@@ -1,0 +1,5 @@
+leaderboard.db
+__pycache__/
+*.pyc
+questions/_drafts/
+.venv/

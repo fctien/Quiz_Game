@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>金榜問答</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* 青花瓷配色:瓷白底、青花藍、硃砂印、玉綠 */
+:root{
+  --ground:#F3F5F8; --paper:#FFFFFF; --ink:#1E2A4A; --muted:#5E6A85; --line:#D9DFEA;
+  --blue:#2B4C9B; --blue-soft:#E6ECF8; --cinnabar:#C8321E; --cinnabar-soft:#FBE7E3;
+  --jade:#2F7D5B; --jade-soft:#E1F2EA; --shadow:0 1px 2px rgba(30,42,74,.06),0 6px 20px rgba(30,42,74,.06);
+  --display:"LXGW WenKai TC","Kaiti TC","STKaiti","BiauKai","DFKai-SB",serif;
+  --body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0F1729; --paper:#18223A; --ink:#E8ECF5; --muted:#9AA6C2; --line:#2A3654;
+    --blue:#8FB0FF; --blue-soft:#1F2D52; --cinnabar:#FF6B57; --cinnabar-soft:#3A1F22;
+    --jade:#5FC89A; --jade-soft:#16332A; --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0F1729; --paper:#18223A; --ink:#E8ECF5; --muted:#9AA6C2; --line:#2A3654;
+  --blue:#8FB0FF; --blue-soft:#1F2D52; --cinnabar:#FF6B57; --cinnabar-soft:#3A1F22;
+  --jade:#5FC89A; --jade-soft:#16332A; --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);
+  line-height:1.65;-webkit-tap-highlight-color:transparent}
+.wrap{max-width:540px;margin:0 auto;padding-inline:16px;padding-block:24px 48px;min-height:100vh}
+button{font:inherit;color:inherit}
+button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+/* 首頁 */
+.masthead{display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+h1{font-family:var(--display);font-size:2.6rem;line-height:1.1;margin:0;letter-spacing:.08em;font-weight:700}
+h1 .seal{display:inline-grid;place-items:center;width:1.25em;height:1.25em;margin-left:.15em;font-size:.55em;
+  vertical-align:.45em;background:var(--cinnabar);color:#fff;border-radius:4px;letter-spacing:0}
+.sub{color:var(--muted);margin:6px 0 0;text-wrap:balance}
+.best{font-family:var(--mono);font-size:.8rem;color:var(--muted);text-align:right;line-height:1.3;white-space:nowrap}
+.best b{display:block;font-size:1.35rem;color:var(--ink)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.cat{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px;
+  text-align:left;cursor:pointer;display:flex;gap:12px;align-items:center;transition:transform .12s,border-color .12s}
+.cat:hover{border-color:var(--blue)}
+.cat:active{transform:scale(.98)}
+.cat .sealbox{flex:none;width:44px;height:44px;border:2px solid var(--cinnabar);color:var(--cinnabar);border-radius:6px;
+  display:grid;place-items:center;font-family:var(--display);font-size:1.5rem;font-weight:700}
+.cat[data-k="news"] .sealbox,.cat[data-k="mix"] .sealbox{border-color:var(--blue);color:var(--blue)}
+.cat b{display:block;font-size:1.05rem;line-height:1.3}
+.cat small{color:var(--muted);font-size:.8rem}
+.rules{margin-top:24px;border-top:1px solid var(--line);padding-top:14px;font-size:.9rem;color:var(--muted)}
+.rules h2{font-family:var(--display);font-size:1.05rem;color:var(--ink);margin:0 0 4px;letter-spacing:.1em}
+.rules ul{margin:0;padding-left:1.2em}
+
+/* 遊戲 */
+.hud{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.lives{display:flex;gap:6px;align-items:center;font-size:.8rem;color:var(--muted)}
+.lives i{width:12px;height:12px;border-radius:50%;background:var(--cinnabar);display:block}
+.lives i.off{background:transparent;border:1.5px solid var(--line)}
+.prog{color:var(--muted);font-size:.88rem;font-variant-numeric:tabular-nums}
+.score{font-family:var(--mono);font-weight:600;font-size:1.1rem;font-variant-numeric:tabular-nums}
+.streak{color:var(--cinnabar);font-size:.85rem;min-height:1.5em;text-align:center;font-weight:500}
+.timer{height:4px;background:var(--line);border-radius:99px;overflow:hidden;margin:6px 0 16px}
+.timer i{display:block;height:100%;background:var(--blue);width:100%;transition:width .25s linear}
+.timer.low i{background:var(--cinnabar)}
+.meta{display:flex;gap:6px;flex-wrap:wrap;font-size:.75rem;margin-bottom:10px;color:var(--muted)}
+.tag{border:1px solid var(--line);border-radius:4px;padding:0 7px;letter-spacing:.05em}
+.qbox{position:relative}
+.q{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px 18px;box-shadow:var(--shadow);
+  font-family:var(--display);font-size:1.4rem;line-height:1.55;font-weight:700;white-space:pre-line;text-wrap:balance}
+.stamp{position:absolute;right:-4px;top:-28px;width:54px;height:54px;border:3px solid currentColor;border-radius:8px;
+  display:grid;place-items:center;font-family:var(--display);font-size:1.9rem;font-weight:700;transform:rotate(-12deg);
+  background:var(--paper);animation:stamp .35s cubic-bezier(.2,1.6,.4,1) both}
+.stamp.pass{color:var(--cinnabar)} .stamp.fail{color:var(--muted)}
+@keyframes stamp{from{transform:rotate(-12deg) scale(2.2);opacity:0}to{transform:rotate(-12deg) scale(1);opacity:1}}
+.opts{display:grid;gap:8px;margin-top:14px}
+.opt{text-align:left;background:var(--paper);border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;
+  cursor:pointer;font-size:1.02rem;display:flex;gap:12px;align-items:center;transition:border-color .12s}
+.opt:hover:not([disabled]){border-color:var(--blue)}
+.opt .n{flex:none;width:26px;height:26px;border-radius:6px;background:var(--blue-soft);color:var(--blue);
+  display:grid;place-items:center;font-family:var(--mono);font-size:.85rem;font-weight:600}
+.opt.picked{border-color:var(--blue)}
+.opt.good{border-color:var(--jade);background:var(--jade-soft)}
+.opt.good .n{background:var(--jade);color:var(--paper)}
+.opt.bad{border-color:var(--cinnabar);background:var(--cinnabar-soft)}
+.opt.bad .n{background:var(--cinnabar);color:var(--paper)}
+.opt.gone{opacity:.25;pointer-events:none}
+.opt[disabled]{cursor:default}
+.tf{grid-template-columns:1fr 1fr}
+.tf .opt{justify-content:center;font-family:var(--display);font-size:1.6rem;padding:16px}
+.hint{color:var(--muted);font-size:.85rem;margin:10px 0 0}
+.row{display:flex;gap:10px;margin-top:12px}
+.btn{border:0;border-radius:10px;padding:12px 18px;cursor:pointer;font-weight:700;background:var(--blue);color:var(--paper);flex:1}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn:disabled{opacity:.4;cursor:default}
+.powers{display:flex;gap:8px;margin-top:16px}
+.pw{flex:1;font-size:.82rem;background:transparent;border:1px dashed var(--line);border-radius:8px;padding:8px 4px;cursor:pointer;color:var(--muted)}
+.pw:not(:disabled):hover{border-color:var(--blue);color:var(--blue)}
+.pw:disabled{opacity:.35;cursor:default}
+
+/* 解說 */
+.fb{margin-top:16px;border-left:3px solid var(--line);padding:4px 0 4px 14px}
+.fb.ok{border-color:var(--jade)} .fb.no{border-color:var(--cinnabar)}
+.fb h3{margin:0 0 4px;font-family:var(--display);font-size:1.25rem}
+.fb.ok h3{color:var(--jade)} .fb.no h3{color:var(--cinnabar)}
+.fb p{margin:6px 0;max-width:36em}
+.fun{background:var(--blue-soft);border-radius:8px;padding:8px 12px;font-size:.93rem}
+.fun b{color:var(--blue);font-weight:700;margin-right:4px}
+.fb a{color:var(--blue);word-break:break-all;font-size:.85rem}
+.pop{animation:pop .3s ease both}
+@keyframes pop{from{transform:translateY(6px);opacity:.3}to{transform:none;opacity:1}}
+.shake{animation:shake .35s}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+
+/* 金榜 */
+.result{text-align:center}
+.bang{display:inline-block;margin-top:8px;padding:18px 28px 14px;border:2px solid var(--cinnabar);border-radius:6px;position:relative}
+.bang small{display:block;color:var(--muted);letter-spacing:.3em;font-size:.8rem}
+.rank{font-family:var(--display);font-size:3rem;line-height:1.2;font-weight:700;color:var(--cinnabar);letter-spacing:.15em}
+.big{font-family:var(--mono);font-size:2rem;font-weight:600;margin:14px 0 2px}
+.newbest{color:var(--cinnabar);font-weight:700;font-size:.9rem}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);margin:18px 0;border-block:1px solid var(--line)}
+.stat{padding:10px 4px}
+.stat + .stat{border-left:1px solid var(--line)}
+.stat b{display:block;font-family:var(--mono);font-size:1.25rem}
+.stat small{color:var(--muted)}
+.review{text-align:left;margin-top:14px}
+.review div{padding:8px 0;border-bottom:1px solid var(--line);font-size:.9rem;display:flex;gap:10px}
+.review span.m{flex:none;width:1.4em;font-family:var(--display);font-weight:700}
+.review .y{color:var(--jade)} .review .x{color:var(--cinnabar)} .review .s{color:var(--muted)}
+.err{color:var(--cinnabar);margin-top:12px}
+/* 排行榜 */
+.linkbtn{margin-top:12px;width:100%;background:transparent;border:1.5px solid var(--line);border-radius:10px;padding:12px;
+  cursor:pointer;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+.linkbtn:hover{border-color:var(--cinnabar)}
+.linkbtn span:first-child{font-family:var(--display);font-size:1.1rem;letter-spacing:.1em}
+.linkbtn .arrow{color:var(--cinnabar)}
+.lbhead{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.lbhead h1{font-size:2.2rem}
+.back{background:transparent;border:0;color:var(--muted);cursor:pointer;padding:6px 0}
+.seg{display:inline-flex;border:1.5px solid var(--line);border-radius:8px;overflow:hidden;margin-top:16px}
+.seg button{background:transparent;border:0;padding:6px 16px;cursor:pointer;color:var(--muted);font-weight:500}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--ground)}
+.chips{display:flex;gap:6px;overflow-x:auto;padding:12px 0 4px;scrollbar-width:none}
+.chips button{flex:none;background:transparent;border:1px solid var(--line);border-radius:999px;padding:3px 12px;
+  cursor:pointer;font-size:.85rem;color:var(--muted)}
+.chips button[aria-pressed="true"]{border-color:var(--cinnabar);color:var(--cinnabar);font-weight:700}
+.board{margin-top:10px;border-top:2px solid var(--ink)}
+.entry{display:grid;grid-template-columns:3.2em 1fr auto;gap:10px;align-items:center;padding:10px 4px;border-bottom:1px solid var(--line)}
+.entry.me{background:var(--cinnabar-soft)}
+.entry .pos{font-family:var(--mono);color:var(--muted);text-align:center;font-weight:600}
+.entry .pos.top{font-family:var(--display);color:var(--cinnabar);font-size:1.05rem;letter-spacing:.05em}
+.entry .who{min-width:0}
+.entry .who b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.entry .who small{color:var(--muted);font-size:.78rem}
+.entry .pts{font-family:var(--mono);font-weight:600;font-variant-numeric:tabular-nums}
+.empty{padding:28px 8px;text-align:center;color:var(--muted)}
+.note{color:var(--muted);font-size:.8rem;margin-top:10px}
+.lbform{margin-top:18px;text-align:left}
+.lbform label{font-family:var(--display);font-size:1.1rem;font-weight:700;letter-spacing:.1em}
+.lbform .row{margin-top:6px}
+.lbform input{flex:1;min-width:0;font:inherit;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;
+  background:var(--paper);color:var(--ink)}
+.lbform input:focus{outline:2px solid var(--blue);outline-offset:1px}
+.lbform .btn{flex:none;background:var(--cinnabar)}
+.placed{margin-top:18px;padding:12px;border:1.5px dashed var(--cinnabar);border-radius:10px}
+.placed b{color:var(--cinnabar);font-family:var(--mono)}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+
+<script>
+/* ============================================================
+ *  金榜問答 前端
+ *  - 有後端時：透過 /api/* 出題、計時、計分(分數以伺服器為準)，排行榜存在 SQLite
+ *  - 單機模式(window.EMBEDDED_BANK 存在):瀏覽器自己出題計分；
+ *    排行榜若在 claude.ai 上開啟就用共用資料庫，否則存在這台裝置
+ * ============================================================ */
+const LIVES = 3;
+const TIME_LIMIT = {choice: 15, order: 25};
+const SEAL = {taiwan:'台', china:'華', world:'寰', poetry:'詩', stars:'星', fun:'奇', news:'聞', mix:'雜'};
+const CAT_NAME = {taiwan:'台灣', china:'中國', world:'世界', poetry:'詩詞', stars:'明星', fun:'趣聞', news:'即時新聞', mix:'綜合挑戰'};
+const TOP3 = ['狀元', '榜眼', '探花'];
+const $app = document.getElementById('app');
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const store = {
+  get(k){ try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
+  set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
+};
+const post = async (url, body) => {
+  const r = await fetch(url, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(j.error || '連線失敗，請再試一次');
+  return j;
+};
+
+/* ---------- 後端版 API ---------- */
+const remote = {
+  categories: () => fetch('/api/categories').then(r => r.json()),
+  start: category => post('/api/start', {category}),
+  show: (session, index) => post('/api/show', {session, index}),
+  answer: (session, index, answer) => post('/api/answer', {session, index, answer}),
+  power: (session, index, type) => post('/api/power', {session, index, type}),
+  finish: session => post('/api/finish', {session}).catch(() => {}),
+  submit: (session, name) => post('/api/submit', {session, name}),
+  leaderboard: (category, period) => fetch(`/api/leaderboard?category=${category}&period=${period}`).then(r => r.json()),
+  boardNote: () => '',
+};
+
+/* ---------- 單機版：在瀏覽器裡模擬同一套規則 ---------- */
+function weekKey(ts = Date.now()){
+  const d = new Date(ts + 8 * 3600e3);                 // 以台灣時間切週,與後端一致
+  const t = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
+  t.setUTCDate(t.getUTCDate() - (t.getUTCDay() + 6) % 7 + 3);   // 該週的週四
+  const y = t.getUTCFullYear(), jan4 = new Date(Date.UTC(y, 0, 4));
+  const w = 1 + Math.round(((t - jan4) / 864e5 - 3 + (jan4.getUTCDay() + 6) % 7) / 7);
+  return `${y}-W${String(w).padStart(2, '0')}`;
+}
+const mult = s => s >= 5 ? 2 : s >= 3 ? 1.5 : 1;
+let dbPromise = null;
+const getDb = () => dbPromise ??= (window.claude?.use ? window.claude.use('db').catch(() => null) : Promise.resolve(null));
+
+const local = {
+  g: null,
+  categories: async () => window.EMBEDDED_CATS,
+  async start(category){
+    const today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
+    let pool = (category === 'mix' ? Object.values(EMBEDDED_BANK).flat() : [...(EMBEDDED_BANK[category] || [])])
+      .filter(q => !q.expires || q.expires >= today);   // 過期題目自動下架
+    pool.sort(() => Math.random() - .5);
+    const qs = pool.slice(0, 10).sort((a, b) => (a.difficulty || 2) - (b.difficulty || 2));
+    this.g = {cat: category, qs, i: 0, shown: null, extra: 0, lives: LIVES, score: 0, streak: 0, best: 0,
+              right: 0, answered: 0, over: false, submitted: false, powers: {fifty: true, skip: true, time: true}};
+    return {session: 'local', total: qs.length, questions: qs};
+  },
+  state(){ const g = this.g; return {i: g.i, lives: g.lives, score: g.score, streak: g.streak, best: g.best,
+    right: g.right, answered: g.answered, over: g.over, powers: {...g.powers}}; },
+  advance(){ const g = this.g; g.i++; g.shown = null; g.extra = 0; if (g.lives <= 0 || g.i >= g.qs.length) g.over = true; },
+  async show(){ this.g.shown ??= Date.now(); return {ok: true}; },
+  async answer(_, index, ans){
+    const g = this.g, q = g.qs[index];
+    const limit = (TIME_LIMIT[q.type] || 15) + g.extra, elapsed = (Date.now() - g.shown) / 1000;
+    const timed_out = ans === null || elapsed > limit + 1.5;
+    const correct = !timed_out && JSON.stringify(ans) === JSON.stringify(q.answer);
+    let gained = 0; g.answered++;
+    if (correct){ g.streak++; g.right++; g.best = Math.max(g.best, g.streak);
+      gained = Math.round((100 * (q.difficulty || 1) + Math.round(Math.max(0, limit - elapsed)) * 5) * mult(g.streak)); g.score += gained; }
+    else { g.streak = 0; g.lives--; }
+    this.advance();
+    return {correct, timed_out, gained, answer: q.answer, explanation: q.explanation, fun_fact: q.fun_fact, source: q.source || '', state: this.state()};
+  },
+  async power(_, index, type){
+    const g = this.g, q = g.qs[index];
+    if (!g.powers[type]) throw new Error('這個道具已經用過了');
+    g.powers[type] = false;
+    const out = {};
+    if (type === 'fifty') out.remove = q.options.map((_, i) => i).filter(i => i !== q.answer).sort(() => Math.random() - .5).slice(0, 2);
+    if (type === 'time') g.extra += 10;
+    if (type === 'skip') this.advance();
+    return {...out, state: this.state()};
+  },
+  finish(){},
+  async submit(_, name){
+    const g = this.g;
+    name = String(name).replace(/[\x00-\x1f<>&"']/g, '').trim().slice(0, 12);
+    if (!name) throw new Error('請輸入 1 到 12 個字的暱稱');
+    if (!g.over || g.submitted) throw new Error('這局已經上榜過了');
+    g.submitted = true;
+    const row = {name, category: g.cat, score: g.score, correct: g.right, answered: g.answered,
+                 best_streak: g.best, week: weekKey(), created: Date.now() / 1000};
+    const db = await getDb();
+    let id;
+    if (db){
+      const ref = await db.collection('scores').add(row);
+      id = ref.id;
+    } else {
+      const list = store.get('quiz_scores') || [];
+      id = 'l' + Date.now();
+      list.push({...row, id}); store.set('quiz_scores', list.sort((a, b) => b.score - a.score).slice(0, 200));
+    }
+    const rankIn = async period => {
+      const all = await this.leaderboard(g.cat, period, 1000);
+      const idx = all.findIndex(r => r.id === id);
+      return idx >= 0 ? idx + 1 : null;
+    };
+    return {id, rank_week: await rankIn('week'), rank_all: await rankIn('all')};
+  },
+  async leaderboard(category, period, limit = 20){
+    const db = await getDb();
+    let rows;
+    if (db){
+      let q = db.collection('scores');
+      if (category !== 'all') q = q.where('category', '==', category);
+      if (period === 'week') q = q.where('week', '==', weekKey());
+      const snap = await q.orderBy('score', 'desc').limit(Math.min(limit, 1000)).get();
+      rows = snap.docs.map(d => ({id: d.id, ...d.data()}));
+    } else {
+      rows = (store.get('quiz_scores') || []).filter(r =>
+        (category === 'all' || r.category === category) && (period === 'all' || r.week === weekKey()));
+    }
+    return rows.sort((a, b) => b.score - a.score || a.created - b.created).slice(0, limit);
+  },
+  async boardNote(){ return (await getDb()) ? '' : '目前顯示的是這台裝置上的紀錄。'; },
+};
+
+const LOCAL = !!window.EMBEDDED_BANK;
+const api = LOCAL ? local : remote;
+
+/* ---------- 首頁 ---------- */
+async function home(){
+  const best = store.get('quiz_best') || 0;
+  $app.innerHTML = `<div class="masthead"><div><h1>金榜問答<span class="seal">試</span></h1>
+    <p class="sub">台灣・中國・世界・詩詞・時事，十題定名次</p></div>
+    ${best ? `<div class="best">個人最高<b>${best}</b></div>` : ''}</div>
+    <div class="grid" id="cats"><p class="sub">載入中…</p></div>
+    <button class="linkbtn" id="to-board"><span>看本週金榜</span><span class="arrow">→</span></button>
+    <div class="rules"><h2>應試規則</h2><ul>
+      <li>每局 10 題，共 ${LIVES} 條命，答錯或超時扣一條</li>
+      <li>答得越快分數越高；連中 3 題 ×1.5、連中 5 題 ×2</li>
+      <li>每局各有一次道具：刪去兩個選項、跳過此題、加時 10 秒</li>
+      <li>依正確率放榜：狀元、榜眼、探花、進士、秀才；留下暱稱就能登上金榜</li>
+    </ul></div>`;
+  document.getElementById('to-board').onclick = () => board('all', 'week');
+  try{
+    const cats = await api.categories();
+    document.getElementById('cats').innerHTML = cats.map(c => `
+      <button class="cat" data-k="${c.key}">
+        <span class="sealbox">${SEAL[c.key] || esc(c.name[0])}</span>
+        <span><b>${esc(c.name)}</b><small>${c.key === 'news' ? '每小時更新' : c.count + ' 題'}</small></span>
+      </button>`).join('');
+    document.querySelectorAll('.cat').forEach(b => b.onclick = () => startGame(b.dataset.k));
+  }catch(e){
+    document.getElementById('cats').innerHTML = `<p class="err">連不到伺服器，請確認 app.py 有在執行。</p>`;
+  }
+}
+
+/* ---------- 遊戲 ---------- */
+let G = null;
+
+async function startGame(cat){
+  $app.innerHTML = `<p class="sub">出題中…</p>`;
+  try{
+    const d = await api.start(cat);
+    G = {session: d.session, qs: d.questions, catKey: cat, catName: CAT_NAME[cat] || cat, log: [],
+         st: {i: 0, lives: LIVES, score: 0, streak: 0, best: 0, right: 0, answered: 0, over: false,
+              powers: {fifty: true, skip: true, time: true}}};
+    showQuestion();
+  }catch(e){
+    $app.innerHTML = `<p class="err">${esc(e.message)}</p><div class="row"><button class="btn" id="home">回首頁</button></div>`;
+    document.getElementById('home').onclick = home;
+  }
+}
+
+function hud(){
+  const s = G.st;
+  return `<div class="hud">
+      <span class="lives" aria-label="剩 ${s.lives} 條命">${Array.from({length: LIVES}, (_, k) => `<i class="${k < s.lives ? '' : 'off'}"></i>`).join('')}</span>
+      <span class="prog">第 ${Math.min(s.i + 1, G.qs.length)} / ${G.qs.length} 題</span>
+      <span class="score">${s.score}</span>
+    </div>
+    <div class="streak">${streakText()}</div>
+    <div class="timer" id="timer"><i></i></div>`;
+}
+const streakText = () => G.st.streak >= 2 ? `連中 ${G.st.streak} 題` + (mult(G.st.streak) > 1 ? `（×${mult(G.st.streak)}）` : '') : '';
+
+async function showQuestion(){
+  const i = G.st.i, q = G.qs[i];
+  G.picked = []; G.locked = false;
+  const isTF = q.options.length === 2 && q.options[0] === '對';
+  const typeLabel = q.type === 'order' ? '排序題' : isTF ? '是非題' : '選擇題';
+  const opts = q.options.map((o, k) => `<button class="opt" data-i="${k}">${isTF ? '' :
+    `<span class="n">${q.type === 'order' ? '·' : 'ABCD'[k]}</span>`}<span>${esc(o)}</span></button>`).join('');
+  const P = G.st.powers;
+  $app.innerHTML = hud() + `
+    <div class="meta"><span class="tag">${esc(q.region || G.catName)}</span><span class="tag">${esc(q.category || '')}</span>
+      <span class="tag">${typeLabel}</span><span class="tag">${'★'.repeat(q.difficulty || 1)}</span>
+      ${q.asof && (q.expires || q.category === '時事') ? `<span class="tag">${esc(q.asof.replace('-', ' 年 ').replace(/ 0?(\d+)$/, ' $1'))} 月資料</span>` : ''}
+      ${q.ai_generated ? '<span class="tag">AI 出題</span>' : ''}</div>
+    <div class="qbox"><div class="q pop">${esc(q.question)}</div></div>
+    <div class="opts ${isTF ? 'tf' : ''}" id="opts">${opts}</div>
+    ${q.type === 'order' ? `<p class="hint">依序點選，由最早到最晚</p>
+      <div class="row"><button class="btn ghost" id="reset">重選</button><button class="btn" id="submit" disabled>送出</button></div>` : ''}
+    <div class="powers">
+      <button class="pw" id="pw-fifty" ${P.fifty && q.type === 'choice' && !isTF ? '' : 'disabled'}>刪去兩個</button>
+      <button class="pw" id="pw-skip" ${P.skip ? '' : 'disabled'}>跳過此題</button>
+      <button class="pw" id="pw-time" ${P.time ? '' : 'disabled'}>加時 10 秒</button>
+    </div>
+    <div id="fb"></div>`;
+
+  const btns = [...document.querySelectorAll('.opt')];
+  if (q.type === 'order'){
+    btns.forEach(b => b.onclick = () => {
+      if (G.locked || G.picked.includes(+b.dataset.i)) return;
+      G.picked.push(+b.dataset.i);
+      b.querySelector('.n').textContent = G.picked.length;
+      b.classList.add('picked');
+      document.getElementById('submit').disabled = G.picked.length !== q.options.length;
+    });
+    document.getElementById('reset').onclick = () => {
+      if (G.locked) return;
+      G.picked = [];
+      btns.forEach(b => { b.querySelector('.n').textContent = '·'; b.classList.remove('picked'); });
+      document.getElementById('submit').disabled = true;
+    };
+    document.getElementById('submit').onclick = () => answer(G.picked);
+  } else {
+    btns.forEach(b => b.onclick = () => answer(+b.dataset.i));
+  }
+  const usePower = async (type, el) => {
+    if (G.locked) return;
+    el.disabled = true;
+    try{
+      const r = await api.power(G.session, i, type);
+      G.st = r.state;
+      if (type === 'fifty') r.remove.forEach(k => btns[k].classList.add('gone'));
+      if (type === 'time'){ G.deadline += 10000; G.limit += 10; }
+      if (type === 'skip'){ G.locked = true; stopTimer(); G.log.push({q: q.question, ok: null}); next(); }
+    }catch(e){ el.disabled = false; }
+  };
+  document.getElementById('pw-fifty').onclick = e => usePower('fifty', e.currentTarget);
+  document.getElementById('pw-skip').onclick = e => usePower('skip', e.currentTarget);
+  document.getElementById('pw-time').onclick = e => usePower('time', e.currentTarget);
+
+  try { await api.show(G.session, i); } catch(e){ return fail(e); }
+  startTimer(TIME_LIMIT[q.type] || 15);
+}
+
+function startTimer(sec){
+  G.limit = sec; G.deadline = Date.now() + sec * 1000;
+  stopTimer();
+  G.tick = setInterval(() => {
+    const left = Math.max(0, G.deadline - Date.now());
+    const el = document.getElementById('timer');
+    if (el){ el.firstElementChild.style.width = (left / (G.limit * 1000) * 100) + '%'; el.classList.toggle('low', left < 5000); }
+    if (left <= 0){ stopTimer(); answer(null); }
+  }, 200);
+}
+function stopTimer(){ clearInterval(G.tick); }
+function fail(e){
+  stopTimer();
+  $app.innerHTML = `<p class="err">${esc(e.message)}</p><div class="row"><button class="btn" id="home">回首頁</button></div>`;
+  document.getElementById('home').onclick = home;
+}
+
+async function answer(ans){
+  if (G.locked) return;
+  G.locked = true; stopTimer();
+  const q = G.qs[G.st.i];
+  let r;
+  try { r = await api.answer(G.session, G.st.i, ans); } catch(e){ return fail(e); }
+  G.st = r.state;
+  const btns = [...document.querySelectorAll('.opt')];
+  btns.forEach(b => b.disabled = true);
+  document.querySelectorAll('.pw').forEach(b => b.disabled = true);
+  if (!r.correct) document.querySelector('.q').classList.add('shake');
+  document.querySelector('.qbox').insertAdjacentHTML('beforeend',
+    `<div class="stamp ${r.correct ? 'pass' : 'fail'}" aria-hidden="true">${r.correct ? '中' : '落'}</div>`);
+
+  if (q.type === 'order'){
+    r.answer.forEach((optIdx, rank) => {
+      const b = btns[optIdx]; b.classList.remove('picked');
+      b.querySelector('.n').textContent = rank + 1;
+      b.classList.add(r.correct || (ans && ans[rank] === optIdx) ? 'good' : 'bad');
+    });
+  } else {
+    btns[r.answer].classList.add('good');
+    if (!r.correct && ans !== null) btns[ans].classList.add('bad');
+  }
+  G.log.push({q: q.question, ok: r.correct});
+
+  const title = r.correct ? `答對了，+${r.gained} 分` : r.timed_out ? '時間到！' : '答錯了！';
+  const correctText = q.type === 'order' ? r.answer.map(k => q.options[k]).join(' → ') : q.options[r.answer];
+  document.getElementById('fb').innerHTML = `
+    <div class="fb pop ${r.correct ? 'ok' : 'no'}">
+      <h3>${title}</h3>
+      ${r.correct ? '' : `<p>正確答案：<b>${esc(correctText)}</b></p>`}
+      <p>${esc(r.explanation)}</p>
+      ${r.fun_fact ? `<p class="fun"><b>冷知識</b>${esc(r.fun_fact)}</p>` : ''}
+      ${r.source ? `<a href="${esc(r.source)}" target="_blank" rel="noopener">${G.catKey === 'news' ? '閱讀新聞原文' : '查看資料來源'} ↗</a>` : ''}
+      <div class="row"><button class="btn" id="next">${G.st.over ? '看放榜' : '下一題'}</button></div>
+    </div>`;
+  // 更新分數與命(保留原本畫面，不要重畫題目)
+  const live = document.querySelector('.hud');
+  live.querySelector('.lives').outerHTML = hud().match(/<span class="lives"[\s\S]*?<\/span>/)[0];
+  live.querySelector('.score').textContent = G.st.score;
+  document.querySelector('.streak').textContent = streakText();
+  document.getElementById('next').onclick = next;
+  document.getElementById('next').scrollIntoView({behavior: 'smooth', block: 'center'});
+}
+
+function next(){
+  if (G.st.over) return result();
+  showQuestion(); window.scrollTo(0, 0);
+}
+
+/* ---------- 放榜 ---------- */
+function result(){
+  const s = G.st;
+  const acc = s.answered ? Math.round(s.right / s.answered * 100) : 0;
+  const prev = store.get('quiz_best') || 0;
+  const isBest = s.score > prev;
+  if (isBest) store.set('quiz_best', s.score);
+  const rank = acc >= 90 ? '狀元' : acc >= 75 ? '榜眼' : acc >= 60 ? '探花' : acc >= 40 ? '進士' : '秀才';
+  const canSubmit = s.score > 0;
+  $app.innerHTML = `<div class="result">
+      <p class="sub">${esc(G.catName)} ・ ${s.lives <= 0 ? '三條命用完了' : '十題作答完畢'}</p>
+      <div class="bang"><small>金榜題名</small><div class="rank">${rank}</div></div>
+      <div class="big">${s.score} 分</div>
+      ${isBest ? '<span class="newbest">刷新個人最高分！</span>' : `<span class="sub">個人最高 ${prev}</span>`}
+      <div class="stats">
+        <div class="stat"><b>${s.right}/${s.answered}</b><small>答對</small></div>
+        <div class="stat"><b>${acc}%</b><small>正確率</small></div>
+        <div class="stat"><b>${s.best}</b><small>最長連中</small></div>
+      </div>
+      <div id="lbslot">${canSubmit ? `
+        <form class="lbform" id="lbform">
+          <label for="nick">留名金榜</label>
+          <div class="row"><input id="nick" name="nick" maxlength="12" autocomplete="nickname" placeholder="輸入暱稱（最多 12 字）"
+            value="${esc(store.get('quiz_nick') || '')}"><button class="btn" type="submit" id="lbsubmit">題名上榜</button></div>
+          <p class="err" id="lberr" hidden></p>
+        </form>` : ''}</div>
+      <div class="row"><button class="btn ghost" id="home">換分類</button><button class="btn" id="again">再考一次</button></div>
+      <div class="review">${G.log.map(x => `<div><span class="m ${x.ok === null ? 's' : x.ok ? 'y' : 'x'}">${x.ok === null ? '略' : x.ok ? '中' : '落'}</span><span>${esc(x.q.split('\n').pop())}</span></div>`).join('')}</div>
+    </div>`;
+  document.getElementById('home').onclick = () => { api.finish(G.session); home(); };
+  document.getElementById('again').onclick = () => { api.finish(G.session); startGame(G.catKey); };
+  const form = document.getElementById('lbform');
+  if (form) form.onsubmit = async e => {
+    e.preventDefault();
+    const name = document.getElementById('nick').value.trim();
+    const err = document.getElementById('lberr');
+    const btn = document.getElementById('lbsubmit');
+    btn.disabled = true; err.hidden = true;
+    try{
+      const r = await api.submit(G.session, name);
+      store.set('quiz_nick', name);
+      G.myId = r.id;
+      document.getElementById('lbslot').innerHTML = `<div class="placed">
+          「${esc(G.catName)}」本週第 <b>${r.rank_week ?? '-'}</b> 名 ・ 總榜第 <b>${r.rank_all ?? '-'}</b> 名
+          <div class="row"><button class="btn ghost" id="seeboard">看金榜</button></div></div>`;
+      document.getElementById('seeboard').onclick = () => board(G.catKey, 'week');
+    }catch(ex){
+      err.textContent = ex.message; err.hidden = false; btn.disabled = false;
+    }
+  };
+}
+
+/* ---------- 金榜 ---------- */
+async function board(category = 'all', period = 'week'){
+  const cats = ['all', 'taiwan', 'china', 'world', 'poetry', 'stars', 'fun', ...(LOCAL ? [] : ['news']), 'mix'];
+  $app.innerHTML = `<div class="lbhead"><h1>金榜</h1><button class="back" id="back">← 回首頁</button></div>
+    <div class="seg" role="group" aria-label="期間">
+      <button id="p-week" aria-pressed="${period === 'week'}">本週</button>
+      <button id="p-all" aria-pressed="${period === 'all'}">總榜</button>
+    </div>
+    <div class="chips" role="group" aria-label="分類">${cats.map(c =>
+      `<button data-c="${c}" aria-pressed="${c === category}">${c === 'all' ? '全部' : CAT_NAME[c]}</button>`).join('')}</div>
+    <div class="board" id="rows"><div class="empty">放榜中…</div></div>
+    <p class="note" id="note"></p>`;
+  document.getElementById('back').onclick = home;
+  document.getElementById('p-week').onclick = () => board(category, 'week');
+  document.getElementById('p-all').onclick = () => board(category, 'all');
+  document.querySelectorAll('.chips button').forEach(b => b.onclick = () => board(b.dataset.c, period));
+  document.querySelector('.chips [aria-pressed="true"]')?.scrollIntoView({inline: 'center', block: 'nearest'});
+  const el = document.getElementById('rows');
+  try{
+    const rows = await api.leaderboard(category, period);
+    document.getElementById('note').textContent = (await api.boardNote()) +
+      (period === 'week' ? ' 本週榜每週一 00:00（台灣時間）重新開始。' : '');
+    if (!rows.length){
+      el.innerHTML = `<div class="empty">${period === 'week' ? '本週' : ''}還沒有人上榜，來當第一位狀元吧。
+        <div class="row"><button class="btn" id="go">開始作答</button></div></div>`;
+      document.getElementById('go').onclick = () => startGame(category === 'all' ? 'mix' : category);
+      return;
+    }
+    el.innerHTML = rows.map((r, k) => {
+      const d = new Date(r.created * 1000);
+      return `<div class="entry ${r.id === G?.myId ? 'me' : ''}">
+        <span class="pos ${k < 3 ? 'top' : ''}">${k < 3 ? TOP3[k] : k + 1}</span>
+        <span class="who"><b>${esc(r.name)}</b><small>${CAT_NAME[r.category] || ''} ・ 答對 ${r.correct}/${r.answered} ・ ${d.getMonth() + 1}/${d.getDate()}</small></span>
+        <span class="pts">${r.score}</span></div>`;
+    }).join('');
+  }catch(e){
+    el.innerHTML = `<div class="empty">金榜暫時打不開，請稍後再試。</div>`;
+  }
+}
+
+home();
+</script>
+</body>
+</html>

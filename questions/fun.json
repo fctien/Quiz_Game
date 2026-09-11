@@ -1,0 +1,653 @@
+[
+  {
+    "id": "fn-001",
+    "category": "時事",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "2024 年爆紅全球的泰國侏儒河馬寶寶「Moo Deng」，名字在泰文裡是什麼意思？",
+    "options": [
+      "粉紅色的泡泡",
+      "胖嘟嘟的小河馬",
+      "彈跳的豬肉（一種肉丸）",
+      "幸運的星星"
+    ],
+    "answer": 2,
+    "explanation": "Moo Deng 是泰國考溪開放動物園的侏儒河馬，名字由網友投票選出，泰文意思是「彈跳豬肉」，指一種 Q 彈的肉丸。",
+    "fun_fact": "侏儒河馬原產於西非，野外只剩約 2,000 到 3,000 隻，是瀕危物種。",
+    "source": "https://www.cbsnews.com/news/moo-deng-baby-hippo-thailand-zoo-bouncy-pork-goes-viral/",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-002",
+    "category": "時事",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "2024 年，澳洲墨爾本水族館的國王企鵝寶寶「Pesto」在網路爆紅，牠為什麼這麼出名？",
+    "options": [
+      "牠自己游出水族館跑去逛街",
+      "牠會用鰭拍打出音樂節拍",
+      "才 9 個月大，體重就將近爸媽的兩倍",
+      "牠是全身雪白的罕見白化企鵝"
+    ],
+    "answer": 2,
+    "explanation": "Pesto 9 個月大時重約 22.5 公斤，而牠的爸媽只有 11 到 12 公斤，毛茸茸的巨大身材讓牠成為網路明星。",
+    "fun_fact": "保育員說 Pesto 的爸爸以前就是該館「最大隻企鵝」的紀錄保持者，大個子可能是遺傳。",
+    "source": "https://www.abc.net.au/news/2024-09-24/pesto-penguin-biggest-chick-at-melbourne-aquarium/104385040",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-003",
+    "category": "時事",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "真新聞還是假新聞？2023 年泰勒絲在美國西雅圖開唱，現場造成的地面震動被地震儀記錄下來，相當於規模約 2.3 的地震。",
+    "options": [
+      "對",
+      "錯"
+    ],
+    "answer": 0,
+    "explanation": "真新聞！2023 年 7 月泰勒絲在西雅圖連開兩場演唱會，地震學家測得的震動相當於規模約 2.3，被稱為「Swift Quake」。",
+    "fun_fact": "這次震動比 2011 年美式足球賽引發的知名「Beast Quake」（約規模 2.0）還強。",
+    "source": "https://amp.cbc.ca/news/science/taylor-swift-seattle-concert-seismology-1.6921705",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-004",
+    "category": "時事",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "2024 年巴黎奧運，一位 51 歲的土耳其選手單手插口袋、只戴普通眼鏡和小耳塞就拿下銀牌而爆紅。他參加的是哪一項運動？",
+    "options": [
+      "射擊（10 公尺空氣手槍）",
+      "射箭",
+      "擊劍",
+      "滑板"
+    ],
+    "answer": 0,
+    "explanation": "土耳其選手迪凱奇在 10 公尺空氣手槍混合團體賽奪銀，他不戴專業護目鏡和大耳罩，一派輕鬆的模樣讓全球網友瘋狂模仿。",
+    "fun_fact": "他賽後說：「我不需要特殊裝備，我是天生的射手。」",
+    "source": "https://www.nbcnews.com/news/sports/sharpshooter-yusuf-dikec-silver-olympics-minimal-gear-internet-sensati-rcna164685",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-005",
+    "category": "時事",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "真新聞還是假新聞？2024 年 1 月，日本探月器 SLIM 成功登陸月球，但落地時是「倒栽蔥」的姿勢。",
+    "options": [
+      "對",
+      "錯"
+    ],
+    "answer": 0,
+    "explanation": "真新聞！SLIM 在降落前一具主引擎失去推力，最後以倒立的姿勢著陸，但降落位置距離目標只有約 55 公尺，精準度驚人。",
+    "fun_fact": "SLIM 的外號是「月球狙擊手」，日本也因此成為第 5 個成功登月的國家。",
+    "source": "https://www.pbs.org/newshour/science/japans-1st-moon-lander-has-hit-its-target-but-it-appears-to-be-upside-down",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-006",
+    "category": "時事",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "2025 年 4 月，流行歌手凱蒂佩芮搭乘藍色起源公司的太空船進行約 10 分鐘的太空飛行。她帶了什麼上太空？",
+    "options": [
+      "一朵雛菊",
+      "一隻泰迪熊",
+      "一瓶香水",
+      "一把吉他"
+    ],
+    "answer": 0,
+    "explanation": "凱蒂佩芮帶著一朵雛菊登上太空船，還在飛行中清唱了〈What a Wonderful World〉。",
+    "fun_fact": "這趟 6 名女性組成的飛行，是 1963 年以來第一次全女性的太空飛行。",
+    "source": "https://www.npr.org/2025/04/14/nx-s1-5364460/blue-origin-launch-female-space-flight-katy-perry",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-007",
+    "category": "時事",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "2024 年巴黎奧運期間，一位挪威游泳選手在網路上大推選手村的某種食物，讓它意外爆紅。那是什麼？",
+    "options": [
+      "馬卡龍",
+      "法式可頌",
+      "巧克力瑪芬",
+      "鹹派"
+    ],
+    "answer": 2,
+    "explanation": "挪威泳將克里斯蒂安森在 TikTok 上給選手村的巧克力瑪芬打了「11 分（滿分 10 分）」，被網友封為「瑪芬人」。",
+    "fun_fact": "許多其他國家的選手也跟著拍影片試吃，瑪芬成了巴黎奧運最紅的「非正式明星」。",
+    "source": "https://globalnews.ca/news/10686295/olympic-chocolate-muffin-man-henrik-christiansen/",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-008",
+    "category": "時事",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "真新聞還是假新聞？在 2024 年巴黎奧運首度登場的霹靂舞，也會在 2028 年洛杉磯奧運繼續舉行。",
+    "options": [
+      "對",
+      "錯"
+    ],
+    "answer": 1,
+    "explanation": "假新聞！霹靂舞在巴黎奧運首次成為正式項目，但沒有被列入 2028 年洛杉磯奧運的比賽項目。",
+    "fun_fact": "洛杉磯奧運新增的項目包括板球、腰旗美式足球、袋棍球和壁球，棒壘球也重返奧運。",
+    "source": "https://www.forbes.com/sites/jasonpu/2024/08/15/breaking-will-not-be-in-the-2028-los-angeles-olympics-whats-next/",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-009",
+    "category": "時事",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "2024 年，臺北市立動物園新生的馬來貘寶寶經過網路票選，最後取了什麼名字？",
+    "options": [
+      "貘範生",
+      "貘茶",
+      "貘睏霸",
+      "莉姆路"
+    ],
+    "answer": 3,
+    "explanation": "「莉姆路」以 3,547 票勝出，保育員沿用媽媽「貘莉」名字的最後一個字，再聯想日本輕小說與漫畫主角的名字而取名。",
+    "fun_fact": "決選中第二名是得到 3,209 票的「貘茶」，「莉姆路」只贏了 338 票。",
+    "source": "https://www.zoo.gov.taipei/News_Content.aspx?n=BD065B2FA7782989&sms=72544237BBE4C5F6&s=0FD8E053FD089A60",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-010",
+    "category": "時事",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "臺北市立動物園在 2024 年 10 月舉辦了大型慶生活動，那一年動物園滿幾歲？",
+    "options": [
+      "110 歲",
+      "150 歲",
+      "50 歲",
+      "80 歲"
+    ],
+    "answer": 0,
+    "explanation": "臺北市立動物園 1914 年在圓山創立，到 2024 年正好 110 歲。",
+    "fun_fact": "動物園在 1986 年才從圓山搬到現在的木柵。",
+    "source": "https://www.cna.com.tw/news/ahel/202410260122.aspx",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-011",
+    "category": "時事",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "2026 年 1 月，美國攀岩家霍諾德在全球直播下，不用繩索徒手爬上了台灣哪一棟大樓？",
+    "options": [
+      "高雄 85 大樓",
+      "台北 101",
+      "台中國家歌劇院",
+      "新光摩天大樓"
+    ],
+    "answer": 1,
+    "explanation": "霍諾德在 2026 年 1 月 25 日無繩徒手攀登台北 101，約 91 分鐘就登頂，全程在網路上直播。",
+    "fun_fact": "原本預定前一天攀登，因為下雨延期了一天。",
+    "source": "https://www.storm.mg/lifestyle/11098054",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-012",
+    "category": "時事",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "2026 年 4 月，NASA「阿提米絲 2 號」的 4 名太空人完成了什麼任務？",
+    "options": [
+      "登陸月球南極並插上旗子",
+      "在月球表面建立第一座基地",
+      "繞月飛行後返回地球，是半世紀以來人類首度前往月球",
+      "成為第一批登陸火星的人類"
+    ],
+    "answer": 2,
+    "explanation": "阿提米絲 2 號在 2026 年 4 月 1 日發射、4 月 10 日返回，太空人繞過月球，是 1972 年阿波羅計畫之後人類首次前往月球。",
+    "fun_fact": "他們飛到距離地球約 40 萬公里遠，打破了 1970 年阿波羅 13 號創下的人類最遠飛行紀錄。",
+    "source": "https://www.nasa.gov/news-release/nasa-welcomes-record-setting-artemis-ii-moonfarers-back-to-earth/",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-013",
+    "category": "時事",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "真新聞還是假新聞？2022 年，一名日本男子花了約 200 萬日圓，請專業公司訂製超逼真的狗狗裝，實現他「變成動物」的夢想。",
+    "options": [
+      "對",
+      "錯"
+    ],
+    "answer": 0,
+    "explanation": "真新聞！這套牧羊犬造型裝由專做影視道具的日本公司花了約 40 天製作，照片一出就在網路上爆紅。",
+    "fun_fact": "製作公司說，狗和人的骨架結構差很多，他們花了很多時間研究怎麼讓人穿起來看起來像真的狗。",
+    "source": "https://www.newsweek.com/its-too-real-man-spends-thousands-incredibly-lifelike-dog-costume-twitter-1710504",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-014",
+    "category": "時事",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "2022 年，NASA 讓 DART 太空船故意撞上一顆小行星，結果發生了什麼事？",
+    "options": [
+      "小行星的繞行週期縮短了約 32 分鐘",
+      "小行星被撞成碎片消失",
+      "小行星被推進太陽燒掉",
+      "太空船撞偏了，完全沒有打中"
+    ],
+    "answer": 0,
+    "explanation": "DART 撞擊後，小行星「迪莫弗斯」繞行主星的時間從 11 小時 55 分縮短為 11 小時 23 分，是人類第一次刻意改變天體的軌道。",
+    "fun_fact": "NASA 原本預估大約只會縮短 10 分鐘，實際效果是預估的 3 倍多。",
+    "source": "https://www.npr.org/2022/10/11/1128132956/nasa-dart-success-asteroid-dimorphos",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-015",
+    "category": "時事",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "2026 年世界盃足球賽首度由美國、墨西哥、加拿大三國合辦，也有三隻吉祥物。代表加拿大的吉祥物是什麼動物？",
+    "options": [
+      "駝鹿",
+      "北極熊",
+      "白頭海鵰",
+      "美洲豹"
+    ],
+    "answer": 0,
+    "explanation": "三隻吉祥物分別是代表加拿大的駝鹿 Maple、代表墨西哥的美洲豹 Zayu，以及代表美國的白頭海鵰 Clutch。",
+    "fun_fact": "國際足總在 2025 年 9 月公布這三隻吉祥物，距離 2026 年 6 月 11 日世界盃開幕不到 9 個月。",
+    "source": "https://www.foxsports.com/articles/soccer/2026-world-cup-mascots-include-bald-eagle-clutch-jaguar-zayu-and-moose-maple",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-016",
+    "category": "紀錄",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "金氏世界紀錄「持續最久的彩虹」長達 8 小時 58 分鐘，是在哪裡觀測到的？（資料時間：2026 年）",
+    "options": [
+      "美國夏威夷",
+      "台灣台北陽明山",
+      "紐西蘭皇后鎮",
+      "冰島雷克雅維克"
+    ],
+    "answer": 1,
+    "explanation": "2017 年 11 月 30 日，中國文化大學大氣科學系在陽明山觀測到從早上 6:57 到下午 3:55 都有彩虹，獲金氏世界紀錄認證。",
+    "fun_fact": "那天最多曾同時出現 4 道彩虹。",
+    "source": "https://www.guinnessworldrecords.com/world-records/66553-longest-lasting-rainbow",
+    "asof": "2026-09",
+    "expires": "2027-09-01",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-017",
+    "category": "紀錄",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "金氏世界紀錄「世界最長個人姓名」的保持者，是一名在紐西蘭出生、現居澳洲的男子。他的全名大約由多少個名字組成？（資料時間：2026 年）",
+    "options": [
+      "約 2,250 個",
+      "約 22 個",
+      "約 22,500 個",
+      "約 225 個"
+    ],
+    "answer": 0,
+    "explanation": "他在 24 歲時依法改名，全名由 2,253 個名字組成，1990 年獲金氏世界紀錄認證，保持至今。",
+    "fun_fact": "他在紐西蘭申請改名時一度被拒，上訴到高等法院才獲准，之後紐西蘭政府還因此修改了兩條法律，避免有人再這樣改名。",
+    "source": "https://www.guinnessworldrecords.com/news/2025/10/meet-the-man-with-the-worlds-longest-name-who-had-to-win-a-legal-battle-to-keep-it",
+    "asof": "2026-09",
+    "expires": "2027-09-01",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-018",
+    "category": "紀錄",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "2025 年，一名日本男子用雙手雙腳著地、像猩猩一樣奔跑，創下「四足跑 100 公尺」的金氏世界紀錄。他的成績大約是幾秒？（資料時間：2025 年）",
+    "options": [
+      "約 30 秒",
+      "約 14.6 秒",
+      "約 9.6 秒",
+      "約 1 分鐘"
+    ],
+    "answer": 1,
+    "explanation": "這位 22 歲男子在 2025 年 9 月跑出 14.55 秒，打破美國人 2022 年創下的 15.66 秒紀錄。",
+    "fun_fact": "他從國中開始就自己研究這種奔跑方式。",
+    "source": "https://www.cna.com.tw/news/aspt/202509250273.aspx",
+    "asof": "2026-09",
+    "expires": "2027-09-01",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-019",
+    "category": "紀錄",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "2024 年，法國麵包師傅烤出長達約 140 公尺的法國長棍麵包，創下世界最長法棍紀錄。他們是從哪個國家手中搶回這項紀錄的？（資料時間：2024 年）",
+    "options": [
+      "義大利",
+      "德國",
+      "美國",
+      "日本"
+    ],
+    "answer": 0,
+    "explanation": "巴黎近郊敘雷訥的 12 位麵包師傅烤出 140.53 公尺的法棍，打破義大利 2019 年創下的 132.62 公尺紀錄。",
+    "fun_fact": "法國平均每秒大約賣出 320 根法棍，難怪法國麵包師傅說要把這項紀錄「帶回家」。",
+    "source": "https://www.cna.com.tw/news/aopl/202405060036.aspx",
+    "asof": "2026-09",
+    "expires": "2027-09-01",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-020",
+    "category": "紀錄",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "日本與澳洲研究團隊在深海拍到一條「蝸牛魚」游動的畫面，被金氏世界紀錄認證為「最深處的魚」。牠被拍到的深度大約是多少？（資料時間：2026 年）",
+    "options": [
+      "約 500 公尺",
+      "約 3,800 公尺",
+      "約 8,300 公尺",
+      "約 1,000 公尺"
+    ],
+    "answer": 2,
+    "explanation": "這條半透明的蝸牛魚（獅子魚科）是 2022 年在日本南方的伊豆－小笠原海溝約 8,336 公尺深處被拍到的，2023 年獲得金氏紀錄認證，至今仍是紀錄保持者。",
+    "fun_fact": "那個深度的水壓大約是每平方公分 800 公斤。",
+    "source": "https://www.cna.com.tw/news/aopl/202304040243.aspx",
+    "asof": "2026-09",
+    "expires": "2027-09-01",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-021",
+    "category": "紀錄",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "日本海洋冒險家堀江謙一在 2022 年單人駕駛帆船、中途不停靠橫越太平洋，成為完成這項壯舉最年長的人。他當時幾歲？（資料時間：2026 年）",
+    "options": [
+      "83 歲",
+      "73 歲",
+      "93 歲",
+      "63 歲"
+    ],
+    "answer": 0,
+    "explanation": "堀江謙一在 83 歲時花了 69 天完成航程，獲金氏世界紀錄認證。",
+    "fun_fact": "2026 年 9 月他在 88 歲生日宣布，要在 2027 年再挑戰一次，刷新自己的紀錄。",
+    "source": "https://www.cna.com.tw/news/aopl/202609080149.aspx",
+    "asof": "2026-09",
+    "expires": "2027-09-01",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-023",
+    "category": "紀錄",
+    "difficulty": 2,
+    "type": "order",
+    "question": "請把下列摩天大樓依高度由高到低排列。（資料時間：2026 年）",
+    "options": [
+      "上海中心大廈",
+      "吉隆坡默迪卡 118",
+      "杜拜哈里發塔",
+      "台北 101"
+    ],
+    "answer": [
+      2,
+      1,
+      0,
+      3
+    ],
+    "explanation": "哈里發塔約 828 公尺、默迪卡 118 約 679 公尺、上海中心約 632 公尺、台北 101 約 508 公尺。",
+    "fun_fact": "默迪卡 118 在 2023 年完工後，擠下上海中心成為世界第二高樓。",
+    "source": "https://www.skyscrapercenter.com/buildings",
+    "asof": "2026-09",
+    "expires": "2027-09-01",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-024",
+    "category": "冷知識",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "玩具品牌「樂高」（LEGO）的名字來自丹麥文，原本是什麼意思？",
+    "options": [
+      "玩得好",
+      "快樂的孩子",
+      "蓋房子",
+      "小積木"
+    ],
+    "answer": 0,
+    "explanation": "LEGO 來自丹麥文「leg godt」，意思是「玩得好」，由創辦人在 1936 年取名。",
+    "fun_fact": "巧合的是，LEGO 在拉丁文裡有「我收集」的意思，但取名時樂高還沒開始做積木。",
+    "source": "https://www.lego.com/en-us/aboutus/news/2026/february/90-year-history-of-the-lego-name",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-025",
+    "category": "冷知識",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "瑞典家具品牌「IKEA」這四個字母是怎麼來的？",
+    "options": [
+      "瑞典文「溫暖的家」的縮寫",
+      "創辦人家裡養的狗的名字",
+      "四位創辦人姓氏的第一個字母",
+      "創辦人姓名加上他家農場和村莊名稱的字首"
+    ],
+    "answer": 3,
+    "explanation": "IKEA 是 Ingvar Kamprad（創辦人）、Elmtaryd（家中農場）、Agunnaryd（家鄉村莊）的字首組合。",
+    "fun_fact": "創辦人 1943 年成立 IKEA 時才 17 歲，因為還未成年，得經過監護人同意才能登記公司。",
+    "source": "https://ikeamuseum.com/en/explore/the-story-of-ikea/meet-ingvar-kamprad/",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-026",
+    "category": "冷知識",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "真的還是假的？冰淇淋品牌「哈根達斯」（Häagen-Dazs）來自丹麥，名字是丹麥文。",
+    "options": [
+      "對",
+      "錯"
+    ],
+    "answer": 1,
+    "explanation": "假的！哈根達斯是 1961 年在美國紐約布朗克斯創立的品牌，名字是創辦人刻意編出來、聽起來很像北歐語言的字，其實沒有任何意思。",
+    "fun_fact": "丹麥文根本不使用「ä」這種上面加兩點的字母，這個名字也不符合丹麥文的拼法。",
+    "source": "https://www.atlasobscura.com/articles/haagen-dazs-fake-foreign-branding",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-027",
+    "category": "冷知識",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "放了鳳梨和火腿的「夏威夷披薩」，其實是在哪個國家發明的？",
+    "options": [
+      "加拿大",
+      "美國夏威夷",
+      "澳洲",
+      "義大利"
+    ],
+    "answer": 0,
+    "explanation": "夏威夷披薩是 1962 年在加拿大安大略省的一家餐廳發明的，名稱來自當時使用的鳳梨罐頭品牌。",
+    "fun_fact": "發明者是從希臘移民到加拿大的餐廳老闆，他說當初只是「好玩加加看」。",
+    "source": "https://time.com/4814056/hawaiian-pizza-pineapple-sam-panopoulos-death/",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-028",
+    "category": "冷知識",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "1958 年發明泡麵（雞汁拉麵）、創立日清食品的安藤百福，出生在台灣的哪裡？",
+    "options": [
+      "台南安平",
+      "彰化鹿港",
+      "基隆",
+      "嘉義朴子"
+    ],
+    "answer": 3,
+    "explanation": "「泡麵之父」安藤百福原名吳百福，1910 年出生於嘉義朴子，後來到日本發展並發明了泡麵。",
+    "fun_fact": "推出雞汁拉麵的同一年，他的公司也正式定名為「日清食品」。",
+    "source": "https://news.ltn.com.tw/news/life/breakingnews/2254062",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-029",
+    "category": "冷知識",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "無線傳輸技術「藍牙」（Bluetooth）的名字，是紀念哪一位歷史人物？",
+    "options": [
+      "一位牙齒發藍的英國發明家",
+      "希臘神話中的海神",
+      "一位愛吃藍莓的瑞典工程師",
+      "一位外號「藍牙」的丹麥國王"
+    ],
+    "answer": 3,
+    "explanation": "藍牙以 10 世紀的丹麥國王哈拉爾「藍牙」命名，他統一了丹麥和挪威，就像這項技術想統一電腦與手機的連線方式。",
+    "fun_fact": "藍牙的標誌是把國王名字縮寫的兩個北歐古文字母疊在一起。",
+    "source": "https://www.bluetooth.com/about-us/bluetooth-origin/",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-030",
+    "category": "冷知識",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "咖啡品牌「星巴克」（Starbucks）的名字，靈感來自哪裡？",
+    "options": [
+      "西雅圖的一條老街",
+      "小說《白鯨記》裡捕鯨船的大副",
+      "創辦人家鄉的一座燈塔",
+      "一種會發光的海星"
+    ],
+    "answer": 1,
+    "explanation": "星巴克的名字來自梅爾維爾小說《白鯨記》中捕鯨船「皮廓德號」的大副 Starbuck。",
+    "fun_fact": "創辦人之一原本想直接把公司叫做「皮廓德號」（Pequod），但被設計師否決了。",
+    "source": "https://about.starbucks.com/history/our-name/",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-031",
+    "category": "冷知識",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "哪一種動物的大便是「方塊形」的？",
+    "options": [
+      "袋熊",
+      "袋鼠",
+      "無尾熊",
+      "水豚"
+    ],
+    "answer": 0,
+    "explanation": "澳洲的袋熊因為腸道不同部位的彈性和收縮速度不一樣，會把大便塑形成小方塊。",
+    "fun_fact": "方塊大便不容易滾走，袋熊會把它放在石頭上標記地盤。",
+    "source": "https://www.smithsonianmag.com/smart-news/scientists-have-solved-mystery-how-wombats-poop-cubes-180976898/",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-032",
+    "category": "冷知識",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "章魚有幾顆心臟？",
+    "options": [
+      "3 顆",
+      "1 顆",
+      "2 顆",
+      "8 顆"
+    ],
+    "answer": 0,
+    "explanation": "章魚有 3 顆心臟：2 顆負責把血液送到鰓，1 顆負責把血液送到全身。",
+    "fun_fact": "章魚的血液含銅，所以是藍色的；而且游泳時送血到全身的那顆心臟會停止跳動，所以章魚比較喜歡用爬的。",
+    "source": "https://www.smithsonianmag.com/science-nature/ten-wild-facts-about-octopuses-they-have-three-hearts-big-brains-and-blue-blood-7625828/",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-033",
+    "category": "冷知識",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "巴黎艾菲爾鐵塔 1889 年完工時高 312 公尺，現在卻有 330 公尺。它「長高」的主要原因是什麼？",
+    "options": [
+      "每年夏天熱脹後沒有完全縮回去",
+      "塔頂陸續加裝了廣播和電視天線",
+      "後來又加蓋了一層觀景台",
+      "地底下的地層慢慢隆起"
+    ],
+    "answer": 1,
+    "explanation": "艾菲爾鐵塔在 1957 年、2000 年和 2022 年陸續加裝天線，才從 312 公尺增加到 330 公尺。",
+    "fun_fact": "晴天時鐵塔被太陽照到的一面會受熱膨脹，塔頂會跟著移動，畫出直徑約 15 公分的圓。",
+    "source": "https://www.toureiffel.paris/en/news/history-and-culture/why-does-eiffel-tower-change-size",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-034",
+    "category": "冷知識",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "真的還是假的？以植物學的定義來說，香蕉屬於「漿果」，草莓反而不是。",
+    "options": [
+      "對",
+      "錯"
+    ],
+    "answer": 0,
+    "explanation": "真的！漿果是由花的子房發育成、果肉多汁並包著種子的果實，香蕉符合定義；草莓的果肉則是由花托發育而來，屬於「假果」。",
+    "fun_fact": "照這個定義，南瓜、小黃瓜也都算漿果。",
+    "source": "https://www.mcgill.ca/oss/article/did-you-know/bananas-are-berries-raspberries-are-not",
+    "asof": "2026-09",
+    "region": "趣聞"
+  },
+  {
+    "id": "fn-035",
+    "category": "冷知識",
+    "difficulty": 2,
+    "type": "order",
+    "question": "請把下列經典品牌或角色，依「誕生年份」由早到晚排列。",
+    "options": [
+      "泡麵（雞汁拉麵）問世",
+      "可口可樂首次販售",
+      "米老鼠首次登場",
+      "任天堂創立"
+    ],
+    "answer": [
+      1,
+      3,
+      2,
+      0
+    ],
+    "explanation": "可口可樂 1886 年在美國亞特蘭大開賣，任天堂 1889 年在京都創立，米老鼠 1928 年在《汽船威利》登場，泡麵則在 1958 年問世。",
+    "fun_fact": "任天堂一開始是做花札紙牌的公司，比米老鼠還早出生快 40 年。",
+    "source": "https://www.coca-colacompany.com/about-us/history/the-birth-of-a-refreshing-idea",
+    "asof": "2026-09",
+    "region": "趣聞"
+  }
+]
