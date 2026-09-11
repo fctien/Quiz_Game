@@ -7,172 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
-<style>
-/* 青花瓷配色:瓷白底、青花藍、硃砂印、玉綠 */
-:root{
-  --ground:#F3F5F8; --paper:#FFFFFF; --ink:#1E2A4A; --muted:#5E6A85; --line:#D9DFEA;
-  --blue:#2B4C9B; --blue-soft:#E6ECF8; --cinnabar:#C8321E; --cinnabar-soft:#FBE7E3;
-  --jade:#2F7D5B; --jade-soft:#E1F2EA; --shadow:0 1px 2px rgba(30,42,74,.06),0 6px 20px rgba(30,42,74,.06);
-  --display:"LXGW WenKai TC","Kaiti TC","STKaiti","BiauKai","DFKai-SB",serif;
-  --body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --ground:#0F1729; --paper:#18223A; --ink:#E8ECF5; --muted:#9AA6C2; --line:#2A3654;
-    --blue:#8FB0FF; --blue-soft:#1F2D52; --cinnabar:#FF6B57; --cinnabar-soft:#3A1F22;
-    --jade:#5FC89A; --jade-soft:#16332A; --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25);
-  }
-}
-:root[data-theme="dark"]{
-  --ground:#0F1729; --paper:#18223A; --ink:#E8ECF5; --muted:#9AA6C2; --line:#2A3654;
-  --blue:#8FB0FF; --blue-soft:#1F2D52; --cinnabar:#FF6B57; --cinnabar-soft:#3A1F22;
-  --jade:#5FC89A; --jade-soft:#16332A; --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25);
-}
-*{box-sizing:border-box}
-body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);
-  line-height:1.65;-webkit-tap-highlight-color:transparent}
-.wrap{max-width:540px;margin:0 auto;padding-inline:16px;padding-block:24px 48px;min-height:100vh}
-button{font:inherit;color:inherit}
-button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
-
-/* 首頁 */
-.masthead{display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
-h1{font-family:var(--display);font-size:2.6rem;line-height:1.1;margin:0;letter-spacing:.08em;font-weight:700}
-h1 .seal{display:inline-grid;place-items:center;width:1.25em;height:1.25em;margin-left:.15em;font-size:.55em;
-  vertical-align:.45em;background:var(--cinnabar);color:#fff;border-radius:4px;letter-spacing:0}
-.sub{color:var(--muted);margin:6px 0 0;text-wrap:balance}
-.best{font-family:var(--mono);font-size:.8rem;color:var(--muted);text-align:right;line-height:1.3;white-space:nowrap}
-.best b{display:block;font-size:1.35rem;color:var(--ink)}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
-.cat{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px;
-  text-align:left;cursor:pointer;display:flex;gap:12px;align-items:center;transition:transform .12s,border-color .12s}
-.cat:hover{border-color:var(--blue)}
-.cat:active{transform:scale(.98)}
-.cat .sealbox{flex:none;width:44px;height:44px;border:2px solid var(--cinnabar);color:var(--cinnabar);border-radius:6px;
-  display:grid;place-items:center;font-family:var(--display);font-size:1.5rem;font-weight:700}
-.cat[data-k="news"] .sealbox,.cat[data-k="mix"] .sealbox{border-color:var(--blue);color:var(--blue)}
-.cat b{display:block;font-size:1.05rem;line-height:1.3}
-.cat small{color:var(--muted);font-size:.8rem}
-.rules{margin-top:24px;border-top:1px solid var(--line);padding-top:14px;font-size:.9rem;color:var(--muted)}
-.rules h2{font-family:var(--display);font-size:1.05rem;color:var(--ink);margin:0 0 4px;letter-spacing:.1em}
-.rules ul{margin:0;padding-left:1.2em}
-
-/* 遊戲 */
-.hud{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.lives{display:flex;gap:6px;align-items:center;font-size:.8rem;color:var(--muted)}
-.lives i{width:12px;height:12px;border-radius:50%;background:var(--cinnabar);display:block}
-.lives i.off{background:transparent;border:1.5px solid var(--line)}
-.prog{color:var(--muted);font-size:.88rem;font-variant-numeric:tabular-nums}
-.score{font-family:var(--mono);font-weight:600;font-size:1.1rem;font-variant-numeric:tabular-nums}
-.streak{color:var(--cinnabar);font-size:.85rem;min-height:1.5em;text-align:center;font-weight:500}
-.timer{height:4px;background:var(--line);border-radius:99px;overflow:hidden;margin:6px 0 16px}
-.timer i{display:block;height:100%;background:var(--blue);width:100%;transition:width .25s linear}
-.timer.low i{background:var(--cinnabar)}
-.meta{display:flex;gap:6px;flex-wrap:wrap;font-size:.75rem;margin-bottom:10px;color:var(--muted)}
-.tag{border:1px solid var(--line);border-radius:4px;padding:0 7px;letter-spacing:.05em}
-.qbox{position:relative}
-.q{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px 18px;box-shadow:var(--shadow);
-  font-family:var(--display);font-size:1.4rem;line-height:1.55;font-weight:700;white-space:pre-line;text-wrap:balance}
-.stamp{position:absolute;right:-4px;top:-28px;width:54px;height:54px;border:3px solid currentColor;border-radius:8px;
-  display:grid;place-items:center;font-family:var(--display);font-size:1.9rem;font-weight:700;transform:rotate(-12deg);
-  background:var(--paper);animation:stamp .35s cubic-bezier(.2,1.6,.4,1) both}
-.stamp.pass{color:var(--cinnabar)} .stamp.fail{color:var(--muted)}
-@keyframes stamp{from{transform:rotate(-12deg) scale(2.2);opacity:0}to{transform:rotate(-12deg) scale(1);opacity:1}}
-.opts{display:grid;gap:8px;margin-top:14px}
-.opt{text-align:left;background:var(--paper);border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;
-  cursor:pointer;font-size:1.02rem;display:flex;gap:12px;align-items:center;transition:border-color .12s}
-.opt:hover:not([disabled]){border-color:var(--blue)}
-.opt .n{flex:none;width:26px;height:26px;border-radius:6px;background:var(--blue-soft);color:var(--blue);
-  display:grid;place-items:center;font-family:var(--mono);font-size:.85rem;font-weight:600}
-.opt.picked{border-color:var(--blue)}
-.opt.good{border-color:var(--jade);background:var(--jade-soft)}
-.opt.good .n{background:var(--jade);color:var(--paper)}
-.opt.bad{border-color:var(--cinnabar);background:var(--cinnabar-soft)}
-.opt.bad .n{background:var(--cinnabar);color:var(--paper)}
-.opt.gone{opacity:.25;pointer-events:none}
-.opt[disabled]{cursor:default}
-.tf{grid-template-columns:1fr 1fr}
-.tf .opt{justify-content:center;font-family:var(--display);font-size:1.6rem;padding:16px}
-.hint{color:var(--muted);font-size:.85rem;margin:10px 0 0}
-.row{display:flex;gap:10px;margin-top:12px}
-.btn{border:0;border-radius:10px;padding:12px 18px;cursor:pointer;font-weight:700;background:var(--blue);color:var(--paper);flex:1}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
-.btn:disabled{opacity:.4;cursor:default}
-.powers{display:flex;gap:8px;margin-top:16px}
-.pw{flex:1;font-size:.82rem;background:transparent;border:1px dashed var(--line);border-radius:8px;padding:8px 4px;cursor:pointer;color:var(--muted)}
-.pw:not(:disabled):hover{border-color:var(--blue);color:var(--blue)}
-.pw:disabled{opacity:.35;cursor:default}
-
-/* 解說 */
-.fb{margin-top:16px;border-left:3px solid var(--line);padding:4px 0 4px 14px}
-.fb.ok{border-color:var(--jade)} .fb.no{border-color:var(--cinnabar)}
-.fb h3{margin:0 0 4px;font-family:var(--display);font-size:1.25rem}
-.fb.ok h3{color:var(--jade)} .fb.no h3{color:var(--cinnabar)}
-.fb p{margin:6px 0;max-width:36em}
-.fun{background:var(--blue-soft);border-radius:8px;padding:8px 12px;font-size:.93rem}
-.fun b{color:var(--blue);font-weight:700;margin-right:4px}
-.fb a{color:var(--blue);word-break:break-all;font-size:.85rem}
-.pop{animation:pop .3s ease both}
-@keyframes pop{from{transform:translateY(6px);opacity:.3}to{transform:none;opacity:1}}
-.shake{animation:shake .35s}
-@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
-
-/* 金榜 */
-.result{text-align:center}
-.bang{display:inline-block;margin-top:8px;padding:18px 28px 14px;border:2px solid var(--cinnabar);border-radius:6px;position:relative}
-.bang small{display:block;color:var(--muted);letter-spacing:.3em;font-size:.8rem}
-.rank{font-family:var(--display);font-size:3rem;line-height:1.2;font-weight:700;color:var(--cinnabar);letter-spacing:.15em}
-.big{font-family:var(--mono);font-size:2rem;font-weight:600;margin:14px 0 2px}
-.newbest{color:var(--cinnabar);font-weight:700;font-size:.9rem}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);margin:18px 0;border-block:1px solid var(--line)}
-.stat{padding:10px 4px}
-.stat + .stat{border-left:1px solid var(--line)}
-.stat b{display:block;font-family:var(--mono);font-size:1.25rem}
-.stat small{color:var(--muted)}
-.review{text-align:left;margin-top:14px}
-.review div{padding:8px 0;border-bottom:1px solid var(--line);font-size:.9rem;display:flex;gap:10px}
-.review span.m{flex:none;width:1.4em;font-family:var(--display);font-weight:700}
-.review .y{color:var(--jade)} .review .x{color:var(--cinnabar)} .review .s{color:var(--muted)}
-.err{color:var(--cinnabar);margin-top:12px}
-/* 排行榜 */
-.linkbtn{margin-top:12px;width:100%;background:transparent;border:1.5px solid var(--line);border-radius:10px;padding:12px;
-  cursor:pointer;font-weight:700;display:flex;justify-content:space-between;align-items:center}
-.linkbtn:hover{border-color:var(--cinnabar)}
-.linkbtn span:first-child{font-family:var(--display);font-size:1.1rem;letter-spacing:.1em}
-.linkbtn .arrow{color:var(--cinnabar)}
-.lbhead{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.lbhead h1{font-size:2.2rem}
-.back{background:transparent;border:0;color:var(--muted);cursor:pointer;padding:6px 0}
-.seg{display:inline-flex;border:1.5px solid var(--line);border-radius:8px;overflow:hidden;margin-top:16px}
-.seg button{background:transparent;border:0;padding:6px 16px;cursor:pointer;color:var(--muted);font-weight:500}
-.seg button[aria-pressed="true"]{background:var(--ink);color:var(--ground)}
-.chips{display:flex;gap:6px;overflow-x:auto;padding:12px 0 4px;scrollbar-width:none}
-.chips button{flex:none;background:transparent;border:1px solid var(--line);border-radius:999px;padding:3px 12px;
-  cursor:pointer;font-size:.85rem;color:var(--muted)}
-.chips button[aria-pressed="true"]{border-color:var(--cinnabar);color:var(--cinnabar);font-weight:700}
-.board{margin-top:10px;border-top:2px solid var(--ink)}
-.entry{display:grid;grid-template-columns:3.2em 1fr auto;gap:10px;align-items:center;padding:10px 4px;border-bottom:1px solid var(--line)}
-.entry.me{background:var(--cinnabar-soft)}
-.entry .pos{font-family:var(--mono);color:var(--muted);text-align:center;font-weight:600}
-.entry .pos.top{font-family:var(--display);color:var(--cinnabar);font-size:1.05rem;letter-spacing:.05em}
-.entry .who{min-width:0}
-.entry .who b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.entry .who small{color:var(--muted);font-size:.78rem}
-.entry .pts{font-family:var(--mono);font-weight:600;font-variant-numeric:tabular-nums}
-.empty{padding:28px 8px;text-align:center;color:var(--muted)}
-.note{color:var(--muted);font-size:.8rem;margin-top:10px}
-.lbform{margin-top:18px;text-align:left}
-.lbform label{font-family:var(--display);font-size:1.1rem;font-weight:700;letter-spacing:.1em}
-.lbform .row{margin-top:6px}
-.lbform input{flex:1;min-width:0;font:inherit;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;
-  background:var(--paper);color:var(--ink)}
-.lbform input:focus{outline:2px solid var(--blue);outline-offset:1px}
-.lbform .btn{flex:none;background:var(--cinnabar)}
-.placed{margin-top:18px;padding:12px;border:1.5px dashed var(--cinnabar);border-radius:10px}
-.placed b{color:var(--cinnabar);font-family:var(--mono)}
-@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
-</style>
+<link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 <div class="wrap" id="app"></div>
@@ -180,7 +15,7 @@ h1 .seal{display:inline-grid;place-items:center;width:1.25em;height:1.25em;margi
 <script>
 /* ============================================================
  *  金榜問答 前端
- *  - 有後端時：透過 /api/* 出題、計時、計分(分數以伺服器為準)，排行榜存在 SQLite
+ *  - 有後端時：透過 /api/* 出題、計時、計分（分數以伺服器為準)，排行榜存在 SQLite
  *  - 單機模式(window.EMBEDDED_BANK 存在):瀏覽器自己出題計分；
  *    排行榜若在 claude.ai 上開啟就用共用資料庫，否則存在這台裝置
  * ============================================================ */
@@ -217,7 +52,7 @@ const remote = {
 
 /* ---------- 單機版：在瀏覽器裡模擬同一套規則 ---------- */
 function weekKey(ts = Date.now()){
-  const d = new Date(ts + 8 * 3600e3);                 // 以台灣時間切週,與後端一致
+  const d = new Date(ts + 8 * 3600e3);                 // 以台灣時間切週，與後端一致
   const t = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
   t.setUTCDate(t.getUTCDate() - (t.getUTCDay() + 6) % 7 + 3);   // 該週的週四
   const y = t.getUTCFullYear(), jan4 = new Date(Date.UTC(y, 0, 4));
@@ -317,9 +152,14 @@ const api = LOCAL ? local : remote;
 /* ---------- 首頁 ---------- */
 async function home(){
   const best = store.get('quiz_best') || 0;
+  const mode = store.get('quiz_mode') || 'solo';
   $app.innerHTML = `<div class="masthead"><div><h1>金榜問答<span class="seal">試</span></h1>
-    <p class="sub">台灣・中國・世界・詩詞・時事，十題定名次</p></div>
+    <p class="sub">台灣・中國・世界・詩詞・明星・趣聞，十題定名次</p></div>
     ${best ? `<div class="best">個人最高<b>${best}</b></div>` : ''}</div>
+    <div class="modes" role="group" aria-label="遊戲模式">
+      <button id="m-solo" aria-pressed="${mode === 'solo'}">單人闖關</button>
+      <button id="m-multi" aria-pressed="${mode === 'multi'}">多人對戰</button></div>
+    <div id="solo" ${mode === 'solo' ? '' : 'hidden'}>
     <div class="grid" id="cats"><p class="sub">載入中…</p></div>
     <button class="linkbtn" id="to-board"><span>看本週金榜</span><span class="arrow">→</span></button>
     <div class="rules"><h2>應試規則</h2><ul>
@@ -327,7 +167,22 @@ async function home(){
       <li>答得越快分數越高；連中 3 題 ×1.5、連中 5 題 ×2</li>
       <li>每局各有一次道具：刪去兩個選項、跳過此題、加時 10 秒</li>
       <li>依正確率放榜：狀元、榜眼、探花、進士、秀才；留下暱稱就能登上金榜</li>
-    </ul></div>`;
+    </ul></div></div>
+    <div id="multi" class="mp-panel" ${mode === 'multi' ? '' : 'hidden'}>${LOCAL ? `
+      <div class="mp-card"><h3>多人對戰</h3><p>多人同場搶答需要執行 Python 伺服器版（app.py），這個單機版只能單人闖關。</p></div>` : `
+      <form class="mp-card" id="joinf"><h3>加入考場</h3><p>輸入主持人畫面上的四位數房號</p>
+        <div class="row" style="margin:0"><input class="codein" id="jcode" inputmode="numeric" maxlength="4" pattern="[0-9]{4}" placeholder="0000" aria-label="房號" required>
+        <button class="btn" type="submit" style="flex:none">加入</button></div></form>
+      <div class="mp-card"><h3>開一間考場</h3><p>當主持人：選分類、題數，大家用手機同時搶答，每題即時排名，最後一題分數加倍。</p>
+        <a class="btn" href="/host" style="display:block;text-align:center;text-decoration:none">開房間</a></div>`}
+    </div>`;
+  const setMode = m => { store.set('quiz_mode', m);
+    document.getElementById('solo').hidden = m !== 'solo'; document.getElementById('multi').hidden = m !== 'multi';
+    document.getElementById('m-solo').setAttribute('aria-pressed', m === 'solo'); document.getElementById('m-multi').setAttribute('aria-pressed', m === 'multi'); };
+  document.getElementById('m-solo').onclick = () => setMode('solo');
+  document.getElementById('m-multi').onclick = () => setMode('multi');
+  const jf = document.getElementById('joinf');
+  if (jf) jf.onsubmit = e => { e.preventDefault(); location.href = '/play?code=' + encodeURIComponent(document.getElementById('jcode').value.trim()); };
   document.getElementById('to-board').onclick = () => board('all', 'week');
   try{
     const cats = await api.categories();
@@ -487,7 +342,7 @@ async function answer(ans){
       ${r.source ? `<a href="${esc(r.source)}" target="_blank" rel="noopener">${G.catKey === 'news' ? '閱讀新聞原文' : '查看資料來源'} ↗</a>` : ''}
       <div class="row"><button class="btn" id="next">${G.st.over ? '看放榜' : '下一題'}</button></div>
     </div>`;
-  // 更新分數與命(保留原本畫面，不要重畫題目)
+  // 更新分數與命（保留原本畫面，不要重畫題目)
   const live = document.querySelector('.hud');
   live.querySelector('.lives').outerHTML = hud().match(/<span class="lives"[\s\S]*?<\/span>/)[0];
   live.querySelector('.score').textContent = G.st.score;

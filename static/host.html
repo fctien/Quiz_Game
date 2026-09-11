@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>金榜問答・主持台</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="/static/style.css">
+<!-- QR code 產生器(若無法連網,只會少了 QR code,輸入房號仍可加入) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+</head>
+<body>
+<div class="wrap wide" id="app"></div>
+<script>
+/* 金榜問答 主持台：開房、顯示房號與 QR、控制出題、公布答案、放榜 */
+const $app = document.getElementById('app');
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const SEAL = {taiwan:'台', china:'華', world:'寰', poetry:'詩', stars:'星', fun:'奇', news:'聞', mix:'雜'};
+const post = async (url, body) => {
+  const r = await fetch(url, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(j.error || '連線失敗');
+  return j;
+};
+const ss = {get(k){ try { return JSON.parse(sessionStorage.getItem(k)); } catch { return null; } },
+            set(k, v){ try { sessionStorage.setItem(k, JSON.stringify(v)); } catch {} },
+            del(k){ try { sessionStorage.removeItem(k); } catch {} }};
+let H = ss.get('mp_host');      // {code, token, join_url}
+let es = null, V = null, deadline = 0, lastQ = -1, tick = null;
+
+/* ---------- 開房設定 ---------- */
+async function setup(){
+  const cats = await fetch('/api/categories').then(r => r.json()).catch(() => []);
+  const pick = {category: 'mix', count: 10, time: 20};
+  $app.innerHTML = `<div class="masthead"><div><h1>主持台<span class="seal">試</span></h1>
+      <p class="sub">開一間考場，大家用手機輸入房號就能一起搶答</p></div>
+      <a class="back" href="/">← 回首頁</a></div>
+    <div class="rules" style="border:0;padding:0"><h2>選擇分類</h2></div>
+    <div class="grid" id="cats">${cats.map(c => `
+      <button class="cat" data-k="${c.key}" aria-pressed="${c.key === pick.category}">
+        <span class="sealbox">${SEAL[c.key] || esc(c.name[0])}</span>
+        <span><b>${esc(c.name)}</b><small>${c.key === 'news' ? '今日新聞' : c.count + ' 題'}</small></span>
+      </button>`).join('')}</div>
+    <div class="row" style="flex-wrap:wrap;gap:18px;margin-top:18px">
+      <div><div class="sub" style="margin:0 0 4px">題數</div><div class="seg" id="cnt" style="margin:0">
+        ${[5, 10, 15, 20].map(n => `<button data-v="${n}" aria-pressed="${n === pick.count}">${n}</button>`).join('')}</div></div>
+      <div><div class="sub" style="margin:0 0 4px">每題秒數</div><div class="seg" id="tm" style="margin:0">
+        ${[10, 15, 20, 30].map(n => `<button data-v="${n}" aria-pressed="${n === pick.time}">${n}</button>`).join('')}</div></div>
+    </div>
+    <div class="row"><button class="btn" id="create">開房間</button></div>
+    <p class="err" id="err" hidden></p>
+    <div class="rules"><h2>怎麼玩</h2><ul>
+      <li>把這個畫面投影到大螢幕，或放在大家看得到的地方</li>
+      <li>玩家用手機掃 QR code，或打開首頁輸入四位數房號</li>
+      <li>答對越快分數越高，連中有加分，<b>最後一題分數加倍</b></li>
+    </ul></div>`;
+  const style = document.createElement('style');
+  style.textContent = '.cat[aria-pressed="true"]{border-color:var(--cinnabar);box-shadow:0 0 0 2px var(--cinnabar)}';
+  $app.appendChild(style);
+  document.querySelectorAll('.cat').forEach(b => b.onclick = () => {
+    pick.category = b.dataset.k;
+    document.querySelectorAll('.cat').forEach(x => x.setAttribute('aria-pressed', x === b));
+  });
+  const seg = (id, key) => document.querySelectorAll(`#${id} button`).forEach(b => b.onclick = () => {
+    pick[key] = +b.dataset.v;
+    document.querySelectorAll(`#${id} button`).forEach(x => x.setAttribute('aria-pressed', x === b));
+  });
+  seg('cnt', 'count'); seg('tm', 'time');
+  document.getElementById('create').onclick = async e => {
+    e.currentTarget.disabled = true;
+    try{
+      const r = await post('/api/mp/create', pick);
+      H = {code: r.code, token: r.token, join_url: r.join_url};
+      ss.set('mp_host', H);
+      connect();
+    }catch(ex){
+      const el = document.getElementById('err'); el.textContent = ex.message; el.hidden = false; e.currentTarget.disabled = false;
+    }
+  };
+}
+
+/* ---------- 即時連線 ---------- */
+function connect(){
+  es?.close();
+  es = new EventSource(`/api/mp/stream?code=${H.code}&pid=host&token=${encodeURIComponent(H.token)}`);
+  es.onmessage = e => render(JSON.parse(e.data));
+  es.onerror = () => {
+    const c = document.getElementById('conn'); if (c) c.textContent = '連線中斷，重新連線中…';
+    fetch(`/api/mp/info?code=${H.code}`).then(r => r.json()).then(j => { if (!j.exists){ es.close(); ss.del('mp_host'); H = null; setup(); } }).catch(() => {});
+  };
+}
+const act = path => post(path, {code: H.code, token: H.token}).catch(e => alert(e.message));
+
+function bar(v){
+  return `<div class="hostbar"><span>房號 <b class="score">${v.code}</b> ・ ${esc(v.category)} ・ ${v.players} 人</span>
+    <span class="conn" id="conn"></span></div>`;
+}
+
+function render(v){
+  V = v;
+  if (v.state === 'closed'){ ss.del('mp_host'); es.close(); H = null; return setup(); }
+  if (v.state !== 'question'){ clearInterval(tick); }
+  ({lobby, question, reveal, final})[v.state]?.(v);
+}
+
+/* ---------- 等待加入 ---------- */
+function lobby(v){
+  $app.innerHTML = bar(v) + `<div class="lobby">
+    <div class="joinbox"><small>手機掃描或輸入房號加入</small>
+      <div class="bigcode">${v.code}</div>
+      <div class="qr" id="qr" hidden></div>
+      <div class="joinurl">${esc(H.join_url)}</div></div>
+    <div class="roster"><h2>已報到 <span>${v.roster.length}</span> 人</h2>
+      <div class="chipset">${v.roster.length ? v.roster.map(p => `<span class="pchip ${p.online ? '' : 'off'}">${esc(p.name)}</span>`).join('')
+        : '<p class="sub">等待考生入場…</p>'}</div>
+      <div class="row"><button class="btn" id="go" ${v.roster.length ? '' : 'disabled'}>開始考試(${v.total} 題)</button></div>
+      <div class="row"><button class="btn ghost" id="close">關閉房間</button></div></div></div>`;
+  if (window.qrcode){
+    const q = qrcode(0, 'M'); q.addData(H.join_url); q.make();
+    const el = document.getElementById('qr'); el.innerHTML = q.createSvgTag(5, 2); el.hidden = false;
+  }
+  document.getElementById('go').onclick = () => act('/api/mp/start');
+  document.getElementById('close').onclick = () => confirm('確定要關閉房間嗎？') && act('/api/mp/close');
+}
+
+/* ---------- 出題中 ---------- */
+function opts(q, rv){
+  return `<div class="hopts">${q.options.map((o, k) => {
+    const cnt = rv ? rv.dist[k] : null, max = rv ? Math.max(1, ...rv.dist) : 1;
+    const cls = rv ? (k === rv.answer ? 'win' : 'dim') : '';
+    return `<div class="hopt o${k} ${cls}"><span class="n">${'ABCD'[k]}</span><span>${esc(o)}</span>
+      ${rv ? `<span class="cnt">${cnt} 人</span><span class="bar" style="transform:scaleX(${cnt / max})"></span>` : ''}</div>`;
+  }).join('')}</div>`;
+}
+function question(v){
+  const q = v.q;
+  if (q.index !== lastQ){ lastQ = q.index; deadline = Date.now() + v.remaining * 1000; }
+  $app.innerHTML = bar(v) + `<div class="hq">
+    <div class="hqtop"><div><span class="prog">第 ${q.index + 1} / ${q.total} 題</span>
+        ${q.double ? ' <span class="double">最後一題・分數加倍</span>' : ''}</div>
+      <div class="cd" id="cd">${Math.ceil(v.remaining)}</div></div>
+    <div class="meta"><span class="tag">${esc(q.region)}</span><span class="tag">${esc(q.category)}</span><span class="tag">${'★'.repeat(q.difficulty)}</span></div>
+    <div class="hqtext">${esc(q.question)}</div>
+    ${opts(q)}
+    <div class="row" style="align-items:center"><span class="answered">已作答 <b>${v.answered}</b> / ${v.players}</span>
+      <button class="btn ghost" id="rv" style="flex:none">提前公布</button></div></div>`;
+  document.getElementById('rv').onclick = () => act('/api/mp/reveal');
+  clearInterval(tick);
+  tick = setInterval(() => {
+    const left = Math.max(0, (deadline - Date.now()) / 1000), el = document.getElementById('cd');
+    if (el){ el.textContent = Math.ceil(left); el.classList.toggle('low', left <= 5); }
+  }, 200);
+}
+
+/* ---------- 公布答案 ---------- */
+function reveal(v){
+  const q = v.q, rv = v.reveal;
+  $app.innerHTML = bar(v) + `<div class="hq">
+    <div class="hqtop"><span class="prog">第 ${q.index + 1} / ${q.total} 題 ・ ${rv.answered} 人作答</span>
+      ${rv.fastest ? `<span class="fastest">最快答對：${esc(rv.fastest.name)}(${rv.fastest.secs} 秒)</span>` : '<span class="sub">這題沒有人答對</span>'}</div>
+    <div class="hqtext">${esc(q.question)}</div>
+    <div class="hreveal"><div>${opts(q, rv)}
+        <div class="fb ok"><p>${esc(rv.explanation)}</p>${rv.fun_fact ? `<p class="fun"><b>冷知識</b>${esc(rv.fun_fact)}</p>` : ''}</div></div>
+      <div class="topboard"><div class="rules" style="border:0;padding:0"><h2>目前排名</h2></div>
+        <div class="board">${v.top.map((p, k) => `<div class="entry">
+          <span class="pos ${k < 3 ? 'top' : ''}">${k + 1}</span>
+          <span class="who"><b>${esc(p.name)}${p.move ? `<span class="move ${p.move > 0 ? 'up' : 'down'}">${p.move > 0 ? '▲' : '▼'}${Math.abs(p.move)}</span>` : ''}</b></span>
+          <span class="pts">${p.score}</span></div>`).join('')}</div>
+        <div class="row"><button class="btn" id="nx">${v.last_q ? '放榜' : '下一題'}</button></div></div></div></div>`;
+  document.getElementById('nx').onclick = () => act('/api/mp/next');
+}
+
+/* ---------- 放榜 ---------- */
+function final(v){
+  const f = v.final, t = ['狀元', '榜眼', '探花'];
+  const pod = k => f[k] ? `<div class="pod p${k + 1}"><div class="t">${t[k]}</div><b>${esc(f[k].name)}</b><small>${f[k].score}</small></div>` : '<div></div>';
+  $app.innerHTML = bar(v) + `<div class="center"><div class="bang"><small>金榜題名</small><div class="rank">放榜</div></div></div>
+    <div class="podium">${pod(1)}${pod(0)}${pod(2)}</div>
+    <div class="board">${f.map((p, k) => `<div class="entry"><span class="pos ${k < 3 ? 'top' : ''}">${k < 3 ? t[k] : k + 1}</span>
+      <span class="who"><b>${esc(p.name)}</b><small>答對 ${p.right} / ${v.total}</small></span><span class="pts">${p.score}</span></div>`).join('')}</div>
+    <div class="row"><button class="btn ghost" id="close">關閉房間</button><button class="btn" id="again">再來一局</button></div>`;
+  document.getElementById('again').onclick = () => { lastQ = -1; act('/api/mp/again'); };
+  document.getElementById('close').onclick = () => act('/api/mp/close');
+}
+
+H ? connect() : setup();
+</script>
+</body>
+</html>

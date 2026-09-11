@@ -14,6 +14,7 @@ from pathlib import Path
 from flask import Flask, jsonify, request, send_from_directory
 
 import leaderboard
+import multiplayer
 import news
 
 BASE = Path(__file__).parent
@@ -127,6 +128,16 @@ def advance(g):
 @app.get("/")
 def index():
     return send_from_directory(app.static_folder, "index.html")
+
+
+@app.get("/host")
+def host_page():
+    return send_from_directory(app.static_folder, "host.html")
+
+
+@app.get("/play")
+def play_page():
+    return send_from_directory(app.static_folder, "play.html")
 
 
 @app.get("/api/categories")
@@ -285,9 +296,12 @@ def get_leaderboard():
     return jsonify(leaderboard.top(cat, period, limit=20))
 
 
+multiplayer.init(app, pick_questions, leaderboard.clean_name, CATEGORIES)
+
 if __name__ == "__main__":
     leaderboard.init()
     # host=0.0.0.0 讓同網段的手機也能連進來
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    # threaded=True:多人模式每位玩家會保持一條即時連線
+    app.run(host="0.0.0.0", port=5000, debug=True, threaded=True)
 else:
     leaderboard.init()      # 用 gunicorn 啟動時

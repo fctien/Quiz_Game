@@ -172,6 +172,91 @@ h1 .seal{display:inline-grid;place-items:center;width:1.25em;height:1.25em;margi
 .placed{margin-top:18px;padding:12px;border:1.5px dashed var(--cinnabar);border-radius:10px}
 .placed b{color:var(--cinnabar);font-family:var(--mono)}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+
+/* ================= 模式選擇 ================= */
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:20px;border:1.5px solid var(--line);border-radius:10px;overflow:hidden}
+.modes button{background:transparent;border:0;padding:10px 8px;cursor:pointer;color:var(--muted);font-weight:700;font-size:1rem}
+.modes button[aria-pressed="true"]{background:var(--ink);color:var(--ground)}
+.mp-panel{margin-top:18px;display:grid;gap:12px}
+.mp-card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px}
+.mp-card h3{margin:0 0 4px;font-family:var(--display);font-size:1.3rem;letter-spacing:.08em}
+.mp-card p{margin:0 0 12px;color:var(--muted);font-size:.92rem}
+.codein{font-family:var(--mono);font-size:1.6rem;letter-spacing:.4em;text-align:center;width:100%;padding:10px;
+  border:1.5px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink)}
+.codein:focus,.textin:focus{outline:2px solid var(--blue);outline-offset:1px}
+.textin{font:inherit;width:100%;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink)}
+.field{display:grid;gap:6px;margin-bottom:12px}
+.field label{font-size:.85rem;color:var(--muted);font-weight:500}
+
+/* ================= 四個選項的顏色 ================= */
+:root{--o0:#2B4C9B;--o1:#C8321E;--o2:#2F7D5B;--o3:#A86B12}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--o0:#8FB0FF;--o1:#FF6B57;--o2:#5FC89A;--o3:#F2B84B}}
+:root[data-theme="dark"]{--o0:#8FB0FF;--o1:#FF6B57;--o2:#5FC89A;--o3:#F2B84B}
+.o0{--oc:var(--o0)} .o1{--oc:var(--o1)} .o2{--oc:var(--o2)} .o3{--oc:var(--o3)}
+
+/* ================= 主持人 ================= */
+.wide{max-width:980px}
+.hostbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
+.hostbar b{color:var(--ink)}
+.lobby{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-top:18px;align-items:start}
+@media (max-width:720px){.lobby{grid-template-columns:1fr}}
+.joinbox{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center;box-shadow:var(--shadow)}
+.joinbox small{display:block;color:var(--muted);letter-spacing:.2em}
+.bigcode{font-family:var(--mono);font-size:clamp(3rem,12vw,5.5rem);font-weight:600;letter-spacing:.12em;line-height:1.1;margin:6px 0}
+.qr{width:min(220px,70%);margin:10px auto 6px;background:#fff;padding:8px;border-radius:8px}
+.qr svg{width:100%;height:auto;display:block}
+.joinurl{font-family:var(--mono);font-size:.85rem;color:var(--blue);word-break:break-all}
+.roster h2{font-family:var(--display);margin:0 0 10px;font-size:1.3rem;letter-spacing:.08em}
+.roster h2 span{font-family:var(--mono);color:var(--cinnabar)}
+.chipset{display:flex;flex-wrap:wrap;gap:8px}
+.pchip{border:1.5px solid var(--line);border-radius:999px;padding:4px 14px;background:var(--paper);animation:pop .3s ease both}
+.pchip.off{opacity:.45;border-style:dashed}
+.hq{display:grid;gap:16px;margin-top:10px}
+.hqtop{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.cd{width:72px;height:72px;border-radius:50%;border:3px solid var(--blue);display:grid;place-items:center;
+  font-family:var(--mono);font-size:1.8rem;font-weight:600;flex:none}
+.cd.low{border-color:var(--cinnabar);color:var(--cinnabar)}
+.hqtext{font-family:var(--display);font-size:clamp(1.5rem,3.6vw,2.4rem);font-weight:700;line-height:1.45;text-wrap:balance;white-space:pre-line}
+.double{display:inline-block;background:var(--cinnabar);color:var(--paper);border-radius:6px;padding:2px 10px;font-weight:700;font-size:.85rem;letter-spacing:.1em}
+.hopts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:560px){.hopts{grid-template-columns:1fr}}
+.hopt{border:2px solid var(--oc);border-radius:12px;padding:14px 16px;display:flex;gap:12px;align-items:center;background:var(--paper);font-size:1.15rem;position:relative;overflow:hidden}
+.hopt .n{flex:none;width:34px;height:34px;border-radius:8px;background:var(--oc);color:var(--paper);display:grid;place-items:center;font-family:var(--mono);font-weight:600}
+.hopt .bar{position:absolute;inset:auto 0 0 0;height:5px;background:var(--oc);transform-origin:left;transition:transform .6s ease}
+.hopt .cnt{margin-left:auto;font-family:var(--mono);font-weight:600}
+.hopt.dim{opacity:.35}
+.hopt.win{box-shadow:0 0 0 3px var(--oc)}
+.answered{font-family:var(--mono);color:var(--muted)}
+.answered b{color:var(--ink);font-size:1.3rem}
+.hreveal{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:720px){.hreveal{grid-template-columns:1fr}}
+.fastest{color:var(--cinnabar);font-weight:700}
+.topboard .entry .pos{font-size:1rem}
+.move{font-family:var(--mono);font-size:.8rem;margin-left:6px}
+.move.up{color:var(--jade)} .move.down{color:var(--cinnabar)}
+.podium{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:end;gap:10px;margin:20px 0 10px;text-align:center}
+.pod{border:2px solid var(--cinnabar);border-bottom:0;border-radius:10px 10px 0 0;padding:12px 6px;background:var(--paper)}
+.pod .t{font-family:var(--display);color:var(--cinnabar);font-size:1.4rem;font-weight:700;letter-spacing:.1em}
+.pod b{display:block;font-size:1.1rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pod small{font-family:var(--mono);color:var(--muted)}
+.pod.p1{min-height:170px} .pod.p2{min-height:130px} .pod.p3{min-height:105px}
+.conn{font-size:.8rem;color:var(--cinnabar)}
+
+/* ================= 玩家 ================= */
+.popts{display:grid;gap:10px;margin-top:14px}
+.popt{border:0;border-radius:12px;padding:16px;background:var(--oc);color:var(--paper);font-size:1.1rem;font-weight:700;
+  text-align:left;display:flex;gap:12px;align-items:center;cursor:pointer;min-height:60px}
+.popt .n{flex:none;width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.22);display:grid;place-items:center;font-family:var(--mono)}
+.popt:active{transform:scale(.98)}
+.popt[disabled]{cursor:default}
+.sent{text-align:center;padding:30px 10px}
+.sent .picked-big{display:inline-flex;gap:10px;align-items:center;border:2px solid var(--oc);border-radius:12px;padding:12px 18px;margin:14px 0;font-weight:700}
+.bigstamp{width:110px;height:110px;margin:10px auto;border:4px solid currentColor;border-radius:12px;display:grid;place-items:center;
+  font-family:var(--display);font-size:3.6rem;font-weight:700;transform:rotate(-10deg);animation:stamp .35s cubic-bezier(.2,1.6,.4,1) both}
+.bigstamp.pass{color:var(--cinnabar)} .bigstamp.fail{color:var(--muted)}
+.gain{font-family:var(--mono);font-size:2rem;font-weight:600;text-align:center}
+.center{text-align:center}
+.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 12px;font-size:.85rem;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -182,7 +267,7 @@ window.EMBEDDED_CATS = [{"key": "taiwan", "name": "台灣", "count": 71}, {"key"
 <script>
 /* ============================================================
  *  金榜問答 前端
- *  - 有後端時：透過 /api/* 出題、計時、計分(分數以伺服器為準)，排行榜存在 SQLite
+ *  - 有後端時：透過 /api/* 出題、計時、計分（分數以伺服器為準)，排行榜存在 SQLite
  *  - 單機模式(window.EMBEDDED_BANK 存在):瀏覽器自己出題計分；
  *    排行榜若在 claude.ai 上開啟就用共用資料庫，否則存在這台裝置
  * ============================================================ */
@@ -219,7 +304,7 @@ const remote = {
 
 /* ---------- 單機版：在瀏覽器裡模擬同一套規則 ---------- */
 function weekKey(ts = Date.now()){
-  const d = new Date(ts + 8 * 3600e3);                 // 以台灣時間切週,與後端一致
+  const d = new Date(ts + 8 * 3600e3);                 // 以台灣時間切週，與後端一致
   const t = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
   t.setUTCDate(t.getUTCDate() - (t.getUTCDay() + 6) % 7 + 3);   // 該週的週四
   const y = t.getUTCFullYear(), jan4 = new Date(Date.UTC(y, 0, 4));
@@ -319,9 +404,14 @@ const api = LOCAL ? local : remote;
 /* ---------- 首頁 ---------- */
 async function home(){
   const best = store.get('quiz_best') || 0;
+  const mode = store.get('quiz_mode') || 'solo';
   $app.innerHTML = `<div class="masthead"><div><h1>金榜問答<span class="seal">試</span></h1>
-    <p class="sub">台灣・中國・世界・詩詞・時事，十題定名次</p></div>
+    <p class="sub">台灣・中國・世界・詩詞・明星・趣聞，十題定名次</p></div>
     ${best ? `<div class="best">個人最高<b>${best}</b></div>` : ''}</div>
+    <div class="modes" role="group" aria-label="遊戲模式">
+      <button id="m-solo" aria-pressed="${mode === 'solo'}">單人闖關</button>
+      <button id="m-multi" aria-pressed="${mode === 'multi'}">多人對戰</button></div>
+    <div id="solo" ${mode === 'solo' ? '' : 'hidden'}>
     <div class="grid" id="cats"><p class="sub">載入中…</p></div>
     <button class="linkbtn" id="to-board"><span>看本週金榜</span><span class="arrow">→</span></button>
     <div class="rules"><h2>應試規則</h2><ul>
@@ -329,7 +419,22 @@ async function home(){
       <li>答得越快分數越高；連中 3 題 ×1.5、連中 5 題 ×2</li>
       <li>每局各有一次道具：刪去兩個選項、跳過此題、加時 10 秒</li>
       <li>依正確率放榜：狀元、榜眼、探花、進士、秀才；留下暱稱就能登上金榜</li>
-    </ul></div>`;
+    </ul></div></div>
+    <div id="multi" class="mp-panel" ${mode === 'multi' ? '' : 'hidden'}>${LOCAL ? `
+      <div class="mp-card"><h3>多人對戰</h3><p>多人同場搶答需要執行 Python 伺服器版（app.py），這個單機版只能單人闖關。</p></div>` : `
+      <form class="mp-card" id="joinf"><h3>加入考場</h3><p>輸入主持人畫面上的四位數房號</p>
+        <div class="row" style="margin:0"><input class="codein" id="jcode" inputmode="numeric" maxlength="4" pattern="[0-9]{4}" placeholder="0000" aria-label="房號" required>
+        <button class="btn" type="submit" style="flex:none">加入</button></div></form>
+      <div class="mp-card"><h3>開一間考場</h3><p>當主持人：選分類、題數，大家用手機同時搶答，每題即時排名，最後一題分數加倍。</p>
+        <a class="btn" href="/host" style="display:block;text-align:center;text-decoration:none">開房間</a></div>`}
+    </div>`;
+  const setMode = m => { store.set('quiz_mode', m);
+    document.getElementById('solo').hidden = m !== 'solo'; document.getElementById('multi').hidden = m !== 'multi';
+    document.getElementById('m-solo').setAttribute('aria-pressed', m === 'solo'); document.getElementById('m-multi').setAttribute('aria-pressed', m === 'multi'); };
+  document.getElementById('m-solo').onclick = () => setMode('solo');
+  document.getElementById('m-multi').onclick = () => setMode('multi');
+  const jf = document.getElementById('joinf');
+  if (jf) jf.onsubmit = e => { e.preventDefault(); location.href = '/play?code=' + encodeURIComponent(document.getElementById('jcode').value.trim()); };
   document.getElementById('to-board').onclick = () => board('all', 'week');
   try{
     const cats = await api.categories();
@@ -489,7 +594,7 @@ async function answer(ans){
       ${r.source ? `<a href="${esc(r.source)}" target="_blank" rel="noopener">${G.catKey === 'news' ? '閱讀新聞原文' : '查看資料來源'} ↗</a>` : ''}
       <div class="row"><button class="btn" id="next">${G.st.over ? '看放榜' : '下一題'}</button></div>
     </div>`;
-  // 更新分數與命(保留原本畫面，不要重畫題目)
+  // 更新分數與命（保留原本畫面，不要重畫題目)
   const live = document.querySelector('.hud');
   live.querySelector('.lives').outerHTML = hud().match(/<span class="lives"[\s\S]*?<\/span>/)[0];
   live.querySelector('.score').textContent = G.st.score;

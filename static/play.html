@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>金榜問答・多人對戰</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<script>
+/* 金榜問答 玩家端：輸入房號與暱稱 → 手機作答 → 看名次 */
+const $app = document.getElementById('app');
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const post = async (url, body) => {
+  const r = await fetch(url, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(j.error || '連線失敗，請再試一次');
+  return j;
+};
+const ls = {get(k){ try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
+            set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+            del(k){ try { localStorage.removeItem(k); } catch {} }};
+const params = new URLSearchParams(location.search);
+let P = null, es = null, deadline = 0, lastQ = -1, tick = null, sending = false;
+
+/* ---------- 加入 ---------- */
+function joinForm(msg = ''){
+  const code = params.get('code') || '';
+  $app.innerHTML = `<div class="masthead"><div><h1>入場<span class="seal">試</span></h1>
+      <p class="sub">輸入主持人畫面上的四位數房號</p></div><a class="back" href="/">← 首頁</a></div>
+    <form class="mp-card" id="f" style="margin-top:20px">
+      <div class="field"><label for="code">房號</label>
+        <input class="codein" id="code" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" autocomplete="off" value="${esc(code)}" required></div>
+      <div class="field"><label for="nick">暱稱</label>
+        <input class="textin" id="nick" maxlength="12" autocomplete="nickname" placeholder="最多 12 個字" value="${esc(ls.get('quiz_nick') || '')}" required></div>
+      <button class="btn" type="submit" id="go" style="width:100%">加入考場</button>
+      <p class="err" id="err" ${msg ? '' : 'hidden'}>${esc(msg)}</p>
+    </form>`;
+  document.getElementById(code ? 'nick' : 'code').focus();
+  document.getElementById('f').onsubmit = async e => {
+    e.preventDefault();
+    const code = document.getElementById('code').value.trim(), name = document.getElementById('nick').value.trim();
+    const btn = document.getElementById('go'); btn.disabled = true;
+    try{
+      const r = await post('/api/mp/join', {code, name});
+      ls.set('quiz_nick', name);
+      P = {code, pid: r.pid, token: r.token};
+      ls.set('mp_' + code, P);
+      history.replaceState(null, '', '/play?code=' + code);
+      connect();
+    }catch(ex){ joinForm(ex.message); }
+  };
+}
+
+async function resume(){
+  const code = params.get('code');
+  const saved = code && ls.get('mp_' + code);
+  if (!saved) return joinForm();
+  try{
+    await post('/api/mp/join', saved);         // 帶原本身分重新加入
+    P = saved; connect();
+  }catch{ ls.del('mp_' + code); joinForm(); }
+}
+
+/* ---------- 即時連線 ---------- */
+function connect(){
+  es?.close();
+  es = new EventSource(`/api/mp/stream?code=${P.code}&pid=${P.pid}&token=${encodeURIComponent(P.token)}`);
+  es.onmessage = e => render(JSON.parse(e.data));
+  es.onerror = () => {
+    const c = document.getElementById('conn'); if (c) c.textContent = '連線中斷，重新連線中…';
+    fetch(`/api/mp/info?code=${P.code}`).then(r => r.json()).then(j => {
+      if (!j.exists){ es.close(); ls.del('mp_' + P.code); closed(); }
+    }).catch(() => {});
+  };
+}
+
+const header = v => `<div class="hud"><span class="prog">${esc(v.name)} ・ 房號 ${v.code}</span><span class="score">${v.score}</span></div>
+  <p class="conn" id="conn"></p>`;
+
+function render(v){
+  if (v.state !== 'question') clearInterval(tick);
+  if (v.state === 'closed'){ es.close(); ls.del('mp_' + P.code); return closed(); }
+  ({lobby, question, reveal, final})[v.state]?.(v);
+}
+
+function closed(){
+  $app.innerHTML = `<div class="center" style="padding-top:40px"><h1>考場已關閉</h1><p class="sub">謝謝參加！</p>
+    <div class="row"><a class="btn" href="/" style="text-decoration:none;text-align:center">回首頁</a></div></div>`;
+}
+
+function lobby(v){
+  $app.innerHTML = header(v) + `<div class="center" style="padding-top:30px">
+    <div class="bigstamp pass" style="font-size:2.4rem">入場</div>
+    <h2 style="font-family:var(--display)">${esc(v.name)}，你已報到</h2>
+    <p class="sub">${esc(v.category)} ・ 共 ${v.total} 題 ・ 目前 ${v.players} 人<br>等主持人開始，題目會直接出現在這裡</p></div>`;
+}
+
+/* ---------- 作答 ---------- */
+function question(v){
+  const q = v.q;
+  if (q.index !== lastQ){ lastQ = q.index; deadline = Date.now() + v.remaining * 1000; sending = false; }
+  if (v.my_answer !== null && v.my_answer !== undefined){
+    const k = v.my_answer;
+    $app.innerHTML = header(v) + `<div class="sent"><p class="prog">第 ${q.index + 1} / ${q.total} 題</p>
+      <div class="picked-big o${k}"><span class="n" style="color:var(--oc);font-family:var(--mono)">${'ABCD'[k]}</span>${esc(q.options[k])}</div>
+      <p class="sub">已交卷，等其他人作答…<br>已作答 ${v.answered} / ${v.players}</p></div>`;
+    return;
+  }
+  $app.innerHTML = header(v) + `
+    <div class="timer" id="timer"><i></i></div>
+    <div class="meta"><span class="tag">第 ${q.index + 1} / ${q.total} 題</span>${q.double ? '<span class="double">分數加倍</span>' : ''}</div>
+    <div class="q">${esc(q.question)}</div>
+    <div class="popts">${q.options.map((o, k) => `<button class="popt o${k}" data-k="${k}"><span class="n">${'ABCD'[k]}</span><span>${esc(o)}</span></button>`).join('')}</div>`;
+  document.querySelectorAll('.popt').forEach(b => b.onclick = async () => {
+    if (sending) return;
+    sending = true;
+    document.querySelectorAll('.popt').forEach(x => { x.disabled = true; if (x !== b) x.style.opacity = .35; });
+    try { await post('/api/mp/answer', {...P, index: q.index, choice: +b.dataset.k}); }
+    catch(e){ sending = false; document.getElementById('conn').textContent = e.message; }
+  });
+  clearInterval(tick);
+  const total = v.limit * 1000;
+  tick = setInterval(() => {
+    const left = Math.max(0, deadline - Date.now()), el = document.getElementById('timer');
+    if (el){ el.firstElementChild.style.width = (left / total * 100) + '%'; el.classList.toggle('low', left < 5000); }
+  }, 200);
+}
+
+/* ---------- 公布 ---------- */
+function reveal(v){
+  const q = v.q, r = v.result || {correct: false, gained: 0}, ans = v.reveal.answer;
+  const mv = v.move ? `<span class="move ${v.move > 0 ? 'up' : 'down'}">${v.move > 0 ? '▲' : '▼'}${Math.abs(v.move)}</span>` : '';
+  $app.innerHTML = header(v) + `<div class="center">
+      <div class="bigstamp ${r.correct ? 'pass' : 'fail'}">${r.correct ? '中' : '落'}</div>
+      <div class="gain">${r.correct ? '+' + r.gained : (r.choice === null || r.choice === undefined ? '沒有作答' : '+0')}</div>
+      ${r.correct && r.bonus ? `<p class="sub">含連中加分 +${r.bonus}</p>` : ''}
+      ${r.correct && q.double ? '<p class="sub">最後一題分數加倍！</p>' : ''}
+      <p style="font-size:1.2rem;margin:14px 0 4px">目前第 <b class="score">${v.rank}</b> 名 / ${v.players} 人 ${mv}</p>
+      ${v.streak >= 2 ? `<p class="streak">連中 ${v.streak} 題</p>` : ''}</div>
+    <div class="fb ${r.correct ? 'ok' : 'no'}"><p>正確答案：<b>${'ABCD'[ans]}. ${esc(q.options[ans])}</b></p>
+      <p>${esc(v.reveal.explanation)}</p></div>
+    <p class="sub center">${v.last_q ? '等主持人放榜…' : '下一題馬上來…'}</p>`;
+}
+
+/* ---------- 放榜 ---------- */
+function final(v){
+  const t = ['狀元', '榜眼', '探花'];
+  const title = v.rank <= 3 ? t[v.rank - 1] : v.rank <= Math.ceil(v.players / 2) ? '進士' : '秀才';
+  $app.innerHTML = header(v) + `<div class="result">
+      <div class="bang"><small>金榜題名</small><div class="rank">${title}</div></div>
+      <div class="big">第 ${v.rank} 名 / ${v.players} 人</div>
+      <p class="sub">${v.score} 分 ・ 答對 ${v.right} / ${v.total} 題</p>
+      <div class="board" style="margin-top:18px">${v.podium.map((p, k) => `<div class="entry"><span class="pos top">${t[k]}</span>
+        <span class="who"><b>${esc(p.name)}</b></span><span class="pts">${p.score}</span></div>`).join('')}</div>
+      <p class="sub" style="margin-top:14px">主持人可以再開一局，留在這個畫面就會自動開始</p></div>`;
+}
+
+resume();
+</script>
+</body>
+</html>
