@@ -5,14 +5,14 @@
 """
 import json
 from pathlib import Path
-from app import BANK, CATEGORIES
+from app import BANK, TOPICS
 
 html = (Path(__file__).parent / "static" / "index.html").read_text(encoding="utf-8")
 css = (Path(__file__).parent / "static" / "style.css").read_text(encoding="utf-8")
 html = html.replace('<link rel="stylesheet" href="/static/style.css">', "<style>\n" + css + "</style>")
-cats = [{"key": k, "name": v["name"],
+cats = [{"key": k, "name": v["name"], "seal": v["seal"],
          "count": len(BANK[k]) if k in BANK else sum(len(b) for b in BANK.values())}
-        for k, v in CATEGORIES.items() if k != "news"]
+        for k, v in TOPICS.items() if k != "news"]
 inject = ("<script>window.EMBEDDED_BANK = " + json.dumps(BANK, ensure_ascii=False) +
           ";\nwindow.EMBEDDED_CATS = " + json.dumps(cats, ensure_ascii=False) + ";</script>\n")
 out = html.replace("<script>", inject + "<script>", 1)

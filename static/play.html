@@ -12,7 +12,7 @@
 <body>
 <div class="wrap" id="app"></div>
 <script>
-/* 金榜問答 玩家端：輸入房號與暱稱 → 手機作答 → 看名次 */
+/* 金榜問答 玩家端：加入考場 → 選隊 → 手機作答 → 看名次 */
 const $app = document.getElementById('app');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const post = async (url, body) => {
@@ -28,26 +28,36 @@ const params = new URLSearchParams(location.search);
 let P = null, es = null, deadline = 0, lastQ = -1, tick = null, sending = false;
 
 /* ---------- 加入 ---------- */
-function joinForm(msg = ''){
+async function joinForm(msg = ''){
   const code = params.get('code') || '';
+  let info = {};
+  if (code) info = await fetch('/api/mp/info?code=' + encodeURIComponent(code)).then(r => r.json()).catch(() => ({}));
+  const needSid = !!info.needs_sid, hasRoster = !!info.has_roster;
   $app.innerHTML = `<div class="masthead"><div><h1>入場<span class="seal">試</span></h1>
-      <p class="sub">輸入主持人畫面上的四位數房號</p></div><a class="back" href="/">← 首頁</a></div>
+      <p class="sub">${info.exists ? `${esc(info.category)}　${info.mode === 'team' ? '分組賽' : '個人賽'}　已有 ${info.players} 人` : '輸入主持人畫面上的四位數房號'}</p></div>
+      <a class="back" href="/">← 首頁</a></div>
     <form class="mp-card" id="f" style="margin-top:20px">
       <div class="field"><label for="code">房號</label>
         <input class="codein" id="code" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" autocomplete="off" value="${esc(code)}" required></div>
-      <div class="field"><label for="nick">暱稱</label>
-        <input class="textin" id="nick" maxlength="12" autocomplete="nickname" placeholder="最多 12 個字" value="${esc(ls.get('quiz_nick') || '')}" required></div>
+      ${needSid ? `<div class="field"><label for="sid">學號</label>
+        <input class="textin" id="sid" maxlength="20" autocomplete="off" placeholder="請輸入學號" value="${esc(ls.get('quiz_sid') || '')}" required></div>` : ''}
+      ${hasRoster ? '<p class="sub">姓名與組別會依老師上傳的名單自動帶出。</p>' : `
+      <div class="field"><label for="nick">${needSid ? '姓名' : '暱稱'}</label>
+        <input class="textin" id="nick" maxlength="12" autocomplete="name" placeholder="最多 12 個字" value="${esc(ls.get('quiz_nick') || '')}" required></div>`}
       <button class="btn" type="submit" id="go" style="width:100%">加入考場</button>
       <p class="err" id="err" ${msg ? '' : 'hidden'}>${esc(msg)}</p>
     </form>`;
-  document.getElementById(code ? 'nick' : 'code').focus();
+  document.getElementById(code ? (needSid ? 'sid' : 'nick') : 'code').focus();
   document.getElementById('f').onsubmit = async e => {
     e.preventDefault();
-    const code = document.getElementById('code').value.trim(), name = document.getElementById('nick').value.trim();
-    const btn = document.getElementById('go'); btn.disabled = true;
+    const code = document.getElementById('code').value.trim();
+    const sid = document.getElementById('sid')?.value.trim() || '';
+    const name = document.getElementById('nick')?.value.trim() || '';
+    document.getElementById('go').disabled = true;
     try{
-      const r = await post('/api/mp/join', {code, name});
-      ls.set('quiz_nick', name);
+      const r = await post('/api/mp/join', {code, sid, name});
+      if (sid) ls.set('quiz_sid', sid);
+      if (name) ls.set('quiz_nick', name);
       P = {code, pid: r.pid, token: r.token};
       ls.set('mp_' + code, P);
       history.replaceState(null, '', '/play?code=' + code);
@@ -60,10 +70,8 @@ async function resume(){
   const code = params.get('code');
   const saved = code && ls.get('mp_' + code);
   if (!saved) return joinForm();
-  try{
-    await post('/api/mp/join', saved);         // 帶原本身分重新加入
-    P = saved; connect();
-  }catch{ ls.del('mp_' + code); joinForm(); }
+  try{ await post('/api/mp/join', saved); P = saved; connect(); }
+  catch{ ls.del('mp_' + code); joinForm(); }
 }
 
 /* ---------- 即時連線 ---------- */
@@ -74,30 +82,46 @@ function connect(){
   es.onerror = () => {
     const c = document.getElementById('conn'); if (c) c.textContent = '連線中斷，重新連線中…';
     fetch(`/api/mp/info?code=${P.code}`).then(r => r.json()).then(j => {
-      if (!j.exists){ es.close(); ls.del('mp_' + P.code); closed(); }
-    }).catch(() => {});
+      if (!j.exists){ es.close(); ls.del('mp_' + P.code); closed(); } }).catch(() => {});
   };
 }
 
-const header = v => `<div class="hud"><span class="prog">${esc(v.name)} ・ 房號 ${v.code}</span><span class="score">${v.score}</span></div>
-  <p class="conn" id="conn"></p>`;
+const header = v => `<div class="hud"><span class="prog">${esc(v.name)}${v.team ? '・' + esc(v.team) : ''} ・ 房號 ${v.code}</span>
+    <span class="score">${v.score}</span></div><p class="conn" id="conn"></p>`;
 
 function render(v){
   if (v.state !== 'question') clearInterval(tick);
   if (v.state === 'closed'){ es.close(); ls.del('mp_' + P.code); return closed(); }
   ({lobby, question, reveal, final})[v.state]?.(v);
 }
-
 function closed(){
   $app.innerHTML = `<div class="center" style="padding-top:40px"><h1>考場已關閉</h1><p class="sub">謝謝參加！</p>
     <div class="row"><a class="btn" href="/" style="text-decoration:none;text-align:center">回首頁</a></div></div>`;
 }
 
+/* ---------- 等待 / 選隊 ---------- */
 function lobby(v){
+  if (v.mode === 'team' && !v.team){
+    $app.innerHTML = header(v) + `<div class="center" style="padding-top:20px"><h2 style="font-family:var(--display)">選擇你的隊伍</h2>
+      <p class="sub">選好才能開始，選錯可以再按一次改</p></div>
+      <div class="popts">${v.teams.map((t, k) => `<button class="popt o${k % 4}" data-t="${esc(t)}">${esc(t)}</button>`).join('')}</div>
+      <p class="err" id="terr" hidden></p>`;
+    document.querySelectorAll('.popt').forEach(b => b.onclick = async () => {
+      try { await post('/api/mp/team', {...P, team: b.dataset.t}); }
+      catch(e){ const el = document.getElementById('terr'); el.textContent = e.message; el.hidden = false; }
+    });
+    return;
+  }
   $app.innerHTML = header(v) + `<div class="center" style="padding-top:30px">
     <div class="bigstamp pass" style="font-size:2.4rem">入場</div>
     <h2 style="font-family:var(--display)">${esc(v.name)}，你已報到</h2>
-    <p class="sub">${esc(v.category)} ・ 共 ${v.total} 題 ・ 目前 ${v.players} 人<br>等主持人開始，題目會直接出現在這裡</p></div>`;
+    ${v.team ? `<p class="pill">${esc(v.team)}</p>` : ''}
+    <p class="sub">${esc(v.category)} ・ 共 ${v.total} 題 ・ 目前 ${v.players} 人<br>等主持人開始，題目會直接出現在這裡</p>
+    ${v.mode === 'team' && v.teams.length > 1 ? '<div class="row"><button class="btn ghost" id="chg">換隊</button></div>' : ''}</div>`;
+  document.getElementById('chg')?.addEventListener('click', () => {
+    $app.querySelector('.result, .center').innerHTML = '';
+    lobby({...v, team: ''});
+  });
 }
 
 /* ---------- 作答 ---------- */
@@ -135,12 +159,14 @@ function question(v){
 function reveal(v){
   const q = v.q, r = v.result || {correct: false, gained: 0}, ans = v.reveal.answer;
   const mv = v.move ? `<span class="move ${v.move > 0 ? 'up' : 'down'}">${v.move > 0 ? '▲' : '▼'}${Math.abs(v.move)}</span>` : '';
+  const myTeam = v.mode === 'team' ? (v.team_board || []).findIndex(t => t.team === v.team) + 1 : 0;
   $app.innerHTML = header(v) + `<div class="center">
       <div class="bigstamp ${r.correct ? 'pass' : 'fail'}">${r.correct ? '中' : '落'}</div>
       <div class="gain">${r.correct ? '+' + r.gained : (r.choice === null || r.choice === undefined ? '沒有作答' : '+0')}</div>
       ${r.correct && r.bonus ? `<p class="sub">含連中加分 +${r.bonus}</p>` : ''}
       ${r.correct && q.double ? '<p class="sub">最後一題分數加倍！</p>' : ''}
       <p style="font-size:1.2rem;margin:14px 0 4px">目前第 <b class="score">${v.rank}</b> 名 / ${v.players} 人 ${mv}</p>
+      ${myTeam ? `<p class="pill">${esc(v.team)}　隊伍第 ${myTeam} 名</p>` : ''}
       ${v.streak >= 2 ? `<p class="streak">連中 ${v.streak} 題</p>` : ''}</div>
     <div class="fb ${r.correct ? 'ok' : 'no'}"><p>正確答案：<b>${'ABCD'[ans]}. ${esc(q.options[ans])}</b></p>
       <p>${esc(v.reveal.explanation)}</p></div>
@@ -151,12 +177,18 @@ function reveal(v){
 function final(v){
   const t = ['狀元', '榜眼', '探花'];
   const title = v.rank <= 3 ? t[v.rank - 1] : v.rank <= Math.ceil(v.players / 2) ? '進士' : '秀才';
+  const tb = v.team_board || [];
+  const myTeam = v.mode === 'team' ? tb.findIndex(x => x.team === v.team) + 1 : 0;
   $app.innerHTML = header(v) + `<div class="result">
       <div class="bang"><small>金榜題名</small><div class="rank">${title}</div></div>
       <div class="big">第 ${v.rank} 名 / ${v.players} 人</div>
       <p class="sub">${v.score} 分 ・ 答對 ${v.right} / ${v.total} 題</p>
-      <div class="board" style="margin-top:18px">${v.podium.map((p, k) => `<div class="entry"><span class="pos top">${t[k]}</span>
-        <span class="who"><b>${esc(p.name)}</b></span><span class="pts">${p.score}</span></div>`).join('')}</div>
+      ${myTeam ? `<p class="pill">${esc(v.team)}　隊伍第 ${myTeam} 名（平均 ${tb[myTeam - 1].avg} 分）</p>` : ''}
+      ${tb.length ? `<div class="board" style="margin-top:18px">${tb.slice(0, 3).map((x, k) => `<div class="entry">
+          <span class="pos top">${t[k]}</span><span class="who"><b>${esc(x.team)}</b><small>${x.members} 人</small></span>
+          <span class="pts">${x.avg}</span></div>`).join('')}</div>`
+        : `<div class="board" style="margin-top:18px">${v.podium.map((p, k) => `<div class="entry"><span class="pos top">${t[k]}</span>
+          <span class="who"><b>${esc(p.name)}</b></span><span class="pts">${p.score}</span></div>`).join('')}</div>`}
       <p class="sub" style="margin-top:14px">主持人可以再開一局，留在這個畫面就會自動開始</p></div>`;
 }
 

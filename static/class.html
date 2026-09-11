@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>金榜問答・班級積分</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="wrap wide" id="app"></div>
+<script>
+/* 班級累積積分：輸入班級代碼與管理碼，查看每位學生的累積分數，可匯出 CSV 當期末加分依據 */
+const $app = document.getElementById('app');
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const post = async (url, body) => {
+  const r = await fetch(url, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(j.error || '連線失敗');
+  return j;
+};
+const ss = {get(k){ try { return JSON.parse(sessionStorage.getItem(k)); } catch { return null; } },
+            set(k, v){ try { sessionStorage.setItem(k, JSON.stringify(v)); } catch {} }};
+const TOPIC = {geo:'地理', history:'歷史', human:'人文', tech:'科技', python:'Python', star:'娛樂', fun:'趣聞', news:'即時新聞', mix:'綜合挑戰'};
+const when = t => { const d = new Date(t * 1000); return `${d.getMonth() + 1}/${d.getDate()}`; };
+
+function form(msg = ''){
+  const last = ss.get('class_login') || {code: '', admin: ''};
+  $app.innerHTML = `<div class="masthead"><div><h1>班級積分<span class="seal">榜</span></h1>
+      <p class="sub">查看累積分數、匯出 CSV 當期末加分依據</p></div><a class="back" href="/host">← 主持台</a></div>
+    <form class="mp-card" id="f" style="margin-top:20px;max-width:460px">
+      <div class="field"><label for="code">班級代碼</label>
+        <input class="textin" id="code" maxlength="30" placeholder="例如 程式設計-115-1" value="${esc(last.code)}" required></div>
+      <div class="field"><label for="admin">管理碼</label>
+        <input class="textin" id="admin" maxlength="12" placeholder="開班時顯示的六碼" value="${esc(last.admin)}" required></div>
+      <button class="btn" type="submit" style="width:100%">查看</button>
+      <p class="err" id="err" ${msg ? '' : 'hidden'}>${esc(msg)}</p></form>`;
+  document.getElementById('f').onsubmit = async e => {
+    e.preventDefault();
+    const code = document.getElementById('code').value.trim(), admin = document.getElementById('admin').value.trim();
+    try{
+      const data = await post('/api/class/summary', {code, admin});
+      ss.set('class_login', {code, admin});
+      show(code, admin, data);
+    }catch(ex){ form(ex.message); }
+  };
+}
+
+function show(code, admin, d){
+  const total = d.students.reduce((a, s) => a + s.points, 0);
+  $app.innerHTML = `<div class="masthead"><div><h1>${esc(code)}</h1>
+      <p class="sub">${d.students.length} 位學生 ・ 累積 ${d.games.length} 場（最近 20 場）・ 總積分 ${total}</p></div>
+      <button class="back" id="out">切換班級</button></div>
+    <div class="row" style="flex-wrap:wrap">
+      <a class="btn" style="text-decoration:none;text-align:center" href="/api/class/export?code=${encodeURIComponent(code)}&admin=${encodeURIComponent(admin)}">匯出 CSV</a>
+      <button class="btn ghost" id="reset">清空這個班級的積分</button></div>
+    ${d.teams.length ? `<div class="rules" style="border:0"><h2>隊伍累積（平均分）</h2></div>
+      <div class="board">${d.teams.map((t, k) => `<div class="entry"><span class="pos ${k < 3 ? 'top' : ''}">${k + 1}</span>
+        <span class="who"><b>${esc(t.team)}</b><small>${t.members} 人・總分 ${t.points}</small></span>
+        <span class="pts">${t.avg}</span></div>`).join('')}</div>` : ''}
+    <div class="rules" style="border:0"><h2>學生累積積分</h2></div>
+    <div class="board">${d.students.length ? d.students.map((s, k) => `<div class="entry">
+        <span class="pos ${k < 3 ? 'top' : ''}">${k + 1}</span>
+        <span class="who"><b>${esc(s.name)}</b><small>${esc(s.student_id)}${s.team ? '・' + esc(s.team) : ''}
+          ・${s.games} 場・答對 ${s.correct}/${s.answered}</small></span>
+        <span class="pts">${s.points}</span></div>`).join('')
+      : '<div class="empty">還沒有任何成績。開一場分組搶答，放榜後按「存入班級積分」就會出現在這裡。</div>'}</div>
+    ${d.games.length ? `<div class="rules"><h2>最近場次</h2>
+      <ul>${d.games.map(g => `<li>${when(g.played)}　${esc(TOPIC[g.topic] || g.topic)}　${g.players} 人　${g.questions} 題</li>`).join('')}</ul></div>` : ''}
+    ${d.roster.length ? `<p class="note">目前名單有 ${d.roster.length} 人；在主持台上傳新的 CSV 就會更新。</p>` : ''}`;
+  document.getElementById('out').onclick = () => form();
+  document.getElementById('reset').onclick = async () => {
+    if (!confirm(`確定要清空「${code}」的所有累積積分嗎？這個動作無法復原。`)) return;
+    if (!confirm('真的確定？建議先按「匯出 CSV」備份。')) return;
+    await post('/api/class/reset', {code, admin});
+    show(code, admin, await post('/api/class/summary', {code, admin}));
+  };
+}
+
+form();
+</script>
+</body>
+</html>

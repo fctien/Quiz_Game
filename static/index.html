@@ -21,8 +21,9 @@
  * ============================================================ */
 const LIVES = 3;
 const TIME_LIMIT = {choice: 15, order: 25};
-const SEAL = {taiwan:'台', china:'華', world:'寰', poetry:'詩', stars:'星', fun:'奇', news:'聞', mix:'雜'};
-const CAT_NAME = {taiwan:'台灣', china:'中國', world:'世界', poetry:'詩詞', stars:'明星', fun:'趣聞', news:'即時新聞', mix:'綜合挑戰'};
+const SEAL = {geo:'輿', history:'史', human:'文', tech:'科', python:'蟒', star:'星', fun:'奇', news:'聞', mix:'雜'};
+const CAT_NAME = {geo:'地理', history:'歷史', human:'人文', tech:'科技', python:'Python', star:'娛樂', fun:'趣聞', news:'即時新聞', mix:'綜合挑戰'};
+const REGIONS = ['', '台灣', '中國', '世界'];
 const TOP3 = ['狀元', '榜眼', '探花'];
 const $app = document.getElementById('app');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -39,8 +40,8 @@ const post = async (url, body) => {
 
 /* ---------- 後端版 API ---------- */
 const remote = {
-  categories: () => fetch('/api/categories').then(r => r.json()),
-  start: category => post('/api/start', {category}),
+  categories: region => fetch('/api/categories' + (region ? '?region=' + encodeURIComponent(region) : '')).then(r => r.json()),
+  start: (category, region) => post('/api/start', {category, region}),
   show: (session, index) => post('/api/show', {session, index}),
   answer: (session, index, answer) => post('/api/answer', {session, index, answer}),
   power: (session, index, type) => post('/api/power', {session, index, type}),
@@ -65,11 +66,14 @@ const getDb = () => dbPromise ??= (window.claude?.use ? window.claude.use('db').
 
 const local = {
   g: null,
-  categories: async () => window.EMBEDDED_CATS,
-  async start(category){
+  categories: async region => window.EMBEDDED_CATS.map(c => ({...c,
+    count: c.count === null ? null : (region ? Object.values(EMBEDDED_BANK).flat()
+      .filter(q => q.region === region && (c.key === 'mix' || q.topic === c.key)).length : c.count)})),
+  async start(category, region){
     const today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
     let pool = (category === 'mix' ? Object.values(EMBEDDED_BANK).flat() : [...(EMBEDDED_BANK[category] || [])])
-      .filter(q => !q.expires || q.expires >= today);   // 過期題目自動下架
+      .filter(q => !q.expires || q.expires >= today)    // 過期題目自動下架
+      .filter(q => !region || q.region === region);
     pool.sort(() => Math.random() - .5);
     const qs = pool.slice(0, 10).sort((a, b) => (a.difficulty || 2) - (b.difficulty || 2));
     this.g = {cat: category, qs, i: 0, shown: null, extra: 0, lives: LIVES, score: 0, streak: 0, best: 0,
@@ -153,13 +157,16 @@ const api = LOCAL ? local : remote;
 async function home(){
   const best = store.get('quiz_best') || 0;
   const mode = store.get('quiz_mode') || 'solo';
+  let region = store.get('quiz_region') || '';
   $app.innerHTML = `<div class="masthead"><div><h1>金榜問答<span class="seal">試</span></h1>
-    <p class="sub">台灣・中國・世界・詩詞・明星・趣聞，十題定名次</p></div>
+    <p class="sub">地理・歷史・人文・科技・Python・娛樂・趣聞，十題定名次</p></div>
     ${best ? `<div class="best">個人最高<b>${best}</b></div>` : ''}</div>
     <div class="modes" role="group" aria-label="遊戲模式">
       <button id="m-solo" aria-pressed="${mode === 'solo'}">單人闖關</button>
       <button id="m-multi" aria-pressed="${mode === 'multi'}">多人對戰</button></div>
     <div id="solo" ${mode === 'solo' ? '' : 'hidden'}>
+    <div class="chips" id="regions" role="group" aria-label="地區">${REGIONS.map(x =>
+      `<button data-r="${x}" aria-pressed="${x === region}">${x || '不限地區'}</button>`).join('')}</div>
     <div class="grid" id="cats"><p class="sub">載入中…</p></div>
     <button class="linkbtn" id="to-board"><span>看本週金榜</span><span class="arrow">→</span></button>
     <div class="rules"><h2>應試規則</h2><ul>
@@ -184,14 +191,23 @@ async function home(){
   const jf = document.getElementById('joinf');
   if (jf) jf.onsubmit = e => { e.preventDefault(); location.href = '/play?code=' + encodeURIComponent(document.getElementById('jcode').value.trim()); };
   document.getElementById('to-board').onclick = () => board('all', 'week');
-  try{
-    const cats = await api.categories();
+  const loadCats = async () => {
+    const cats = await api.categories(region);
+    cats.forEach(c => CAT_NAME[c.key] = c.name);
     document.getElementById('cats').innerHTML = cats.map(c => `
-      <button class="cat" data-k="${c.key}">
-        <span class="sealbox">${SEAL[c.key] || esc(c.name[0])}</span>
+      <button class="cat" data-k="${c.key}" ${c.count === 0 ? 'disabled style="opacity:.4"' : ''}>
+        <span class="sealbox">${c.seal || SEAL[c.key] || esc(c.name[0])}</span>
         <span><b>${esc(c.name)}</b><small>${c.key === 'news' ? '每小時更新' : c.count + ' 題'}</small></span>
       </button>`).join('');
-    document.querySelectorAll('.cat').forEach(b => b.onclick = () => startGame(b.dataset.k));
+    document.querySelectorAll('.cat').forEach(b => b.onclick = () => startGame(b.dataset.k, region));
+  };
+  document.querySelectorAll('#regions button').forEach(b => b.onclick = async () => {
+    region = b.dataset.r; store.set('quiz_region', region);
+    document.querySelectorAll('#regions button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    await loadCats();
+  });
+  try{
+    await loadCats();
   }catch(e){
     document.getElementById('cats').innerHTML = `<p class="err">連不到伺服器，請確認 app.py 有在執行。</p>`;
   }
@@ -200,11 +216,11 @@ async function home(){
 /* ---------- 遊戲 ---------- */
 let G = null;
 
-async function startGame(cat){
+async function startGame(cat, region = ''){
   $app.innerHTML = `<p class="sub">出題中…</p>`;
   try{
-    const d = await api.start(cat);
-    G = {session: d.session, qs: d.questions, catKey: cat, catName: CAT_NAME[cat] || cat, log: [],
+    const d = await api.start(cat, region);
+    G = {session: d.session, qs: d.questions, catKey: cat, catRegion: region, catName: (CAT_NAME[cat] || cat) + (region ? `・${region}` : ''), log: [],
          st: {i: 0, lives: LIVES, score: 0, streak: 0, best: 0, right: 0, answered: 0, over: false,
               powers: {fifty: true, skip: true, time: true}}};
     showQuestion();
@@ -386,7 +402,7 @@ function result(){
       <div class="review">${G.log.map(x => `<div><span class="m ${x.ok === null ? 's' : x.ok ? 'y' : 'x'}">${x.ok === null ? '略' : x.ok ? '中' : '落'}</span><span>${esc(x.q.split('\n').pop())}</span></div>`).join('')}</div>
     </div>`;
   document.getElementById('home').onclick = () => { api.finish(G.session); home(); };
-  document.getElementById('again').onclick = () => { api.finish(G.session); startGame(G.catKey); };
+  document.getElementById('again').onclick = () => { api.finish(G.session); startGame(G.catKey, G.catRegion); };
   const form = document.getElementById('lbform');
   if (form) form.onsubmit = async e => {
     e.preventDefault();
@@ -410,7 +426,7 @@ function result(){
 
 /* ---------- 金榜 ---------- */
 async function board(category = 'all', period = 'week'){
-  const cats = ['all', 'taiwan', 'china', 'world', 'poetry', 'stars', 'fun', ...(LOCAL ? [] : ['news']), 'mix'];
+  const cats = ['all', 'geo', 'history', 'human', 'tech', 'python', 'star', 'fun', ...(LOCAL ? [] : ['news']), 'mix'];
   $app.innerHTML = `<div class="lbhead"><h1>金榜</h1><button class="back" id="back">← 回首頁</button></div>
     <div class="seg" role="group" aria-label="期間">
       <button id="p-week" aria-pressed="${period === 'week'}">本週</button>
@@ -433,7 +449,7 @@ async function board(category = 'all', period = 'week'){
     if (!rows.length){
       el.innerHTML = `<div class="empty">${period === 'week' ? '本週' : ''}還沒有人上榜，來當第一位狀元吧。
         <div class="row"><button class="btn" id="go">開始作答</button></div></div>`;
-      document.getElementById('go').onclick = () => startGame(category === 'all' ? 'mix' : category);
+      document.getElementById('go').onclick = () => startGame(category === 'all' ? 'mix' : category, '');
       return;
     }
     el.innerHTML = rows.map((r, k) => {

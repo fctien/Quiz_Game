@@ -10,9 +10,11 @@ import secrets
 import time
 from datetime import date
 from pathlib import Path
+from urllib.parse import quote
 
-from flask import Flask, jsonify, request, send_from_directory
+from flask import Flask, Response, jsonify, request, send_from_directory
 
+import classroom
 import leaderboard
 import multiplayer
 import news
@@ -28,28 +30,36 @@ TIME_LIMIT = {"choice": 15, "order": 25}   # 秒
 GRACE = 1.5                                 # 網路延遲容忍秒數
 GAME_TTL = 60 * 60                          # 一局最長保留 1 小時
 
-CATEGORIES = {
-    "taiwan": {"name": "台灣", "file": "taiwan.json"},
-    "china":  {"name": "中國", "file": "china.json"},
-    "world":  {"name": "世界", "file": "world.json"},
-    "poetry": {"name": "詩詞", "file": "poetry.json"},
-    "stars":  {"name": "明星", "file": "stars.json"},
-    "fun":    {"name": "趣聞", "file": "fun.json"},
-    "news":   {"name": "即時新聞", "file": None},   # 動態產生
-    "mix":    {"name": "綜合挑戰", "file": None},   # 從各題庫混合
+TOPICS = {
+    "geo":     {"name": "地理",     "seal": "輿"},
+    "history": {"name": "歷史",     "seal": "史"},
+    "human":   {"name": "人文",     "seal": "文"},
+    "tech":    {"name": "科技",     "seal": "科"},
+    "python":  {"name": "Python",   "seal": "蟒"},
+    "star":    {"name": "娛樂",     "seal": "星"},
+    "fun":     {"name": "趣聞",     "seal": "奇"},
+    "news":    {"name": "即時新聞", "seal": "聞"},
+    "mix":     {"name": "綜合挑戰", "seal": "雜"},
 }
+CATEGORIES = TOPICS            # 舊名稱,保留相容
+# 題庫檔案 -> 這個檔的題目屬於哪個地區(顯示在題目上,也可以當篩選條件)
+FILES = {"taiwan": "台灣", "china": "中國", "world": "世界", "poetry": "古典詩詞",
+         "stars": "娛樂", "fun": "趣聞", "tech": "科技", "python": "Python"}
+REGIONS = ["台灣", "中國", "世界"]   # 地理、歷史、人文可再依地區篩選
 
 
-def load_bank(key):
-    f = CATEGORIES[key]["file"]
-    with open(QDIR / f, encoding="utf-8") as fp:
-        data = json.load(fp)
-    for q in data:
-        q.setdefault("region", CATEGORIES[key]["name"])
-    return data
+def load_all():
+    """把各檔題庫讀進來,依 topic 分組(地區則放在每題的 region 欄位)"""
+    bank = {k: [] for k in TOPICS if k not in ("news", "mix")}
+    for f, region in FILES.items():
+        with open(QDIR / f"{f}.json", encoding="utf-8") as fp:
+            for q in json.load(fp):
+                q.setdefault("region", region)
+                bank[q["topic"]].append(q)
+    return bank
 
 
-BANK = {k: load_bank(k) for k in CATEGORIES if CATEGORIES[k]["file"]}
+BANK = load_all()
 
 
 def active(q):
@@ -57,8 +67,12 @@ def active(q):
     return not q.get("expires") or q["expires"] >= date.today().isoformat()
 
 
-def active_bank(key):
-    return [q for q in BANK[key] if active(q)]
+def active_bank(topic, region=None):
+    qs = [q for q in BANK[topic] if active(q)]
+    if region:
+        qs = [q for q in qs if q.get("region") == region]
+    return qs
+
 
 # 進行中的遊戲 session_id -> 狀態
 # (教學雛形用記憶體保存;多台主機或多個 worker 時請改用 Redis)
@@ -86,13 +100,13 @@ def public_view(q):
             if k not in ("answer", "explanation", "fun_fact", "source", "expires")}
 
 
-def pick_questions(cat, n):
+def pick_questions(cat, n, region=None):
     if cat == "news":
         pool = news.get_news_questions()
     elif cat == "mix":
-        pool = [q for k in BANK for q in active_bank(k)]
+        pool = [q for k in BANK for q in active_bank(k, region)]
     else:
-        pool = active_bank(cat)
+        pool = active_bank(cat, region)
     random.shuffle(pool)
     chosen = pool[:n]
     chosen.sort(key=lambda q: q.get("difficulty", 2))   # 由易到難
@@ -140,15 +154,23 @@ def play_page():
     return send_from_directory(app.static_folder, "play.html")
 
 
+@app.get("/class")
+def class_page():
+    return send_from_directory(app.static_folder, "class.html")
+
+
 @app.get("/api/categories")
 def categories():
+    region = request.args.get("region") or None
     out = []
-    for k, v in CATEGORIES.items():
+    for k, v in TOPICS.items():
         if k == "mix":
-            count = sum(len(active_bank(b)) for b in BANK)
+            count = sum(len(active_bank(b, region)) for b in BANK)
+        elif k == "news":
+            count = None
         else:
-            count = len(active_bank(k)) if v["file"] else None
-        out.append({"key": k, "name": v["name"], "count": count})
+            count = len(active_bank(k, region))
+        out.append({"key": k, "name": v["name"], "seal": v["seal"], "count": count})
     return jsonify(out)
 
 
@@ -157,9 +179,12 @@ def start():
     cleanup()
     body = request.get_json(silent=True) or {}
     cat = body.get("category", "mix")
-    if cat not in CATEGORIES:
-        return jsonify(error="沒有這個分類"), 400
-    qs = pick_questions(cat, 10)
+    if cat not in TOPICS:
+        return jsonify(error="沒有這個主題"), 400
+    region = body.get("region") or None
+    if region and region not in REGIONS:
+        return jsonify(error="沒有這個地區"), 400
+    qs = pick_questions(cat, 10, region)
     if not qs:
         return jsonify(error="目前抓不到新聞,請稍後再試或先玩其他分類"), 503
     sid = secrets.token_urlsafe(12)
@@ -289,19 +314,57 @@ def submit():
 def get_leaderboard():
     cat = request.args.get("category", "all")
     period = request.args.get("period", "week")
-    if cat != "all" and cat not in CATEGORIES:
+    if cat != "all" and cat not in TOPICS:
         return jsonify(error="沒有這個分類"), 400
     if period not in ("week", "all"):
         return jsonify(error="period 只能是 week 或 all"), 400
     return jsonify(leaderboard.top(cat, period, limit=20))
 
 
-multiplayer.init(app, pick_questions, leaderboard.clean_name, CATEGORIES)
+multiplayer.init(app, pick_questions, leaderboard.clean_name, TOPICS)
+
+@app.post("/api/class/summary")
+def class_summary():
+    b = request.get_json(silent=True) or {}
+    code = classroom.clean_code(b.get("code", ""))
+    if not classroom.get(code):
+        return jsonify(error="找不到這個班級代碼"), 404
+    if not classroom.check(code, b.get("admin", "")):
+        return jsonify(error="管理碼不對"), 403
+    out = classroom.summary(code)
+    out["roster"] = classroom.get_roster(code)
+    return jsonify(out)
+
+
+@app.get("/api/class/export")
+def class_export():
+    code = classroom.clean_code(request.args.get("code", ""))
+    if not classroom.check(code, request.args.get("admin", "")):
+        return jsonify(error="管理碼不對"), 403
+    csv_text = classroom.export_csv(code)
+    # 檔名含中文,要用 RFC 5987 的 filename* 編碼,HTTP 標頭只能放 ASCII
+    quoted = quote(f"{code}-積分.csv")
+    return Response(csv_text, mimetype="text/csv",
+                    headers={"Content-Disposition":
+                             f"attachment; filename=class-points.csv; filename*=UTF-8''{quoted}"})
+
+
+@app.post("/api/class/reset")
+def class_reset():
+    b = request.get_json(silent=True) or {}
+    code = classroom.clean_code(b.get("code", ""))
+    if not classroom.check(code, b.get("admin", "")):
+        return jsonify(error="管理碼不對"), 403
+    classroom.reset(code)
+    return jsonify(ok=True)
+
 
 if __name__ == "__main__":
     leaderboard.init()
+    classroom.init()
     # host=0.0.0.0 讓同網段的手機也能連進來
     # threaded=True:多人模式每位玩家會保持一條即時連線
     app.run(host="0.0.0.0", port=5000, debug=True, threaded=True)
 else:
     leaderboard.init()      # 用 gunicorn 啟動時
+    classroom.init()

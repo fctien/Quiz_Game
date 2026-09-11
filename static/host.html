@@ -8,16 +8,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <link rel="stylesheet" href="/static/style.css">
-<!-- QR code 產生器(若無法連網,只會少了 QR code,輸入房號仍可加入) -->
+<!-- QR code 產生器：連不到網路時只會少了 QR code，輸入房號一樣能加入 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 </head>
 <body>
 <div class="wrap wide" id="app"></div>
 <script>
-/* 金榜問答 主持台：開房、顯示房號與 QR、控制出題、公布答案、放榜 */
+/* 金榜問答 主持台：開房、分組、控制出題、公布答案、放榜、存入班級積分 */
 const $app = document.getElementById('app');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const SEAL = {taiwan:'台', china:'華', world:'寰', poetry:'詩', stars:'星', fun:'奇', news:'聞', mix:'雜'};
+const SEAL = {geo:'輿', history:'史', human:'文', tech:'科', python:'蟒', star:'星', fun:'奇', news:'聞', mix:'雜'};
+const REGIONS = ['', '台灣', '中國', '世界'];
 const post = async (url, body) => {
   const r = await fetch(url, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
   const j = await r.json().catch(() => ({}));
@@ -27,20 +28,29 @@ const post = async (url, body) => {
 const ss = {get(k){ try { return JSON.parse(sessionStorage.getItem(k)); } catch { return null; } },
             set(k, v){ try { sessionStorage.setItem(k, JSON.stringify(v)); } catch {} },
             del(k){ try { sessionStorage.removeItem(k); } catch {} }};
-let H = ss.get('mp_host');      // {code, token, join_url}
-let es = null, V = null, deadline = 0, lastQ = -1, tick = null;
+let H = ss.get('mp_host');
+let es = null, deadline = 0, lastQ = -1, tick = null, rosterText = '', rosterInfo = '';
+
+/* 讀 CSV：Excel 存出來常是 Big5，這裡自動判斷 */
+async function readCsv(file){
+  const buf = await file.arrayBuffer();
+  let text = new TextDecoder('utf-8').decode(buf);
+  if (text.includes('�')){ try { text = new TextDecoder('big5').decode(buf); } catch {} }
+  return text;
+}
 
 /* ---------- 開房設定 ---------- */
-async function setup(){
-  const cats = await fetch('/api/categories').then(r => r.json()).catch(() => []);
-  const pick = {category: 'mix', count: 10, time: 20};
+async function setup(msg = ''){
+  const pick = ss.get('mp_setup') || {category: 'mix', region: '', count: 10, time: 20, mode: 'solo', team_count: 4, class_code: ''};
+  const cats = await fetch('/api/categories' + (pick.region ? '?region=' + encodeURIComponent(pick.region) : '')).then(r => r.json()).catch(() => []);
   $app.innerHTML = `<div class="masthead"><div><h1>主持台<span class="seal">試</span></h1>
-      <p class="sub">開一間考場，大家用手機輸入房號就能一起搶答</p></div>
+      <p class="sub">開一間考場，學生用手機輸入房號一起搶答</p></div>
       <a class="back" href="/">← 回首頁</a></div>
-    <div class="rules" style="border:0;padding:0"><h2>選擇分類</h2></div>
+    <div class="chips" id="regions" role="group" aria-label="地區">${REGIONS.map(x =>
+      `<button data-r="${x}" aria-pressed="${x === pick.region}">${x || '不限地區'}</button>`).join('')}</div>
     <div class="grid" id="cats">${cats.map(c => `
-      <button class="cat" data-k="${c.key}" aria-pressed="${c.key === pick.category}">
-        <span class="sealbox">${SEAL[c.key] || esc(c.name[0])}</span>
+      <button class="cat" data-k="${c.key}" aria-pressed="${c.key === pick.category}" ${c.count === 0 ? 'disabled style="opacity:.4"' : ''}>
+        <span class="sealbox">${c.seal || SEAL[c.key] || esc(c.name[0])}</span>
         <span><b>${esc(c.name)}</b><small>${c.key === 'news' ? '今日新聞' : c.count + ' 題'}</small></span>
       </button>`).join('')}</div>
     <div class="row" style="flex-wrap:wrap;gap:18px;margin-top:18px">
@@ -48,36 +58,62 @@ async function setup(){
         ${[5, 10, 15, 20].map(n => `<button data-v="${n}" aria-pressed="${n === pick.count}">${n}</button>`).join('')}</div></div>
       <div><div class="sub" style="margin:0 0 4px">每題秒數</div><div class="seg" id="tm" style="margin:0">
         ${[10, 15, 20, 30].map(n => `<button data-v="${n}" aria-pressed="${n === pick.time}">${n}</button>`).join('')}</div></div>
+      <div><div class="sub" style="margin:0 0 4px">賽制</div><div class="seg" id="md" style="margin:0">
+        <button data-v="solo" aria-pressed="${pick.mode === 'solo'}">個人賽</button>
+        <button data-v="team" aria-pressed="${pick.mode === 'team'}">分組賽</button></div></div>
+      <div id="tcwrap" ${pick.mode === 'team' ? '' : 'hidden'}><div class="sub" style="margin:0 0 4px">隊伍數</div>
+        <div class="seg" id="tc" style="margin:0">${[2, 3, 4, 5, 6].map(n => `<button data-v="${n}" aria-pressed="${n === pick.team_count}">${n}</button>`).join('')}</div></div>
     </div>
+    <div class="mp-card" style="margin-top:18px"><h3>課堂設定（選填）</h3>
+      <p>填了班級代碼，每場成績就能累積起來，當作期末加分依據。上傳分組名單後，學生只要輸入學號就會自動帶出姓名與組別。</p>
+      <div class="row" style="margin:0;flex-wrap:wrap">
+        <div class="field" style="flex:1;min-width:200px"><label for="cls">班級代碼</label>
+          <input class="textin" id="cls" maxlength="30" placeholder="例如 程式設計-115-1" value="${esc(pick.class_code)}"></div>
+        <div class="field" style="flex:1;min-width:160px"><label for="adm">管理碼（班級已建立過才要填）</label>
+          <input class="textin" id="adm" maxlength="12" placeholder="第一次開班留空"></div>
+      </div>
+      <div class="field"><label for="csv">分組名單 CSV（學號,姓名,組別）</label>
+        <input type="file" id="csv" accept=".csv,.txt,.tsv"><small class="sub" id="csvinfo">未選擇檔案；沒有名單也可以玩，學生自己選隊。</small></div>
+      <a class="joinurl" href="/class" target="_blank">查看班級累積積分 →</a></div>
     <div class="row"><button class="btn" id="create">開房間</button></div>
-    <p class="err" id="err" hidden></p>
+    <p class="err" id="err" ${msg ? '' : 'hidden'}>${esc(msg)}</p>
     <div class="rules"><h2>怎麼玩</h2><ul>
-      <li>把這個畫面投影到大螢幕，或放在大家看得到的地方</li>
-      <li>玩家用手機掃 QR code，或打開首頁輸入四位數房號</li>
+      <li>把這個畫面投影到大螢幕，學生掃 QR code 或輸入四位數房號加入</li>
       <li>答對越快分數越高，連中有加分，<b>最後一題分數加倍</b></li>
+      <li>分組賽的隊伍分數用<b>隊員平均分</b>計算，各組人數不同也公平</li>
     </ul></div>`;
   const style = document.createElement('style');
   style.textContent = '.cat[aria-pressed="true"]{border-color:var(--cinnabar);box-shadow:0 0 0 2px var(--cinnabar)}';
   $app.appendChild(style);
+  const save = () => ss.set('mp_setup', pick);
+  document.querySelectorAll('#regions button').forEach(b => b.onclick = () => { pick.region = b.dataset.r; save(); setup(); });
   document.querySelectorAll('.cat').forEach(b => b.onclick = () => {
-    pick.category = b.dataset.k;
+    pick.category = b.dataset.k; save();
     document.querySelectorAll('.cat').forEach(x => x.setAttribute('aria-pressed', x === b));
   });
-  const seg = (id, key) => document.querySelectorAll(`#${id} button`).forEach(b => b.onclick = () => {
-    pick[key] = +b.dataset.v;
+  const seg = (id, key, after) => document.querySelectorAll(`#${id} button`).forEach(b => b.onclick = () => {
+    pick[key] = isNaN(+b.dataset.v) ? b.dataset.v : +b.dataset.v; save();
     document.querySelectorAll(`#${id} button`).forEach(x => x.setAttribute('aria-pressed', x === b));
+    after?.();
   });
-  seg('cnt', 'count'); seg('tm', 'time');
+  seg('cnt', 'count'); seg('tm', 'time'); seg('tc', 'team_count');
+  seg('md', 'mode', () => document.getElementById('tcwrap').hidden = pick.mode !== 'team');
+  document.getElementById('csv').onchange = async e => {
+    const f = e.target.files[0]; if (!f) return;
+    rosterText = await readCsv(f);
+    const n = rosterText.split(/\r?\n/).filter(x => x.trim()).length;
+    rosterInfo = `已讀取 ${f.name}，約 ${n} 行`;
+    document.getElementById('csvinfo').textContent = rosterInfo;
+  };
   document.getElementById('create').onclick = async e => {
     e.currentTarget.disabled = true;
+    pick.class_code = document.getElementById('cls').value.trim(); save();
     try{
-      const r = await post('/api/mp/create', pick);
-      H = {code: r.code, token: r.token, join_url: r.join_url};
+      const r = await post('/api/mp/create', {...pick, admin_code: document.getElementById('adm').value.trim(), roster_text: rosterText});
+      H = {code: r.code, token: r.token, join_url: r.join_url, admin_code: r.admin_code, class_code: r.class_code};
       ss.set('mp_host', H);
       connect();
-    }catch(ex){
-      const el = document.getElementById('err'); el.textContent = ex.message; el.hidden = false; e.currentTarget.disabled = false;
-    }
+    }catch(ex){ setup(ex.message); }
   };
 }
 
@@ -88,34 +124,42 @@ function connect(){
   es.onmessage = e => render(JSON.parse(e.data));
   es.onerror = () => {
     const c = document.getElementById('conn'); if (c) c.textContent = '連線中斷，重新連線中…';
-    fetch(`/api/mp/info?code=${H.code}`).then(r => r.json()).then(j => { if (!j.exists){ es.close(); ss.del('mp_host'); H = null; setup(); } }).catch(() => {});
+    fetch(`/api/mp/info?code=${H.code}`).then(r => r.json()).then(j => {
+      if (!j.exists){ es.close(); ss.del('mp_host'); H = null; setup(); } }).catch(() => {});
   };
 }
-const act = path => post(path, {code: H.code, token: H.token}).catch(e => alert(e.message));
+const act = (path, extra = {}) => post(path, {code: H.code, token: H.token, ...extra}).catch(e => alert(e.message));
 
 function bar(v){
-  return `<div class="hostbar"><span>房號 <b class="score">${v.code}</b> ・ ${esc(v.category)} ・ ${v.players} 人</span>
+  return `<div class="hostbar"><span>房號 <b class="score">${v.code}</b> ・ ${esc(v.category)}${v.region ? '・' + esc(v.region) : ''}
+      ・ ${v.mode === 'team' ? '分組賽' : '個人賽'} ・ ${v.players} 人${v.class_code ? ' ・ 班級 ' + esc(v.class_code) : ''}</span>
     <span class="conn" id="conn"></span></div>`;
 }
-
 function render(v){
-  V = v;
   if (v.state === 'closed'){ ss.del('mp_host'); es.close(); H = null; return setup(); }
-  if (v.state !== 'question'){ clearInterval(tick); }
+  if (v.state !== 'question') clearInterval(tick);
   ({lobby, question, reveal, final})[v.state]?.(v);
 }
 
 /* ---------- 等待加入 ---------- */
 function lobby(v){
-  $app.innerHTML = bar(v) + `<div class="lobby">
+  const byTeam = {};
+  (v.teams || []).forEach(t => byTeam[t] = []);
+  v.roster.forEach(p => { if (v.mode === 'team') (byTeam[p.team] ||= []).push(p); });
+  $app.innerHTML = bar(v) + `${H.admin_code ? `<div class="placed" style="margin:12px 0">
+      班級「${esc(H.class_code)}」已建立，管理碼 <b>${esc(H.admin_code)}</b>　請記下來，之後開房存分與查看積分都要用。</div>` : ''}
+    <div class="lobby">
     <div class="joinbox"><small>手機掃描或輸入房號加入</small>
       <div class="bigcode">${v.code}</div>
       <div class="qr" id="qr" hidden></div>
       <div class="joinurl">${esc(H.join_url)}</div></div>
-    <div class="roster"><h2>已報到 <span>${v.roster.length}</span> 人</h2>
-      <div class="chipset">${v.roster.length ? v.roster.map(p => `<span class="pchip ${p.online ? '' : 'off'}">${esc(p.name)}</span>`).join('')
-        : '<p class="sub">等待考生入場…</p>'}</div>
-      <div class="row"><button class="btn" id="go" ${v.roster.length ? '' : 'disabled'}>開始考試(${v.total} 題)</button></div>
+    <div class="roster"><h2>已報到 <span>${v.roster.length}</span>${v.roster_size ? ` / ${v.roster_size}` : ''} 人</h2>
+      ${v.mode === 'team' ? Object.entries(byTeam).map(([t, list]) => `
+        <div style="margin-bottom:10px"><b>${esc(t)}</b>（${list.length}）
+          <div class="chipset" style="margin-top:4px">${list.map(p => `<span class="pchip ${p.online ? '' : 'off'}">${esc(p.name)}</span>`).join('') || '<span class="sub">尚無</span>'}</div></div>`).join('')
+        : `<div class="chipset">${v.roster.map(p => `<span class="pchip ${p.online ? '' : 'off'}">${esc(p.name)}</span>`).join('') || '<p class="sub">等待考生入場…</p>'}</div>`}
+      ${v.missing && v.missing.length ? `<p class="sub" style="margin-top:10px">未到（${v.missing.length}）：${v.missing.slice(0, 12).map(esc).join('、')}${v.missing.length > 12 ? '…' : ''}</p>` : ''}
+      <div class="row"><button class="btn" id="go" ${v.roster.length ? '' : 'disabled'}>開始考試（${v.total} 題）</button></div>
       <div class="row"><button class="btn ghost" id="close">關閉房間</button></div></div></div>`;
   if (window.qrcode){
     const q = qrcode(0, 'M'); q.addData(H.join_url); q.make();
@@ -155,32 +199,48 @@ function question(v){
 }
 
 /* ---------- 公布答案 ---------- */
+function boardRows(rows, team){
+  return rows.map((p, k) => `<div class="entry"><span class="pos ${k < 3 ? 'top' : ''}">${k + 1}</span>
+    <span class="who"><b>${esc(team ? p.team : p.name)}${p.move ? `<span class="move ${p.move > 0 ? 'up' : 'down'}">${p.move > 0 ? '▲' : '▼'}${Math.abs(p.move)}</span>` : ''}</b>
+      ${team ? `<small>${p.members} 人・總分 ${p.total}</small>` : (p.team ? `<small>${esc(p.team)}</small>` : '')}</span>
+    <span class="pts">${team ? p.avg : p.score}</span></div>`).join('');
+}
 function reveal(v){
   const q = v.q, rv = v.reveal;
   $app.innerHTML = bar(v) + `<div class="hq">
     <div class="hqtop"><span class="prog">第 ${q.index + 1} / ${q.total} 題 ・ ${rv.answered} 人作答</span>
-      ${rv.fastest ? `<span class="fastest">最快答對：${esc(rv.fastest.name)}(${rv.fastest.secs} 秒)</span>` : '<span class="sub">這題沒有人答對</span>'}</div>
+      ${rv.fastest ? `<span class="fastest">最快答對：${esc(rv.fastest.name)}（${rv.fastest.secs} 秒）</span>` : '<span class="sub">這題沒有人答對</span>'}</div>
     <div class="hqtext">${esc(q.question)}</div>
     <div class="hreveal"><div>${opts(q, rv)}
         <div class="fb ok"><p>${esc(rv.explanation)}</p>${rv.fun_fact ? `<p class="fun"><b>冷知識</b>${esc(rv.fun_fact)}</p>` : ''}</div></div>
-      <div class="topboard"><div class="rules" style="border:0;padding:0"><h2>目前排名</h2></div>
-        <div class="board">${v.top.map((p, k) => `<div class="entry">
-          <span class="pos ${k < 3 ? 'top' : ''}">${k + 1}</span>
-          <span class="who"><b>${esc(p.name)}${p.move ? `<span class="move ${p.move > 0 ? 'up' : 'down'}">${p.move > 0 ? '▲' : '▼'}${Math.abs(p.move)}</span>` : ''}</b></span>
-          <span class="pts">${p.score}</span></div>`).join('')}</div>
+      <div class="topboard">
+        ${v.mode === 'team' ? `<div class="rules" style="border:0;padding:0"><h2>隊伍排名（平均分）</h2></div>
+          <div class="board">${boardRows(v.team_board, true)}</div>` : ''}
+        <div class="rules" style="border:0;padding:0"><h2>個人前五名</h2></div>
+        <div class="board">${boardRows(v.top)}</div>
         <div class="row"><button class="btn" id="nx">${v.last_q ? '放榜' : '下一題'}</button></div></div></div></div>`;
   document.getElementById('nx').onclick = () => act('/api/mp/next');
 }
 
 /* ---------- 放榜 ---------- */
 function final(v){
-  const f = v.final, t = ['狀元', '榜眼', '探花'];
-  const pod = k => f[k] ? `<div class="pod p${k + 1}"><div class="t">${t[k]}</div><b>${esc(f[k].name)}</b><small>${f[k].score}</small></div>` : '<div></div>';
-  $app.innerHTML = bar(v) + `<div class="center"><div class="bang"><small>金榜題名</small><div class="rank">放榜</div></div></div>
+  const t = ['狀元', '榜眼', '探花'];
+  const win = v.mode === 'team' ? v.team_board : v.final;
+  const pod = k => win[k] ? `<div class="pod p${k + 1}"><div class="t">${t[k]}</div>
+      <b>${esc(v.mode === 'team' ? win[k].team : win[k].name)}</b><small>${v.mode === 'team' ? win[k].avg : win[k].score}</small></div>` : '<div></div>';
+  $app.innerHTML = bar(v) + `<div class="center"><div class="bang"><small>金榜題名</small><div class="rank">放榜</div></div>
+      ${v.mode === 'team' ? '<p class="sub">隊伍排名依隊員平均分計算</p>' : ''}</div>
     <div class="podium">${pod(1)}${pod(0)}${pod(2)}</div>
-    <div class="board">${f.map((p, k) => `<div class="entry"><span class="pos ${k < 3 ? 'top' : ''}">${k < 3 ? t[k] : k + 1}</span>
-      <span class="who"><b>${esc(p.name)}</b><small>答對 ${p.right} / ${v.total}</small></span><span class="pts">${p.score}</span></div>`).join('')}</div>
+    ${v.mode === 'team' ? `<div class="rules" style="border:0"><h2>各隊成績</h2></div><div class="board">${boardRows(v.team_board, true)}</div>` : ''}
+    <div class="rules" style="border:0"><h2>個人成績</h2></div>
+    <div class="board">${v.final.map((p, k) => `<div class="entry"><span class="pos ${k < 3 ? 'top' : ''}">${k < 3 ? t[k] : k + 1}</span>
+      <span class="who"><b>${esc(p.name)}</b><small>${p.team ? esc(p.team) + '・' : ''}答對 ${p.right} / ${v.total}</small></span>
+      <span class="pts">${p.score}</span></div>`).join('')}</div>
+    ${v.class_code ? `<div class="placed" id="saveslot">${v.saved
+      ? `已存入班級「${esc(v.class_code)}」的累積積分。<div class="row"><a class="btn ghost" href="/class" target="_blank" style="text-decoration:none;text-align:center">查看累積積分</a></div>`
+      : `這場成績可以存入班級「${esc(v.class_code)}」的累積積分。<div class="row"><button class="btn" id="save">存入班級積分</button></div>`}</div>` : ''}
     <div class="row"><button class="btn ghost" id="close">關閉房間</button><button class="btn" id="again">再來一局</button></div>`;
+  document.getElementById('save')?.addEventListener('click', e => { e.target.disabled = true; act('/api/mp/save_class'); });
   document.getElementById('again').onclick = () => { lastQ = -1; act('/api/mp/again'); };
   document.getElementById('close').onclick = () => act('/api/mp/close');
 }

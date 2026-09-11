@@ -1,0 +1,802 @@
+[
+  {
+    "id": "py-001",
+    "topic": "python",
+    "category": "語法",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "這段程式在 Python 3 會印出什麼？\n\nprint(7 / 2)",
+    "options": [
+      "3",
+      "3.0",
+      "3.5",
+      "4"
+    ],
+    "answer": 2,
+    "explanation": "在 Python 3 中，單斜線 / 是「真除法」，即使兩邊都是整數，結果也會是浮點數。",
+    "fun_fact": "想要整數結果請用 // ，例如 7 // 2 會得到 3。",
+    "region": "Python"
+  },
+  {
+    "id": "py-002",
+    "topic": "python",
+    "category": "語法",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "下列哪一個是「合法」的 Python 變數名稱？",
+    "options": [
+      "2nd_place",
+      "my-var",
+      "class",
+      "_count"
+    ],
+    "answer": 3,
+    "explanation": "變數名稱只能由英文字母、數字、底線組成，不能以數字開頭，也不能使用保留字。",
+    "fun_fact": "class 是保留字，my-var 中的減號會被當成運算子。",
+    "region": "Python"
+  },
+  {
+    "id": "py-003",
+    "topic": "python",
+    "category": "語法",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "在 Python 中，單行註解要用哪一個符號開頭？",
+    "options": [
+      "#",
+      "--",
+      "//",
+      "/*"
+    ],
+    "answer": 0,
+    "explanation": "Python 用 # 標示單行註解，# 之後到該行結尾的內容都不會被執行。",
+    "fun_fact": "Python 其實沒有真正的多行註解語法，大家常用三引號字串來代替。",
+    "region": "Python"
+  },
+  {
+    "id": "py-004",
+    "topic": "python",
+    "category": "語法",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "Python 使用「縮排」來區分程式區塊，而不是像 C 或 Java 那樣使用大括號 {}。",
+    "options": [
+      "對",
+      "錯"
+    ],
+    "answer": 0,
+    "explanation": "Python 以縮排決定程式區塊的層次，縮排錯誤會直接造成 IndentationError。",
+    "fun_fact": "官方風格指南 PEP 8 建議每層縮排使用 4 個空白，不要混用 Tab 與空白。",
+    "region": "Python"
+  },
+  {
+    "id": "py-005",
+    "topic": "python",
+    "category": "語法",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\nprint(int(\"12\") + 3)",
+    "options": [
+      "\"123\"",
+      "123",
+      "15",
+      "會出現 TypeError"
+    ],
+    "answer": 2,
+    "explanation": "int(\"12\") 先把字串轉成整數 12，再與 3 相加得到 15。",
+    "fun_fact": "int(\"12.5\") 反而會出錯，因為字串裡有小數點，要先用 float() 轉換。",
+    "region": "Python"
+  },
+  {
+    "id": "py-006",
+    "topic": "python",
+    "category": "語法",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\nprint(\"3\" + \"4\")",
+    "options": [
+      "7",
+      "34",
+      "7.0",
+      "會出現 TypeError"
+    ],
+    "answer": 1,
+    "explanation": "兩個都是字串時，+ 代表「字串串接」，所以結果是 \"34\" 而不是數字相加。",
+    "fun_fact": "如果寫成 \"3\" + 4 就會出現 TypeError，因為字串不能和整數相加。",
+    "region": "Python"
+  },
+  {
+    "id": "py-007",
+    "topic": "python",
+    "category": "語法",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\nprint(\"Python\"[1:4])",
+    "options": [
+      "Pyt",
+      "yt",
+      "yth",
+      "ytho"
+    ],
+    "answer": 2,
+    "explanation": "切片 [1:4] 取索引 1、2、3 的字元，包含起點但不含終點。",
+    "fun_fact": "字串在 Python 中也是序列，所以可以像串列一樣索引與切片。",
+    "region": "Python"
+  },
+  {
+    "id": "py-008",
+    "topic": "python",
+    "category": "語法",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "10 // 3 和 10 % 3 的結果分別是什麼？",
+    "options": [
+      "3.33 和 1",
+      "3 和 0",
+      "3 和 1",
+      "1 和 3"
+    ],
+    "answer": 2,
+    "explanation": "// 是整數除法（取商並向下取整），% 是取餘數，10 除以 3 商 3 餘 1。",
+    "fun_fact": "% 常用來判斷奇偶數：n % 2 == 0 就是偶數。",
+    "region": "Python"
+  },
+  {
+    "id": "py-009",
+    "topic": "python",
+    "category": "語法",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\nname = \"小明\"\nprint(f\"你好, {name}\")",
+    "options": [
+      "你好, 小明",
+      "你好, {name}",
+      "你好, f小明",
+      "你好, name"
+    ],
+    "answer": 0,
+    "explanation": "f-string 前面加上 f，字串中 {} 內的變數會被代換成它的值。",
+    "fun_fact": "f-string 從 Python 3.6 開始支援，也可以直接寫運算式，例如 f\"{2+3}\"。",
+    "region": "Python"
+  },
+  {
+    "id": "py-010",
+    "topic": "python",
+    "category": "語法",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\nprint(2 ** 3 ** 2)",
+    "options": [
+      "36",
+      "64",
+      "18",
+      "512"
+    ],
+    "answer": 3,
+    "explanation": "** 是右結合運算子，所以先算 3 ** 2 = 9，再算 2 ** 9 = 512。",
+    "fun_fact": "大部分運算子都是左結合，** 是少數的例外，想先算左邊要自己加括號。",
+    "region": "Python"
+  },
+  {
+    "id": "py-011",
+    "topic": "python",
+    "category": "資料結構",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\nx = [1, 2, 3]\nprint(x[-1])",
+    "options": [
+      "2",
+      "1",
+      "3",
+      "會出現 IndexError"
+    ],
+    "answer": 2,
+    "explanation": "負索引從尾端開始算，-1 代表最後一個元素，也就是 3。",
+    "fun_fact": "x[-2] 會拿到倒數第二個元素，這比寫 x[len(x)-2] 簡潔多了。",
+    "region": "Python"
+  },
+  {
+    "id": "py-012",
+    "topic": "python",
+    "category": "資料結構",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\nd = {\"a\": 1, \"b\": 2}\nprint(d[\"b\"])",
+    "options": [
+      "b",
+      "2",
+      "會出現 KeyError",
+      "1"
+    ],
+    "answer": 1,
+    "explanation": "字典用「鍵」取值，d[\"b\"] 會取出鍵 \"b\" 對應的值 2。",
+    "fun_fact": "怕鍵不存在時出錯，可以改用 d.get(\"b\", 0)，找不到就回傳預設值。",
+    "region": "Python"
+  },
+  {
+    "id": "py-013",
+    "topic": "python",
+    "category": "資料結構",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "元組（tuple）建立之後，就不能再修改裡面的元素。",
+    "options": [
+      "對",
+      "錯"
+    ],
+    "answer": 0,
+    "explanation": "元組是不可變（immutable）型別，對它的元素指派新值會引發 TypeError。",
+    "fun_fact": "正因為不可變，元組可以當字典的鍵，串列則不行。",
+    "region": "Python"
+  },
+  {
+    "id": "py-014",
+    "topic": "python",
+    "category": "資料結構",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "要把一個元素加到串列的最後面，應該使用哪一個方法？",
+    "options": [
+      "insert_last()",
+      "append()",
+      "add()",
+      "push()"
+    ],
+    "answer": 1,
+    "explanation": "串列使用 append() 在尾端新增一個元素；add() 是集合（set）的方法。",
+    "fun_fact": "要一次加入多個元素請用 extend()，它會把另一個序列攤平接上去。",
+    "region": "Python"
+  },
+  {
+    "id": "py-015",
+    "topic": "python",
+    "category": "資料結構",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\nx = [1, 2, 3, 4, 5]\nprint(x[1:4])",
+    "options": [
+      "[2, 3, 4]",
+      "[2, 3]",
+      "[2, 3, 4, 5]",
+      "[1, 2, 3, 4]"
+    ],
+    "answer": 0,
+    "explanation": "切片包含起始索引、不含結束索引，所以取到索引 1、2、3 的元素。",
+    "fun_fact": "x[:] 會複製整個串列，是初學者常用的淺層複製寫法。",
+    "region": "Python"
+  },
+  {
+    "id": "py-016",
+    "topic": "python",
+    "category": "資料結構",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\ns = {1, 2, 2, 3, 3, 3}\nprint(len(s))",
+    "options": [
+      "6",
+      "1",
+      "會出現 TypeError",
+      "3"
+    ],
+    "answer": 3,
+    "explanation": "集合（set）不允許重複元素，重複的值只會保留一個，因此長度是 3。",
+    "fun_fact": "把串列丟進 set() 是最快的去重方法，但順序不保證維持原樣。",
+    "region": "Python"
+  },
+  {
+    "id": "py-017",
+    "topic": "python",
+    "category": "資料結構",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\nx = [1, 2]\nx.append([3, 4])\nprint(x)",
+    "options": [
+      "[1, 2]",
+      "[[1, 2], [3, 4]]",
+      "[1, 2, [3, 4]]",
+      "[1, 2, 3, 4]"
+    ],
+    "answer": 2,
+    "explanation": "append() 是把「整個物件」當成一個元素接在尾端，所以串列裡多了一個子串列。",
+    "fun_fact": "想得到 [1, 2, 3, 4] 要改用 x.extend([3, 4]) 或 x += [3, 4]。",
+    "region": "Python"
+  },
+  {
+    "id": "py-018",
+    "topic": "python",
+    "category": "資料結構",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\na = [1, 2, 3]\nb = a\nb.append(4)\nprint(len(a))",
+    "options": [
+      "4",
+      "會出現 TypeError",
+      "3",
+      "1"
+    ],
+    "answer": 0,
+    "explanation": "b = a 只是讓 b 指向同一個串列物件，並沒有複製，所以改 b 等於改 a。",
+    "fun_fact": "要真正複製請用 b = a.copy() 或 b = a[:]，這是初學者最常踩的坑之一。",
+    "region": "Python"
+  },
+  {
+    "id": "py-019",
+    "topic": "python",
+    "category": "資料結構",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\nd = {\"a\": 1}\nd[\"b\"] = 2\nprint(list(d.keys()))",
+    "options": [
+      "[1, 2]",
+      "[('a', 1), ('b', 2)]",
+      "['b', 'a']",
+      "['a', 'b']"
+    ],
+    "answer": 3,
+    "explanation": "對不存在的鍵指派值等於新增一筆資料；從 Python 3.7 起字典會保留插入順序。",
+    "fun_fact": "d.items() 可以同時取出鍵與值，常搭配 for k, v in d.items() 使用。",
+    "region": "Python"
+  },
+  {
+    "id": "py-020",
+    "topic": "python",
+    "category": "流程",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\nfor i in range(3):\n    print(i, end=\" \")",
+    "options": [
+      "0 1 2",
+      "1 2",
+      "1 2 3",
+      "0 1 2 3"
+    ],
+    "answer": 0,
+    "explanation": "range(3) 會產生 0、1、2 三個數字，從 0 開始且不包含 3。",
+    "fun_fact": "print 的 end 參數可以改變結尾字元，預設是換行符號。",
+    "region": "Python"
+  },
+  {
+    "id": "py-021",
+    "topic": "python",
+    "category": "流程",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "range(1, 5) 產生的數字包含 5。",
+    "options": [
+      "對",
+      "錯"
+    ],
+    "answer": 1,
+    "explanation": "range 的區間是「包含起點、不含終點」，range(1, 5) 只會產生 1、2、3、4。",
+    "fun_fact": "想要包含 5，就得寫成 range(1, 6)，這種差一錯誤英文叫 off-by-one error。",
+    "region": "Python"
+  },
+  {
+    "id": "py-022",
+    "topic": "python",
+    "category": "流程",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\ndef f():\n    pass\n\nprint(f())",
+    "options": [
+      "pass",
+      "None",
+      "什麼都不會印出",
+      "0"
+    ],
+    "answer": 1,
+    "explanation": "函式若沒有 return 陳述句，呼叫後會回傳特殊值 None。",
+    "fun_fact": "pass 是佔位用的空陳述句，讓還沒寫好的函式或迴圈不會語法錯誤。",
+    "region": "Python"
+  },
+  {
+    "id": "py-023",
+    "topic": "python",
+    "category": "流程",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\nn = 3\nwhile n > 0:\n    n -= 1\nprint(n)",
+    "options": [
+      "會無限迴圈",
+      "0",
+      "1",
+      "3"
+    ],
+    "answer": 1,
+    "explanation": "每輪把 n 減 1，當 n 變成 0 時條件 n > 0 不成立，迴圈結束，最後印出 0。",
+    "fun_fact": "while 迴圈忘記更新條件變數，就會變成無限迴圈，可用 Ctrl+C 中斷。",
+    "region": "Python"
+  },
+  {
+    "id": "py-024",
+    "topic": "python",
+    "category": "流程",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\ndef greet(name=\"同學\"):\n    return \"你好, \" + name\n\nprint(greet())",
+    "options": [
+      "你好, name",
+      "會出現 TypeError",
+      "你好, ",
+      "你好, 同學"
+    ],
+    "answer": 3,
+    "explanation": "呼叫時沒有傳引數，參數 name 就會使用預設值 \"同學\"。",
+    "fun_fact": "預設值千萬不要用可變物件（例如 []），否則所有呼叫會共用同一個串列。",
+    "region": "Python"
+  },
+  {
+    "id": "py-025",
+    "topic": "python",
+    "category": "流程",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\nprint(list(range(2, 10, 3)))",
+    "options": [
+      "[2, 5, 8]",
+      "[2, 5, 8, 11]",
+      "[2, 4, 6, 8]",
+      "[3, 6, 9]"
+    ],
+    "answer": 0,
+    "explanation": "range(2, 10, 3) 從 2 開始每次加 3，在小於 10 的範圍內產生 2、5、8。",
+    "fun_fact": "第三個參數也可以是負數，range(5, 0, -1) 就會倒著數 5 到 1。",
+    "region": "Python"
+  },
+  {
+    "id": "py-026",
+    "topic": "python",
+    "category": "流程",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "關於 lambda 匿名函式，下列敘述何者正確？",
+    "options": [
+      "它只能寫一個運算式，該運算式的值就是回傳值",
+      "它必須用 return 明確寫出回傳值",
+      "它可以包含多行 if 與 for 陳述句",
+      "它不能接收任何參數"
+    ],
+    "answer": 0,
+    "explanation": "lambda 的本體只能是單一運算式，運算結果會自動當成回傳值，不需要寫 return。",
+    "fun_fact": "lambda 最常見的用途是當 sorted() 的 key，例如 sorted(data, key=lambda x: x[1])。",
+    "region": "Python"
+  },
+  {
+    "id": "py-027",
+    "topic": "python",
+    "category": "流程",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\nfor i in range(5):\n    if i == 2:\n        continue\n    print(i, end=\"\")",
+    "options": [
+      "01234",
+      "01",
+      "0134",
+      "234"
+    ],
+    "answer": 2,
+    "explanation": "continue 會跳過本輪剩下的程式碼、直接進入下一輪，所以只有 2 沒被印出來。",
+    "fun_fact": "break 則是直接離開整個迴圈，兩者常被初學者搞混。",
+    "region": "Python"
+  },
+  {
+    "id": "py-028",
+    "topic": "python",
+    "category": "輸出",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\nx = 5\nx += 3\nprint(x)",
+    "options": [
+      "8",
+      "5",
+      "53",
+      "3"
+    ],
+    "answer": 0,
+    "explanation": "x += 3 等同於 x = x + 3，所以 x 從 5 變成 8。",
+    "fun_fact": "Python 沒有 x++ 這種寫法，要累加只能用 x += 1。",
+    "region": "Python"
+  },
+  {
+    "id": "py-029",
+    "topic": "python",
+    "category": "輸出",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\nprint(\"Hello\" * 3)",
+    "options": [
+      "Hello3",
+      "會出現 TypeError",
+      "HelloHelloHello",
+      "Hello Hello Hello"
+    ],
+    "answer": 2,
+    "explanation": "字串乘以整數代表「重複」該字串指定次數，中間不會自動加空白。",
+    "fun_fact": "同樣的技巧也能用在串列上：[0] * 5 會得到五個 0 的串列。",
+    "region": "Python"
+  },
+  {
+    "id": "py-030",
+    "topic": "python",
+    "category": "輸出",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\nwords = [\"a\", \"b\", \"c\"]\nprint(\"-\".join(words))",
+    "options": [
+      "a-b-c-",
+      "abc",
+      "a-b-c",
+      "['a', 'b', 'c']"
+    ],
+    "answer": 2,
+    "explanation": "join() 由分隔字串呼叫，把序列中的元素用該分隔字串連接起來。",
+    "fun_fact": "join 只能連接字串元素，遇到數字要先用 map(str, nums) 轉換。",
+    "region": "Python"
+  },
+  {
+    "id": "py-031",
+    "topic": "python",
+    "category": "輸出",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "這段程式在 Python 3 會印出什麼？\n\nx = [1, 2, 3]\nprint(sum(x) / len(x))",
+    "options": [
+      "2.0",
+      "2",
+      "6",
+      "3"
+    ],
+    "answer": 0,
+    "explanation": "sum(x) 是 6、len(x) 是 3，用 / 相除得到浮點數 2.0 而非整數 2。",
+    "fun_fact": "statistics 模組其實內建 mean() 函式，可以直接算平均數。",
+    "region": "Python"
+  },
+  {
+    "id": "py-032",
+    "topic": "python",
+    "category": "輸出",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\ns = \"Hello World\"\nprint(s.upper().count(\"L\"))",
+    "options": [
+      "1",
+      "3",
+      "2",
+      "0"
+    ],
+    "answer": 1,
+    "explanation": "先用 upper() 把字串全轉大寫成 \"HELLO WORLD\"，其中大寫 L 共出現 3 次。",
+    "fun_fact": "字串方法可以像這樣一路串接呼叫，因為每個方法都回傳新的字串。",
+    "region": "Python"
+  },
+  {
+    "id": "py-033",
+    "topic": "python",
+    "category": "輸出",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\nprint(bool(0), bool(\"\"), bool([1]))",
+    "options": [
+      "False False True",
+      "0 \"\" [1]",
+      "False False False",
+      "True True True"
+    ],
+    "answer": 0,
+    "explanation": "數字 0、空字串、空容器的布林值都是 False，非空容器則是 True。",
+    "fun_fact": "這種特性叫 truthiness，所以判斷串列非空時直接寫 if items: 就夠了。",
+    "region": "Python"
+  },
+  {
+    "id": "py-034",
+    "topic": "python",
+    "category": "輸出",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\na = [1, 2, 3]\nprint(a[::-1])",
+    "options": [
+      "[3]",
+      "[1, 2, 3]",
+      "[-1, -2, -3]",
+      "[3, 2, 1]"
+    ],
+    "answer": 3,
+    "explanation": "切片的第三個參數是間隔，-1 代表由後往前取，因此得到反轉後的串列。",
+    "fun_fact": "字串也適用這招，\"abc\"[::-1] 會得到 \"cba\"，是常見的回文判斷寫法。",
+    "region": "Python"
+  },
+  {
+    "id": "py-035",
+    "topic": "python",
+    "category": "輸出",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "這段程式會印出什麼？\n\ndef f(n):\n    if n <= 1:\n        return 1\n    return n * f(n - 1)\n\nprint(f(4))",
+    "options": [
+      "會無限遞迴",
+      "10",
+      "4",
+      "24"
+    ],
+    "answer": 3,
+    "explanation": "這是階乘的遞迴寫法，f(4) = 4 × 3 × 2 × 1 = 24。",
+    "fun_fact": "Python 預設遞迴深度上限約 1000 層，太深會引發 RecursionError。",
+    "region": "Python"
+  },
+  {
+    "id": "py-036",
+    "topic": "python",
+    "category": "除錯",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "執行下面這行程式，會出現哪一種例外？\n\nprint(\"3\" + 5)",
+    "options": [
+      "TypeError",
+      "NameError",
+      "ValueError",
+      "SyntaxError"
+    ],
+    "answer": 0,
+    "explanation": "字串與整數不能用 + 相加，型別不相容時 Python 會引發 TypeError。",
+    "fun_fact": "修正方式是 \"3\" + str(5) 或 int(\"3\") + 5，要先統一型別。",
+    "region": "Python"
+  },
+  {
+    "id": "py-037",
+    "topic": "python",
+    "category": "除錯",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "執行這段程式，會出現哪一種例外？\n\nx = [1, 2, 3]\nprint(x[3])",
+    "options": [
+      "IndexError",
+      "ValueError",
+      "TypeError",
+      "KeyError"
+    ],
+    "answer": 0,
+    "explanation": "串列索引從 0 開始，三個元素的合法索引只有 0、1、2，索引 3 超出範圍。",
+    "fun_fact": "用 for item in x 走訪串列就不必自己算索引，也不會踩到這個錯誤。",
+    "region": "Python"
+  },
+  {
+    "id": "py-038",
+    "topic": "python",
+    "category": "除錯",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "執行這段程式，會出現哪一種例外？\n\nd = {\"a\": 1}\nprint(d[\"b\"])",
+    "options": [
+      "NameError",
+      "AttributeError",
+      "KeyError",
+      "IndexError"
+    ],
+    "answer": 2,
+    "explanation": "用中括號取值時若字典裡沒有那個鍵，就會引發 KeyError。",
+    "fun_fact": "想避開它可以先用 if \"b\" in d 判斷，或改用 d.get(\"b\")。",
+    "region": "Python"
+  },
+  {
+    "id": "py-039",
+    "topic": "python",
+    "category": "除錯",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "在 Python 中執行 10 / 0 會引發 ZeroDivisionError。",
+    "options": [
+      "對",
+      "錯"
+    ],
+    "answer": 0,
+    "explanation": "任何數除以 0 在數學上沒有定義，Python 會直接引發 ZeroDivisionError。",
+    "fun_fact": "10 % 0 和 10 // 0 也一樣會出錯，但浮點數 float(\"inf\") 是合法的無限大。",
+    "region": "Python"
+  },
+  {
+    "id": "py-040",
+    "topic": "python",
+    "category": "除錯",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "執行這段程式，會出現哪一種例外？\n\ndef show():\n    print(total)\n\nshow()",
+    "options": [
+      "SyntaxError",
+      "TypeError",
+      "IndentationError",
+      "NameError"
+    ],
+    "answer": 3,
+    "explanation": "函式裡使用了從未定義的名稱 total，執行到那一行時會引發 NameError。",
+    "fun_fact": "拼錯變數名稱是 NameError 最常見的原因，仔細看錯誤訊息通常就能發現。",
+    "region": "Python"
+  },
+  {
+    "id": "py-041",
+    "topic": "python",
+    "category": "生態系",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "要從網路安裝第三方套件（例如 requests），最常用的指令是什麼？",
+    "options": [
+      "python install requests",
+      "pip install requests",
+      "import install requests",
+      "requests --setup"
+    ],
+    "answer": 1,
+    "explanation": "pip 是 Python 官方推薦的套件管理工具，pip install 套件名稱 會從 PyPI 下載並安裝。",
+    "fun_fact": "PyPI 上的專案已超過八十萬個，取名時記得先查有沒有撞名。",
+    "region": "Python"
+  },
+  {
+    "id": "py-042",
+    "topic": "python",
+    "category": "生態系",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "下列「套件與主要用途」的配對，哪一個是正確的？",
+    "options": [
+      "pandas — 訓練深度學習模型",
+      "matplotlib — 繪製圖表",
+      "requests — 數值陣列運算",
+      "NumPy — 發送 HTTP 請求"
+    ],
+    "answer": 1,
+    "explanation": "matplotlib 是最常見的繪圖套件；NumPy 負責數值陣列、requests 負責 HTTP、pandas 負責表格資料。",
+    "fun_fact": "matplotlib 的介面刻意模仿 MATLAB，所以許多函式名稱看起來很眼熟。",
+    "region": "Python"
+  },
+  {
+    "id": "py-043",
+    "topic": "python",
+    "category": "生態系",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "下列哪一個套件主要用來建立與訓練深度學習模型？",
+    "options": [
+      "pandas",
+      "PyTorch",
+      "matplotlib",
+      "requests"
+    ],
+    "answer": 1,
+    "explanation": "PyTorch 是深度學習框架，提供張量運算與自動微分；另外三者各有不同用途。",
+    "fun_fact": "PyTorch 最初由 Meta（原 Facebook）的 AI 研究團隊開發，2022 年起交由 Linux 基金會旗下的 PyTorch Foundation 維護。",
+    "region": "Python"
+  },
+  {
+    "id": "py-044",
+    "topic": "python",
+    "category": "生態系",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "Python 這個名字來自英國喜劇團體 Monty Python，而不是蟒蛇。",
+    "options": [
+      "對",
+      "錯"
+    ],
+    "answer": 0,
+    "explanation": "作者 Guido van Rossum 當時正在讀《Monty Python's Flying Circus》的劇本，想找一個簡短、獨特又帶點神祕感的名字，就採用了 Python。",
+    "fun_fact": "受此影響，Python 文件與教學常用 spam 和 eggs 當範例變數名稱。",
+    "region": "Python"
+  },
+  {
+    "id": "py-045",
+    "topic": "python",
+    "category": "生態系",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "使用虛擬環境（venv）最主要的目的是什麼？",
+    "options": [
+      "讓 Python 程式的執行速度變快",
+      "讓不同專案各自擁有獨立的套件版本，避免互相衝突",
+      "把 Python 程式打包成 .exe 執行檔",
+      "自動幫程式碼修正語法錯誤"
+    ],
+    "answer": 1,
+    "explanation": "虛擬環境會建立獨立的套件安裝目錄，讓 A 專案用舊版、B 專案用新版也不會打架。",
+    "fun_fact": "建立指令是 python -m venv venv，啟用後提示字元前面會出現環境名稱。",
+    "region": "Python"
+  }
+]

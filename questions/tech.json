@@ -1,0 +1,821 @@
+[
+  {
+    "id": "tc-001",
+    "topic": "tech",
+    "category": "電腦",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "電腦突然斷電時，下列哪一個地方還沒存檔的資料會直接消失？",
+    "options": [
+      "SSD 固態硬碟",
+      "RAM（主記憶體）",
+      "傳統機械硬碟",
+      "USB 隨身碟"
+    ],
+    "answer": 1,
+    "explanation": "RAM 是「揮發性記憶體」，必須持續供電才能保住資料；硬碟與隨身碟則是非揮發性的，斷電後資料仍在。",
+    "fun_fact": "所以打報告打到一半跳電會欲哭無淚——因為內容還躺在 RAM 裡，沒被寫進硬碟。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-002",
+    "topic": "tech",
+    "category": "電腦",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "電腦世界裡，1 個位元組（byte）等於幾個位元（bit）？",
+    "options": [
+      "4 個",
+      "1024 個",
+      "16 個",
+      "8 個"
+    ],
+    "answer": 3,
+    "explanation": "1 byte = 8 bit。位元是 0 與 1 的最小單位，8 個位元組成一個位元組，剛好可以表示 0 到 255 共 256 種數值。",
+    "fun_fact": "網路速度常寫成「100 Mbps」，那個小寫 b 是 bit 不是 byte，所以實際下載速度大約只有 12.5 MB/s。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-003",
+    "topic": "tech",
+    "category": "電腦",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "下列哪一個「不是」作業系統？",
+    "options": [
+      "Adobe Photoshop",
+      "Ubuntu",
+      "Android",
+      "macOS"
+    ],
+    "answer": 0,
+    "explanation": "Photoshop 是跑在作業系統上的應用軟體；macOS、Android、Ubuntu 都是作業系統。",
+    "fun_fact": "作業系統的工作是管理硬體與分配資源，就像餐廳的內場經理，應用軟體則是客人點的菜。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-004",
+    "topic": "tech",
+    "category": "電腦",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "網域名稱結尾是「.edu.tw」，通常代表這是什麼單位的網站？",
+    "options": [
+      "台灣的公司行號",
+      "台灣的教育機構（學校）",
+      "台灣的政府機關",
+      "台灣的民間社團組織"
+    ],
+    "answer": 1,
+    "explanation": "在台灣的網域分類中，.edu.tw 給教育機構、.gov.tw 給政府機關、.com.tw 給公司、.org.tw 給民間組織。",
+    "fun_fact": "最後的 .tw 叫「國碼頂級網域」，是依國際標準分配給台灣的代碼。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-005",
+    "topic": "tech",
+    "category": "電腦",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "把照片上傳到「雲端硬碟」之後，檔案實際上存放在哪裡？",
+    "options": [
+      "漂浮在大氣層的資料衛星上",
+      "網際網路路由器的暫存空間",
+      "你手機裡的一塊隱藏分割區",
+      "服務業者資料中心裡的實體伺服器硬碟"
+    ],
+    "answer": 3,
+    "explanation": "所謂「雲端」其實就是別人家的電腦——業者蓋在世界各地的資料中心，裡面滿滿都是實體伺服器和硬碟。",
+    "fun_fact": "資料中心最大的開銷之一是冷氣，有些業者乾脆把機房蓋在北歐，或直接沉到海底散熱。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-006",
+    "topic": "tech",
+    "category": "電腦",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "二進位的「1011」換算成十進位是多少？",
+    "options": [
+      "13",
+      "11",
+      "15",
+      "9"
+    ],
+    "answer": 1,
+    "explanation": "由右至左各位數代表 1、2、4、8：1011 = 8 + 0 + 2 + 1 = 11。",
+    "fun_fact": "工程師的冷笑話：「世界上有 10 種人，懂二進位的和不懂的。」這裡的 10 就是二進位的 2。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-007",
+    "topic": "tech",
+    "category": "電腦",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "下列哪一種常見圖片格式屬於「有失真壓縮」，每重新存檔一次畫質就會再差一點？",
+    "options": [
+      "BMP",
+      "GIF",
+      "JPEG",
+      "PNG"
+    ],
+    "answer": 2,
+    "explanation": "JPEG 靠丟掉人眼較不敏感的細節來縮小檔案，屬於有失真壓縮；PNG 與 GIF 是無失真壓縮，BMP 則幾乎不壓縮。",
+    "fun_fact": "網路迷因圖之所以糊到像被洗過，就是因為被反覆下載、截圖、再存成 JPEG，俗稱「JPEG 化」。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-008",
+    "topic": "tech",
+    "category": "電腦",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "家裡的 Wi-Fi 路由器常配給手機、筆電像「192.168.0.5」這樣的位址，這類位址稱為什麼？",
+    "options": [
+      "DNS 位址",
+      "私有 IP 位址",
+      "公有 IP 位址",
+      "MAC 位址"
+    ],
+    "answer": 1,
+    "explanation": "192.168 開頭的位址是保留給區域網路使用的私有 IP，只在你家網路內有效，外面的人無法直接連到它。",
+    "fun_fact": "全家的裝置對外其實共用同一個公有 IP，由路由器負責轉換，這個機制叫 NAT（網路位址轉譯）。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-009",
+    "topic": "tech",
+    "category": "電腦",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "「Wi-Fi」這個名字是「Wireless Fidelity（無線保真）」的英文縮寫。",
+    "options": [
+      "對",
+      "錯"
+    ],
+    "answer": 1,
+    "explanation": "假的！Wi-Fi 純粹是 Wi-Fi 聯盟找品牌顧問公司 Interbrand 想出來的商標名稱，本身不代表任何字。當年是為了取代拗口的技術規格名「IEEE 802.11b Direct Sequence」。",
+    "fun_fact": "聯盟創始成員 Belanger 說，「Wireless Fidelity」是同事事後硬加上去的標語，因為大家不好意思承認這名字根本沒有意思——他形容那是個「錯誤」。",
+    "source": "https://www.techradar.com/news/we-finally-know-what-wi-fi-stands-for-and-its-not-what-you-think",
+    "region": "科技"
+  },
+  {
+    "id": "tc-010",
+    "topic": "tech",
+    "category": "電腦",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "無線傳輸技術「Bluetooth（藍牙）」這個名字是怎麼來的？",
+    "options": [
+      "取自十世紀統一丹麥與挪威的國王 Harald「藍牙」Gormsson",
+      "因為發明人的女兒小名叫 Blue",
+      "因為訊號在示波器上會顯示成藍色鋸齒波",
+      "因為早期的藍牙晶片外殼一律漆成藍色"
+    ],
+    "answer": 0,
+    "explanation": "1990 年代 Intel、Ericsson 與 Nokia 合作制定這套規格時，借用了維京國王 Harald Bluetooth 的名號——他統一了丹麥與挪威，象徵把各家不同的裝置「統一」起來。",
+    "fun_fact": "藍牙的圖示其實是北歐符文 ᚼ（H）和 ᛒ（B）疊在一起，正是 Harald Bluetooth 的姓名縮寫；「藍牙」的綽號則來自他那顆變成深藍灰色的死牙。",
+    "source": "https://www.bluetooth.com/about-us/bluetooth-origin/",
+    "region": "科技"
+  },
+  {
+    "id": "tc-011",
+    "topic": "tech",
+    "category": "歷史",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "二戰期間在英國布萊切利園帶領團隊破解德軍 Enigma 密碼機、被譽為「電腦科學之父」的數學家是誰？",
+    "options": [
+      "克勞德·夏農（Claude Shannon）",
+      "諾伯特·維納（Norbert Wiener）",
+      "艾倫·圖靈（Alan Turing）",
+      "查爾斯·巴貝奇（Charles Babbage）"
+    ],
+    "answer": 2,
+    "explanation": "圖靈設計的解密機器大幅加快 Enigma 的破譯速度，一般認為讓二戰提早結束；他也提出了「圖靈機」這個計算理論的基礎模型。",
+    "fun_fact": "他在 1950 年提出著名的「圖靈測試」：如果人類在純文字對話中分不出對方是人還是機器，那就可以說這台機器「會思考」。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-012",
+    "topic": "tech",
+    "category": "歷史",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "現代電腦「把程式和資料一起放在同一個記憶體裡」的基本設計，一般稱為什麼架構？",
+    "options": [
+      "巴貝奇架構",
+      "圖靈架構",
+      "馮紐曼架構",
+      "香農架構"
+    ],
+    "answer": 2,
+    "explanation": "馮紐曼（John von Neumann）提出的「儲存程式」概念，讓電腦不必重接線路就能換工作，只要載入不同程式即可，這是通用電腦的關鍵。",
+    "fun_fact": "因為 CPU 讀指令和讀資料要共用同一條通道，速度容易卡住，這個先天限制被戲稱為「馮紐曼瓶頸」。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-013",
+    "topic": "tech",
+    "category": "歷史",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "1946 年公開亮相、一般被視為第一部通用電子數位計算機的機器是？",
+    "options": [
+      "IBM PC",
+      "Apple I",
+      "ENIAC",
+      "Altair 8800"
+    ],
+    "answer": 2,
+    "explanation": "ENIAC 由賓州大學建造，用了約 1.8 萬支真空管，重達 27 公噸，佔滿整個房間。Apple I（1976）、Altair 8800（1975）、IBM PC（1981）都晚了三十年以上。",
+    "fun_fact": "ENIAC 最早的六位程式設計師全是女性數學家，但當年的宣傳照片幾乎不提她們的名字，直到近幾十年才被重新肯定。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-014",
+    "topic": "tech",
+    "category": "歷史",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "1991 年寫出 Linux 作業系統核心、當時還是芬蘭赫爾辛基大學學生的人是誰？",
+    "options": [
+      "Richard Stallman",
+      "Linus Torvalds",
+      "Steve Wozniak",
+      "Bill Gates"
+    ],
+    "answer": 1,
+    "explanation": "Torvalds 在 1991 年 8 月把作品貼上 Usenet 新聞群組，謙虛地說這「只是個興趣，不會像 GNU 那樣又大又專業」。",
+    "fun_fact": "結果這個「興趣」如今跑在絕大多數的雲端伺服器、所有 Android 手機和超級電腦上；吉祥物企鵝 Tux 的靈感據說來自他被企鵝咬了一口。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-015",
+    "topic": "tech",
+    "category": "歷史",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "1964 年在 SRI 誕生的第一個滑鼠原型，外殼是用什麼材質做的？",
+    "options": [
+      "木頭（紅木）",
+      "鋁合金",
+      "玻璃",
+      "陶瓷"
+    ],
+    "answer": 0,
+    "explanation": "由 Douglas Engelbart 構想、工程師 Bill English 打造的第一個滑鼠，外殼是 SRI 機工房用紅木削出來的，底下只有兩個互相垂直的滾輪。",
+    "fun_fact": "據 Engelbart 回憶，因為電線從尾端拉出來像老鼠尾巴，大家就順口叫它 mouse，至於是誰先這樣叫的，已經沒人記得了。",
+    "source": "https://computerhistory.org/sri-mouse-mn052024/",
+    "region": "科技"
+  },
+  {
+    "id": "tc-016",
+    "topic": "tech",
+    "category": "歷史",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "1971 年 Ray Tomlinson 送出第一封跨電腦的網路電子郵件，他選用的「@」符號是用來做什麼的？",
+    "options": [
+      "標示信件已經加密",
+      "表示這封信是緊急信件",
+      "分隔使用者名稱與他所在的電腦主機",
+      "代表寄件時間的時區"
+    ],
+    "answer": 2,
+    "explanation": "Tomlinson 需要一個絕對不會出現在人名裡的符號，來寫出「使用者@主機」這種位址格式，鍵盤上的 @ 剛好符合，這個寫法就沿用至今。",
+    "fun_fact": "@ 在各國有各種可愛綽號：義大利叫「蝸牛」、荷蘭叫「猴子尾巴」、丹麥叫「大象鼻子」、希臘叫「小鴨子」。",
+    "source": "https://www.internethalloffame.org/official-biography-raymond-tomlinson/",
+    "region": "科技"
+  },
+  {
+    "id": "tc-017",
+    "topic": "tech",
+    "category": "歷史",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "全球資訊網（World Wide Web）是 Tim Berners-Lee 在 1989 年於哪個機構工作時提出的構想？",
+    "options": [
+      "美國國防部先進研究計畫署（DARPA）",
+      "美國國家航空暨太空總署（NASA）",
+      "美國麻省理工學院（MIT）",
+      "歐洲核子研究組織（CERN）"
+    ],
+    "answer": 3,
+    "explanation": "Berners-Lee 當時在 CERN 服務，為了解決各國研究人員之間資料難以共享的問題，提出用超連結串起文件的構想，並寫出 HTML、HTTP 與第一個瀏覽器。",
+    "fun_fact": "1993 年 CERN 宣布放棄全球資訊網的所有權利、讓它永久免費公開，這個決定被認為是網路得以爆炸成長的關鍵。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-018",
+    "topic": "tech",
+    "category": "歷史",
+    "difficulty": 2,
+    "type": "order",
+    "question": "請把下列資訊科技的里程碑依發生時間先後排列：",
+    "options": [
+      "全球資訊網構想提出",
+      "第一個滑鼠原型問世",
+      "第一封跨電腦的網路電子郵件",
+      "ENIAC 公開亮相"
+    ],
+    "answer": [
+      3,
+      1,
+      2,
+      0
+    ],
+    "explanation": "ENIAC 公開（1946）→ 第一個滑鼠原型（1964）→ 第一封網路電子郵件（1971）→ 全球資訊網構想提出（1989）。",
+    "fun_fact": "從佔滿一整個房間的 ENIAC 到全球資訊網，中間只隔了 43 年，比很多人的爸媽還年輕。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-019",
+    "topic": "tech",
+    "category": "歷史",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "自由軟體的 GPL 授權有個核心規定叫「copyleft」，它的意思是什麼？",
+    "options": [
+      "修改之後必須把著作權轉讓給自由軟體基金會",
+      "你可以自由修改、散布，但散布出去的版本也必須用同樣的開源授權",
+      "程式碼只能自己用，完全不得用於商業用途",
+      "所有使用者都必須付一筆授權費給原作者"
+    ],
+    "answer": 1,
+    "explanation": "copyleft 是把著作權「反過來用」：不是拿來禁止散布，而是用來保證自由不會在下一手被收回，所以衍生作品也得繼續開源。",
+    "fun_fact": "copyleft 這個字是對 copyright 的雙關玩笑，連符號都把 © 左右翻轉寫成 ↄ。GPL 完全允許商業使用，Linux 就是靠它養活了一整個產業。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-020",
+    "topic": "tech",
+    "category": "歷史",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "蘋果公司（Apple）最早其實有三位共同創辦人，其中一位在公司成立後不到兩週就賣掉自己的股份離開了。",
+    "options": [
+      "對",
+      "錯"
+    ],
+    "answer": 0,
+    "explanation": "真的！1976 年蘋果由 Steve Jobs、Steve Wozniak 和 Ronald Wayne 三人創立，Wayne 持有一成股份，但擔心要承擔公司債務的風險，不到兩週就以 800 美元把股份賣回給另外兩人。",
+    "fun_fact": "Wayne 本人多次公開表示不後悔，說自己當年做的是「當下最合理的決定」，而且他也畫了蘋果最早那個牛頓坐在蘋果樹下的公司標誌。",
+    "source": "https://www.cnbc.com/2018/08/02/why-ronald-wayne-sold-his-10-percent-stake-in-apple-for-800-dollars.html",
+    "region": "科技"
+  },
+  {
+    "id": "tc-021",
+    "topic": "tech",
+    "category": "軟體",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "程式語言 Python 的名字是從哪裡來的？",
+    "options": [
+      "創造者養的一條寵物蛇",
+      "英國喜劇團體「Monty Python（蒙提·派森）」",
+      "蟒蛇，因為程式碼像蛇一樣蜿蜒",
+      "希臘神話中被阿波羅殺死的巨蟒"
+    ],
+    "answer": 1,
+    "explanation": "根據 Python 官方文件，作者 Guido van Rossum 動手開發時正在讀 BBC 喜劇《Monty Python's Flying Circus》的劇本，他想要一個「簡短、獨特、又有點神祕」的名字，就這麼定了。",
+    "fun_fact": "官方 FAQ 還俏皮地問：「我一定要喜歡 Monty Python 嗎？」答案是：「不用，但會有幫助。:)」",
+    "source": "https://docs.python.org/3/faq/general.html",
+    "region": "科技"
+  },
+  {
+    "id": "tc-022",
+    "topic": "tech",
+    "category": "軟體",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "程式設計師常用的工具「Git」主要是拿來做什麼的？",
+    "options": [
+      "把原始碼翻譯成機器碼的編譯器",
+      "把檔案壓縮成更小的壓縮檔",
+      "版本控制：記錄程式碼每次修改，隨時能回到舊版本",
+      "掃描並清除程式裡的電腦病毒"
+    ],
+    "answer": 2,
+    "explanation": "Git 是分散式版本控制系統，會記錄每一次修改是誰、什麼時候、改了哪幾行，讓多人協作不會互相覆蓋，出錯還能回溯。",
+    "fun_fact": "Git 是 Linux 之父 Linus Torvalds 在 2005 年親手打造的，因為他原本用的版本控制工具突然不給 Linux 社群免費使用了——短短幾天內他就做出了第一個能用的版本。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-023",
+    "topic": "tech",
+    "category": "軟體",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "「JavaScript」和「Java」這兩個語言是什麼關係？",
+    "options": [
+      "兩者是各自獨立的語言，當年取這個名字主要是為了搭 Java 的熱潮",
+      "JavaScript 是 Java 的簡化版，語法完全相容",
+      "JavaScript 是 Java 專門用在網頁上的官方版本",
+      "JavaScript 是後來才推出的 Java 第二代"
+    ],
+    "answer": 0,
+    "explanation": "JavaScript 由 Netscape 在 1995 年推出，原本叫 LiveScript，因為當時 Java 正紅，行銷考量才改成 JavaScript，兩者的設計與用途其實大不相同。",
+    "fun_fact": "程式圈有個經典比喻：Java 和 JavaScript 的關係，就像「車」和「車厘子」——名字很像，完全兩回事。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-024",
+    "topic": "tech",
+    "category": "軟體",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "「編譯式語言」和「直譯式語言」最主要的差別是什麼？",
+    "options": [
+      "直譯式語言寫出來的程式一定比較安全，不會有漏洞",
+      "編譯式先把整份原始碼翻成機器碼再執行；直譯式則是執行時一行一行邊翻譯邊跑",
+      "編譯式語言只能在 Windows 執行，直譯式語言只能在 Linux 執行",
+      "編譯式語言不必寫原始碼，畫流程圖就能直接產生程式"
+    ],
+    "answer": 1,
+    "explanation": "編譯（如 C、Go）先整份翻譯、產生執行檔，跑起來通常比較快；直譯（如 Python）邊翻邊跑，改完馬上能測試，開發比較靈活。",
+    "fun_fact": "現在界線已經模糊：Java 先編譯成中介的位元組碼再由虛擬機執行，很多直譯器也會用 JIT 在執行中即時編譯熱點程式碼。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-025",
+    "topic": "tech",
+    "category": "軟體",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "Git 和 GitHub 其實是同一個東西，一定要註冊 GitHub 帳號才能使用 Git。",
+    "options": [
+      "對",
+      "錯"
+    ],
+    "answer": 1,
+    "explanation": "假的！Git 是安裝在自己電腦上的版本控制工具，完全離線也能用；GitHub 只是一家提供 Git 遠端代管服務的網站，同類型的還有 GitLab、Bitbucket 等。",
+    "fun_fact": "GitHub 的吉祥物是一隻章魚貓「Octocat」，牠有貓的臉配上章魚的觸手，已經衍生出上百種造型。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-026",
+    "topic": "tech",
+    "category": "軟體",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "1947 年哈佛 Mark II 電腦故障，工程師在繼電器裡找到一隻昆蟲，把牠貼進日誌本並寫下「第一次真正抓到 bug」。那是什麼昆蟲？",
+    "options": [
+      "蟑螂",
+      "螞蟻",
+      "飛蛾",
+      "獨角仙"
+    ],
+    "answer": 2,
+    "explanation": "那是一隻卡在繼電器裡的飛蛾。要注意的是，工程師早在 1870 年代（愛迪生的年代）就用 bug 形容機器的小毛病，所以這次不是「發明」這個字，而是第一次真的抓到一隻蟲。",
+    "fun_fact": "那本日誌連同那隻飛蛾至今收藏在美國史密森尼國家美國歷史博物館；當年 Mark II 團隊中的 Grace Hopper 很愛講這個故事，讓它變得家喻戶曉。",
+    "source": "https://americanhistory.si.edu/collections/object/nmah_334663",
+    "region": "科技"
+  },
+  {
+    "id": "tc-027",
+    "topic": "tech",
+    "category": "軟體",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "同樣是開源授權，下列哪一種最寬鬆——只要保留原作者的版權宣告，就能拿去修改成閉源的商業產品？",
+    "options": [
+      "CC BY-SA 授權",
+      "GPL 授權",
+      "AGPL 授權",
+      "MIT 授權"
+    ],
+    "answer": 3,
+    "explanation": "MIT 屬於「寬鬆式（permissive）」授權，幾乎只要求保留版權與免責聲明；GPL 與 AGPL 都是 copyleft，衍生作品必須繼續開源，CC BY-SA 也要求「相同方式分享」。",
+    "fun_fact": "正因為限制少，MIT 是 GitHub 上最常見的授權之一，React、Vue、jQuery 等知名專案都採用它。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-028",
+    "topic": "tech",
+    "category": "軟體",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "下列四個程式語言，哪一個誕生得最早？",
+    "options": [
+      "Fortran",
+      "Python",
+      "C",
+      "Java"
+    ],
+    "answer": 0,
+    "explanation": "Fortran 誕生於 1950 年代（1957 年釋出第一版編譯器），C 是 1970 年代初，Python 於 1991 年公開，Java 則是 1995 年。",
+    "fun_fact": "Fortran 專為科學與工程運算而生，將近七十年後的今天，許多氣象預報與物理模擬的核心程式仍然是 Fortran 寫的。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-029",
+    "topic": "tech",
+    "category": "AI",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "深度學習是機器學習的一種，而機器學習又是人工智慧底下的一個分支。",
+    "options": [
+      "對",
+      "錯"
+    ],
+    "answer": 0,
+    "explanation": "真的！三者是層層包含的關係：人工智慧範圍最大，機器學習是其中「讓機器從資料中自己學規則」的做法，深度學習則是機器學習裡使用多層類神經網路的分支。",
+    "fun_fact": "早期的人工智慧多半是人工寫死的規則（專家系統），跟「從資料學習」完全是兩條路線。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-030",
+    "topic": "tech",
+    "category": "AI",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "1997 年擊敗西洋棋世界冠軍卡斯帕洛夫的 IBM 超級電腦，名字叫什麼？",
+    "options": [
+      "大藍（Big Blue）",
+      "藍色基因（Blue Gene）",
+      "華生（Watson）",
+      "深藍（Deep Blue）"
+    ],
+    "answer": 3,
+    "explanation": "深藍在 1997 年的六局對戰中以 3.5 比 2.5 擊敗世界冠軍卡斯帕洛夫，是電腦首次在正式比賽中擊敗在位的西洋棋世界冠軍。",
+    "fun_fact": "深藍靠的是超高速搜尋與人工調校的評估函式，和今天從資料自己學棋的 AI 是完全不同的思路。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-031",
+    "topic": "tech",
+    "category": "AI",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "2016 年 AlphaGo 以 4 比 1 擊敗南韓棋王李世乭，他們下的是什麼棋？",
+    "options": [
+      "日本將棋",
+      "象棋",
+      "圍棋",
+      "西洋棋"
+    ],
+    "answer": 2,
+    "explanation": "AlphaGo 由 DeepMind 開發，2016 年 3 月在首爾擊敗世界頂尖棋士李世乭。圍棋的變化數量遠超過西洋棋，過去被認為電腦還要很多年才能攻克。",
+    "fun_fact": "第二局那手「第 37 手」當下被解說員認為是失誤，事後卻證明是妙手，讓不少職業棋士開始重新研究圍棋的定石。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-032",
+    "topic": "tech",
+    "category": "AI",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "訓練一個類神經網路時，電腦實際上是在反覆調整什麼？",
+    "options": [
+      "程式碼的行數與註解內容",
+      "訓練圖片的解析度與色彩飽和度",
+      "CPU 的時脈與散熱風扇的轉速",
+      "神經元之間連結的「權重」，也就是模型的參數"
+    ],
+    "answer": 3,
+    "explanation": "訓練就是不斷比對模型的輸出和正確答案，再依誤差微調每條連結的權重，讓下一次猜得更準，這個調整過程的核心演算法叫反向傳播。",
+    "fun_fact": "所謂「模型有多少參數」，指的就是這些權重的數量；模型檔案本質上是一大包數字，沒有任何一行寫著「這是貓」。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-033",
+    "topic": "tech",
+    "category": "AI",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "模型訓練完成後，拿它來回答問題、產生結果的這個階段，在 AI 領域稱為什麼？",
+    "options": [
+      "推論（inference）",
+      "除錯（debugging）",
+      "編譯（compile）",
+      "訓練（training）"
+    ],
+    "answer": 0,
+    "explanation": "訓練是「學」，推論是「用」。訓練通常要大量運算資源、跑上數週；推論則是每次使用時即時執行，成本低得多。",
+    "fun_fact": "這也是為什麼 AI 服務的費用多半是按使用量計價——你付的是推論的錢，訓練的成本早就先被業者付掉了。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-034",
+    "topic": "tech",
+    "category": "AI",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "機器學習裡說的「過擬合（overfitting）」是指什麼情況？",
+    "options": [
+      "訓練時間太長，導致電腦過熱當機",
+      "模型的參數數量少於訓練資料的筆數",
+      "模型把訓練資料學得太細，連雜訊都背下來，遇到沒看過的新資料反而表現變差",
+      "模型檔案太大，硬碟空間不夠存放"
+    ],
+    "answer": 2,
+    "explanation": "過擬合就像學生只把考古題答案背起來，模擬考滿分，正式考換個題型就崩潰——模型記住了訓練集，卻沒學到可以推廣的規律。",
+    "fun_fact": "對付過擬合的常見招數包括增加資料量、提早停止訓練，以及訓練時故意隨機「關掉」部分神經元的 dropout。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-035",
+    "topic": "tech",
+    "category": "AI",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "大型語言模型處理文字時，會先把句子切成一個個基本單位再計算。這個單位叫什麼？",
+    "options": [
+      "vector（向量）",
+      "token（詞元）",
+      "frame（影格）",
+      "pixel（像素）"
+    ],
+    "answer": 1,
+    "explanation": "模型不是逐字也不是逐詞處理，而是切成 token——可能是一個完整的字、一個詞、或是單字的一小段，再轉換成數字送進模型。",
+    "fun_fact": "英文大約 4 個字元算一個 token，中文則常常一個字就佔一到兩個 token，所以同樣的內容用中文寫，token 數往往比英文多。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-036",
+    "topic": "tech",
+    "category": "AI",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "2017 年一篇名為〈Attention Is All You Need〉的論文提出了什麼模型架構，成為今天大型語言模型共同的基礎？",
+    "options": [
+      "卷積神經網路（CNN）",
+      "支援向量機（SVM）",
+      "Transformer",
+      "長短期記憶網路（LSTM）"
+    ],
+    "answer": 2,
+    "explanation": "這篇由 Google 團隊發表的論文提出 Transformer，用「注意力機制」取代了原本逐步處理序列的遞迴結構，讓訓練可以大規模平行化。",
+    "fun_fact": "GPT 的 T 就是 Transformer；這個架構後來還被反過來用在影像上，成了 Vision Transformer。",
+    "source": "https://en.wikipedia.org/wiki/Attention_Is_All_You_Need",
+    "region": "科技"
+  },
+  {
+    "id": "tc-037",
+    "topic": "tech",
+    "category": "AI",
+    "difficulty": 3,
+    "type": "order",
+    "question": "請把下列人工智慧的里程碑事件依發生時間先後排列：",
+    "options": [
+      "AlexNet 在 ImageNet 影像辨識大賽奪冠",
+      "深藍擊敗西洋棋世界冠軍卡斯帕洛夫",
+      "AlphaGo 擊敗南韓棋王李世乭",
+      "〈Attention Is All You Need〉論文發表"
+    ],
+    "answer": [
+      1,
+      0,
+      2,
+      3
+    ],
+    "explanation": "深藍（1997）→ AlexNet 奪下 ImageNet 冠軍（2012）→ AlphaGo 勝李世乭（2016）→ Transformer 論文發表（2017）。",
+    "fun_fact": "2012 年的 AlexNet 大幅領先第二名約 10 個百分點奪冠，被視為深度學習熱潮真正的起跑槍聲。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-038",
+    "topic": "tech",
+    "category": "資安",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "關於密碼，下列哪一個做法最安全？",
+    "options": [
+      "把密碼寫在便利貼，貼在螢幕邊框上",
+      "每個網站設定不同的長密碼，統一交給密碼管理器保管",
+      "想一組超複雜的密碼，所有網站都用同一組",
+      "用生日加上姓名縮寫，好記又有數字"
+    ],
+    "answer": 1,
+    "explanation": "密碼外洩幾乎無可避免，重點是「不要一把鑰匙開所有門」。密碼管理器讓你只需要記住一組主密碼，其餘交給它產生與保管。",
+    "fun_fact": "駭客最愛的攻擊叫「撞庫」：拿 A 網站外洩的帳密，直接去 B 網站、C 網站一個個試——密碼重複使用就會全軍覆沒。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-039",
+    "topic": "tech",
+    "category": "資安",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "雙因素驗證（2FA）之所以比只有密碼更安全，是因為它同時要求哪兩類證明？",
+    "options": [
+      "兩組完全不同的密碼",
+      "你「知道」的東西（密碼）＋ 你「擁有」的東西（手機驗證碼或實體金鑰）",
+      "帳號名稱＋密碼",
+      "電子郵件地址＋手機號碼"
+    ],
+    "answer": 1,
+    "explanation": "2FA 的精神是混用不同「類別」的憑證：知識（密碼）、持有物（手機、金鑰）、生物特徵（指紋、臉）。只要不同類，被偷一項也還有第二道防線。",
+    "fun_fact": "資安專家普遍認為，簡訊驗證碼是 2FA 中相對較弱的一種，因為有被「SIM 卡挾持」的風險；驗證器 App 或實體安全金鑰更保險。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-040",
+    "topic": "tech",
+    "category": "資安",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "下列哪一個最可能是釣魚（phishing）信件的特徵？",
+    "options": [
+      "信件只有純文字，沒有附件也沒有連結",
+      "信件附上該公司官方網站的網址，但沒有要求任何動作",
+      "信件寄到你的公司信箱而不是私人信箱",
+      "用「24 小時內未處理將停用帳號」製造急迫感，並附連結要你輸入帳號密碼"
+    ],
+    "answer": 3,
+    "explanation": "釣魚信的共同套路就是「製造恐慌 + 催你立刻動作 + 引導你到假網站輸入帳密」，因為一慌張就不會仔細看網址。",
+    "fun_fact": "更精準的版本叫「魚叉式釣魚」：攻擊者會先查好你的姓名、職稱與同事名字，信件看起來像主管親自寄的，命中率高得多。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-041",
+    "topic": "tech",
+    "category": "資安",
+    "difficulty": 1,
+    "type": "choice",
+    "question": "收到簡訊說「您的銀行帳戶有異常，請點此連結登入確認」，最安全的處理方式是？",
+    "options": [
+      "先點進去看看網頁長得像不像官網再決定",
+      "直接回覆簡訊，問對方是不是銀行",
+      "照著輸入帳密，但故意先打錯一次測試反應",
+      "不要點簡訊裡的連結，改用官方 App、自己輸入官網網址，或打客服電話查證"
+    ],
+    "answer": 3,
+    "explanation": "只要是對方主動送上門的連結或電話號碼，一律不要用。自己從已知的官方管道重新發起聯絡，才能確保沒有被中間人騙。",
+    "fun_fact": "假網站可以做得跟官網一模一樣，連網址都只差一個字母（例如把 l 換成 1），肉眼幾乎分不出來。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-042",
+    "topic": "tech",
+    "category": "資安",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "只要網址開頭是 https、瀏覽器網址列顯示鎖頭圖示，就代表這個網站一定是合法、不會騙人的。",
+    "options": [
+      "對",
+      "錯"
+    ],
+    "answer": 1,
+    "explanation": "假的！鎖頭只保證「你和這個網站之間的連線經過加密」，別人在中間偷看不到內容，但它完全不保證網站背後的人是好人。",
+    "fun_fact": "現在免費憑證隨手可得，絕大多數詐騙網站也都是 https 開頭；真正該看的是網址的網域名稱本身對不對。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-043",
+    "topic": "tech",
+    "category": "資安",
+    "difficulty": 2,
+    "type": "choice",
+    "question": "資料備份的「3-2-1 原則」是指什麼？",
+    "options": [
+      "分成 3 個資料夾，放在 2 台電腦，用 1 個帳號管理",
+      "每 3 天備份一次，保留 2 個版本，1 年整理一次",
+      "資料保留 3 份副本，存放在 2 種不同的儲存媒體，其中 1 份放在異地",
+      "密碼要含 3 個大寫字母、2 個數字、1 個符號"
+    ],
+    "answer": 2,
+    "explanation": "3 份副本讓單一損壞不致命，2 種媒體避免同一類裝置同時故障，1 份異地則能扛住火災、竊盜或勒索軟體整個網域加密。",
+    "fun_fact": "勒索軟體之所以可怕，就是它會連同接在電腦上的備份硬碟一起加密——所以那「1 份異地」最好是離線或不常掛載的。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-044",
+    "topic": "tech",
+    "category": "資安",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "公開金鑰加密（非對稱加密）的運作方式是什麼？",
+    "options": [
+      "只要知道所使用的加密演算法，就能直接把內容解開",
+      "用公開的「公鑰」加密，只有持有對應「私鑰」的人才解得開",
+      "把資料壓縮成亂碼，任何人輸入檔名就能還原",
+      "加密和解密都使用同一把大家共用的鑰匙"
+    ],
+    "answer": 1,
+    "explanation": "公鑰可以大方公開給任何人，私鑰則必須自己牢牢保管。這解決了古典加密最大的難題：雙方不必先安全地交換同一把密鑰。",
+    "fun_fact": "反過來用私鑰加密、公鑰驗證，就成了「數位簽章」，可以證明訊息確實出自某人且沒被竄改，HTTPS 憑證就是這樣運作的。",
+    "region": "科技"
+  },
+  {
+    "id": "tc-045",
+    "topic": "tech",
+    "category": "資安",
+    "difficulty": 3,
+    "type": "choice",
+    "question": "資安專家建議不要把登機證的照片貼上社群媒體，主要原因是什麼？",
+    "options": [
+      "條碼被掃描後會自動從信用卡扣款",
+      "條碼裡藏著訂位代號等個資，別人掃描後可能查到你的行程，甚至更改或取消機位",
+      "條碼會讓照片檔案異常變大，佔用手機空間",
+      "航空公司規定登機證一律禁止拍照"
+    ],
+    "answer": 1,
+    "explanation": "登機證條碼依國際航空運輸協會的規格編碼，含有姓名、班次與訂位代號等資訊，網路上隨便一個解碼器就能讀出來。拿到訂位代號加姓名，往往就能登入航空公司網站查看甚至異動行程。",
+    "fun_fact": "資安記者 Brian Krebs 實測過，光靠一張被丟進垃圾桶的登機證，就能查出旅客未來的所有航班與部分常客資料。",
+    "source": "https://krebsonsecurity.com/2017/08/why-its-still-a-bad-idea-to-post-or-trash-your-airline-boarding-pass/",
+    "region": "科技"
+  }
+]
