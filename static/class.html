@@ -60,12 +60,12 @@ function show(code, admin, d){
       <div class="board">${d.teams.map((t, k) => `<div class="entry"><span class="pos ${k < 3 ? 'top' : ''}">${k + 1}</span>
         <span class="who"><b>${esc(t.team)}</b><small>${t.members} 人・總分 ${t.points}</small></span>
         <span class="pts">${t.avg}</span></div>`).join('')}</div>` : ''}
-    <div class="rules" style="border:0"><h2>學生累積積分</h2></div>
+    <div class="rules" style="border:0"><h2>學生累積成績<small class="sub">（右欄是課堂加分，每題最快答對 +0.5）</small></h2></div>
     <div class="board">${d.students.length ? d.students.map((s, k) => `<div class="entry">
         <span class="pos ${k < 3 ? 'top' : ''}">${k + 1}</span>
         <span class="who"><b>${esc(s.name)}</b><small>${esc(s.student_id)}${s.team ? '・' + esc(s.team) : ''}
-          ・${s.games} 場・答對 ${s.correct}/${s.answered}</small></span>
-        <span class="pts">${s.points}</span></div>`).join('')
+          ・${s.games} 場・答對 ${s.correct}/${s.answered}・${s.points} 分</small></span>
+        <span class="pts">${s.bonus}</span></div>`).join('')
       : '<div class="empty">還沒有任何成績。開一場分組搶答，放榜後按「存入班級積分」就會出現在這裡。</div>'}</div>
     ${d.games.length ? `<div class="rules"><h2>最近場次</h2>
       <ul>${d.games.map(g => `<li>${when(g.played)}　${esc(TOPIC[g.topic] || g.topic)}　${g.players} 人　${g.questions} 題</li>`).join('')}</ul></div>` : ''}

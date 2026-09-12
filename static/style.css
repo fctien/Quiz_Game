@@ -247,3 +247,6 @@ h1 .seal{display:inline-grid;place-items:center;width:1.25em;height:1.25em;margi
 .gain{font-family:var(--mono);font-size:2rem;font-weight:600;text-align:center}
 .center{text-align:center}
 .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 12px;font-size:.85rem;color:var(--muted)}
+
+.cd.up{border-color:var(--muted);color:var(--muted)}
+.rules h2 small{font-weight:400;font-size:.8rem;margin-left:8px}

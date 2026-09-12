@@ -127,16 +127,16 @@ function lobby(v){
 /* ---------- 作答 ---------- */
 function question(v){
   const q = v.q;
-  if (q.index !== lastQ){ lastQ = q.index; deadline = Date.now() + v.remaining * 1000; sending = false; }
+  if (q.index !== lastQ){ lastQ = q.index; deadline = Date.now() + (v.remaining || 0) * 1000; sending = false; }
   if (v.my_answer !== null && v.my_answer !== undefined){
     const k = v.my_answer;
     $app.innerHTML = header(v) + `<div class="sent"><p class="prog">第 ${q.index + 1} / ${q.total} 題</p>
       <div class="picked-big o${k}"><span class="n" style="color:var(--oc);font-family:var(--mono)">${'ABCD'[k]}</span>${esc(q.options[k])}</div>
-      <p class="sub">已交卷，等其他人作答…<br>已作答 ${v.answered} / ${v.players}</p></div>`;
+      <p class="sub">已交卷，${v.manual ? '等老師公布答案' : '等其他人作答'}…<br>已作答 ${v.answered} / ${v.players}</p></div>`;
     return;
   }
   $app.innerHTML = header(v) + `
-    <div class="timer" id="timer"><i></i></div>
+    ${v.manual ? '<p class="sub center">搶答中，答對最快的人加 0.5 分</p>' : '<div class="timer" id="timer"><i></i></div>'}
     <div class="meta"><span class="tag">第 ${q.index + 1} / ${q.total} 題</span>${q.double ? '<span class="double">分數加倍</span>' : ''}</div>
     <div class="q">${esc(q.question)}</div>
     <div class="popts">${q.options.map((o, k) => `<button class="popt o${k}" data-k="${k}"><span class="n">${'ABCD'[k]}</span><span>${esc(o)}</span></button>`).join('')}</div>`;
@@ -148,6 +148,7 @@ function question(v){
     catch(e){ sending = false; document.getElementById('conn').textContent = e.message; }
   });
   clearInterval(tick);
+  if (v.manual) return;                       // 手動模式沒有倒數
   const total = v.limit * 1000;
   tick = setInterval(() => {
     const left = Math.max(0, deadline - Date.now()), el = document.getElementById('timer');
@@ -164,6 +165,7 @@ function reveal(v){
       <div class="bigstamp ${r.correct ? 'pass' : 'fail'}">${r.correct ? '中' : '落'}</div>
       <div class="gain">${r.correct ? '+' + r.gained : (r.choice === null || r.choice === undefined ? '沒有作答' : '+0')}</div>
       ${r.correct && r.bonus ? `<p class="sub">含連中加分 +${r.bonus}</p>` : ''}
+      ${r.bonus_point ? `<p class="pill" style="border-color:var(--cinnabar);color:var(--cinnabar)">最快答對！課堂加分 +${r.bonus_point}</p>` : ''}
       ${r.correct && q.double ? '<p class="sub">最後一題分數加倍！</p>' : ''}
       <p style="font-size:1.2rem;margin:14px 0 4px">目前第 <b class="score">${v.rank}</b> 名 / ${v.players} 人 ${mv}</p>
       ${myTeam ? `<p class="pill">${esc(v.team)}　隊伍第 ${myTeam} 名</p>` : ''}
@@ -182,7 +184,7 @@ function final(v){
   $app.innerHTML = header(v) + `<div class="result">
       <div class="bang"><small>金榜題名</small><div class="rank">${title}</div></div>
       <div class="big">第 ${v.rank} 名 / ${v.players} 人</div>
-      <p class="sub">${v.score} 分 ・ 答對 ${v.right} / ${v.total} 題</p>
+      <p class="sub">${v.score} 分 ・ 答對 ${v.right} / ${v.total} 題${v.bonus ? ` ・ 課堂加分 ${v.bonus}` : ''}</p>
       ${myTeam ? `<p class="pill">${esc(v.team)}　隊伍第 ${myTeam} 名（平均 ${tb[myTeam - 1].avg} 分）</p>` : ''}
       ${tb.length ? `<div class="board" style="margin-top:18px">${tb.slice(0, 3).map((x, k) => `<div class="entry">
           <span class="pos top">${t[k]}</span><span class="who"><b>${esc(x.team)}</b><small>${x.members} 人</small></span>

@@ -8,12 +8,16 @@
 每次房間狀態改變，伺服器把「這位使用者該看到的畫面資料」整包推給他，
 斷線重連時也能直接拿到最新狀態。
 """
+import csv
+import io
 import json
 import random
 import secrets
 import socket
 import threading
 import time
+
+from urllib.parse import quote
 
 from flask import Blueprint, Response, jsonify, request
 
@@ -25,7 +29,9 @@ MAX_PLAYERS = 100
 ROOM_TTL = 3 * 60 * 60        # 房間最長保留 3 小時
 GRACE = 1.0                   # 網路延遲容忍秒數
 COUNTS = (5, 10, 15, 20)
-TIMES = (10, 15, 20, 30)
+TIMES = (0, 10, 15, 20, 30)      # 0 = 手動,由主持人按鈕控制每題的開始與結束
+MANUAL_WINDOW = 30               # 手動模式的速度分以 30 秒為基準
+BONUS = 0.5                      # 每題最快答對的人,課堂加分
 
 rooms = {}                    # 房號 -> Room
 rooms_lock = threading.Lock()
@@ -84,7 +90,7 @@ class Room:
         self.round_id = 0
         self.saved = False
         for p in self.players.values():
-            p.update(score=0, streak=0, right=0, last=None, rank=None, move=0)
+            p.update(score=0, streak=0, right=0, bonus=0.0, last=None, rank=None, move=0)
 
     # ---------- 狀態改變時通知所有連線 ----------
     def bump(self):
@@ -106,12 +112,13 @@ class Room:
         self.answers = {}
         self.reveal = None
         self.q_started = time.time()
-        self.deadline = self.q_started + self.limit
+        self.deadline = (self.q_started + self.limit) if self.limit else 0
         self.round_id += 1
-        rid = self.round_id
-        t = threading.Timer(self.limit + GRACE, self._timeout, args=(rid,))
-        t.daemon = True
-        t.start()
+        if self.limit:                       # 限時模式:時間到自動公布
+            rid = self.round_id
+            t = threading.Timer(self.limit + GRACE, self._timeout, args=(rid,))
+            t.daemon = True
+            t.start()
         self.bump()
 
     def _timeout(self, rid):
@@ -123,11 +130,11 @@ class Room:
         if self.state != "question" or pid in self.answers:
             return False
         elapsed = time.time() - self.q_started
-        if elapsed > self.limit + GRACE:
+        if self.limit and elapsed > self.limit + GRACE:
             return False
         self.answers[pid] = (choice, elapsed)
         online = [k for k, p in self.players.items() if p["online"]]
-        if all(k in self.answers for k in online):
+        if self.limit and all(k in self.answers for k in online):   # 手動模式一律等主持人結束
             self.do_reveal()
         else:
             self.bump()
@@ -154,8 +161,9 @@ class Room:
     def do_reveal(self):
         q = self.questions[self.qi]
         dist = [0] * len(q["options"])
-        fastest = None
+        fastest = fastest_pid = None
         mult = 2 if self.is_double() else 1
+        window = self.limit or MANUAL_WINDOW
         for pid, p in self.players.items():
             choice, elapsed = self.answers.get(pid, (None, None))
             if choice is not None and 0 <= choice < len(dist):
@@ -163,7 +171,7 @@ class Room:
             if choice == q["answer"]:
                 p["streak"] += 1
                 p["right"] += 1
-                frac = max(0.0, (self.limit - elapsed) / self.limit)
+                frac = max(0.0, (window - elapsed) / window)
                 bonus = 100 * min(p["streak"] - 1, 5)
                 gained = round((500 + 500 * frac + bonus) * mult)
                 p["score"] += gained
@@ -171,10 +179,14 @@ class Room:
                              "choice": choice, "secs": round(elapsed, 1)}
                 if fastest is None or elapsed < fastest[1]:
                     fastest = (p["name"], elapsed)
+                    fastest_pid = pid
             else:
                 p["streak"] = 0
                 p["last"] = {"correct": False, "gained": 0, "bonus": 0,
                              "choice": choice, "secs": None if elapsed is None else round(elapsed, 1)}
+        if fastest_pid:                       # 最快答對的人得到課堂加分
+            self.players[fastest_pid]["bonus"] = round(self.players[fastest_pid]["bonus"] + BONUS, 2)
+            self.players[fastest_pid]["last"]["bonus_point"] = BONUS
         ranks = {pid: i + 1 for i, (pid, _) in enumerate(self.ranking())}
         for pid, p in self.players.items():
             p["rank"] = ranks[pid]
@@ -182,7 +194,8 @@ class Room:
         self.prev_rank = ranks
         self.reveal = {"answer": q["answer"], "dist": dist,
                        "explanation": q.get("explanation", ""), "fun_fact": q.get("fun_fact", ""),
-                       "fastest": {"name": fastest[0], "secs": round(fastest[1], 1)} if fastest else None,
+                       "fastest": {"name": fastest[0], "secs": round(fastest[1], 1),
+                                   "bonus": BONUS} if fastest else None,
                        "answered": len(self.answers)}
         self.state = "reveal"
         self.bump()
@@ -202,7 +215,7 @@ class Room:
     def board(self, n=None):
         rows = [{"name": p["name"], "score": p["score"], "move": p.get("move", 0),
                  "online": p["online"], "right": p["right"], "team": p.get("team", ""),
-                 "sid": p.get("sid", "")} for _, p in self.ranking()]
+                 "sid": p.get("sid", ""), "bonus": p.get("bonus", 0)} for _, p in self.ranking()]
         return rows[:n] if n else rows
 
     def view(self, pid):
@@ -213,7 +226,9 @@ class Room:
              "players": len(self.players), "limit": self.limit, "total": len(self.questions)}
         if self.state in ("question", "reveal"):
             v["q"] = self.public_question()
-            v["remaining"] = max(0.0, round(self.deadline - time.time(), 2))
+            v["remaining"] = max(0.0, round(self.deadline - time.time(), 2)) if self.limit else None
+            v["elapsed"] = round(time.time() - self.q_started, 1)
+            v["manual"] = not self.limit
             v["answered"] = len(self.answers)
         if self.state == "reveal":
             v["reveal"] = self.reveal
@@ -235,7 +250,7 @@ class Room:
         else:
             p = self.players[pid]
             v.update(role="player", name=p["name"], score=p["score"], streak=p["streak"],
-                     team=p.get("team", ""), sid=p.get("sid", ""))
+                     team=p.get("team", ""), sid=p.get("sid", ""), bonus=p.get("bonus", 0))
             if self.state == "question":
                 a = self.answers.get(pid)
                 v["my_answer"] = None if a is None else a[0]
@@ -391,6 +406,24 @@ def upload_roster():
     return jsonify(ok=True, teams=r.teams, roster_size=len(rows))
 
 
+@bp.get("/api/mp/export")
+def export_game():
+    """匯出這一場的成績 CSV(不必存到班級也能下載)"""
+    r = rooms.get(request.args.get("code", ""))
+    if not r or not secrets.compare_digest(request.args.get("token", ""), r.host_token):
+        return err("房間不存在或你不是主持人", 403)
+    out = io.StringIO()
+    w = csv.writer(out)
+    w.writerow(["名次", "學號", "姓名", "組別", "分數", "答對題數", "總題數", "課堂加分"])
+    for i, (_, p) in enumerate(r.ranking(), 1):
+        w.writerow([i, p.get("sid", ""), p["name"], p.get("team", ""), p["score"],
+                    p["right"], len(r.questions), p.get("bonus", 0)])
+    name = f"{r.class_code or '金榜問答'}-{time.strftime('%m%d')}-成績.csv"
+    return Response("\ufeff" + out.getvalue(), mimetype="text/csv",
+                    headers={"Content-Disposition":
+                             f"attachment; filename=quiz-scores.csv; filename*=UTF-8''{quote(name)}"})
+
+
 @bp.post("/api/mp/save_class")
 def save_class():
     """把這一場的成績存進班級累積積分"""
@@ -406,7 +439,8 @@ def save_class():
         if r.saved:
             return err("這場已經存過了")
         results = [{"sid": p.get("sid") or p["name"], "name": p["name"], "team": p.get("team", ""),
-                    "points": p["score"], "correct": p["right"], "answered": len(r.questions)}
+                    "points": p["score"], "correct": p["right"], "answered": len(r.questions),
+                    "bonus": p.get("bonus", 0)}
                    for p in r.players.values()]
         classroom.save_game(r.class_code, r.category, results, len(r.questions))
         r.saved = True
@@ -524,7 +558,7 @@ def join():
             team = ""                                   # 之後在選隊畫面挑
         pid = secrets.token_hex(4)
         r.players[pid] = {"name": name, "sid": sid, "team": team, "token": secrets.token_urlsafe(12),
-                          "score": 0, "streak": 0, "right": 0, "last": None,
+                          "score": 0, "streak": 0, "right": 0, "bonus": 0.0, "last": None,
                           "online": False, "conns": 0, "joined": time.time()}
         r.bump()
     return jsonify(pid=pid, token=r.players[pid]["token"], name=name, team=r.players[pid]["team"])

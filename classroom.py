@@ -41,8 +41,12 @@ def init():
             correct INTEGER NOT NULL DEFAULT 0,
             answered INTEGER NOT NULL DEFAULT 0,
             games INTEGER NOT NULL DEFAULT 0,
+            bonus REAL NOT NULL DEFAULT 0,
             updated REAL NOT NULL,
             PRIMARY KEY (class_code, student_id))""")
+        cols = [r[1] for r in c.execute("PRAGMA table_info(class_points)")]
+        if "bonus" not in cols:              # 舊資料庫升級
+            c.execute("ALTER TABLE class_points ADD COLUMN bonus REAL NOT NULL DEFAULT 0")
         c.execute("""CREATE TABLE IF NOT EXISTS class_games (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             class_code TEXT NOT NULL,
@@ -133,8 +137,8 @@ def save_game(code, topic, results, questions):
     now = time.time()
     with conn() as c:
         for r in results:
-            c.execute("""INSERT INTO class_points(class_code, student_id, name, team, points, correct, answered, games, updated)
-                         VALUES (?,?,?,?,?,?,?,1,?)
+            c.execute("""INSERT INTO class_points(class_code, student_id, name, team, points, correct, answered, games, bonus, updated)
+                         VALUES (?,?,?,?,?,?,?,1,?,?)
                          ON CONFLICT(class_code, student_id) DO UPDATE SET
                            name = excluded.name,
                            team = CASE WHEN excluded.team != '' THEN excluded.team ELSE class_points.team END,
@@ -142,9 +146,10 @@ def save_game(code, topic, results, questions):
                            correct = class_points.correct + excluded.correct,
                            answered = class_points.answered + excluded.answered,
                            games = class_points.games + 1,
+                           bonus = class_points.bonus + excluded.bonus,
                            updated = excluded.updated""",
                       (code, r["sid"], r["name"], r.get("team", ""), int(r["points"]),
-                       int(r["correct"]), int(r["answered"]), now))
+                       int(r["correct"]), int(r["answered"]), float(r.get("bonus", 0)), now))
         c.execute("INSERT INTO class_games(class_code, topic, players, questions, played) VALUES (?,?,?,?,?)",
                   (code, topic, len(results), questions, now))
 
@@ -152,15 +157,16 @@ def save_game(code, topic, results, questions):
 def summary(code):
     with conn() as c:
         rows = [dict(r) for r in c.execute(
-            "SELECT student_id, name, team, points, correct, answered, games, updated "
-            "FROM class_points WHERE class_code = ? ORDER BY points DESC, name ASC", (code,))]
+            "SELECT student_id, name, team, points, correct, answered, games, bonus, updated "
+            "FROM class_points WHERE class_code = ? ORDER BY bonus DESC, points DESC, name ASC", (code,))]
         games = [dict(r) for r in c.execute(
             "SELECT topic, players, questions, played FROM class_games WHERE class_code = ? "
             "ORDER BY played DESC LIMIT 20", (code,))]
     teams = {}
     for r in rows:
-        t = teams.setdefault(r["team"] or "未分組", {"team": r["team"] or "未分組", "points": 0, "members": 0})
+        t = teams.setdefault(r["team"] or "未分組", {"team": r["team"] or "未分組", "points": 0, "members": 0, "bonus": 0})
         t["points"] += r["points"]
+        t["bonus"] = round(t["bonus"] + r["bonus"], 2)
         t["members"] += 1
     for t in teams.values():
         t["avg"] = round(t["points"] / max(1, t["members"]))
@@ -172,9 +178,10 @@ def summary(code):
 def export_csv(code):
     out = io.StringIO()
     w = csv.writer(out)
-    w.writerow(["學號", "姓名", "組別", "累積積分", "答對題數", "作答題數", "參加場次"])
+    w.writerow(["學號", "姓名", "組別", "課堂加分", "累積積分", "答對題數", "作答題數", "參加場次"])
     for r in summary(code)["students"]:
-        w.writerow([r["student_id"], r["name"], r["team"], r["points"], r["correct"], r["answered"], r["games"]])
+        w.writerow([r["student_id"], r["name"], r["team"], r["bonus"], r["points"],
+                    r["correct"], r["answered"], r["games"]])
     return "﻿" + out.getvalue()          # 加 BOM,Excel 開啟才不會亂碼
 
 

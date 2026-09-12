@@ -56,8 +56,9 @@ async function setup(msg = ''){
     <div class="row" style="flex-wrap:wrap;gap:18px;margin-top:18px">
       <div><div class="sub" style="margin:0 0 4px">題數</div><div class="seg" id="cnt" style="margin:0">
         ${[5, 10, 15, 20].map(n => `<button data-v="${n}" aria-pressed="${n === pick.count}">${n}</button>`).join('')}</div></div>
-      <div><div class="sub" style="margin:0 0 4px">每題秒數</div><div class="seg" id="tm" style="margin:0">
-        ${[10, 15, 20, 30].map(n => `<button data-v="${n}" aria-pressed="${n === pick.time}">${n}</button>`).join('')}</div></div>
+      <div><div class="sub" style="margin:0 0 4px">每題秒數（選「手動」由你控制開始與結束）</div><div class="seg" id="tm" style="margin:0">
+        ${[10, 15, 20, 30].map(n => `<button data-v="${n}" aria-pressed="${n === pick.time}">${n}</button>`).join('')}
+        <button data-v="0" aria-pressed="${pick.time === 0}">手動</button></div></div>
       <div><div class="sub" style="margin:0 0 4px">賽制</div><div class="seg" id="md" style="margin:0">
         <button data-v="solo" aria-pressed="${pick.mode === 'solo'}">個人賽</button>
         <button data-v="team" aria-pressed="${pick.mode === 'team'}">分組賽</button></div></div>
@@ -180,21 +181,25 @@ function opts(q, rv){
 }
 function question(v){
   const q = v.q;
-  if (q.index !== lastQ){ lastQ = q.index; deadline = Date.now() + v.remaining * 1000; }
+  if (q.index !== lastQ){ lastQ = q.index; deadline = Date.now() + (v.manual ? -v.elapsed * 1000 : v.remaining * 1000); }
   $app.innerHTML = bar(v) + `<div class="hq">
     <div class="hqtop"><div><span class="prog">第 ${q.index + 1} / ${q.total} 題</span>
-        ${q.double ? ' <span class="double">最後一題・分數加倍</span>' : ''}</div>
-      <div class="cd" id="cd">${Math.ceil(v.remaining)}</div></div>
+        ${q.double ? ' <span class="double">最後一題・分數加倍</span>' : ''}
+        ${v.manual ? ' <span class="pill">手動計時・按「結束本題」公布答案</span>' : ''}</div>
+      <div class="cd ${v.manual ? 'up' : ''}" id="cd">${v.manual ? Math.floor(v.elapsed) : Math.ceil(v.remaining)}</div></div>
     <div class="meta"><span class="tag">${esc(q.region)}</span><span class="tag">${esc(q.category)}</span><span class="tag">${'★'.repeat(q.difficulty)}</span></div>
     <div class="hqtext">${esc(q.question)}</div>
     ${opts(q)}
     <div class="row" style="align-items:center"><span class="answered">已作答 <b>${v.answered}</b> / ${v.players}</span>
-      <button class="btn ghost" id="rv" style="flex:none">提前公布</button></div></div>`;
+      <button class="btn${v.manual ? '' : ' ghost'}" id="rv" style="flex:none">${v.manual ? '結束本題，公布答案' : '提前公布'}</button></div></div>`;
   document.getElementById('rv').onclick = () => act('/api/mp/reveal');
   clearInterval(tick);
   tick = setInterval(() => {
-    const left = Math.max(0, (deadline - Date.now()) / 1000), el = document.getElementById('cd');
-    if (el){ el.textContent = Math.ceil(left); el.classList.toggle('low', left <= 5); }
+    const el = document.getElementById('cd');
+    if (!el) return;
+    if (v.manual){ el.textContent = Math.floor((Date.now() - deadline) / 1000); return; }   // 手動模式:往上數
+    const left = Math.max(0, (deadline - Date.now()) / 1000);
+    el.textContent = Math.ceil(left); el.classList.toggle('low', left <= 5);
   }, 200);
 }
 
@@ -209,7 +214,7 @@ function reveal(v){
   const q = v.q, rv = v.reveal;
   $app.innerHTML = bar(v) + `<div class="hq">
     <div class="hqtop"><span class="prog">第 ${q.index + 1} / ${q.total} 題 ・ ${rv.answered} 人作答</span>
-      ${rv.fastest ? `<span class="fastest">最快答對：${esc(rv.fastest.name)}（${rv.fastest.secs} 秒）</span>` : '<span class="sub">這題沒有人答對</span>'}</div>
+      ${rv.fastest ? `<span class="fastest">最快答對：${esc(rv.fastest.name)}（${rv.fastest.secs} 秒）　加 ${rv.fastest.bonus} 分</span>` : '<span class="sub">這題沒有人答對</span>'}</div>
     <div class="hqtext">${esc(q.question)}</div>
     <div class="hreveal"><div>${opts(q, rv)}
         <div class="fb ok"><p>${esc(rv.explanation)}</p>${rv.fun_fact ? `<p class="fun"><b>冷知識</b>${esc(rv.fun_fact)}</p>` : ''}</div></div>
@@ -234,8 +239,10 @@ function final(v){
     ${v.mode === 'team' ? `<div class="rules" style="border:0"><h2>各隊成績</h2></div><div class="board">${boardRows(v.team_board, true)}</div>` : ''}
     <div class="rules" style="border:0"><h2>個人成績</h2></div>
     <div class="board">${v.final.map((p, k) => `<div class="entry"><span class="pos ${k < 3 ? 'top' : ''}">${k < 3 ? t[k] : k + 1}</span>
-      <span class="who"><b>${esc(p.name)}</b><small>${p.team ? esc(p.team) + '・' : ''}答對 ${p.right} / ${v.total}</small></span>
+      <span class="who"><b>${esc(p.name)}</b><small>${p.sid ? esc(p.sid) + '・' : ''}${p.team ? esc(p.team) + '・' : ''}答對 ${p.right} / ${v.total}${p.bonus ? `・<b class="fastest">加分 ${p.bonus}</b>` : ''}</small></span>
       <span class="pts">${p.score}</span></div>`).join('')}</div>
+    <div class="row"><a class="btn ghost" style="text-decoration:none;text-align:center"
+      href="/api/mp/export?code=${v.code}&token=${encodeURIComponent(H.token)}">匯出本場成績 CSV</a></div>
     ${v.class_code ? `<div class="placed" id="saveslot">${v.saved
       ? `已存入班級「${esc(v.class_code)}」的累積積分。<div class="row"><a class="btn ghost" href="/class" target="_blank" style="text-decoration:none;text-align:center">查看累積積分</a></div>`
       : `這場成績可以存入班級「${esc(v.class_code)}」的累積積分。<div class="row"><button class="btn" id="save">存入班級積分</button></div>`}</div>` : ''}
