@@ -305,8 +305,13 @@ def _player(b):
     return r, pid
 
 
+def _private(ip):
+    return (ip.startswith("192.168.") or ip.startswith("10.")
+            or (ip.startswith("172.") and ip.split(".")[1].isdigit() and 16 <= int(ip.split(".")[1]) <= 31))
+
+
 def lan_ip():
-    """找出這台電腦在區網的 IP，讓手機掃 QR code 就能連進來"""
+    """這台電腦對外的主要區網 IP"""
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     try:
         s.connect(("10.255.255.255", 1))
@@ -315,6 +320,26 @@ def lan_ip():
         return "127.0.0.1"
     finally:
         s.close()
+
+
+def lan_ips():
+    """
+    列出這台電腦所有可能的區網 IP。
+    筆電常同時有 Wi-Fi、有線網路、VPN 等多張網卡，自動挑的那個不一定是手機連得到的，
+    所以主持台會把全部列出來讓老師切換。
+    """
+    ips = []
+    main = lan_ip()
+    if _private(main):
+        ips.append(main)
+    try:
+        for info in socket.getaddrinfo(socket.gethostname(), None, socket.AF_INET):
+            ip = info[4][0]
+            if _private(ip) and ip not in ips:
+                ips.append(ip)
+    except OSError:
+        pass
+    return ips or [main]
 
 
 def err(msg, code=400):
@@ -370,10 +395,15 @@ def create():
         rooms[code] = r
     # 加入連結:主持人若用 localhost 開,改用區網 IP,手機才連得到
     host = request.host
+    port = host.split(":")[1] if ":" in host else "80"
     if host.split(":")[0] in ("127.0.0.1", "localhost"):
-        port = host.split(":")[1] if ":" in host else "80"
         host = f"{lan_ip()}:{port}"
-    return jsonify(code=code, token=r.host_token, join_url=f"{request.scheme}://{host}/play?code={code}",
+    urls = [f"{request.scheme}://{host}/play?code={code}"]
+    for ip in lan_ips():                       # 其他網卡的網址,手機連不到時可以換一個
+        u = f"{request.scheme}://{ip}:{port}/play?code={code}"
+        if u not in urls:
+            urls.append(u)
+    return jsonify(code=code, token=r.host_token, join_url=urls[0], join_urls=urls,
                    total=len(r.questions), teams=teams, roster_size=len(roster),
                    class_code=class_code, admin_code=admin_code)
 
@@ -512,6 +542,12 @@ def close():
 
 
 # ================================================================ 玩家 API
+@bp.get("/api/health")
+def health():
+    """手機開這個網址如果看得到 ok,就表示連得到老師的電腦"""
+    return jsonify(ok=True, ips=lan_ips(), rooms=len(rooms), time=time.strftime("%H:%M:%S"))
+
+
 @bp.get("/api/mp/info")
 def info():
     r = rooms.get(request.args.get("code", ""))
