@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<title>金榜問答・課堂操作小抄</title>
+<style>
+@page { size: A4; margin: 9mm 9mm; }
+:root{
+  --ink:#1E2A4A; --muted:#5E6A85; --line:#C9D2E2; --blue:#2B4C9B; --blue-soft:#EAF0FA;
+  --cinnabar:#C8321E; --cinnabar-soft:#FBE7E3; --jade:#2F7D5B; --paper:#fff;
+  --serif:"Noto Serif CJK TC","Noto Serif TC",serif;
+  --sans:"Noto Sans CJK TC","Noto Sans TC",sans-serif;
+  --mono:"DejaVu Sans Mono",monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--sans);color:var(--ink);font-size:9.6pt;line-height:1.45;background:#fff}
+header{display:flex;align-items:flex-end;gap:10px;border-bottom:2.5px solid var(--ink);padding-bottom:5px}
+h1{font-family:var(--serif);font-size:19pt;margin:0;letter-spacing:.06em;font-weight:700}
+.seal{display:inline-grid;place-items:center;width:20pt;height:20pt;background:var(--cinnabar);color:#fff;
+  border-radius:3px;font-family:var(--serif);font-size:12pt;font-weight:700;margin-left:2px}
+header .sub{color:var(--muted);font-size:9pt;margin-left:auto;text-align:right;line-height:1.35}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0 9mm;margin-top:6px}
+section{break-inside:avoid;margin-bottom:8px}
+h2{font-family:var(--serif);font-size:12.5pt;margin:0 0 3px;letter-spacing:.05em;
+  border-left:3.5px solid var(--cinnabar);padding-left:6px}
+h2 small{font-family:var(--sans);font-size:8pt;color:var(--muted);font-weight:400;margin-left:5px;letter-spacing:0}
+ol,ul{margin:0;padding-left:1.25em}
+li{margin:1.5px 0}
+b{color:var(--ink)}
+.k{font-family:var(--mono);background:var(--blue-soft);color:var(--blue);padding:0 3px;border-radius:2px;font-size:9.1pt}
+.btn{display:inline-block;background:var(--blue);color:#fff;border-radius:3px;padding:0 5px;font-size:9pt;font-weight:700;white-space:nowrap}
+.btn.red{background:var(--cinnabar)}
+.btn.out{background:#fff;color:var(--ink);border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;font-size:9.3pt}
+th,td{text-align:left;padding:3.5px 4px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--blue-soft);color:var(--blue);font-size:9pt;white-space:nowrap}
+td.sym{width:38%}
+.fill{border:1.2px dashed var(--cinnabar);border-radius:4px;padding:5px 7px;background:var(--cinnabar-soft)}
+.fill table{font-size:9pt}
+.fill td{border:0;padding:3px 4px}
+.fill .lbl{color:var(--cinnabar);font-weight:700;white-space:nowrap;width:30%}
+.fill .blank{border-bottom:1.2px solid var(--ink);width:100%;display:block;height:13px}
+.flow{counter-reset:step;margin:0;padding:0;list-style:none}
+.flow li{position:relative;padding-left:19px;margin:3px 0}
+.flow li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:1px;
+  width:14px;height:14px;border-radius:50%;background:var(--ink);color:#fff;font-size:7.5pt;
+  display:grid;place-items:center;font-family:var(--mono)}
+.note{color:var(--muted);font-size:9pt;margin:4px 0 0}
+.warn{background:var(--cinnabar-soft);border-left:3px solid var(--cinnabar);padding:5px 8px;font-size:9.2pt;margin-top:5px}
+.score{display:flex;gap:5px;flex-wrap:wrap;margin-top:3px}
+.score div{flex:1;min-width:95px;border:1px solid var(--line);border-radius:4px;padding:4px 6px}
+.score b{display:block;font-family:var(--serif);font-size:10pt;color:var(--cinnabar)}
+footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:var(--muted);font-size:8.6pt;
+  display:flex;justify-content:space-between}
+</style>
+</head>
+<body>
+<header>
+  <h1>金榜問答<span class="seal">試</span></h1>
+  <div class="sub">課堂操作小抄 ・ 個人賽・老師控題<br>v3.3　印出來放在講桌上</div>
+</header>
+
+<div class="cols">
+<div>
+
+<section class="fill">
+  <table>
+    <tr><td class="lbl">電腦 IP</td><td><span class="blank"></span></td></tr>
+    <tr><td class="lbl">今日房號</td><td><span class="blank"></span></td></tr>
+    <tr><td class="lbl">班級代碼</td><td><span class="blank"></span></td></tr>
+    <tr><td class="lbl">管理碼（六碼）</td><td><span class="blank"></span></td></tr>
+  </table>
+  <p class="note" style="margin:2px 0 0">管理碼開班時只顯示一次，請立刻抄在這裡。</p>
+</section>
+
+<section>
+  <h2>一、上課前 15 分鐘</h2>
+  <ol class="flow">
+    <li>電腦連上<b>學生會用的那個 Wi-Fi</b>（不要只插網路線）。</li>
+    <li>連點兩下 <span class="k">啟動-Windows.bat</span>（Mac 是 <span class="k">啟動-Mac.command</span>），瀏覽器會自動打開主持台。</li>
+    <li>Windows 跳出防火牆詢問 → 按<b>「允許存取」</b>，並勾選<b>專用網路</b>。</li>
+    <li>拿一支手機開 <span class="k">http://電腦IP:5000/api/health</span>，看到 <span class="k">ok: true</span> 才算連得通。</li>
+  </ol>
+  <div class="warn">連不通就先換網址：主持台房號下方的<span class="btn out">手機連不到？換一個網址</span>可逐一切換（筆電常有多張網卡）。</div>
+</section>
+
+<section>
+  <h2>二、開房設定</h2>
+  <table>
+    <tr><th>項目</th><th>選什麼</th></tr>
+    <tr><td>主題</td><td><b>Python</b>（45 題）</td></tr>
+    <tr><td>題數</td><td>5 或 10（10 題約 15 分鐘）</td></tr>
+    <tr><td>每題秒數</td><td><b>手動</b>　← 由你控制開始與結束</td></tr>
+    <tr><td>賽制</td><td><b>個人賽</b></td></tr>
+    <tr><td>班級代碼</td><td>例如 <span class="k">Python-115-1</span>（要累積成績才填）</td></tr>
+    <tr><td>管理碼</td><td>第一次開班<b>留空</b>，之後填抄下來的六碼</td></tr>
+    <tr><td>分組名單</td><td>選填。CSV 三欄：學號,姓名,組別</td></tr>
+  </table>
+  <p class="note">按 <span class="btn">開房間</span> → 畫面出現四位數房號與 QR code，投影給全班看。</p>
+</section>
+
+<section>
+  <h2>三、學生加入</h2>
+  <ul>
+    <li>手機掃 QR code，或開 <span class="k">http://電腦IP:5000</span> → <b>多人對戰</b> → 輸入房號。</li>
+    <li>填<b>學號</b>與<b>姓名</b>（有上傳名單時只要學號，姓名自動帶出）。</li>
+    <li>主持台右側即時顯示報到名單；有名單時還會列出<b>未到的人</b>。</li>
+  </ul>
+</section>
+
+</div>
+<div>
+
+<section>
+  <h2>四、每一題的流程</h2>
+  <ol class="flow">
+    <li>按 <span class="btn">開始考試</span>（之後是 <span class="btn">下一題</span>）→ 題目同時出現在大螢幕與所有手機上，秒數往上數。</li>
+    <li>等大家作答，畫面顯示「已作答 ○ / ○ 人」。<b>全部答完也不會自動公布</b>，一定等你按。</li>
+    <li>按 <span class="btn red">結束本題，公布答案</span> → 顯示正解、各選項人數、<b>最快答對是誰</b>。</li>
+    <li>講解完按 <span class="btn">下一題</span>；最後一題按鈕會變成 <span class="btn">放榜</span>。</li>
+  </ol>
+</section>
+
+<section>
+  <h2>五、計分 <small>分數由伺服器計算，公布前手機拿不到答案</small></h2>
+  <div class="score">
+    <div><b>+0.5 分</b>每題<b>最快答對</b>的人，課堂加分（期末加分用）</div>
+    <div><b>遊戲分數</b>答對 500 ＋ 速度分 ＋ 連中加分；最後一題 ×2</div>
+  </div>
+</section>
+
+<section>
+  <h2>六、下課前一定要做</h2>
+  <ol class="flow">
+    <li>放榜畫面按 <span class="btn out">匯出本場成績 CSV</span> → 下載這堂課的成績（名次、學號、姓名、分數、答對題數、加分）。</li>
+    <li>按 <span class="btn">存入班級積分</span> → 成績累加到班級。</li>
+    <li>之後開 <span class="k">http://電腦IP:5000/class</span>，輸入班級代碼＋管理碼，可看累積成績並匯出 CSV。</li>
+  </ol>
+  <div class="warn">先匯出，再存入。關掉房間後這場的 CSV 就下載不到了。</div>
+</section>
+
+<section>
+  <h2>七、當場排錯</h2>
+  <table>
+    <tr><th class="sym">狀況</th><th>怎麼辦</th></tr>
+    <tr><td class="sym">學生打不開網址</td><td>手機先連上校園 Wi-Fi 並完成認證；再按「換一個網址」試其他 IP</td></tr>
+    <tr><td class="sym">全班都連不到</td><td>多半是 Wi-Fi 裝置隔離或防火牆。改用<b>自備路由器／手機熱點</b>，電腦與學生都連它</td></tr>
+    <tr><td class="sym">某位學生斷線</td><td>請他重新整理頁面，會自動回到原位，分數不會不見</td></tr>
+    <tr><td class="sym">有人手機沒電／沒帶</td><td>可以兩人共用一支，或用電腦瀏覽器加入</td></tr>
+    <tr><td class="sym">題目太難</td><td>下課後編輯 <span class="k">questions/python.json</span> 刪改；或改選題數少一點</td></tr>
+    <tr><td class="sym">主持台不小心關掉</td><td>重開 <span class="k">/host</span> 會自動回到原本的房間（同一個瀏覽器）</td></tr>
+    <tr><td class="sym">要重玩一輪</td><td>放榜後按「再來一局」，題目重新抽、分數歸零</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>八、給學生的一句話</h2>
+  <p style="margin:2px 0 0">「連上 Wi-Fi，掃 QR code，輸入<b>學號和姓名</b>。每題我喊開始你們就搶答，<b>最快答對的人加 0.5 分</b>，算進期末成績。」</p>
+</section>
+
+</div>
+</div>
+
+<footer>
+  <span>金榜問答 v3.3 ・ 題庫 418 題（Python 45 題）</span>
+  <span>伺服器：<span class="k">python app.py</span>　停止：在視窗按 Ctrl+C</span>
+</footer>
+</body>
+</html>
