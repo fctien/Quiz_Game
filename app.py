@@ -154,6 +154,17 @@ def play_page():
     return send_from_directory(app.static_folder, "play.html")
 
 
+@app.get("/manifest.json")
+def manifest():
+    return send_from_directory(app.static_folder, "manifest.json")
+
+
+@app.get("/sw.js")
+def service_worker():
+    # Service Worker 必須放在根目錄,才能控制整個網站
+    return send_from_directory(app.static_folder, "sw.js", mimetype="application/javascript")
+
+
 @app.get("/class")
 def class_page():
     return send_from_directory(app.static_folder, "class.html")

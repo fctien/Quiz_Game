@@ -7,7 +7,20 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#F3F5F8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1729" media="(prefers-color-scheme: dark)">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="金榜問答">
+<link rel="apple-touch-icon" href="/static/icons/icon-180.png">
+<link rel="icon" href="/static/icons/favicon.png" type="image/png">
 <link rel="stylesheet" href="/static/style.css">
+<script>
+/* 註冊 Service Worker：加到主畫面後可全螢幕開啟、載入更快 */
+if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
+</script>
 </head>
 <body>
 <div class="wrap" id="app"></div>
@@ -153,6 +166,27 @@ const local = {
 const LOCAL = !!window.EMBEDDED_BANK;
 const api = LOCAL ? local : remote;
 
+/* ---------- 加到主畫面 ---------- */
+let deferredPrompt = null;
+const standalone = () => matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+const isIOS = () => /iPad|iPhone|iPod/.test(navigator.userAgent);
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferredPrompt = e; renderInstall(); });
+function renderInstall(){
+  const slot = document.getElementById('installslot');
+  if (!slot || standalone()) return;
+  if (deferredPrompt){
+    slot.innerHTML = `<button class="linkbtn" id="install"><span>加到手機主畫面</span><span class="arrow">＋</span></button>`;
+    document.getElementById('install').onclick = async () => {
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      slot.innerHTML = '';
+    };
+  } else if (isIOS()){
+    slot.innerHTML = `<p class="note">想像 App 一樣開啟：在 Safari 按下方的「分享」→「加入主畫面」。</p>`;
+  }
+}
+
 /* ---------- 首頁 ---------- */
 async function home(){
   const best = store.get('quiz_best') || 0;
@@ -182,7 +216,9 @@ async function home(){
         <button class="btn" type="submit" style="flex:none">加入</button></div></form>
       <div class="mp-card"><h3>開一間考場</h3><p>當主持人：選分類、題數，大家用手機同時搶答，每題即時排名，最後一題分數加倍。</p>
         <a class="btn" href="/host" style="display:block;text-align:center;text-decoration:none">開房間</a></div>`}
-    </div>`;
+    </div>
+    <div id="installslot"></div>`;
+  renderInstall();
   const setMode = m => { store.set('quiz_mode', m);
     document.getElementById('solo').hidden = m !== 'solo'; document.getElementById('multi').hidden = m !== 'multi';
     document.getElementById('m-solo').setAttribute('aria-pressed', m === 'solo'); document.getElementById('m-multi').setAttribute('aria-pressed', m === 'multi'); };

@@ -20,6 +20,7 @@
   --jade:#5FC89A; --jade-soft:#16332A; --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25);
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}   /* 沒有這行,display:grid 會蓋掉 hidden 屬性 */
 body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);
   line-height:1.65;-webkit-tap-highlight-color:transparent}
 .wrap{max-width:540px;margin:0 auto;padding-inline:16px;padding-block:24px 48px;min-height:100vh}
