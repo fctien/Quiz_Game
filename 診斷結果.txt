@@ -1,0 +1,18 @@
+===== 金榜問答 環境診斷 ===== 
+時間: 週日 2026/09/13  8:29:48.83 
+資料夾: C:\Users\User\Desktop\Tien Research\益智問答開發\quiz_game\ 
+ 
+--- where py --- 
+INFO: Could not find files for the given pattern(s).
+--- py -3 --version --- 
+'py' is not recognized as an internal or external command,
+operable program or batch file.
+--- where python --- 
+C:\ProgramData\anaconda3\python.exe
+C:\Users\User\AppData\Local\Microsoft\WindowsApps\python.exe
+--- python --version --- 
+Python 3.11.7
+--- where pip --- 
+C:\ProgramData\anaconda3\Scripts\pip.exe
+ 
+--- 已安裝套件（flask 相關） --- 
