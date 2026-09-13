@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-title" content="脈衝 PULSE">
 <link rel="apple-touch-icon" href="/static/icons/icon-180.png">
 <link rel="icon" href="/static/icons/favicon.png" type="image/png">
-<link rel="stylesheet" href="/static/style.css?v=4.6">
+<link rel="stylesheet" href="/static/style.css?v=4.7">
 <!-- QR code 產生器：連不到網路時只會少了 QR code，輸入房號一樣能加入 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 <script>
@@ -58,7 +58,7 @@ async function setup(msg = ''){
   document.body.dataset.topic = pick.category || '';   // 設定頁就先換上該主題的布景
   const cats = await fetch('/api/categories' + (pick.region ? '?region=' + encodeURIComponent(pick.region) : '')).then(r => r.json()).catch(() => []);
   $app.innerHTML = `<div class="masthead"><div><h1>主持台<span class="seal">試</span></h1>
-      <p class="sub">開一間考坊，學生用手機輸入房號一起搶答　<span style="opacity:.6">v4.6</span></p></div>
+      <p class="sub">開一間考坊，學生用手機輸入房號一起搶答　<span style="opacity:.6">v4.7</span></p></div>
       <a class="back" href="/">← 回首頁</a></div>
     <div class="chips" id="regions" role="group" aria-label="地區">${REGIONS.map(x =>
       `<button data-r="${x}" aria-pressed="${x === pick.region}">${x || '不限地區'}</button>`).join('')}</div>

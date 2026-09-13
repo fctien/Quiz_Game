@@ -94,7 +94,7 @@ h1 .wordmark{display:inline-block;margin-left:.35em;padding:.18em .5em;font-size
 .tag{border:1px solid var(--line);border-radius:4px;padding:0 7px;letter-spacing:.05em}
 .qbox{position:relative}
 .q{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px 18px;box-shadow:var(--shadow);
-  font-family:var(--display);font-size:1.4rem;line-height:1.55;font-weight:700;white-space:pre-line;text-wrap:balance}
+  font-family:var(--display);font-size:1.4rem;line-height:1.55;font-weight:700;white-space:pre-wrap;text-wrap:balance}
 .stamp{position:absolute;right:-4px;top:-28px;width:54px;height:54px;border:3px solid currentColor;border-radius:8px;
   display:grid;place-items:center;font-family:var(--display);font-size:1.9rem;font-weight:700;transform:rotate(-12deg);
   background:var(--paper);animation:stamp .35s cubic-bezier(.2,1.6,.4,1) both}
@@ -113,6 +113,9 @@ h1 .wordmark{display:inline-block;margin-left:.35em;padding:.18em .5em;font-size
 .opt.bad .n{background:var(--cinnabar);color:var(--paper)}
 .opt.gone{opacity:.25;pointer-events:none}
 .opt[disabled]{cursor:default}
+/* 選項裡的程式碼也要看得到縮排（.n 是 A/B/C/D 的圓角標，.cnt 是人數，不受影響） */
+.opt span:not(.n),.hopt span:not(.n):not(.cnt),.popt span:not(.n){white-space:pre-wrap}
+
 .tf{grid-template-columns:1fr 1fr}
 .tf .opt{justify-content:center;font-family:var(--display);font-size:1.6rem;padding:16px}
 .hint{color:var(--muted);font-size:.85rem;margin:10px 0 0}
@@ -239,7 +242,7 @@ h1 .wordmark{display:inline-block;margin-left:.35em;padding:.18em .5em;font-size
 .cd{width:72px;height:72px;border-radius:50%;border:3px solid var(--blue);display:grid;place-items:center;
   font-family:var(--mono);font-size:1.8rem;font-weight:600;flex:none}
 .cd.low{border-color:var(--cinnabar);color:var(--cinnabar)}
-.hqtext{font-family:var(--display);font-size:clamp(1.5rem,3.6vw,2.4rem);font-weight:700;line-height:1.45;text-wrap:balance;white-space:pre-line}
+.hqtext{font-family:var(--display);font-size:clamp(1.5rem,3.6vw,2.4rem);font-weight:700;line-height:1.45;text-wrap:balance;white-space:pre-wrap}
 .double{display:inline-block;background:var(--cinnabar);color:var(--paper);border-radius:6px;padding:2px 10px;font-weight:700;font-size:.85rem;letter-spacing:.1em}
 .hopts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media (max-width:560px){.hopts{grid-template-columns:1fr}}
@@ -620,7 +623,7 @@ async function home(){
       <li>答得越快分數越高；連中 3 題 ×1.5、連中 5 題 ×2</li>
       <li>每局各有一次道具：刪去兩個選項、跳過此題、加時 10 秒</li>
       <li>依正確率評級：滿格、高峰、躍升、穩定、起跳；留下代號就能登上脈衝榜</li>
-    </ul><p class="sub" style="font-size:.78rem;margin-top:10px">脈衝 PULSE v4.6</p></div></div>
+    </ul><p class="sub" style="font-size:.78rem;margin-top:10px">脈衝 PULSE v4.7</p></div></div>
     <div id="multi" class="mp-panel" ${mode === 'multi' ? '' : 'hidden'}>${LOCAL ? `
       <div class="mp-card"><h3>多人對戰</h3><p>多人同場搶答需要執行 Python 伺服器版（app.py），這個單機版只能單人闖關。</p></div>` : `
       <form class="mp-card" id="joinf"><h3>加入考坊</h3><p>輸入主持人畫面上的四位數房號</p>
