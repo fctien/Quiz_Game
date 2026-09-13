@@ -1,3 +1,5 @@
 flask>=3.0
 requests>=2.31
-anthropic>=0.40   # 選用:即時新聞 AI 出題
+
+# 選用：只有要讓 Claude 依當日新聞出題時才需要（需付費 API key）
+# anthropic>=0.40

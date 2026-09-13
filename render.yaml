@@ -1,0 +1,13 @@
+# Render 部署設定（Blueprint）
+# 在 Render 按 New → Blueprint，選這個 repo，它會自動照這個檔建立服務。
+services:
+  - type: web
+    name: jinbang-quiz
+    runtime: python
+    plan: free
+    region: singapore            # 離台灣最近
+    buildCommand: pip install -r requirements.txt gunicorn
+    # 房間狀態存在記憶體，所以只能一個 worker；多執行緒才能同時服務多位學生的即時連線
+    startCommand: gunicorn -w 1 --threads 100 --timeout 0 -b 0.0.0.0:$PORT app:app
+    healthCheckPath: /api/health
+    autoDeploy: true

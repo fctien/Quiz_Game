@@ -393,16 +393,19 @@ def create():
         if not r.questions:
             return err("這個主題目前沒有可用的題目", 503)
         rooms[code] = r
-    # 加入連結:主持人若用 localhost 開,改用區網 IP,手機才連得到
+    # 加入連結:自己的電腦要換成區網 IP,手機才連得到;部署在雲端時直接用網域
     host = request.host
-    port = host.split(":")[1] if ":" in host else "80"
-    if host.split(":")[0] in ("127.0.0.1", "localhost"):
+    hostname = host.split(":")[0]
+    port = host.split(":")[1] if ":" in host else ("443" if request.scheme == "https" else "80")
+    local = hostname in ("127.0.0.1", "localhost") or _private(hostname)
+    if hostname in ("127.0.0.1", "localhost"):
         host = f"{lan_ip()}:{port}"
     urls = [f"{request.scheme}://{host}/play?code={code}"]
-    for ip in lan_ips():                       # 其他網卡的網址,手機連不到時可以換一個
-        u = f"{request.scheme}://{ip}:{port}/play?code={code}"
-        if u not in urls:
-            urls.append(u)
+    if local:                                  # 只有區網模式才需要列出其他網卡
+        for ip in lan_ips():
+            u = f"{request.scheme}://{ip}:{port}/play?code={code}"
+            if u not in urls:
+                urls.append(u)
     return jsonify(code=code, token=r.host_token, join_url=urls[0], join_urls=urls,
                    total=len(r.questions), teams=teams, roster_size=len(roster),
                    class_code=class_code, admin_code=admin_code)

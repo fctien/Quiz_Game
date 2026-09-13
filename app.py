@@ -13,6 +13,7 @@ from pathlib import Path
 from urllib.parse import quote
 
 from flask import Flask, Response, jsonify, request, send_from_directory
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 import classroom
 import leaderboard
@@ -23,6 +24,9 @@ BASE = Path(__file__).parent
 QDIR = BASE / "questions"
 
 app = Flask(__name__, static_folder="static")
+# 部署到 Render 等雲端平台時,前面會有一層反向代理;
+# 這行讓 Flask 讀得到真正的網址與 https,QR code 才不會產生錯的連結。
+app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1)
 
 # ---------------------------------------------------------------- 遊戲規則
 LIVES = 3

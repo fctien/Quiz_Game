@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<title>金榜問答・Render 雲端備援小抄</title>
+<style>
+@page { size: A4; margin: 9mm 9mm; }
+:root{
+  --ink:#1E2A4A; --muted:#5E6A85; --line:#C9D2E2; --blue:#2B4C9B; --blue-soft:#EAF0FA;
+  --cinnabar:#C8321E; --cinnabar-soft:#FBE7E3; --jade:#2F7D5B; --paper:#fff;
+  --serif:"Noto Serif CJK TC","Noto Serif TC",serif;
+  --sans:"Noto Sans CJK TC","Noto Sans TC",sans-serif;
+  --mono:"DejaVu Sans Mono",monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--sans);color:var(--ink);font-size:9.6pt;line-height:1.45;background:#fff}
+header{display:flex;align-items:flex-end;gap:10px;border-bottom:2.5px solid var(--ink);padding-bottom:5px}
+h1{font-family:var(--serif);font-size:19pt;margin:0;letter-spacing:.06em;font-weight:700}
+.seal{display:inline-grid;place-items:center;width:20pt;height:20pt;background:var(--cinnabar);color:#fff;
+  border-radius:3px;font-family:var(--serif);font-size:12pt;font-weight:700;margin-left:2px}
+header .sub{color:var(--muted);font-size:9pt;margin-left:auto;text-align:right;line-height:1.35}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0 9mm;margin-top:6px}
+section{break-inside:avoid;margin-bottom:8px}
+h2{font-family:var(--serif);font-size:12.5pt;margin:0 0 3px;letter-spacing:.05em;
+  border-left:3.5px solid var(--cinnabar);padding-left:6px}
+h2 small{font-family:var(--sans);font-size:8pt;color:var(--muted);font-weight:400;margin-left:5px;letter-spacing:0}
+ol,ul{margin:0;padding-left:1.25em}
+li{margin:1.5px 0}
+b{color:var(--ink)}
+.k{font-family:var(--mono);background:var(--blue-soft);color:var(--blue);padding:0 3px;border-radius:2px;font-size:9.1pt}
+.btn{display:inline-block;background:var(--blue);color:#fff;border-radius:3px;padding:0 5px;font-size:9pt;font-weight:700;white-space:nowrap}
+.btn.red{background:var(--cinnabar)}
+.btn.out{background:#fff;color:var(--ink);border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;font-size:9.3pt}
+th,td{text-align:left;padding:3.5px 4px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--blue-soft);color:var(--blue);font-size:9pt;white-space:nowrap}
+td.sym{width:38%}
+.fill{border:1.2px dashed var(--cinnabar);border-radius:4px;padding:5px 7px;background:var(--cinnabar-soft)}
+.fill table{font-size:9pt}
+.fill td{border:0;padding:3px 4px}
+.fill .lbl{color:var(--cinnabar);font-weight:700;white-space:nowrap;width:30%}
+.fill .blank{border-bottom:1.2px solid var(--ink);width:100%;display:block;height:13px}
+.flow{counter-reset:step;margin:0;padding:0;list-style:none}
+.flow li{position:relative;padding-left:19px;margin:3px 0}
+.flow li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:1px;
+  width:14px;height:14px;border-radius:50%;background:var(--ink);color:#fff;font-size:7.5pt;
+  display:grid;place-items:center;font-family:var(--mono)}
+.note{color:var(--muted);font-size:9pt;margin:4px 0 0}
+.warn{background:var(--cinnabar-soft);border-left:3px solid var(--cinnabar);padding:5px 8px;font-size:9.2pt;margin-top:5px}
+.score{display:flex;gap:5px;flex-wrap:wrap;margin-top:3px}
+.score div{flex:1;min-width:95px;border:1px solid var(--line);border-radius:4px;padding:4px 6px}
+.score b{display:block;font-family:var(--serif);font-size:10pt;color:var(--cinnabar)}
+footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:var(--muted);font-size:8.6pt;
+  display:flex;justify-content:space-between}
+</style>
+</head>
+<body>
+<header>
+  <h1>金榜問答<span class="seal">雲</span></h1>
+  <div class="sub">Render 雲端備援小抄 ・ 學生用 4G 就能玩<br>v3.4　不必和老師同一個 Wi-Fi</div>
+</header>
+
+<div class="cols">
+<div>
+
+<section class="fill">
+  <table>
+    <tr><td class="lbl">Render 網址</td><td><span class="blank"></span></td></tr>
+    <tr><td class="lbl">GitHub repo</td><td><span class="blank"></span></td></tr>
+    <tr><td class="lbl">班級代碼</td><td><span class="blank"></span></td></tr>
+    <tr><td class="lbl">管理碼（六碼）</td><td><span class="blank"></span></td></tr>
+  </table>
+  <p class="note" style="margin:2px 0 0">網址長這樣：<span class="k">https://jinbang-quiz.onrender.com</span></p>
+</section>
+
+<section>
+  <h2>一、一次性設定 <small>上課前幾天做，約 20 分鐘</small></h2>
+  <ol class="flow">
+    <li><b>程式推上 GitHub</b>（Render 從 repo 部署）。在 <span class="k">quiz_game</span> 資料夾開 PowerShell：
+      <div class="k" style="display:block;padding:4px 6px;margin:3px 0;line-height:1.6">git init<br>git add -A<br>git commit -m "金榜問答"<br>git branch -M main<br>git remote add origin https://github.com/<b>你的帳號</b>/jinbang-quiz.git<br>git push -u origin main</div>
+      解壓縮「含git紀錄」那份的話，前三行可以省略。儲存庫設 <b>Private 也可以</b>。</li>
+    <li><b>建立服務</b>：到 <span class="k">render.com</span> 用 GitHub 登入 → <span class="btn">New</span> → <b>Blueprint</b> → 選這個 repo → <span class="btn">Apply</span>。專案裡的 <span class="k">render.yaml</span> 已經寫好設定，不用自己填。</li>
+    <li>等 2～5 分鐘，狀態變成 <b>Live</b>，複製網址填到左上角。</li>
+    <li><b>測試</b>：手機關 Wi-Fi、只用行動網路，開 <span class="k">你的網址/api/health</span>，看到 <span class="k">ok: true</span> 就成功。</li>
+  </ol>
+  <div class="warn">免費方案不需要信用卡。第一次部署較久，之後每次 push 會自動重新部署。</div>
+</section>
+
+<section>
+  <h2>二、上課當天</h2>
+  <ol class="flow">
+    <li><b>上課前 5 分鐘先開一次網頁</b>把服務叫醒（休眠中第一次開要等 30～60 秒）。</li>
+    <li>開 <span class="k">你的網址/host</span>，照平常方式開房（主題 Python、秒數<b>手動</b>、個人賽、班級代碼）。</li>
+    <li>QR code 會自動變成雲端網址，學生用 <b>4G 或任何 Wi-Fi</b> 都能加入。</li>
+    <li>每題流程、加 0.5 分的規則，都和區網版一模一樣。</li>
+    <li><b>下課前一定要按「匯出本場成績 CSV」</b>，再按「存入班級積分」。</li>
+  </ol>
+  <div class="warn">雲端版的班級積分<b>可能會被清空</b>（見右欄），成績以你匯出的 CSV 為準。</div>
+</section>
+
+</div>
+<div>
+
+<section>
+  <h2>三、免費方案的三個限制</h2>
+  <table>
+    <tr><th>限制</th><th>對策</th></tr>
+    <tr><td><b>閒置 15 分鐘會休眠</b><br>下次開啟要等 30～60 秒</td><td>上課前先開網頁叫醒；上課中有人在用就不會睡</td></tr>
+    <tr><td><b>資料不保證保存</b><br>重新部署或重啟後，班級積分可能歸零</td><td>每堂課結束<b>立刻匯出 CSV</b>。要永久保存需付費方案加掛 Disk</td></tr>
+    <tr><td><b>資源有限</b><br>約 40～50 人可行，反應比區網慢一點</td><td>人多時優先用區網；雲端當備援</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>四、兩種方案比較</h2>
+  <table>
+    <tr><th></th><th>區網（你的電腦）</th><th>Render（雲端）</th></tr>
+    <tr><td>學生上網方式</td><td>必須同一個 Wi-Fi</td><td>4G／任何網路</td></tr>
+    <tr><td>會被校園網路擋</td><td>有可能</td><td><b>不會</b></td></tr>
+    <tr><td>速度</td><td><b>最快</b></td><td>慢 0.1～0.3 秒</td></tr>
+    <tr><td>成績保存</td><td><b>穩，存在你電腦</b></td><td>要當場匯出</td></tr>
+    <tr><td>Android 裝成 App</td><td>不行（非 HTTPS）</td><td><b>可以</b></td></tr>
+    <tr><td>要不要開電腦</td><td>要，且要一直開著</td><td>不用</td></tr>
+  </table>
+  <p class="note">建議：主要用區網，Render 當備援。兩邊都先設好，當天哪個通就用哪個。</p>
+</section>
+
+<section>
+  <h2>五、排錯</h2>
+  <table>
+    <tr><th class="sym">狀況</th><th>怎麼辦</th></tr>
+    <tr><td class="sym">開網頁一直轉圈</td><td>服務在休眠喚醒，等 30～60 秒；再不行看 Render 的 <b>Logs</b> 分頁</td></tr>
+    <tr><td class="sym">部署失敗（Failed）</td><td>看 Logs 最後幾行，把訊息貼給 Claude</td></tr>
+    <tr><td class="sym">學生說連不上</td><td>確認網址開頭是 <span class="k">https</span>；請他關掉 VPN</td></tr>
+    <tr><td class="sym">房號不見了</td><td>服務重啟會清掉進行中的房間，重開一間即可</td></tr>
+    <tr><td class="sym">成績不見了</td><td>只能靠當場匯出的 CSV，沒有其他備份</td></tr>
+    <tr><td class="sym">改了題目要更新</td><td><span class="k">git add -A</span> → <span class="k">git commit -m "更新題庫"</span> → <span class="k">git push</span>，Render 會自動重新部署</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>六、想更省事的話</h2>
+  <p style="margin:2px 0 0">當天若區網和雲端都出狀況，最後的備案是<b>自備無線路由器</b>：插電開機，電腦和學生都連它，純區網也能玩，完全不需要網際網路。</p>
+</section>
+
+</div>
+</div>
+
+<footer>
+  <span>金榜問答 v3.4 ・ 部署設定寫在 render.yaml，步驟另見 DEPLOY-Render.md</span>
+  <span>健康檢查：<span class="k">/api/health</span></span>
+</footer>
+</body>
+</html>
