@@ -1,8 +1,8 @@
 """
 多人同場搶答（類似 Kahoot)
 
-流程：主持人開房 → 玩家用手機輸入房號加入 → 主持人開始 → 每題同時作答、計時
-     → 公布答案與分布、即時排名 → 最後一題分數加倍 → 放榜（狀元、榜眼、探花)
+流程：主持人開考場 → 玩家用手機輸入房號加入 → 主持人開始 → 每題同時作答、計時
+     → 公布答案與分布、即時排名 → 最後一題分數加倍 → 放榜（滿格、高峰、躍升)
 
 即時推播使用 Server-Sent Events(SSE):純 Flask 就能做，不需要安裝 WebSocket 套件。
 每次房間狀態改變，伺服器把「這位使用者該看到的畫面資料」整包推給他，
@@ -53,11 +53,13 @@ def init(app, pick, clean, cats):
 # ================================================================ 房間
 class Room:
     def __init__(self, code, category, count, limit, region=None, mode="solo",
-                 teams=None, class_code="", roster=None):
+                 teams=None, class_code="", roster=None, unit=None, unit_name=""):
         self.code = code
         self.host_token = secrets.token_urlsafe(16)
         self.category = category
         self.region = region
+        self.unit = unit                      # 課程週次,例如 W5
+        self.unit_name = unit_name
         self.count = count
         self.limit = limit
         self.mode = mode                      # solo(個人賽) / team(分組賽)
@@ -76,10 +78,9 @@ class Room:
         return next((r for r in self.roster if r["sid"] == sid), None)
 
     def new_round(self):
-        pool = [q for q in pick_questions(self.category, 400, self.region) if q["type"] == "choice"]
-        qs = pool[:self.count]
-        qs.sort(key=lambda q: q.get("difficulty", 2))
-        self.questions = qs
+        # 依 25% 簡單 / 50% 中等 / 25% 較難的比例抽題,由易到難排好
+        self.questions = pick_questions(self.category, self.count, self.region,
+                                        self.unit, only_choice=True)
         self.state = "lobby"      # lobby → question → reveal → … → final
         self.qi = -1
         self.deadline = 0
@@ -220,8 +221,10 @@ class Room:
 
     def view(self, pid):
         v = {"code": self.code, "state": "closed" if self.closed else self.state,
+             "topic": self.category,
              "category": categories.get(self.category, {}).get("name", self.category),
-             "region": self.region or "", "mode": self.mode, "teams": self.teams,
+             "region": self.region or "", "unit": self.unit or "", "unit_name": self.unit_name,
+             "mode": self.mode, "teams": self.teams,
              "class_code": self.class_code, "has_roster": bool(self.roster),
              "players": len(self.players), "limit": self.limit, "total": len(self.questions)}
         if self.state in ("question", "reveal"):
@@ -272,7 +275,7 @@ def _new_code():
         code = f"{random.randint(0, 9999):04d}"
         if code not in rooms:
             return code
-    raise RuntimeError("房間太多了")
+    raise RuntimeError("考場太多了")
 
 
 def _cleanup():
@@ -357,6 +360,8 @@ def create():
     if count not in COUNTS or limit not in TIMES:
         return err("題數或秒數不在可選範圍內")
     region = b.get("region") or None
+    unit = b.get("unit") or None
+    unit_name = str(b.get("unit_name", ""))[:40]
     mode = "team" if b.get("mode") == "team" else "solo"
 
     # ---- 班級(選填):有填才會累積積分 ----
@@ -389,7 +394,7 @@ def create():
     with rooms_lock:
         _cleanup()
         code = _new_code()
-        r = Room(code, cat, count, limit, region, mode, teams, class_code, roster)
+        r = Room(code, cat, count, limit, region, mode, teams, class_code, roster, unit, unit_name)
         if not r.questions:
             return err("這個主題目前沒有可用的題目", 503)
         rooms[code] = r
@@ -413,12 +418,12 @@ def create():
 
 @bp.post("/api/mp/roster")
 def upload_roster():
-    """開房之後再上傳/更換分組名單"""
+    """開考場之後再上傳/更換分組名單"""
     b = _body()
     with rooms_lock:
         r = _host_room(b)
         if not r:
-            return err("房間不存在或你不是主持人", 403)
+            return err("考場不存在或你不是主持人", 403)
         if r.state != "lobby":
             return err("遊戲已經開始,不能換名單")
         rows = classroom.parse_roster(b.get("roster_text", ""))
@@ -444,14 +449,14 @@ def export_game():
     """匯出這一場的成績 CSV(不必存到班級也能下載)"""
     r = rooms.get(request.args.get("code", ""))
     if not r or not secrets.compare_digest(request.args.get("token", ""), r.host_token):
-        return err("房間不存在或你不是主持人", 403)
+        return err("考場不存在或你不是主持人", 403)
     out = io.StringIO()
     w = csv.writer(out)
     w.writerow(["名次", "學號", "姓名", "組別", "分數", "答對題數", "總題數", "課堂加分"])
     for i, (_, p) in enumerate(r.ranking(), 1):
         w.writerow([i, p.get("sid", ""), p["name"], p.get("team", ""), p["score"],
                     p["right"], len(r.questions), p.get("bonus", 0)])
-    name = f"{r.class_code or '金榜問答'}-{time.strftime('%m%d')}-成績.csv"
+    name = f"{r.class_code or 'PULSE'}-{time.strftime('%m%d')}-成績.csv"
     return Response("\ufeff" + out.getvalue(), mimetype="text/csv",
                     headers={"Content-Disposition":
                              f"attachment; filename=quiz-scores.csv; filename*=UTF-8''{quote(name)}"})
@@ -464,7 +469,7 @@ def save_class():
     with rooms_lock:
         r = _host_room(b)
         if not r:
-            return err("房間不存在或你不是主持人", 403)
+            return err("考場不存在或你不是主持人", 403)
         if not r.class_code:
             return err("這場沒有設定班級代碼")
         if r.state != "final":
@@ -475,7 +480,8 @@ def save_class():
                     "points": p["score"], "correct": p["right"], "answered": len(r.questions),
                     "bonus": p.get("bonus", 0)}
                    for p in r.players.values()]
-        classroom.save_game(r.class_code, r.category, results, len(r.questions))
+        topic = r.category + (f"・{r.unit_name}" if r.unit_name else "")
+        classroom.save_game(r.class_code, topic, results, len(r.questions))
         r.saved = True
         r.bump()
     return jsonify(ok=True, saved=len(results))
@@ -487,7 +493,7 @@ def start():
     with rooms_lock:
         r = _host_room(b)
         if not r:
-            return err("房間不存在或你不是主持人", 403)
+            return err("考場不存在或你不是主持人", 403)
         if r.state != "lobby":
             return err("遊戲已經開始了")
         if not r.players:
@@ -505,7 +511,7 @@ def reveal():
     with rooms_lock:
         r = _host_room(_body())
         if not r:
-            return err("房間不存在或你不是主持人", 403)
+            return err("考場不存在或你不是主持人", 403)
         if r.state == "question":
             r.do_reveal()
     return jsonify(ok=True)
@@ -516,7 +522,7 @@ def next_q():
     with rooms_lock:
         r = _host_room(_body())
         if not r:
-            return err("房間不存在或你不是主持人", 403)
+            return err("考場不存在或你不是主持人", 403)
         if r.state == "reveal":
             r.start_question()
     return jsonify(ok=True)
@@ -527,7 +533,7 @@ def again():
     with rooms_lock:
         r = _host_room(_body())
         if not r:
-            return err("房間不存在或你不是主持人", 403)
+            return err("考場不存在或你不是主持人", 403)
         r.new_round()
         r.bump()
     return jsonify(ok=True)
@@ -592,7 +598,7 @@ def join():
         if sid and any(p.get("sid") == sid for p in r.players.values()):
             return err("這個學號已經加入了,如果是斷線請重新整理原本的頁面")
         if len(r.players) >= MAX_PLAYERS:
-            return err("房間已滿")
+            return err("考場已滿")
         if r.mode == "team" and team not in r.teams:
             team = ""                                   # 之後在選隊畫面挑
         pid = secrets.token_hex(4)
@@ -610,7 +616,7 @@ def choose_team():
     with rooms_lock:
         r, pid = _player(b)
         if not pid:
-            return err("請重新加入房間", 403)
+            return err("請重新加入考場", 403)
         if r.mode != "team":
             return err("這場不是分組賽")
         if r.state != "lobby":
@@ -631,7 +637,7 @@ def answer():
     with rooms_lock:
         r, pid = _player(b)
         if not pid:
-            return err("請重新加入房間", 403)
+            return err("請重新加入考場", 403)
         choice = b.get("choice")
         if not isinstance(choice, int):
             return err("答案格式錯誤")
@@ -649,12 +655,12 @@ def stream():
     token = request.args.get("token", "")
     r = rooms.get(code)
     if not r:
-        return err("房間不存在", 404)
+        return err("考場不存在", 404)
     if pid == "host":
         if not secrets.compare_digest(token, r.host_token):
             return err("你不是主持人", 403)
     elif pid not in r.players or not secrets.compare_digest(token, r.players[pid]["token"]):
-        return err("請重新加入房間", 403)
+        return err("請重新加入考場", 403)
 
     def gen():
         last = -1

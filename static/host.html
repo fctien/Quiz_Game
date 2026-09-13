@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>金榜問答・主持台</title>
+<title>脈衝 PULSE・主持台</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
@@ -13,10 +13,10 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="金榜問答">
+<meta name="apple-mobile-web-app-title" content="脈衝 PULSE">
 <link rel="apple-touch-icon" href="/static/icons/icon-180.png">
 <link rel="icon" href="/static/icons/favicon.png" type="image/png">
-<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="/static/style.css?v=4.6">
 <!-- QR code 產生器：連不到網路時只會少了 QR code，輸入房號一樣能加入 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 <script>
@@ -27,10 +27,10 @@ if ('serviceWorker' in navigator) window.addEventListener('load', () => navigato
 <body>
 <div class="wrap wide" id="app"></div>
 <script>
-/* 金榜問答 主持台：開房、分組、控制出題、公布答案、放榜、存入班級積分 */
+/* 脈衝 PULSE 主持台：開考坊、分組、控制出題、公布答案、放榜、存入班級積分 */
 const $app = document.getElementById('app');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const SEAL = {geo:'輿', history:'史', human:'文', tech:'科', python:'蟒', star:'星', fun:'奇', news:'聞', mix:'雜'};
+const SEAL = {python:'蟒', pytorch:'深', geo:'輿', history:'史', human:'文', tech:'科', star:'星', fun:'奇', news:'聞', mix:'雜'};
 const REGIONS = ['', '台灣', '中國', '世界'];
 const post = async (url, body) => {
   const r = await fetch(url, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
@@ -52,15 +52,17 @@ async function readCsv(file){
   return text;
 }
 
-/* ---------- 開房設定 ---------- */
+/* ---------- 開考坊設定 ---------- */
 async function setup(msg = ''){
   const pick = ss.get('mp_setup') || {category: 'mix', region: '', count: 10, time: 20, mode: 'solo', team_count: 4, class_code: ''};
+  document.body.dataset.topic = pick.category || '';   // 設定頁就先換上該主題的布景
   const cats = await fetch('/api/categories' + (pick.region ? '?region=' + encodeURIComponent(pick.region) : '')).then(r => r.json()).catch(() => []);
   $app.innerHTML = `<div class="masthead"><div><h1>主持台<span class="seal">試</span></h1>
-      <p class="sub">開一間考場，學生用手機輸入房號一起搶答</p></div>
+      <p class="sub">開一間考坊，學生用手機輸入房號一起搶答　<span style="opacity:.6">v4.6</span></p></div>
       <a class="back" href="/">← 回首頁</a></div>
     <div class="chips" id="regions" role="group" aria-label="地區">${REGIONS.map(x =>
       `<button data-r="${x}" aria-pressed="${x === pick.region}">${x || '不限地區'}</button>`).join('')}</div>
+    <div class="chips multi" id="units" role="group" aria-label="單元"></div>
     <div class="grid" id="cats">${cats.map(c => `
       <button class="cat" data-k="${c.key}" aria-pressed="${c.key === pick.category}" ${c.count === 0 ? 'disabled style="opacity:.4"' : ''}>
         <span class="sealbox">${c.seal || SEAL[c.key] || esc(c.name[0])}</span>
@@ -89,7 +91,7 @@ async function setup(msg = ''){
       <div class="field"><label for="csv">分組名單 CSV（學號,姓名,組別）</label>
         <input type="file" id="csv" accept=".csv,.txt,.tsv"><small class="sub" id="csvinfo">未選擇檔案；沒有名單也可以玩，學生自己選隊。</small></div>
       <a class="joinurl" href="/class" target="_blank">查看班級累積積分 →</a></div>
-    <div class="row"><button class="btn" id="create">開房間</button></div>
+    <div class="row"><button class="btn" id="create">開考坊</button></div>
     <p class="err" id="err" ${msg ? '' : 'hidden'}>${esc(msg)}</p>
     <div class="rules"><h2>怎麼玩</h2><ul>
       <li>把這個畫面投影到大螢幕，學生掃 QR code 或輸入四位數房號加入</li>
@@ -101,9 +103,24 @@ async function setup(msg = ''){
   $app.appendChild(style);
   const save = () => ss.set('mp_setup', pick);
   document.querySelectorAll('#regions button').forEach(b => b.onclick = () => { pick.region = b.dataset.r; save(); setup(); });
+  const loadUnits = async () => {
+    const box = document.getElementById('units');
+    const list = await fetch('/api/units?topic=' + encodeURIComponent(pick.category)).then(r => r.json()).catch(() => []);
+    if (!list.length){ box.innerHTML = ''; pick.unit = ''; pick.unit_name = ''; save(); return; }
+    if (!list.some(u => u.key === pick.unit)) { pick.unit = ''; pick.unit_name = ''; save(); }
+    box.innerHTML = `<button data-u="" aria-pressed="${!pick.unit}">不分單元</button>` + list.map(u =>
+      `<button data-u="${u.key}" data-n="${esc(u.name)}" aria-pressed="${u.key === pick.unit}">${u.key === 'GEN' ? '綜合' : u.key}　${esc(u.name)}（${u.count}）</button>`).join('');
+    box.querySelectorAll('button').forEach(b => b.onclick = () => {
+      pick.unit = b.dataset.u; pick.unit_name = b.dataset.n || ''; save();
+      box.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    });
+  };
+  loadUnits();
   document.querySelectorAll('.cat').forEach(b => b.onclick = () => {
     pick.category = b.dataset.k; save();
+    document.body.dataset.topic = pick.category;        // 點下去馬上換布景
     document.querySelectorAll('.cat').forEach(x => x.setAttribute('aria-pressed', x === b));
+    loadUnits();
   });
   const seg = (id, key, after) => document.querySelectorAll(`#${id} button`).forEach(b => b.onclick = () => {
     pick[key] = isNaN(+b.dataset.v) ? b.dataset.v : +b.dataset.v; save();
@@ -147,10 +164,11 @@ const act = (path, extra = {}) => post(path, {code: H.code, token: H.token, ...e
 
 function bar(v){
   return `<div class="hostbar"><span>房號 <b class="score">${v.code}</b> ・ ${esc(v.category)}${v.region ? '・' + esc(v.region) : ''}
-      ・ ${v.mode === 'team' ? '分組賽' : '個人賽'} ・ ${v.players} 人${v.class_code ? ' ・ 班級 ' + esc(v.class_code) : ''}</span>
+${v.unit_name ? '・' + esc(v.unit_name) : ''} ・ ${v.mode === 'team' ? '分組賽' : '個人賽'} ・ ${v.players} 人${v.class_code ? ' ・ 班級 ' + esc(v.class_code) : ''}</span>
     <span class="conn" id="conn"></span></div>`;
 }
 function render(v){
+  document.body.dataset.topic = v.topic || '';
   if (v.state === 'closed'){ ss.del('mp_host'); es.close(); H = null; return setup(); }
   if (v.state !== 'question') clearInterval(tick);
   ({lobby, question, reveal, final})[v.state]?.(v);
@@ -162,7 +180,7 @@ function lobby(v){
   (v.teams || []).forEach(t => byTeam[t] = []);
   v.roster.forEach(p => { if (v.mode === 'team') (byTeam[p.team] ||= []).push(p); });
   $app.innerHTML = bar(v) + `${H.admin_code ? `<div class="placed" style="margin:12px 0">
-      班級「${esc(H.class_code)}」已建立，管理碼 <b>${esc(H.admin_code)}</b>　請記下來，之後開房存分與查看積分都要用。</div>` : ''}
+      班級「${esc(H.class_code)}」已建立，管理碼 <b>${esc(H.admin_code)}</b>　請記下來，之後開考坊存分與查看積分都要用。</div>` : ''}
     <div class="lobby">
     <div class="joinbox"><small>手機掃描或輸入房號加入</small>
       <div class="bigcode">${v.code}</div>
@@ -177,7 +195,7 @@ function lobby(v){
         : `<div class="chipset">${v.roster.map(p => `<span class="pchip ${p.online ? '' : 'off'}">${esc(p.name)}</span>`).join('') || '<p class="sub">等待考生入場…</p>'}</div>`}
       ${v.missing && v.missing.length ? `<p class="sub" style="margin-top:10px">未到（${v.missing.length}）：${v.missing.slice(0, 12).map(esc).join('、')}${v.missing.length > 12 ? '…' : ''}</p>` : ''}
       <div class="row"><button class="btn" id="go" ${v.roster.length ? '' : 'disabled'}>開始考試（${v.total} 題）</button></div>
-      <div class="row"><button class="btn ghost" id="close">關閉房間</button></div></div></div>`;
+      <div class="row"><button class="btn ghost" id="close">關閉考坊</button></div></div></div>`;
   if (window.qrcode){
     const q = qrcode(0, 'M'); q.addData(H.join_url); q.make();
     const el = document.getElementById('qr'); el.innerHTML = q.createSvgTag(5, 2); el.hidden = false;
@@ -187,7 +205,7 @@ function lobby(v){
     H.join_url = H.join_urls[i]; ss.set('mp_host', H); lobby(v);
   });
   document.getElementById('go').onclick = () => act('/api/mp/start');
-  document.getElementById('close').onclick = () => confirm('確定要關閉房間嗎？') && act('/api/mp/close');
+  document.getElementById('close').onclick = () => confirm('確定要關閉考坊嗎？') && act('/api/mp/close');
 }
 
 /* ---------- 出題中 ---------- */
@@ -249,11 +267,11 @@ function reveal(v){
 
 /* ---------- 放榜 ---------- */
 function final(v){
-  const t = ['狀元', '榜眼', '探花'];
+  const t = ['滿格', '高峰', '躍升'];
   const win = v.mode === 'team' ? v.team_board : v.final;
   const pod = k => win[k] ? `<div class="pod p${k + 1}"><div class="t">${t[k]}</div>
       <b>${esc(v.mode === 'team' ? win[k].team : win[k].name)}</b><small>${v.mode === 'team' ? win[k].avg : win[k].score}</small></div>` : '<div></div>';
-  $app.innerHTML = bar(v) + `<div class="center"><div class="bang"><small>金榜題名</small><div class="rank">放榜</div></div>
+  $app.innerHTML = bar(v) + `<div class="center"><div class="bang"><small>PULSE</small><div class="rank">放榜</div></div>
       ${v.mode === 'team' ? '<p class="sub">隊伍排名依隊員平均分計算</p>' : ''}</div>
     <div class="podium">${pod(1)}${pod(0)}${pod(2)}</div>
     ${v.mode === 'team' ? `<div class="rules" style="border:0"><h2>各隊成績</h2></div><div class="board">${boardRows(v.team_board, true)}</div>` : ''}
@@ -266,7 +284,7 @@ function final(v){
     ${v.class_code ? `<div class="placed" id="saveslot">${v.saved
       ? `已存入班級「${esc(v.class_code)}」的累積積分。<div class="row"><a class="btn ghost" href="/class" target="_blank" style="text-decoration:none;text-align:center">查看累積積分</a></div>`
       : `這場成績可以存入班級「${esc(v.class_code)}」的累積積分。<div class="row"><button class="btn" id="save">存入班級積分</button></div>`}</div>` : ''}
-    <div class="row"><button class="btn ghost" id="close">關閉房間</button><button class="btn" id="again">再來一局</button></div>`;
+    <div class="row"><button class="btn ghost" id="close">關閉考坊</button><button class="btn" id="again">再來一局</button></div>`;
   document.getElementById('save')?.addEventListener('click', e => { e.target.disabled = true; act('/api/mp/save_class'); });
   document.getElementById('again').onclick = () => { lastQ = -1; act('/api/mp/again'); };
   document.getElementById('close').onclick = () => act('/api/mp/close');

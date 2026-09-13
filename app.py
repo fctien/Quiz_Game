@@ -1,5 +1,5 @@
 """
-金榜問答 — Flask 後端
+脈衝 PULSE — Flask 後端
 執行:  python app.py   然後用手機(同一個 Wi-Fi)開 http://<電腦IP>:5000
 
 分數完全由伺服器計算(含作答秒數),前端送不了假分數,排行榜才可信。
@@ -24,6 +24,8 @@ BASE = Path(__file__).parent
 QDIR = BASE / "questions"
 
 app = Flask(__name__, static_folder="static")
+# 靜態檔不快取:改了樣式或題庫,重新整理就會看到新的
+app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
 # 部署到 Render 等雲端平台時,前面會有一層反向代理;
 # 這行讓 Flask 讀得到真正的網址與 https,QR code 才不會產生錯的連結。
 app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1)
@@ -35,11 +37,12 @@ GRACE = 1.5                                 # 網路延遲容忍秒數
 GAME_TTL = 60 * 60                          # 一局最長保留 1 小時
 
 TOPICS = {
+    "python":  {"name": "Python",   "seal": "蟒"},
+    "pytorch": {"name": "Deep Learning", "seal": "深"},
     "geo":     {"name": "地理",     "seal": "輿"},
     "history": {"name": "歷史",     "seal": "史"},
     "human":   {"name": "人文",     "seal": "文"},
     "tech":    {"name": "科技",     "seal": "科"},
-    "python":  {"name": "Python",   "seal": "蟒"},
     "star":    {"name": "娛樂",     "seal": "星"},
     "fun":     {"name": "趣聞",     "seal": "奇"},
     "news":    {"name": "即時新聞", "seal": "聞"},
@@ -48,7 +51,7 @@ TOPICS = {
 CATEGORIES = TOPICS            # 舊名稱,保留相容
 # 題庫檔案 -> 這個檔的題目屬於哪個地區(顯示在題目上,也可以當篩選條件)
 FILES = {"taiwan": "台灣", "china": "中國", "world": "世界", "poetry": "古典詩詞",
-         "stars": "娛樂", "fun": "趣聞", "tech": "科技", "python": "Python"}
+         "stars": "娛樂", "fun": "趣聞", "tech": "科技", "python": "Python", "pytorch": "Deep Learning"}
 REGIONS = ["台灣", "中國", "世界"]   # 地理、歷史、人文可再依地區篩選
 
 
@@ -71,11 +74,25 @@ def active(q):
     return not q.get("expires") or q["expires"] >= date.today().isoformat()
 
 
-def active_bank(topic, region=None):
+def active_bank(topic, region=None, unit=None):
     qs = [q for q in BANK[topic] if active(q)]
     if region:
         qs = [q for q in qs if q.get("region") == region]
+    if unit:                                   # 課程週次(Python 題庫用)
+        qs = [q for q in qs if q.get("unit") == unit]
     return qs
+
+
+def units_of(topic):
+    """回傳這個主題的單元清單(依題庫出現順序),例如 Python 的 W1~W16 週次"""
+    out, seen = [], set()
+    for q in BANK.get(topic, []):
+        u = q.get("unit")
+        if u and u not in seen:
+            seen.add(u)
+            out.append({"key": u, "name": q.get("unit_name", u),
+                        "count": len(active_bank(topic, None, u))})
+    return out
 
 
 # 進行中的遊戲 session_id -> 狀態
@@ -104,17 +121,47 @@ def public_view(q):
             if k not in ("answer", "explanation", "fun_fact", "source", "expires")}
 
 
-def pick_questions(cat, n, region=None):
+# 一份考卷的難度比例:25% 簡單、50% 中等、25% 較難
+DIFF_MIX = {1: 0.25, 2: 0.50, 3: 0.25}
+
+
+def by_ratio(pool, n):
+    """依 DIFF_MIX 的比例抽 n 題;某一級題目不夠時,缺的份額由其他級補上。"""
+    buckets = {d: [q for q in pool if q.get("difficulty", 2) == d] for d in DIFF_MIX}
+    for b in buckets.values():
+        random.shuffle(b)
+    # 最大餘數法:先取整數部分,剩下的名額給小數最大的那一級
+    raw = {d: n * r for d, r in DIFF_MIX.items()}
+    want = {d: int(v) for d, v in raw.items()}
+    order = list(raw)
+    random.shuffle(order)                      # 餘數相同時隨機分配,長期平均才會貼近 25/50/25
+    for d in sorted(order, key=lambda d: raw[d] - want[d], reverse=True):
+        if sum(want.values()) >= n:
+            break
+        want[d] += 1
+    chosen = []
+    for d in (1, 2, 3):
+        chosen += buckets[d][:want[d]]
+    # 有哪一級題目不夠,就從剩下的題目補滿
+    if len(chosen) < n:
+        taken = {id(q) for q in chosen}
+        rest = [q for q in pool if id(q) not in taken]
+        random.shuffle(rest)
+        chosen += rest[:n - len(chosen)]
+    chosen.sort(key=lambda q: q.get("difficulty", 2))   # 由易到難
+    return chosen
+
+
+def pick_questions(cat, n, region=None, unit=None, only_choice=False):
     if cat == "news":
         pool = news.get_news_questions()
     elif cat == "mix":
         pool = [q for k in BANK for q in active_bank(k, region)]
     else:
-        pool = active_bank(cat, region)
-    random.shuffle(pool)
-    chosen = pool[:n]
-    chosen.sort(key=lambda q: q.get("difficulty", 2))   # 由易到難
-    return chosen
+        pool = active_bank(cat, region, unit)
+    if only_choice:
+        pool = [q for q in pool if q.get("type") == "choice"]
+    return by_ratio(list(pool), n)
 
 
 def multiplier(streak):
@@ -189,6 +236,15 @@ def categories():
     return jsonify(out)
 
 
+@app.get("/api/units")
+def units():
+    """某個主題的單元(週次)清單"""
+    topic = request.args.get("topic", "")
+    if topic not in BANK:
+        return jsonify([])
+    return jsonify(units_of(topic))
+
+
 @app.post("/api/start")
 def start():
     cleanup()
@@ -199,12 +255,14 @@ def start():
     region = body.get("region") or None
     if region and region not in REGIONS:
         return jsonify(error="沒有這個地區"), 400
-    qs = pick_questions(cat, 10, region)
+    unit = body.get("unit") or None
+    qs = pick_questions(cat, 10, region, unit)
     if not qs:
         return jsonify(error="目前抓不到新聞,請稍後再試或先玩其他分類"), 503
     sid = secrets.token_urlsafe(12)
     GAMES[sid] = new_game(cat, qs)
     return jsonify(session=sid, total=len(qs), lives=LIVES, time_limit=TIME_LIMIT,
+                   unit_name=(qs[0].get("unit_name", "") if unit else ""),
                    questions=[public_view(q) for q in qs])
 
 

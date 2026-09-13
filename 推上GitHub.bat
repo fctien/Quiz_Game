@@ -7,7 +7,7 @@ title 推上 GitHub
 set "REPO=https://github.com/fctien/Quiz_Game.git"
 
 echo ================================================
-echo   把金榜問答推上 GitHub
+echo   把脈衝 PULSE 推上 GitHub
 echo   目標：%REPO%
 echo ================================================
 echo.
@@ -53,7 +53,7 @@ git add -A
 git diff --cached --quiet
 if errorlevel 1 (
   echo 提交目前的變更...
-  git commit -m "更新金榜問答"
+  git commit -m "更新脈衝 PULSE"
 ) else (
   echo 沒有新的變更需要提交。
 )

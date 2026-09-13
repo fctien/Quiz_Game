@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>金榜問答・多人對戰</title>
+<title>脈衝 PULSE・多人對戰</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
@@ -13,10 +13,10 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="金榜問答">
+<meta name="apple-mobile-web-app-title" content="脈衝 PULSE">
 <link rel="apple-touch-icon" href="/static/icons/icon-180.png">
 <link rel="icon" href="/static/icons/favicon.png" type="image/png">
-<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="/static/style.css?v=4.6">
 <script>
 /* 註冊 Service Worker：加到主畫面後可全螢幕開啟、載入更快 */
 if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
@@ -25,7 +25,7 @@ if ('serviceWorker' in navigator) window.addEventListener('load', () => navigato
 <body>
 <div class="wrap" id="app"></div>
 <script>
-/* 金榜問答 玩家端：加入考場 → 選隊 → 手機作答 → 看名次 */
+/* 脈衝 PULSE 玩家端：加入考坊 → 選隊 → 手機作答 → 看名次 */
 const $app = document.getElementById('app');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const post = async (url, body) => {
@@ -57,7 +57,7 @@ async function joinForm(msg = ''){
       ${hasRoster ? '<p class="sub">姓名與組別會依老師上傳的名單自動帶出。</p>' : `
       <div class="field"><label for="nick">${needSid ? '姓名' : '暱稱'}</label>
         <input class="textin" id="nick" maxlength="12" autocomplete="name" placeholder="最多 12 個字" value="${esc(ls.get('quiz_nick') || '')}" required></div>`}
-      <button class="btn" type="submit" id="go" style="width:100%">加入考場</button>
+      <button class="btn" type="submit" id="go" style="width:100%">加入考坊</button>
       <p class="err" id="err" ${msg ? '' : 'hidden'}>${esc(msg)}</p>
     </form>`;
   document.getElementById(code ? (needSid ? 'sid' : 'nick') : 'code').focus();
@@ -103,12 +103,13 @@ const header = v => `<div class="hud"><span class="prog">${esc(v.name)}${v.team 
     <span class="score">${v.score}</span></div><p class="conn" id="conn"></p>`;
 
 function render(v){
+  document.body.dataset.topic = v.topic || '';
   if (v.state !== 'question') clearInterval(tick);
   if (v.state === 'closed'){ es.close(); ls.del('mp_' + P.code); return closed(); }
   ({lobby, question, reveal, final})[v.state]?.(v);
 }
 function closed(){
-  $app.innerHTML = `<div class="center" style="padding-top:40px"><h1>考場已關閉</h1><p class="sub">謝謝參加！</p>
+  $app.innerHTML = `<div class="center" style="padding-top:40px"><h1>考坊已關閉</h1><p class="sub">謝謝參加！</p>
     <div class="row"><a class="btn" href="/" style="text-decoration:none;text-align:center">回首頁</a></div></div>`;
 }
 
@@ -190,12 +191,12 @@ function reveal(v){
 
 /* ---------- 放榜 ---------- */
 function final(v){
-  const t = ['狀元', '榜眼', '探花'];
-  const title = v.rank <= 3 ? t[v.rank - 1] : v.rank <= Math.ceil(v.players / 2) ? '進士' : '秀才';
+  const t = ['滿格', '高峰', '躍升'];
+  const title = v.rank <= 3 ? t[v.rank - 1] : v.rank <= Math.ceil(v.players / 2) ? '穩定' : '起跳';
   const tb = v.team_board || [];
   const myTeam = v.mode === 'team' ? tb.findIndex(x => x.team === v.team) + 1 : 0;
   $app.innerHTML = header(v) + `<div class="result">
-      <div class="bang"><small>金榜題名</small><div class="rank">${title}</div></div>
+      <div class="bang"><small>PULSE</small><div class="rank">${title}</div></div>
       <div class="big">第 ${v.rank} 名 / ${v.players} 人</div>
       <p class="sub">${v.score} 分 ・ 答對 ${v.right} / ${v.total} 題${v.bonus ? ` ・ 課堂加分 ${v.bonus}` : ''}</p>
       ${myTeam ? `<p class="pill">${esc(v.team)}　隊伍第 ${myTeam} 名（平均 ${tb[myTeam - 1].avg} 分）</p>` : ''}

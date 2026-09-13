@@ -1,881 +1,1289 @@
 [
-  {
-    "id": "po-001",
-    "category": "接句",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "「床前明月光，疑是地上霜」的下一句是？",
-    "options": [
-      "明月幾時有",
-      "低頭思故鄉",
-      "月落烏啼霜滿天",
-      "舉頭望明月"
-    ],
-    "answer": 3,
-    "explanation": "出自李白〈靜夜思〉：床前明月光，疑是地上霜。舉頭望明月，低頭思故鄉。",
-    "fun_fact": "這裡的「床」，有學者認為指的是井邊的欄杆。",
-    "topic": "human"
-  },
-  {
-    "id": "po-002",
-    "category": "接句",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "「白日依山盡，黃河入海流」的下一句是？",
-    "options": [
-      "孤帆遠影碧空盡",
-      "欲窮千里目",
-      "春風不度玉門關",
-      "更上一層樓"
-    ],
-    "answer": 1,
-    "explanation": "出自王之渙〈登鸛雀樓〉：欲窮千里目，更上一層樓。",
-    "fun_fact": "鸛雀樓位在今天的山西永濟。",
-    "topic": "human"
-  },
-  {
-    "id": "po-003",
-    "category": "接句",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "「野火燒不盡」的下一句是？",
-    "options": [
-      "離離原上草",
-      "春風吹又生",
-      "遠芳侵古道",
-      "一歲一枯榮"
-    ],
-    "answer": 1,
-    "explanation": "出自白居易〈賦得古原草送別〉。",
-    "fun_fact": "傳說白居易年輕時靠這首詩讓前輩顧況刮目相看。",
-    "topic": "human"
-  },
-  {
-    "id": "po-004",
-    "category": "作者",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "「春眠不覺曉，處處聞啼鳥」的作者是？",
-    "options": [
-      "杜甫",
-      "孟浩然",
-      "王維",
-      "李白"
-    ],
-    "answer": 1,
-    "explanation": "出自孟浩然〈春曉〉。",
-    "fun_fact": "孟浩然是唐代山水田園詩的代表人物之一。",
-    "topic": "human"
-  },
-  {
-    "id": "po-005",
-    "category": "作者",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "「誰知盤中飧，粒粒皆辛苦」的作者是？",
-    "options": [
-      "李商隱",
-      "白居易",
-      "杜牧",
-      "李紳"
-    ],
-    "answer": 3,
-    "explanation": "出自李紳〈憫農〉。",
-    "fun_fact": "「飧」讀作「ㄙㄨㄣ」，指熟食、飯菜。",
-    "topic": "human"
-  },
-  {
-    "id": "po-006",
-    "category": "作者",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "「慈母手中線，遊子身上衣」出自哪一首詩？",
-    "options": [
-      "靜夜思",
-      "春曉",
-      "遊子吟",
-      "相思"
-    ],
-    "answer": 2,
-    "explanation": "出自孟郊〈遊子吟〉。",
-    "fun_fact": "孟郊五十歲才當上小官，這首詩寫於迎接母親同住之時。",
-    "topic": "human"
-  },
-  {
-    "id": "po-007",
-    "category": "作者",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "被後人稱為「詩聖」的是哪一位詩人？",
-    "options": [
-      "白居易",
-      "杜甫",
-      "李白",
-      "王維"
-    ],
-    "answer": 1,
-    "explanation": "杜甫被稱為詩聖，李白是詩仙，王維是詩佛。",
-    "fun_fact": "李賀因為詩風奇詭，被稱為「詩鬼」。",
-    "topic": "human"
-  },
-  {
-    "id": "po-008",
-    "category": "作者",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "「海內存知己，天涯若比鄰」的作者是？",
-    "options": [
-      "王維",
-      "王昌齡",
-      "王之渙",
-      "王勃"
-    ],
-    "answer": 3,
-    "explanation": "出自王勃〈送杜少府之任蜀州〉。",
-    "fun_fact": "王勃也寫了名篇〈滕王閣序〉，卻在二十多歲就英年早逝。",
-    "topic": "human"
-  },
-  {
-    "id": "po-009",
-    "category": "作者",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "「大江東去，浪淘盡，千古風流人物」是誰的詞？",
-    "options": [
-      "柳永",
-      "辛棄疾",
-      "李清照",
-      "蘇軾"
-    ],
-    "answer": 3,
-    "explanation": "出自蘇軾〈念奴嬌・赤壁懷古〉。",
-    "fun_fact": "蘇軾也是美食家，「東坡肉」就是以他的名號命名的。",
-    "topic": "human"
-  },
-  {
-    "id": "po-010",
-    "category": "作者",
-    "difficulty": 3,
-    "type": "choice",
-    "question": "「人生自古誰無死，留取丹心照汗青」的作者是？",
-    "options": [
-      "岳飛",
-      "于謙",
-      "陸游",
-      "文天祥"
-    ],
-    "answer": 3,
-    "explanation": "出自南宋文天祥〈過零丁洋〉。",
-    "fun_fact": "「汗青」指史冊，古代在竹簡上寫字前要先烤出水分，好像出汗一樣。",
-    "topic": "human"
-  },
-  {
-    "id": "po-011",
-    "category": "情境",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "「但願人長久，千里共嬋娟」最常在哪一個節日被引用？",
-    "options": [
-      "中秋節",
-      "清明節",
-      "端午節",
-      "春節"
-    ],
-    "answer": 0,
-    "explanation": "出自蘇軾〈水調歌頭〉，寫於中秋，「嬋娟」指月亮。",
-    "fun_fact": "這首詞是蘇軾思念弟弟蘇轍時寫的。",
-    "topic": "human"
-  },
-  {
-    "id": "po-012",
-    "category": "情境",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "「獨在異鄉為異客，每逢佳節倍思親」寫的是哪個節日？",
-    "options": [
-      "重陽節",
-      "元宵節",
-      "七夕",
-      "中秋節"
-    ],
-    "answer": 0,
-    "explanation": "出自王維〈九月九日憶山東兄弟〉，九月九日是重陽節。",
-    "fun_fact": "詩中「遍插茱萸少一人」，插茱萸正是重陽習俗。",
-    "topic": "human"
-  },
-  {
-    "id": "po-013",
-    "category": "情境",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "杜甫「會當凌絕頂，一覽眾山小」描寫的是哪一座山？",
-    "options": [
-      "廬山",
-      "泰山",
-      "華山",
-      "黃山"
-    ],
-    "answer": 1,
-    "explanation": "出自杜甫〈望嶽〉，「嶽」指東嶽泰山。",
-    "fun_fact": "這是杜甫年輕時的作品，充滿壯志。",
-    "topic": "human"
-  },
-  {
-    "id": "po-014",
-    "category": "情境",
-    "difficulty": 3,
-    "type": "choice",
-    "question": "于謙〈石灰吟〉「粉身碎骨渾不怕，要留清白在人間」歌詠的是什麼？",
-    "options": [
-      "石灰",
-      "玉石",
-      "白雪",
-      "白梅"
-    ],
-    "answer": 0,
-    "explanation": "這首詩以石灰自比，表達不怕犧牲、堅守清白的志節。",
-    "fun_fact": "石灰要經過開採、火燒、化成粉，正好對應詩中的過程。",
-    "topic": "human"
-  },
-  {
-    "id": "po-015",
-    "category": "冷知識",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "《唐詩三百首》是唐朝人編選的。",
-    "options": [
-      "對",
-      "錯"
-    ],
-    "answer": 1,
-    "explanation": "《唐詩三百首》是清代的蘅塘退士（孫洙）編選的。",
-    "fun_fact": "書中實際收錄的詩超過三百首。",
-    "topic": "human"
-  },
-  {
-    "id": "po-016",
-    "category": "冷知識",
-    "difficulty": 2,
-    "type": "order",
-    "question": "請依年代先後排出這些文人：",
-    "options": [
-      "屈原",
-      "陶淵明",
-      "李白",
-      "蘇軾"
-    ],
-    "answer": [
-      0,
-      1,
-      2,
-      3
-    ],
-    "explanation": "屈原（戰國）→ 陶淵明（東晉）→ 李白（唐）→ 蘇軾（北宋）。",
-    "fun_fact": "陶淵明的「採菊東籬下，悠然見南山」是田園詩的經典。",
-    "topic": "human"
-  },
-  {
-    "id": "po-017",
-    "category": "接句",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "「兩個黃鸝鳴翠柳」的下一句是？",
-    "options": [
-      "窗含西嶺千秋雪",
-      "門泊東吳萬里船",
-      "一行白鷺上青天",
-      "孤帆遠影碧空盡"
-    ],
-    "answer": 2,
-    "explanation": "出自杜甫〈絕句〉：兩個黃鸝鳴翠柳，一行白鷺上青天。窗含西嶺千秋雪，門泊東吳萬里船。",
-    "fun_fact": "這是杜甫住在成都草堂時所寫〈絕句四首〉中的一首。",
-    "topic": "human"
-  },
-  {
-    "id": "po-018",
-    "category": "接句",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "「紅豆生南國」的下一句是？",
-    "options": [
-      "此物最相思",
-      "春風又綠江南岸",
-      "人面桃花相映紅",
-      "春來發幾枝"
-    ],
-    "answer": 3,
-    "explanation": "出自王維〈相思〉：紅豆生南國，春來發幾枝。以紅豆寄託相思之情。（此句以通行本為準，另有版本作「秋來發故枝」。）",
-    "fun_fact": "紅豆又被稱為「相思子」。",
-    "topic": "human"
-  },
-  {
-    "id": "po-019",
-    "category": "接句",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "「少小離家老大回」的下一句是？",
-    "options": [
-      "兒童相見不相識",
-      "近鄉情更怯",
-      "鄉音無改鬢毛衰",
-      "笑問客從何處來"
-    ],
-    "answer": 2,
-    "explanation": "出自賀知章〈回鄉偶書〉：少小離家老大回，鄉音無改鬢毛衰。寫久別返鄉的感慨。（此句以通行本為準，「衰」另有版本作「催」。）",
-    "fun_fact": "賀知章八十多歲才辭官回鄉，他也是稱李白為「謫仙人」的人。",
-    "topic": "human"
-  },
-  {
-    "id": "po-020",
-    "category": "接句",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "「朝辭白帝彩雲間」的下一句是？",
-    "options": [
-      "千里江陵一日還",
-      "煙花三月下揚州",
-      "兩岸猿聲啼不住",
-      "輕舟已過萬重山"
-    ],
-    "answer": 0,
-    "explanation": "出自李白〈早發白帝城〉：朝辭白帝彩雲間，千里江陵一日還。寫順江而下的輕快。",
-    "fun_fact": "一般認為此詩寫於李白被流放夜郎途中遇赦東歸之時，難怪心情如此輕快。",
-    "topic": "human"
-  },
-  {
-    "id": "po-021",
-    "category": "接句",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "「千山鳥飛絕」的下一句是？",
-    "options": [
-      "野渡無人舟自橫",
-      "獨釣寒江雪",
-      "孤舟蓑笠翁",
-      "萬徑人蹤滅"
-    ],
-    "answer": 3,
-    "explanation": "出自柳宗元〈江雪〉：千山鳥飛絕，萬徑人蹤滅。孤舟蓑笠翁，獨釣寒江雪。",
-    "fun_fact": "把四句的第一個字連起來，正好是「千萬孤獨」。",
-    "topic": "human"
-  },
-  {
-    "id": "po-022",
-    "category": "接句",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "「在天願作比翼鳥」的下一句是？",
-    "options": [
-      "在地願為連理枝",
-      "七月七日長生殿",
-      "此恨綿綿無絕期",
-      "天長地久有時盡"
-    ],
-    "answer": 0,
-    "explanation": "出自白居易〈長恨歌〉，寫唐玄宗與楊貴妃的誓言。",
-    "fun_fact": "傳說比翼鳥只有一隻眼睛、一邊翅膀，必須兩隻並肩才能飛。",
-    "topic": "human"
-  },
-  {
-    "id": "po-023",
-    "category": "接句",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "「勸君更盡一杯酒」的下一句是？",
-    "options": [
-      "客舍青青柳色新",
-      "西出陽關無故人",
-      "一片冰心在玉壺",
-      "春風不度玉門關"
-    ],
-    "answer": 1,
-    "explanation": "出自王維〈送元二使安西〉：勸君更盡一杯酒，西出陽關無故人。是送別詩的經典。",
-    "fun_fact": "這首詩後來被譜成琴曲〈陽關三疊〉，流傳至今。",
-    "topic": "human"
-  },
-  {
-    "id": "po-024",
-    "category": "接句",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "「姑蘇城外寒山寺」的下一句是？",
-    "options": [
-      "夜半鐘聲到客船",
-      "江楓漁火對愁眠",
-      "煙籠寒水月籠沙",
-      "月落烏啼霜滿天"
-    ],
-    "answer": 0,
-    "explanation": "出自張繼〈楓橋夜泊〉：姑蘇城外寒山寺，夜半鐘聲到客船。寫旅人夜泊的愁思。",
-    "fun_fact": "「姑蘇」就是今天的蘇州，寒山寺因這首詩而名揚天下。",
-    "topic": "human"
-  },
-  {
-    "id": "po-025",
-    "category": "接句",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "「山重水複疑無路」的下一句是？",
-    "options": [
-      "柳暗花明又一村",
-      "衣冠簡樸古風存",
-      "豐年留客足雞豚",
-      "行到水窮處"
-    ],
-    "answer": 0,
-    "explanation": "出自陸游〈遊山西村〉：山重水複疑無路，柳暗花明又一村。常用來比喻困境中出現轉機。",
-    "fun_fact": "詩中的「山西村」位在陸游的家鄉浙江紹興一帶，不是山西省。",
-    "topic": "human"
-  },
-  {
-    "id": "po-026",
-    "category": "接句",
-    "difficulty": 3,
-    "type": "choice",
-    "question": "辛棄疾〈破陣子〉「醉裡挑燈看劍」的下一句是？",
-    "options": [
-      "氣吞萬里如虎",
-      "沙場秋點兵",
-      "可憐白髮生",
-      "夢回吹角連營"
-    ],
-    "answer": 3,
-    "explanation": "出自辛棄疾〈破陣子・為陳同甫賦壯詞以寄之〉：醉裡挑燈看劍，夢回吹角連營。抒發報國壯志。",
-    "fun_fact": "詞中「馬作的盧飛快」的「的盧」，正是三國時劉備騎過的名馬。",
-    "topic": "human"
-  },
-  {
-    "id": "po-027",
-    "category": "接句",
-    "difficulty": 1,
-    "type": "order",
-    "question": "請依正確順序排出李白〈贈汪倫〉的四句：",
-    "options": [
-      "不及汪倫送我情",
-      "桃花潭水深千尺",
-      "忽聞岸上踏歌聲",
-      "李白乘舟將欲行"
-    ],
-    "answer": [
-      3,
-      2,
-      1,
-      0
-    ],
-    "explanation": "李白〈贈汪倫〉：李白乘舟將欲行，忽聞岸上踏歌聲。桃花潭水深千尺，不及汪倫送我情。",
-    "fun_fact": "桃花潭位在今天的安徽涇縣。",
-    "topic": "human"
-  },
-  {
-    "id": "po-028",
-    "category": "接句",
-    "difficulty": 3,
-    "type": "order",
-    "question": "請依正確順序排出王翰〈涼州詞〉的四句：",
-    "options": [
-      "欲飲琵琶馬上催",
-      "葡萄美酒夜光杯",
-      "古來征戰幾人回",
-      "醉臥沙場君莫笑"
-    ],
-    "answer": [
-      1,
-      0,
-      3,
-      2
-    ],
-    "explanation": "王翰〈涼州詞〉：葡萄美酒夜光杯，欲飲琵琶馬上催。醉臥沙場君莫笑，古來征戰幾人回？",
-    "fun_fact": "「涼州詞」其實是曲調名，王之渙也寫過同題的「羌笛何須怨楊柳」。",
-    "topic": "human"
-  },
-  {
-    "id": "po-029",
-    "category": "作者",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "「飛流直下三千尺，疑是銀河落九天」的作者是？",
-    "options": [
-      "李白",
-      "白居易",
-      "杜甫",
-      "王維"
-    ],
-    "answer": 0,
-    "explanation": "出自李白〈望廬山瀑布〉，以誇張手法寫瀑布的氣勢。",
-    "fun_fact": "首句「日照香爐生紫煙」的「香爐」，指的是廬山的香爐峰。",
-    "topic": "human"
-  },
-  {
-    "id": "po-030",
-    "category": "作者",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "「國破山河在，城春草木深」的作者是？",
-    "options": [
-      "杜牧",
-      "李白",
-      "陸游",
-      "杜甫"
-    ],
-    "answer": 3,
-    "explanation": "出自杜甫〈春望〉，寫安史之亂時長安殘破的景象。",
-    "fun_fact": "同一首詩的「烽火連三月，家書抵萬金」也是千古名句。",
-    "topic": "human"
-  },
-  {
-    "id": "po-031",
-    "category": "作者",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "「天生我材必有用，千金散盡還復來」是李白的詩句。",
-    "options": [
-      "對",
-      "錯"
-    ],
-    "answer": 0,
-    "explanation": "出自李白〈將進酒〉，展現他豪放自信的個性。",
-    "fun_fact": "「將進酒」的「將」讀作「ㄑㄧㄤ」，是「請」的意思。",
-    "topic": "human"
-  },
-  {
-    "id": "po-032",
-    "category": "作者",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "「尋尋覓覓，冷冷清清，淒淒慘慘戚戚」是哪位詞人的作品？",
-    "options": [
-      "辛棄疾",
-      "李清照",
-      "蘇軾",
-      "柳永"
-    ],
-    "answer": 1,
-    "explanation": "出自李清照〈聲聲慢〉，寫國破家亡、晚年孤苦的愁緒。",
-    "fun_fact": "開頭一口氣連用了十四個疊字，歷來被視為神來之筆。",
-    "topic": "human"
-  },
-  {
-    "id": "po-033",
-    "category": "作者",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "「但使龍城飛將在，不教胡馬度陰山」的作者是？",
-    "options": [
-      "王之渙",
-      "岑參",
-      "高適",
-      "王昌齡"
-    ],
-    "answer": 3,
-    "explanation": "出自王昌齡〈出塞〉，「飛將」一般認為指漢代名將李廣。（「龍城」為通行本寫法，清人閻若璩主張應作「盧城」。）",
-    "fun_fact": "據明代王世貞《藝苑卮言》記載，李攀龍認為唐人絕句應以這首「秦時明月漢時關」為壓卷之作。",
-    "topic": "human"
-  },
-  {
-    "id": "po-034",
-    "category": "作者",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "「王師北定中原日，家祭無忘告乃翁」的作者是？",
-    "options": [
-      "岳飛",
-      "辛棄疾",
-      "文天祥",
-      "陸游"
-    ],
-    "answer": 3,
-    "explanation": "出自陸游〈示兒〉，是他臨終前寫給兒子的詩，至死不忘收復中原。",
-    "fun_fact": "陸游現存詩作九千多首，是存詩最多的古代詩人之一。",
-    "topic": "human"
-  },
-  {
-    "id": "po-035",
-    "category": "作者",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "「停車坐愛楓林晚，霜葉紅於二月花」出自哪一首詩？",
-    "options": [
-      "山行",
-      "楓橋夜泊",
-      "江雪",
-      "秋夕"
-    ],
-    "answer": 0,
-    "explanation": "出自杜牧〈山行〉，描寫秋天山中楓葉比春花還紅豔。",
-    "fun_fact": "句中的「坐」不是坐下，而是「因為」的意思。",
-    "topic": "human"
-  },
-  {
-    "id": "po-036",
-    "category": "作者",
-    "difficulty": 3,
-    "type": "choice",
-    "question": "「身無彩鳳雙飛翼，心有靈犀一點通」的作者是？",
-    "options": [
-      "李賀",
-      "溫庭筠",
-      "杜牧",
-      "李商隱"
-    ],
-    "answer": 3,
-    "explanation": "出自李商隱〈無題〉（昨夜星辰昨夜風），寫戀人心意相通。",
-    "fun_fact": "李商隱寫了許多以〈無題〉為名的詩，詩意隱晦，至今仍眾說紛紜。",
-    "topic": "human"
-  },
-  {
-    "id": "po-037",
-    "category": "作者",
-    "difficulty": 3,
-    "type": "choice",
-    "question": "「楊柳岸，曉風殘月」出自哪位詞人的作品？",
-    "options": [
-      "柳永",
-      "秦觀",
-      "李清照",
-      "晏殊"
-    ],
-    "answer": 0,
-    "explanation": "出自柳永〈雨霖鈴〉：今宵酒醒何處？楊柳岸，曉風殘月。寫離別的淒涼。",
-    "fun_fact": "柳永的詞流行到「凡有井水飲處，即能歌柳詞」。",
-    "topic": "human"
-  },
-  {
-    "id": "po-038",
-    "category": "作者",
-    "difficulty": 3,
-    "type": "choice",
-    "question": "「老驥伏櫪，志在千里」的作者是？",
-    "options": [
-      "劉備",
-      "曹植",
-      "曹操",
-      "諸葛亮"
-    ],
-    "answer": 2,
-    "explanation": "出自曹操〈龜雖壽〉：老驥伏櫪，志在千里；烈士暮年，壯心不已。",
-    "fun_fact": "「驥」是千里馬，「櫪」是馬槽，比喻年老仍懷壯志。",
-    "topic": "human"
-  },
-  {
-    "id": "po-039",
-    "category": "情境",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "王安石〈元日〉「爆竹聲中一歲除，春風送暖入屠蘇」描寫的是哪個節日？",
-    "options": [
-      "清明節",
-      "端午節",
-      "春節",
-      "元宵節"
-    ],
-    "answer": 2,
-    "explanation": "「元日」就是農曆正月初一，詩中寫放爆竹、喝屠蘇酒的過年景象。",
-    "fun_fact": "詩末「總把新桃換舊符」的「桃符」，就是春聯的前身。",
-    "topic": "human"
-  },
-  {
-    "id": "po-040",
-    "category": "情境",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "楊萬里「接天蓮葉無窮碧，映日荷花別樣紅」描寫的是哪個季節？",
-    "options": [
-      "冬天",
-      "春天",
-      "秋天",
-      "夏天"
-    ],
-    "answer": 3,
-    "explanation": "出自楊萬里〈曉出淨慈寺送林子方〉，寫農曆六月西湖荷花盛開的景色。",
-    "fun_fact": "前兩句是「畢竟西湖六月中，風光不與四時同」。",
-    "topic": "human"
-  },
-  {
-    "id": "po-041",
-    "category": "情境",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "杜甫「好雨知時節，當春乃發生」描寫的是什麼？",
-    "options": [
-      "秋霜",
-      "夏日雷陣雨",
-      "春雨",
-      "冬雪"
-    ],
-    "answer": 2,
-    "explanation": "出自杜甫〈春夜喜雨〉，讚美春雨適時而來、滋潤萬物。",
-    "fun_fact": "同一首詩的「隨風潛入夜，潤物細無聲」也常被用來形容默默付出。",
-    "topic": "human"
-  },
-  {
-    "id": "po-042",
-    "category": "情境",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "秦觀「金風玉露一相逢，便勝卻人間無數」描寫的是哪個節日？",
-    "options": [
-      "元宵節",
-      "中秋節",
-      "重陽節",
-      "七夕"
-    ],
-    "answer": 3,
-    "explanation": "出自秦觀〈鵲橋仙〉，寫牛郎織女七夕相會。",
-    "fun_fact": "同一首詞的結尾「兩情若是久長時，又豈在朝朝暮暮」是著名的愛情名句。",
-    "topic": "human"
-  },
-  {
-    "id": "po-043",
-    "category": "情境",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "辛棄疾「東風夜放花千樹，更吹落、星如雨」描寫的是哪個節日？",
-    "options": [
-      "元宵節",
-      "中秋節",
-      "春節",
-      "端午節"
-    ],
-    "answer": 0,
-    "explanation": "出自辛棄疾〈青玉案・元夕〉，「元夕」就是元宵夜，詞中描寫滿城花燈。",
-    "fun_fact": "同一首詞的「燈火闌珊處」，「闌珊」是燈火稀落的意思。",
-    "topic": "human"
-  },
-  {
-    "id": "po-044",
-    "category": "情境",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "岑參「北風捲地白草折，胡天八月即飛雪」描寫的是哪種地方？",
-    "options": [
-      "江南水鄉",
-      "東南海濱",
-      "西北邊塞",
-      "京城宮殿"
-    ],
-    "answer": 2,
-    "explanation": "出自岑參〈白雪歌送武判官歸京〉，寫邊塞農曆八月就下雪的奇寒。",
-    "fun_fact": "同一首詩「忽如一夜春風來，千樹萬樹梨花開」是把雪比作梨花。",
-    "topic": "human"
-  },
-  {
-    "id": "po-045",
-    "category": "情境",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "李白〈月下獨酌〉「舉杯邀明月，對影成三人」主要表達什麼心情？",
-    "options": [
-      "戰爭悲憤",
-      "孤獨寂寞",
-      "離別不捨",
-      "思念家鄉"
-    ],
-    "answer": 1,
-    "explanation": "前兩句是「花間一壺酒，獨酌無相親」，只能邀月亮和影子作伴，寫出詩人的孤獨。",
-    "fun_fact": "〈月下獨酌〉共有四首，這是其中第一首。",
-    "topic": "human"
-  },
-  {
-    "id": "po-046",
-    "category": "情境",
-    "difficulty": 3,
-    "type": "choice",
-    "question": "《詩經》〈蒹葭〉「蒹葭蒼蒼，白露為霜」描寫的是哪個季節？",
-    "options": [
-      "秋天",
-      "冬天",
-      "春天",
-      "夏天"
-    ],
-    "answer": 0,
-    "explanation": "出自《詩經・秦風・蒹葭》，露水凝結成霜，是深秋景象。",
-    "fun_fact": "「蒹葭」是蘆荻、蘆葦一類的水草。",
-    "topic": "human"
-  },
-  {
-    "id": "po-047",
-    "category": "冷知識",
-    "difficulty": 3,
-    "type": "choice",
-    "question": "「青蓮居士」是哪一位詩人的別號？",
-    "options": [
-      "杜甫",
-      "白居易",
-      "王維",
-      "李白"
-    ],
-    "answer": 3,
-    "explanation": "李白自號青蓮居士，由來有兩說：一說取自佛典中象徵清淨的青蓮花（他曾在詩中自比維摩詰）；另一說與他少年時居住的四川清廉鄉（今江油市青蓮鎮）有關。",
-    "fun_fact": "白居易號香山居士，杜甫自稱少陵野老。",
-    "topic": "human"
-  },
-  {
-    "id": "po-048",
-    "category": "冷知識",
-    "difficulty": 3,
-    "type": "choice",
-    "question": "成語「青梅竹馬」出自哪一位詩人的作品？",
-    "options": [
-      "白居易",
-      "李白",
-      "王維",
-      "杜甫"
-    ],
-    "answer": 1,
-    "explanation": "出自李白〈長干行〉：郎騎竹馬來，遶床弄青梅。形容男女童年時天真的情誼。",
-    "fun_fact": "同一首詩的「同居長干里，兩小無嫌猜」也衍生出成語「兩小無猜」。",
-    "topic": "human"
-  },
-  {
-    "id": "po-049",
-    "category": "冷知識",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "「春蠶到死絲方盡，蠟炬成灰淚始乾」原本是一首歌頌老師無私奉獻的詩。",
-    "options": [
-      "對",
-      "錯"
-    ],
-    "answer": 1,
-    "explanation": "出自李商隱〈無題〉（相見時難別亦難），原本是表達堅貞不渝的愛情。",
-    "fun_fact": "後人才借用這兩句來比喻老師的奉獻。",
-    "topic": "human"
-  },
-  {
-    "id": "po-050",
-    "category": "冷知識",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "宋詞原本是可以配合音樂演唱的歌詞。",
-    "options": [
-      "對",
-      "錯"
-    ],
-    "answer": 0,
-    "explanation": "詞起源於隋唐的曲子詞，依曲調填寫，所以作詞又叫「填詞」。",
-    "fun_fact": "〈水調歌頭〉、〈念奴嬌〉這類「詞牌」其實是曲調名，不是題目。",
-    "topic": "human"
-  },
-  {
-    "id": "po-051",
-    "category": "冷知識",
-    "difficulty": 2,
-    "type": "order",
-    "question": "請依年代先後排出這些文人：",
-    "options": [
-      "馬致遠",
-      "曹植",
-      "辛棄疾",
-      "王昌齡"
-    ],
-    "answer": [
-      1,
-      3,
-      2,
-      0
-    ],
-    "explanation": "曹植（三國魏）→ 王昌齡（唐）→ 辛棄疾（南宋）→ 馬致遠（元）。",
-    "fun_fact": "馬致遠的〈天淨沙・秋思〉被譽為「秋思之祖」。",
-    "topic": "human"
-  }
+ {
+  "id": "po-001",
+  "category": "接句",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「床前明月光，疑是地上霜」的下一句是？",
+  "options": [
+   "明月幾時有",
+   "低頭思故鄉",
+   "月落烏啼霜滿天",
+   "舉頭望明月"
+  ],
+  "answer": 3,
+  "explanation": "出自李白〈靜夜思〉：床前明月光，疑是地上霜。舉頭望明月，低頭思故鄉。",
+  "fun_fact": "這裡的「床」，有學者認為指的是井邊的欄杆。",
+  "topic": "human"
+ },
+ {
+  "id": "po-002",
+  "category": "接句",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「白日依山盡，黃河入海流」的下一句是？",
+  "options": [
+   "孤帆遠影碧空盡",
+   "欲窮千里目",
+   "春風不度玉門關",
+   "更上一層樓"
+  ],
+  "answer": 1,
+  "explanation": "出自王之渙〈登鸛雀樓〉：欲窮千里目，更上一層樓。",
+  "fun_fact": "鸛雀樓位在今天的山西永濟。",
+  "topic": "human"
+ },
+ {
+  "id": "po-003",
+  "category": "接句",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「野火燒不盡」的下一句是？",
+  "options": [
+   "離離原上草",
+   "春風吹又生",
+   "遠芳侵古道",
+   "一歲一枯榮"
+  ],
+  "answer": 1,
+  "explanation": "出自白居易〈賦得古原草送別〉。",
+  "fun_fact": "傳說白居易年輕時靠這首詩讓前輩顧況刮目相看。",
+  "topic": "human"
+ },
+ {
+  "id": "po-004",
+  "category": "作者",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「春眠不覺曉，處處聞啼鳥」的作者是？",
+  "options": [
+   "杜甫",
+   "孟浩然",
+   "王維",
+   "李白"
+  ],
+  "answer": 1,
+  "explanation": "出自孟浩然〈春曉〉。",
+  "fun_fact": "孟浩然是唐代山水田園詩的代表人物之一。",
+  "topic": "human"
+ },
+ {
+  "id": "po-005",
+  "category": "作者",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「誰知盤中飧，粒粒皆辛苦」的作者是？",
+  "options": [
+   "李商隱",
+   "白居易",
+   "杜牧",
+   "李紳"
+  ],
+  "answer": 3,
+  "explanation": "出自李紳〈憫農〉。",
+  "fun_fact": "「飧」讀作「ㄙㄨㄣ」，指熟食、飯菜。",
+  "topic": "human"
+ },
+ {
+  "id": "po-006",
+  "category": "作者",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「慈母手中線，遊子身上衣」出自哪一首詩？",
+  "options": [
+   "靜夜思",
+   "春曉",
+   "遊子吟",
+   "相思"
+  ],
+  "answer": 2,
+  "explanation": "出自孟郊〈遊子吟〉。",
+  "fun_fact": "孟郊五十歲才當上小官，這首詩寫於迎接母親同住之時。",
+  "topic": "human"
+ },
+ {
+  "id": "po-007",
+  "category": "作者",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "被後人稱為「詩聖」的是哪一位詩人？",
+  "options": [
+   "白居易",
+   "杜甫",
+   "李白",
+   "王維"
+  ],
+  "answer": 1,
+  "explanation": "杜甫被稱為詩聖，李白是詩仙，王維是詩佛。",
+  "fun_fact": "李賀因為詩風奇詭，被稱為「詩鬼」。",
+  "topic": "human"
+ },
+ {
+  "id": "po-008",
+  "category": "作者",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「海內存知己，天涯若比鄰」的作者是？",
+  "options": [
+   "王維",
+   "王昌齡",
+   "王之渙",
+   "王勃"
+  ],
+  "answer": 3,
+  "explanation": "出自王勃〈送杜少府之任蜀州〉。",
+  "fun_fact": "王勃也寫了名篇〈滕王閣序〉，卻在二十多歲就英年早逝。",
+  "topic": "human"
+ },
+ {
+  "id": "po-009",
+  "category": "作者",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「大江東去，浪淘盡，千古風流人物」是誰的詞？",
+  "options": [
+   "柳永",
+   "辛棄疾",
+   "李清照",
+   "蘇軾"
+  ],
+  "answer": 3,
+  "explanation": "出自蘇軾〈念奴嬌・赤壁懷古〉。",
+  "fun_fact": "蘇軾也是美食家，「東坡肉」就是以他的名號命名的。",
+  "topic": "human"
+ },
+ {
+  "id": "po-010",
+  "category": "作者",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "「人生自古誰無死，留取丹心照汗青」的作者是？",
+  "options": [
+   "岳飛",
+   "于謙",
+   "陸游",
+   "文天祥"
+  ],
+  "answer": 3,
+  "explanation": "出自南宋文天祥〈過零丁洋〉。",
+  "fun_fact": "「汗青」指史冊，古代在竹簡上寫字前要先烤出水分，好像出汗一樣。",
+  "topic": "human"
+ },
+ {
+  "id": "po-011",
+  "category": "情境",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「但願人長久，千里共嬋娟」最常在哪一個節日被引用？",
+  "options": [
+   "中秋節",
+   "清明節",
+   "端午節",
+   "春節"
+  ],
+  "answer": 0,
+  "explanation": "出自蘇軾〈水調歌頭〉，寫於中秋，「嬋娟」指月亮。",
+  "fun_fact": "這首詞是蘇軾思念弟弟蘇轍時寫的。",
+  "topic": "human"
+ },
+ {
+  "id": "po-012",
+  "category": "情境",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「獨在異鄉為異客，每逢佳節倍思親」寫的是哪個節日？",
+  "options": [
+   "重陽節",
+   "元宵節",
+   "七夕",
+   "中秋節"
+  ],
+  "answer": 0,
+  "explanation": "出自王維〈九月九日憶山東兄弟〉，九月九日是重陽節。",
+  "fun_fact": "詩中「遍插茱萸少一人」，插茱萸正是重陽習俗。",
+  "topic": "human"
+ },
+ {
+  "id": "po-013",
+  "category": "情境",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "杜甫「會當凌絕頂，一覽眾山小」描寫的是哪一座山？",
+  "options": [
+   "廬山",
+   "泰山",
+   "華山",
+   "黃山"
+  ],
+  "answer": 1,
+  "explanation": "出自杜甫〈望嶽〉，「嶽」指東嶽泰山。",
+  "fun_fact": "這是杜甫年輕時的作品，充滿壯志。",
+  "topic": "human"
+ },
+ {
+  "id": "po-014",
+  "category": "情境",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "于謙〈石灰吟〉「粉身碎骨渾不怕，要留清白在人間」歌詠的是什麼？",
+  "options": [
+   "石灰",
+   "玉石",
+   "白雪",
+   "白梅"
+  ],
+  "answer": 0,
+  "explanation": "這首詩以石灰自比，表達不怕犧牲、堅守清白的志節。",
+  "fun_fact": "石灰要經過開採、火燒、化成粉，正好對應詩中的過程。",
+  "topic": "human"
+ },
+ {
+  "id": "po-015",
+  "category": "冷知識",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "《唐詩三百首》是唐朝人編選的。",
+  "options": [
+   "對",
+   "錯"
+  ],
+  "answer": 1,
+  "explanation": "《唐詩三百首》是清代的蘅塘退士（孫洙）編選的。",
+  "fun_fact": "書中實際收錄的詩超過三百首。",
+  "topic": "human"
+ },
+ {
+  "id": "po-016",
+  "category": "冷知識",
+  "difficulty": 2,
+  "type": "order",
+  "question": "請依年代先後排出這些文人：",
+  "options": [
+   "屈原",
+   "陶淵明",
+   "李白",
+   "蘇軾"
+  ],
+  "answer": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "explanation": "屈原（戰國）→ 陶淵明（東晉）→ 李白（唐）→ 蘇軾（北宋）。",
+  "fun_fact": "陶淵明的「採菊東籬下，悠然見南山」是田園詩的經典。",
+  "topic": "human"
+ },
+ {
+  "id": "po-017",
+  "category": "接句",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「兩個黃鸝鳴翠柳」的下一句是？",
+  "options": [
+   "窗含西嶺千秋雪",
+   "門泊東吳萬里船",
+   "一行白鷺上青天",
+   "孤帆遠影碧空盡"
+  ],
+  "answer": 2,
+  "explanation": "出自杜甫〈絕句〉：兩個黃鸝鳴翠柳，一行白鷺上青天。窗含西嶺千秋雪，門泊東吳萬里船。",
+  "fun_fact": "這是杜甫住在成都草堂時所寫〈絕句四首〉中的一首。",
+  "topic": "human"
+ },
+ {
+  "id": "po-018",
+  "category": "接句",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「紅豆生南國」的下一句是？",
+  "options": [
+   "此物最相思",
+   "春風又綠江南岸",
+   "人面桃花相映紅",
+   "春來發幾枝"
+  ],
+  "answer": 3,
+  "explanation": "出自王維〈相思〉：紅豆生南國，春來發幾枝。以紅豆寄託相思之情。（此句以通行本為準，另有版本作「秋來發故枝」。）",
+  "fun_fact": "紅豆又被稱為「相思子」。",
+  "topic": "human"
+ },
+ {
+  "id": "po-019",
+  "category": "接句",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「少小離家老大回」的下一句是？",
+  "options": [
+   "兒童相見不相識",
+   "近鄉情更怯",
+   "鄉音無改鬢毛衰",
+   "笑問客從何處來"
+  ],
+  "answer": 2,
+  "explanation": "出自賀知章〈回鄉偶書〉：少小離家老大回，鄉音無改鬢毛衰。寫久別返鄉的感慨。（此句以通行本為準，「衰」另有版本作「催」。）",
+  "fun_fact": "賀知章八十多歲才辭官回鄉，他也是稱李白為「謫仙人」的人。",
+  "topic": "human"
+ },
+ {
+  "id": "po-020",
+  "category": "接句",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「朝辭白帝彩雲間」的下一句是？",
+  "options": [
+   "千里江陵一日還",
+   "煙花三月下揚州",
+   "兩岸猿聲啼不住",
+   "輕舟已過萬重山"
+  ],
+  "answer": 0,
+  "explanation": "出自李白〈早發白帝城〉：朝辭白帝彩雲間，千里江陵一日還。寫順江而下的輕快。",
+  "fun_fact": "一般認為此詩寫於李白被流放夜郎途中遇赦東歸之時，難怪心情如此輕快。",
+  "topic": "human"
+ },
+ {
+  "id": "po-021",
+  "category": "接句",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「千山鳥飛絕」的下一句是？",
+  "options": [
+   "野渡無人舟自橫",
+   "獨釣寒江雪",
+   "孤舟蓑笠翁",
+   "萬徑人蹤滅"
+  ],
+  "answer": 3,
+  "explanation": "出自柳宗元〈江雪〉：千山鳥飛絕，萬徑人蹤滅。孤舟蓑笠翁，獨釣寒江雪。",
+  "fun_fact": "把四句的第一個字連起來，正好是「千萬孤獨」。",
+  "topic": "human"
+ },
+ {
+  "id": "po-022",
+  "category": "接句",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「在天願作比翼鳥」的下一句是？",
+  "options": [
+   "在地願為連理枝",
+   "七月七日長生殿",
+   "此恨綿綿無絕期",
+   "天長地久有時盡"
+  ],
+  "answer": 0,
+  "explanation": "出自白居易〈長恨歌〉，寫唐玄宗與楊貴妃的誓言。",
+  "fun_fact": "傳說比翼鳥只有一隻眼睛、一邊翅膀，必須兩隻並肩才能飛。",
+  "topic": "human"
+ },
+ {
+  "id": "po-023",
+  "category": "接句",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「勸君更盡一杯酒」的下一句是？",
+  "options": [
+   "客舍青青柳色新",
+   "西出陽關無故人",
+   "一片冰心在玉壺",
+   "春風不度玉門關"
+  ],
+  "answer": 1,
+  "explanation": "出自王維〈送元二使安西〉：勸君更盡一杯酒，西出陽關無故人。是送別詩的經典。",
+  "fun_fact": "這首詩後來被譜成琴曲〈陽關三疊〉，流傳至今。",
+  "topic": "human"
+ },
+ {
+  "id": "po-024",
+  "category": "接句",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「姑蘇城外寒山寺」的下一句是？",
+  "options": [
+   "夜半鐘聲到客船",
+   "江楓漁火對愁眠",
+   "煙籠寒水月籠沙",
+   "月落烏啼霜滿天"
+  ],
+  "answer": 0,
+  "explanation": "出自張繼〈楓橋夜泊〉：姑蘇城外寒山寺，夜半鐘聲到客船。寫旅人夜泊的愁思。",
+  "fun_fact": "「姑蘇」就是今天的蘇州，寒山寺因這首詩而名揚天下。",
+  "topic": "human"
+ },
+ {
+  "id": "po-025",
+  "category": "接句",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「山重水複疑無路」的下一句是？",
+  "options": [
+   "柳暗花明又一村",
+   "衣冠簡樸古風存",
+   "豐年留客足雞豚",
+   "行到水窮處"
+  ],
+  "answer": 0,
+  "explanation": "出自陸游〈遊山西村〉：山重水複疑無路，柳暗花明又一村。常用來比喻困境中出現轉機。",
+  "fun_fact": "詩中的「山西村」位在陸游的家鄉浙江紹興一帶，不是山西省。",
+  "topic": "human"
+ },
+ {
+  "id": "po-026",
+  "category": "接句",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "辛棄疾〈破陣子〉「醉裡挑燈看劍」的下一句是？",
+  "options": [
+   "氣吞萬里如虎",
+   "沙場秋點兵",
+   "可憐白髮生",
+   "夢回吹角連營"
+  ],
+  "answer": 3,
+  "explanation": "出自辛棄疾〈破陣子・為陳同甫賦壯詞以寄之〉：醉裡挑燈看劍，夢回吹角連營。抒發報國壯志。",
+  "fun_fact": "詞中「馬作的盧飛快」的「的盧」，正是三國時劉備騎過的名馬。",
+  "topic": "human"
+ },
+ {
+  "id": "po-027",
+  "category": "接句",
+  "difficulty": 1,
+  "type": "order",
+  "question": "請依正確順序排出李白〈贈汪倫〉的四句：",
+  "options": [
+   "不及汪倫送我情",
+   "桃花潭水深千尺",
+   "忽聞岸上踏歌聲",
+   "李白乘舟將欲行"
+  ],
+  "answer": [
+   3,
+   2,
+   1,
+   0
+  ],
+  "explanation": "李白〈贈汪倫〉：李白乘舟將欲行，忽聞岸上踏歌聲。桃花潭水深千尺，不及汪倫送我情。",
+  "fun_fact": "桃花潭位在今天的安徽涇縣。",
+  "topic": "human"
+ },
+ {
+  "id": "po-028",
+  "category": "接句",
+  "difficulty": 3,
+  "type": "order",
+  "question": "請依正確順序排出王翰〈涼州詞〉的四句：",
+  "options": [
+   "欲飲琵琶馬上催",
+   "葡萄美酒夜光杯",
+   "古來征戰幾人回",
+   "醉臥沙場君莫笑"
+  ],
+  "answer": [
+   1,
+   0,
+   3,
+   2
+  ],
+  "explanation": "王翰〈涼州詞〉：葡萄美酒夜光杯，欲飲琵琶馬上催。醉臥沙場君莫笑，古來征戰幾人回？",
+  "fun_fact": "「涼州詞」其實是曲調名，王之渙也寫過同題的「羌笛何須怨楊柳」。",
+  "topic": "human"
+ },
+ {
+  "id": "po-029",
+  "category": "作者",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「飛流直下三千尺，疑是銀河落九天」的作者是？",
+  "options": [
+   "李白",
+   "白居易",
+   "杜甫",
+   "王維"
+  ],
+  "answer": 0,
+  "explanation": "出自李白〈望廬山瀑布〉，以誇張手法寫瀑布的氣勢。",
+  "fun_fact": "首句「日照香爐生紫煙」的「香爐」，指的是廬山的香爐峰。",
+  "topic": "human"
+ },
+ {
+  "id": "po-030",
+  "category": "作者",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「國破山河在，城春草木深」的作者是？",
+  "options": [
+   "杜牧",
+   "李白",
+   "陸游",
+   "杜甫"
+  ],
+  "answer": 3,
+  "explanation": "出自杜甫〈春望〉，寫安史之亂時長安殘破的景象。",
+  "fun_fact": "同一首詩的「烽火連三月，家書抵萬金」也是千古名句。",
+  "topic": "human"
+ },
+ {
+  "id": "po-031",
+  "category": "作者",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「天生我材必有用，千金散盡還復來」是李白的詩句。",
+  "options": [
+   "對",
+   "錯"
+  ],
+  "answer": 0,
+  "explanation": "出自李白〈將進酒〉，展現他豪放自信的個性。",
+  "fun_fact": "「將進酒」的「將」讀作「ㄑㄧㄤ」，是「請」的意思。",
+  "topic": "human"
+ },
+ {
+  "id": "po-032",
+  "category": "作者",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「尋尋覓覓，冷冷清清，淒淒慘慘戚戚」是哪位詞人的作品？",
+  "options": [
+   "辛棄疾",
+   "李清照",
+   "蘇軾",
+   "柳永"
+  ],
+  "answer": 1,
+  "explanation": "出自李清照〈聲聲慢〉，寫國破家亡、晚年孤苦的愁緒。",
+  "fun_fact": "開頭一口氣連用了十四個疊字，歷來被視為神來之筆。",
+  "topic": "human"
+ },
+ {
+  "id": "po-033",
+  "category": "作者",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「但使龍城飛將在，不教胡馬度陰山」的作者是？",
+  "options": [
+   "王之渙",
+   "岑參",
+   "高適",
+   "王昌齡"
+  ],
+  "answer": 3,
+  "explanation": "出自王昌齡〈出塞〉，「飛將」一般認為指漢代名將李廣。（「龍城」為通行本寫法，清人閻若璩主張應作「盧城」。）",
+  "fun_fact": "據明代王世貞《藝苑卮言》記載，李攀龍認為唐人絕句應以這首「秦時明月漢時關」為壓卷之作。",
+  "topic": "human"
+ },
+ {
+  "id": "po-034",
+  "category": "作者",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「王師北定中原日，家祭無忘告乃翁」的作者是？",
+  "options": [
+   "岳飛",
+   "辛棄疾",
+   "文天祥",
+   "陸游"
+  ],
+  "answer": 3,
+  "explanation": "出自陸游〈示兒〉，是他臨終前寫給兒子的詩，至死不忘收復中原。",
+  "fun_fact": "陸游現存詩作九千多首，是存詩最多的古代詩人之一。",
+  "topic": "human"
+ },
+ {
+  "id": "po-035",
+  "category": "作者",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「停車坐愛楓林晚，霜葉紅於二月花」出自哪一首詩？",
+  "options": [
+   "山行",
+   "楓橋夜泊",
+   "江雪",
+   "秋夕"
+  ],
+  "answer": 0,
+  "explanation": "出自杜牧〈山行〉，描寫秋天山中楓葉比春花還紅豔。",
+  "fun_fact": "句中的「坐」不是坐下，而是「因為」的意思。",
+  "topic": "human"
+ },
+ {
+  "id": "po-036",
+  "category": "作者",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "「身無彩鳳雙飛翼，心有靈犀一點通」的作者是？",
+  "options": [
+   "李賀",
+   "溫庭筠",
+   "杜牧",
+   "李商隱"
+  ],
+  "answer": 3,
+  "explanation": "出自李商隱〈無題〉（昨夜星辰昨夜風），寫戀人心意相通。",
+  "fun_fact": "李商隱寫了許多以〈無題〉為名的詩，詩意隱晦，至今仍眾說紛紜。",
+  "topic": "human"
+ },
+ {
+  "id": "po-037",
+  "category": "作者",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "「楊柳岸，曉風殘月」出自哪位詞人的作品？",
+  "options": [
+   "柳永",
+   "秦觀",
+   "李清照",
+   "晏殊"
+  ],
+  "answer": 0,
+  "explanation": "出自柳永〈雨霖鈴〉：今宵酒醒何處？楊柳岸，曉風殘月。寫離別的淒涼。",
+  "fun_fact": "柳永的詞流行到「凡有井水飲處，即能歌柳詞」。",
+  "topic": "human"
+ },
+ {
+  "id": "po-038",
+  "category": "作者",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "「老驥伏櫪，志在千里」的作者是？",
+  "options": [
+   "劉備",
+   "曹植",
+   "曹操",
+   "諸葛亮"
+  ],
+  "answer": 2,
+  "explanation": "出自曹操〈龜雖壽〉：老驥伏櫪，志在千里；烈士暮年，壯心不已。",
+  "fun_fact": "「驥」是千里馬，「櫪」是馬槽，比喻年老仍懷壯志。",
+  "topic": "human"
+ },
+ {
+  "id": "po-039",
+  "category": "情境",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "王安石〈元日〉「爆竹聲中一歲除，春風送暖入屠蘇」描寫的是哪個節日？",
+  "options": [
+   "清明節",
+   "端午節",
+   "春節",
+   "元宵節"
+  ],
+  "answer": 2,
+  "explanation": "「元日」就是農曆正月初一，詩中寫放爆竹、喝屠蘇酒的過年景象。",
+  "fun_fact": "詩末「總把新桃換舊符」的「桃符」，就是春聯的前身。",
+  "topic": "human"
+ },
+ {
+  "id": "po-040",
+  "category": "情境",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "楊萬里「接天蓮葉無窮碧，映日荷花別樣紅」描寫的是哪個季節？",
+  "options": [
+   "冬天",
+   "春天",
+   "秋天",
+   "夏天"
+  ],
+  "answer": 3,
+  "explanation": "出自楊萬里〈曉出淨慈寺送林子方〉，寫農曆六月西湖荷花盛開的景色。",
+  "fun_fact": "前兩句是「畢竟西湖六月中，風光不與四時同」。",
+  "topic": "human"
+ },
+ {
+  "id": "po-041",
+  "category": "情境",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "杜甫「好雨知時節，當春乃發生」描寫的是什麼？",
+  "options": [
+   "秋霜",
+   "夏日雷陣雨",
+   "春雨",
+   "冬雪"
+  ],
+  "answer": 2,
+  "explanation": "出自杜甫〈春夜喜雨〉，讚美春雨適時而來、滋潤萬物。",
+  "fun_fact": "同一首詩的「隨風潛入夜，潤物細無聲」也常被用來形容默默付出。",
+  "topic": "human"
+ },
+ {
+  "id": "po-042",
+  "category": "情境",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "秦觀「金風玉露一相逢，便勝卻人間無數」描寫的是哪個節日？",
+  "options": [
+   "元宵節",
+   "中秋節",
+   "重陽節",
+   "七夕"
+  ],
+  "answer": 3,
+  "explanation": "出自秦觀〈鵲橋仙〉，寫牛郎織女七夕相會。",
+  "fun_fact": "同一首詞的結尾「兩情若是久長時，又豈在朝朝暮暮」是著名的愛情名句。",
+  "topic": "human"
+ },
+ {
+  "id": "po-043",
+  "category": "情境",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "辛棄疾「東風夜放花千樹，更吹落、星如雨」描寫的是哪個節日？",
+  "options": [
+   "元宵節",
+   "中秋節",
+   "春節",
+   "端午節"
+  ],
+  "answer": 0,
+  "explanation": "出自辛棄疾〈青玉案・元夕〉，「元夕」就是元宵夜，詞中描寫滿城花燈。",
+  "fun_fact": "同一首詞的「燈火闌珊處」，「闌珊」是燈火稀落的意思。",
+  "topic": "human"
+ },
+ {
+  "id": "po-044",
+  "category": "情境",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "岑參「北風捲地白草折，胡天八月即飛雪」描寫的是哪種地方？",
+  "options": [
+   "江南水鄉",
+   "東南海濱",
+   "西北邊塞",
+   "京城宮殿"
+  ],
+  "answer": 2,
+  "explanation": "出自岑參〈白雪歌送武判官歸京〉，寫邊塞農曆八月就下雪的奇寒。",
+  "fun_fact": "同一首詩「忽如一夜春風來，千樹萬樹梨花開」是把雪比作梨花。",
+  "topic": "human"
+ },
+ {
+  "id": "po-045",
+  "category": "情境",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "李白〈月下獨酌〉「舉杯邀明月，對影成三人」主要表達什麼心情？",
+  "options": [
+   "戰爭悲憤",
+   "孤獨寂寞",
+   "離別不捨",
+   "思念家鄉"
+  ],
+  "answer": 1,
+  "explanation": "前兩句是「花間一壺酒，獨酌無相親」，只能邀月亮和影子作伴，寫出詩人的孤獨。",
+  "fun_fact": "〈月下獨酌〉共有四首，這是其中第一首。",
+  "topic": "human"
+ },
+ {
+  "id": "po-046",
+  "category": "情境",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "《詩經》〈蒹葭〉「蒹葭蒼蒼，白露為霜」描寫的是哪個季節？",
+  "options": [
+   "秋天",
+   "冬天",
+   "春天",
+   "夏天"
+  ],
+  "answer": 0,
+  "explanation": "出自《詩經・秦風・蒹葭》，露水凝結成霜，是深秋景象。",
+  "fun_fact": "「蒹葭」是蘆荻、蘆葦一類的水草。",
+  "topic": "human"
+ },
+ {
+  "id": "po-047",
+  "category": "冷知識",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "「青蓮居士」是哪一位詩人的別號？",
+  "options": [
+   "杜甫",
+   "白居易",
+   "王維",
+   "李白"
+  ],
+  "answer": 3,
+  "explanation": "李白自號青蓮居士，由來有兩說：一說取自佛典中象徵清淨的青蓮花（他曾在詩中自比維摩詰）；另一說與他少年時居住的四川清廉鄉（今江油市青蓮鎮）有關。",
+  "fun_fact": "白居易號香山居士，杜甫自稱少陵野老。",
+  "topic": "human"
+ },
+ {
+  "id": "po-048",
+  "category": "冷知識",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "成語「青梅竹馬」出自哪一位詩人的作品？",
+  "options": [
+   "白居易",
+   "李白",
+   "王維",
+   "杜甫"
+  ],
+  "answer": 1,
+  "explanation": "出自李白〈長干行〉：郎騎竹馬來，遶床弄青梅。形容男女童年時天真的情誼。",
+  "fun_fact": "同一首詩的「同居長干里，兩小無嫌猜」也衍生出成語「兩小無猜」。",
+  "topic": "human"
+ },
+ {
+  "id": "po-049",
+  "category": "冷知識",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「春蠶到死絲方盡，蠟炬成灰淚始乾」原本是一首歌頌老師無私奉獻的詩。",
+  "options": [
+   "對",
+   "錯"
+  ],
+  "answer": 1,
+  "explanation": "出自李商隱〈無題〉（相見時難別亦難），原本是表達堅貞不渝的愛情。",
+  "fun_fact": "後人才借用這兩句來比喻老師的奉獻。",
+  "topic": "human"
+ },
+ {
+  "id": "po-050",
+  "category": "冷知識",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "宋詞原本是可以配合音樂演唱的歌詞。",
+  "options": [
+   "對",
+   "錯"
+  ],
+  "answer": 0,
+  "explanation": "詞起源於隋唐的曲子詞，依曲調填寫，所以作詞又叫「填詞」。",
+  "fun_fact": "〈水調歌頭〉、〈念奴嬌〉這類「詞牌」其實是曲調名，不是題目。",
+  "topic": "human"
+ },
+ {
+  "id": "po-051",
+  "category": "冷知識",
+  "difficulty": 2,
+  "type": "order",
+  "question": "請依年代先後排出這些文人：",
+  "options": [
+   "馬致遠",
+   "曹植",
+   "辛棄疾",
+   "王昌齡"
+  ],
+  "answer": [
+   1,
+   3,
+   2,
+   0
+  ],
+  "explanation": "曹植（三國魏）→ 王昌齡（唐）→ 辛棄疾（南宋）→ 馬致遠（元）。",
+  "fun_fact": "馬致遠的〈天淨沙・秋思〉被譽為「秋思之祖」。",
+  "topic": "human"
+ },
+ {
+  "id": "po-052",
+  "topic": "human",
+  "category": "文言文名篇",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「先天下之憂而憂，後天下之樂而樂」出自哪一篇文章？",
+  "options": [
+   "出師表",
+   "醉翁亭記",
+   "岳陽樓記",
+   "桃花源記"
+  ],
+  "answer": 2,
+  "explanation": "出自北宋范仲淹〈岳陽樓記〉，表達士人以天下為己任的胸襟。",
+  "fun_fact": "范仲淹寫這篇文章時人並不在岳陽，是應好友滕子京之請、看著寄來的圖畫寫成的。"
+ },
+ {
+  "id": "po-053",
+  "topic": "human",
+  "category": "書法文房",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "傳統所說的「文房四寶」是指哪四樣東西？",
+  "options": [
+   "筆、墨、紙、硯",
+   "琴、棋、書、畫",
+   "詩、書、禮、樂",
+   "梅、蘭、竹、菊"
+  ],
+  "answer": 0,
+  "explanation": "文房四寶是書房中最基本的四種用具：毛筆、墨、紙、硯台。",
+  "fun_fact": "文人講究「湖筆、徽墨、宣紙、端硯」，各自來自不同的名產地。"
+ },
+ {
+  "id": "po-054",
+  "topic": "human",
+  "category": "傳統節慶",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "端午節吃粽子、划龍舟，最普遍的說法是為了紀念哪一位人物？",
+  "options": [
+   "介之推",
+   "屈原",
+   "伍子胥",
+   "文天祥"
+  ],
+  "answer": 1,
+  "explanation": "相傳戰國楚國詩人屈原於農曆五月五日投汨羅江，百姓划船打撈、投粽入江，形成端午習俗。",
+  "fun_fact": "介之推的故事對應的是另一個節日——寒食節。"
+ },
+ {
+  "id": "po-055",
+  "topic": "human",
+  "category": "文言文名篇",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "描寫漁人誤入世外桃源的〈桃花源記〉，作者是誰？",
+  "options": [
+   "陶淵明",
+   "王羲之",
+   "柳宗元",
+   "歐陽脩"
+  ],
+  "answer": 0,
+  "explanation": "〈桃花源記〉是東晉陶淵明的作品，描繪一個沒有戰亂、與世隔絕的理想社會。",
+  "fun_fact": "「世外桃源」「豁然開朗」這兩個常用詞，都是從這篇文章來的。"
+ },
+ {
+  "id": "po-056",
+  "topic": "human",
+  "category": "四書五經",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「學而時習之，不亦說乎」出自下列哪一部經典？",
+  "options": [
+   "《孟子》",
+   "《大學》",
+   "《論語》",
+   "《中庸》"
+  ],
+  "answer": 2,
+  "explanation": "這是《論語・學而》的開篇第一章，記錄孔子的言論。",
+  "fun_fact": "句中的「說」要讀作「ㄩㄝˋ」，同「悅」，是高興的意思。"
+ },
+ {
+  "id": "po-057",
+  "topic": "human",
+  "category": "二十四節氣",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在北半球，一年當中白天最長、黑夜最短的節氣是？",
+  "options": [
+   "冬至",
+   "夏至",
+   "春分",
+   "立夏"
+  ],
+  "answer": 1,
+  "explanation": "夏至這天太陽直射北回歸線，北半球白晝最長；冬至則相反，是白晝最短的一天。",
+  "fun_fact": "台灣嘉義、花蓮一帶有北回歸線標誌，夏至正午時分幾乎看不到影子。"
+ },
+ {
+  "id": "po-058",
+  "topic": "human",
+  "category": "成語典故",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "成語「破釜沉舟」講的是哪一位人物的故事？",
+  "options": [
+   "韓信",
+   "勾踐",
+   "劉邦",
+   "項羽"
+  ],
+  "answer": 3,
+  "explanation": "項羽在鉅鹿之戰渡河後砸破鍋子、鑿沉船隻，斷絕退路以示決一死戰。",
+  "fun_fact": "勾踐的故事對應的是另一個成語「臥薪嘗膽」。"
+ },
+ {
+  "id": "po-059",
+  "topic": "human",
+  "category": "文言文名篇",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「臣本布衣，躬耕於南陽」出自〈出師表〉，這篇文章的作者是？",
+  "options": [
+   "曹操",
+   "周瑜",
+   "司馬懿",
+   "諸葛亮"
+  ],
+  "answer": 3,
+  "explanation": "〈出師表〉是諸葛亮北伐前上呈蜀漢後主劉禪的奏章。",
+  "fun_fact": "文中「鞠躬盡瘁」後來與「死而後已」連用，成為形容盡忠職守的成語。"
+ },
+ {
+  "id": "po-060",
+  "topic": "human",
+  "category": "文言文名篇",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「醉翁之意不在酒，在乎山水之間也」出自〈醉翁亭記〉，作者是誰？",
+  "options": [
+   "蘇軾",
+   "王安石",
+   "范仲淹",
+   "歐陽脩"
+  ],
+  "answer": 3,
+  "explanation": "〈醉翁亭記〉是歐陽脩貶官滁州時所作，「醉翁」正是他的自號。",
+  "fun_fact": "歐陽脩晚年又自號「六一居士」，指藏書一萬卷、金石一千卷、琴一張、棋一局、酒一壺，加上他自己一個老翁。"
+ },
+ {
+  "id": "po-061",
+  "topic": "human",
+  "category": "文言文名篇",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「山不在高，有仙則名；水不在深，有龍則靈」出自哪一篇？",
+  "options": [
+   "愛蓮說",
+   "陋室銘",
+   "師說",
+   "阿房宮賦"
+  ],
+  "answer": 1,
+  "explanation": "出自唐代劉禹錫〈陋室銘〉，全篇藉簡陋居室表明主人品德高潔。",
+  "fun_fact": "文章最後一句「孔子云：何陋之有」，是引用《論語》來收尾。"
+ },
+ {
+  "id": "po-062",
+  "topic": "human",
+  "category": "文言文名篇",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「師者，所以傳道、受業、解惑也」出自〈師說〉，作者是唐宋八大家中的哪一位？",
+  "options": [
+   "柳宗元",
+   "韓愈",
+   "蘇洵",
+   "曾鞏"
+  ],
+  "answer": 1,
+  "explanation": "〈師說〉是韓愈為勉勵學生李蟠而作，強調從師問學的重要。",
+  "fun_fact": "文中「弟子不必不如師，師不必賢於弟子」，是很早就出現的教學相長觀念。"
+ },
+ {
+  "id": "po-063",
+  "topic": "human",
+  "category": "成語典故",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "農夫守著樹樁等兔子撞上來——成語「守株待兔」的寓言出自哪一部先秦典籍？",
+  "options": [
+   "《莊子》",
+   "《孟子》",
+   "《韓非子》",
+   "《左傳》"
+  ],
+  "answer": 2,
+  "explanation": "出自《韓非子・五蠹》，韓非用這個故事諷刺一味守舊、不知變通的人。",
+  "fun_fact": "韓非是法家代表人物，主張治國要因時制宜，不能死守古法。"
+ },
+ {
+  "id": "po-064",
+  "topic": "human",
+  "category": "四書五經",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「四書」除了《論語》和《孟子》，還包括哪兩部？",
+  "options": [
+   "《大學》、《中庸》",
+   "《詩經》、《尚書》",
+   "《荀子》、《墨子》",
+   "《易經》、《春秋》"
+  ],
+  "answer": 0,
+  "explanation": "四書指《大學》、《中庸》、《論語》、《孟子》，由南宋朱熹合編並作注。",
+  "fun_fact": "《大學》和《中庸》原本是《禮記》中的兩篇，被朱熹抽出來單獨成書。"
+ },
+ {
+  "id": "po-065",
+  "topic": "human",
+  "category": "二十四節氣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "二十四節氣中，緊接在「清明」之後的節氣是？",
+  "options": [
+   "立夏",
+   "小滿",
+   "穀雨",
+   "芒種"
+  ],
+  "answer": 2,
+  "explanation": "春季六個節氣依序是立春、雨水、驚蟄、春分、清明、穀雨，穀雨之後才進入立夏。",
+  "fun_fact": "「穀雨」得名於此時雨水增多、有利穀物生長，台灣茶農也講究採「雨前茶」。"
+ },
+ {
+  "id": "po-066",
+  "topic": "human",
+  "category": "對聯常識",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "依傳統貼春聯的方式，面對大門時，上聯應該貼在哪裡？",
+  "options": [
+   "面對大門的右邊",
+   "面對大門的左邊",
+   "門楣的正中央",
+   "門框的最下方"
+  ],
+  "answer": 0,
+  "explanation": "傳統橫批由右至左書寫，因此上聯貼在面對大門的右手邊，下聯在左。（若橫批改為由左至右書寫，則左右相反。）",
+  "fun_fact": "分辨上下聯還有一個訣竅：上聯最後一字多為仄聲，下聯最後一字多為平聲。"
+ },
+ {
+  "id": "po-067",
+  "topic": "human",
+  "category": "書法文房",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "被譽為「天下第一行書」的〈蘭亭集序〉，出自哪位書法家之手？",
+  "options": [
+   "顏真卿",
+   "王羲之",
+   "柳公權",
+   "歐陽詢"
+  ],
+  "answer": 1,
+  "explanation": "〈蘭亭集序〉是東晉王羲之所書，他也被後世尊稱為「書聖」。",
+  "fun_fact": "相傳〈蘭亭集序〉的真跡被唐太宗帶進了陵墓，今天看到的都是摹本。"
+ },
+ {
+  "id": "po-068",
+  "topic": "human",
+  "category": "元曲戲劇",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "元代雜劇名作《竇娥冤》的作者是誰？",
+  "options": [
+   "王實甫",
+   "白樸",
+   "馬致遠",
+   "關漢卿"
+  ],
+  "answer": 3,
+  "explanation": "《竇娥冤》是關漢卿的代表作，寫竇娥蒙冤受刑、血濺白練、六月飛雪的故事。",
+  "fun_fact": "俗語「六月雪」用來形容天大的冤情，典故正是出自這齣戲。"
+ },
+ {
+  "id": "po-069",
+  "topic": "human",
+  "category": "諸子百家",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "主張「兼愛」、「非攻」，反對厚葬與奢侈的是先秦哪一家？",
+  "options": [
+   "儒家",
+   "道家",
+   "法家",
+   "墨家"
+  ],
+  "answer": 3,
+  "explanation": "墨子創立墨家，主張不分親疏地愛人（兼愛）、反對侵略戰爭（非攻），並提倡節用節葬。",
+  "fun_fact": "「墨守成規」原本是稱讚墨家守城技術高明，後來詞義才轉為貶義。"
+ },
+ {
+  "id": "po-070",
+  "topic": "human",
+  "category": "文言文名篇",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "「寄蜉蝣於天地，渺滄海之一粟」出自哪一篇文章？",
+  "options": [
+   "赤壁賦",
+   "岳陽樓記",
+   "滕王閣序",
+   "阿房宮賦"
+  ],
+  "answer": 0,
+  "explanation": "出自蘇軾〈前赤壁賦〉，以蜉蝣、米粒形容人在天地間的渺小短暫。",
+  "fun_fact": "蘇軾遊的黃州赤壁（赤鼻磯），其實與三國赤壁之戰的戰場並非同一處。"
+ },
+ {
+  "id": "po-071",
+  "topic": "human",
+  "category": "成語典故",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "成語「洛陽紙貴」是因為哪一部作品太受歡迎、大家爭相抄寫？",
+  "options": [
+   "左思〈三都賦〉",
+   "曹植〈洛神賦〉",
+   "班固〈兩都賦〉",
+   "張衡〈二京賦〉"
+  ],
+  "answer": 0,
+  "explanation": "據《晉書・左思傳》，左思〈三都賦〉問世後豪門競相傳抄，使得洛陽的紙價因此上漲。",
+  "fun_fact": "左思為了寫〈三都賦〉構思了十年，據說家中處處放著紙筆，想到一句就馬上記下來。"
+ },
+ {
+  "id": "po-072",
+  "topic": "human",
+  "category": "文人軼事",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "為了「僧敲月下門」該用「推」還是「敲」而反覆斟酌，留下「推敲」典故的詩人是？",
+  "options": [
+   "孟郊",
+   "賈島",
+   "李賀",
+   "盧仝"
+  ],
+  "answer": 1,
+  "explanation": "相傳賈島騎驢苦思用字，衝撞了韓愈的儀仗，韓愈建議用「敲」字，後人便以「推敲」比喻斟酌字句。",
+  "fun_fact": "賈島與孟郊詩風都清冷瘦硬，蘇軾因此有「郊寒島瘦」的評語。"
+ },
+ {
+  "id": "po-073",
+  "topic": "human",
+  "category": "諸子百家",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "與孟子「性善說」針鋒相對，主張「人之性惡」的先秦儒家思想家是？",
+  "options": [
+   "墨子",
+   "莊子",
+   "荀子",
+   "董仲舒"
+  ],
+  "answer": 2,
+  "explanation": "荀子在〈性惡〉篇主張人性本惡，必須靠後天的禮義教化與學習來矯正。",
+  "fun_fact": "「青出於藍而勝於藍」就出自荀子〈勸學〉，正好呼應他重視學習的立場。"
+ },
+ {
+  "id": "po-074",
+  "topic": "human",
+  "category": "二十四節氣",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "二十四節氣是依據什麼來劃分的？",
+  "options": [
+   "月亮的圓缺週期",
+   "北斗七星的方位",
+   "太陽的週年位置",
+   "海水潮汐的漲落"
+  ],
+  "answer": 2,
+  "explanation": "節氣是依太陽在黃道上的位置（每十五度一個節氣）劃分，屬於陽曆的性質，所以對應的國曆日期每年幾乎固定。",
+  "fun_fact": "清明大多落在國曆四月四日或五日，冬至多在十二月二十一至二十三日之間，就是這個道理。"
+ },
+ {
+  "id": "po-075",
+  "topic": "human",
+  "category": "書法文房",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "書畫家愛用、以耐久不蛀著稱的「宣紙」，原產地在哪一省？",
+  "options": [
+   "浙江",
+   "江蘇",
+   "湖南",
+   "安徽"
+  ],
+  "answer": 3,
+  "explanation": "宣紙因產於唐代宣州（今安徽宣城一帶，以涇縣最著名）而得名。",
+  "fun_fact": "宣紙有「紙壽千年」之稱，主要原料是青檀樹皮與稻草。"
+ }
 ]

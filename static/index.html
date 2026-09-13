@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>金榜問答</title>
+<title>脈衝 PULSE</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
@@ -13,10 +13,10 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="金榜問答">
+<meta name="apple-mobile-web-app-title" content="脈衝 PULSE">
 <link rel="apple-touch-icon" href="/static/icons/icon-180.png">
 <link rel="icon" href="/static/icons/favicon.png" type="image/png">
-<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="/static/style.css?v=4.6">
 <script>
 /* 註冊 Service Worker：加到主畫面後可全螢幕開啟、載入更快 */
 if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
@@ -27,17 +27,17 @@ if ('serviceWorker' in navigator) window.addEventListener('load', () => navigato
 
 <script>
 /* ============================================================
- *  金榜問答 前端
+ *  脈衝 PULSE 前端
  *  - 有後端時：透過 /api/* 出題、計時、計分（分數以伺服器為準)，排行榜存在 SQLite
  *  - 單機模式(window.EMBEDDED_BANK 存在):瀏覽器自己出題計分；
  *    排行榜若在 claude.ai 上開啟就用共用資料庫，否則存在這台裝置
  * ============================================================ */
 const LIVES = 3;
 const TIME_LIMIT = {choice: 15, order: 25};
-const SEAL = {geo:'輿', history:'史', human:'文', tech:'科', python:'蟒', star:'星', fun:'奇', news:'聞', mix:'雜'};
-const CAT_NAME = {geo:'地理', history:'歷史', human:'人文', tech:'科技', python:'Python', star:'娛樂', fun:'趣聞', news:'即時新聞', mix:'綜合挑戰'};
+const SEAL = {python:'蟒', pytorch:'深', geo:'輿', history:'史', human:'文', tech:'科', star:'星', fun:'奇', news:'聞', mix:'雜'};
+const CAT_NAME = {python:'Python', pytorch:'Deep Learning', geo:'地理', history:'歷史', human:'人文', tech:'科技', star:'娛樂', fun:'趣聞', news:'即時新聞', mix:'綜合挑戰'};
 const REGIONS = ['', '台灣', '中國', '世界'];
-const TOP3 = ['狀元', '榜眼', '探花'];
+const TOP3 = ['滿格', '高峰', '躍升'];
 const $app = document.getElementById('app');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const store = {
@@ -54,7 +54,8 @@ const post = async (url, body) => {
 /* ---------- 後端版 API ---------- */
 const remote = {
   categories: region => fetch('/api/categories' + (region ? '?region=' + encodeURIComponent(region) : '')).then(r => r.json()),
-  start: (category, region) => post('/api/start', {category, region}),
+  units: topic => fetch('/api/units?topic=' + encodeURIComponent(topic)).then(r => r.json()),
+  start: (category, region, unit) => post('/api/start', {category, region, unit}),
   show: (session, index) => post('/api/show', {session, index}),
   answer: (session, index, answer) => post('/api/answer', {session, index, answer}),
   power: (session, index, type) => post('/api/power', {session, index, type}),
@@ -82,16 +83,25 @@ const local = {
   categories: async region => window.EMBEDDED_CATS.map(c => ({...c,
     count: c.count === null ? null : (region ? Object.values(EMBEDDED_BANK).flat()
       .filter(q => q.region === region && (c.key === 'mix' || q.topic === c.key)).length : c.count)})),
-  async start(category, region){
+  async units(topic){
+    const seen = new Map();
+    for (const q of (EMBEDDED_BANK[topic] || [])){
+      if (!q.unit) continue;
+      seen.set(q.unit, {key: q.unit, name: q.unit_name || q.unit, count: (seen.get(q.unit)?.count || 0) + 1});
+    }
+    return [...seen.values()];
+  },
+  async start(category, region, unit){
     const today = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
     let pool = (category === 'mix' ? Object.values(EMBEDDED_BANK).flat() : [...(EMBEDDED_BANK[category] || [])])
       .filter(q => !q.expires || q.expires >= today)    // 過期題目自動下架
-      .filter(q => !region || q.region === region);
+      .filter(q => !region || q.region === region)
+      .filter(q => !unit || q.unit === unit);
     pool.sort(() => Math.random() - .5);
     const qs = pool.slice(0, 10).sort((a, b) => (a.difficulty || 2) - (b.difficulty || 2));
     this.g = {cat: category, qs, i: 0, shown: null, extra: 0, lives: LIVES, score: 0, streak: 0, best: 0,
               right: 0, answered: 0, over: false, submitted: false, powers: {fifty: true, skip: true, time: true}};
-    return {session: 'local', total: qs.length, questions: qs};
+    return {session: 'local', total: qs.length, questions: qs, unit_name: qs[0]?.unit_name || ''};
   },
   state(){ const g = this.g; return {i: g.i, lives: g.lives, score: g.score, streak: g.streak, best: g.best,
     right: g.right, answered: g.answered, over: g.over, powers: {...g.powers}}; },
@@ -189,11 +199,12 @@ function renderInstall(){
 
 /* ---------- 首頁 ---------- */
 async function home(){
+  document.body.dataset.topic = '';
   const best = store.get('quiz_best') || 0;
   const mode = store.get('quiz_mode') || 'solo';
   let region = store.get('quiz_region') || '';
-  $app.innerHTML = `<div class="masthead"><div><h1>金榜問答<span class="seal">試</span></h1>
-    <p class="sub">地理・歷史・人文・科技・Python・娛樂・趣聞，十題定名次</p></div>
+  $app.innerHTML = `<div class="masthead"><div><h1>脈衝<span class="wordmark">PULSE</span></h1>
+    <p class="sub">Python・Deep Learning・地理・歷史・人文・科技・娛樂・趣聞，十題定名次</p></div>
     ${best ? `<div class="best">個人最高<b>${best}</b></div>` : ''}</div>
     <div class="modes" role="group" aria-label="遊戲模式">
       <button id="m-solo" aria-pressed="${mode === 'solo'}">單人闖關</button>
@@ -202,20 +213,21 @@ async function home(){
     <div class="chips" id="regions" role="group" aria-label="地區">${REGIONS.map(x =>
       `<button data-r="${x}" aria-pressed="${x === region}">${x || '不限地區'}</button>`).join('')}</div>
     <div class="grid" id="cats"><p class="sub">載入中…</p></div>
-    <button class="linkbtn" id="to-board"><span>看本週金榜</span><span class="arrow">→</span></button>
+    <button class="linkbtn" id="to-board"><span>看本週脈衝榜</span><span class="arrow">→</span></button>
     <div class="rules"><h2>應試規則</h2><ul>
       <li>每局 10 題，共 ${LIVES} 條命，答錯或超時扣一條</li>
+      <li>每局固定 25% 簡單、50% 中等、25% 較難，由易到難出題</li>
       <li>答得越快分數越高；連中 3 題 ×1.5、連中 5 題 ×2</li>
       <li>每局各有一次道具：刪去兩個選項、跳過此題、加時 10 秒</li>
-      <li>依正確率放榜：狀元、榜眼、探花、進士、秀才；留下暱稱就能登上金榜</li>
-    </ul></div></div>
+      <li>依正確率評級：滿格、高峰、躍升、穩定、起跳；留下代號就能登上脈衝榜</li>
+    </ul><p class="sub" style="font-size:.78rem;margin-top:10px">脈衝 PULSE v4.6</p></div></div>
     <div id="multi" class="mp-panel" ${mode === 'multi' ? '' : 'hidden'}>${LOCAL ? `
       <div class="mp-card"><h3>多人對戰</h3><p>多人同場搶答需要執行 Python 伺服器版（app.py），這個單機版只能單人闖關。</p></div>` : `
-      <form class="mp-card" id="joinf"><h3>加入考場</h3><p>輸入主持人畫面上的四位數房號</p>
+      <form class="mp-card" id="joinf"><h3>加入考坊</h3><p>輸入主持人畫面上的四位數房號</p>
         <div class="row" style="margin:0"><input class="codein" id="jcode" inputmode="numeric" maxlength="4" pattern="[0-9]{4}" placeholder="0000" aria-label="房號" required>
         <button class="btn" type="submit" style="flex:none">加入</button></div></form>
-      <div class="mp-card"><h3>開一間考場</h3><p>當主持人：選分類、題數，大家用手機同時搶答，每題即時排名，最後一題分數加倍。</p>
-        <a class="btn" href="/host" style="display:block;text-align:center;text-decoration:none">開房間</a></div>`}
+      <div class="mp-card"><h3>開一間考坊</h3><p>當主持人：選分類、題數，大家用手機同時搶答，每題即時排名，最後一題分數加倍。</p>
+        <a class="btn" href="/host" style="display:block;text-align:center;text-decoration:none">開考坊</a></div>`}
     </div>
     <div id="installslot"></div>`;
   renderInstall();
@@ -235,7 +247,7 @@ async function home(){
         <span class="sealbox">${c.seal || SEAL[c.key] || esc(c.name[0])}</span>
         <span><b>${esc(c.name)}</b><small>${c.key === 'news' ? '每小時更新' : c.count + ' 題'}</small></span>
       </button>`).join('');
-    document.querySelectorAll('.cat').forEach(b => b.onclick = () => startGame(b.dataset.k, region));
+    document.querySelectorAll('.cat').forEach(b => b.onclick = () => pickUnit(b.dataset.k, region));
   };
   document.querySelectorAll('#regions button').forEach(b => b.onclick = async () => {
     region = b.dataset.r; store.set('quiz_region', region);
@@ -249,14 +261,38 @@ async function home(){
   }
 }
 
+/* ---------- 有分單元的主題(例如 Python 課程週次),先選單元 ---------- */
+async function pickUnit(cat, region){
+  document.body.dataset.topic = cat;
+  const units = await api.units(cat).catch(() => []);
+  if (!units.length) return startGame(cat, region);
+  $app.innerHTML = `<div class="masthead"><div><h1>${esc(CAT_NAME[cat] || cat)}</h1>
+      <p class="sub">選一個單元，或直接全部一起考</p></div><button class="back" id="back">← 回首頁</button></div>
+    <div class="grid" style="grid-template-columns:1fr">
+      <button class="cat" data-u=""><span class="sealbox">全</span><span><b>不分單元</b><small>全部題目一起出</small></span></button></div>
+    <div class="grid">${units.map(u => {
+      const tag = u.key === 'GEN' ? '綜' : u.key.replace(/^W/, '');
+      const size = tag.length >= 4 ? ' xlong' : tag.length >= 3 ? ' long' : '';
+      return `<button class="cat" data-u="${u.key}">
+      <span class="sealbox${size}">${esc(tag)}</span>
+      <span><b>${esc(u.name)}</b><small>${u.key} ・ ${u.count} 題</small></span></button>`;
+    }).join('')}</div>`;
+  document.getElementById('back').onclick = home;
+  document.querySelectorAll('.cat').forEach(b => b.onclick = () => startGame(cat, region, b.dataset.u));
+}
+
 /* ---------- 遊戲 ---------- */
 let G = null;
 
-async function startGame(cat, region = ''){
+const setTopic = t => { document.body.dataset.topic = t || ''; };
+
+async function startGame(cat, region = '', unit = ''){
+  setTopic(cat);
   $app.innerHTML = `<p class="sub">出題中…</p>`;
   try{
-    const d = await api.start(cat, region);
-    G = {session: d.session, qs: d.questions, catKey: cat, catRegion: region, catName: (CAT_NAME[cat] || cat) + (region ? `・${region}` : ''), log: [],
+    const d = await api.start(cat, region, unit);
+    G = {session: d.session, qs: d.questions, catKey: cat, catRegion: region, catUnit: unit,
+         catName: (CAT_NAME[cat] || cat) + (region ? `・${region}` : '') + (d.unit_name ? `・${d.unit_name}` : ''), log: [],
          st: {i: 0, lives: LIVES, score: 0, streak: 0, best: 0, right: 0, answered: 0, over: false,
               powers: {fifty: true, skip: true, time: true}}};
     showQuestion();
@@ -415,11 +451,11 @@ function result(){
   const prev = store.get('quiz_best') || 0;
   const isBest = s.score > prev;
   if (isBest) store.set('quiz_best', s.score);
-  const rank = acc >= 90 ? '狀元' : acc >= 75 ? '榜眼' : acc >= 60 ? '探花' : acc >= 40 ? '進士' : '秀才';
+  const rank = acc >= 90 ? '滿格' : acc >= 75 ? '高峰' : acc >= 60 ? '躍升' : acc >= 40 ? '穩定' : '起跳';
   const canSubmit = s.score > 0;
   $app.innerHTML = `<div class="result">
       <p class="sub">${esc(G.catName)} ・ ${s.lives <= 0 ? '三條命用完了' : '十題作答完畢'}</p>
-      <div class="bang"><small>金榜題名</small><div class="rank">${rank}</div></div>
+      <div class="bang"><small>PULSE</small><div class="rank">${rank}</div></div>
       <div class="big">${s.score} 分</div>
       ${isBest ? '<span class="newbest">刷新個人最高分！</span>' : `<span class="sub">個人最高 ${prev}</span>`}
       <div class="stats">
@@ -429,7 +465,7 @@ function result(){
       </div>
       <div id="lbslot">${canSubmit ? `
         <form class="lbform" id="lbform">
-          <label for="nick">留名金榜</label>
+          <label for="nick">留下代號</label>
           <div class="row"><input id="nick" name="nick" maxlength="12" autocomplete="nickname" placeholder="輸入暱稱（最多 12 字）"
             value="${esc(store.get('quiz_nick') || '')}"><button class="btn" type="submit" id="lbsubmit">題名上榜</button></div>
           <p class="err" id="lberr" hidden></p>
@@ -438,7 +474,7 @@ function result(){
       <div class="review">${G.log.map(x => `<div><span class="m ${x.ok === null ? 's' : x.ok ? 'y' : 'x'}">${x.ok === null ? '略' : x.ok ? '中' : '落'}</span><span>${esc(x.q.split('\n').pop())}</span></div>`).join('')}</div>
     </div>`;
   document.getElementById('home').onclick = () => { api.finish(G.session); home(); };
-  document.getElementById('again').onclick = () => { api.finish(G.session); startGame(G.catKey, G.catRegion); };
+  document.getElementById('again').onclick = () => { api.finish(G.session); startGame(G.catKey, G.catRegion, G.catUnit); };
   const form = document.getElementById('lbform');
   if (form) form.onsubmit = async e => {
     e.preventDefault();
@@ -452,7 +488,7 @@ function result(){
       G.myId = r.id;
       document.getElementById('lbslot').innerHTML = `<div class="placed">
           「${esc(G.catName)}」本週第 <b>${r.rank_week ?? '-'}</b> 名 ・ 總榜第 <b>${r.rank_all ?? '-'}</b> 名
-          <div class="row"><button class="btn ghost" id="seeboard">看金榜</button></div></div>`;
+          <div class="row"><button class="btn ghost" id="seeboard">看脈衝榜</button></div></div>`;
       document.getElementById('seeboard').onclick = () => board(G.catKey, 'week');
     }catch(ex){
       err.textContent = ex.message; err.hidden = false; btn.disabled = false;
@@ -460,10 +496,10 @@ function result(){
   };
 }
 
-/* ---------- 金榜 ---------- */
+/* ---------- 脈衝榜 ---------- */
 async function board(category = 'all', period = 'week'){
-  const cats = ['all', 'geo', 'history', 'human', 'tech', 'python', 'star', 'fun', ...(LOCAL ? [] : ['news']), 'mix'];
-  $app.innerHTML = `<div class="lbhead"><h1>金榜</h1><button class="back" id="back">← 回首頁</button></div>
+  const cats = ['all', 'python', 'pytorch', 'geo', 'history', 'human', 'tech', 'star', 'fun', ...(LOCAL ? [] : ['news']), 'mix'];
+  $app.innerHTML = `<div class="lbhead"><h1>脈衝榜</h1><button class="back" id="back">← 回首頁</button></div>
     <div class="seg" role="group" aria-label="期間">
       <button id="p-week" aria-pressed="${period === 'week'}">本週</button>
       <button id="p-all" aria-pressed="${period === 'all'}">總榜</button>
@@ -483,9 +519,9 @@ async function board(category = 'all', period = 'week'){
     document.getElementById('note').textContent = (await api.boardNote()) +
       (period === 'week' ? ' 本週榜每週一 00:00（台灣時間）重新開始。' : '');
     if (!rows.length){
-      el.innerHTML = `<div class="empty">${period === 'week' ? '本週' : ''}還沒有人上榜，來當第一位狀元吧。
+      el.innerHTML = `<div class="empty">${period === 'week' ? '本週' : ''}還沒有人上榜，來當第一個滿格吧。
         <div class="row"><button class="btn" id="go">開始作答</button></div></div>`;
-      document.getElementById('go').onclick = () => startGame(category === 'all' ? 'mix' : category, '');
+      document.getElementById('go').onclick = () => pickUnit(category === 'all' ? 'mix' : category, '');
       return;
     }
     el.innerHTML = rows.map((r, k) => {
@@ -496,7 +532,7 @@ async function board(category = 'all', period = 'week'){
         <span class="pts">${r.score}</span></div>`;
     }).join('');
   }catch(e){
-    el.innerHTML = `<div class="empty">金榜暫時打不開，請稍後再試。</div>`;
+    el.innerHTML = `<div class="empty">脈衝榜暫時打不開，請稍後再試。</div>`;
   }
 }
 

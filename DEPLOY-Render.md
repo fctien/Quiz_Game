@@ -1,57 +1,113 @@
-# 部署到 Render（備援方案）
+# 部署到 Render（雲端備援方案）
 
-學生用自己的行動網路就能玩，不必和老師在同一個 Wi-Fi，也不受校園網路的裝置隔離影響。
-Render 免費方案就夠用，不需要信用卡。
+用意：學生用自己的行動網路就能加入考坊，不必和老師同一個 Wi-Fi，也不會被校園網路的裝置隔離擋掉。
+Render 免費方案就夠用，不必先綁信用卡。
 
-## 一、一次性設定（建議上課前幾天做）
+整個流程分成三段：**一次性設定（上課前幾天做）→ 上課當天 → 之後要更新程式**。
 
-1. **把程式放上 GitHub**（Render 從 repo 部署）
-   ```bash
-   cd quiz_game
-   git init                     # 若解壓縮的是含 git 紀錄的版本就跳過
-   git add -A
-   git commit -m "金榜問答"
-   git branch -M main
-   git remote add origin https://github.com/<你的帳號>/jinbang-quiz.git
-   git push -u origin main
+---
+
+## 一、一次性設定
+
+### 步驟 1　把程式推上 GitHub
+
+Render 是從 GitHub 讀程式的，所以先把資料夾推上去。
+
+1. 電腦要先裝 Git for Windows：<https://git-scm.com/download/win>（安裝時全部按預設值）。
+2. 到 `quiz_game` 資料夾，雙擊 **`推上GitHub.bat`**。
+3. 第一次執行會跳出 GitHub 登入視窗，用瀏覽器授權一次就好。
+4. 看到 `推送完成` 就成功。到 <https://github.com/fctien/Quiz_Game> 重新整理，應該看得到 `app.py`、`questions/`、`render.yaml` 這些檔案。
+
+> 儲存庫設成 **Private 也沒問題**，Render 連得到。
+
+### 步驟 2　在 Render 建立服務
+
+1. 開 <https://render.com> → **Get Started** → 選 **GitHub** 登入（用 GitHub 帳號登入，Render 才看得到你的 repo）。
+2. 第一次會問要授權哪些儲存庫，選 **Only select repositories** → 勾 **Quiz_Game** → Install。
+3. 回到 Render 主控台，按 **New ＋** → **Blueprint**。
+4. 選 **Quiz_Game** → **Connect**。
+5. Render 會自動讀到專案裡的 `render.yaml`，畫面上會列出它要建立的服務 **pulse-quiz**（Free 方案、Singapore 區）。
+6. Blueprint Name 隨便填（例如 `pulse`），Branch 選 **main**。
+7. 按 **Deploy Blueprint**。
+
+### 步驟 3　等它跑完，拿到網址
+
+- 第一次建置大約 **2～5 分鐘**。畫面上會一直滾動 build log。
+- 狀態變成綠色的 **Live** 就好了。
+- 網址在服務名稱下方，長得像：
+  ```
+  https://pulse-quiz.onrender.com
+  ```
+  （如果 `pulse-quiz` 這個名字被別人用掉了，Render 會自動加一段亂碼，以畫面上顯示的為準。）
+- **把這個網址記下來**，寫在小抄上。
+
+### 步驟 4　測試（很重要，一定要用手機的行動網路測）
+
+1. 手機**關掉 Wi-Fi**，只用 4G/5G。
+2. 開 `https://<你的網址>/api/health`
+3. 看到這樣的內容就成功：
+   ```json
+   {"ok": true, "rooms": 0, "time": "14:03:21", "ips": [...]}
    ```
-   儲存庫設為 **Private 也可以**，Render 連得到。
+4. 再開 `https://<你的網址>/` 確認首頁正常，右上角應該看到版本字樣 **v4.6**。
 
-2. **在 Render 建立服務**
-   - 到 <https://render.com> 用 GitHub 帳號登入
-   - **New → Blueprint** → 選這個 repo → Render 會讀取 `render.yaml` 自動設定 → **Apply**
-   - 等 2～5 分鐘，狀態變成 **Live**
-   - 拿到網址，例如 `https://jinbang-quiz.onrender.com`
+---
 
-   （若不用 Blueprint，也可以 New → Web Service 手動填：
-   Build `pip install -r requirements.txt gunicorn`、
-   Start `gunicorn -w 1 --threads 100 --timeout 0 -b 0.0.0.0:$PORT app:app`）
+## 二、上課當天的流程
 
-3. **測試**：手機用行動網路開 `https://<你的網址>/api/health`，看到 `ok: true` 就成功。
+1. **上課前 5 分鐘**：先用手機或電腦開一次網址，把服務叫醒（免費方案閒置 15 分鐘會休眠，第一次開要等約 1 分鐘轉圈，這是正常的）。
+2. 老師電腦開 `https://<你的網址>/host`，投影到大螢幕。
+3. 照平常的方式設定：選主題 → 選單元 → 題數 → 秒數（要自己控題就選「手動」）→ 個人賽／分組賽 → 填班級代碼 → 按 **開考坊**。
+4. 學生用手機掃 QR code，或直接輸入四位數房號加入。**這時候 QR code 會自動是雲端網址**，學生用 4G 或任何 Wi-Fi 都連得到。
+5. 下課前一定要先按 **匯出本場成績 CSV**，再按存入班級積分，最後才關閉考坊。
 
-## 二、上課當天
+---
 
-1. 老師開 `https://<你的網址>/host`，照平常的方式開房。
-2. QR code 會自動變成雲端網址，學生用 4G 或任何 Wi-Fi 都能加入。
-3. **重要：下課前先按「匯出本場成績 CSV」再關閉**（原因見下）。
+## 三、之後要更新程式
 
-## 三、免費方案要注意的事
+改完程式（或我幫你更新題庫之後），在 `quiz_game` 資料夾雙擊 **`推上GitHub.bat`** 就好。
+Render 設定了 `autoDeployTrigger: commit`，只要 main 分支有新的 commit 就會**自動重新部署**，約 2～3 分鐘後生效。
 
-| 事項 | 說明 | 對策 |
+---
+
+## 四、免費方案要知道的三件事
+
+| 事項 | 實際情況 | 對策 |
 |---|---|---|
-| **閒置會休眠** | 15 分鐘沒人用就停機，下次開啟要等 30～60 秒 | 上課前 5 分鐘先開一次網頁把它叫醒 |
-| **資料不會永久保存** | 重新部署或休眠重啟後，`leaderboard.db`（班級積分）可能被清空 | 每堂課結束**立刻匯出 CSV**；班級積分只當輔助 |
-| **同時連線數** | 免費方案資源有限，約 40～50 人的班級可行，但反應會比區網慢一點 | 人多時改用區網模式，或升級付費方案 |
-| **要保留班級積分** | 需要永久儲存 | 升級付費方案並掛一顆 Disk（掛載到程式資料夾），或改用外部資料庫 |
+| **閒置會休眠** | 15 分鐘沒有任何連線就停機，下次開啟要等約 1 分鐘冷啟動 | 上課前 5 分鐘先開一次網頁叫醒它 |
+| **資料不會永久保存** | 免費方案**不能掛硬碟**，重新部署或休眠重啟後 `leaderboard.db`（排行榜、班級累積積分）會被清空 | 每堂課結束**立刻匯出 CSV**；班級積分只當課堂即時顯示用，正式成績以 CSV 為準 |
+| **每月 750 小時** | 一個工作區共用。一個服務不可能用完（一個月才 730 小時），但如果建了兩個以上的免費服務同時醒著就會超過 | 只留這一個服務就好 |
 
-## 四、兩種方案怎麼選
+其他小提醒：
 
-| | 區網（老師電腦） | Render（雲端） |
+- 免費方案是 0.1 CPU／512 MB。40～50 人的班級可行，但反應會比區網慢一點（大約多 0.1～0.3 秒）。
+- Render 是 HTTPS，所以**手機可以把它加到主畫面當 App 用**（區網的 http 位址在 Android 上不行）。
+- 如果之後要保留班級積分，就得升級到付費方案並掛一顆 Disk，或改接外部資料庫。
+
+---
+
+## 五、區網 vs Render 怎麼選
+
+| | 區網（老師電腦跑 app.py） | Render（雲端） |
 |---|---|---|
 | 學生用什麼上網 | 必須同一個 Wi-Fi | 4G 或任何網路都行 |
-| 速度 | 最快 | 稍慢（約多 0.1～0.3 秒） |
-| 會被校園網路擋 | 有可能 | 不會 |
+| 速度 | 最快 | 稍慢 |
+| 會被校園網路擋 | 有可能（裝置隔離） | 不會 |
 | 成績保存 | 存在你電腦上，穩 | 要當場匯出 |
-| 手機可安裝成 App | Android 不行（非 HTTPS） | 可以（Render 是 HTTPS） |
+| 手機裝成 App | Android 不行（非 HTTPS） | 可以 |
+| 要不要先準備 | 開 .bat 就好 | 要先推 GitHub、建服務 |
 
-**建議**：主要用區網，Render 當備援。兩邊都先設好，上課當天哪個通就用哪個。
+**建議**：主要用區網，Render 當備援，兩邊都先設好。上課當天先試區網，連不上就直接換雲端網址，學生那邊只是換一個網址而已。
+
+---
+
+## 六、卡住的時候
+
+| 症狀 | 原因與處理 |
+|---|---|
+| Render 找不到我的 repo | 步驟 2 的 GitHub 授權沒有勾到 Quiz_Game。到 GitHub → Settings → Applications → Render → 加選該儲存庫 |
+| Build 失敗，log 出現 `ModuleNotFoundError` | `requirements.txt` 沒推上去。確認 GitHub 上看得到這個檔，再推一次 |
+| 一直停在 `Deploying...` | 看 log 最後一行。若是 `Address already in use`，表示 start command 被改過，確認是 `-b 0.0.0.0:$PORT` |
+| 網頁開得起來但學生加不進來 | 檢查網址有沒有打錯；房號是四位數字；或服務剛好在冷啟動，等 1 分鐘再試 |
+| 畫面還是舊版 | 右上角看版本字樣。不是 v4.6 就是瀏覽器快取，按 Ctrl+Shift+R |
+| 房號突然失效 | 服務重啟會清掉進行中的考坊（狀態存在記憶體），重開一間即可 |

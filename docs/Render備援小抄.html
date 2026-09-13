@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
-<title>金榜問答・Render 雲端備援小抄</title>
+<title>脈衝 PULSE・Render 雲端備援小抄</title>
 <style>
 @page { size: A4; margin: 9mm 9mm; }
 :root{
@@ -34,7 +34,7 @@ b{color:var(--ink)}
 table{width:100%;border-collapse:collapse;font-size:9.3pt}
 th,td{text-align:left;padding:3.5px 4px;border-bottom:1px solid var(--line);vertical-align:top}
 th{background:var(--blue-soft);color:var(--blue);font-size:9pt;white-space:nowrap}
-td.sym{width:38%}
+td.sym{width:40%}
 .fill{border:1.2px dashed var(--cinnabar);border-radius:4px;padding:5px 7px;background:var(--cinnabar-soft)}
 .fill table{font-size:9pt}
 .fill td{border:0;padding:3px 4px}
@@ -47,108 +47,133 @@ td.sym{width:38%}
   display:grid;place-items:center;font-family:var(--mono)}
 .note{color:var(--muted);font-size:9pt;margin:4px 0 0}
 .warn{background:var(--cinnabar-soft);border-left:3px solid var(--cinnabar);padding:5px 8px;font-size:9.2pt;margin-top:5px}
-.score{display:flex;gap:5px;flex-wrap:wrap;margin-top:3px}
-.score div{flex:1;min-width:95px;border:1px solid var(--line);border-radius:4px;padding:4px 6px}
-.score b{display:block;font-family:var(--serif);font-size:10pt;color:var(--cinnabar)}
+.ok{background:#E7F4EE;border-left:3px solid var(--jade);padding:5px 8px;font-size:9.2pt;margin-top:5px}
 footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:var(--muted);font-size:8.6pt;
   display:flex;justify-content:space-between}
 </style>
 </head>
 <body>
 <header>
-  <h1>金榜問答<span class="seal">雲</span></h1>
-  <div class="sub">Render 雲端備援小抄 ・ 學生用 4G 就能玩<br>v3.4　不必和老師同一個 Wi-Fi</div>
+  <h1>脈衝 PULSE<span class="seal">雲</span></h1>
+  <div class="sub">Render 雲端備援小抄 ・ 學生用 4G 就能加入<br>v4.6　印出來夾在講義裡</div>
 </header>
 
 <div class="cols">
 <div>
 
-<section class="fill">
-  <table>
-    <tr><td class="lbl">Render 網址</td><td><span class="blank"></span></td></tr>
-    <tr><td class="lbl">GitHub repo</td><td><span class="blank"></span></td></tr>
-    <tr><td class="lbl">班級代碼</td><td><span class="blank"></span></td></tr>
-    <tr><td class="lbl">管理碼（六碼）</td><td><span class="blank"></span></td></tr>
-  </table>
-  <p class="note" style="margin:2px 0 0">網址長這樣：<span class="k">https://jinbang-quiz.onrender.com</span></p>
+<section>
+  <h2>先填這裡 <small>設定完成後填，上課只看這一格</small></h2>
+  <div class="fill">
+    <table>
+      <tr><td class="lbl">雲端網址</td><td><span class="blank"></span></td></tr>
+      <tr><td class="lbl">主持台</td><td>上面網址 + <span class="k">/host</span></td></tr>
+      <tr><td class="lbl">班級代碼</td><td><span class="blank"></span></td></tr>
+      <tr><td class="lbl">管理碼</td><td><span class="blank"></span></td></tr>
+    </table>
+  </div>
+  <p class="note">學生只要掃 QR code，不用背網址。</p>
 </section>
 
 <section>
-  <h2>一、一次性設定 <small>上課前幾天做，約 20 分鐘</small></h2>
+  <h2>一、把程式推上 GitHub <small>只做一次</small></h2>
   <ol class="flow">
-    <li><b>程式推上 GitHub</b>（Render 從 repo 部署）。在 <span class="k">quiz_game</span> 資料夾開 PowerShell：
-      <div class="k" style="display:block;padding:4px 6px;margin:3px 0;line-height:1.6">git init<br>git add -A<br>git commit -m "金榜問答"<br>git branch -M main<br>git remote add origin https://github.com/<b>你的帳號</b>/jinbang-quiz.git<br>git push -u origin main</div>
-      解壓縮「含git紀錄」那份的話，前三行可以省略。儲存庫設 <b>Private 也可以</b>。</li>
-    <li><b>建立服務</b>：到 <span class="k">render.com</span> 用 GitHub 登入 → <span class="btn">New</span> → <b>Blueprint</b> → 選這個 repo → <span class="btn">Apply</span>。專案裡的 <span class="k">render.yaml</span> 已經寫好設定，不用自己填。</li>
-    <li>等 2～5 分鐘，狀態變成 <b>Live</b>，複製網址填到左上角。</li>
-    <li><b>測試</b>：手機關 Wi-Fi、只用行動網路，開 <span class="k">你的網址/api/health</span>，看到 <span class="k">ok: true</span> 就成功。</li>
+    <li>電腦先裝 Git for Windows（<span class="k">git-scm.com/download/win</span>，全部按預設）。</li>
+    <li>在 <span class="k">quiz_game</span> 資料夾雙擊 <span class="btn out">推上GitHub.bat</span>。</li>
+    <li>跳出 GitHub 登入視窗 → 用瀏覽器授權一次。</li>
+    <li>看到「推送完成」，到 <span class="k">github.com/fctien/Quiz_Game</span> 確認檔案上去了。</li>
   </ol>
-  <div class="warn">免費方案不需要信用卡。第一次部署較久，之後每次 push 會自動重新部署。</div>
+  <p class="note">儲存庫設 Private 也沒關係，Render 連得到。</p>
 </section>
 
 <section>
-  <h2>二、上課當天</h2>
+  <h2>二、在 Render 建服務 <small>只做一次，約 5 分鐘</small></h2>
   <ol class="flow">
-    <li><b>上課前 5 分鐘先開一次網頁</b>把服務叫醒（休眠中第一次開要等 30～60 秒）。</li>
-    <li>開 <span class="k">你的網址/host</span>，照平常方式開房（主題 Python、秒數<b>手動</b>、個人賽、班級代碼）。</li>
-    <li>QR code 會自動變成雲端網址，學生用 <b>4G 或任何 Wi-Fi</b> 都能加入。</li>
-    <li>每題流程、加 0.5 分的規則，都和區網版一模一樣。</li>
-    <li><b>下課前一定要按「匯出本場成績 CSV」</b>，再按「存入班級積分」。</li>
+    <li>開 <span class="k">render.com</span> → Get Started → 用 <b>GitHub 帳號</b>登入。</li>
+    <li>授權畫面選 <b>Only select repositories</b> → 勾 <b>Quiz_Game</b> → Install。</li>
+    <li>主控台按 <span class="btn">New ＋</span> → <b>Blueprint</b>。</li>
+    <li>選 <b>Quiz_Game</b> → <span class="btn">Connect</span>。</li>
+    <li>Render 自動讀到 <span class="k">render.yaml</span>，列出服務 <b>pulse-quiz</b>（Free、Singapore）。Branch 選 <b>main</b>。</li>
+    <li>按 <span class="btn red">Deploy Blueprint</span>，等 2～5 分鐘。</li>
+    <li>狀態變成綠色 <b>Live</b>，把上面的網址抄到左上角那一格。</li>
   </ol>
-  <div class="warn">雲端版的班級積分<b>可能會被清空</b>（見右欄），成績以你匯出的 CSV 為準。</div>
+</section>
+
+<section>
+  <h2>三、測試 <small>一定要用手機行動網路測</small></h2>
+  <ol class="flow">
+    <li>手機<b>關掉 Wi-Fi</b>，只用 4G/5G。</li>
+    <li>開 <span class="k">你的網址/api/health</span>。</li>
+    <li>看到 <span class="k">{"ok": true, ...}</span> 就成功。</li>
+    <li>再開首頁，右上角要看到 <b>v4.6</b>。</li>
+  </ol>
+  <div class="ok">測過一次以後，上課當天只要開主持台就好。</div>
 </section>
 
 </div>
 <div>
 
 <section>
-  <h2>三、免費方案的三個限制</h2>
+  <h2>四、上課當天</h2>
+  <ol class="flow">
+    <li><b>提前 5 分鐘</b>先開一次網址把它叫醒（免費方案會休眠，第一次要等約 1 分鐘）。</li>
+    <li>電腦開 <span class="k">你的網址/host</span>，投影到大螢幕。</li>
+    <li>選主題 → 選單元 → 題數 → 秒數（自己控題選<b>手動</b>）→ 賽制 → 填班級代碼。</li>
+    <li>按 <span class="btn red">開考坊</span>，螢幕出現四位數房號與 QR code。</li>
+    <li>學生掃 QR 或輸入房號加入；QR 會自動是雲端網址。</li>
+    <li>每題按 <span class="btn">結束本題，公布答案</span> → <span class="btn">下一題</span>。</li>
+    <li>放榜後先按 <span class="btn red">匯出本場成績 CSV</span>，再存入班級積分，最後關閉考坊。</li>
+  </ol>
+  <div class="warn">先匯出，再關閉。雲端版的資料庫會被清掉，關了就下載不到。</div>
+</section>
+
+<section>
+  <h2>五、免費方案的三個限制</h2>
   <table>
-    <tr><th>限制</th><th>對策</th></tr>
-    <tr><td><b>閒置 15 分鐘會休眠</b><br>下次開啟要等 30～60 秒</td><td>上課前先開網頁叫醒；上課中有人在用就不會睡</td></tr>
-    <tr><td><b>資料不保證保存</b><br>重新部署或重啟後，班級積分可能歸零</td><td>每堂課結束<b>立刻匯出 CSV</b>。要永久保存需付費方案加掛 Disk</td></tr>
-    <tr><td><b>資源有限</b><br>約 40～50 人可行，反應比區網慢一點</td><td>人多時優先用區網；雲端當備援</td></tr>
+    <tr><th>事項</th><th>對策</th></tr>
+    <tr><td class="sym"><b>閒置 15 分鐘會休眠</b><br>下次開要等約 1 分鐘</td><td>上課前 5 分鐘先開一次網頁</td></tr>
+    <tr><td class="sym"><b>不能掛硬碟</b><br>重啟後排行榜與班級積分會清空</td><td>每堂課結束立刻匯出 CSV，成績以 CSV 為準</td></tr>
+    <tr><td class="sym"><b>每月 750 小時</b><br>整個工作區共用</td><td>只留這一個免費服務就不會超過</td></tr>
+  </table>
+  <p class="note">0.1 CPU／512 MB，40～50 人可行，比區網慢約 0.1～0.3 秒。</p>
+</section>
+
+<section>
+  <h2>六、要更新程式的時候</h2>
+  <p style="margin:0">在 <span class="k">quiz_game</span> 資料夾雙擊 <span class="btn out">推上GitHub.bat</span>，
+  Render 會自動重新部署，約 2～3 分鐘生效。不用回 Render 按任何東西。</p>
+</section>
+
+<section>
+  <h2>七、卡住的時候</h2>
+  <table>
+    <tr><th>症狀</th><th>處理</th></tr>
+    <tr><td class="sym">Render 找不到我的 repo</td><td>GitHub → Settings → Applications → Render → 加選 Quiz_Game</td></tr>
+    <tr><td class="sym">Build 失敗 <span class="k">ModuleNotFoundError</span></td><td>確認 GitHub 上有 <span class="k">requirements.txt</span>，再推一次</td></tr>
+    <tr><td class="sym">網頁打不開／一直轉圈</td><td>冷啟動中，等 1 分鐘；仍不行就看 Render 的 Logs 最後一行</td></tr>
+    <tr><td class="sym">學生加不進來</td><td>網址有沒有打錯、房號是四位數字、是不是剛好在冷啟動</td></tr>
+    <tr><td class="sym">畫面還是舊版</td><td>右上角不是 v4.6 就是快取，按 Ctrl+Shift+R</td></tr>
+    <tr><td class="sym">房號突然失效</td><td>服務重啟會清掉進行中的考坊，重開一間即可</td></tr>
   </table>
 </section>
 
 <section>
-  <h2>四、兩種方案比較</h2>
+  <h2>八、區網 vs 雲端</h2>
   <table>
-    <tr><th></th><th>區網（你的電腦）</th><th>Render（雲端）</th></tr>
-    <tr><td>學生上網方式</td><td>必須同一個 Wi-Fi</td><td>4G／任何網路</td></tr>
-    <tr><td>會被校園網路擋</td><td>有可能</td><td><b>不會</b></td></tr>
-    <tr><td>速度</td><td><b>最快</b></td><td>慢 0.1～0.3 秒</td></tr>
-    <tr><td>成績保存</td><td><b>穩，存在你電腦</b></td><td>要當場匯出</td></tr>
-    <tr><td>Android 裝成 App</td><td>不行（非 HTTPS）</td><td><b>可以</b></td></tr>
-    <tr><td>要不要開電腦</td><td>要，且要一直開著</td><td>不用</td></tr>
+    <tr><th></th><th>區網</th><th>Render</th></tr>
+    <tr><td>學生網路</td><td>同一個 Wi-Fi</td><td>4G 都行</td></tr>
+    <tr><td>會被校網擋</td><td>有可能</td><td>不會</td></tr>
+    <tr><td>成績保存</td><td>存在電腦，穩</td><td>當場匯出</td></tr>
+    <tr><td>裝成手機 App</td><td>Android 不行</td><td>可以</td></tr>
   </table>
-  <p class="note">建議：主要用區網，Render 當備援。兩邊都先設好，當天哪個通就用哪個。</p>
-</section>
-
-<section>
-  <h2>五、排錯</h2>
-  <table>
-    <tr><th class="sym">狀況</th><th>怎麼辦</th></tr>
-    <tr><td class="sym">開網頁一直轉圈</td><td>服務在休眠喚醒，等 30～60 秒；再不行看 Render 的 <b>Logs</b> 分頁</td></tr>
-    <tr><td class="sym">部署失敗（Failed）</td><td>看 Logs 最後幾行，把訊息貼給 Claude</td></tr>
-    <tr><td class="sym">學生說連不上</td><td>確認網址開頭是 <span class="k">https</span>；請他關掉 VPN</td></tr>
-    <tr><td class="sym">房號不見了</td><td>服務重啟會清掉進行中的房間，重開一間即可</td></tr>
-    <tr><td class="sym">成績不見了</td><td>只能靠當場匯出的 CSV，沒有其他備份</td></tr>
-    <tr><td class="sym">改了題目要更新</td><td><span class="k">git add -A</span> → <span class="k">git commit -m "更新題庫"</span> → <span class="k">git push</span>，Render 會自動重新部署</td></tr>
-  </table>
-</section>
-
-<section>
-  <h2>六、想更省事的話</h2>
-  <p style="margin:2px 0 0">當天若區網和雲端都出狀況，最後的備案是<b>自備無線路由器</b>：插電開機，電腦和學生都連它，純區網也能玩，完全不需要網際網路。</p>
+  <p class="note">建議主要用區網，雲端當備援，當天哪個通就用哪個。</p>
 </section>
 
 </div>
 </div>
 
 <footer>
-  <span>金榜問答 v3.4 ・ 部署設定寫在 render.yaml，步驟另見 DEPLOY-Render.md</span>
-  <span>健康檢查：<span class="k">/api/health</span></span>
+  <span>脈衝 PULSE v4.6 ・ 題庫 1917 題（Python 500、Deep Learning 660）</span>
+  <span>github.com/fctien/Quiz_Game　・　render.com</span>
 </footer>
 </body>
 </html>

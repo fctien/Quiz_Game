@@ -1,704 +1,2234 @@
 [
-  {
-    "id": "st-001",
-    "category": "音樂",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "五月天的團名「Mayday」，原本是哪位團員在BBS上的網路代號？",
-    "options": [
-      "瑪莎",
-      "怪獸",
-      "阿信",
-      "石頭"
-    ],
-    "answer": 0,
-    "explanation": "五月天前身是「So Band」，1997年為了報名野台開唱，借用貝斯手瑪莎的BBS代號「MayDay」當團名，並改名「五月天」。",
-    "fun_fact": "「Mayday」同時也是國際通用的無線電求救信號。",
-    "source": "https://zh.wikipedia.org/wiki/%E4%BA%94%E6%9C%88%E5%A4%A9",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-002",
-    "category": "音樂",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "周杰倫在2000年發行的首張錄音室專輯叫什麼？",
-    "options": [
-      "《葉惠美》",
-      "《八度空間》",
-      "《Jay》",
-      "《范特西》"
-    ],
-    "answer": 2,
-    "explanation": "周杰倫的首張專輯是2000年11月發行的同名專輯《Jay》，全碟由他作曲並擔任製作人。",
-    "fun_fact": "這張出道專輯就拿下第12屆金曲獎最佳流行音樂演唱專輯獎。",
-    "source": "https://www.jvrmusic.com/news/detail/1275679152900542464",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-003",
-    "category": "音樂",
-    "difficulty": 3,
-    "type": "order",
-    "question": "請依發行時間由早到晚，排列周杰倫這四張專輯。",
-    "options": [
-      "《葉惠美》",
-      "《范特西》",
-      "《七里香》",
-      "《十一月的蕭邦》"
-    ],
-    "answer": [
-      1,
-      0,
-      2,
-      3
-    ],
-    "explanation": "《范特西》2001年、《葉惠美》2003年、《七里香》2004年、《十一月的蕭邦》2005年發行。",
-    "fun_fact": "夾在《范特西》和《葉惠美》中間的，是2002年的《八度空間》。",
-    "source": "https://en.wikipedia.org/wiki/Jay_Chou_albums_discography",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-004",
-    "category": "音樂",
-    "difficulty": 3,
-    "type": "choice",
-    "question": "張惠妹出道前，是在哪個電視歌唱節目拿下「五度五關」？",
-    "options": [
-      "《華人星光大道》",
-      "《超級星光大道》",
-      "《超級偶像》",
-      "《五燈獎》"
-    ],
-    "answer": 3,
-    "explanation": "張惠妹1992年首次參加《五燈獎》拿到四度五關，1994年再度挑戰，以〈愛的憧憬〉奪得五度五關。",
-    "fun_fact": "其他三個選秀節目都是在她出道十多年後才開播的。",
-    "source": "https://time.udn.com/udntime/story/122834/6652667",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-005",
-    "category": "音樂",
-    "difficulty": 3,
-    "type": "choice",
-    "question": "鄧麗君的名曲〈甜蜜蜜〉，旋律改編自哪裡的民謠？",
-    "options": [
-      "菲律賓民謠",
-      "印尼民謠",
-      "韓國民謠",
-      "日本民謠"
-    ],
-    "answer": 1,
-    "explanation": "原曲是印尼萬丹省民謠〈Dayung Sampan〉（划舢舨），由莊奴填上中文詞，1979年發行。",
-    "fun_fact": "莊奴依照對鄧麗君甜美歌聲的印象，據說五分鐘就寫完歌詞。",
-    "source": "https://zh.wikipedia.org/wiki/%E7%94%9C%E8%9C%9C%E8%9C%9C_(%E9%84%A7%E9%BA%97%E5%90%9B%E6%AD%8C%E6%9B%B2)",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-006",
-    "category": "音樂",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "以下哪一位「不是」香港樂壇「四大天王」的成員？",
-    "options": [
-      "劉德華",
-      "郭富城",
-      "張學友",
-      "張國榮"
-    ],
-    "answer": 3,
-    "explanation": "「四大天王」指張學友、劉德華、黎明、郭富城四位歌手，稱號約在1992年出現。",
-    "fun_fact": "稱號由來有兩種說法：一說源自《東方日報》的打油詩，一說是香港電台在活動上當場封號。",
-    "source": "https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E5%9B%9B%E5%A4%A7%E5%A4%A9%E7%8E%8B",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-007",
-    "category": "音樂",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "「JJ」林俊傑出生於哪個國家？",
-    "options": [
-      "泰國",
-      "汶萊",
-      "馬來西亞",
-      "新加坡"
-    ],
-    "answer": 3,
-    "explanation": "林俊傑1981年生於新加坡，2003年以首張專輯《樂行者》出道。",
-    "fun_fact": "他憑出道專輯《樂行者》拿下第15屆金曲獎最佳新人獎。",
-    "source": "https://en.wikipedia.org/wiki/JJ_Lin",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-008",
-    "category": "音樂",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "搖滾歌手伍佰長年合作、常一起掛名的專屬樂團叫什麼？",
-    "options": [
-      "四分衛",
-      "動力火車",
-      "China Blue",
-      "脫拉庫"
-    ],
-    "answer": 2,
-    "explanation": "1991年伍佰與貝斯手小朱相約組團，隔年鍵盤手大貓加入，「伍佰 & China Blue」正式成形，作品也常以這個名義發表。",
-    "fun_fact": "樂團的鼓手Dino是來自美國加州的外籍樂手。",
-    "source": "https://wubai.com/china-blue/",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-009",
-    "category": "音樂",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "「池塘邊的榕樹上，知了在聲聲叫著夏天」是哪首歌的開頭？",
-    "options": [
-      "〈鹿港小鎮〉",
-      "〈戀曲1990〉",
-      "〈光陰的故事〉",
-      "〈童年〉"
-    ],
-    "answer": 3,
-    "explanation": "〈童年〉由羅大佑作詞作曲，1981年由張艾嘉首唱，後來羅大佑也自己錄唱。",
-    "fun_fact": "歌詞裡的榕樹、福利社、漫畫、黑板、便當、課桌，都是羅大佑真實的生活記憶。",
-    "source": "http://www.goodnews.org.tw/read.php?id=1475399",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-010",
-    "category": "音樂",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "女子團體S.H.E的團名是怎麼來的？",
-    "options": [
-      "唱片公司名稱的縮寫",
-      "三位成員英文名的第一個字母",
-      "出道選秀節目名稱的縮寫",
-      "三位成員出生地的縮寫"
-    ],
-    "answer": 1,
-    "explanation": "S、H、E分別是Selina（任家萱）、Hebe（田馥甄）、Ella（陳嘉樺）英文名的字首。",
-    "fun_fact": "S.H.E在2001年9月11日正式出道，三人簽約前彼此並不認識。",
-    "source": "https://udn.com/news/story/120910/6156967",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-011",
-    "category": "音樂",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "韓國男團BTS（防彈少年團）的粉絲名稱是什麼？",
-    "options": [
-      "ARMY",
-      "ONCE",
-      "BLINK",
-      "CARAT"
-    ],
-    "answer": 0,
-    "explanation": "ARMY是「Adorable Representative M.C for Youth」的縮寫，在BTS 2013年出道後不久確定；BLINK、ONCE、CARAT則分別是BLACKPINK、TWICE、SEVENTEEN的粉絲名。",
-    "fun_fact": "RM曾在美國談話節目上透露，當初討論粉絲名時，有人提議過跟「鈴鐺」有關的名字。",
-    "source": "https://www.wionews.com/entertainment/why-are-bts-fans-called-the-army-603329",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-012",
-    "category": "音樂",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "BLACKPINK成員Lisa來自哪個國家？",
-    "options": [
-      "菲律賓",
-      "越南",
-      "泰國",
-      "印尼"
-    ],
-    "answer": 2,
-    "explanation": "Lisa出生於泰國武里南府，也是YG娛樂第一位非韓裔練習生。",
-    "fun_fact": "她的個人歌曲〈Money〉是第一首在Spotify突破10億次播放的K-pop個人歌手作品。",
-    "source": "https://en.wikipedia.org/wiki/Lisa_(rapper)",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-013",
-    "category": "音樂",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "泰勒絲2006年以首張專輯出道時，走的是哪種曲風？",
-    "options": [
-      "嘻哈",
-      "鄉村音樂",
-      "重金屬",
-      "爵士"
-    ],
-    "answer": 1,
-    "explanation": "泰勒絲的同名首張專輯《Taylor Swift》於2006年10月發行，是一張鄉村音樂專輯。",
-    "fun_fact": "她的出道單曲就叫〈Tim McGraw〉，歌名直接用了一位鄉村歌手的名字。",
-    "source": "https://en.wikipedia.org/wiki/Taylor_Swift_(album)",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-014",
-    "category": "音樂",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "傳奇樂團披頭四（The Beatles）是在英國哪座城市成立的？",
-    "options": [
-      "曼徹斯特",
-      "愛丁堡",
-      "利物浦",
-      "伯明罕"
-    ],
-    "answer": 2,
-    "explanation": "披頭四1960年在利物浦成立，成員是約翰·藍儂、保羅·麥卡尼、喬治·哈里森和林哥·史達。",
-    "fun_fact": "",
-    "source": "https://en.wikipedia.org/wiki/The_Beatles",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-015",
-    "category": "音樂",
-    "difficulty": 3,
-    "type": "choice",
-    "question": "麥可傑克森1983年第一次在電視特別節目中表演「月球漫步」時，唱的是哪首歌？",
-    "options": [
-      "〈Beat It〉",
-      "〈Billie Jean〉",
-      "〈Thriller〉",
-      "〈Bad〉"
-    ],
-    "answer": 1,
-    "explanation": "1983年3月《Motown 25》錄影時，他在演唱〈Billie Jean〉時秀出月球漫步，節目播出後轟動全球。",
-    "fun_fact": "從此月球漫步就成了他表演〈Billie Jean〉時的招牌動作。",
-    "source": "https://en.wikipedia.org/wiki/Moonwalk_(dance)",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-016",
-    "category": "音樂",
-    "difficulty": 3,
-    "type": "choice",
-    "question": "米津玄師的暢銷歌曲〈Lemon〉，原本是哪部日劇的主題曲？",
-    "options": [
-      "《Unnatural》（法醫女王）",
-      "《月薪嬌妻》",
-      "《交響情人夢》",
-      "《半澤直樹》"
-    ],
-    "answer": 0,
-    "explanation": "〈Lemon〉是為石原聰美主演的TBS日劇《Unnatural》（台譯《法醫女王》）寫的主題曲，2018年發行。",
-    "fun_fact": "這支MV在2025年成為第一支YouTube播放破9億次的日本歌手MV。",
-    "source": "https://ja.wikipedia.org/wiki/Lemon_(%E7%B1%B3%E6%B4%A5%E7%8E%84%E5%B8%AB%E3%81%AE%E6%9B%B2)",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-017",
-    "category": "音樂",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "是非題：PSY的〈江南Style〉是YouTube史上第一支觀看次數突破10億次的影片。",
-    "options": [
-      "對",
-      "錯"
-    ],
-    "answer": 0,
-    "explanation": "正確。2012年12月21日，〈江南Style〉在上傳159天後突破10億次觀看，獲金氏世界紀錄認證。",
-    "fun_fact": "",
-    "source": "https://www.guinnessworldrecords.com/world-records/107048-first-video-to-receive-one-billion-views",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-018",
-    "category": "影視",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "電影《那些年，我們一起追的女孩》的導演是誰？",
-    "options": [
-      "九把刀",
-      "侯孝賢",
-      "易智言",
-      "魏德聖"
-    ],
-    "answer": 0,
-    "explanation": "這部片改編自九把刀的同名小說，2011年由他親自執導，也是他第一部執導的電影。",
-    "fun_fact": "柯震東憑片中「柯景騰」一角拿下第48屆金馬獎最佳新演員。",
-    "source": "https://udn.com/news/story/120910/8151172",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-019",
-    "category": "影視",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "2008年創下國片票房奇蹟的《海角七號》，主要在台灣哪裡拍攝？",
-    "options": [
-      "花蓮",
-      "澎湖",
-      "恆春半島（墾丁一帶）",
-      "九份"
-    ],
-    "answer": 2,
-    "explanation": "魏德聖執導的《海角七號》以屏東恆春為故事舞台，在台灣拿下約新台幣5.3億元票房。",
-    "fun_fact": "",
-    "source": "https://www.cna.com.tw/project/20180822-cape-no7/index.html",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-020",
-    "category": "影視",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "李安第一次拿下奧斯卡最佳導演獎，是靠哪部電影？",
-    "options": [
-      "《色，戒》",
-      "《臥虎藏龍》",
-      "《飲食男女》",
-      "《斷背山》"
-    ],
-    "answer": 3,
-    "explanation": "李安2006年以《斷背山》首度獲得奧斯卡最佳導演，2013年又以《少年Pi的奇幻漂流》再度得獎；《臥虎藏龍》拿的則是最佳外語片。",
-    "fun_fact": "李安出生於屏東潮州。",
-    "source": "https://taiwancinema.bamid.gov.tw/Staff/StaffContent/?ContentUrl=12437",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-021",
-    "category": "影視",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "2001年紅遍亞洲的台灣偶像劇《流星花園》，改編自哪位日本漫畫家的作品？",
-    "options": [
-      "二之宮知子",
-      "高橋留美子",
-      "神尾葉子",
-      "矢澤愛"
-    ],
-    "answer": 2,
-    "explanation": "《流星花園》改編自神尾葉子的漫畫《花より男子》，劇中四位男主角也組成了偶像團體F4。",
-    "fun_fact": "",
-    "source": "https://en.wikipedia.org/wiki/Meteor_Garden_(2001_TV_series)",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-022",
-    "category": "影視",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "「曾經有一份真摯的感情放在我面前，我沒有珍惜……」是周星馳哪部電影裡的經典台詞？",
-    "options": [
-      "《大話西遊》",
-      "《唐伯虎點秋香》",
-      "《少林足球》",
-      "《功夫》"
-    ],
-    "answer": 0,
-    "explanation": "這是《大話西遊》中周星馳飾演的至尊寶所說的台詞，至今仍常被模仿。",
-    "fun_fact": "",
-    "source": "https://zh.wikiquote.org/wiki/%E5%A4%A7%E8%A9%B1%E8%A5%BF%E9%81%8A",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-023",
-    "category": "影視",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "李奧納多是以哪部電影拿下生涯第一座奧斯卡最佳男主角？",
-    "options": [
-      "《全面啟動》",
-      "《神鬼獵人》",
-      "《鐵達尼號》",
-      "《華爾街之狼》"
-    ],
-    "answer": 1,
-    "explanation": "2016年第88屆奧斯卡，李奧納多以《神鬼獵人》中的拓荒者休·格拉斯一角封帝。",
-    "fun_fact": "這已是他第5次入圍奧斯卡演技獎，前4次都沒有得獎。",
-    "source": "https://abcnews.com/Entertainment/leonardo-dicaprio-wins-oscar-revenant/story?id=37221983",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-024",
-    "category": "影視",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "是非題：李政宰以《魷魚遊戲》成為第一位獲得艾美獎劇集類最佳男主角的亞洲演員。",
-    "options": [
-      "對",
-      "錯"
-    ],
-    "answer": 0,
-    "explanation": "正確。李政宰在2022年艾美獎以《魷魚遊戲》拿下劇集類最佳男主角，寫下亞洲演員首例。",
-    "fun_fact": "",
-    "source": "https://www.aljazeera.com/news/2022/9/13/squid-game-star-lee-jung-jae-first-asian-to-win-best-actor-emmy",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-025",
-    "category": "影視",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "「以牙還牙，加倍奉還！」是哪部日劇主角的招牌台詞？",
-    "options": [
-      "《派遣女王》",
-      "《交響情人夢》",
-      "《東京愛情故事》",
-      "《半澤直樹》"
-    ],
-    "answer": 3,
-    "explanation": "這是堺雅人主演的《半澤直樹》名台詞，日文「倍返し」還拿下2013年日本流行語大賞。",
-    "fun_fact": "同年一起並列流行語大賞的，還有「今でしょ！」、「じぇじぇじぇ」和「お・も・て・な・し」。",
-    "source": "https://mantan-web.jp/article/20131202dog00m200045000c.html",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-026",
-    "category": "影視",
-    "difficulty": 2,
-    "type": "order",
-    "question": "請依上映年份由早到晚，排列這四部電影。",
-    "options": [
-      "《海角七號》",
-      "《臥虎藏龍》",
-      "《少年Pi的奇幻漂流》",
-      "《那些年，我們一起追的女孩》"
-    ],
-    "answer": [
-      1,
-      0,
-      3,
-      2
-    ],
-    "explanation": "《臥虎藏龍》2000年、《海角七號》2008年、《那些年，我們一起追的女孩》2011年、《少年Pi的奇幻漂流》2012年上映。",
-    "fun_fact": "其中兩部是李安作品：《臥虎藏龍》和《少年Pi的奇幻漂流》。",
-    "source": "https://zh.wikipedia.org/zh-hant/%E8%87%A5%E8%99%8E%E8%97%8F%E9%BE%8D_(%E9%9B%BB%E5%BD%B1)",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-027",
-    "category": "運動",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "王建民在2006年拿下單季19勝、並列大聯盟勝投王時，效力哪支球隊？",
-    "options": [
-      "紐約洋基",
-      "西雅圖水手",
-      "波士頓紅襪",
-      "洛杉磯道奇"
-    ],
-    "answer": 0,
-    "explanation": "王建民2006年替洋基拿下19勝，與雙城隊的桑塔納並列勝投王，是第一位亞洲籍大聯盟勝投王。",
-    "fun_fact": "那一年他在美聯賽揚獎票選中排名第二。",
-    "source": "https://time.udn.com/udntime/story/122833/8309919",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-028",
-    "category": "運動",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "戴資穎在2020東京奧運羽球女子單打拿下哪一種獎牌？",
-    "options": [
-      "金牌",
-      "銅牌",
-      "銀牌",
-      "沒有獲得獎牌"
-    ],
-    "answer": 2,
-    "explanation": "戴資穎在決賽以1比2惜敗中國的陳雨菲，拿下銀牌，創下台灣奧運羽球女單最佳成績。",
-    "fun_fact": "",
-    "source": "https://www.thenewslens.com/article/154436",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-029",
-    "category": "運動",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "郭婞淳在2020東京奧運為台灣奪下金牌，她的比賽項目是？",
-    "options": [
-      "射箭",
-      "柔道",
-      "舉重",
-      "跆拳道"
-    ],
-    "answer": 2,
-    "explanation": "郭婞淳在女子舉重59公斤級奪金，抓舉103公斤、挺舉133公斤，3度刷新奧運紀錄。",
-    "fun_fact": "許多媒體報導都稱她為「舉重女神」。",
-    "source": "https://news.tvbs.com.tw/life/1553605",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-030",
-    "category": "運動",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "是非題：李洋與王齊麟在2024巴黎奧運衛冕羽球男雙金牌，是奧運史上第一組男雙連霸的組合。",
-    "options": [
-      "對",
-      "錯"
-    ],
-    "answer": 0,
-    "explanation": "正確。「麟洋配」繼東京奧運後，在巴黎奧運決賽擊敗中國組合再度奪金，成為奧運羽球男雙首組連霸。",
-    "fun_fact": "這也是台灣在巴黎奧運的第一面金牌。",
-    "source": "https://www.cna.com.tw/news/aspt/202408050004.aspx",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-031",
-    "category": "運動",
-    "difficulty": 3,
-    "type": "choice",
-    "question": "2023年WBC世界棒球經典賽冠軍戰，大谷翔平最後三振了哪位美國隊球星，替日本拿下冠軍？",
-    "options": [
-      "貝茲",
-      "哈波",
-      "楚奧特",
-      "賈吉"
-    ],
-    "answer": 2,
-    "explanation": "九局上兩出局、滿球數，大谷用一顆滑球三振楚奧特，日本以3比2擊敗美國奪冠。",
-    "fun_fact": "大谷翔平也獲選為該屆賽事MVP。",
-    "source": "https://www.foxsports.com/stories/mlb/japan-edges-usa-in-wbc-final-after-ohtani-strikes-out-trout",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-032",
-    "category": "運動",
-    "difficulty": 2,
-    "type": "choice",
-    "question": "梅西有個西班牙文綽號「La Pulga」，意思是什麼？",
-    "options": [
-      "跳蚤",
-      "閃電",
-      "小獅子",
-      "金童"
-    ],
-    "answer": 0,
-    "explanation": "「La Pulga」是「跳蚤」的意思，因為梅西從小個子嬌小、動作靈活而得名。",
-    "fun_fact": "西班牙媒體還叫他「La Pulga Atómica」，也就是「原子跳蚤」。",
-    "source": "https://www.goal.com/en-us/news/why-lionel-messi-called-la-pulga-psg-flea-nickname-meaning-explained/bltaf91687a3d94468b",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-033",
-    "category": "運動",
-    "difficulty": 1,
-    "type": "choice",
-    "question": "「籃球之神」喬丹在芝加哥公牛隊最經典的背號是幾號？",
-    "options": [
-      "23號",
-      "24號",
-      "32號",
-      "33號"
-    ],
-    "answer": 0,
-    "explanation": "喬丹在公牛隊生涯大多穿23號，23號也幾乎成了他的代名詞。",
-    "fun_fact": "喬丹從沒替邁阿密熱火出賽過，熱火隊卻在2003年退休23號球衣向他致敬。",
-    "source": "https://www.sportbible.com/nba/michael-jordan-jersey-number-23-chicago-bulls-678869-20240815",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-034",
-    "category": "運動",
-    "difficulty": 3,
-    "type": "choice",
-    "question": "誰是第一位登上美國職棒大聯盟的台灣球員？",
-    "options": [
-      "曹錦輝",
-      "郭泓志",
-      "陳金鋒",
-      "王建民"
-    ],
-    "answer": 2,
-    "explanation": "2002年9月，陳金鋒穿著洛杉磯道奇的52號球衣出賽，成為第一位在大聯盟出賽的台灣選手。",
-    "fun_fact": "陳金鋒的綽號是「台灣巨砲」，也被稱為「永遠的第四棒」。",
-    "source": "https://time.udn.com/udntime/story/122833/8221744",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  },
-  {
-    "id": "st-035",
-    "category": "運動",
-    "difficulty": 3,
-    "type": "choice",
-    "question": "是非題：台灣田徑名將紀政的綽號是「亞洲鐵人」。",
-    "options": [
-      "對",
-      "錯"
-    ],
-    "answer": 1,
-    "explanation": "錯誤。紀政的綽號是「飛躍的羚羊」，1968年墨西哥奧運拿下女子80公尺跨欄銅牌；「亞洲鐵人」是十項全能名將楊傳廣。",
-    "fun_fact": "紀政是台灣第一位贏得奧運獎牌的女性運動員。",
-    "source": "https://www.cna.com.tw/news/aspt/202107165009.aspx",
-    "asof": "2026-09",
-    "region": "明星",
-    "topic": "star"
-  }
+ {
+  "id": "st-001",
+  "category": "音樂",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "五月天的團名「Mayday」，原本是哪位團員在BBS上的網路代號？",
+  "options": [
+   "瑪莎",
+   "怪獸",
+   "阿信",
+   "石頭"
+  ],
+  "answer": 0,
+  "explanation": "五月天前身是「So Band」，1997年為了報名野台開唱，借用貝斯手瑪莎的BBS代號「MayDay」當團名，並改名「五月天」。",
+  "fun_fact": "「Mayday」同時也是國際通用的無線電求救信號。",
+  "source": "https://zh.wikipedia.org/wiki/%E4%BA%94%E6%9C%88%E5%A4%A9",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-002",
+  "category": "音樂",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "周杰倫在2000年發行的首張錄音室專輯叫什麼？",
+  "options": [
+   "《葉惠美》",
+   "《八度空間》",
+   "《Jay》",
+   "《范特西》"
+  ],
+  "answer": 2,
+  "explanation": "周杰倫的首張專輯是2000年11月發行的同名專輯《Jay》，全碟由他作曲並擔任製作人。",
+  "fun_fact": "這張出道專輯就拿下第12屆金曲獎最佳流行音樂演唱專輯獎。",
+  "source": "https://www.jvrmusic.com/news/detail/1275679152900542464",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-003",
+  "category": "音樂",
+  "difficulty": 3,
+  "type": "order",
+  "question": "請依發行時間由早到晚，排列周杰倫這四張專輯。",
+  "options": [
+   "《葉惠美》",
+   "《范特西》",
+   "《七里香》",
+   "《十一月的蕭邦》"
+  ],
+  "answer": [
+   1,
+   0,
+   2,
+   3
+  ],
+  "explanation": "《范特西》2001年、《葉惠美》2003年、《七里香》2004年、《十一月的蕭邦》2005年發行。",
+  "fun_fact": "夾在《范特西》和《葉惠美》中間的，是2002年的《八度空間》。",
+  "source": "https://en.wikipedia.org/wiki/Jay_Chou_albums_discography",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-004",
+  "category": "音樂",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "張惠妹出道前，是在哪個電視歌唱節目拿下「五度五關」？",
+  "options": [
+   "《華人星光大道》",
+   "《超級星光大道》",
+   "《超級偶像》",
+   "《五燈獎》"
+  ],
+  "answer": 3,
+  "explanation": "張惠妹1992年首次參加《五燈獎》拿到四度五關，1994年再度挑戰，以〈愛的憧憬〉奪得五度五關。",
+  "fun_fact": "其他三個選秀節目都是在她出道十多年後才開播的。",
+  "source": "https://time.udn.com/udntime/story/122834/6652667",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-005",
+  "category": "音樂",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "鄧麗君的名曲〈甜蜜蜜〉，旋律改編自哪裡的民謠？",
+  "options": [
+   "菲律賓民謠",
+   "印尼民謠",
+   "韓國民謠",
+   "日本民謠"
+  ],
+  "answer": 1,
+  "explanation": "原曲是印尼萬丹省民謠〈Dayung Sampan〉（划舢舨），由莊奴填上中文詞，1979年發行。",
+  "fun_fact": "莊奴依照對鄧麗君甜美歌聲的印象，據說五分鐘就寫完歌詞。",
+  "source": "https://zh.wikipedia.org/wiki/%E7%94%9C%E8%9C%9C%E8%9C%9C_(%E9%84%A7%E9%BA%97%E5%90%9B%E6%AD%8C%E6%9B%B2)",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-006",
+  "category": "音樂",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "以下哪一位「不是」香港樂壇「四大天王」的成員？",
+  "options": [
+   "劉德華",
+   "郭富城",
+   "張學友",
+   "張國榮"
+  ],
+  "answer": 3,
+  "explanation": "「四大天王」指張學友、劉德華、黎明、郭富城四位歌手，稱號約在1992年出現。",
+  "fun_fact": "稱號由來有兩種說法：一說源自《東方日報》的打油詩，一說是香港電台在活動上當場封號。",
+  "source": "https://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E5%9B%9B%E5%A4%A7%E5%A4%A9%E7%8E%8B",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-007",
+  "category": "音樂",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「JJ」林俊傑出生於哪個國家？",
+  "options": [
+   "泰國",
+   "汶萊",
+   "馬來西亞",
+   "新加坡"
+  ],
+  "answer": 3,
+  "explanation": "林俊傑1981年生於新加坡，2003年以首張專輯《樂行者》出道。",
+  "fun_fact": "他憑出道專輯《樂行者》拿下第15屆金曲獎最佳新人獎。",
+  "source": "https://en.wikipedia.org/wiki/JJ_Lin",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-008",
+  "category": "音樂",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "搖滾歌手伍佰長年合作、常一起掛名的專屬樂團叫什麼？",
+  "options": [
+   "四分衛",
+   "動力火車",
+   "China Blue",
+   "脫拉庫"
+  ],
+  "answer": 2,
+  "explanation": "1991年伍佰與貝斯手小朱相約組團，隔年鍵盤手大貓加入，「伍佰 & China Blue」正式成形，作品也常以這個名義發表。",
+  "fun_fact": "樂團的鼓手Dino是來自美國加州的外籍樂手。",
+  "source": "https://wubai.com/china-blue/",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-009",
+  "category": "音樂",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「池塘邊的榕樹上，知了在聲聲叫著夏天」是哪首歌的開頭？",
+  "options": [
+   "〈鹿港小鎮〉",
+   "〈戀曲1990〉",
+   "〈光陰的故事〉",
+   "〈童年〉"
+  ],
+  "answer": 3,
+  "explanation": "〈童年〉由羅大佑作詞作曲，1981年由張艾嘉首唱，後來羅大佑也自己錄唱。",
+  "fun_fact": "歌詞裡的榕樹、福利社、漫畫、黑板、便當、課桌，都是羅大佑真實的生活記憶。",
+  "source": "http://www.goodnews.org.tw/read.php?id=1475399",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-010",
+  "category": "音樂",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "女子團體S.H.E的團名是怎麼來的？",
+  "options": [
+   "唱片公司名稱的縮寫",
+   "三位成員英文名的第一個字母",
+   "出道選秀節目名稱的縮寫",
+   "三位成員出生地的縮寫"
+  ],
+  "answer": 1,
+  "explanation": "S、H、E分別是Selina（任家萱）、Hebe（田馥甄）、Ella（陳嘉樺）英文名的字首。",
+  "fun_fact": "S.H.E在2001年9月11日正式出道，三人簽約前彼此並不認識。",
+  "source": "https://udn.com/news/story/120910/6156967",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-011",
+  "category": "音樂",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "韓國男團BTS（防彈少年團）的粉絲名稱是什麼？",
+  "options": [
+   "ARMY",
+   "ONCE",
+   "BLINK",
+   "CARAT"
+  ],
+  "answer": 0,
+  "explanation": "ARMY是「Adorable Representative M.C for Youth」的縮寫，在BTS 2013年出道後不久確定；BLINK、ONCE、CARAT則分別是BLACKPINK、TWICE、SEVENTEEN的粉絲名。",
+  "fun_fact": "RM曾在美國談話節目上透露，當初討論粉絲名時，有人提議過跟「鈴鐺」有關的名字。",
+  "source": "https://www.wionews.com/entertainment/why-are-bts-fans-called-the-army-603329",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-012",
+  "category": "音樂",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "BLACKPINK成員Lisa來自哪個國家？",
+  "options": [
+   "菲律賓",
+   "越南",
+   "泰國",
+   "印尼"
+  ],
+  "answer": 2,
+  "explanation": "Lisa出生於泰國武里南府，也是YG娛樂第一位非韓裔練習生。",
+  "fun_fact": "她的個人歌曲〈Money〉是第一首在Spotify突破10億次播放的K-pop個人歌手作品。",
+  "source": "https://en.wikipedia.org/wiki/Lisa_(rapper)",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-013",
+  "category": "音樂",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "泰勒絲2006年以首張專輯出道時，走的是哪種曲風？",
+  "options": [
+   "嘻哈",
+   "鄉村音樂",
+   "重金屬",
+   "爵士"
+  ],
+  "answer": 1,
+  "explanation": "泰勒絲的同名首張專輯《Taylor Swift》於2006年10月發行，是一張鄉村音樂專輯。",
+  "fun_fact": "她的出道單曲就叫〈Tim McGraw〉，歌名直接用了一位鄉村歌手的名字。",
+  "source": "https://en.wikipedia.org/wiki/Taylor_Swift_(album)",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-014",
+  "category": "音樂",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "傳奇樂團披頭四（The Beatles）是在英國哪座城市成立的？",
+  "options": [
+   "曼徹斯特",
+   "愛丁堡",
+   "利物浦",
+   "伯明罕"
+  ],
+  "answer": 2,
+  "explanation": "披頭四1960年在利物浦成立，成員是約翰·藍儂、保羅·麥卡尼、喬治·哈里森和林哥·史達。",
+  "fun_fact": "",
+  "source": "https://en.wikipedia.org/wiki/The_Beatles",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-015",
+  "category": "音樂",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "麥可傑克森1983年第一次在電視特別節目中表演「月球漫步」時，唱的是哪首歌？",
+  "options": [
+   "〈Beat It〉",
+   "〈Billie Jean〉",
+   "〈Thriller〉",
+   "〈Bad〉"
+  ],
+  "answer": 1,
+  "explanation": "1983年3月《Motown 25》錄影時，他在演唱〈Billie Jean〉時秀出月球漫步，節目播出後轟動全球。",
+  "fun_fact": "從此月球漫步就成了他表演〈Billie Jean〉時的招牌動作。",
+  "source": "https://en.wikipedia.org/wiki/Moonwalk_(dance)",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-016",
+  "category": "音樂",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "米津玄師的暢銷歌曲〈Lemon〉，原本是哪部日劇的主題曲？",
+  "options": [
+   "《Unnatural》（法醫女王）",
+   "《月薪嬌妻》",
+   "《交響情人夢》",
+   "《半澤直樹》"
+  ],
+  "answer": 0,
+  "explanation": "〈Lemon〉是為石原聰美主演的TBS日劇《Unnatural》（台譯《法醫女王》）寫的主題曲，2018年發行。",
+  "fun_fact": "這支MV在2025年成為第一支YouTube播放破9億次的日本歌手MV。",
+  "source": "https://ja.wikipedia.org/wiki/Lemon_(%E7%B1%B3%E6%B4%A5%E7%8E%84%E5%B8%AB%E3%81%AE%E6%9B%B2)",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-017",
+  "category": "音樂",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "是非題：PSY的〈江南Style〉是YouTube史上第一支觀看次數突破10億次的影片。",
+  "options": [
+   "對",
+   "錯"
+  ],
+  "answer": 0,
+  "explanation": "正確。2012年12月21日，〈江南Style〉在上傳159天後突破10億次觀看，獲金氏世界紀錄認證。",
+  "fun_fact": "",
+  "source": "https://www.guinnessworldrecords.com/world-records/107048-first-video-to-receive-one-billion-views",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-018",
+  "category": "影視",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "電影《那些年，我們一起追的女孩》的導演是誰？",
+  "options": [
+   "九把刀",
+   "侯孝賢",
+   "易智言",
+   "魏德聖"
+  ],
+  "answer": 0,
+  "explanation": "這部片改編自九把刀的同名小說，2011年由他親自執導，也是他第一部執導的電影。",
+  "fun_fact": "柯震東憑片中「柯景騰」一角拿下第48屆金馬獎最佳新演員。",
+  "source": "https://udn.com/news/story/120910/8151172",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-019",
+  "category": "影視",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "2008年創下國片票房奇蹟的《海角七號》，主要在台灣哪裡拍攝？",
+  "options": [
+   "花蓮",
+   "澎湖",
+   "恆春半島（墾丁一帶）",
+   "九份"
+  ],
+  "answer": 2,
+  "explanation": "魏德聖執導的《海角七號》以屏東恆春為故事舞台，在台灣拿下約新台幣5.3億元票房。",
+  "fun_fact": "",
+  "source": "https://www.cna.com.tw/project/20180822-cape-no7/index.html",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-020",
+  "category": "影視",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "李安第一次拿下奧斯卡最佳導演獎，是靠哪部電影？",
+  "options": [
+   "《色，戒》",
+   "《臥虎藏龍》",
+   "《飲食男女》",
+   "《斷背山》"
+  ],
+  "answer": 3,
+  "explanation": "李安2006年以《斷背山》首度獲得奧斯卡最佳導演，2013年又以《少年Pi的奇幻漂流》再度得獎；《臥虎藏龍》拿的則是最佳外語片。",
+  "fun_fact": "李安出生於屏東潮州。",
+  "source": "https://taiwancinema.bamid.gov.tw/Staff/StaffContent/?ContentUrl=12437",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-021",
+  "category": "影視",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "2001年紅遍亞洲的台灣偶像劇《流星花園》，改編自哪位日本漫畫家的作品？",
+  "options": [
+   "二之宮知子",
+   "高橋留美子",
+   "神尾葉子",
+   "矢澤愛"
+  ],
+  "answer": 2,
+  "explanation": "《流星花園》改編自神尾葉子的漫畫《花より男子》，劇中四位男主角也組成了偶像團體F4。",
+  "fun_fact": "",
+  "source": "https://en.wikipedia.org/wiki/Meteor_Garden_(2001_TV_series)",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-022",
+  "category": "影視",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「曾經有一份真摯的感情放在我面前，我沒有珍惜……」是周星馳哪部電影裡的經典台詞？",
+  "options": [
+   "《大話西遊》",
+   "《唐伯虎點秋香》",
+   "《少林足球》",
+   "《功夫》"
+  ],
+  "answer": 0,
+  "explanation": "這是《大話西遊》中周星馳飾演的至尊寶所說的台詞，至今仍常被模仿。",
+  "fun_fact": "",
+  "source": "https://zh.wikiquote.org/wiki/%E5%A4%A7%E8%A9%B1%E8%A5%BF%E9%81%8A",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-023",
+  "category": "影視",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "李奧納多是以哪部電影拿下生涯第一座奧斯卡最佳男主角？",
+  "options": [
+   "《全面啟動》",
+   "《神鬼獵人》",
+   "《鐵達尼號》",
+   "《華爾街之狼》"
+  ],
+  "answer": 1,
+  "explanation": "2016年第88屆奧斯卡，李奧納多以《神鬼獵人》中的拓荒者休·格拉斯一角封帝。",
+  "fun_fact": "這已是他第5次入圍奧斯卡演技獎，前4次都沒有得獎。",
+  "source": "https://abcnews.com/Entertainment/leonardo-dicaprio-wins-oscar-revenant/story?id=37221983",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-024",
+  "category": "影視",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "是非題：李政宰以《魷魚遊戲》成為第一位獲得艾美獎劇集類最佳男主角的亞洲演員。",
+  "options": [
+   "對",
+   "錯"
+  ],
+  "answer": 0,
+  "explanation": "正確。李政宰在2022年艾美獎以《魷魚遊戲》拿下劇集類最佳男主角，寫下亞洲演員首例。",
+  "fun_fact": "",
+  "source": "https://www.aljazeera.com/news/2022/9/13/squid-game-star-lee-jung-jae-first-asian-to-win-best-actor-emmy",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-025",
+  "category": "影視",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「以牙還牙，加倍奉還！」是哪部日劇主角的招牌台詞？",
+  "options": [
+   "《派遣女王》",
+   "《交響情人夢》",
+   "《東京愛情故事》",
+   "《半澤直樹》"
+  ],
+  "answer": 3,
+  "explanation": "這是堺雅人主演的《半澤直樹》名台詞，日文「倍返し」還拿下2013年日本流行語大賞。",
+  "fun_fact": "同年一起並列流行語大賞的，還有「今でしょ！」、「じぇじぇじぇ」和「お・も・て・な・し」。",
+  "source": "https://mantan-web.jp/article/20131202dog00m200045000c.html",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-026",
+  "category": "影視",
+  "difficulty": 2,
+  "type": "order",
+  "question": "請依上映年份由早到晚，排列這四部電影。",
+  "options": [
+   "《海角七號》",
+   "《臥虎藏龍》",
+   "《少年Pi的奇幻漂流》",
+   "《那些年，我們一起追的女孩》"
+  ],
+  "answer": [
+   1,
+   0,
+   3,
+   2
+  ],
+  "explanation": "《臥虎藏龍》2000年、《海角七號》2008年、《那些年，我們一起追的女孩》2011年、《少年Pi的奇幻漂流》2012年上映。",
+  "fun_fact": "其中兩部是李安作品：《臥虎藏龍》和《少年Pi的奇幻漂流》。",
+  "source": "https://zh.wikipedia.org/zh-hant/%E8%87%A5%E8%99%8E%E8%97%8F%E9%BE%8D_(%E9%9B%BB%E5%BD%B1)",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-027",
+  "category": "運動",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "王建民在2006年拿下單季19勝、並列大聯盟勝投王時，效力哪支球隊？",
+  "options": [
+   "紐約洋基",
+   "西雅圖水手",
+   "波士頓紅襪",
+   "洛杉磯道奇"
+  ],
+  "answer": 0,
+  "explanation": "王建民2006年替洋基拿下19勝，與雙城隊的桑塔納並列勝投王，是第一位亞洲籍大聯盟勝投王。",
+  "fun_fact": "那一年他在美聯賽揚獎票選中排名第二。",
+  "source": "https://time.udn.com/udntime/story/122833/8309919",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-028",
+  "category": "運動",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "戴資穎在2020東京奧運羽球女子單打拿下哪一種獎牌？",
+  "options": [
+   "金牌",
+   "銅牌",
+   "銀牌",
+   "沒有獲得獎牌"
+  ],
+  "answer": 2,
+  "explanation": "戴資穎在決賽以1比2惜敗中國的陳雨菲，拿下銀牌，創下台灣奧運羽球女單最佳成績。",
+  "fun_fact": "",
+  "source": "https://www.thenewslens.com/article/154436",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-029",
+  "category": "運動",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "郭婞淳在2020東京奧運為台灣奪下金牌，她的比賽項目是？",
+  "options": [
+   "射箭",
+   "柔道",
+   "舉重",
+   "跆拳道"
+  ],
+  "answer": 2,
+  "explanation": "郭婞淳在女子舉重59公斤級奪金，抓舉103公斤、挺舉133公斤，3度刷新奧運紀錄。",
+  "fun_fact": "許多媒體報導都稱她為「舉重女神」。",
+  "source": "https://news.tvbs.com.tw/life/1553605",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-030",
+  "category": "運動",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "是非題：李洋與王齊麟在2024巴黎奧運衛冕羽球男雙金牌，是奧運史上第一組男雙連霸的組合。",
+  "options": [
+   "對",
+   "錯"
+  ],
+  "answer": 0,
+  "explanation": "正確。「麟洋配」繼東京奧運後，在巴黎奧運決賽擊敗中國組合再度奪金，成為奧運羽球男雙首組連霸。",
+  "fun_fact": "這也是台灣在巴黎奧運的第一面金牌。",
+  "source": "https://www.cna.com.tw/news/aspt/202408050004.aspx",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-031",
+  "category": "運動",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "2023年WBC世界棒球經典賽冠軍戰，大谷翔平最後三振了哪位美國隊球星，替日本拿下冠軍？",
+  "options": [
+   "貝茲",
+   "哈波",
+   "楚奧特",
+   "賈吉"
+  ],
+  "answer": 2,
+  "explanation": "九局上兩出局、滿球數，大谷用一顆滑球三振楚奧特，日本以3比2擊敗美國奪冠。",
+  "fun_fact": "大谷翔平也獲選為該屆賽事MVP。",
+  "source": "https://www.foxsports.com/stories/mlb/japan-edges-usa-in-wbc-final-after-ohtani-strikes-out-trout",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-032",
+  "category": "運動",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "梅西有個西班牙文綽號「La Pulga」，意思是什麼？",
+  "options": [
+   "跳蚤",
+   "閃電",
+   "小獅子",
+   "金童"
+  ],
+  "answer": 0,
+  "explanation": "「La Pulga」是「跳蚤」的意思，因為梅西從小個子嬌小、動作靈活而得名。",
+  "fun_fact": "西班牙媒體還叫他「La Pulga Atómica」，也就是「原子跳蚤」。",
+  "source": "https://www.goal.com/en-us/news/why-lionel-messi-called-la-pulga-psg-flea-nickname-meaning-explained/bltaf91687a3d94468b",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-033",
+  "category": "運動",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「籃球之神」喬丹在芝加哥公牛隊最經典的背號是幾號？",
+  "options": [
+   "23號",
+   "24號",
+   "32號",
+   "33號"
+  ],
+  "answer": 0,
+  "explanation": "喬丹在公牛隊生涯大多穿23號，23號也幾乎成了他的代名詞。",
+  "fun_fact": "喬丹從沒替邁阿密熱火出賽過，熱火隊卻在2003年退休23號球衣向他致敬。",
+  "source": "https://www.sportbible.com/nba/michael-jordan-jersey-number-23-chicago-bulls-678869-20240815",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-034",
+  "category": "運動",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "誰是第一位登上美國職棒大聯盟的台灣球員？",
+  "options": [
+   "曹錦輝",
+   "郭泓志",
+   "陳金鋒",
+   "王建民"
+  ],
+  "answer": 2,
+  "explanation": "2002年9月，陳金鋒穿著洛杉磯道奇的52號球衣出賽，成為第一位在大聯盟出賽的台灣選手。",
+  "fun_fact": "陳金鋒的綽號是「台灣巨砲」，也被稱為「永遠的第四棒」。",
+  "source": "https://time.udn.com/udntime/story/122833/8221744",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-035",
+  "category": "運動",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "是非題：台灣田徑名將紀政的綽號是「亞洲鐵人」。",
+  "options": [
+   "對",
+   "錯"
+  ],
+  "answer": 1,
+  "explanation": "錯誤。紀政的綽號是「飛躍的羚羊」，1968年墨西哥奧運拿下女子80公尺跨欄銅牌；「亞洲鐵人」是十項全能名將楊傳廣。",
+  "fun_fact": "紀政是台灣第一位贏得奧運獎牌的女性運動員。",
+  "source": "https://www.cna.com.tw/news/aspt/202107165009.aspx",
+  "asof": "2026-09",
+  "region": "明星",
+  "topic": "star"
+ },
+ {
+  "id": "st-036",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "周杰倫的〈晴天〉收錄在哪一張專輯裡？",
+  "options": [
+   "《范特西》",
+   "《八度空間》",
+   "《葉惠美》",
+   "《七里香》"
+  ],
+  "answer": 2,
+  "explanation": "〈晴天〉由周杰倫自己作詞作曲並演唱，收錄於2003年發行的專輯《葉惠美》。",
+  "fun_fact": "專輯名《葉惠美》其實是周杰倫母親的名字。"
+ },
+ {
+  "id": "st-037",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "由田馥甄演唱的〈小幸運〉，是哪一部台灣電影的主題曲？",
+  "options": [
+   "《藍色大門》",
+   "《我的少女時代》",
+   "《六弄咖啡館》",
+   "《等一個人咖啡》"
+  ],
+  "answer": 1,
+  "explanation": "〈小幸運〉2015年發行，是電影《我的少女時代》的主題曲，由徐世珍、吳輝福作詞，JerryC作曲。",
+  "fun_fact": "這首歌入圍了第27屆金曲獎的最佳年度歌曲獎與最佳作曲人獎。"
+ },
+ {
+  "id": "st-038",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "〈月亮代表我的心〉、〈小城故事〉、〈我只在乎你〉都是哪位歌手唱紅的？",
+  "options": [
+   "鳳飛飛",
+   "蔡琴",
+   "鄧麗君",
+   "甄妮"
+  ],
+  "answer": 2,
+  "explanation": "這三首都是鄧麗君的代表作，她的歌聲在1970至80年代紅遍華人世界與日本。",
+  "fun_fact": "鄧麗君在日本樂壇是以藝名「テレサ・テン」（Teresa Teng）活動。"
+ },
+ {
+  "id": "st-039",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "台語勵志名曲〈愛拚才會贏〉的原唱者是誰？",
+  "options": [
+   "洪榮宏",
+   "陳雷",
+   "江蕙",
+   "葉啟田"
+  ],
+  "answer": 3,
+  "explanation": "〈愛拚才會贏〉由陳百潭作詞作曲，葉啟田演唱，收錄在1988年發行的同名專輯。",
+  "fun_fact": "這首歌正好唱在台灣經濟起飛的年代，後來成為各種場合的加油歌。"
+ },
+ {
+  "id": "st-040",
+  "topic": "star",
+  "category": "綜藝",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "talk show《康熙來了》的兩位主持人是誰？",
+  "options": [
+   "蔡康永與徐熙娣",
+   "吳宗憲與陳建州",
+   "張菲與費玉清",
+   "胡瓜與郭子乾"
+  ],
+  "answer": 0,
+  "explanation": "《康熙來了》2004年開播、2016年播出最後一集，由蔡康永和徐熙娣（小S）搭檔主持。",
+  "fun_fact": "節目名稱就是取自兩位主持人名字中的「康」與「熙」。"
+ },
+ {
+  "id": "st-041",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "魏德聖執導、以1930年霧社事件為主題的史詩電影是哪一部？",
+  "options": [
+   "《海角七號》",
+   "《悲情城市》",
+   "《賽德克·巴萊》",
+   "《一八九五》"
+  ],
+  "answer": 2,
+  "explanation": "《賽德克·巴萊》2011年上映，分成〈太陽旗〉與〈彩虹橋〉上下兩集，改編自邱若龍的漫畫《霧社事件》。",
+  "fun_fact": "片名在賽德克語裡的意思是「真正的人」。"
+ },
+ {
+  "id": "st-042",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "《推手》、《囍宴》、《飲食男女》這「父親三部曲」是誰導演的作品？",
+  "options": [
+   "侯孝賢",
+   "李安",
+   "楊德昌",
+   "蔡明亮"
+  ],
+  "answer": 1,
+  "explanation": "這三部都是李安早期的作品，因為主題都圍繞著父親與家庭，被合稱為「父親三部曲」。",
+  "fun_fact": "三部片裡的父親角色，全都由演員郎雄飾演。"
+ },
+ {
+  "id": "st-043",
+  "topic": "star",
+  "category": "動漫",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "台灣早期把哪一部日本卡通翻譯成《小叮噹》？",
+  "options": [
+   "《櫻桃小丸子》",
+   "《科學小飛俠》",
+   "《怪醫黑傑克》",
+   "《哆啦A夢》"
+  ],
+  "answer": 3,
+  "explanation": "《哆啦A夢》在台灣早年被譯為《小叮噹》，主角群也曾譯成大雄、宜靜、技安、阿福。",
+  "fun_fact": "1990年代後期起，各地陸續改用音譯的「哆啦A夢」作為統一譯名。"
+ },
+ {
+  "id": "st-044",
+  "topic": "star",
+  "category": "廣告",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "經典廣告詞「有青，才敢大聲」是哪個品牌的標語？",
+  "options": [
+   "保力達B",
+   "黑松沙士",
+   "維士比",
+   "台灣啤酒"
+  ],
+  "answer": 3,
+  "explanation": "這是台灣啤酒1998年起推出的廣告標語，由搖滾歌手伍佰代言，成為長銷不墜的經典金句。",
+  "fun_fact": "台語「有青」是「最新鮮」的意思。"
+ },
+ {
+  "id": "st-045",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "台灣電影界最高榮譽的獎項是下列哪一個？",
+  "options": [
+   "金鐘獎",
+   "金鼎獎",
+   "金馬獎",
+   "金曲獎"
+  ],
+  "answer": 2,
+  "explanation": "金馬獎1962年創辦，是華語電影界重要的獎項；金鐘獎頒給電視，金曲獎頒給音樂，金鼎獎頒給出版。",
+  "fun_fact": "金馬獎從1990年起交由民間的台北金馬影展執行委員會主辦。"
+ },
+ {
+  "id": "st-046",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "周杰倫〈青花瓷〉、〈菊花台〉這些「中國風」歌曲的作詞人是誰？",
+  "options": [
+   "林夕",
+   "方文山",
+   "黃俊郎",
+   "姚若龍"
+  ],
+  "answer": 1,
+  "explanation": "方文山是周杰倫長期的作詞搭檔，〈青花瓷〉、〈菊花台〉、〈東風破〉等歌詞都出自他手。",
+  "fun_fact": "〈菊花台〉曾入圍第18屆金曲獎最佳作詞人獎。"
+ },
+ {
+  "id": "st-047",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "台灣樂團蘇打綠的主唱是誰？",
+  "options": [
+   "張懸",
+   "阿信",
+   "盧廣仲",
+   "吳青峰"
+  ],
+  "answer": 3,
+  "explanation": "蘇打綠由吳青峰擔任主唱，他同時也包辦樂團大部分歌曲的詞曲創作。",
+  "fun_fact": "他以〈小情歌〉拿下2007年第18屆金曲獎最佳作曲人獎。"
+ },
+ {
+  "id": "st-048",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "〈天黑黑〉、〈遇見〉、〈綠光〉都是哪位新加坡籍歌手的代表作？",
+  "options": [
+   "蔡依林",
+   "梁靜茹",
+   "戴佩妮",
+   "孫燕姿"
+  ],
+  "answer": 3,
+  "explanation": "這幾首歌都是孫燕姿的代表作，她2000年以同名專輯《孫燕姿》在台灣出道。",
+  "fun_fact": "她憑這張出道專輯拿下第12屆金曲獎最佳新人獎。"
+ },
+ {
+  "id": "st-049",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "〈凡人歌〉、〈愛的代價〉、〈鬼迷心竅〉都是哪位音樂人的作品？",
+  "options": [
+   "羅大佑",
+   "小蟲",
+   "李宗盛",
+   "陳昇"
+  ],
+  "answer": 2,
+  "explanation": "這些歌都出自李宗盛之手，他長期在滾石唱片擔任製作人，有「華語流行音樂教父」之稱。",
+  "fun_fact": "他因為製作出多張百萬銷量專輯，也被叫做「百萬製作人」。"
+ },
+ {
+  "id": "st-050",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "2007年電影《不能說的祕密》的導演兼男主角是誰？",
+  "options": [
+   "王力宏",
+   "周杰倫",
+   "林俊傑",
+   "陶喆"
+  ],
+  "answer": 1,
+  "explanation": "《不能說的祕密》由周杰倫自編自導自演，也是他第一部執導的電影長片。",
+  "fun_fact": "王力宏也在片中演出，兩人合演了一場著名的鬥琴戲。"
+ },
+ {
+  "id": "st-051",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "2001年偶像劇《流星花園》捧紅的四位男主角，組成了哪個團體？",
+  "options": [
+   "F4",
+   "5566",
+   "飛輪海",
+   "棒棒堂"
+  ],
+  "answer": 0,
+  "explanation": "言承旭、周渝民、吳建豪、朱孝天因《流星花園》爆紅，之後以團體「F4」出片並紅遍亞洲。",
+  "fun_fact": "F4的名字取自原著漫畫中的「Flower 4」。"
+ },
+ {
+  "id": "st-052",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "2010年電影《艋舺》的故事，發生在台北的哪一個地區？",
+  "options": [
+   "大稻埕",
+   "西門町",
+   "士林",
+   "萬華"
+  ],
+  "answer": 3,
+  "explanation": "「艋舺」是台北萬華的舊稱，電影描寫1980年代這一帶的幫派少年故事，由鈕承澤執導。",
+  "fun_fact": "「艋舺」一詞源自原住民語，原意是「獨木舟」。"
+ },
+ {
+  "id": "st-053",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「天上的星星不說話」是哪一首電影主題曲的開頭？",
+  "options": [
+   "〈茉莉花〉",
+   "〈橄欖樹〉",
+   "〈蘭花草〉",
+   "〈魯冰花〉"
+  ],
+  "answer": 3,
+  "explanation": "這是1989年電影《魯冰花》主題曲〈魯冰花〉的開頭，由曾淑勤演唱。",
+  "fun_fact": "電影改編自作家鍾肇政的同名小說，編劇是吳念真。"
+ },
+ {
+  "id": "st-054",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "電影《牯嶺街少年殺人事件》的導演是誰？",
+  "options": [
+   "侯孝賢",
+   "楊德昌",
+   "蔡明亮",
+   "王童"
+  ],
+  "answer": 1,
+  "explanation": "《牯嶺街少年殺人事件》1991年上映，由楊德昌執導，改編自1961年發生在台北牯嶺街的真實案件。",
+  "fun_fact": "片中男主角由當時還是青少年的張震飾演。"
+ },
+ {
+  "id": "st-055",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "五月天1999年的首張專輯，收錄了哪一首讓他們一炮而紅的歌？",
+  "options": [
+   "〈志明與春嬌〉",
+   "〈戀愛ing〉",
+   "〈倔強〉",
+   "〈溫柔〉"
+  ],
+  "answer": 0,
+  "explanation": "《五月天第一張創作專輯》1999年7月7日發行，其中的台語歌〈志明與春嬌〉迅速在年輕聽眾間流行。",
+  "fun_fact": "〈溫柔〉收錄在隔年的第二張專輯《愛情萬歲》裡。"
+ },
+ {
+  "id": "st-056",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "五月天第一次拿下金曲獎最佳樂團獎，靠的是哪一張專輯？",
+  "options": [
+   "《人生海海》",
+   "《愛情萬歲》",
+   "《時光機》",
+   "《第二人生》"
+  ],
+  "answer": 1,
+  "explanation": "五月天以2000年的專輯《愛情萬歲》拿下2001年第12屆金曲獎最佳樂團獎，這是他們的第一座金曲獎。",
+  "fun_fact": "他們後來又以《時光機》、《後青春期的詩》、《第二人生》三度拿到同一個獎。"
+ },
+ {
+  "id": "st-057",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "蘇打綠的〈小情歌〉收錄在哪一張專輯裡？",
+  "options": [
+   "《無與倫比的美麗》",
+   "《春．日光》",
+   "《小宇宙》",
+   "《你在煩惱什麼》"
+  ],
+  "answer": 2,
+  "explanation": "〈小情歌〉收錄在蘇打綠2006年的專輯《小宇宙》，吳青峰也以這首歌拿下金曲獎最佳作曲人獎。",
+  "fun_fact": "蘇打綠憑《小宇宙》拿下2007年第18屆金曲獎最佳樂團獎。"
+ },
+ {
+  "id": "st-058",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "陳綺貞的〈旅行的意義〉收錄在哪一張專輯？",
+  "options": [
+   "《華麗的冒險》",
+   "《讓我想一想》",
+   "《還是會寂寞》",
+   "《時間的歌》"
+  ],
+  "answer": 0,
+  "explanation": "〈旅行的意義〉收錄在陳綺貞2005年的專輯《華麗的冒險》，是她傳唱最廣的作品之一。",
+  "fun_fact": "陳綺貞1998年以首張專輯《讓我想一想》出道，並入圍第10屆金曲獎最佳新人獎。"
+ },
+ {
+  "id": "st-059",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "張惠妹1996年出道的首張專輯叫什麼名字？",
+  "options": [
+   "《牽手》",
+   "《真實》",
+   "《姊妹》",
+   "《旅程》"
+  ],
+  "answer": 2,
+  "explanation": "張惠妹1996年12月發行首張專輯《姊妹》，在台灣賣出超過一百萬張，銷售榜連續九週冠軍。",
+  "fun_fact": "專輯同名曲〈姊妹〉還找了她的母親與家人一起合聲。"
+ },
+ {
+  "id": "st-060",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1996年紅遍兩岸三地的〈心太軟〉，原唱者是誰？",
+  "options": [
+   "張信哲",
+   "任賢齊",
+   "周華健",
+   "庾澄慶"
+  ],
+  "answer": 1,
+  "explanation": "〈心太軟〉由小蟲作詞作曲，收錄在任賢齊1996年12月發行的同名專輯裡。",
+  "fun_fact": "這首歌也讓原本以演員身分為人所知的任賢齊成功轉型為歌手。"
+ },
+ {
+  "id": "st-061",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "香港樂團Beyond的名曲〈海闊天空〉，是由哪位團員創作並主唱的？",
+  "options": [
+   "黃貫中",
+   "葉世榮",
+   "黃家強",
+   "黃家駒"
+  ],
+  "answer": 3,
+  "explanation": "〈海闊天空〉由主唱黃家駒作詞作曲，1993年收錄在專輯《樂與怒》中。",
+  "fun_fact": "這首歌是Beyond成軍十週年時推出的作品。"
+ },
+ {
+  "id": "st-062",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1985年台灣六十位歌手合唱的公益歌曲〈明天會更好〉，作曲者是誰？",
+  "options": [
+   "李壽全",
+   "陳志遠",
+   "羅大佑",
+   "李宗盛"
+  ],
+  "answer": 2,
+  "explanation": "〈明天會更好〉由羅大佑作曲，羅大佑、張大春、張艾嘉等人共同作詞，陳志遠編曲。",
+  "fun_fact": "它的創作靈感來自1985年美國群星合唱的〈We Are the World〉。"
+ },
+ {
+  "id": "st-063",
+  "topic": "star",
+  "category": "廣告",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「好東西要和好朋友分享」是哪個品牌的經典廣告詞？",
+  "options": [
+   "雀巢即溶咖啡",
+   "西雅圖極品咖啡",
+   "伯朗咖啡",
+   "麥斯威爾咖啡"
+  ],
+  "answer": 3,
+  "explanation": "這是麥斯威爾咖啡在1980年代推出的廣告詞，由演員孫越代言，讓它成為台灣即溶咖啡的領導品牌。",
+  "fun_fact": "這句廣告詞後來變成台灣人日常生活裡的口頭禪。"
+ },
+ {
+  "id": "st-064",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「金馬獎」的「金馬」二字，是取自哪兩個地名？",
+  "options": [
+   "金門與馬祖",
+   "金山與馬公",
+   "金瓜石與馬祖",
+   "金門與馬公"
+  ],
+  "answer": 0,
+  "explanation": "1962年創辦時取金門、馬祖兩個外島地名的字首，寓意鼓勵電影界效法前線官兵的奮發精神。",
+  "fun_fact": "也因此台灣役男抽籤抽到金門、馬祖時，常被戲稱為抽中了「金馬獎」。"
+ },
+ {
+  "id": "st-065",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "伍佰1996年的歌曲〈Last Dance〉，因為2019年哪一部台劇而重新爆紅？",
+  "options": [
+   "《想見你》",
+   "《華燈初上》",
+   "《我們與惡的距離》",
+   "《俗女養成記》"
+  ],
+  "answer": 0,
+  "explanation": "2019年的台劇《想見你》多次以〈Last Dance〉串起穿越劇情，讓這首1990年代的歌重新翻紅。",
+  "fun_fact": "〈Last Dance〉原本收錄在伍佰1996年的專輯《愛情的盡頭》。"
+ },
+ {
+  "id": "st-066",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "2019年的台灣電影《返校》，是改編自什麼作品？",
+  "options": [
+   "赤燭團隊的同名電腦遊戲",
+   "鍾肇政的同名長篇小說",
+   "九把刀的同名網路小說",
+   "公視播出的同名電視影集"
+  ],
+  "answer": 0,
+  "explanation": "《返校》改編自台灣赤燭遊戲開發的同名恐怖遊戲，由徐漢強執導，故事背景設在1960年代的白色恐怖時期。",
+  "fun_fact": "本片在第56屆金馬獎入圍12項，最後拿下最佳新導演等五個獎項。"
+ },
+ {
+  "id": "st-067",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "侯孝賢的《悲情城市》1989年在威尼斯影展拿下什麼大獎？",
+  "options": [
+   "金棕櫚獎",
+   "金獅獎",
+   "金熊獎",
+   "金球獎"
+  ],
+  "answer": 1,
+  "explanation": "《悲情城市》拿下威尼斯影展最高榮譽金獅獎，是第一部在世界三大影展奪得首獎的台灣電影。",
+  "fun_fact": "金棕櫚是坎城影展的最高獎項，金熊則是柏林影展的最高獎項。"
+ },
+ {
+  "id": "st-068",
+  "topic": "star",
+  "category": "綜藝",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "2007年歌唱選秀節目《超級星光大道》第一屆的總冠軍是誰？",
+  "options": [
+   "林宥嘉",
+   "蕭敬騰",
+   "楊宗緯",
+   "徐佳瑩"
+  ],
+  "answer": 0,
+  "explanation": "第一屆總冠軍是林宥嘉；楊宗緯在決賽期間退賽，蕭敬騰則是以踢館者身分在節目中成名。",
+  "fun_fact": "那一屆的參賽者被觀眾合稱為「星光幫」。"
+ },
+ {
+  "id": "st-069",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1993年華視八點檔《包青天》中，飾演包拯的演員是誰？",
+  "options": [
+   "歸亞蕾",
+   "何家勁",
+   "金超群",
+   "寇世勳"
+  ],
+  "answer": 2,
+  "explanation": "1993年版《包青天》由金超群飾演包拯、何家勁飾演展昭，原訂15集卻一路加拍到236集。",
+  "fun_fact": "這部戲的片頭曲〈包青天〉是由綜藝節目主持人胡瓜演唱的。"
+ },
+ {
+  "id": "st-070",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "黃俊雄的電視布袋戲《雲州大儒俠》，主角是下列哪一位？",
+  "options": [
+   "秦假仙",
+   "藏鏡人",
+   "素還真",
+   "史豔文"
+  ],
+  "answer": 3,
+  "explanation": "《雲州大儒俠》1970年在台視開播，主角是儒俠史豔文，藏鏡人則是頭號反派。",
+  "fun_fact": "這齣戲當年紅到被說「影響農工作息」，1974年一度停播。"
+ },
+ {
+  "id": "st-071",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "〈家後〉、〈酒後的心聲〉、〈落雨聲〉都是哪位台語歌后的代表作？",
+  "options": [
+   "鳳飛飛",
+   "江蕙",
+   "黃乙玲",
+   "詹雅雯"
+  ],
+  "answer": 1,
+  "explanation": "這些都是江蕙的代表作，其中〈家後〉收錄在2001年的《江蕙同名專輯》，長年高居KTV點播榜。",
+  "fun_fact": "歌迷暱稱她「二姊」，是因為她在家中四個孩子裡排行老二。"
+ },
+ {
+  "id": "st-072",
+  "topic": "star",
+  "category": "綜藝",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "主持過綜藝節目《龍兄虎弟》的張菲與費玉清，兩人是什麼關係？",
+  "options": [
+   "是一對親兄弟",
+   "是一對表兄弟",
+   "是師徒的關係",
+   "是同班的同學"
+  ],
+  "answer": 0,
+  "explanation": "張菲與費玉清是親兄弟，1990年代初期一起在台視主持綜藝節目《龍兄虎弟》。",
+  "fun_fact": "兩人本姓張，費玉清的本名是張彥亭。"
+ },
+ {
+  "id": "st-073",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "〈月亮代表我的心〉在1973年最早錄唱的歌手，其實是誰？",
+  "options": [
+   "鳳飛飛",
+   "陳芬蘭",
+   "甄妮",
+   "蔡琴"
+  ],
+  "answer": 1,
+  "explanation": "這首歌由孫儀作詞、翁清溪作曲，1973年由麗歌唱片的陳芬蘭最先錄唱；1977年鄧麗君重新詮釋後才紅遍全球。",
+  "fun_fact": "同年麗歌新人劉冠霖也灌錄了這首歌，當時在台灣流行的其實是她的版本。"
+ },
+ {
+  "id": "st-074",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "鄧麗君的〈我只在乎你〉，最早是以哪一種語言的版本發行的？",
+  "options": [
+   "日語",
+   "粵語",
+   "英語",
+   "國語"
+  ],
+  "answer": 0,
+  "explanation": "原曲是1986年2月在日本發行的日語單曲〈時の流れに身をまかせ〉，中文版同年底才推出。",
+  "fun_fact": "中文歌詞是由台灣資深作詞人慎芝填寫的。"
+ },
+ {
+  "id": "st-075",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "張惠妹的首張專輯《姊妹》，是由哪位音樂人擔任製作人？",
+  "options": [
+   "李宗盛",
+   "陳志遠",
+   "張雨生",
+   "小蟲"
+  ],
+  "answer": 2,
+  "explanation": "《姊妹》由張雨生製作，他也為專輯寫了多首歌，被視為發掘張惠妹歌唱潛力的關鍵人物。",
+  "fun_fact": "兩人更早之前就在張雨生的專輯裡合唱過〈最愛的人傷我最深〉。"
+ },
+ {
+  "id": "st-076",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "楊德昌以《一一》拿下2000年哪一個國際影展的最佳導演獎？",
+  "options": [
+   "柏林影展",
+   "坎城影展",
+   "威尼斯影展",
+   "東京影展"
+  ],
+  "answer": 1,
+  "explanation": "《一一》在2000年第53屆坎城影展正式競賽單元首映，並為楊德昌拿下最佳導演獎。",
+  "fun_fact": "這也是楊德昌生前完成的最後一部電影長片。"
+ },
+ {
+  "id": "st-077",
+  "topic": "star",
+  "category": "動漫",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "日本動畫《中華一番》在台灣播出時，主角被叫做「小當家」、女配角叫「嘟嘟」，這是為什麼？",
+  "options": [
+   "因為當年播出時由食品公司冠名贊助",
+   "因為原著漫畫的角色本來就叫這些名字",
+   "因為配音員自己替角色取了新的綽號",
+   "因為要避開另一部卡通的角色名稱"
+  ],
+  "answer": 0,
+  "explanation": "1999年台視播出時由統一企業冠名贊助，劇中人物名稱因此被改成該公司的產品名。",
+  "fun_fact": "主角原名其實叫「劉昴星」，「及第師傅」的原名則是周瑜。"
+ },
+ {
+  "id": "st-078",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "羅大佑1982年發行、被視為震撼台灣樂壇的首張個人專輯叫什麼？",
+  "options": [
+   "《未來的主人翁》",
+   "《愛人同志》",
+   "《戀曲2000》",
+   "《之乎者也》"
+  ],
+  "answer": 3,
+  "explanation": "《之乎者也》1982年4月發行，收錄〈鹿港小鎮〉、〈光陰的故事〉等歌，帶著強烈的社會批判色彩。",
+  "fun_fact": "這張專輯曾被評選為「台灣流行音樂百張最佳專輯」的第一名。"
+ },
+ {
+  "id": "st-079",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "周杰倫第一次拿下金曲獎「最佳國語男歌手獎」，是以哪張專輯？",
+  "options": [
+   "《范特西》",
+   "《葉惠美》",
+   "《魔杰座》",
+   "《跨時代》"
+  ],
+  "answer": 2,
+  "explanation": "他在2009年第20屆金曲獎以《魔杰座》首度封王，2011年又以《跨時代》二度拿下同一獎項。",
+  "fun_fact": "更早的《Jay》、《范特西》、《葉惠美》為他拿下的是最佳流行音樂演唱專輯獎。"
+ },
+ {
+  "id": "st-080",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "侯孝賢以哪一部電影拿下2015年坎城影展最佳導演獎？",
+  "options": [
+   "《海上花》",
+   "《刺客聶隱娘》",
+   "《戀戀風塵》",
+   "《最好的時光》"
+  ],
+  "answer": 1,
+  "explanation": "《刺客聶隱娘》由舒淇、張震主演，2015年在第68屆坎城影展為侯孝賢贏得最佳導演獎。",
+  "fun_fact": "同年它也拿下第52屆金馬獎最佳劇情片，是該屆入圍與得獎最多的作品。"
+ },
+ {
+  "id": "st-081",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "李安1993年的《囍宴》為他拿下了哪一個國際大獎？",
+  "options": [
+   "柏林影展金熊獎",
+   "坎城影展金棕櫚獎",
+   "威尼斯影展金獅獎",
+   "奧斯卡最佳外語片"
+  ],
+  "answer": 0,
+  "explanation": "《囍宴》1993年奪下柏林影展金熊獎，讓李安正式躍上國際影壇；它也入圍了該年的奧斯卡最佳外語片。",
+  "fun_fact": "同年《囍宴》還拿下第30屆金馬獎最佳劇情片。"
+ },
+ {
+  "id": "st-082",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "1997年上映、締造全球票房紀錄的電影《鐵達尼號》，導演是誰？",
+  "options": [
+   "馬丁·史柯西斯",
+   "雷利·史考特",
+   "詹姆斯·卡麥隆",
+   "史蒂芬·史匹柏"
+  ],
+  "answer": 2,
+  "explanation": "《鐵達尼號》由詹姆斯·卡麥隆自編自導，在第70屆奧斯卡奪下11項大獎。",
+  "fun_fact": "卡麥隆後來又執導了《阿凡達》，兩部片都曾是當時的全球票房冠軍。"
+ },
+ {
+  "id": "st-083",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "《大白鯊》、《E.T.外星人》、《侏羅紀公園》這三部賣座名片，都是誰執導的？",
+  "options": [
+   "史蒂芬·史匹柏",
+   "法蘭西斯·柯波拉",
+   "昆汀·塔倫提諾",
+   "史丹利·庫柏力克"
+  ],
+  "answer": 0,
+  "explanation": "這三部片都出自史蒂芬·史匹柏之手，他也被視為好萊塢商業大片的代表導演。",
+  "fun_fact": "他真正拿到奧斯卡最佳導演，靠的卻是嚴肅題材的《辛德勒的名單》。"
+ },
+ {
+  "id": "st-084",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "《哈利波特》系列裡，哈利就讀的魔法學校叫什麼名字？",
+  "options": [
+   "布斯巴頓魔法學院",
+   "德姆蘭魔法學校",
+   "波巴洞魔法學校",
+   "霍格華茲魔法學校"
+  ],
+  "answer": 3,
+  "explanation": "哈利就讀霍格華茲魔法與巫術學院，分為葛萊分多、史萊哲林、雷文克勞、赫夫帕夫四個學院。",
+  "fun_fact": "布斯巴頓和德姆蘭是《火盃的考驗》中參加三巫鬥法大賽的另外兩所學校。"
+ },
+ {
+  "id": "st-085",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "《星際大戰》的經典台詞「不，我就是你父親」，出現在哪一部？",
+  "options": [
+   "《星際大戰四部曲：曙光乍現》",
+   "《星際大戰五部曲：帝國大反擊》",
+   "《星際大戰六部曲：絕地大反攻》",
+   "《星際大戰三部曲：西斯大帝的復仇》"
+  ],
+  "answer": 1,
+  "explanation": "黑武士向路克揭露身世，是1980年《帝國大反擊》結尾的橋段，也是影史最著名的轉折之一。",
+  "fun_fact": "原文其實是「No, I am your father」，常被誤記成「Luke, I am your father」。"
+ },
+ {
+  "id": "st-086",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "史上第一部拿下奧斯卡「最佳影片」的非英語電影是哪一部？",
+  "options": [
+   "《寄生上流》",
+   "《臥虎藏龍》",
+   "《美麗人生》",
+   "《羅馬》"
+  ],
+  "answer": 0,
+  "explanation": "南韓導演奉俊昊的《寄生上流》在2020年第92屆奧斯卡奪下最佳影片，是史上首部非英語得主。",
+  "fun_fact": "同一晚它還拿下最佳導演、最佳原創劇本與最佳國際影片，共四座獎。"
+ },
+ {
+  "id": "st-087",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "《魔戒》電影三部曲的導演彼得·傑克森是哪一國人？",
+  "options": [
+   "澳洲",
+   "英國",
+   "加拿大",
+   "紐西蘭"
+  ],
+  "answer": 3,
+  "explanation": "彼得·傑克森是紐西蘭導演，三部曲也幾乎全在紐西蘭取景拍攝。",
+  "fun_fact": "電影大紅之後，紐西蘭的哈比屯外景地變成熱門觀光景點。"
+ },
+ {
+  "id": "st-088",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "奧斯卡史上單部電影得獎最多的紀錄是11座，由三部片並列保持。以下哪一部不在其中？",
+  "options": [
+   "《鐵達尼號》",
+   "《亂世佳人》",
+   "《賓漢》",
+   "《魔戒：王者再臨》"
+  ],
+  "answer": 1,
+  "explanation": "保持11座紀錄的是《賓漢》、《鐵達尼號》和《魔戒：王者再臨》；《亂世佳人》當年拿下8座競賽獎項。",
+  "fun_fact": "《魔戒：王者再臨》是唯一入圍11項、11項全中的電影。"
+ },
+ {
+  "id": "st-089",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「人生就像一盒巧克力，你永遠不知道會拿到哪一顆。」出自哪部電影？",
+  "options": [
+   "《刺激1995》",
+   "《美麗境界》",
+   "《阿甘正傳》",
+   "《心靈捕手》"
+  ],
+  "answer": 2,
+  "explanation": "這是1994年《阿甘正傳》裡阿甘轉述母親的話，該片也奪下該屆奧斯卡最佳影片。",
+  "fun_fact": "湯姆·漢克斯靠這個角色連續兩年拿下奧斯卡影帝，前一年是《費城》。"
+ },
+ {
+  "id": "st-090",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "史上第一部全片以電腦動畫製作的動畫長片是哪一部？",
+  "options": [
+   "《玩具總動員》",
+   "《怪獸電力公司》",
+   "《冰原歷險記》",
+   "《史瑞克》"
+  ],
+  "answer": 0,
+  "explanation": "皮克斯1995年的《玩具總動員》是影史第一部完全以電腦動畫製作的劇情長片。",
+  "fun_fact": "片中牛仔胡迪的配音是湯姆·漢克斯。"
+ },
+ {
+  "id": "st-091",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "黑澤明的《七武士》，後來被好萊塢翻拍成哪一部西部片經典？",
+  "options": [
+   "《日正當中》",
+   "《原野奇俠》",
+   "《狂沙十萬里》",
+   "《豪勇七蛟龍》"
+  ],
+  "answer": 3,
+  "explanation": "1960年的西部片《豪勇七蛟龍》把《七武士》的故事搬到美墨邊境，是最著名的跨文化翻拍例子。",
+  "fun_fact": "《豪勇七蛟龍》在2016年又被重拍了一次。"
+ },
+ {
+  "id": "st-092",
+  "topic": "star",
+  "category": "影視",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "以《驚魂記》、《後窗》、《鳥》聞名，被稱為「懸疑大師」的導演是誰？",
+  "options": [
+   "比利·懷德",
+   "希區考克",
+   "奧森·威爾斯",
+   "約翰·福特"
+  ],
+  "answer": 1,
+  "explanation": "英國導演阿佛烈·希區考克擅長營造緊張感，《驚魂記》的浴室謀殺場景更是影史經典。",
+  "fun_fact": "他有個習慣：幾乎每部自己的電影都會客串路過一下。"
+ },
+ {
+  "id": "st-093",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "英國傳奇樂團「皇后合唱團」（Queen）的主唱是誰？",
+  "options": [
+   "布魯斯·史普林斯汀",
+   "米克·傑格",
+   "佛萊迪·墨裘瑞",
+   "大衛·鮑伊"
+  ],
+  "answer": 2,
+  "explanation": "佛萊迪·墨裘瑞是皇后合唱團的主唱，也是〈Bohemian Rhapsody〉的詞曲作者。",
+  "fun_fact": "2018年的傳記電影《波希米亞狂想曲》講的就是他和樂團的故事。"
+ },
+ {
+  "id": "st-094",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "被稱為「搖滾樂之王」的美國歌手「貓王」，本名是什麼？",
+  "options": [
+   "艾維斯·普里斯萊",
+   "巴迪·霍利",
+   "傑瑞·李·劉易斯",
+   "查克·貝里"
+  ],
+  "answer": 0,
+  "explanation": "貓王本名艾維斯·普里斯萊（Elvis Presley），1950年代把搖滾樂推向主流，被封為「搖滾樂之王」。",
+  "fun_fact": "他位於曼菲斯的故居「雅園」（Graceland）至今仍是熱門觀光景點。"
+ },
+ {
+  "id": "st-095",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "金氏世界紀錄認證的「史上最暢銷專輯」是哪一張？",
+  "options": [
+   "《Back in Black》",
+   "《Rumours》",
+   "《Hotel California》",
+   "《Thriller》"
+  ],
+  "answer": 3,
+  "explanation": "麥可傑克森1982年的《Thriller》是公認史上最暢銷的專輯，全球銷量以千萬張計。",
+  "fun_fact": "專輯裡的〈Thriller〉MV長達十多分鐘，被視為把MV拍成短片的開端。"
+ },
+ {
+  "id": "st-096",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "披頭四1969年專輯《Abbey Road》的封面，是四人走過倫敦哪條街的斑馬線？",
+  "options": [
+   "貝克街",
+   "艾比路",
+   "牛津街",
+   "卡納比街"
+  ],
+  "answer": 1,
+  "explanation": "封面拍攝於倫敦艾比路（Abbey Road）上的斑馬線，旁邊就是他們錄音的艾比路錄音室。",
+  "fun_fact": "這條斑馬線後來被英國官方列為受保護的文化資產。"
+ },
+ {
+  "id": "st-097",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "披頭四正式宣告解散是在哪一年？",
+  "options": [
+   "1966年",
+   "1968年",
+   "1970年",
+   "1974年"
+  ],
+  "answer": 2,
+  "explanation": "1970年保羅·麥卡尼公開宣布退出，披頭四就此解散，團體活動前後約十年。",
+  "fun_fact": "解散前發行的《Let It Be》成了他們最後一張專輯。"
+ },
+ {
+  "id": "st-098",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "〈殘酷天使的行動綱領〉是哪部日本動畫的主題曲？",
+  "options": [
+   "《新世紀福音戰士》",
+   "《機動戰士鋼彈SEED》",
+   "《美少女戰士》",
+   "《攻殼機動隊》"
+  ],
+  "answer": 0,
+  "explanation": "這首由高橋洋子演唱的歌是1995年《新世紀福音戰士》的片頭曲，長年高居日本卡拉OK點播排行前段。",
+  "fun_fact": "許多人第一次聽到它，其實是在卡拉OK而不是動畫裡。"
+ },
+ {
+  "id": "st-099",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1985年美國群星合唱的〈We Are the World〉，是為了什麼而錄製的慈善單曲？",
+  "options": [
+   "南亞海嘯賑災",
+   "非洲飢荒救援",
+   "愛滋病防治宣導",
+   "兒童失學問題"
+  ],
+  "answer": 1,
+  "explanation": "這首歌由麥可傑克森與萊諾·李奇共同創作，號召美國歌手合唱，為非洲（尤其衣索比亞）飢荒募款。",
+  "fun_fact": "錄音當晚，製作人在錄音室門口貼了一句話：「進門前請把你的自我留在外面。」"
+ },
+ {
+  "id": "st-100",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "唱紅〈Dancing Queen〉、〈Mamma Mia〉的團體ABBA來自哪一國？",
+  "options": [
+   "挪威",
+   "丹麥",
+   "荷蘭",
+   "瑞典"
+  ],
+  "answer": 3,
+  "explanation": "ABBA是1972年成軍的瑞典四人團體，1974年靠〈Waterloo〉拿下歐洲歌唱大賽冠軍而走紅。",
+  "fun_fact": "團名ABBA是四位成員名字的字首組合。"
+ },
+ {
+  "id": "st-101",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "紅遍全球的〈Let It Go〉是哪部迪士尼動畫的主題曲？",
+  "options": [
+   "《魔髮奇緣》",
+   "《海洋奇緣》",
+   "《冰雪奇緣》",
+   "《勇敢傳說》"
+  ],
+  "answer": 2,
+  "explanation": "〈Let It Go〉是2013年《冰雪奇緣》中艾莎的歌，並拿下奧斯卡最佳原創歌曲。",
+  "fun_fact": "這首歌被翻唱成數十種語言版本，中文版歌名是〈放開手〉。"
+ },
+ {
+  "id": "st-102",
+  "topic": "star",
+  "category": "音樂",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "經典反戰歌曲〈Imagine〉是披頭四哪位成員的個人作品？",
+  "options": [
+   "約翰·藍儂",
+   "保羅·麥卡尼",
+   "喬治·哈里森",
+   "林哥·史達"
+  ],
+  "answer": 0,
+  "explanation": "〈Imagine〉是約翰·藍儂1971年的個人單曲，歌詞描繪一個沒有國界與戰爭的世界。",
+  "fun_fact": "這首歌常在跨年與國際賽事場合被演唱。"
+ },
+ {
+  "id": "st-103",
+  "topic": "star",
+  "category": "動漫遊戲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "宮崎駿與高畑勳等人在1985年成立的動畫工作室叫什麼？",
+  "options": [
+   "東映動畫公司",
+   "京都動畫公司",
+   "吉卜力工作室",
+   "日昇動畫公司"
+  ],
+  "answer": 2,
+  "explanation": "吉卜力工作室1985年成立，《龍貓》、《魔法公主》、《神隱少女》都出自這裡。",
+  "fun_fact": "「Ghibli」原本是撒哈拉沙漠熱風的名字，也曾用在義大利飛機上。"
+ },
+ {
+  "id": "st-104",
+  "topic": "star",
+  "category": "動漫遊戲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "宮崎駿哪一部作品拿下了奧斯卡最佳動畫長片獎？",
+  "options": [
+   "《龍貓》",
+   "《魔法公主》",
+   "《霍爾的移動城堡》",
+   "《神隱少女》"
+  ],
+  "answer": 3,
+  "explanation": "《神隱少女》在2003年第75屆奧斯卡奪下最佳動畫長片，是首部得此獎的非英語動畫。",
+  "fun_fact": "它在同一年也拿下柏林影展金熊獎。"
+ },
+ {
+  "id": "st-105",
+  "topic": "star",
+  "category": "動漫遊戲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "長篇漫畫《航海王》（海賊王）的作者是誰？",
+  "options": [
+   "久保帶人",
+   "尾田榮一郎",
+   "鳥山明",
+   "藤子·F·不二雄"
+  ],
+  "answer": 1,
+  "explanation": "《航海王》1997年開始在《週刊少年Jump》連載，作者是尾田榮一郎。",
+  "fun_fact": "主角魯夫的夢想是找到大祕寶「ONE PIECE」，成為海賊王。"
+ },
+ {
+  "id": "st-106",
+  "topic": "star",
+  "category": "動漫遊戲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "《七龍珠》主角孫悟空的真實種族是什麼？",
+  "options": [
+   "賽亞人",
+   "那美克星人",
+   "地球人",
+   "弗利沙一族"
+  ],
+  "answer": 0,
+  "explanation": "孫悟空是被送到地球的賽亞人，本名卡卡羅特，後來才被地球人養大。",
+  "fun_fact": "作者鳥山明畫這部作品的靈感之一，是中國古典小說《西遊記》。"
+ },
+ {
+  "id": "st-107",
+  "topic": "star",
+  "category": "動漫遊戲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "《名偵探柯南》裡的江戶川柯南，真實身分是哪位高中生偵探？",
+  "options": [
+   "服部平次",
+   "黑羽快斗",
+   "工藤新一",
+   "白馬探"
+  ],
+  "answer": 2,
+  "explanation": "高中生偵探工藤新一被組織灌下藥物後身體變小，於是化名「江戶川柯南」繼續辦案。",
+  "fun_fact": "這個化名取自推理作家江戶川亂步與柯南·道爾。"
+ },
+ {
+  "id": "st-108",
+  "topic": "star",
+  "category": "動漫遊戲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "電玩角色「瑪利歐」是哪一家日本公司的招牌人物？",
+  "options": [
+   "世嘉",
+   "卡普空",
+   "科樂美",
+   "任天堂"
+  ],
+  "answer": 3,
+  "explanation": "瑪利歐由任天堂的宮本茂設計，1981年在《大金剛》中首次登場，後來成為公司的看板角色。",
+  "fun_fact": "他最早的名字其實叫「Jumpman」。"
+ },
+ {
+  "id": "st-109",
+  "topic": "star",
+  "category": "動漫遊戲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "瑪利歐在遊戲設定中的職業是什麼？",
+  "options": [
+   "建築工人",
+   "水管工",
+   "餐廳廚師",
+   "郵差"
+  ],
+  "answer": 1,
+  "explanation": "瑪利歐的設定職業是水管工，這也是他常在水管裡鑽進鑽出的原因。",
+  "fun_fact": "他在《大金剛》初登場時的設定其實是木匠，之後才改成水管工。"
+ },
+ {
+  "id": "st-110",
+  "topic": "star",
+  "category": "動漫遊戲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "《薩爾達傳說》系列中，玩家實際操作的主角叫什麼名字？",
+  "options": [
+   "薩爾達",
+   "加儂多夫",
+   "林克",
+   "英帕"
+  ],
+  "answer": 2,
+  "explanation": "主角是綠衣少年林克（Link），薩爾達是遊戲中的公主，兩者常被搞混。",
+  "fun_fact": "系列第一代在1986年推出，由宮本茂主導開發。"
+ },
+ {
+  "id": "st-111",
+  "topic": "star",
+  "category": "動漫遊戲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1984年發明《俄羅斯方塊》的工程師，當時是哪個國家的人？",
+  "options": [
+   "蘇聯",
+   "美國",
+   "日本",
+   "芬蘭"
+  ],
+  "answer": 0,
+  "explanation": "《俄羅斯方塊》由蘇聯工程師阿列克謝·帕基特諾夫在1984年開發，之後才傳到西方世界。",
+  "fun_fact": "這款遊戲紅遍全球多年，但發明人一開始一毛錢版稅都沒拿到。"
+ },
+ {
+  "id": "st-112",
+  "topic": "star",
+  "category": "動漫遊戲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1980年推出的經典電玩《小精靈》（Pac-Man）是哪一家日本公司的作品？",
+  "options": [
+   "任天堂",
+   "南夢宮（Namco）",
+   "科樂美（Konami）",
+   "太東（Taito）"
+  ],
+  "answer": 1,
+  "explanation": "《小精靈》由南夢宮（Namco）在1980年推出，設計者是岩谷徹，是大型電玩機台史上最成功的作品之一。",
+  "fun_fact": "據說主角的造型靈感，來自一塊被切走一角的披薩。"
+ },
+ {
+  "id": "st-113",
+  "topic": "star",
+  "category": "動漫遊戲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "《哆啦A夢》拿出各種祕密道具的口袋，正式名稱叫什麼？",
+  "options": [
+   "百寶萬能口袋",
+   "時空任意口袋",
+   "無限收納口袋",
+   "四次元口袋"
+  ],
+  "answer": 3,
+  "explanation": "哆啦A夢肚子上的是「四次元口袋」，裡面可以裝進遠超過體積的道具。",
+  "fun_fact": "作者是藤子·F·不二雄，作品1969年開始連載。"
+ },
+ {
+  "id": "st-114",
+  "topic": "star",
+  "category": "運動",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "奧運會旗上的五個彩色環圈，代表的是什麼？",
+  "options": [
+   "五種比賽項目",
+   "五個創辦國家",
+   "世界五大洲",
+   "五項奧運精神"
+  ],
+  "answer": 2,
+  "explanation": "五環代表世界五大洲的團結，環環相扣則象徵全球運動員的相聚。",
+  "fun_fact": "五環的藍、黃、黑、綠、紅加上白底，當年至少能組出所有參賽國國旗上的顏色。"
+ },
+ {
+  "id": "st-115",
+  "topic": "star",
+  "category": "運動",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "第一屆現代奧林匹克運動會1896年在哪座城市舉行？",
+  "options": [
+   "雅典",
+   "巴黎",
+   "倫敦",
+   "羅馬"
+  ],
+  "answer": 0,
+  "explanation": "1896年首屆現代奧運在希臘雅典舉行，呼應古代奧運的發源地。",
+  "fun_fact": "第二屆1900年移師巴黎，首度開放女性選手參賽。"
+ },
+ {
+  "id": "st-116",
+  "topic": "star",
+  "category": "運動",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "馬拉松比賽的標準距離是多少？",
+  "options": [
+   "40.000公里",
+   "42.195公里",
+   "45.500公里",
+   "38.600公里"
+  ],
+  "answer": 1,
+  "explanation": "馬拉松的標準距離是42.195公里，這個數字在1921年被國際田徑總會正式確定。",
+  "fun_fact": "42.195這個零頭，來自1908年倫敦奧運為了配合王室看台而調整的路線長度。"
+ },
+ {
+  "id": "st-117",
+  "topic": "star",
+  "category": "運動",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "世界盃足球賽（FIFA World Cup）多久舉辦一次？",
+  "options": [
+   "每兩年舉辦一次",
+   "每三年舉辦一次",
+   "每五年舉辦一次",
+   "每四年舉辦一次"
+  ],
+  "answer": 3,
+  "explanation": "世界盃自1930年首辦以來固定每四年一屆，只在第二次世界大戰期間停辦過。",
+  "fun_fact": "1930年第一屆在烏拉圭舉行，地主隊也拿下了冠軍。"
+ },
+ {
+  "id": "st-118",
+  "topic": "star",
+  "category": "運動",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "2022年卡達世界盃足球賽的冠軍是哪一支球隊？",
+  "options": [
+   "法國",
+   "巴西",
+   "阿根廷",
+   "克羅埃西亞"
+  ],
+  "answer": 2,
+  "explanation": "阿根廷在決賽與法國踢成3比3，最後靠PK戰4比2獲勝，睽違36年再度奪冠。",
+  "fun_fact": "那是梅西第五次參加世界盃，也是他唯一一座世界盃冠軍。"
+ },
+ {
+  "id": "st-119",
+  "topic": "star",
+  "category": "運動",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "網球四大滿貫賽事中，唯一在紅土球場舉行的是哪一項？",
+  "options": [
+   "法國公開賽",
+   "澳洲公開賽",
+   "溫布頓錦標賽",
+   "美國公開賽"
+  ],
+  "answer": 0,
+  "explanation": "法國公開賽（羅蘭·加洛斯）在紅土球場舉行，溫布頓是草地，澳網與美網則是硬地。",
+  "fun_fact": "納達爾在法網一共拿下14座冠軍，被稱為「紅土之王」。"
+ },
+ {
+  "id": "st-120",
+  "topic": "star",
+  "category": "運動",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "網球比賽中裁判報分時說的「love」，代表幾分？",
+  "options": [
+   "15分",
+   "0分",
+   "40分",
+   "平分"
+  ],
+  "answer": 1,
+  "explanation": "網球的「love」就是零分，一局的計分依序是15、30、40。",
+  "fun_fact": "一種常見說法是它來自法文「l'œuf」（蛋），因為零長得像蛋。"
+ },
+ {
+  "id": "st-121",
+  "topic": "star",
+  "category": "運動",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "籃球比賽中，在三分線外投進一球可以得幾分？",
+  "options": [
+   "1分",
+   "2分",
+   "4分",
+   "3分"
+  ],
+  "answer": 3,
+  "explanation": "三分線外投進得3分，線內的投籃得2分，罰球則是1分。",
+  "fun_fact": "NBA在1979–80球季才正式採用三分線。"
+ },
+ {
+  "id": "st-122",
+  "topic": "star",
+  "category": "運動",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "排球比賽中，每隊同時在場上的球員有幾人？",
+  "options": [
+   "4人",
+   "5人",
+   "6人",
+   "7人"
+  ],
+  "answer": 2,
+  "explanation": "室內排球每隊場上6人，輪轉發球；沙灘排球則是每隊2人。",
+  "fun_fact": "場上穿不同顏色球衣的那位，通常是專司防守的自由球員。"
+ },
+ {
+  "id": "st-123",
+  "topic": "star",
+  "category": "運動",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "2004年雅典奧運，陳詩欣與朱木炎替台灣拿下史上頭兩面奧運金牌，他們的項目是什麼？",
+  "options": [
+   "跆拳道",
+   "柔道",
+   "空手道",
+   "角力"
+  ],
+  "answer": 0,
+  "explanation": "陳詩欣在女子49公斤級、朱木炎在男子58公斤級雙雙奪金，是台灣奧運史上最早的兩面金牌。",
+  "fun_fact": "跆拳道也是在2000年雪梨奧運才成為奧運正式項目。"
+ },
+ {
+  "id": "st-124",
+  "topic": "star",
+  "category": "運動",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "牙買加短跑名將波爾特跑出9秒58的男子100公尺世界紀錄，是在2009年哪一座城市？",
+  "options": [
+   "北京",
+   "柏林",
+   "倫敦",
+   "大阪"
+  ],
+  "answer": 1,
+  "explanation": "2009年柏林世界田徑錦標賽，波爾特以9秒58奪冠，把自己一年前創下的紀錄再推進一大步。",
+  "fun_fact": "同一屆比賽，他還跑出19秒19的200公尺世界紀錄。"
+ },
+ {
+  "id": "st-125",
+  "topic": "star",
+  "category": "運動",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "被譽為「現代奧運之父」、催生1896年首屆現代奧運的人是誰？",
+  "options": [
+   "詹姆士·奈史密斯",
+   "胡安·薩瑪蘭奇",
+   "湯瑪斯·巴赫",
+   "皮耶·德·古柏坦"
+  ],
+  "answer": 3,
+  "explanation": "法國教育家皮耶·德·古柏坦（顧拜旦）推動復興奧運，1894年促成國際奧會成立。",
+  "fun_fact": "選項中的奈史密斯是籃球發明人，不是奧運推手。"
+ }
 ]

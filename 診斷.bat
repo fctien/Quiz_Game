@@ -3,10 +3,10 @@ chcp 65001 >nul
 setlocal
 cd /d "%~dp0"
 set "LOG=%~dp0診斷結果.txt"
-title 金榜問答 - 環境診斷
+title 脈衝 PULSE - 環境診斷
 
 echo 正在診斷，請稍候...
-echo ===== 金榜問答 環境診斷 ===== > "%LOG%"
+echo ===== 脈衝 PULSE 環境診斷 ===== > "%LOG%"
 echo 時間: %DATE% %TIME% >> "%LOG%"
 echo 資料夾: %~dp0 >> "%LOG%"
 echo. >> "%LOG%"

@@ -4,12 +4,13 @@
 用法: python build_standalone.py
 """
 import json
+import re
 from pathlib import Path
 from app import BANK, TOPICS
 
 html = (Path(__file__).parent / "static" / "index.html").read_text(encoding="utf-8")
 css = (Path(__file__).parent / "static" / "style.css").read_text(encoding="utf-8")
-html = html.replace('<link rel="stylesheet" href="/static/style.css">', "<style>\n" + css + "</style>")
+html = re.sub(r'<link rel="stylesheet" href="/static/style\.css[^"]*">', lambda m: "<style>\n" + css + "</style>", html)
 cats = [{"key": k, "name": v["name"], "seal": v["seal"],
          "count": len(BANK[k]) if k in BANK else sum(len(b) for b in BANK.values())}
         for k, v in TOPICS.items() if k != "news"]
