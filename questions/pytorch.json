@@ -461,26 +461,6 @@
   "region": "Deep Learning"
  },
  {
-  "id": "pt-L1-04",
-  "topic": "pytorch",
-  "unit": "L1",
-  "unit_name": "Lab1 張量 Tensor",
-  "category": "Lab1 張量 Tensor",
-  "difficulty": 1,
-  "type": "choice",
-  "question": "torch.tensor([1, 2, 3]).dtype 是什麼？",
-  "options": [
-   "torch.int32",
-   "torch.float32",
-   "torch.uint8",
-   "torch.int64"
-  ],
-  "answer": 3,
-  "explanation": "整數 list 建出來預設是 int64（torch.long），這剛好也是分類標籤要求的型別。",
-  "fun_fact": "",
-  "region": "Deep Learning"
- },
- {
   "id": "pt-L1-05",
   "topic": "pytorch",
   "unit": "L1",
@@ -623,46 +603,6 @@
   "region": "Deep Learning"
  },
  {
-  "id": "pt-L1-12",
-  "topic": "pytorch",
-  "unit": "L1",
-  "unit_name": "Lab1 張量 Tensor",
-  "category": "Lab1 張量 Tensor",
-  "difficulty": 2,
-  "type": "choice",
-  "question": "x = torch.arange(12).reshape(3, 4)\ny = x.t()\ny.view(-1) 會發生什麼事？",
-  "options": [
-   "成功，得到 12 個元素的一維 tensor",
-   "成功，但回傳的是複製出來的新 tensor",
-   "報錯，因為轉置後記憶體不連續",
-   "得到形狀為 (4, 3) 的二維 tensor"
-  ],
-  "answer": 2,
-  "explanation": "轉置只是把兩個 stride 對調、資料沒搬，所以不再連續，view 會丟出 view size is not compatible 的錯誤；改用 reshape 或先 contiguous() 就可以。",
-  "fun_fact": "",
-  "region": "Deep Learning"
- },
- {
-  "id": "pt-L1-13",
-  "topic": "pytorch",
-  "unit": "L1",
-  "unit_name": "Lab1 張量 Tensor",
-  "category": "Lab1 張量 Tensor",
-  "difficulty": 2,
-  "type": "choice",
-  "question": "OpenCV 讀進來的影像是 (H, W, 3)，要換成 PyTorch 的 (3, H, W)，正確做法是？",
-  "options": [
-   "reshape(3, H, W)",
-   "view(-1, 3, H, W)",
-   "transpose(0, 1)",
-   "permute(2, 0, 1)"
-  ],
-  "answer": 3,
-  "explanation": "reshape/view 只是重新解讀同一串數字，形狀會對但像素全錯；換維度順序一定要用 permute。",
-  "fun_fact": "",
-  "region": "Deep Learning"
- },
- {
   "id": "pt-L1-14",
   "topic": "pytorch",
   "unit": "L1",
@@ -702,48 +642,6 @@
   "explanation": "squeeze(dim) 只有在該維度長度等於 1 時才會拿掉它，這裡第 1 維是 224，所以形狀原封不動。",
   "fun_fact": "",
   "region": "Deep Learning"
- },
- {
-  "id": "pt-L1-16",
-  "topic": "pytorch",
-  "unit": "L1",
-  "unit_name": "Lab1 張量 Tensor",
-  "category": "Lab1 張量 Tensor",
-  "difficulty": 2,
-  "type": "choice",
-  "question": "torch.rand(3, 1) + torch.rand(1, 4) 的形狀是？",
-  "options": [
-   "報錯，形狀不合",
-   "(3, 1)",
-   "(3, 4)",
-   "(1, 4)"
-  ],
-  "answer": 2,
-  "explanation": "從最後一維往前比：1 對 4、3 對 1，都有一邊是 1，於是雙方各自展開成 (3, 4)。",
-  "fun_fact": "",
-  "region": "Deep Learning",
-  "verify_code": "import numpy as np\nprint((np.zeros((3,1)) + np.zeros((1,4))).shape)"
- },
- {
-  "id": "pt-L1-17",
-  "topic": "pytorch",
-  "unit": "L1",
-  "unit_name": "Lab1 張量 Tensor",
-  "category": "Lab1 張量 Tensor",
-  "difficulty": 2,
-  "type": "choice",
-  "question": "pred 的形狀是 (10, 1)，true 的形狀是 (10,)\n(pred - true).shape 是？",
-  "options": [
-   "(10,)",
-   "(10, 1)",
-   "(1, 10)",
-   "(10, 10)"
-  ],
-  "answer": 3,
-  "explanation": "(10,) 會先補成 (1, 10) 再展開，結果變成 (10, 10)；不報錯卻把 10 個誤差變成 100 個，是最難查的 bug。",
-  "fun_fact": "",
-  "region": "Deep Learning",
-  "verify_code": "import numpy as np\nprint((np.zeros((10,1)) - np.zeros((10,))).shape)"
  },
  {
   "id": "pt-L1-18",
@@ -808,48 +706,6 @@
   "region": "Deep Learning"
  },
  {
-  "id": "pt-L1-21",
-  "topic": "pytorch",
-  "unit": "L1",
-  "unit_name": "Lab1 張量 Tensor",
-  "category": "Lab1 張量 Tensor",
-  "difficulty": 2,
-  "type": "choice",
-  "question": "t = torch.rand(2, 3, 4)\nt.sum(dim=1).shape 是？",
-  "options": [
-   "(2, 4)",
-   "(2, 3)",
-   "(3, 4)",
-   "(2, 1, 4)"
-  ],
-  "answer": 0,
-  "explanation": "dim 指的是「被吃掉」的那一維，第 1 維加總後消失，剩下 (2, 4)。",
-  "fun_fact": "",
-  "region": "Deep Learning",
-  "verify_code": "import numpy as np\nprint(np.zeros((2,3,4)).sum(axis=1).shape)"
- },
- {
-  "id": "pt-L1-22",
-  "topic": "pytorch",
-  "unit": "L1",
-  "unit_name": "Lab1 張量 Tensor",
-  "category": "Lab1 張量 Tensor",
-  "difficulty": 2,
-  "type": "choice",
-  "question": "t = torch.rand(2, 3, 4)\nt.sum(dim=1, keepdim=True).shape 是？",
-  "options": [
-   "(2, 4)",
-   "(1, 3, 4)",
-   "(2, 3, 1)",
-   "(2, 1, 4)"
-  ],
-  "answer": 3,
-  "explanation": "keepdim=True 把被歸約的那一維保留成長度 1，結果才能直接跟原本的 t 做 broadcasting。",
-  "fun_fact": "",
-  "region": "Deep Learning",
-  "verify_code": "import numpy as np\nprint(np.zeros((2,3,4)).sum(axis=1, keepdims=True).shape)"
- },
- {
   "id": "pt-L1-23",
   "topic": "pytorch",
   "unit": "L1",
@@ -866,47 +722,6 @@
   ],
   "answer": 2,
   "explanation": "指定 dim 時 max 回傳具名的 (values, indices) 兩個 tensor；只想要位置可以直接用 argmax。",
-  "fun_fact": "",
-  "region": "Deep Learning"
- },
- {
-  "id": "pt-L1-24",
-  "topic": "pytorch",
-  "unit": "L1",
-  "unit_name": "Lab1 張量 Tensor",
-  "category": "Lab1 張量 Tensor",
-  "difficulty": 2,
-  "type": "choice",
-  "question": "a、b 的形狀都是 (3, 4)\ntorch.cat([a, b], dim=0) 與 torch.stack([a, b], dim=0) 的形狀分別是？",
-  "options": [
-   "(2, 3, 4) 與 (6, 4)",
-   "(6, 4) 與 (2, 3, 4)",
-   "(3, 8) 與 (6, 4)",
-   "(2, 3, 4) 與 (2, 3, 4)"
-  ],
-  "answer": 1,
-  "explanation": "cat 在既有維度上接長、維度數不變，所以是 (6, 4)；stack 一定會多開一個新維度，所以是 (2, 3, 4)。",
-  "fun_fact": "",
-  "region": "Deep Learning",
-  "verify_code": "import numpy as np\na=np.zeros((3,4)); b=np.zeros((3,4))\nprint(np.concatenate([a,b],0).shape, np.stack([a,b],0).shape)"
- },
- {
-  "id": "pt-L1-25",
-  "topic": "pytorch",
-  "unit": "L1",
-  "unit_name": "Lab1 張量 Tensor",
-  "category": "Lab1 張量 Tensor",
-  "difficulty": 2,
-  "type": "choice",
-  "question": "arr 是 numpy 陣列，t = torch.from_numpy(arr)，接著執行 arr[0] = 999，t[0] 會怎樣？",
-  "options": [
-   "也變成 999，因為兩者共用同一塊記憶體",
-   "維持原值，from_numpy 會複製一份",
-   "報錯，numpy 改動後 tensor 會失效",
-   "變成 0，因為 tensor 已經被重設"
-  ],
-  "answer": 0,
-  "explanation": "from_numpy 共享記憶體、改一邊另一邊跟著變；要獨立的複製請用 torch.tensor(arr)。",
   "fun_fact": "",
   "region": "Deep Learning"
  },
@@ -932,122 +747,667 @@
   "verify_code": "import numpy as np\nprint(np.zeros((8,32,32,3)).transpose(0,3,1,2).shape)"
  },
  {
-  "id": "pt-L1-27",
+  "id": "pt-L1T-01",
   "topic": "pytorch",
   "unit": "L1",
   "unit_name": "Lab1 張量 Tensor",
   "category": "Lab1 張量 Tensor",
-  "difficulty": 3,
+  "difficulty": 2,
   "type": "choice",
-  "question": "x = torch.arange(12).reshape(3, 4)，x.stride() 是 (4, 1)，這代表什麼？",
+  "question": "x = torch.arange(12).reshape(3, 4)，x.stride() 是多少？",
   "options": [
-   "x 的形狀是 4 列 1 欄",
-   "往第 0 維走一格要跳 4 個元素",
-   "卷積核每次在影像上滑動 4 格",
-   "x 總共佔用 4 個 byte 的記憶體"
-  ],
-  "answer": 1,
-  "explanation": "stride 描述的是記憶體要怎麼跳：往第 0 維走一格跳 4 個元素，往第 1 維走一格只跳 1 個。它和 nn.Conv2d(stride=2) 的滑動步長只是撞名，完全無關。",
-  "fun_fact": "",
-  "region": "Deep Learning"
- },
- {
-  "id": "pt-L1-28",
-  "topic": "pytorch",
-  "unit": "L1",
-  "unit_name": "Lab1 張量 Tensor",
-  "category": "Lab1 張量 Tensor",
-  "difficulty": 3,
-  "type": "choice",
-  "question": "a = torch.rand(3, 1)\nb = a.expand(3, 4)\nb.stride() 是 (1, 0)，這說明 broadcasting 是怎麼實作的？",
-  "options": [
-   "把 a 複製 4 份再拼成 (3, 4)",
-   "先轉成 numpy 展開後再轉回 tensor",
-   "不複製資料，把該維 stride 設成 0",
-   "在底層改用 python 迴圈逐元素複製"
-  ],
-  "answer": 2,
-  "explanation": "stride 為 0 代表往那一維走指標不動、重複讀同一個值，所以 expand 之後 storage 仍然只有 3 個元素，記憶體完全沒變多。",
-  "fun_fact": "",
-  "region": "Deep Learning"
- },
- {
-  "id": "pt-L1-29",
-  "topic": "pytorch",
-  "unit": "L1",
-  "unit_name": "Lab1 張量 Tensor",
-  "category": "Lab1 張量 Tensor",
-  "difficulty": 3,
-  "type": "choice",
-  "question": "w = torch.tensor([1.0], requires_grad=True)\nfor _ in range(2):\n    (w * 2).sum().backward()   # 每一圈都重新算一次前向\nprint(w.grad)\n輸出會是多少？",
-  "options": [
-   "tensor([2.])",
-   "tensor([0.])",
-   "報錯，不能重複 backward",
-   "tensor([4.])"
-  ],
-  "answer": 3,
-  "explanation": "每一圈都重新做一次前向運算，所以是兩張各自獨立的計算圖，不會有「backward through the graph a second time」的錯誤。每次 backward 對 w 的梯度都是 2，而梯度是累加不是覆蓋，兩次加起來變成 4；這正是訓練迴圈每一步都要 optimizer.zero_grad() 的原因。",
-  "fun_fact": "",
-  "region": "Deep Learning"
- },
- {
-  "id": "pt-L1-30",
-  "topic": "pytorch",
-  "unit": "L1",
-  "unit_name": "Lab1 張量 Tensor",
-  "category": "Lab1 張量 Tensor",
-  "difficulty": 3,
-  "type": "choice",
-  "question": "對一個 requires_grad=True 的 tensor 直接呼叫 .numpy() 會怎樣？",
-  "options": [
-   "報錯，必須先 detach() 切斷",
-   "正常回傳，梯度資訊會一起帶過去",
-   "自動 detach，不會有任何問題",
-   "回傳一個空的 numpy 陣列"
+   "(4, 1)",
+   "(1, 4)",
+   "(3, 4)",
+   "(12, 1)"
   ],
   "answer": 0,
-  "explanation": "轉成 numpy 後的修改 autograd 追蹤不到，PyTorch 直接擋下來；正確寫法是 x.detach().numpy()。",
+  "explanation": "往下一列要跳 4 個元素，往右一欄跳 1 個；stride 說的是記憶體怎麼跳，不是形狀",
   "fun_fact": "",
   "region": "Deep Learning"
  },
  {
-  "id": "pt-L1-31",
+  "id": "pt-L1T-02",
   "topic": "pytorch",
   "unit": "L1",
   "unit_name": "Lab1 張量 Tensor",
   "category": "Lab1 張量 Tensor",
   "difficulty": 3,
   "type": "choice",
-  "question": "把形狀 (8, 32, 32, 3) 的 tensor 直接餵給 nn.Conv2d(3, 16, 3) 會怎樣？",
+  "question": "x = torch.arange(12).reshape(3, 4)，x.t() 之後的 stride 是多少？",
   "options": [
-   "正常輸出，形狀為 (8, 16, 30, 30)",
-   "PyTorch 會自動轉成 channel first",
-   "可以執行，但輸出的數值全部是 0",
-   "報錯，卷積層把第 1 維當成通道數"
-  ],
-  "answer": 3,
-  "explanation": "PyTorch 是 channel first，輸入必須是 (N, C, H, W)；這裡第 1 維是 32，卷積層會以為有 32 個通道而不是 3 個。從 TensorFlow 或 OpenCV 拿到的資料要先 permute(0, 3, 1, 2)。",
-  "fun_fact": "",
-  "region": "Deep Learning"
- },
- {
-  "id": "pt-L1-32",
-  "topic": "pytorch",
-  "unit": "L1",
-  "unit_name": "Lab1 張量 Tensor",
-  "category": "Lab1 張量 Tensor",
-  "difficulty": 3,
-  "type": "choice",
-  "question": "訓練迴圈裡每個 batch 都呼叫 loss.item()，在 GPU 上會變慢的真正原因是？",
-  "options": [
-   "把 float 轉成 python 數值本身很慢",
-   "它會強制 CPU 停下來等 GPU 算完（同步）",
-   "它會把整個 tensor 複製到 CPU 記憶體",
-   "它會順便把梯度重新計算一次並累加"
+   "(4, 1)",
+   "(1, 4)",
+   "(4, 3)",
+   "(3, 1)"
   ],
   "answer": 1,
-  "explanation": "GPU 是非同步執行的，item() 要拿到真實數值就得等 kernel 跑完；建議把 loss 累加在 GPU 上，epoch 結束再取一次值。",
+  "explanation": "轉置只是把兩個 stride 對調，資料一個都沒搬",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1T-03",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "x = torch.arange(12).reshape(3, 4)，x.t().view(-1) 會發生什麼事？",
+  "options": [
+   "成功，得到 12 個元素",
+   "報錯",
+   "得到一個複製",
+   "得到 (4, 3)"
+  ],
+  "answer": 1,
+  "explanation": "view 要求記憶體連續，轉置後不連續；要用 reshape 或先 contiguous()",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1T-04",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "tensor.stride() 和 nn.Conv2d(stride=2) 的 stride 是什麼關係？",
+  "options": [
+   "同一個東西",
+   "沒有關係，只是同一個英文字",
+   "卷積的 stride 是 tensor stride 的兩倍",
+   "卷積的 stride 決定 tensor 的 stride"
+  ],
+  "answer": 1,
+  "explanation": "tensor.stride() 是記憶體跨步；卷積的 stride 是卷積核滑動幾個像素，兩者無關",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1T-05",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "torch.rand(3, 1) + torch.rand(1, 4) 的形狀？",
+  "options": [
+   "報錯",
+   "(3, 1)",
+   "(1, 4)",
+   "(3, 4)"
+  ],
+  "answer": 3,
+  "explanation": "從最後一維比對：1 對 4、3 對 1，都有一邊是 1，雙方各自展開成 (3, 4)",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1T-06",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "pred 是 (10, 1)，true 是 (10,)，pred - true 的形狀？",
+  "options": [
+   "(10,)",
+   "(10, 1)",
+   "(10, 10)",
+   "報錯"
+  ],
+  "answer": 2,
+  "explanation": "(10,) 先補成 (1, 10)，再與 (10, 1) 各自展開成 (10, 10)；不報錯，卻把 10 個誤差變成 100 個",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1T-07",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "Broadcasting 展開時，記憶體發生什麼事？",
+  "options": [
+   "把小的那個複製成大的",
+   "兩邊都複製成共同形狀",
+   "不複製，把展開那一維的 stride 設成 0",
+   "先轉成 numpy 再算"
+  ],
+  "answer": 2,
+  "explanation": "expand 之後 stride 會出現 0，代表往那一維走指標不動；實測 (3,1).expand(3,4) 的 storage 仍只有 3 個元素",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1T-08",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "torch.rand(3, 1).expand(3, 4).stride() 是多少？",
+  "options": [
+   "(4, 1)",
+   "(1, 0)",
+   "(1, 1)",
+   "(0, 1)"
+  ],
+  "answer": 1,
+  "explanation": "第 0 維走一格跳 1 個元素，第 1 維走一格跳 0 個，也就是重複讀同一個值",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1T-09",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "a 是 (3, 1)，a.expand(3, 4) 與 a.repeat(1, 4) 的 storage 各有幾個元素？",
+  "options": [
+   "3 與 3",
+   "12 與 12",
+   "3 與 12",
+   "12 與 3"
+  ],
+  "answer": 2,
+  "explanation": "expand 只改 stride 不複製，storage 仍是 3 個；repeat 真的複製，變成 12 個",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1T-10",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "t 是 (2, 3, 4)，t.sum(dim=1).shape 是？",
+  "options": [
+   "(2, 4)",
+   "(3, 4)",
+   "(2, 3)",
+   "(2, 1, 4)"
+  ],
+  "answer": 0,
+  "explanation": "dim 是「被吃掉」的那一維，第 1 維消失，剩 (2, 4)",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1T-11",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "t 是 (2, 3, 4)，t.sum(dim=1, keepdim=True).shape 是？",
+  "options": [
+   "(2, 4)",
+   "(2, 3, 1)",
+   "(1, 3, 4)",
+   "(2, 1, 4)"
+  ],
+  "answer": 3,
+  "explanation": "keepdim 把那一維留成 1，結果才能直接與原本的 t 做 broadcasting",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1T-12",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "a、b 都是 (3, 4)，torch.cat([a, b], dim=0) 與 torch.stack([a, b], dim=0) 的形狀分別是？",
+  "options": [
+   "(6, 4) 與 (2, 3, 4)",
+   "(2, 3, 4) 與 (6, 4)",
+   "(3, 8) 與 (6, 4)",
+   "都是 (6, 4)"
+  ],
+  "answer": 0,
+  "explanation": "cat 在既有維度接長不增加維度；stack 開一個新維度",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1T-13",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "要把 OpenCV 的 (H, W, C) 影像變成 PyTorch 的 (C, H, W)，該用哪個？",
+  "options": [
+   "reshape(3, H, W)",
+   "view(3, H, W)",
+   "permute(2, 0, 1)",
+   "transpose(0, 1)"
+  ],
+  "answer": 2,
+  "explanation": "reshape 與 view 只是換一副眼鏡看同一串數字，形狀會對但像素全錯；換維度順序一定要 permute",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1T-14",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "torch.tensor([1, 2, 3]).dtype 是？",
+  "options": [
+   "torch.int32",
+   "torch.float32",
+   "torch.int64",
+   "torch.uint8"
+  ],
+  "answer": 2,
+  "explanation": "整數 list 預設是 int64（torch.long），這也是分類標籤要求的型別",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1T-15",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "arr 是 numpy 陣列，t = torch.from_numpy(arr) 之後執行 arr[0] = 999，t[0] 會？",
+  "options": [
+   "維持原值",
+   "變成 0",
+   "報錯",
+   "也變成 999"
+  ],
+  "answer": 3,
+  "explanation": "from_numpy 與原陣列共用同一塊記憶體；要獨立的複製請用 torch.tensor(arr)",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1T-16",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "torch.tensor([1.0]).requires_grad 預設是？",
+  "options": [
+   "True",
+   "看有沒有 GPU",
+   "None",
+   "False"
+  ],
+  "answer": 3,
+  "explanation": "輸入資料預設不追蹤梯度；只有要被訓練的參數才需要 True",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1T-17",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "nn.Linear(2, 2).weight.requires_grad 是？",
+  "options": [
+   "True",
+   "False",
+   "None",
+   "要呼叫 train() 才會變 True"
+  ],
+  "answer": 0,
+  "explanation": "模型參數就是要被訓練的東西，PyTorch 建立時就設成 True",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1T-18",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "w 需要梯度，連續呼叫兩次 (w * 2).sum().backward()，w.grad 會是？",
+  "options": [
+   "2",
+   "報錯",
+   "0",
+   "4"
+  ],
+  "answer": 3,
+  "explanation": "梯度是累加的，兩次各加 2 得 4；所以訓練迴圈每一步都要 optimizer.zero_grad()",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1T-19",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "對一個 requires_grad=True 的 tensor 直接呼叫 .numpy() 會？",
+  "options": [
+   "正常回傳",
+   "回傳但梯度會錯",
+   "自動 detach",
+   "報錯，要先 detach()"
+  ],
+  "answer": 3,
+  "explanation": "PyTorch 會擋下來，因為轉成 numpy 後的修改追蹤不到；正確寫法 x.detach().numpy()",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1T-20",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "訓練迴圈裡每個 batch 都呼叫 loss.item()，慢的真正原因是？",
+  "options": [
+   "型別轉換很慢",
+   "它會把 tensor 搬到 CPU 兩次",
+   "它會複製整個 tensor",
+   "它強制 CPU 停下來等 GPU 算完"
+  ],
+  "answer": 3,
+  "explanation": "GPU 是非同步的，item() 需要那個值就得等；建議把 loss 累加在 GPU 上，epoch 結束再取",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1T-21",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "把 (8, 32, 32, 3) 的 TensorFlow 格式 tensor 直接餵給 nn.Conv2d(3, 16, 3) 會？",
+  "options": [
+   "正常輸出 (8, 16, 30, 30)",
+   "自動換成 channel first",
+   "輸出全是 0",
+   "報錯"
+  ],
+  "answer": 3,
+  "explanation": "卷積層看第 1 維當通道數，它會以為有 32 個通道而不是 3 個；要先 permute(0, 3, 1, 2)",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1X-01",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "torch.tensor(3.0).shape 印出來是什麼？",
+  "options": [
+   "torch.Size([1])",
+   "torch.Size([])",
+   "torch.Size([0])",
+   "torch.Size([1, 1])"
+  ],
+  "answer": 1,
+  "explanation": "只包一個數字的 tensor 是 0 維純量，形狀是空的；它和 torch.tensor([3.0]) 的 (1,) 不一樣，但一樣可以用 .item() 取值。",
+  "fun_fact": "",
+  "region": "Deep Learning",
+  "verify_code": "import numpy as np\nfor obj in (np.array(3.0), np.array([3.0])):\n    print('ndim =', obj.ndim, ' shape =', obj.shape, ' -> torch.Size(%s)' % list(obj.shape))"
+ },
+ {
+  "id": "pt-L1X-02",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "x = torch.arange(12).reshape(3, 4)\nprint(x[:, 1].shape, x[:, 1:2].shape)\n印出什麼？",
+  "options": [
+   "torch.Size([3]) torch.Size([3, 1])",
+   "torch.Size([3, 1]) torch.Size([3])",
+   "torch.Size([4]) torch.Size([3, 1])",
+   "torch.Size([3]) torch.Size([1, 3])"
+  ],
+  "answer": 0,
+  "explanation": "用整數索引會把那一維整個吃掉，用切片則會把那一維留下來、長度變成 1；想保住維度好做 broadcasting 就寫 1:2。",
+  "fun_fact": "",
+  "region": "Deep Learning",
+  "verify_code": "import numpy as np\nx = np.arange(12).reshape(3, 4)\nprint('x[:, 1].shape   =', x[:, 1].shape)\nprint('x[:, 1:2].shape =', x[:, 1:2].shape)"
+ },
+ {
+  "id": "pt-L1X-03",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "訓練時出現 RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu!\n最可能的原因是？",
+  "options": [
+   "GPU 記憶體不足，PyTorch 自動把一半資料退回 CPU",
+   "模型與資料的 dtype 不同，一邊 float32 一邊 float64",
+   "忘了呼叫 model.train()，模型還停在評估模式",
+   "模型已經搬上 GPU，這個 batch 的資料卻還在 CPU"
+  ],
+  "answer": 3,
+  "explanation": "參與同一個運算的 tensor 必須在同一個裝置上；標準作法是每個 batch 都補上 x = x.to(device) 與 y = y.to(device)。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1X-04",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "x = torch.rand(3, requires_grad=True)\ny = torch.tensor(x)\n第 2 行會跳出 UserWarning，官方建議改成哪一種寫法？",
+  "options": [
+   "y = torch.clone(x)",
+   "y = x.clone().detach()",
+   "y = torch.Tensor(x.data)",
+   "y = x.detach().numpy()"
+  ],
+  "answer": 1,
+  "explanation": "clone() 負責複製一份資料、detach() 負責切斷運算圖，兩件事都做才是官方建議寫法；只 clone() 的話 y 仍然掛在運算圖上。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1X-05",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "logits 是 (N, 10) 的 float32，labels 是 (N,) 的 float32。\nloss = criterion(logits, labels) 在 nn.CrossEntropyLoss 報\nexpected scalar type Long but found Float，最直接的修法是？",
+  "options": [
+   "把 labels 換成 labels.float()",
+   "把 logits 換成 logits.long()",
+   "把 labels 換成 labels.long()",
+   "把 labels 換成 labels.unsqueeze(1)"
+  ],
+  "answer": 2,
+  "explanation": "分類標籤放的是「類別索引」，CrossEntropyLoss 規定它必須是 int64（long）；把 logits 轉成整數反而會把模型輸出的小數全部砍掉。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1X-06",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "把 tensor 搬上 GPU 時，x.to(device) 與 x.cuda() 主要差在哪？",
+  "options": [
+   "to() 的裝置可以是變數，同一份程式也能在 CPU 跑",
+   "cuda() 會複製資料，to() 不複製只改裝置的標記",
+   "cuda() 比較快，因為它省掉了裝置檢查的步驟",
+   "to() 只能轉換 dtype，要換裝置一定得用 cuda()"
+  ],
+  "answer": 0,
+  "explanation": "兩者搬資料的效果一樣，差在通用性：device = 'cuda' if torch.cuda.is_available() else 'cpu' 搭配 to(device)，沒有 GPU 的機器也不會報錯。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1X-07",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "要建立一個與 x 的形狀、dtype、device 全部相同、內容全是 0 的新 tensor，該用哪一個？",
+  "options": [
+   "torch.zeros(x.shape)",
+   "torch.empty_like(x)",
+   "torch.zeros_like(x)",
+   "torch.zeros(x.numel())"
+  ],
+  "answer": 2,
+  "explanation": "zeros_like 會照抄來源的形狀、dtype 與 device；torch.zeros(x.shape) 只抄到形狀，dtype 與 device 會退回預設值，empty_like 雖然形狀對，內容卻是沒初始化的垃圾值。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1X-08",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "卷積輸出 feat 的形狀是 (N, 64, 7, 7)，要接 nn.Linear(64*7*7, 10)，中間該補哪一行？",
+  "options": [
+   "feat = feat.squeeze().view(-1)",
+   "feat = feat.view(feat.size(0) * 64, -1)",
+   "feat = feat.permute(0, 2, 3, 1)",
+   "feat = feat.view(feat.size(0), -1)"
+  ],
+  "answer": 3,
+  "explanation": "-1 的意思是「這一維讓 PyTorch 自己算」，保留批次維、其餘攤平成 (N, 3136)；view(-1) 會把整個 batch 混成一長條，模型就分不出誰是誰。",
+  "fun_fact": "",
+  "region": "Deep Learning",
+  "verify_code": "import numpy as np\nfeat = np.zeros((8, 64, 7, 7))\nprint('64*7*7 =', 64 * 7 * 7)\nprint('view(feat.size(0), -1) ->', feat.reshape(feat.shape[0], -1).shape)\nprint('view(-1)               ->', feat.reshape(-1).shape)"
+ },
+ {
+  "id": "pt-L1X-09",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "x 的形狀是 (2, 3, 4)，x.size() 與 x.size(0) 分別回傳什麼？",
+  "options": [
+   "size() 回傳元素總數 24，size(0) 回傳第 0 維長度 2",
+   "size() 回傳整個形狀，size(0) 回傳去掉第 0 維的形狀",
+   "兩者都回傳整個形狀，size(0) 只是比較舊的寫法",
+   "size() 回傳整個形狀，size(0) 回傳第 0 維的長度 2"
+  ],
+  "answer": 3,
+  "explanation": "x.size() 與 x.shape 完全等價，回傳 torch.Size([2, 3, 4])；給了維度就只回傳那一維的長度（python 的 int），len(x) 等於 x.size(0)。",
+  "fun_fact": "",
+  "region": "Deep Learning",
+  "verify_code": "import numpy as np\nx = np.zeros((2, 3, 4))\nprint('x.size()  ->', x.shape)\nprint('x.size(0) ->', x.shape[0])\nprint('len(x)    ->', len(x), ' numel ->', x.size)"
+ },
+ {
+  "id": "pt-L1X-10",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "x = torch.arange(12).reshape(3, 4)\na = x[0:2]\nb = x[[0, 2]]\na、b 與 x 的記憶體關係是？",
+  "options": [
+   "a 與 x 共用記憶體，b 是另外複製的新資料",
+   "b 與 x 共用記憶體，a 是另外複製的新資料",
+   "a、b 都與 x 共用同一塊記憶體，都沒有複製",
+   "a、b 都是複製出來的新資料，都不共用記憶體"
+  ],
+  "answer": 0,
+  "explanation": "基本切片只是換一組 shape 與 stride 去看同一塊 storage，所以改 a 會動到 x；用 list 或布林遮罩做的進階索引挑出的位置不連續，只能複製一份出來。",
+  "fun_fact": "",
+  "region": "Deep Learning",
+  "verify_code": "import numpy as np\nx = np.arange(12).reshape(3, 4)\na = x[0:2]\nb = x[[0, 2]]\nprint('x[0:2]  共用記憶體 ->', np.shares_memory(x, a))\nprint('x[[0,2]] 共用記憶體 ->', np.shares_memory(x, b))"
+ },
+ {
+  "id": "pt-L1X-11",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "關於 with torch.no_grad(): 區塊，下列敘述何者正確？",
+  "options": [
+   "區塊內模型參數的 requires_grad 會變成 False",
+   "區塊內新算出的 tensor 不會記錄運算圖",
+   "區塊內的運算會被延後，離開區塊時才真正算",
+   "區塊結束時會自動把所有參數的 grad 清成 0"
+  ],
+  "answer": 1,
+  "explanation": "no_grad 關掉的是「記錄運算圖」這個動作，參數自己的 requires_grad 完全沒變；推論與驗證時包起來可以省記憶體也跑得比較快。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1X-12",
+  "topic": "pytorch",
+  "unit": "L1",
+  "unit_name": "Lab1 張量 Tensor",
+  "category": "Lab1 張量 Tensor",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "loss.backward() 時報 RuntimeError: one of the variables needed for gradient computation has been modified by an inplace operation，最可能的原因是？",
+  "options": [
+   "忘了呼叫 optimizer.zero_grad()，梯度一直累加下去",
+   "forward 之後用底線結尾的就地運算蓋掉了中間結果",
+   "同一張運算圖被連續呼叫了兩次 backward()",
+   "輸入資料的 requires_grad 忘了設成 True"
+  ],
+  "answer": 1,
+  "explanation": "反向傳播要用 forward 時存下來的中間值，被 add_() 這類就地運算蓋掉就算不回去；把那一行改成非就地的 add() 即可。",
   "fun_fact": "",
   "region": "Deep Learning"
  },
@@ -1133,26 +1493,6 @@
   "region": "Deep Learning"
  },
  {
-  "id": "pt-L1-2-05",
-  "topic": "pytorch",
-  "unit": "L1-2",
-  "unit_name": "Lab1-2 PyTorch 常用指令",
-  "category": "Lab1-2 PyTorch 常用指令",
-  "difficulty": 2,
-  "type": "choice",
-  "question": "x.clamp(min=0) 這個運算，效果等同於下列哪一個激活函數？",
-  "options": [
-   "ReLU",
-   "Sigmoid",
-   "Tanh",
-   "Softmax"
-  ],
-  "answer": 0,
-  "explanation": "把小於 0 的值全部壓成 0、正值不動，正是 ReLU 的定義。",
-  "fun_fact": "",
-  "region": "Deep Learning"
- },
- {
   "id": "pt-L1-2-06",
   "topic": "pytorch",
   "unit": "L1-2",
@@ -1172,88 +1512,6 @@
   "fun_fact": "",
   "region": "Deep Learning",
   "verify_code": "x = [-2.0, -0.3, 0.4, 1.5]\nprint([min(max(v, -0.5), 0.5) for v in x])  # [-0.5, -0.3, 0.4, 0.5]"
- },
- {
-  "id": "pt-L1-2-07",
-  "topic": "pytorch",
-  "unit": "L1-2",
-  "unit_name": "Lab1-2 PyTorch 常用指令",
-  "category": "Lab1-2 PyTorch 常用指令",
-  "difficulty": 2,
-  "type": "choice",
-  "question": "y = x.clone() 與 y = x.detach() 最主要的差別是什麼？",
-  "options": [
-   "clone 不可微分，detach 仍然可微分",
-   "兩者都會複製記憶體，只是 detach 速度較快",
-   "clone 會另外配置新記憶體，detach 只切斷計算圖",
-   "clone 會切斷計算圖，detach 會保留整張計算圖"
-  ],
-  "answer": 2,
-  "explanation": "clone 是複製資料（data_ptr 不同但梯度仍可回傳）；detach 不複製、仍與原 tensor 共用同一塊記憶體，只是把 requires_grad 設為 False。",
-  "fun_fact": "",
-  "region": "Deep Learning"
- },
- {
-  "id": "pt-L1-2-08",
-  "topic": "pytorch",
-  "unit": "L1-2",
-  "unit_name": "Lab1-2 PyTorch 常用指令",
-  "category": "Lab1-2 PyTorch 常用指令",
-  "difficulty": 3,
-  "type": "choice",
-  "question": "對一個 requires_grad=True 的 tensor x 做 y = x.detach()，關於 y 的敘述何者正確？",
-  "options": [
-   "y.requires_grad 仍為 True，梯度照常傳到 x",
-   "y 會被複製到新的記憶體，改 y 不會影響 x",
-   "y 會自動轉成 numpy array 型別",
-   "y.requires_grad 為 False，梯度不會回到 x"
-  ],
-  "answer": 3,
-  "explanation": "detach 的用途就是把 tensor 從計算圖切下來（凍結分支、只做推論），反向傳播不會經過 y，但它和 x 仍共用同一塊資料。",
-  "fun_fact": "",
-  "region": "Deep Learning"
- },
- {
-  "id": "pt-L1-2-09",
-  "topic": "pytorch",
-  "unit": "L1-2",
-  "unit_name": "Lab1-2 PyTorch 常用指令",
-  "category": "Lab1-2 PyTorch 常用指令",
-  "difficulty": 1,
-  "type": "choice",
-  "question": "3 個 shape 都是 (10, 5) 的 tensor，分別做 torch.cat(..., dim=0) 與 torch.stack(..., dim=0)，結果的 shape 各是？",
-  "options": [
-   "cat → (30, 5)；stack → (3, 10, 5)",
-   "cat → (3, 10, 5)；stack → (30, 5)",
-   "cat → (3, 10, 5)；stack → (3, 10, 5)",
-   "cat → (30, 5)；stack → (30, 5)"
-  ],
-  "answer": 0,
-  "explanation": "cat 是沿著既有維度接起來（維度數不變），所以是 (30, 5)；stack 會多長出一個新維度，所以是 (3, 10, 5)。",
-  "fun_fact": "",
-  "region": "Deep Learning",
-  "verify_code": "print('cat', (10*3, 5), 'stack', (3, 10, 5))"
- },
- {
-  "id": "pt-L1-2-10",
-  "topic": "pytorch",
-  "unit": "L1-2",
-  "unit_name": "Lab1-2 PyTorch 常用指令",
-  "category": "Lab1-2 PyTorch 常用指令",
-  "difficulty": 2,
-  "type": "choice",
-  "question": "c1、c2、c3 的 shape 都是 (1, 5, 5)\nx = torch.stack((c1, c2, c3), dim=0)\nprint(x.shape)",
-  "options": [
-   "torch.Size([3, 5, 5])",
-   "torch.Size([1, 15, 5, 5])",
-   "torch.Size([3, 1, 5, 5])",
-   "torch.Size([1, 3, 5, 5])"
-  ],
-  "answer": 2,
-  "explanation": "stack 在 dim=0 插入一個大小為 3 的新維度，原本的 (1, 5, 5) 完整保留在後面。",
-  "fun_fact": "",
-  "region": "Deep Learning",
-  "verify_code": "print((3,) + (1, 5, 5))  # (3, 1, 5, 5)"
  },
  {
   "id": "pt-L1-2-11",
@@ -1298,48 +1556,6 @@
   "verify_code": "print((1, 5, 5))  # select(0, 0) 會移除第 0 維"
  },
  {
-  "id": "pt-L1-2-13",
-  "topic": "pytorch",
-  "unit": "L1-2",
-  "unit_name": "Lab1-2 PyTorch 常用指令",
-  "category": "Lab1-2 PyTorch 常用指令",
-  "difficulty": 3,
-  "type": "choice",
-  "question": "x = torch.arange(12).view(3, 4)\nidx = torch.tensor([0, 2])\ny = torch.index_select(x, 1, idx)\nprint(y.shape)",
-  "options": [
-   "torch.Size([2, 4])",
-   "torch.Size([3, 2])",
-   "torch.Size([3, 4])",
-   "torch.Size([2, 2])"
-  ],
-  "answer": 1,
-  "explanation": "index_select 在 dim=1 挑出 2 個欄位，列數不變，所以是 (3, 2)；它不像 select 會把維度移除。",
-  "fun_fact": "",
-  "region": "Deep Learning",
-  "verify_code": "import numpy as np\nx = np.arange(12).reshape(3, 4)\nprint(x[:, [0, 2]].shape)  # (3, 2)"
- },
- {
-  "id": "pt-L1-2-14",
-  "topic": "pytorch",
-  "unit": "L1-2",
-  "unit_name": "Lab1-2 PyTorch 常用指令",
-  "category": "Lab1-2 PyTorch 常用指令",
-  "difficulty": 2,
-  "type": "choice",
-  "question": "x = torch.tensor([0, 1, 2, 3, 4, 5, 0])\nprint(torch.nonzero(x == 0).size(0))",
-  "options": [
-   "5",
-   "7",
-   "2",
-   "0"
-  ],
-  "answer": 2,
-  "explanation": "torch.nonzero(x == 0) 回傳值為 0 的位置，再用 size(0) 數個數，這裡頭尾各一個 0。",
-  "fun_fact": "",
-  "region": "Deep Learning",
-  "verify_code": "x = [0, 1, 2, 3, 4, 5, 0]\nprint(len([i for i, v in enumerate(x) if v == 0]))  # 2"
- },
- {
   "id": "pt-L1-2-15",
   "topic": "pytorch",
   "unit": "L1-2",
@@ -1382,26 +1598,6 @@
   "verify_code": "x = [3.0, 7.0, 1.0, 5.0]\nprint(x.index(max(x)))  # 1"
  },
  {
-  "id": "pt-L1-2-17",
-  "topic": "pytorch",
-  "unit": "L1-2",
-  "unit_name": "Lab1-2 PyTorch 常用指令",
-  "category": "Lab1-2 PyTorch 常用指令",
-  "difficulty": 2,
-  "type": "choice",
-  "question": "t = torch.rand(4, 4)\nb = t.view(2, 8)\nb[0][0] = 1\nprint(t.data_ptr() == b.data_ptr(), t[0][0])\n輸出是？",
-  "options": [
-   "False tensor(1.)",
-   "False，而且 t[0][0] 不會改變",
-   "True，但 t[0][0] 不會改變",
-   "True tensor(1.)"
-  ],
-  "answer": 3,
-  "explanation": "view 只是換一個形狀的「檢視」，和原 tensor 共用同一塊 storage，起始位址相同所以 data_ptr() 相等，改一邊另一邊也同步變。（早期教材常寫 t.storage().data_ptr()，但 Tensor.storage() 在 PyTorch 2.x 已 deprecated，會跳 TypedStorage is deprecated 警告，改用 data_ptr() 或 untyped_storage() 即可。）",
-  "fun_fact": "",
-  "region": "Deep Learning"
- },
- {
   "id": "pt-L1-2-18",
   "topic": "pytorch",
   "unit": "L1-2",
@@ -1442,27 +1638,6 @@
   "fun_fact": "",
   "region": "Deep Learning",
   "verify_code": "s = (3, 1)\nprint(s if s[0] != 1 else s[1:])  # (3, 1) 不變"
- },
- {
-  "id": "pt-L1-2-20",
-  "topic": "pytorch",
-  "unit": "L1-2",
-  "unit_name": "Lab1-2 PyTorch 常用指令",
-  "category": "Lab1-2 PyTorch 常用指令",
-  "difficulty": 2,
-  "type": "choice",
-  "question": "x = torch.rand(2, 3, 4)\ny = torch.flatten(x, 1)\nprint(y.shape)",
-  "options": [
-   "torch.Size([2, 12])",
-   "torch.Size([24])",
-   "torch.Size([6, 4])",
-   "torch.Size([2, 3, 4])"
-  ],
-  "answer": 0,
-  "explanation": "flatten(x, 1) 表示從第 1 維開始往後全部攤平，第 0 維(batch)保留，這是 CNN 接全連接層的標準寫法。",
-  "fun_fact": "",
-  "region": "Deep Learning",
-  "verify_code": "print((2, 3 * 4))  # (2, 12)"
  },
  {
   "id": "pt-L1-2-21",
@@ -1563,6 +1738,691 @@
   ],
   "answer": 0,
   "explanation": "少了 () 就沒有真的呼叫函式，函式物件恆為 True，即使沒有顯示卡也會選到 cuda，正確寫法是 torch.cuda.is_available()。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2T-01",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "torch.tensor([1, 2]) + torch.tensor([0.5, 0.5]) 的 dtype 是",
+  "options": [
+   "torch.int64",
+   "torch.float32",
+   "torch.float64",
+   "報錯"
+  ],
+  "answer": 1,
+  "explanation": "不同型別相加會自動提升到能容納兩者的型別，int64 遇 float32 升成 float32",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2T-02",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "x 是 uint8，x / 255 的 dtype 是",
+  "options": [
+   "torch.uint8",
+   "torch.float32",
+   "torch.int64",
+   "報錯"
+  ],
+  "answer": 1,
+  "explanation": "/ 是真除法，PyTorch 會把整數自動升成預設的 float32；x // 255 才會留在 uint8",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2T-03",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "x = torch.tensor([200], dtype=torch.uint8)，x // 255 的值是",
+  "options": [
+   "0",
+   "0.78",
+   "200",
+   "1"
+  ],
+  "answer": 0,
+  "explanation": "// 是整數除法，200 // 255 = 0；影像正規化一定要用 /",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2T-04",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "x.clone() 和 x 是否共用同一塊記憶體",
+  "options": [
+   "True",
+   "False",
+   "看 x 是否 contiguous",
+   "看 x 在 CPU 還是 GPU"
+  ],
+  "answer": 1,
+  "explanation": "clone 一定複製一份新的 storage；view / detach / 切片才會共用",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2T-05",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "x.view(12) 和 x 是否共用同一塊記憶體",
+  "options": [
+   "True",
+   "False",
+   "只有 x 是一維時才共用",
+   "只有 requires_grad 時才共用"
+  ],
+  "answer": 0,
+  "explanation": "view 只是換一種看法，資料還是同一塊；改一個另一個也變",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2T-06",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "哪一個和 torch.relu(x) 完全相同",
+  "options": [
+   "x.clamp(min=0)",
+   "x.clamp(max=0)",
+   "x.clamp(0, 1)",
+   "x.abs()"
+  ],
+  "answer": 0,
+  "explanation": "ReLU 就是 max(x, 0)，clamp 只給 min=0 正好是它；clamp(0, 1) 會把大於 1 的也截掉",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2T-07",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "x 是 (8, 3, 4, 5)，x.flatten(1) 的形狀是",
+  "options": [
+   "(8, 60)",
+   "(480,)",
+   "(8, 3, 20)",
+   "(24, 20)"
+  ],
+  "answer": 0,
+  "explanation": "flatten(1) 從第 1 維開始攤到最後，批次維保留；接 Linear 之前都是這樣寫",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2T-08",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "x 是 (8, 3, 4, 5)，x.flatten() 的形狀是",
+  "options": [
+   "(8, 60)",
+   "(480,)",
+   "(8, 3, 20)",
+   "報錯"
+  ],
+  "answer": 1,
+  "explanation": "不給參數就是全部攤成一維，批次也沒了；這是接 Linear 時最常見的錯",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2T-09",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "torch.rand(2, 3).item() 會",
+  "options": [
+   "回傳第一個元素",
+   "回傳平均值",
+   "報錯",
+   "回傳 list"
+  ],
+  "answer": 2,
+  "explanation": "item 只能用在恰好一個元素的 tensor；多個元素要用 tolist()",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2T-10",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "四張 (3, 5, 5) 影像 torch.stack 之後的形狀是",
+  "options": [
+   "(12, 5, 5)",
+   "(3, 5, 20)",
+   "(3, 20, 5)",
+   "(4, 3, 5, 5)"
+  ],
+  "answer": 3,
+  "explanation": "stack 在新的第 0 維把它們疊起來，這正是 (N, C, H, W) 批次的做法",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2T-11",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "四張 (3, 5, 5) 影像 torch.cat 之後的形狀是",
+  "options": [
+   "(12, 5, 5)",
+   "(4, 3, 5, 5)",
+   "(3, 20, 5)",
+   "(3, 5, 20)"
+  ],
+  "answer": 0,
+  "explanation": "cat 沿既有的第 0 維黏起來，通道全混在一起變 12；要批次得用 stack",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2T-12",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "torch.rand(1, 3, 1, 5).squeeze() 的形狀是",
+  "options": [
+   "(3, 1, 5)",
+   "(1, 3, 5)",
+   "(3, 5)",
+   "(15,)"
+  ],
+  "answer": 2,
+  "explanation": "不給 dim 的 squeeze 會把所有長度 1 的維度全拿掉；只想拿掉批次維要寫 squeeze(0)",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2T-13",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "torch.rand(3, 5).unsqueeze(1) 的形狀是",
+  "options": [
+   "(1, 3, 5)",
+   "(3, 5, 1)",
+   "(3, 1, 5)",
+   "(3, 5)"
+  ],
+  "answer": 2,
+  "explanation": "unsqueeze(k) 在第 k 個位置插一維；插在 1 就變 (3, 1, 5)",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2T-14",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "x 是 (2, 3, 6, 7)，x.mean(dim=(2, 3), keepdim=True) 的形狀是",
+  "options": [
+   "(2, 3)",
+   "(6, 7)",
+   "(2, 3, 6, 7)",
+   "(2, 3, 1, 1)"
+  ],
+  "answer": 3,
+  "explanation": "keepdim 把被歸約的維度留成 1，之後才能直接和 x 廣播相減",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2T-15",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "m 是 4×3 的 [[10,20,30],[40,50,60],[70,80,90],[100,110,120]]，torch.index_select(m, 0, tensor([3, 0])) 是",
+  "options": [
+   "[100, 10]",
+   "[[10, 20, 30], [100, 110, 120]]",
+   "[[100, 110, 120], [10, 20, 30]]",
+   "[[10, 100], [20, 110], [30, 120]]"
+  ],
+  "answer": 2,
+  "explanation": "dim=0 挑列，順序照 index 給的 3 再 0；index_select 可重複、可任意順序",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2T-16",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "同一個 m，m.gather(1, tensor([[0],[2],[1],[2]])).squeeze(1) 是",
+  "options": [
+   "[40, 60, 80, 120]",
+   "[10, 20, 30, 40]",
+   "[10, 50, 90, 120]",
+   "[10, 60, 80, 120]"
+  ],
+  "answer": 3,
+  "explanation": "gather 沿 dim=1：第 i 列取第 index[i] 行，得到 10、60、80、120",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2T-17",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "(torch.tensor([0, 5, 0, 7]) > 0).nonzero() 的形狀是",
+  "options": [
+   "(2,)",
+   "(4,)",
+   "(2, 1)",
+   "(1, 2)"
+  ],
+  "answer": 2,
+  "explanation": "nonzero 回傳 (非零個數, 維度數)，一維 tensor 兩個非零元素就是 (2, 1)",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2T-18",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "z = y.detach()；z[0] = 99 之後 y[0] 也變成 99 嗎",
+  "options": [
+   "會報錯",
+   "False",
+   "只有 y 在 GPU 時",
+   "True"
+  ],
+  "answer": 3,
+  "explanation": "detach 不複製，只切斷梯度；要獨立又不追蹤請用 detach().clone()",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2T-19",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "A=[[2,1],[1,3]]，b=[7,11]，torch.linalg.solve(A, b) 是",
+  "options": [
+   "[1.0, 5.0]",
+   "[3.0, 2.0]",
+   "[2.0, 3.0]",
+   "[3.5, 3.7]"
+  ],
+  "answer": 2,
+  "explanation": "2×2+1×3=7、2+3×3=11；solve 比 inv(A) @ b 快又穩",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2T-20",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "量 GPU 上矩陣乘法的時間，下面哪個做法是對的",
+  "options": [
+   "t0=time.time(); a@b; t=time.time()-t0",
+   "多跑幾次取平均就會準",
+   "用 time.time() 但先 torch.cuda.empty_cache()",
+   "用 torch.cuda.Event 打點，最後 synchronize 再算 elapsed_time"
+  ],
+  "answer": 3,
+  "explanation": "GPU 是非同步的，CPU 派完工就往下走；要用 Event 或前後 synchronize，並先暖機",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2X-01",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "x = torch.arange(10)\nparts = torch.chunk(x, 3)\nprint(len(parts), parts[0].shape, parts[-1].shape)\n印出什麼？",
+  "options": [
+   "3 torch.Size([3]) torch.Size([4])",
+   "4 torch.Size([3]) torch.Size([1])",
+   "3 torch.Size([4]) torch.Size([2])",
+   "3 torch.Size([4]) torch.Size([4])"
+  ],
+  "answer": 2,
+  "explanation": "chunk 先算出每塊大小 ceil(10/3)=4，切成 4、4、2 三塊，最後一塊比較小，並不是平均分配。",
+  "fun_fact": "",
+  "region": "Deep Learning",
+  "verify_code": "import math\nn, k = 10, 3\nsize = math.ceil(n / k)\nparts = []\ni = 0\nwhile i < n:\n    parts.append(min(size, n - i))\n    i += size\nprint(len(parts), parts[0], parts[-1])"
+ },
+ {
+  "id": "pt-L1-2X-02",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "x 是長度 10 的 1D tensor，torch.split(x, 3) 和 torch.chunk(x, 3) 的差別是什麼？",
+  "options": [
+   "chunk 的 3 是每段長度，split 的 3 才是段數，剛好相反過來",
+   "兩者切出來的結果完全一樣，split 只是 chunk 的另一個名字",
+   "split 回傳 list、chunk 回傳 tuple，切出來的段數則完全相同",
+   "split 的 3 是每段長度，chunk 的 3 是段數，切法不一樣"
+  ],
+  "answer": 3,
+  "explanation": "split 的第二個參數是「每段長度」，得到 3、3、3、1 共四段；chunk 的第二個參數是「段數」，得到 4、4、2 共三段。兩者都回傳 tuple。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2X-03",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "x 是 (8, 3, 32, 32) 的一個 batch，想拿到 8 個 shape 為 (3, 32, 32) 的 tensor 逐一處理，該用哪個？",
+  "options": [
+   "torch.chunk(x, 8, dim=0)",
+   "torch.unbind(x, dim=0)",
+   "torch.split(x, 8, dim=0)",
+   "x.view(-1, 3, 32, 32)"
+  ],
+  "answer": 1,
+  "explanation": "unbind 會把指定的那一維整個拆掉，回傳 8 個 (3, 32, 32)；chunk 會保留該維得到 8 個 (1, 3, 32, 32)，而 split(x, 8) 是每段長 8，只會切出一段。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2X-04",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "x 的 shape 是 (8, 3, 32, 64)，要轉成 matplotlib 需要的 (8, 32, 64, 3)，下列哪個正確？",
+  "options": [
+   "x.reshape(8, 32, 64, 3)",
+   "x.transpose(1, 3)",
+   "x.permute(0, 2, 3, 1)",
+   "x.view(8, 32, 64, 3)"
+  ],
+  "answer": 2,
+  "explanation": "permute 一次指定所有維度的新順序；transpose(1, 3) 只交換兩維會得到 (8, 64, 32, 3)，而 view/reshape 只是重新切割同一串資料，畫出來的圖會整個錯亂。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2X-05",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "x = torch.rand(4, 3, 8)\ny = x.transpose(1, 2)\nz = y.view(4, 24)\nRuntimeError: view size is not compatible with input tensor's size and stride\n最可能的原因與解法是？",
+  "options": [
+   "y 的元素個數其實不是 24，要先確認前後的元素總數一致才行",
+   "transpose 後 y 不再連續，view 需要連續記憶體，改用 reshape",
+   "view 只能用在 2 維 tensor，3 維以上一律都要改用 reshape 才行",
+   "transpose 回傳的是資料的複本，要先 y.clone() 之後才能 view"
+  ],
+  "answer": 1,
+  "explanation": "transpose 只改 stride 不搬資料，結果不是 contiguous，而 view 要求記憶體連續；用 y.contiguous().view(4, 24) 或直接 y.reshape(4, 24) 即可。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2X-06",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "x = torch.tensor([3., 1., 2.])\nout = torch.sort(x)\nout 裡面裝的是什麼？",
+  "options": [
+   "排序後的數值 [1., 2., 3.]，以及名次 [2, 0, 1]",
+   "原始索引 [1, 2, 0]，以及排序後的數值 [1., 2., 3.]",
+   "由大到小的 [3., 2., 1.]，以及索引 [0, 2, 1]",
+   "排序後的數值 [1., 2., 3.]，以及原始索引 [1, 2, 0]"
+  ],
+  "answer": 3,
+  "explanation": "torch.sort 預設由小到大（descending=False），回傳 (values, indices) 兩個 tensor，indices 說明每個排序後的值原本在哪個位置。",
+  "fun_fact": "",
+  "region": "Deep Learning",
+  "verify_code": "x = [3., 1., 2.]\nidx = sorted(range(len(x)), key=lambda i: x[i])\nprint([x[i] for i in idx], idx)"
+ },
+ {
+  "id": "pt-L1-2X-07",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "print(torch.arange(0, 1, 0.25))\n印出什麼？",
+  "options": [
+   "tensor([0.0000, 0.2500, 0.5000, 0.7500, 1.0000])",
+   "tensor([0.0000, 0.2500, 0.5000, 0.7500])",
+   "tensor([0.2500, 0.5000, 0.7500, 1.0000])",
+   "tensor([0, 0, 0, 0], dtype=torch.int64)"
+  ],
+  "answer": 1,
+  "explanation": "arange 的第三個參數是步長 step，區間是半開的 [start, end)，不會包含終點 1；要包含終點並指定個數請改用 torch.linspace。",
+  "fun_fact": "",
+  "region": "Deep Learning",
+  "verify_code": "v = []\nt = 0.0\nwhile t < 1.0 - 1e-9:\n    v.append(round(t, 4))\n    t += 0.25\nprint(v)"
+ },
+ {
+  "id": "pt-L1-2X-08",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "x = torch.rand(64, 3, 224, 224)\nprint(x.numel() * x.element_size())\n印出來的數字最接近下列哪一個？",
+  "options": [
+   "約 6.0 x 10^5",
+   "約 9.6 x 10^6",
+   "約 3.9 x 10^7",
+   "約 7.7 x 10^7"
+  ],
+  "answer": 2,
+  "explanation": "numel() = 64*3*224*224 約 9.6x10^6 個元素，float32 的 element_size() 是 4 bytes，相乘約 3.85x10^7 bytes（約 37 MB）。",
+  "fun_fact": "",
+  "region": "Deep Learning",
+  "verify_code": "numel = 64*3*224*224\nprint(numel, numel*4)"
+ },
+ {
+  "id": "pt-L1-2X-09",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "x 是 (1, 4)，y = x.expand(3, 4)、z = x.repeat(3, 1)，兩者最大的差別是？",
+  "options": [
+   "y 只是 stride 設 0 的檢視不佔新記憶體；z 會真的複製三份",
+   "y 會把資料實際複製三份；z 只是換一種檢視方式不佔記憶體",
+   "兩者都會複製資料，唯一的差別是 expand 必須寫滿每個維度",
+   "兩者都不會複製資料，差別只在 repeat 的參數是重複倍數"
+  ],
+  "answer": 0,
+  "explanation": "expand 把長度 1 的維度的 stride 設成 0，讓三列指向同一份資料，不配置新記憶體；repeat 則是真的複製出三份，記憶體用量是三倍。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2X-10",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "x = torch.rand(1, 4)\ny = x.expand(3, 4)\ny += 1\nRuntimeError: unsupported operation: more than one element of the written-to tensor refers to a single memory location\n原因是？",
+  "options": [
+   "expand 的三列共用同一塊記憶體，就地寫入會互相覆蓋所以被擋下",
+   "expand 之後的 tensor 是唯讀的，任何運算都必須先呼叫 .contiguous()",
+   "y 的元素個數是 12 但 x 只有 4 個，廣播時數量對不上才報錯",
+   "x 的 requires_grad 預設是 True，計算圖裡的 tensor 不能就地修改"
+  ],
+  "answer": 0,
+  "explanation": "expand 用 stride=0 讓三列指到同一份資料，+= 這種就地運算會發生記憶體重疊，PyTorch 直接擋下；改用 x.repeat(3, 1) 或 y.clone() 就能寫入。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2X-11",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "比較兩個浮點數 tensor 是不是相等時，為什麼常建議用 torch.allclose(a, b) 而不是 (a == b).all()？",
+  "options": [
+   "浮點運算有捨入誤差，== 要求完全相同，allclose 允許容忍誤差",
+   "allclose 會自動把兩者轉成 float64 再比，精度較高所以較可靠",
+   "== 只能比較 shape 相同的 tensor，allclose 可以比較任意 shape",
+   "== 是逐元素的 Python 迴圈，allclose 才有 CUDA 加速，快很多"
+  ],
+  "answer": 0,
+  "explanation": "同樣的數學結果用不同順序算出來，最後幾個位元常常不一樣，== 會判定不相等；allclose 用 rtol、atol 給一個容忍範圍，才是比較浮點數的正確做法。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2X-12",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "a = torch.rand(2, 3, 4)\nb = torch.rand(4, 5)\nprint((a @ b).shape)\n印出什麼？",
+  "options": [
+   "torch.Size([2, 3, 5])",
+   "torch.Size([2, 4, 5])",
+   "torch.Size([3, 5])",
+   "RuntimeError：維度不合會報錯"
+  ],
+  "answer": 0,
+  "explanation": "@ 遇到 3 維以上會做批次矩陣乘法，只拿最後兩維相乘 (3,4) @ (4,5) = (3,5)；b 是 2 維沒有批次維，a 的批次維 2 會原樣保留，得到 (2, 3, 5)。",
+  "fun_fact": "",
+  "region": "Deep Learning",
+  "verify_code": "a = (2, 3, 4)\nb = (4, 5)\nassert a[-1] == b[0]\nprint(tuple(a[:-2]) + (a[-2], b[-1]))"
+ },
+ {
+  "id": "pt-L1-2X-13",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "x 是 (4, 1, 28, 28) 的灰階 batch，想複製成 3 通道 (4, 3, 28, 28)，但 x.repeat(3, 1, 1, 1) 得到 (12, 1, 28, 28)。該怎麼改？",
+  "options": [
+   "改成 x.repeat(3, 3, 1, 1)",
+   "改成 x.reshape(4, 3, 28, 28)",
+   "改成 x.repeat(1, 1, 3, 3)",
+   "改成 x.repeat(1, 3, 1, 1)"
+  ],
+  "answer": 3,
+  "explanation": "repeat 的每個參數代表「該維度要重複幾次」，原來的寫法是把 batch 維重複 3 次；要複製通道應該在第 1 維寫 3、其餘寫 1，也可以用 x.expand(4, 3, 28, 28)。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-2X-14",
+  "topic": "pytorch",
+  "unit": "L1-2",
+  "unit_name": "Lab1-2 PyTorch 常用指令",
+  "category": "Lab1-2 PyTorch 常用指令",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "做資料增強時想把一張 (3, H, W) 的影像左右鏡射（水平翻轉），該用哪個指令？",
+  "options": [
+   "torch.roll(x, 1, dims=2)",
+   "torch.flip(x, dims=[2])",
+   "torch.flip(x, dims=[0])",
+   "x.transpose(1, 2)"
+  ],
+  "answer": 1,
+  "explanation": "flip 會把指定維度的順序整個反轉，(3, H, W) 的最後一維是寬度，所以 dims=[2] 就是左右翻轉；dims=[0] 翻的是通道（RGB 變 BGR），roll 是循環平移，transpose 則是把高和寬對調。",
   "fun_fact": "",
   "region": "Deep Learning"
  },
@@ -2485,6 +3345,108 @@
   "fun_fact": "",
   "region": "Deep Learning",
   "verify_code": "print(256*6*6)  # 9216"
+ },
+ {
+  "id": "pt-L1-3X-01",
+  "topic": "pytorch",
+  "unit": "L1-3",
+  "unit_name": "Lab1-3 torch.nn 層與容器",
+  "category": "Lab1-3 torch.nn 層與容器",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "x = torch.randn(4, 3, 8, 8)\nm = nn.Sequential(nn.Conv2d(3, 6, 3, padding=1), nn.MaxPool2d(2), nn.Flatten())\nprint(m(x).shape)\n印出什麼？",
+  "options": [
+   "torch.Size([4, 384])",
+   "torch.Size([384])",
+   "torch.Size([4, 96])",
+   "torch.Size([96])"
+  ],
+  "answer": 2,
+  "explanation": "Conv2d(k=3, padding=1) 維持 8x8，MaxPool2d(2) 變成 4x4，通道 6，攤平為 6*4*4=96；nn.Flatten() 預設 start_dim=1，所以 batch 維 4 會被保留。",
+  "fun_fact": "",
+  "region": "Deep Learning",
+  "verify_code": "h = (8 + 2*1 - 3)//1 + 1\nh = h // 2\nprint('shape =', (4, 6*h*h))"
+ },
+ {
+  "id": "pt-L1-3X-02",
+  "topic": "pytorch",
+  "unit": "L1-3",
+  "unit_name": "Lab1-3 torch.nn 層與容器",
+  "category": "Lab1-3 torch.nn 層與容器",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "一個 LeNet 風格模型原本吃 32x32 影像，改餵 28x28 後 forward 就報錯：\nRuntimeError: mat1 and mat2 shapes cannot be multiplied (64x256 and 400x120)\n最可能的原因是什麼？",
+  "options": [
+   "nn.Linear 權重存成 (120, 400)，得自己轉成 (400, 120) 才行",
+   "batch size 設成 64 太大，超過 nn.Linear 一次能處理的上限",
+   "攤平後忘了轉置，要先寫 x = x.t() 再送進 nn.Linear 才行",
+   "輸入變小，攤平後只剩 256 維，和 nn.Linear(400, 120) 對不上"
+  ],
+  "answer": 3,
+  "explanation": "錯誤訊息裡 64 是 batch、256 是攤平後的特徵數，400 是 Linear 的 in_features；28x28 經過兩組 conv5+pool2 只剩 16*4*4=256，與寫死的 16*5*5=400 不符。",
+  "fun_fact": "",
+  "region": "Deep Learning",
+  "verify_code": "s = 28\ns = (s - 5) + 1; s //= 2\ns = (s - 5) + 1; s //= 2\nprint('flatten =', 16*s*s, ' vs 16*5*5 =', 400)"
+ },
+ {
+  "id": "pt-L1-3X-03",
+  "topic": "pytorch",
+  "unit": "L1-3",
+  "unit_name": "Lab1-3 torch.nn 層與容器",
+  "category": "Lab1-3 torch.nn 層與容器",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "十類分類模型的分類頭寫成：\nself.classifier = nn.Sequential(\n    nn.Linear(256, 128), nn.ReLU(),\n    nn.Linear(128, 10), nn.ReLU())\n搭配 nn.CrossEntropyLoss 訓練，loss 卡住降不下來。該怎麼改？",
+  "options": [
+   "把兩個 nn.ReLU() 都換成 nn.Sigmoid()，讓輸出被壓在 0 到 1 之間",
+   "在最尾端再接一層 nn.Softmax(dim=1)，先把輸出轉成機率分布",
+   "把 nn.Linear(256, 128) 的輸出改成 10，讓前後兩層的維度一致",
+   "刪掉最後那個 nn.ReLU()，讓最後一層直接輸出未加工的 logits"
+  ],
+  "answer": 3,
+  "explanation": "CrossEntropyLoss 內部已含 log_softmax，需要的是可正可負的 logits；末端 ReLU 把所有負分數壓成 0，類別間差距被抹平且該處梯度為 0，模型幾乎學不動。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-3X-04",
+  "topic": "pytorch",
+  "unit": "L1-3",
+  "unit_name": "Lab1-3 torch.nn 層與容器",
+  "category": "Lab1-3 torch.nn 層與容器",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "推論時寫 out = model(x) 和寫 out = model.forward(x)，兩者差在哪裡？",
+  "options": [
+   "model.forward(x) 才會建立計算圖，model(x) 只做推論不保留梯度",
+   "model(x) 會經過 __call__ 並觸發註冊的 hook，直接叫 forward 會跳過",
+   "model(x) 會自動切成 eval 模式，model.forward(x) 維持目前模式",
+   "兩者完全等價，model(x) 只是 forward 的語法糖，可以隨意互換"
+  ],
+  "answer": 1,
+  "explanation": "nn.Module.__call__ 會在呼叫 forward 前後執行 forward_pre_hook / forward_hook 等機制，直接呼叫 forward 等於繞過它們；兩者都會正常建圖與記錄梯度。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L1-3X-05",
+  "topic": "pytorch",
+  "unit": "L1-3",
+  "unit_name": "Lab1-3 torch.nn 層與容器",
+  "category": "Lab1-3 torch.nn 層與容器",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "要把 Conv2d → BatchNorm2d → ReLU 疊成標準 block，卷積層的 bias 一般怎麼設，為什麼？",
+  "options": [
+   "設 bias=True，因為 BatchNorm 只縮放不平移，卷積 bias 是唯一平移來源",
+   "設 bias=True，否則 BatchNorm 收到的輸入恆為零，算不出標準差會壞掉",
+   "設 bias=False，因為 BatchNorm 減去平均值時會抵消它，平移改由 β 負責",
+   "設 bias=False，因為 BatchNorm 之後不允許任何可訓練參數，統計會失準"
+  ],
+  "answer": 2,
+  "explanation": "BatchNorm 會先減掉批次平均，卷積的常數 bias 在此被完全抵消，等於白養一組參數；平移的工作由 BatchNorm 自己的可學習參數 β 接手，所以慣例寫 bias=False。",
+  "fun_fact": "",
+  "region": "Deep Learning"
  },
  {
   "id": "pt-L2-01",
