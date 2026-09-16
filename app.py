@@ -4,7 +4,9 @@
 
 分數完全由伺服器計算(含作答秒數),前端送不了假分數,排行榜才可信。
 """
+import hashlib
 import json
+import os
 import random
 import secrets
 import time
@@ -55,6 +57,58 @@ FILES = {"taiwan": "台灣", "china": "中國", "world": "世界", "poetry": "�
          "stars": "娛樂", "fun": "趣聞", "tech": "科技", "python": "Python", "pytorch": "Deep Learning",
          "pingpong": "桌球"}
 REGIONS = ["台灣", "中國", "世界"]   # 地理、歷史、人文可再依地區篩選
+
+
+# ---------------------------------------------------------------- 課程主題上鎖
+# Python 與 Deep Learning 是課程教材,放在網路上時要輸入課程代碼才能玩。
+# 代碼從哪裡讀(依序):
+#   1. 環境變數 PULSE_CODE            <- 部署到 Render 用這個
+#   2. 同資料夾的 course_code.txt      <- 自己電腦跑 app.py 用這個(不會進 git)
+# 兩個都沒有 => 課程主題一律鎖住(寧可鎖住,也不要不小心公開)
+PRIVATE_TOPICS = {"python", "pytorch"}
+FAIL_LIMIT, FAIL_WINDOW = 10, 600      # 同一個來源 10 分鐘內最多猜 10 次
+_fails = {}
+
+
+def course_code():
+    c = (os.environ.get("PULSE_CODE") or "").strip()
+    if c:
+        return c
+    f = BASE / "course_code.txt"
+    if f.exists():
+        return f.read_text(encoding="utf-8").strip()
+    return ""
+
+
+def code_key(code):
+    """給前端存在瀏覽器裡的通行證,不是代碼本身"""
+    return hashlib.sha256(("pulse-unlock|" + code).encode()).hexdigest()[:24]
+
+
+def has_key(body=None):
+    code = course_code()
+    if not code:
+        return False
+    got = request.headers.get("X-Pulse-Key") or (body or {}).get("key") or ""
+    return secrets.compare_digest(str(got), code_key(code))
+
+
+def locked(cat, body=None):
+    """這個主題現在要不要擋?回傳 None 表示放行,否則回傳要送出去的錯誤"""
+    if cat not in PRIVATE_TOPICS or has_key(body):
+        return None
+    if not course_code():
+        return jsonify(error="這是課程題庫。伺服器還沒設定課程代碼,請在 Render 新增環境變數 PULSE_CODE,"
+                             "或在程式資料夾放一個 course_code.txt。", locked=True, no_code=True), 403
+    return jsonify(error="這是課程題庫,請輸入課程代碼。", locked=True), 403
+
+
+def too_many_tries():
+    who = request.headers.get("X-Forwarded-For", request.remote_addr or "?").split(",")[0].strip()
+    now = time.time()
+    tries = [t for t in _fails.get(who, []) if now - t < FAIL_WINDOW]
+    _fails[who] = tries
+    return who, len(tries) >= FAIL_LIMIT
 
 
 def load_all():
@@ -154,11 +208,13 @@ def by_ratio(pool, n):
     return chosen
 
 
-def pick_questions(cat, n, region=None, unit=None, only_choice=False):
+def pick_questions(cat, n, region=None, unit=None, only_choice=False, with_private=True):
     if cat == "news":
         pool = news.get_news_questions()
     elif cat == "mix":
-        pool = [q for k in BANK for q in active_bank(k, region)]
+        # 綜合挑戰:沒輸入課程代碼的人,抽不到課程題庫的題目
+        keys = [k for k in BANK if with_private or k not in PRIVATE_TOPICS]
+        pool = [q for k in keys for q in active_bank(k, region)]
     else:
         pool = active_bank(cat, region, unit)
     if only_choice:
@@ -226,15 +282,20 @@ def class_page():
 @app.get("/api/categories")
 def categories():
     region = request.args.get("region") or None
+    open_all = has_key()               # 有通行證的人才看得到含課程題庫的總題數
     out = []
     for k, v in TOPICS.items():
         if k == "mix":
-            count = sum(len(active_bank(b, region)) for b in BANK)
+            keys = [b for b in BANK if open_all or b not in PRIVATE_TOPICS]
+            count = sum(len(active_bank(b, region)) for b in keys)
         elif k == "news":
             count = None
         else:
             count = len(active_bank(k, region))
-        out.append({"key": k, "name": v["name"], "seal": v["seal"], "count": count})
+        item = {"key": k, "name": v["name"], "seal": v["seal"], "count": count}
+        if k in PRIVATE_TOPICS:
+            item["locked"] = True          # 前端看到這個就會先問代碼
+        out.append(item)
     return jsonify(out)
 
 
@@ -244,7 +305,29 @@ def units():
     topic = request.args.get("topic", "")
     if topic not in BANK:
         return jsonify([])
+    stop = locked(topic)
+    if stop:
+        return stop
     return jsonify(units_of(topic))
+
+
+@app.post("/api/unlock")
+def unlock():
+    """輸入課程代碼,換一張存在瀏覽器裡的通行證"""
+    code = course_code()
+    if not code:
+        return jsonify(error="伺服器還沒設定課程代碼。請在 Render 新增環境變數 PULSE_CODE,"
+                             "或在程式資料夾放一個 course_code.txt。", no_code=True), 503
+    who, blocked = too_many_tries()
+    if blocked:
+        return jsonify(error="試太多次了,請過 10 分鐘再試。"), 429
+    got = str((request.get_json(silent=True) or {}).get("code", "")).strip()
+    if not secrets.compare_digest(got, code):
+        _fails.setdefault(who, []).append(time.time())
+        left = FAIL_LIMIT - len(_fails[who])
+        return jsonify(error=f"代碼不對{f'(還可以試 {left} 次)' if left <= 3 else ''}。"), 403
+    _fails.pop(who, None)
+    return jsonify(ok=True, key=code_key(code))
 
 
 @app.post("/api/start")
@@ -254,11 +337,14 @@ def start():
     cat = body.get("category", "mix")
     if cat not in TOPICS:
         return jsonify(error="沒有這個主題"), 400
+    stop = locked(cat, body)
+    if stop:
+        return stop
     region = body.get("region") or None
     if region and region not in REGIONS:
         return jsonify(error="沒有這個地區"), 400
     unit = body.get("unit") or None
-    qs = pick_questions(cat, 10, region, unit)
+    qs = pick_questions(cat, 10, region, unit, with_private=has_key(body))
     if not qs:
         return jsonify(error="目前抓不到新聞,請稍後再試或先玩其他分類"), 503
     sid = secrets.token_urlsafe(12)
@@ -396,7 +482,7 @@ def get_leaderboard():
     return jsonify(leaderboard.top(cat, period, limit=20))
 
 
-multiplayer.init(app, pick_questions, leaderboard.clean_name, TOPICS)
+multiplayer.init(app, pick_questions, leaderboard.clean_name, TOPICS, locked)
 
 @app.post("/api/class/summary")
 def class_summary():

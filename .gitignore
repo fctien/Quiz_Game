@@ -3,3 +3,5 @@ __pycache__/
 *.pyc
 questions/_drafts/
 .venv/
+course_code.txt
+standalone.html

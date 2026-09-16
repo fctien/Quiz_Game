@@ -42,24 +42,28 @@ MAX_TEAMS = 8
 pick_questions = None
 clean_name = None
 categories = {}
+topic_locked = lambda cat, body=None: None      # 課程主題要不要擋,由 app.py 決定
 
 
-def init(app, pick, clean, cats):
-    global pick_questions, clean_name, categories
+def init(app, pick, clean, cats, lock=None):
+    global pick_questions, clean_name, categories, topic_locked
     pick_questions, clean_name, categories = pick, clean, cats
+    if lock:
+        topic_locked = lock
     app.register_blueprint(bp)
 
 
 # ================================================================ 房間
 class Room:
     def __init__(self, code, category, count, limit, region=None, mode="solo",
-                 teams=None, class_code="", roster=None, unit=None, unit_name=""):
+                 teams=None, class_code="", roster=None, unit=None, unit_name="", with_private=True):
         self.code = code
         self.host_token = secrets.token_urlsafe(16)
         self.category = category
         self.region = region
         self.unit = unit                      # 課程週次,例如 W5
         self.unit_name = unit_name
+        self.with_private = with_private      # 綜合挑戰要不要包含課程題庫(開考坊時有沒有輸入代碼)
         self.count = count
         self.limit = limit
         self.mode = mode                      # solo(個人賽) / team(分組賽)
@@ -80,7 +84,8 @@ class Room:
     def new_round(self):
         # 依 25% 簡單 / 50% 中等 / 25% 較難的比例抽題,由易到難排好
         self.questions = pick_questions(self.category, self.count, self.region,
-                                        self.unit, only_choice=True)
+                                        self.unit, only_choice=True,
+                                        with_private=self.with_private)
         self.state = "lobby"      # lobby → question → reveal → … → final
         self.qi = -1
         self.deadline = 0
@@ -356,6 +361,9 @@ def create():
     cat = b.get("category", "mix")
     if cat not in categories:
         return err("沒有這個主題")
+    stop = topic_locked(cat, b)                 # 課程題庫要先輸入課程代碼
+    if stop:
+        return stop
     count, limit = int(b.get("count", 10)), int(b.get("time", 20))
     if count not in COUNTS or limit not in TIMES:
         return err("題數或秒數不在可選範圍內")
@@ -394,7 +402,8 @@ def create():
     with rooms_lock:
         _cleanup()
         code = _new_code()
-        r = Room(code, cat, count, limit, region, mode, teams, class_code, roster, unit, unit_name)
+        r = Room(code, cat, count, limit, region, mode, teams, class_code, roster, unit, unit_name,
+                 with_private=topic_locked("python", b) is None)
         if not r.questions:
             return err("這個主題目前沒有可用的題目", 503)
         rooms[code] = r

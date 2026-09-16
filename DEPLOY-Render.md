@@ -30,6 +30,21 @@ Render 是從 GitHub 讀程式的，所以先把資料夾推上去。
 6. Blueprint Name 隨便填（例如 `pulse`），Branch 選 **main**。
 7. 按 **Deploy Blueprint**。
 
+### 步驟 2.5　設定課程代碼（很重要）
+
+Python 與 Deep Learning 是你的課程題庫，網址公開在網路上，所以加了一道鎖：**要輸入課程代碼才玩得到**，其他主題（地理、歷史、桌球…）不用。
+
+代碼要設在 Render 上，程式裡沒有寫死，GitHub 上也看不到：
+
+1. Render 主控台 → 點進 **pulse-quiz** 服務 → 左邊選 **Environment**。
+2. 按 **Add Environment Variable**。
+3. Key 填 `PULSE_CODE`，Value 填**你自己設的代碼**（要改代碼就改這裡）。
+4. 按 **Save, rebuild, and deploy**，等它重新部署完。
+
+> **沒設這個變數的話，Python 與 Deep Learning 會整個鎖住**（連你自己也進不去），首頁會提示你去設。這是故意的——寧可鎖住，也不要不小心公開。
+
+自己電腦跑 `app.py` 時不用設環境變數，資料夾裡的 **`course_code.txt`** 就是代碼（這個檔不會上傳到 GitHub）。
+
 ### 步驟 3　等它跑完，拿到網址
 
 - 第一次建置大約 **2～5 分鐘**。畫面上會一直滾動 build log。
@@ -49,7 +64,8 @@ Render 是從 GitHub 讀程式的，所以先把資料夾推上去。
    ```json
    {"ok": true, "rooms": 0, "time": "14:03:21", "ips": [...]}
    ```
-4. 再開 `https://<你的網址>/` 確認首頁正常，右上角應該看到版本字樣 **v4.6**。
+4. 再開 `https://<你的網址>/` 確認首頁正常，版本字樣應該是 **v5.0**。
+5. 點 **Python**，應該要跳出「請輸入課程代碼」；輸入你設的代碼就能進去。輸入過一次，這台裝置就記住了。
 
 ---
 
@@ -86,6 +102,19 @@ Render 設定了 `autoDeployTrigger: commit`，只要 main 分支有新的 commi
 
 ---
 
+## 四之二、課程題庫的鎖
+
+| | 情況 |
+|---|---|
+| 要輸入代碼的主題 | Python、Deep Learning |
+| 不用代碼的主題 | 地理、歷史、人文、科技、娛樂、趣聞、桌球、即時新聞 |
+| 綜合挑戰 | 沒輸入代碼時，抽不到課程題庫的題目（只從 882 題裡抽） |
+| 學生加入考坊 | **不用代碼**。代碼只有開考坊的人（你）要輸入一次 |
+| 輸入過以後 | 記在那台裝置的瀏覽器裡，換電腦或清快取要再輸入一次 |
+| 換代碼 | 改 Render 的 `PULSE_CODE`，舊的通行證會自動失效 |
+
+> 提醒：這道鎖擋的是「網頁上玩得到題目」。如果你的 GitHub 儲存庫是 Public，`questions/python.json` 這些檔案在 GitHub 上還是點得開。真的不想外流，把儲存庫改成 Private（Render 照樣連得到）。
+
 ## 五、區網 vs Render 怎麼選
 
 | | 區網（老師電腦跑 app.py） | Render（雲端） |
@@ -109,5 +138,8 @@ Render 設定了 `autoDeployTrigger: commit`，只要 main 分支有新的 commi
 | Build 失敗，log 出現 `ModuleNotFoundError` | `requirements.txt` 沒推上去。確認 GitHub 上看得到這個檔，再推一次 |
 | 一直停在 `Deploying...` | 看 log 最後一行。若是 `Address already in use`，表示 start command 被改過，確認是 `-b 0.0.0.0:$PORT` |
 | 網頁開得起來但學生加不進來 | 檢查網址有沒有打錯；房號是四位數字；或服務剛好在冷啟動，等 1 分鐘再試 |
-| 畫面還是舊版 | 右上角看版本字樣。不是 v4.6 就是瀏覽器快取，按 Ctrl+Shift+R |
+| 畫面還是舊版 | 右上角看版本字樣。不是 v5.0 就是瀏覽器快取，按 Ctrl+Shift+R |
 | 房號突然失效 | 服務重啟會清掉進行中的考坊（狀態存在記憶體），重開一間即可 |
+| Python／Deep Learning 打不開，說「伺服器還沒設定課程代碼」 | Render 上少了環境變數 `PULSE_CODE`，回步驟 2.5 設定 |
+| 代碼輸入對了還是說不對 | 檢查 Render 的 Value 有沒有多打空格；改完要按 Save 讓它重新部署 |
+| 「試太多次了」 | 防亂猜的保護，同一個網路 10 分鐘內只能試 10 次，等 10 分鐘 |
