@@ -45,13 +45,15 @@ TOPICS = {
     "tech":    {"name": "科技",     "seal": "科"},
     "star":    {"name": "娛樂",     "seal": "星"},
     "fun":     {"name": "趣聞",     "seal": "奇"},
+    "tt":      {"name": "桌球",     "seal": "桌"},
     "news":    {"name": "即時新聞", "seal": "聞"},
     "mix":     {"name": "綜合挑戰", "seal": "雜"},
 }
 CATEGORIES = TOPICS            # 舊名稱,保留相容
 # 題庫檔案 -> 這個檔的題目屬於哪個地區(顯示在題目上,也可以當篩選條件)
 FILES = {"taiwan": "台灣", "china": "中國", "world": "世界", "poetry": "古典詩詞",
-         "stars": "娛樂", "fun": "趣聞", "tech": "科技", "python": "Python", "pytorch": "Deep Learning"}
+         "stars": "娛樂", "fun": "趣聞", "tech": "科技", "python": "Python", "pytorch": "Deep Learning",
+         "pingpong": "桌球"}
 REGIONS = ["台灣", "中國", "世界"]   # 地理、歷史、人文可再依地區篩選
 
 

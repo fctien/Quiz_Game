@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-title" content="脈衝 PULSE">
 <link rel="apple-touch-icon" href="/static/icons/icon-180.png">
 <link rel="icon" href="/static/icons/favicon.png" type="image/png">
-<link rel="stylesheet" href="/static/style.css?v=4.7">
+<link rel="stylesheet" href="/static/style.css?v=4.9">
 <!-- QR code 產生器：連不到網路時只會少了 QR code，輸入房號一樣能加入 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 <script>
@@ -30,7 +30,7 @@ if ('serviceWorker' in navigator) window.addEventListener('load', () => navigato
 /* 脈衝 PULSE 主持台：開考坊、分組、控制出題、公布答案、放榜、存入班級積分 */
 const $app = document.getElementById('app');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const SEAL = {python:'蟒', pytorch:'深', geo:'輿', history:'史', human:'文', tech:'科', star:'星', fun:'奇', news:'聞', mix:'雜'};
+const SEAL = {python:'蟒', pytorch:'深', geo:'輿', history:'史', human:'文', tech:'科', star:'星', fun:'奇', tt:'桌', news:'聞', mix:'雜'};
 const REGIONS = ['', '台灣', '中國', '世界'];
 const post = async (url, body) => {
   const r = await fetch(url, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
@@ -58,7 +58,7 @@ async function setup(msg = ''){
   document.body.dataset.topic = pick.category || '';   // 設定頁就先換上該主題的布景
   const cats = await fetch('/api/categories' + (pick.region ? '?region=' + encodeURIComponent(pick.region) : '')).then(r => r.json()).catch(() => []);
   $app.innerHTML = `<div class="masthead"><div><h1>主持台<span class="seal">試</span></h1>
-      <p class="sub">開一間考坊，學生用手機輸入房號一起搶答　<span style="opacity:.6">v4.7</span></p></div>
+      <p class="sub">開一間考坊，學生用手機輸入房號一起搶答　<span style="opacity:.6">v4.9</span></p></div>
       <a class="back" href="/">← 回首頁</a></div>
     <div class="chips" id="regions" role="group" aria-label="地區">${REGIONS.map(x =>
       `<button data-r="${x}" aria-pressed="${x === pick.region}">${x || '不限地區'}</button>`).join('')}</div>
@@ -162,20 +162,45 @@ function connect(){
 }
 const act = (path, extra = {}) => post(path, {code: H.code, token: H.token, ...extra}).catch(e => alert(e.message));
 
+function barText(v){
+  return `房號 <b class="score">${v.code}</b> ・ ${esc(v.category)}${v.region ? '・' + esc(v.region) : ''}
+${v.unit_name ? '・' + esc(v.unit_name) : ''} ・ ${v.mode === 'team' ? '分組賽' : '個人賽'} ・ ${v.players} 人${v.class_code ? ' ・ 班級 ' + esc(v.class_code) : ''}`;
+}
 function bar(v){
-  return `<div class="hostbar"><span>房號 <b class="score">${v.code}</b> ・ ${esc(v.category)}${v.region ? '・' + esc(v.region) : ''}
-${v.unit_name ? '・' + esc(v.unit_name) : ''} ・ ${v.mode === 'team' ? '分組賽' : '個人賽'} ・ ${v.players} 人${v.class_code ? ' ・ 班級 ' + esc(v.class_code) : ''}</span>
+  return `<div class="hostbar"><span id="barinfo">${barText(v)}</span>
     <span class="conn" id="conn"></span></div>`;
+}
+/* 只換某個元素的內容,內容沒變就完全不動 DOM,畫面才不會閃 */
+function setHTML(id, html){
+  const el = document.getElementById(id);
+  if (el && el.innerHTML !== html) el.innerHTML = html;
+}
+function setText(id, txt){
+  const el = document.getElementById(id);
+  if (el && el.textContent !== String(txt)) el.textContent = txt;
+}
+let lastKey = '';
+/* 每收到一次即時更新就重畫整頁,會讓畫面閃爍(尤其一堆學生同時作答時)。
+   這裡用一個 key 判斷「畫面骨架有沒有變」:沒變就只更新會動的那幾個數字。 */
+function viewKey(v){
+  if (v.state === 'question') return 'q' + v.q.index;
+  if (v.state === 'reveal')   return 'r' + v.q.index;
+  if (v.state === 'final')    return 'final' + (v.saved ? '1' : '0');
+  return v.state;
 }
 function render(v){
   document.body.dataset.topic = v.topic || '';
-  if (v.state === 'closed'){ ss.del('mp_host'); es.close(); H = null; return setup(); }
+  if (v.state === 'closed'){ ss.del('mp_host'); es.close(); H = null; lastKey = ''; return setup(); }
   if (v.state !== 'question') clearInterval(tick);
-  ({lobby, question, reveal, final})[v.state]?.(v);
+  const key = viewKey(v), fresh = key !== lastKey;
+  lastKey = key;
+  ({lobby, question, reveal, final})[v.state]?.(v, fresh);
+  if (!fresh) setHTML('barinfo', barText(v));
 }
 
 /* ---------- 等待加入 ---------- */
-function lobby(v){
+function lobby(v, fresh){
+  if (!fresh) return patchLobby(v);
   const byTeam = {};
   (v.teams || []).forEach(t => byTeam[t] = []);
   v.roster.forEach(p => { if (v.mode === 'team') (byTeam[p.team] ||= []).push(p); });
@@ -188,12 +213,13 @@ function lobby(v){
       <div class="joinurl" id="joinurl">${esc(H.join_url)}</div>
       ${H.join_urls && H.join_urls.length > 1 ? `<button class="back" id="swap" style="margin-top:6px">手機連不到？換一個網址（${H.join_urls.length} 組）</button>` : ''}
       <p class="note">測試用：手機開 <span class="joinurl">${esc(H.join_url.split('/play')[0])}/api/health</span> 看得到 ok 就表示連得通。</p></div>
-    <div class="roster"><h2>已報到 <span>${v.roster.length}</span>${v.roster_size ? ` / ${v.roster_size}` : ''} 人</h2>
-      ${v.mode === 'team' ? Object.entries(byTeam).map(([t, list]) => `
+    <div class="roster"><h2>已報到 <span id="rcount">${v.roster.length}</span>${v.roster_size ? ` / ${v.roster_size}` : ''} 人</h2>
+      <div id="rlist">${v.mode === 'team' ? Object.entries(byTeam).map(([t, list]) => `
         <div style="margin-bottom:10px"><b>${esc(t)}</b>（${list.length}）
           <div class="chipset" style="margin-top:4px">${list.map(p => `<span class="pchip ${p.online ? '' : 'off'}">${esc(p.name)}</span>`).join('') || '<span class="sub">尚無</span>'}</div></div>`).join('')
         : `<div class="chipset">${v.roster.map(p => `<span class="pchip ${p.online ? '' : 'off'}">${esc(p.name)}</span>`).join('') || '<p class="sub">等待考生入場…</p>'}</div>`}
-      ${v.missing && v.missing.length ? `<p class="sub" style="margin-top:10px">未到（${v.missing.length}）：${v.missing.slice(0, 12).map(esc).join('、')}${v.missing.length > 12 ? '…' : ''}</p>` : ''}
+</div>
+      <div id="rmiss">${v.missing && v.missing.length ? `<p class="sub" style="margin-top:10px">未到（${v.missing.length}）：${v.missing.slice(0, 12).map(esc).join('、')}${v.missing.length > 12 ? '…' : ''}</p>` : ''}</div>
       <div class="row"><button class="btn" id="go" ${v.roster.length ? '' : 'disabled'}>開始考試（${v.total} 題）</button></div>
       <div class="row"><button class="btn ghost" id="close">關閉考坊</button></div></div></div>`;
   if (window.qrcode){
@@ -208,6 +234,22 @@ function lobby(v){
   document.getElementById('close').onclick = () => confirm('確定要關閉考坊嗎？') && act('/api/mp/close');
 }
 
+/* 名單有人進出時,只換名單那一塊 */
+function patchLobby(v){
+  const byTeam = {};
+  (v.teams || []).forEach(t => byTeam[t] = []);
+  v.roster.forEach(p => { if (v.mode === 'team') (byTeam[p.team] ||= []).push(p); });
+  setText('rcount', v.roster.length);
+  setHTML('rlist', v.mode === 'team' ? Object.entries(byTeam).map(([t, list]) => `
+        <div style="margin-bottom:10px"><b>${esc(t)}</b>（${list.length}）
+          <div class="chipset" style="margin-top:4px">${list.map(p => `<span class="pchip ${p.online ? '' : 'off'}">${esc(p.name)}</span>`).join('') || '<span class="sub">尚無</span>'}</div></div>`).join('')
+    : `<div class="chipset">${v.roster.map(p => `<span class="pchip ${p.online ? '' : 'off'}">${esc(p.name)}</span>`).join('') || '<p class="sub">等待考生入場…</p>'}</div>`);
+  setHTML('rmiss', v.missing && v.missing.length
+    ? `<p class="sub" style="margin-top:10px">未到（${v.missing.length}）：${v.missing.slice(0, 12).map(esc).join('、')}${v.missing.length > 12 ? '…' : ''}</p>` : '');
+  const go = document.getElementById('go');
+  if (go) go.disabled = !v.roster.length;
+}
+
 /* ---------- 出題中 ---------- */
 function opts(q, rv){
   return `<div class="hopts">${q.options.map((o, k) => {
@@ -217,7 +259,8 @@ function opts(q, rv){
       ${rv ? `<span class="cnt">${cnt} 人</span><span class="bar" style="transform:scaleX(${cnt / max})"></span>` : ''}</div>`;
   }).join('')}</div>`;
 }
-function question(v){
+function question(v, fresh){
+  if (!fresh){ setHTML('acount', `已作答 <b>${v.answered}</b> / ${v.players}`); return; }
   const q = v.q;
   if (q.index !== lastQ){ lastQ = q.index; deadline = Date.now() + (v.manual ? -v.elapsed * 1000 : v.remaining * 1000); }
   $app.innerHTML = bar(v) + `<div class="hq">
@@ -228,16 +271,22 @@ function question(v){
     <div class="meta"><span class="tag">${esc(q.region)}</span><span class="tag">${esc(q.category)}</span><span class="tag">${'★'.repeat(q.difficulty)}</span></div>
     <div class="hqtext">${esc(q.question)}</div>
     ${opts(q)}
-    <div class="row" style="align-items:center"><span class="answered">已作答 <b>${v.answered}</b> / ${v.players}</span>
+    <div class="row" style="align-items:center"><span class="answered" id="acount">已作答 <b>${v.answered}</b> / ${v.players}</span>
       <button class="btn${v.manual ? '' : ' ghost'}" id="rv" style="flex:none">${v.manual ? '結束本題，公布答案' : '提前公布'}</button></div></div>`;
   document.getElementById('rv').onclick = () => act('/api/mp/reveal');
   clearInterval(tick);
   tick = setInterval(() => {
     const el = document.getElementById('cd');
     if (!el) return;
-    if (v.manual){ el.textContent = Math.floor((Date.now() - deadline) / 1000); return; }   // 手動模式:往上數
+    if (v.manual){                                   // 手動模式:往上數
+      const up = String(Math.floor((Date.now() - deadline) / 1000));
+      if (el.textContent !== up) el.textContent = up;  // 數字沒變就別動,免得每 0.2 秒重畫一次
+      return;
+    }
     const left = Math.max(0, (deadline - Date.now()) / 1000);
-    el.textContent = Math.ceil(left); el.classList.toggle('low', left <= 5);
+    const txt = String(Math.ceil(left));
+    if (el.textContent !== txt) el.textContent = txt;
+    el.classList.toggle('low', left <= 5);
   }, 200);
 }
 
@@ -248,7 +297,12 @@ function boardRows(rows, team){
       ${team ? `<small>${p.members} 人・總分 ${p.total}</small>` : (p.team ? `<small>${esc(p.team)}</small>` : '')}</span>
     <span class="pts">${team ? p.avg : p.score}</span></div>`).join('');
 }
-function reveal(v){
+function reveal(v, fresh){
+  if (!fresh){
+    if (v.mode === 'team') setHTML('tboard', boardRows(v.team_board, true));
+    setHTML('pboard', boardRows(v.top));
+    return;
+  }
   const q = v.q, rv = v.reveal;
   $app.innerHTML = bar(v) + `<div class="hq">
     <div class="hqtop"><span class="prog">第 ${q.index + 1} / ${q.total} 題 ・ ${rv.answered} 人作答</span>
@@ -258,15 +312,16 @@ function reveal(v){
         <div class="fb ok"><p>${esc(rv.explanation)}</p>${rv.fun_fact ? `<p class="fun"><b>冷知識</b>${esc(rv.fun_fact)}</p>` : ''}</div></div>
       <div class="topboard">
         ${v.mode === 'team' ? `<div class="rules" style="border:0;padding:0"><h2>隊伍排名（平均分）</h2></div>
-          <div class="board">${boardRows(v.team_board, true)}</div>` : ''}
+          <div class="board" id="tboard">${boardRows(v.team_board, true)}</div>` : ''}
         <div class="rules" style="border:0;padding:0"><h2>個人前五名</h2></div>
-        <div class="board">${boardRows(v.top)}</div>
+        <div class="board" id="pboard">${boardRows(v.top)}</div>
         <div class="row"><button class="btn" id="nx">${v.last_q ? '放榜' : '下一題'}</button></div></div></div></div>`;
   document.getElementById('nx').onclick = () => act('/api/mp/next');
 }
 
 /* ---------- 放榜 ---------- */
-function final(v){
+function final(v, fresh){
+  if (!fresh) return;
   const t = ['滿格', '高峰', '躍升'];
   const win = v.mode === 'team' ? v.team_board : v.final;
   const pod = k => win[k] ? `<div class="pod p${k + 1}"><div class="t">${t[k]}</div>

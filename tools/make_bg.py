@@ -282,16 +282,55 @@ def art_default():
                  f'r="{rnd.uniform(2,5):.0f}" fill="#1F53B5" opacity="{rnd.uniform(.10,.26):.2f}"/>')
     return svg("".join(p), d)
 
+# ---------------------------------------------------------------- 桌球(球檯、球網、球路)
+def art_tt():
+    rnd = random.Random(37)
+    d = f'<defs>{SOFT}{GLOW}</defs>'
+    p = [blob(1320, 210, 300, "#1F6FEB", .20), blob(260, 800, 300, "#E0562A", .20)]
+    # 俯視的球檯:深藍檯面、白邊線與中線、中間一條球網
+    tx, ty, tw, th = 210, 250, 1180, 500
+    p.append(f'<rect x="{tx}" y="{ty}" width="{tw}" height="{th}" rx="10" fill="#1F53B5" opacity=".30"/>')
+    p.append(f'<rect x="{tx}" y="{ty}" width="{tw}" height="{th}" rx="10" fill="none" stroke="#fff" stroke-width="9" opacity=".8"/>')
+    p.append(f'<line x1="{tx}" y1="{ty+th/2:.0f}" x2="{tx+tw}" y2="{ty+th/2:.0f}" stroke="#fff" stroke-width="6" opacity=".7"/>')
+    # 球網:直立的細格子
+    nx = tx + tw / 2
+    p.append(f'<rect x="{nx-4:.0f}" y="{ty-46}" width="8" height="{th+92}" fill="#12233F" opacity=".14"/>')
+    for i in range(15):
+        yy = ty - 40 + i * (th + 80) / 14
+        p.append(f'<line x1="{nx-30:.0f}" y1="{yy:.0f}" x2="{nx+30:.0f}" y2="{yy:.0f}" stroke="#12233F" stroke-width="2" opacity=".12"/>')
+    # 球路:兩段弧線,中間在檯面上彈一下
+    for (x0, y0, x1, y1, col) in [(300, 470, 1300, 380, "#E0562A"), (1290, 620, 320, 660, "#0E9E6E")]:
+        mx, my = (x0 + x1) / 2, min(y0, y1) - 150
+        p.append(f'<path d="M{x0} {y0} Q{mx:.0f} {my:.0f} {x1} {y1}" fill="none" stroke="{col}" '
+                 f'stroke-width="4" opacity=".40" stroke-dasharray="14 10" stroke-linecap="round"/>')
+    # 球拍:一紅一黑
+    def bat(cx, cy, ang, col):
+        return (f'<g transform="translate({cx},{cy}) rotate({ang})" opacity=".55">'
+                f'<ellipse cx="0" cy="0" rx="78" ry="92" fill="{col}"/>'
+                f'<ellipse cx="0" cy="0" rx="78" ry="92" fill="none" stroke="#12233F" stroke-width="5" opacity=".5"/>'
+                f'<rect x="-17" y="86" width="34" height="96" rx="14" fill="#8A5A2B"/></g>')
+    p.append(bat(180, 190, -28, "#D8342A"))
+    p.append(bat(1420, 800, 152, "#26313F"))
+    # 白色小球
+    for (x, y, r) in [(760, 300, 26), (1180, 520, 18), (420, 700, 15)]:
+        p.append(f'<circle cx="{x}" cy="{y}" r="{r}" fill="#fff" opacity=".85" filter="url(#glow)"/>')
+        p.append(f'<circle cx="{x}" cy="{y}" r="{r}" fill="none" stroke="#E0562A" stroke-width="3" opacity=".55"/>')
+    # 觀眾席的點點
+    for _ in range(40):
+        p.append(f'<circle cx="{rnd.uniform(0,W):.0f}" cy="{rnd.uniform(0,H):.0f}" '
+                 f'r="{rnd.uniform(2,5):.0f}" fill="#1F53B5" opacity="{rnd.uniform(.10,.24):.2f}"/>')
+    return svg("".join(p), d)
+
 ARTS = {"": art_default, "mix": art_default, "pytorch": art_dl, "tech": art_tech,
         "history": art_history, "human": art_human, "geo": art_geo, "star": art_star,
-        "fun": art_fun, "news": art_news, "python": art_python}
+        "fun": art_fun, "tt": art_tt, "news": art_news, "python": art_python}
 
 def build_css():
     lines = ["/* ===== \u4e3b\u984c\u80cc\u666f\u63d2\u756b\uff08\u7531 tools/make_bg.py \u7522\u751f\uff0c\u539f\u5275\u5716\u5f62\uff0c\u52ff\u624b\u6539\uff09 ===== */"]
     # \u6bcf\u5f35\u63d2\u756b\u7684\u6fc3\u6de1\u4e0d\u540c\uff0c\u500b\u5225\u8abf\u5230\u770b\u5f97\u898b\u53c8\u4e0d\u6436\u6587\u5b57
     OPACITY = {"": .62, "mix": .62, "pytorch": .34, "tech": .42, "python": .55,
                "geo": .72, "history": .58, "human": .78, "star": .55,
-               "fun": .58, "news": .58}
+               "fun": .58, "tt": .60, "news": .58}
     for key, fn in ARTS.items():
         u = uri(fn())
         sel = "body" if key == "" else f'body[data-topic="{key}"]'

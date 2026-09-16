@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-title" content="脈衝 PULSE">
 <link rel="apple-touch-icon" href="/static/icons/icon-180.png">
 <link rel="icon" href="/static/icons/favicon.png" type="image/png">
-<link rel="stylesheet" href="/static/style.css?v=4.7">
+<link rel="stylesheet" href="/static/style.css?v=4.9">
 <script>
 /* 註冊 Service Worker：加到主畫面後可全螢幕開啟、載入更快 */
 if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
@@ -100,13 +100,36 @@ function connect(){
 }
 
 const header = v => `<div class="hud"><span class="prog">${esc(v.name)}${v.team ? '・' + esc(v.team) : ''} ・ 房號 ${v.code}</span>
-    <span class="score">${v.score}</span></div><p class="conn" id="conn"></p>`;
+    <span class="score" id="myscore">${v.score}</span></div><p class="conn" id="conn"></p>`;
 
+/* 只換某個元素的內容,內容沒變就完全不動 DOM */
+function setHTML(id, html){
+  const el = document.getElementById(id);
+  if (el && el.innerHTML !== html) el.innerHTML = html;
+}
+function setText(id, txt){
+  const el = document.getElementById(id);
+  if (el && el.textContent !== String(txt)) el.textContent = txt;
+}
+
+let lastKey = '';
+/* 別人一作答,伺服器就推一次更新;如果每次都重畫整頁,
+   正在選答案的同學會看到按鈕閃一下,手指剛好按下去還會被吃掉。
+   所以畫面骨架沒變時,只更新會動的那幾個字。 */
+function viewKey(v){
+  if (v.state === 'lobby')    return 'lobby:' + (v.mode === 'team' && !v.team ? 'pick' : 'wait');
+  if (v.state === 'question') return 'q' + v.q.index + ':' + (v.my_answer === null || v.my_answer === undefined ? 'open' : 'sent');
+  if (v.state === 'reveal')   return 'r' + v.q.index;
+  return v.state;
+}
 function render(v){
   document.body.dataset.topic = v.topic || '';
   if (v.state !== 'question') clearInterval(tick);
-  if (v.state === 'closed'){ es.close(); ls.del('mp_' + P.code); return closed(); }
-  ({lobby, question, reveal, final})[v.state]?.(v);
+  if (v.state === 'closed'){ es.close(); ls.del('mp_' + P.code); lastKey = ''; return closed(); }
+  const key = viewKey(v), fresh = key !== lastKey;
+  lastKey = key;
+  ({lobby, question, reveal, final})[v.state]?.(v, fresh);
+  if (!fresh) setText('myscore', v.score);
 }
 function closed(){
   $app.innerHTML = `<div class="center" style="padding-top:40px"><h1>考坊已關閉</h1><p class="sub">謝謝參加！</p>
@@ -114,7 +137,8 @@ function closed(){
 }
 
 /* ---------- 等待 / 選隊 ---------- */
-function lobby(v){
+function lobby(v, fresh){
+  if (!fresh){ setText('pcount', v.players); return; }
   if (v.mode === 'team' && !v.team){
     $app.innerHTML = header(v) + `<div class="center" style="padding-top:20px"><h2 style="font-family:var(--display)">選擇你的隊伍</h2>
       <p class="sub">選好才能開始，選錯可以再按一次改</p></div>
@@ -130,7 +154,7 @@ function lobby(v){
     <div class="bigstamp pass" style="font-size:2.4rem">入場</div>
     <h2 style="font-family:var(--display)">${esc(v.name)}，你已報到</h2>
     ${v.team ? `<p class="pill">${esc(v.team)}</p>` : ''}
-    <p class="sub">${esc(v.category)} ・ 共 ${v.total} 題 ・ 目前 ${v.players} 人<br>等主持人開始，題目會直接出現在這裡</p>
+    <p class="sub">${esc(v.category)} ・ 共 ${v.total} 題 ・ 目前 <span id="pcount">${v.players}</span> 人<br>等主持人開始，題目會直接出現在這裡</p>
     ${v.mode === 'team' && v.teams.length > 1 ? '<div class="row"><button class="btn ghost" id="chg">換隊</button></div>' : ''}</div>`;
   document.getElementById('chg')?.addEventListener('click', () => {
     $app.querySelector('.result, .center').innerHTML = '';
@@ -139,14 +163,16 @@ function lobby(v){
 }
 
 /* ---------- 作答 ---------- */
-function question(v){
+function question(v, fresh){
+  /* 還沒作答時完全不重畫:按鈕不會閃,手指按下去也不會被吃掉 */
+  if (!fresh){ setText('sentcount', `已作答 ${v.answered} / ${v.players}`); return; }
   const q = v.q;
   if (q.index !== lastQ){ lastQ = q.index; deadline = Date.now() + (v.remaining || 0) * 1000; sending = false; }
   if (v.my_answer !== null && v.my_answer !== undefined){
     const k = v.my_answer;
     $app.innerHTML = header(v) + `<div class="sent"><p class="prog">第 ${q.index + 1} / ${q.total} 題</p>
       <div class="picked-big o${k}"><span class="n" style="color:var(--oc);font-family:var(--mono)">${'ABCD'[k]}</span>${esc(q.options[k])}</div>
-      <p class="sub">已交卷，${v.manual ? '等老師公布答案' : '等其他人作答'}…<br>已作答 ${v.answered} / ${v.players}</p></div>`;
+      <p class="sub">已交卷，${v.manual ? '等老師公布答案' : '等其他人作答'}…<br><span id="sentcount">已作答 ${v.answered} / ${v.players}</span></p></div>`;
     return;
   }
   $app.innerHTML = header(v) + `
@@ -171,7 +197,8 @@ function question(v){
 }
 
 /* ---------- 公布 ---------- */
-function reveal(v){
+function reveal(v, fresh){
+  if (!fresh) return;
   const q = v.q, r = v.result || {correct: false, gained: 0}, ans = v.reveal.answer;
   const mv = v.move ? `<span class="move ${v.move > 0 ? 'up' : 'down'}">${v.move > 0 ? '▲' : '▼'}${Math.abs(v.move)}</span>` : '';
   const myTeam = v.mode === 'team' ? (v.team_board || []).findIndex(t => t.team === v.team) + 1 : 0;
@@ -190,7 +217,8 @@ function reveal(v){
 }
 
 /* ---------- 放榜 ---------- */
-function final(v){
+function final(v, fresh){
+  if (!fresh) return;
   const t = ['滿格', '高峰', '躍升'];
   const title = v.rank <= 3 ? t[v.rank - 1] : v.rank <= Math.ceil(v.players / 2) ? '穩定' : '起跳';
   const tb = v.team_board || [];

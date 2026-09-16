@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-title" content="脈衝 PULSE">
 <link rel="apple-touch-icon" href="/static/icons/icon-180.png">
 <link rel="icon" href="/static/icons/favicon.png" type="image/png">
-<link rel="stylesheet" href="/static/style.css?v=4.7">
+<link rel="stylesheet" href="/static/style.css?v=4.9">
 <script>
 /* 註冊 Service Worker：加到主畫面後可全螢幕開啟、載入更快 */
 if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
@@ -36,7 +36,7 @@ const post = async (url, body) => {
 };
 const ss = {get(k){ try { return JSON.parse(sessionStorage.getItem(k)); } catch { return null; } },
             set(k, v){ try { sessionStorage.setItem(k, JSON.stringify(v)); } catch {} }};
-const TOPIC = {python:'Python', pytorch:'Deep Learning', geo:'地理', history:'歷史', human:'人文', tech:'科技', star:'娛樂', fun:'趣聞', news:'即時新聞', mix:'綜合挑戰'};
+const TOPIC = {python:'Python', pytorch:'Deep Learning', geo:'地理', history:'歷史', human:'人文', tech:'科技', star:'娛樂', fun:'趣聞', tt:'桌球', news:'即時新聞', mix:'綜合挑戰'};
 const when = t => { const d = new Date(t * 1000); return `${d.getMonth() + 1}/${d.getDate()}`; };
 
 function form(msg = ''){
