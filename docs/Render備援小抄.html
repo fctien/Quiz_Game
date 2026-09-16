@@ -55,7 +55,7 @@ footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:va
 <body>
 <header>
   <h1>脈衝 PULSE<span class="seal">雲</span></h1>
-  <div class="sub">Render 雲端備援小抄 ・ 學生用 4G 就能加入<br>v5.0　印出來夾在講義裡</div>
+  <div class="sub">Render 雲端備援小抄 ・ 學生用 4G 就能加入<br>v5.1　印出來夾在講義裡</div>
 </header>
 
 <div class="cols">
@@ -69,7 +69,6 @@ footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:va
       <tr><td class="lbl">主持台</td><td>上面網址 + <span class="k">/host</span></td></tr>
       <tr><td class="lbl">班級代碼</td><td><span class="blank"></span></td></tr>
       <tr><td class="lbl">管理碼</td><td><span class="blank"></span></td></tr>
-      <tr><td class="lbl">課程代碼</td><td><span class="blank"></span></td></tr>
     </table>
   </div>
   <p class="note">學生只要掃 QR code，不用背網址。</p>
@@ -100,26 +99,12 @@ footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:va
 </section>
 
 <section>
-  <h2>二之二、設定課程代碼 <small>沒設就整個鎖住</small></h2>
-  <ol class="flow">
-    <li>Render 主控台 → 點進 <b>pulse-quiz</b> → 左邊 <b>Environment</b>。</li>
-    <li>按 <span class="btn out">Add Environment Variable</span>。</li>
-    <li>Key：<span class="k">PULSE_CODE</span>　Value：你自己設的代碼（抄在左上角那一格）</li>
-    <li>按 <span class="btn red">Save, rebuild, and deploy</span>。</li>
-  </ol>
-  <div class="warn">Python 與 Deep Learning 是課程題庫，要輸入代碼才玩得到；其他主題不用。
-  <b>沒設這個變數的話連你自己也進不去</b>——寧可鎖住，也不要不小心公開。</div>
-  <p class="note">自己電腦跑 app.py 不必設，資料夾裡的 <span class="k">course_code.txt</span> 就是代碼（不會上 GitHub）。</p>
-</section>
-
-<section>
   <h2>三、測試 <small>一定要用手機行動網路測</small></h2>
   <ol class="flow">
     <li>手機<b>關掉 Wi-Fi</b>，只用 4G/5G。</li>
     <li>開 <span class="k">你的網址/api/health</span>。</li>
     <li>看到 <span class="k">{"ok": true, ...}</span> 就成功。</li>
-    <li>再開首頁，版本要看到 <b>v5.0</b>。</li>
-    <li>點 <b>Python</b>，跳出「請輸入課程代碼」→ 輸入你設的代碼進得去就對了。</li>
+    <li>再開首頁，版本要看到 <b>v5.1</b>。</li>
   </ol>
   <div class="ok">測過一次以後，上課當天只要開主持台就好。</div>
 </section>
@@ -166,9 +151,7 @@ footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:va
     <tr><td class="sym">Build 失敗 <span class="k">ModuleNotFoundError</span></td><td>確認 GitHub 上有 <span class="k">requirements.txt</span>，再推一次</td></tr>
     <tr><td class="sym">網頁打不開／一直轉圈</td><td>冷啟動中，等 1 分鐘；仍不行就看 Render 的 Logs 最後一行</td></tr>
     <tr><td class="sym">學生加不進來</td><td>網址有沒有打錯、房號是四位數字、是不是剛好在冷啟動</td></tr>
-    <tr><td class="sym">畫面還是舊版</td><td>版本不是 v5.0 就是快取，按 Ctrl+Shift+R</td></tr>
-    <tr><td class="sym">說「還沒設定課程代碼」</td><td>Render 少了 <span class="k">PULSE_CODE</span>，回二之二</td></tr>
-    <tr><td class="sym">學生說要代碼</td><td>不該要。學生只是加入考坊，代碼只有你開考坊時輸入一次</td></tr>
+    <tr><td class="sym">畫面還是舊版</td><td>版本不是 v5.1 就是快取，按 Ctrl+Shift+R</td></tr>
     <tr><td class="sym">房號突然失效</td><td>服務重啟會清掉進行中的考坊，重開一間即可</td></tr>
   </table>
 </section>
@@ -189,7 +172,7 @@ footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:va
 </div>
 
 <footer>
-  <span>脈衝 PULSE v5.0 ・ 題庫 2090 題（Python 500、Deep Learning 708，需課程代碼）</span>
+  <span>脈衝 PULSE v5.1 ・ 題庫 2090 題（Python 500、Deep Learning 708、桌球 125）</span>
   <span>github.com/fctien/Quiz_Game　・　render.com</span>
 </footer>
 </body>

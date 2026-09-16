@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-title" content="脈衝 PULSE">
 <link rel="apple-touch-icon" href="/static/icons/icon-180.png">
 <link rel="icon" href="/static/icons/favicon.png" type="image/png">
-<link rel="stylesheet" href="/static/style.css?v=5.0">
+<link rel="stylesheet" href="/static/style.css?v=5.1">
 <script>
 /* 註冊 Service Worker：加到主畫面後可全螢幕開啟、載入更快 */
 if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
@@ -44,29 +44,17 @@ const store = {
   get(k){ try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
   set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
 };
-/* 課程題庫(Python、Deep Learning)要先輸入課程代碼；通過後把通行證記在這台裝置上 */
-const KEY_ITEM = 'pulse_key';
-const myKey = () => store.get(KEY_ITEM) || '';
-const authHeaders = () => { const k = myKey(); return k ? {'X-Pulse-Key': k} : {}; };
 const post = async (url, body) => {
-  const r = await fetch(url, {method:'POST', headers:{'Content-Type':'application/json', ...authHeaders()},
-                              body: JSON.stringify(body)});
+  const r = await fetch(url, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
   const j = await r.json().catch(() => ({}));
-  if (!r.ok){ const e = new Error(j.error || '連線失敗，請再試一次'); e.locked = !!j.locked; throw e; }
-  return j;
-};
-const getJson = async url => {
-  const r = await fetch(url, {headers: authHeaders()});
-  const j = await r.json().catch(() => ({}));
-  if (!r.ok){ const e = new Error(j.error || '連線失敗'); e.locked = !!j.locked; throw e; }
+  if (!r.ok) throw new Error(j.error || '連線失敗，請再試一次');
   return j;
 };
 
 /* ---------- 後端版 API ---------- */
 const remote = {
   categories: region => fetch('/api/categories' + (region ? '?region=' + encodeURIComponent(region) : '')).then(r => r.json()),
-  units: topic => getJson('/api/units?topic=' + encodeURIComponent(topic)),
-  unlock: code => post('/api/unlock', {code}),
+  units: topic => fetch('/api/units?topic=' + encodeURIComponent(topic)).then(r => r.json()),
   start: (category, region, unit) => post('/api/start', {category, region, unit}),
   show: (session, index) => post('/api/show', {session, index}),
   answer: (session, index, answer) => post('/api/answer', {session, index, answer}),
@@ -186,7 +174,6 @@ const local = {
 };
 
 const LOCAL = !!window.EMBEDDED_BANK;
-const LOCKED = new Set();          // 需要課程代碼的主題，由 /api/categories 告訴前端
 const api = LOCAL ? local : remote;
 
 /* ---------- 加到主畫面 ---------- */
@@ -233,7 +220,7 @@ async function home(){
       <li>答得越快分數越高；連中 3 題 ×1.5、連中 5 題 ×2</li>
       <li>每局各有一次道具：刪去兩個選項、跳過此題、加時 10 秒</li>
       <li>依正確率評級：滿格、高峰、躍升、穩定、起跳；留下代號就能登上脈衝榜</li>
-    </ul><p class="sub" style="font-size:.78rem;margin-top:10px">脈衝 PULSE v5.0</p></div></div>
+    </ul><p class="sub" style="font-size:.78rem;margin-top:10px">脈衝 PULSE v5.1</p></div></div>
     <div id="multi" class="mp-panel" ${mode === 'multi' ? '' : 'hidden'}>${LOCAL ? `
       <div class="mp-card"><h3>多人對戰</h3><p>多人同場搶答需要執行 Python 伺服器版（app.py），這個單機版只能單人闖關。</p></div>` : `
       <form class="mp-card" id="joinf"><h3>加入考坊</h3><p>輸入主持人畫面上的四位數房號</p>
@@ -254,15 +241,12 @@ async function home(){
   document.getElementById('to-board').onclick = () => board('all', 'week');
   const loadCats = async () => {
     const cats = await api.categories(region);
-    cats.forEach(c => { CAT_NAME[c.key] = c.name; c.locked ? LOCKED.add(c.key) : LOCKED.delete(c.key); });
-    document.getElementById('cats').innerHTML = cats.map(c => {
-      const shut = c.locked && !myKey();
-      return `
+    cats.forEach(c => CAT_NAME[c.key] = c.name);
+    document.getElementById('cats').innerHTML = cats.map(c => `
       <button class="cat" data-k="${c.key}" ${c.count === 0 ? 'disabled style="opacity:.4"' : ''}>
         <span class="sealbox">${c.seal || SEAL[c.key] || esc(c.name[0])}</span>
-        <span><b>${esc(c.name)}${shut ? '<i class="lock" aria-label="需要課程代碼">鎖</i>' : ''}</b>
-        <small>${c.key === 'news' ? '每小時更新' : shut ? '需要課程代碼' : c.count + ' 題'}</small></span>
-      </button>`; }).join('');
+        <span><b>${esc(c.name)}</b><small>${c.key === 'news' ? '每小時更新' : c.count + ' 題'}</small></span>
+      </button>`).join('');
     document.querySelectorAll('.cat').forEach(b => b.onclick = () => pickUnit(b.dataset.k, region));
   };
   document.querySelectorAll('#regions button').forEach(b => b.onclick = async () => {
@@ -277,45 +261,10 @@ async function home(){
   }
 }
 
-/* ---------- 課程題庫:先輸入課程代碼 ---------- */
-function askCode(cat, then, msg = ''){
-  document.body.dataset.topic = cat;
-  const name = CAT_NAME[cat] || cat;
-  $app.innerHTML = `<div class="masthead"><div><h1>${esc(name)}<span class="seal">鎖</span></h1>
-      <p class="sub">這是課程題庫，請輸入老師給的課程代碼</p></div>
-      <button class="back" id="back">← 回首頁</button></div>
-    <form class="lbform gate" id="gatef">
-      <label for="gcode">課程代碼</label>
-      <div class="row"><input id="gcode" name="gcode" inputmode="numeric" autocomplete="off"
-        maxlength="20" placeholder="輸入代碼"><button class="btn" type="submit" id="gsubmit">解鎖</button></div>
-      <p class="err" id="gerr" ${msg ? '' : 'hidden'}>${esc(msg)}</p>
-      <p class="note">輸入一次就好，這台裝置會記住。其他主題不需要代碼。</p>
-    </form>`;
-  document.getElementById('back').onclick = home;
-  const input = document.getElementById('gcode');
-  input.focus();
-  document.getElementById('gatef').onsubmit = async e => {
-    e.preventDefault();
-    const err = document.getElementById('gerr'), btn = document.getElementById('gsubmit');
-    btn.disabled = true; err.hidden = true;
-    try{
-      const r = await api.unlock(input.value.trim());
-      store.set(KEY_ITEM, r.key);
-      then();
-    }catch(ex){
-      err.textContent = ex.message; err.hidden = false; btn.disabled = false;
-      input.select();
-    }
-  };
-}
-
 /* ---------- 有分單元的主題(例如 Python 課程週次),先選單元 ---------- */
 async function pickUnit(cat, region){
-  if (LOCKED.has(cat) && !myKey()) return askCode(cat, () => pickUnit(cat, region));
   document.body.dataset.topic = cat;
-  let units = [];
-  try { units = await api.units(cat); }
-  catch(e){ if (e.locked) return askCode(cat, () => pickUnit(cat, region), e.message); }
+  const units = await api.units(cat).catch(() => []);
   if (!units.length) return startGame(cat, region);
   $app.innerHTML = `<div class="masthead"><div><h1>${esc(CAT_NAME[cat] || cat)}</h1>
       <p class="sub">選一個單元，或直接全部一起考</p></div><button class="back" id="back">← 回首頁</button></div>
@@ -348,7 +297,6 @@ async function startGame(cat, region = '', unit = ''){
               powers: {fifty: true, skip: true, time: true}}};
     showQuestion();
   }catch(e){
-    if (e.locked){ store.set(KEY_ITEM, ''); return askCode(cat, () => startGame(cat, region, unit), e.message); }
     $app.innerHTML = `<p class="err">${esc(e.message)}</p><div class="row"><button class="btn" id="home">回首頁</button></div>`;
     document.getElementById('home').onclick = home;
   }

@@ -1,8 +1,8 @@
 /* 脈衝 PULSE Service Worker
    目的：加到主畫面後開得快、離線時仍看得到畫面骨架。
    題目與即時連線一定走網路，不會被快取，所以不會拿到舊題目或舊比分。 */
-const CACHE = 'pulse-v5.0';
-const SHELL = ['/', '/host', '/play', '/class', '/static/style.css?v=5.0',
+const CACHE = 'pulse-v5.1';
+const SHELL = ['/', '/host', '/play', '/class', '/static/style.css?v=5.1',
                '/static/icons/icon-192.png', '/static/icons/icon-512.png', '/static/manifest.json'];
 
 self.addEventListener('install', e => {

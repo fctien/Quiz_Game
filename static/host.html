@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-title" content="脈衝 PULSE">
 <link rel="apple-touch-icon" href="/static/icons/icon-180.png">
 <link rel="icon" href="/static/icons/favicon.png" type="image/png">
-<link rel="stylesheet" href="/static/style.css?v=5.0">
+<link rel="stylesheet" href="/static/style.css?v=5.1">
 <!-- QR code 產生器：連不到網路時只會少了 QR code，輸入房號一樣能加入 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 <script>
@@ -32,16 +32,10 @@ const $app = document.getElementById('app');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const SEAL = {python:'蟒', pytorch:'深', geo:'輿', history:'史', human:'文', tech:'科', star:'星', fun:'奇', tt:'桌', news:'聞', mix:'雜'};
 const REGIONS = ['', '台灣', '中國', '世界'];
-/* 課程題庫(Python、Deep Learning)要先輸入課程代碼；通過後記在這台電腦上 */
-const KEY_ITEM = 'pulse_key';
-const myKey = () => { try { return JSON.parse(localStorage.getItem(KEY_ITEM)) || ''; } catch { return ''; } };
-const setKey = k => { try { localStorage.setItem(KEY_ITEM, JSON.stringify(k)); } catch {} };
-const authHeaders = () => { const k = myKey(); return k ? {'X-Pulse-Key': k} : {}; };
 const post = async (url, body) => {
-  const r = await fetch(url, {method:'POST', headers:{'Content-Type':'application/json', ...authHeaders()},
-                              body: JSON.stringify(body)});
+  const r = await fetch(url, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
   const j = await r.json().catch(() => ({}));
-  if (!r.ok){ const e = new Error(j.error || '連線失敗'); e.locked = !!j.locked; throw e; }
+  if (!r.ok) throw new Error(j.error || '連線失敗');
   return j;
 };
 const ss = {get(k){ try { return JSON.parse(sessionStorage.getItem(k)); } catch { return null; } },
@@ -64,24 +58,16 @@ async function setup(msg = ''){
   document.body.dataset.topic = pick.category || '';   // 設定頁就先換上該主題的布景
   const cats = await fetch('/api/categories' + (pick.region ? '?region=' + encodeURIComponent(pick.region) : '')).then(r => r.json()).catch(() => []);
   $app.innerHTML = `<div class="masthead"><div><h1>主持台<span class="seal">試</span></h1>
-      <p class="sub">開一間考坊，學生用手機輸入房號一起搶答　<span style="opacity:.6">v5.0</span></p></div>
+      <p class="sub">開一間考坊，學生用手機輸入房號一起搶答　<span style="opacity:.6">v5.1</span></p></div>
       <a class="back" href="/">← 回首頁</a></div>
     <div class="chips" id="regions" role="group" aria-label="地區">${REGIONS.map(x =>
       `<button data-r="${x}" aria-pressed="${x === pick.region}">${x || '不限地區'}</button>`).join('')}</div>
     <div class="chips multi" id="units" role="group" aria-label="單元"></div>
-    <div class="grid" id="cats">${cats.map(c => { const shut = c.locked && !myKey(); return `
+    <div class="grid" id="cats">${cats.map(c => `
       <button class="cat" data-k="${c.key}" aria-pressed="${c.key === pick.category}" ${c.count === 0 ? 'disabled style="opacity:.4"' : ''}>
         <span class="sealbox">${c.seal || SEAL[c.key] || esc(c.name[0])}</span>
-        <span><b>${esc(c.name)}${shut ? '<i class="lock" aria-label="需要課程代碼">鎖</i>' : ''}</b>
-        <small>${c.key === 'news' ? '今日新聞' : shut ? '需要課程代碼' : c.count + ' 題'}</small></span>
-      </button>`; }).join('')}</div>
-    <form class="lbform gate" id="gatef" hidden>
-      <label for="gcode">課程代碼</label>
-      <div class="row"><input id="gcode" inputmode="numeric" autocomplete="off" maxlength="20" placeholder="輸入代碼">
-        <button class="btn" type="submit" id="gsubmit">解鎖</button></div>
-      <p class="err" id="gerr" hidden></p>
-      <p class="note">Python 與 Deep Learning 是課程題庫。輸入一次就好，這台電腦會記住。</p>
-    </form>
+        <span><b>${esc(c.name)}</b><small>${c.key === 'news' ? '今日新聞' : c.count + ' 題'}</small></span>
+      </button>`).join('')}</div>
     <div class="row" style="flex-wrap:wrap;gap:18px;margin-top:18px">
       <div><div class="sub" style="margin:0 0 4px">題數</div><div class="seg" id="cnt" style="margin:0">
         ${[5, 10, 15, 20].map(n => `<button data-v="${n}" aria-pressed="${n === pick.count}">${n}</button>`).join('')}</div></div>
@@ -119,8 +105,7 @@ async function setup(msg = ''){
   document.querySelectorAll('#regions button').forEach(b => b.onclick = () => { pick.region = b.dataset.r; save(); setup(); });
   const loadUnits = async () => {
     const box = document.getElementById('units');
-    const list = await fetch('/api/units?topic=' + encodeURIComponent(pick.category), {headers: authHeaders()})
-      .then(r => r.ok ? r.json() : []).catch(() => []);
+    const list = await fetch('/api/units?topic=' + encodeURIComponent(pick.category)).then(r => r.json()).catch(() => []);
     if (!list.length){ box.innerHTML = ''; pick.unit = ''; pick.unit_name = ''; save(); return; }
     if (!list.some(u => u.key === pick.unit)) { pick.unit = ''; pick.unit_name = ''; save(); }
     box.innerHTML = `<button data-u="" aria-pressed="${!pick.unit}">不分單元</button>` + list.map(u =>
@@ -131,28 +116,12 @@ async function setup(msg = ''){
     });
   };
   loadUnits();
-  const shutKeys = new Set(cats.filter(c => c.locked).map(c => c.key));
-  const gate = document.getElementById('gatef');
-  const showGate = on => { gate.hidden = !on; if (on){ gate.scrollIntoView({block:'center', behavior:'smooth'});
-                                                       document.getElementById('gcode').focus(); } };
-  gate.onsubmit = async e => {
-    e.preventDefault();
-    const err = document.getElementById('gerr'), btn = document.getElementById('gsubmit');
-    btn.disabled = true; err.hidden = true;
-    try{
-      const r = await post('/api/unlock', {code: document.getElementById('gcode').value.trim()});
-      setKey(r.key); save(); setup();                   // 解鎖後重畫一次，鎖頭就消失
-    }catch(ex){ err.textContent = ex.message; err.hidden = false; btn.disabled = false; }
-  };
   document.querySelectorAll('.cat').forEach(b => b.onclick = () => {
     pick.category = b.dataset.k; save();
     document.body.dataset.topic = pick.category;        // 點下去馬上換布景
     document.querySelectorAll('.cat').forEach(x => x.setAttribute('aria-pressed', x === b));
-    if (shutKeys.has(pick.category) && !myKey()){ showGate(true); document.getElementById('units').innerHTML = ''; return; }
-    showGate(false);
     loadUnits();
   });
-  if (shutKeys.has(pick.category) && !myKey()) showGate(true);
   const seg = (id, key, after) => document.querySelectorAll(`#${id} button`).forEach(b => b.onclick = () => {
     pick[key] = isNaN(+b.dataset.v) ? b.dataset.v : +b.dataset.v; save();
     document.querySelectorAll(`#${id} button`).forEach(x => x.setAttribute('aria-pressed', x === b));
@@ -176,7 +145,7 @@ async function setup(msg = ''){
            admin_code: r.admin_code, class_code: r.class_code};
       ss.set('mp_host', H);
       connect();
-    }catch(ex){ if (ex.locked) setKey(''); setup(ex.message); }
+    }catch(ex){ setup(ex.message); }
   };
 }
 
