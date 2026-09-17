@@ -439,7 +439,11 @@ if __name__ == "__main__":
     classroom.init()
     # host=0.0.0.0 讓同網段的手機也能連進來
     # threaded=True:多人模式每位玩家會保持一條即時連線
-    app.run(host="0.0.0.0", port=5000, debug=True, threaded=True)
+    # debug=False:上課用。開 debug 會多耗一倍記憶體,而且同網段的人可以透過偵錯畫面
+    #             在你的電腦上執行指令。要改程式時把下面那行的 False 改成 True 就好。
+    from werkzeug.serving import WSGIRequestHandler
+    WSGIRequestHandler.protocol_version = "HTTP/1.1"     # 55 支手機同時連線比較穩
+    app.run(host="0.0.0.0", port=5000, debug=False, threaded=True)
 else:
     leaderboard.init()      # 用 gunicorn 啟動時
     classroom.init()

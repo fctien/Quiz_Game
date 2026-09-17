@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-title" content="脈衝 PULSE">
 <link rel="apple-touch-icon" href="/static/icons/icon-180.png">
 <link rel="icon" href="/static/icons/favicon.png" type="image/png">
-<link rel="stylesheet" href="/static/style.css?v=5.1">
+<link rel="stylesheet" href="/static/style.css?v=5.3">
 <script>
 /* 註冊 Service Worker：加到主畫面後可全螢幕開啟、載入更快 */
 if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
@@ -87,16 +87,77 @@ async function resume(){
   catch{ ls.del('mp_' + code); joinForm(); }
 }
 
-/* ---------- 即時連線 ---------- */
+/* ---------- 即時連線 ----------
+   手機最容易出問題的兩件事:
+   1. 螢幕關掉或換基地台,連線其實已經斷了,但瀏覽器沒有察覺 → 畫面停在舊的一題
+   2. 學校網路擋掉或緩衝 SSE → 從頭到尾收不到東西
+   所以這裡加了看門狗(超過 12 秒沒收到任何訊息就重連),以及連不上時改用輪詢。 */
+const DEAD_MS = 12000;          // 伺服器每 5 秒有心跳,超過這個時間沒消息就當作斷線
+let lastMsg = 0, watch = null, poll = null, esFails = 0, gotAny = false;
+
+function note(txt){ const c = document.getElementById('conn'); if (c) c.textContent = txt; }
+
+function handle(data){
+  lastMsg = Date.now();
+  if (data.ping) return note('');                 // 只是心跳
+  if (data.kicked) return kicked(data.name);
+  note('');
+  render(data);
+}
+
 function connect(){
+  stopPoll();
   es?.close();
+  gotAny = false;
   es = new EventSource(`/api/mp/stream?code=${P.code}&pid=${P.pid}&token=${encodeURIComponent(P.token)}`);
-  es.onmessage = e => render(JSON.parse(e.data));
+  lastMsg = Date.now();
+  es.onmessage = e => { gotAny = true; esFails = 0; handle(JSON.parse(e.data)); };
   es.onerror = () => {
-    const c = document.getElementById('conn'); if (c) c.textContent = '連線中斷，重新連線中…';
+    note('連線中斷，重新連線中…');
+    if (!gotAny && ++esFails >= 2){ es.close(); return startPoll(); }   // 這個網路不讓 SSE 過,改用輪詢
     fetch(`/api/mp/info?code=${P.code}`).then(r => r.json()).then(j => {
       if (!j.exists){ es.close(); ls.del('mp_' + P.code); closed(); } }).catch(() => {});
   };
+  clearInterval(watch);
+  watch = setInterval(() => {
+    if (poll) return;
+    if (Date.now() - lastMsg > DEAD_MS){ note('連線中斷，重新連線中…'); connect(); }
+  }, 3000);
+}
+
+/* SSE 走不通時的備援:每兩秒問一次 */
+function startPoll(){
+  if (poll) return;
+  note('連線較慢，改用備援模式');
+  const tickOnce = () => fetch(`/api/mp/view?code=${P.code}&pid=${P.pid}&token=${encodeURIComponent(P.token)}`)
+    .then(r => r.json().then(j => r.ok ? j : Promise.reject(j)))
+    .then(d => { if (d.gone){ ls.del('mp_' + P.code); return closed(); } handle(d); })
+    .catch(j => {
+      /* 這個座位已經被自己在別台裝置上接手了(或被移出),請他重新加入 */
+      if (j && j.error){ stopPoll(); clearInterval(watch); ls.del('mp_' + P.code);
+        const c = P.code; P = null; params.set('code', c); joinForm(j.error); }
+    });
+  tickOnce();
+  poll = setInterval(tickOnce, 2000);
+}
+function stopPoll(){ clearInterval(poll); poll = null; }
+
+/* 手機解鎖、切回這個分頁、網路回來:馬上確認一次,不要等看門狗 */
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible' && P && Date.now() - lastMsg > 5000) connect();
+});
+window.addEventListener('online', () => { if (P) connect(); });
+
+/* ---------- 被主持人移出考坊 ---------- */
+function kicked(name){
+  es?.close(); stopPoll(); clearInterval(watch); clearInterval(tick);
+  ls.del('mp_' + P.code);
+  const code = P.code; P = null;
+  $app.innerHTML = `<div class="result"><p class="sub">${esc(name || '')}</p>
+    <div class="bang"><small>PULSE</small><div class="rank">離席</div></div>
+    <p class="sub" style="margin-top:14px">主持人把你移出了這間考坊。<br>如果是學號輸錯，重新輸入正確的學號再加入一次。</p>
+    <div class="row"><button class="btn" id="again">重新加入</button></div></div>`;
+  document.getElementById('again').onclick = () => { location.href = '/play?code=' + code; };
 }
 
 const header = v => `<div class="hud"><span class="prog">${esc(v.name)}${v.team ? '・' + esc(v.team) : ''} ・ 房號 ${v.code}</span>
@@ -125,13 +186,14 @@ function viewKey(v){
 function render(v){
   document.body.dataset.topic = v.topic || '';
   if (v.state !== 'question') clearInterval(tick);
-  if (v.state === 'closed'){ es.close(); ls.del('mp_' + P.code); lastKey = ''; return closed(); }
+  if (v.state === 'closed'){ es?.close(); stopPoll(); clearInterval(watch); ls.del('mp_' + P.code); lastKey = ''; return closed(); }
   const key = viewKey(v), fresh = key !== lastKey;
   lastKey = key;
   ({lobby, question, reveal, final})[v.state]?.(v, fresh);
   if (!fresh) setText('myscore', v.score);
 }
 function closed(){
+  es?.close(); stopPoll(); clearInterval(watch); clearInterval(tick);
   $app.innerHTML = `<div class="center" style="padding-top:40px"><h1>考坊已關閉</h1><p class="sub">謝謝參加！</p>
     <div class="row"><a class="btn" href="/" style="text-decoration:none;text-align:center">回首頁</a></div></div>`;
 }

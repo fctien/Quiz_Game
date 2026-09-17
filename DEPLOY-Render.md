@@ -49,7 +49,7 @@ Render 是從 GitHub 讀程式的，所以先把資料夾推上去。
    ```json
    {"ok": true, "rooms": 0, "time": "14:03:21", "ips": [...]}
    ```
-4. 再開 `https://<你的網址>/` 確認首頁正常，版本字樣應該是 **v5.1**。
+4. 再開 `https://<你的網址>/` 確認首頁正常，版本字樣應該是 **v5.3**。
 
 ---
 
@@ -80,7 +80,7 @@ Render 設定了 `autoDeployTrigger: commit`，只要 main 分支有新的 commi
 
 其他小提醒：
 
-- 免費方案是 0.1 CPU／512 MB。40～50 人的班級可行，但反應會比區網慢一點（大約多 0.1～0.3 秒）。
+- 免費方案是 0.1 CPU／512 MB。實測 55 人可行（記憶體只用約 55 MB），但每題會比區網多等 1～2 秒。**人多的時候優先用區網**，雲端當備援。
 - Render 是 HTTPS，所以**手機可以把它加到主畫面當 App 用**（區網的 http 位址在 Android 上不行）。
 - 如果之後要保留班級積分，就得升級到付費方案並掛一顆 Disk，或改接外部資料庫。
 
@@ -109,5 +109,5 @@ Render 設定了 `autoDeployTrigger: commit`，只要 main 分支有新的 commi
 | Build 失敗，log 出現 `ModuleNotFoundError` | `requirements.txt` 沒推上去。確認 GitHub 上看得到這個檔，再推一次 |
 | 一直停在 `Deploying...` | 看 log 最後一行。若是 `Address already in use`，表示 start command 被改過，確認是 `-b 0.0.0.0:$PORT` |
 | 網頁開得起來但學生加不進來 | 檢查網址有沒有打錯；房號是四位數字；或服務剛好在冷啟動，等 1 分鐘再試 |
-| 畫面還是舊版 | 右上角看版本字樣。不是 v5.1 就是瀏覽器快取，按 Ctrl+Shift+R |
+| 畫面還是舊版 | 右上角看版本字樣。不是 v5.3 就是瀏覽器快取，按 Ctrl+Shift+R |
 | 房號突然失效 | 服務重啟會清掉進行中的考坊（狀態存在記憶體），重開一間即可 |

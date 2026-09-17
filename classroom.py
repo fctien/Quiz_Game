@@ -82,7 +82,13 @@ def create(code):
 
 def check(code, admin_code):
     cls = get(code)
-    return bool(cls) and secrets.compare_digest(cls["admin_code"], str(admin_code or "").upper().strip())
+    if not cls:
+        return False
+    try:    # 老師把管理碼打成中文時,compare_digest 會丟例外,不能讓伺服器噴 500
+        return secrets.compare_digest(cls["admin_code"].encode("utf-8"),
+                                      str(admin_code or "").upper().strip().encode("utf-8"))
+    except Exception:
+        return False
 
 
 # ---------------------------------------------------------------- 分組名單

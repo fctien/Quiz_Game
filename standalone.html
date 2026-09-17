@@ -236,6 +236,12 @@ h1 .wordmark{display:inline-block;margin-left:.35em;padding:.18em .5em;font-size
 .chipset{display:flex;flex-wrap:wrap;gap:8px}
 .pchip{border:1.5px solid var(--line);border-radius:999px;padding:4px 14px;background:var(--paper);animation:pop .3s ease both}
 .pchip.off{opacity:.45;border-style:dashed}
+.pchip{display:inline-flex;align-items:center;gap:6px;padding-right:6px}
+.pchip .sid{font-style:normal;font-size:.76em;color:var(--muted);font-family:var(--mono,monospace)}
+.pchip .kick{border:0;background:var(--line);color:var(--ink);cursor:pointer;
+  width:20px;height:20px;line-height:1;border-radius:50%;font-size:.72rem;padding:0;
+  display:grid;place-items:center;opacity:.55;transition:background .15s,opacity .15s}
+.pchip .kick:hover,.pchip .kick:focus-visible{background:var(--cinnabar);color:#fff;opacity:1}
 .hq{display:grid;gap:16px;margin-top:10px}
 .hqtop{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .cd{width:72px;height:72px;border-radius:50%;border:3px solid var(--blue);display:grid;place-items:center;
@@ -625,7 +631,7 @@ async function home(){
       <li>答得越快分數越高；連中 3 題 ×1.5、連中 5 題 ×2</li>
       <li>每局各有一次道具：刪去兩個選項、跳過此題、加時 10 秒</li>
       <li>依正確率評級：滿格、高峰、躍升、穩定、起跳；留下代號就能登上脈衝榜</li>
-    </ul><p class="sub" style="font-size:.78rem;margin-top:10px">脈衝 PULSE v5.1</p></div></div>
+    </ul><p class="sub" style="font-size:.78rem;margin-top:10px">脈衝 PULSE v5.3</p></div></div>
     <div id="multi" class="mp-panel" ${mode === 'multi' ? '' : 'hidden'}>${LOCAL ? `
       <div class="mp-card"><h3>多人對戰</h3><p>多人同場搶答需要執行 Python 伺服器版（app.py），這個單機版只能單人闖關。</p></div>` : `
       <form class="mp-card" id="joinf"><h3>加入考坊</h3><p>輸入主持人畫面上的四位數房號</p>

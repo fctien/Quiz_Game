@@ -55,7 +55,7 @@ footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:va
 <body>
 <header>
   <h1>脈衝 PULSE<span class="seal">雲</span></h1>
-  <div class="sub">Render 雲端備援小抄 ・ 學生用 4G 就能加入<br>v5.1　印出來夾在講義裡</div>
+  <div class="sub">Render 雲端備援小抄 ・ 學生用 4G 就能加入<br>v5.3　印出來夾在講義裡</div>
 </header>
 
 <div class="cols">
@@ -104,7 +104,7 @@ footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:va
     <li>手機<b>關掉 Wi-Fi</b>，只用 4G/5G。</li>
     <li>開 <span class="k">你的網址/api/health</span>。</li>
     <li>看到 <span class="k">{"ok": true, ...}</span> 就成功。</li>
-    <li>再開首頁，版本要看到 <b>v5.1</b>。</li>
+    <li>再開首頁，版本要看到 <b>v5.3</b>。</li>
   </ol>
   <div class="ok">測過一次以後，上課當天只要開主持台就好。</div>
 </section>
@@ -134,7 +134,7 @@ footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:va
     <tr><td class="sym"><b>不能掛硬碟</b><br>重啟後排行榜與班級積分會清空</td><td>每堂課結束立刻匯出 CSV，成績以 CSV 為準</td></tr>
     <tr><td class="sym"><b>每月 750 小時</b><br>整個工作區共用</td><td>只留這一個免費服務就不會超過</td></tr>
   </table>
-  <p class="note">0.1 CPU／512 MB，40～50 人可行，比區網慢約 0.1～0.3 秒。</p>
+  <p class="note">0.1 CPU／512 MB。55 人可行，但每題會比區網多等 1～2 秒。人多的時候<b>優先用區網</b>，雲端當備援。</p>
 </section>
 
 <section>
@@ -151,7 +151,9 @@ footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:va
     <tr><td class="sym">Build 失敗 <span class="k">ModuleNotFoundError</span></td><td>確認 GitHub 上有 <span class="k">requirements.txt</span>，再推一次</td></tr>
     <tr><td class="sym">網頁打不開／一直轉圈</td><td>冷啟動中，等 1 分鐘；仍不行就看 Render 的 Logs 最後一行</td></tr>
     <tr><td class="sym">學生加不進來</td><td>網址有沒有打錯、房號是四位數字、是不是剛好在冷啟動</td></tr>
-    <tr><td class="sym">畫面還是舊版</td><td>版本不是 v5.1 就是快取，按 Ctrl+Shift+R</td></tr>
+    <tr><td class="sym">說「這個學號正在線上」</td><td>同一個學號在別台裝置上。用同一個學號重新加入就會接手原本的位子</td></tr>
+    <tr><td class="sym">學生畫面停在上一題</td><td>解鎖手機、切回那個分頁,十幾秒內會自己接回來</td></tr>
+    <tr><td class="sym">畫面還是舊版</td><td>版本不是 v5.3 就是快取，按 Ctrl+Shift+R</td></tr>
     <tr><td class="sym">房號突然失效</td><td>服務重啟會清掉進行中的考坊，重開一間即可</td></tr>
   </table>
 </section>
@@ -172,7 +174,7 @@ footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:va
 </div>
 
 <footer>
-  <span>脈衝 PULSE v5.1 ・ 題庫 2090 題（Python 500、Deep Learning 708、桌球 125）</span>
+  <span>脈衝 PULSE v5.3 ・ 題庫 2090 題（Python 500、Deep Learning 708、桌球 125）</span>
   <span>github.com/fctien/Quiz_Game　・　render.com</span>
 </footer>
 </body>

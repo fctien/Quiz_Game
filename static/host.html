@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-title" content="脈衝 PULSE">
 <link rel="apple-touch-icon" href="/static/icons/icon-180.png">
 <link rel="icon" href="/static/icons/favicon.png" type="image/png">
-<link rel="stylesheet" href="/static/style.css?v=5.1">
+<link rel="stylesheet" href="/static/style.css?v=5.3">
 <!-- QR code 產生器：連不到網路時只會少了 QR code，輸入房號一樣能加入 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 <script>
@@ -58,7 +58,7 @@ async function setup(msg = ''){
   document.body.dataset.topic = pick.category || '';   // 設定頁就先換上該主題的布景
   const cats = await fetch('/api/categories' + (pick.region ? '?region=' + encodeURIComponent(pick.region) : '')).then(r => r.json()).catch(() => []);
   $app.innerHTML = `<div class="masthead"><div><h1>主持台<span class="seal">試</span></h1>
-      <p class="sub">開一間考坊，學生用手機輸入房號一起搶答　<span style="opacity:.6">v5.1</span></p></div>
+      <p class="sub">開一間考坊，學生用手機輸入房號一起搶答　<span style="opacity:.6">v5.3</span></p></div>
       <a class="back" href="/">← 回首頁</a></div>
     <div class="chips" id="regions" role="group" aria-label="地區">${REGIONS.map(x =>
       `<button data-r="${x}" aria-pressed="${x === pick.region}">${x || '不限地區'}</button>`).join('')}</div>
@@ -149,16 +149,66 @@ async function setup(msg = ''){
   };
 }
 
-/* ---------- 即時連線 ---------- */
+/* ---------- 即時連線 ----------
+   連線可能悄悄斷掉(電腦休眠、Wi-Fi 換點、學校網路擋 SSE),瀏覽器不一定會察覺。
+   看門狗:超過 12 秒沒收到任何訊息就重連;真的連不上就改用每兩秒輪詢。 */
+const DEAD_MS = 12000;
+let lastMsg = 0, watch = null, poll = null, esFails = 0, gotAny = false;
+
+function note(txt){ const c = document.getElementById('conn'); if (c) c.textContent = txt; }
+
+function handle(data){
+  lastMsg = Date.now();
+  if (data.ping) return note('');
+  note('');
+  render(data);
+}
+
 function connect(){
+  stopPoll();
   es?.close();
+  gotAny = false;
   es = new EventSource(`/api/mp/stream?code=${H.code}&pid=host&token=${encodeURIComponent(H.token)}`);
-  es.onmessage = e => render(JSON.parse(e.data));
+  lastMsg = Date.now();
+  es.onmessage = e => { gotAny = true; esFails = 0; handle(JSON.parse(e.data)); };
   es.onerror = () => {
-    const c = document.getElementById('conn'); if (c) c.textContent = '連線中斷，重新連線中…';
+    note('連線中斷，重新連線中…');
+    if (!gotAny && ++esFails >= 2){ es.close(); return startPoll(); }
     fetch(`/api/mp/info?code=${H.code}`).then(r => r.json()).then(j => {
       if (!j.exists){ es.close(); ss.del('mp_host'); H = null; setup(); } }).catch(() => {});
   };
+  clearInterval(watch);
+  watch = setInterval(() => {
+    if (poll) return;
+    if (Date.now() - lastMsg > DEAD_MS){ note('連線中斷，重新連線中…'); connect(); }
+  }, 3000);
+}
+
+function startPoll(){
+  if (poll) return;
+  note('連線較慢，改用備援模式');
+  const tickOnce = () => fetch(`/api/mp/view?code=${H.code}&pid=host&token=${encodeURIComponent(H.token)}`)
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(d => handle(d)).catch(() => {});
+  tickOnce();
+  poll = setInterval(tickOnce, 2000);
+}
+function stopPoll(){ clearInterval(poll); poll = null; }
+
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible' && H && Date.now() - lastMsg > 5000) connect();
+});
+window.addEventListener('online', () => { if (H) connect(); });
+
+/* ---------- 把某位考生移出考坊(學號打錯時用) ---------- */
+async function kick(pid, name){
+  if (!confirm(`確定把「${name}」移出考坊嗎？\n他會看到通知，可以用正確的學號重新加入。`)) return;
+  try { await post('/api/mp/kick', {code: H.code, token: H.token, pid}); }
+  catch(e){ alert(e.message); }
+}
+function bindKick(){
+  document.querySelectorAll('[data-kick]').forEach(b =>
+    b.onclick = () => kick(b.dataset.kick, b.dataset.name));
 }
 const act = (path, extra = {}) => post(path, {code: H.code, token: H.token, ...extra}).catch(e => alert(e.message));
 
@@ -190,12 +240,18 @@ function viewKey(v){
 }
 function render(v){
   document.body.dataset.topic = v.topic || '';
-  if (v.state === 'closed'){ ss.del('mp_host'); es.close(); H = null; lastKey = ''; return setup(); }
+  if (v.state === 'closed'){ ss.del('mp_host'); es?.close(); stopPoll(); clearInterval(watch); H = null; lastKey = ''; return setup(); }
   if (v.state !== 'question') clearInterval(tick);
   const key = viewKey(v), fresh = key !== lastKey;
   lastKey = key;
   ({lobby, question, reveal, final})[v.state]?.(v, fresh);
   if (!fresh) setHTML('barinfo', barText(v));
+}
+
+/* 名單上的一個人:滑鼠移上去(手機是直接看得到)會出現 ✕,可以把他移出考坊 */
+function chip(p){
+  return `<span class="pchip ${p.online ? '' : 'off'}">${esc(p.name)}${p.sid ? `<i class="sid">${esc(p.sid)}</i>` : ''}` +
+    `<button class="kick" data-kick="${esc(p.pid)}" data-name="${esc(p.name)}" title="把 ${esc(p.name)} 移出考坊" aria-label="移出 ${esc(p.name)}">✕</button></span>`;
 }
 
 /* ---------- 等待加入 ---------- */
@@ -216,8 +272,8 @@ function lobby(v, fresh){
     <div class="roster"><h2>已報到 <span id="rcount">${v.roster.length}</span>${v.roster_size ? ` / ${v.roster_size}` : ''} 人</h2>
       <div id="rlist">${v.mode === 'team' ? Object.entries(byTeam).map(([t, list]) => `
         <div style="margin-bottom:10px"><b>${esc(t)}</b>（${list.length}）
-          <div class="chipset" style="margin-top:4px">${list.map(p => `<span class="pchip ${p.online ? '' : 'off'}">${esc(p.name)}</span>`).join('') || '<span class="sub">尚無</span>'}</div></div>`).join('')
-        : `<div class="chipset">${v.roster.map(p => `<span class="pchip ${p.online ? '' : 'off'}">${esc(p.name)}</span>`).join('') || '<p class="sub">等待考生入場…</p>'}</div>`}
+          <div class="chipset" style="margin-top:4px">${list.map(p => chip(p)).join('') || '<span class="sub">尚無</span>'}</div></div>`).join('')
+        : `<div class="chipset">${v.roster.map(p => chip(p)).join('') || '<p class="sub">等待考生入場…</p>'}</div>`}
 </div>
       <div id="rmiss">${v.missing && v.missing.length ? `<p class="sub" style="margin-top:10px">未到（${v.missing.length}）：${v.missing.slice(0, 12).map(esc).join('、')}${v.missing.length > 12 ? '…' : ''}</p>` : ''}</div>
       <div class="row"><button class="btn" id="go" ${v.roster.length ? '' : 'disabled'}>開始考試（${v.total} 題）</button></div>
@@ -232,6 +288,7 @@ function lobby(v, fresh){
   });
   document.getElementById('go').onclick = () => act('/api/mp/start');
   document.getElementById('close').onclick = () => confirm('確定要關閉考坊嗎？') && act('/api/mp/close');
+  bindKick();
 }
 
 /* 名單有人進出時,只換名單那一塊 */
@@ -242,12 +299,13 @@ function patchLobby(v){
   setText('rcount', v.roster.length);
   setHTML('rlist', v.mode === 'team' ? Object.entries(byTeam).map(([t, list]) => `
         <div style="margin-bottom:10px"><b>${esc(t)}</b>（${list.length}）
-          <div class="chipset" style="margin-top:4px">${list.map(p => `<span class="pchip ${p.online ? '' : 'off'}">${esc(p.name)}</span>`).join('') || '<span class="sub">尚無</span>'}</div></div>`).join('')
-    : `<div class="chipset">${v.roster.map(p => `<span class="pchip ${p.online ? '' : 'off'}">${esc(p.name)}</span>`).join('') || '<p class="sub">等待考生入場…</p>'}</div>`);
+          <div class="chipset" style="margin-top:4px">${list.map(p => chip(p)).join('') || '<span class="sub">尚無</span>'}</div></div>`).join('')
+    : `<div class="chipset">${v.roster.map(p => chip(p)).join('') || '<p class="sub">等待考生入場…</p>'}</div>`);
   setHTML('rmiss', v.missing && v.missing.length
     ? `<p class="sub" style="margin-top:10px">未到（${v.missing.length}）：${v.missing.slice(0, 12).map(esc).join('、')}${v.missing.length > 12 ? '…' : ''}</p>` : '');
   const go = document.getElementById('go');
   if (go) go.disabled = !v.roster.length;
+  bindKick();
 }
 
 /* ---------- 出題中 ---------- */

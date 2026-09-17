@@ -70,7 +70,10 @@ class Room:
         self.created = self.touched = time.time()
         self.cond = threading.Condition()
         self.version = 0
+        self.soft_at = 0                  # 上一次「作答人數」推播的時間
+        self.soft_timer = None
         self.players = {}         # pid -> dict
+        self.kicked = {}          # 被主持人移出的 pid -> 姓名(他的連線要收到通知)
         self.closed = False
         self.new_round()
 
@@ -100,12 +103,35 @@ class Room:
             self.touched = time.time()
             self.cond.notify_all()
 
+    def bump_soft(self):
+        """作答人數的小更新:全班同時按下去時,一秒最多推兩次就好。
+
+        每收到一張答案就推播給全班,55 個人就是 55 次 × 56 個人的推播,
+        在 Render 這種只有 0.1 顆 CPU 的機器上會塞住,連帶讓後面的人答題變慢。
+        這裡把它合併起來:最多 0.4 秒推一次,最後一張一定會補推。
+        """
+        now = time.time()
+        if now - self.soft_at >= 0.4:
+            self.soft_at = now
+            self.bump()
+            return
+        if not self.soft_timer or not self.soft_timer.is_alive():
+            self.soft_timer = threading.Timer(0.4, self._soft_fire)
+            self.soft_timer.daemon = True
+            self.soft_timer.start()
+
+    def _soft_fire(self):
+        if self.state == "question" and not self.closed:
+            self.soft_at = time.time()
+            self.bump()
+
     # ---------- 流程 ----------
     def is_double(self, i=None):
         i = self.qi if i is None else i
         return i == len(self.questions) - 1 and len(self.questions) > 1
 
     def start_question(self):
+        self.soft_at = 0                  # 新的一題,節流重新計算
         self.qi += 1
         if self.qi >= len(self.questions):
             return self.finish()
@@ -135,10 +161,13 @@ class Room:
             return False
         self.answers[pid] = (choice, elapsed)
         online = [k for k, p in self.players.items() if p["online"]]
-        if self.limit and all(k in self.answers for k in online):   # 手動模式一律等主持人結束
-            self.do_reveal()
+        if all(k in self.answers for k in online):
+            if self.limit:                      # 有計時:全班答完就直接公布
+                self.do_reveal()
+            else:                               # 手動控題:等主持人按,但人數要立刻更新
+                self.bump()
         else:
-            self.bump()
+            self.bump_soft()
         return True
 
     def ranking(self):
@@ -213,10 +242,11 @@ class Room:
                 "region": q.get("region", ""), "difficulty": q.get("difficulty", 1),
                 "double": self.is_double()}
 
-    def board(self, n=None):
-        rows = [{"name": p["name"], "score": p["score"], "move": p.get("move", 0),
+    def board(self, n=None, with_pid=False):
+        rows = [{**({"pid": k} if with_pid else {}),
+                 "name": p["name"], "score": p["score"], "move": p.get("move", 0),
                  "online": p["online"], "right": p["right"], "team": p.get("team", ""),
-                 "sid": p.get("sid", ""), "bonus": p.get("bonus", 0)} for _, p in self.ranking()]
+                 "sid": p.get("sid", ""), "bonus": p.get("bonus", 0)} for k, p in self.ranking()]
         return rows[:n] if n else rows
 
     def view(self, pid):
@@ -240,15 +270,15 @@ class Room:
             v["team_board"] = self.team_board()
         if pid == "host":
             v["role"] = "host"
-            v["roster"] = self.board()
+            v["roster"] = self.board(with_pid=True)
             if self.roster:
                 here = {p["sid"] for p in self.players.values() if p.get("sid")}
                 v["missing"] = [r["name"] for r in self.roster if r["sid"] not in here]
                 v["roster_size"] = len(self.roster)
             if self.state == "reveal":
-                v["top"] = self.board(5)
+                v["top"] = self.board(5, with_pid=True)
             if self.state == "final":
-                v["final"] = self.board()
+                v["final"] = self.board(with_pid=True)
                 v["saved"] = self.saved
         else:
             p = self.players[pid]
@@ -286,13 +316,21 @@ def _cleanup():
         r.bump()
 
 
+def same_token(a, b):
+    """比對通行碼。直接丟給 compare_digest 的話,對方傳中文進來會讓伺服器噴 500"""
+    try:
+        return secrets.compare_digest(str(a).encode("utf-8"), str(b).encode("utf-8"))
+    except Exception:
+        return False
+
+
 def _body():
     return request.get_json(silent=True) or {}
 
 
 def _host_room(b):
     r = rooms.get(str(b.get("code", "")))
-    if not r or r.closed or not secrets.compare_digest(str(b.get("token", "")), r.host_token):
+    if not r or r.closed or not same_token(b.get("token", ""), r.host_token):
         return None
     return r
 
@@ -303,7 +341,7 @@ def _player(b):
         return None, None
     pid = str(b.get("pid", ""))
     p = r.players.get(pid)
-    if not p or not secrets.compare_digest(str(b.get("token", "")), p["token"]):
+    if not p or not same_token(b.get("token", ""), p["token"]):
         return r, None
     return r, pid
 
@@ -448,7 +486,7 @@ def upload_roster():
 def export_game():
     """匯出這一場的成績 CSV(不必存到班級也能下載)"""
     r = rooms.get(request.args.get("code", ""))
-    if not r or not secrets.compare_digest(request.args.get("token", ""), r.host_token):
+    if not r or not same_token(request.args.get("token", ""), r.host_token):
         return err("考場不存在或你不是主持人", 403)
     out = io.StringIO()
     w = csv.writer(out)
@@ -582,6 +620,14 @@ def join():
         sid = classroom.clean_id(b.get("sid", ""))
         name = clean_name(b.get("name", ""))
         team = str(b.get("team", ""))[:10]
+
+        def seat_of(match, need_offline=True):
+            """找一個舊座位讓他接手,回傳 pid"""
+            for k, p in r.players.items():
+                if match(p) and (p["online"] is False or not need_offline):
+                    return k
+            return None
+
         if r.roster:                                   # 有名單:認學號,姓名與組別自動帶出
             if not sid:
                 return err("請輸入學號")
@@ -593,10 +639,21 @@ def join():
             return err("請輸入學號")
         if not name:
             return err("請輸入 1 到 12 個字的姓名或暱稱")
+        # 換手機、清快取、重新掃 QR、手機剛剛沒電:同一個學號就直接接手原本的座位,分數留著。
+        # (學號等於身分,所以不管舊裝置是不是還連著都讓他接手;舊裝置會被請回加入畫面。
+        #  只有暱稱的場次沒有學號可以認,就只在舊的已離線時才接手。)
+        old_pid = (seat_of(lambda p: p.get("sid") == sid, need_offline=False) if sid
+                   else seat_of(lambda p: p["name"] == name))
+        if old_pid:
+            p = r.players[old_pid]
+            p["token"] = secrets.token_urlsafe(12)         # 換一張新的,舊裝置就接不回去
+            p["conn_gen"] = p.get("conn_gen", 0) + 1       # 舊裝置那條連線會自己收掉
+            r.bump()
+            return jsonify(pid=old_pid, token=p["token"], name=p["name"], team=p.get("team", ""))
         if any(p["name"] == name for p in r.players.values()):
             return err("這個名字已經有人用了,請加上學號後兩碼")
         if sid and any(p.get("sid") == sid for p in r.players.values()):
-            return err("這個學號已經加入了,如果是斷線請重新整理原本的頁面")
+            return err("這個學號正在線上。如果是你自己,請回到原本那個分頁;不然請洽老師")
         if len(r.players) >= MAX_PLAYERS:
             return err("考場已滿")
         if r.mode == "team" and team not in r.teams:
@@ -604,9 +661,47 @@ def join():
         pid = secrets.token_hex(4)
         r.players[pid] = {"name": name, "sid": sid, "team": team, "token": secrets.token_urlsafe(12),
                           "score": 0, "streak": 0, "right": 0, "bonus": 0.0, "last": None,
-                          "online": False, "conns": 0, "joined": time.time()}
+                          "online": False, "conns": 0, "conn_gen": 0, "joined": time.time()}
         r.bump()
     return jsonify(pid=pid, token=r.players[pid]["token"], name=name, team=r.players[pid]["team"])
+
+
+@bp.post("/api/mp/kick")
+def kick():
+    """主持人把某位考生移出考坊(例如學號打錯)"""
+    b = _body()
+    with rooms_lock:
+        r = _host_room(b)
+        if not r:
+            return err("你不是主持人", 403)
+        pid = str(b.get("pid", ""))
+        p = r.players.pop(pid, None)
+        if not p:
+            return err("這個人已經不在考坊裡了", 404)
+        r.answers.pop(pid, None)
+        r.kicked[pid] = p["name"]
+        r.bump()
+    return jsonify(ok=True, name=p["name"])
+
+
+@bp.get("/api/mp/view")
+def view_once():
+    """即時連線(SSE)被擋住時的備援:每隔兩秒問一次現在該看什麼"""
+    code = request.args.get("code", "")
+    pid = request.args.get("pid", "")
+    token = request.args.get("token", "")
+    r = rooms.get(code)
+    if not r:
+        return jsonify(gone=True), 404
+    if pid == "host":
+        if not same_token(token, r.host_token):
+            return err("你不是主持人", 403)
+    elif pid in r.kicked:
+        return jsonify(kicked=True, name=r.kicked[pid])
+    elif pid not in r.players or not same_token(token, r.players[pid]["token"]):
+        return err("請重新加入考坊", 403)
+    with rooms_lock:
+        return jsonify(r.view(pid))
 
 
 @bp.post("/api/mp/team")
@@ -657,27 +752,40 @@ def stream():
     if not r:
         return err("考場不存在", 404)
     if pid == "host":
-        if not secrets.compare_digest(token, r.host_token):
+        if not same_token(token, r.host_token):
             return err("你不是主持人", 403)
-    elif pid not in r.players or not secrets.compare_digest(token, r.players[pid]["token"]):
-        return err("請重新加入考場", 403)
+    elif pid in r.kicked:                       # 被移出的人重新連線:直接告訴他,不要一直重試
+        msg = json.dumps({"kicked": True, "name": r.kicked[pid]}, ensure_ascii=False)
+        return Response(f"data: {msg}\n\n", mimetype="text/event-stream",
+                        headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"})
+    elif pid not in r.players or not same_token(token, r.players[pid]["token"]):
+        return err("請重新加入考坊", 403)
 
     def gen():
         last = -1
+        mine = 0
         if pid != "host":
             p = r.players[pid]
-            p["conns"] += 1                 # 同一人可能重新整理，連線數歸零才算離線
+            mine = p["conn_gen"] = p.get("conn_gen", 0) + 1   # 只有最新這一條算數
+            p["conns"] += 1
             p["online"] = True
             r.bump()
         try:
             while True:
                 with r.cond:
                     if r.version == last:
-                        r.cond.wait(timeout=15)
+                        r.cond.wait(timeout=5)     # 每 5 秒一次心跳,手機才能及早發現斷線
                     changed = r.version != last
                     last = r.version
+                if pid != "host" and pid not in r.players:      # 被主持人移出考坊:先通知本人
+                    msg = {"kicked": True, "name": r.kicked.get(pid, "")}
+                    yield f"data: {json.dumps(msg, ensure_ascii=False)}\n\n"
+                    return
+                if pid != "host" and r.players[pid].get("conn_gen") != mine:
+                    return                  # 這個人又開了新的連線,舊的就收掉
                 if not changed:
-                    yield ": ping\n\n"          # 心跳，避免連線被中間設備切斷
+                    # 心跳:除了避免連線被中間設備切斷,也讓手機知道「這條線還活著」
+                    yield 'data: {"ping":1}\n\n'
                     continue
                 with rooms_lock:
                     data = r.view(pid)
@@ -688,7 +796,7 @@ def stream():
             if pid != "host" and pid in r.players:
                 p = r.players[pid]
                 p["conns"] = max(0, p["conns"] - 1)
-                p["online"] = p["conns"] > 0
+                p["online"] = p["conns"] > 0 or p.get("conn_gen") != mine
                 r.bump()
 
     return Response(gen(), mimetype="text/event-stream",
