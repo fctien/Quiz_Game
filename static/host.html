@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-title" content="脈衝 PULSE">
 <link rel="apple-touch-icon" href="/static/icons/icon-180.png">
 <link rel="icon" href="/static/icons/favicon.png" type="image/png">
-<link rel="stylesheet" href="/static/style.css?v=5.7">
+<link rel="stylesheet" href="/static/style.css?v=5.8">
 <!-- QR code 產生器：連不到網路時只會少了 QR code，輸入房號一樣能加入 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 <script>
@@ -44,6 +44,22 @@ const ss = {get(k){ try { return JSON.parse(sessionStorage.getItem(k)); } catch 
 let H = ss.get('mp_host');
 let es = null, deadline = 0, lastQ = -1, tick = null, rosterText = '', rosterInfo = '';
 
+/* 先在瀏覽器這一端看一下名單長什麼樣子:幾個人、有沒有填組別。
+   學期初常常還沒分組,名單只有「學號,姓名」兩欄,那就直接跑個人賽。 */
+function scanRoster(text){
+  const delim = (text.match(/\t/g) || []).length > (text.match(/,/g) || []).length ? '\t' : ',';
+  const teams = new Set();
+  let rows = 0, missing = 0;
+  text.replace(/^\uFEFF/, '').split(/\r?\n/).forEach((line, i) => {
+    const c = line.split(delim).map(x => x.trim());
+    if (!c[0]) return;
+    if (i === 0 && /學號|座號|id/i.test(c[0])) return;      // 標題列
+    rows++;
+    if (c[2]) teams.add(c[2]); else missing++;
+  });
+  return {rows, teams: teams.size, missing};
+}
+
 /* 讀 CSV：Excel 存出來常是 Big5，這裡自動判斷 */
 async function readCsv(file){
   const buf = await file.arrayBuffer();
@@ -59,7 +75,7 @@ async function setup(msg = ''){
   document.body.dataset.topic = pick.category || '';   // 設定頁就先換上該主題的布景
   const cats = await fetch('/api/categories' + (pick.region ? '?region=' + encodeURIComponent(pick.region) : '')).then(r => r.json()).catch(() => []);
   $app.innerHTML = `<div class="masthead"><div><h1>主持台<span class="seal">試</span></h1>
-      <p class="sub">開一間考坊，學生用手機輸入房號一起搶答　<span style="opacity:.6">v5.7</span></p></div>
+      <p class="sub">開一間考坊，學生用手機輸入房號一起搶答　<span style="opacity:.6">v5.8</span></p></div>
       <a class="back" href="/">← 回首頁</a></div>
     <div class="chips" id="regions" role="group" aria-label="地區">${REGIONS.map(x =>
       `<button data-r="${x}" aria-pressed="${x === pick.region}">${x || '不限地區'}</button>`).join('')}</div>
@@ -92,8 +108,8 @@ async function setup(msg = ''){
           <input class="textin" id="entry" maxlength="24" placeholder="例如 PY115（英數字）" value="${esc(pick.entry || '')}">
           <small class="sub">填了以後，學生掃 <b>你的網址/j/PY115</b> 就會自動進入當下開著的考坊，這張 QR 印一次整學期都能用。只能用英文字母、數字和 -，留空就是不啟用。</small></div>
       </div>
-      <div class="field"><label for="csv">分組名單 CSV（學號,姓名,組別）</label>
-        <input type="file" id="csv" accept=".csv,.txt,.tsv"><small class="sub" id="csvinfo">未選擇檔案；沒有名單也可以玩，學生自己選隊。</small></div>
+      <div class="field"><label for="csv">名單 CSV（學號,姓名,組別）</label>
+        <input type="file" id="csv" accept=".csv,.txt,.tsv"><small class="sub" id="csvinfo">未選擇檔案。<b>還沒分組也沒關係</b>：只有「學號,姓名」兩欄就好，先跑個人賽。</small></div>
       <a class="joinurl" href="/class" target="_blank">查看班級累積積分 →</a></div>
     <div class="row"><button class="btn" id="create">開考坊</button></div>
     <p class="err" id="err" ${msg ? '' : 'hidden'}>${esc(msg)}</p>
@@ -136,9 +152,19 @@ async function setup(msg = ''){
   document.getElementById('csv').onchange = async e => {
     const f = e.target.files[0]; if (!f) return;
     rosterText = await readCsv(f);
-    const n = rosterText.split(/\r?\n/).filter(x => x.trim()).length;
-    rosterInfo = `已讀取 ${f.name}，約 ${n} 行`;
+    const s = scanRoster(rosterText);
+    rosterInfo = `已讀取 ${f.name}，${s.rows} 人`
+      + (s.teams === 0 ? '，沒有組別欄位 → 這一場會用個人賽'
+         : s.missing ? `，其中 ${s.missing} 位還沒分組（他們要自己選隊）`
+         : `，分成 ${s.teams} 組`);
     document.getElementById('csvinfo').textContent = rosterInfo;
+    // 沒有組別就直接把賽制切回個人賽，省得老師按了分組賽才發現不行
+    if (s.teams === 0 && pick.mode === 'team'){
+      pick.mode = 'solo'; save();
+      document.querySelectorAll('#md button').forEach(x =>
+        x.setAttribute('aria-pressed', x.dataset.v === 'solo'));
+      document.getElementById('tcwrap').hidden = true;
+    }
   };
   document.getElementById('create').onclick = async e => {
     e.currentTarget.disabled = true;
@@ -148,7 +174,8 @@ async function setup(msg = ''){
       const r = await post('/api/mp/create', {...pick, admin_code: document.getElementById('adm').value.trim(), roster_text: rosterText});
       H = {code: r.code, token: r.token, join_url: r.join_url, join_urls: r.join_urls || [r.join_url],
            admin_code: r.admin_code, class_code: r.class_code,
-           entry: r.entry, entry_url: r.entry_url};
+           entry: r.entry, entry_url: r.entry_url, note: r.note || ''};
+      if (r.mode && r.mode !== pick.mode){ pick.mode = r.mode; save(); }
       ss.set('mp_host', H);
       connect();
     }catch(ex){ setup(ex.message); }
@@ -328,7 +355,8 @@ function lobby(v, fresh){
   const byTeam = {};
   (v.teams || []).forEach(t => byTeam[t] = []);
   v.roster.forEach(p => { if (v.mode === 'team') (byTeam[p.team] ||= []).push(p); });
-  $app.innerHTML = bar(v) + `${H.admin_code ? `<div class="placed" style="margin:12px 0">
+  $app.innerHTML = bar(v) + `${H.note ? `<div class="placed warnnote" style="margin:12px 0">${esc(H.note)}</div>` : ''}
+    ${H.admin_code ? `<div class="placed" style="margin:12px 0">
       班級「${esc(H.class_code)}」已建立，管理碼 <b>${esc(H.admin_code)}</b>　請記下來，之後開考坊存分與查看積分都要用。</div>` : ''}
     <div class="lobby">
     <div class="joinbox"><small>手機掃描或輸入房號加入</small>

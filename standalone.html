@@ -234,6 +234,7 @@ h1 .wordmark{display:inline-block;margin-left:.35em;padding:.18em .5em;font-size
 .joinacts{justify-content:center;flex-wrap:wrap}
 .joinacts .btn{flex:none;padding:8px 16px;font-size:.92rem}
 .entryline{margin-top:10px;padding-top:8px;border-top:1px dashed var(--line)}
+.placed.warnnote{border-color:var(--cinnabar);background:var(--cinnabar-soft)}
 .roster h2{font-family:var(--display);margin:0 0 10px;font-size:1.3rem;letter-spacing:.08em}
 .roster h2 span{font-family:var(--mono);color:var(--cinnabar)}
 .chipset{display:flex;flex-wrap:wrap;gap:8px}
@@ -646,7 +647,7 @@ async function home(){
       <li>答得越快分數越高；連中 3 題 ×1.5、連中 5 題 ×2</li>
       <li>每局各有一次道具：刪去兩個選項、跳過此題、加時 10 秒</li>
       <li>依正確率評級：滿格、高峰、躍升、穩定、起跳；留下代號就能登上脈衝榜</li>
-    </ul><p class="sub" style="font-size:.78rem;margin-top:10px">脈衝 PULSE v5.7</p></div></div>
+    </ul><p class="sub" style="font-size:.78rem;margin-top:10px">脈衝 PULSE v5.8</p></div></div>
     <div id="multi" class="mp-panel" ${mode === 'multi' ? '' : 'hidden'}>${LOCAL ? `
       <div class="mp-card"><h3>多人對戰</h3><p>多人同場搶答需要執行 Python 伺服器版（app.py），這個單機版只能單人闖關。</p></div>` : `
       <form class="mp-card" id="joinf"><h3>加入考坊</h3><p>輸入主持人畫面上的四位數房號</p>

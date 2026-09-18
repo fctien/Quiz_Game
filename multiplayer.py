@@ -452,16 +452,25 @@ def create():
     if b.get("roster_text"):
         roster = classroom.parse_roster(b["roster_text"])
         if not roster:
-            return err("名單讀不到資料,請確認格式為:學號,姓名,組別")
+            return err("名單讀不到資料。每一行請寫「學號,姓名」,還沒分組的話組別那一欄留空或不寫都可以")
         if class_code:
             classroom.set_roster(class_code, roster)
     # ---- 隊伍 ----
-    teams = []
+    # 學期初常常還沒分組,名單只有學號與姓名。這種情況直接跑個人賽,
+    # 不要硬生出「第一組、第二組」逼全班在手機上自己選隊。
+    teams, note = [], ""
     if mode == "team":
         teams = classroom.teams_of(roster)
-        if not teams:
+        if roster and not teams:
+            mode, teams = "solo", []
+            note = "這份名單沒有組別，這一場改用個人賽。等分組完成後，名單補上第三欄再開分組賽。"
+        elif not teams:                        # 完全沒有名單:維持原本的「學生自己選隊」
             n = max(2, min(MAX_TEAMS, int(b.get("team_count", 4))))
             teams = [f"第{'一二三四五六七八'[i]}組" for i in range(n)]
+        elif roster:
+            missing = sum(1 for r in roster if not r["team"])
+            if missing:
+                note = f"名單裡有 {missing} 位還沒分組，他們加入後要自己在手機上選一隊。"
 
     with rooms_lock:
         _cleanup()
@@ -488,7 +497,8 @@ def create():
     return jsonify(code=code, token=r.host_token, join_url=urls[0], join_urls=urls,
                    total=len(r.questions), teams=teams, roster_size=len(roster),
                    class_code=class_code, admin_code=admin_code,
-                   entry=r.entry, entry_url=(f"{base}/j/{r.entry}" if r.entry else ""))
+                   entry=r.entry, entry_url=(f"{base}/j/{r.entry}" if r.entry else ""),
+                   mode=mode, note=note)
 
 
 @bp.post("/api/mp/roster")
