@@ -39,6 +39,7 @@ GAME_TTL = 60 * 60                          # 一局最長保留 1 小時
 TOPICS = {
     "python":  {"name": "Python",   "seal": "蟒"},
     "pytorch": {"name": "Deep Learning", "seal": "深"},
+    "vba":     {"name": "VBA",      "seal": "巨"},
     "geo":     {"name": "地理",     "seal": "輿"},
     "history": {"name": "歷史",     "seal": "史"},
     "human":   {"name": "人文",     "seal": "文"},
@@ -53,7 +54,7 @@ CATEGORIES = TOPICS            # 舊名稱,保留相容
 # 題庫檔案 -> 這個檔的題目屬於哪個地區(顯示在題目上,也可以當篩選條件)
 FILES = {"taiwan": "台灣", "china": "中國", "world": "世界", "poetry": "古典詩詞",
          "stars": "娛樂", "fun": "趣聞", "tech": "科技", "python": "Python", "pytorch": "Deep Learning",
-         "pingpong": "桌球"}
+         "vba": "VBA", "pingpong": "桌球"}
 REGIONS = ["台灣", "中國", "世界"]   # 地理、歷史、人文可再依地區篩選
 
 
@@ -216,6 +217,18 @@ def manifest():
 def service_worker():
     # Service Worker 必須放在根目錄,才能控制整個網站
     return send_from_directory(app.static_folder, "sw.js", mimetype="application/javascript")
+
+
+@app.get("/qrcard")
+def qr_card():
+    """做一張可以印出來的固定入口卡"""
+    return send_from_directory(app.static_folder, "qrcard.html")
+
+
+@app.get("/j/<entry>")
+def join_entry(entry):
+    """固定入口:印出來的 QR 都指向這裡,再自動轉進目前開著的考坊"""
+    return send_from_directory(app.static_folder, "join.html")
 
 
 @app.get("/class")

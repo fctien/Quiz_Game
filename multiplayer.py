@@ -53,7 +53,7 @@ def init(app, pick, clean, cats):
 # ================================================================ 房間
 class Room:
     def __init__(self, code, category, count, limit, region=None, mode="solo",
-                 teams=None, class_code="", roster=None, unit=None, unit_name=""):
+                 teams=None, class_code="", roster=None, unit=None, unit_name="", entry=""):
         self.code = code
         self.host_token = secrets.token_urlsafe(16)
         self.category = category
@@ -65,6 +65,7 @@ class Room:
         self.mode = mode                      # solo(個人賽) / team(分組賽)
         self.teams = list(teams or [])
         self.class_code = class_code          # 課堂累積積分用
+        self.entry = entry                    # 固定入口代碼,學生掃印好的 QR 就會進這一間
         self.roster = list(roster or [])      # [{"sid","name","team"}]
         self.saved = False
         self.created = self.touched = time.time()
@@ -73,7 +74,7 @@ class Room:
         self.soft_at = 0                  # 上一次「作答人數」推播的時間
         self.soft_timer = None
         self.players = {}         # pid -> dict
-        self.kicked = {}          # 被主持人移出的 pid -> 姓名(他的連線要收到通知)
+        self.kicked = {}          # 被主持人移出的 pid -> (姓名, 原因),他的連線要收到通知
         self.closed = False
         self.new_round()
 
@@ -300,6 +301,38 @@ class Room:
 
 
 # ================================================================ 工具
+ENTRY_OK = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_"
+
+
+def clean_entry(s):
+    """固定入口代碼:只留英數與 - _,轉大寫,最多 24 個字。空的就是沒有設。"""
+    s = str(s or "").strip().upper().replace(" ", "-")
+    s = "".join(ch for ch in s if ch in ENTRY_OK)[:24]
+    while "--" in s:
+        s = s.replace("--", "-")
+    return s.strip("-_")
+
+
+def entry_from_class(code):
+    """班級代碼可以直接當入口代碼,但只在它本來就是英數的時候。
+
+    「程式設計-115-1」這種中文代碼濾完只剩「115-1」,不同課會撞在一起,
+    那還不如不要自動帶,讓老師自己填一個。
+    """
+    raw = str(code or "").strip().upper().replace(" ", "-")
+    auto = clean_entry(raw)
+    return auto if len(auto) >= 3 and auto == raw.strip("-_") else ""
+
+
+def room_of_entry(e):
+    """這個入口代碼現在開著的考坊(有多間就給最新開的那一間)"""
+    e = clean_entry(e)
+    if not e:
+        return None
+    live = [r for r in rooms.values() if not r.closed and r.entry == e]
+    return max(live, key=lambda r: r.created) if live else None
+
+
 def _new_code():
     for _ in range(1000):
         code = f"{random.randint(0, 9999):04d}"
@@ -401,6 +434,7 @@ def create():
     unit = b.get("unit") or None
     unit_name = str(b.get("unit_name", ""))[:40]
     mode = "team" if b.get("mode") == "team" else "solo"
+    entry = clean_entry(b.get("entry", ""))
 
     # ---- 班級(選填):有填才會累積積分 ----
     class_code = classroom.clean_code(b.get("class_code", ""))
@@ -432,7 +466,8 @@ def create():
     with rooms_lock:
         _cleanup()
         code = _new_code()
-        r = Room(code, cat, count, limit, region, mode, teams, class_code, roster, unit, unit_name)
+        r = Room(code, cat, count, limit, region, mode, teams, class_code, roster, unit, unit_name,
+                 entry=entry or entry_from_class(class_code))
         if not r.questions:
             return err("這個主題目前沒有可用的題目", 503)
         rooms[code] = r
@@ -449,9 +484,11 @@ def create():
             u = f"{request.scheme}://{ip}:{port}/play?code={code}"
             if u not in urls:
                 urls.append(u)
+    base = f"{request.scheme}://{host}"
     return jsonify(code=code, token=r.host_token, join_url=urls[0], join_urls=urls,
                    total=len(r.questions), teams=teams, roster_size=len(roster),
-                   class_code=class_code, admin_code=admin_code)
+                   class_code=class_code, admin_code=admin_code,
+                   entry=r.entry, entry_url=(f"{base}/j/{r.entry}" if r.entry else ""))
 
 
 @bp.post("/api/mp/roster")
@@ -589,6 +626,16 @@ def close():
 
 
 # ================================================================ 玩家 API
+@bp.get("/api/mp/entry")
+def entry_lookup():
+    """固定入口:這個代碼現在有沒有開著的考坊"""
+    r = room_of_entry(request.args.get("e", ""))
+    if not r:
+        return jsonify(waiting=True)
+    return jsonify(code=r.code, category=categories.get(r.category, {}).get("name", r.category),
+                   players=len(r.players), state=r.state)
+
+
 @bp.get("/api/health")
 def health():
     """手機開這個網址如果看得到 ok,就表示連得到老師的電腦"""
@@ -679,9 +726,27 @@ def kick():
         if not p:
             return err("這個人已經不在考坊裡了", 404)
         r.answers.pop(pid, None)
-        r.kicked[pid] = p["name"]
+        r.kicked[pid] = (p["name"], "kick")
         r.bump()
     return jsonify(ok=True, name=p["name"])
+
+
+@bp.post("/api/mp/clear")
+def clear_players():
+    """把目前加入的人全部清掉,名單重來(例如測試完要正式開始,或上一班沒關就換班)"""
+    b = _body()
+    with rooms_lock:
+        r = _host_room(b)
+        if not r:
+            return err("你不是主持人", 403)
+        n = len(r.players)
+        for pid, p in r.players.items():
+            r.kicked[pid] = (p["name"], "clear")
+        r.players.clear()
+        r.answers.clear()
+        r.prev_rank = {}
+        r.bump()
+    return jsonify(ok=True, cleared=n)
 
 
 @bp.get("/api/mp/view")
@@ -697,7 +762,8 @@ def view_once():
         if not same_token(token, r.host_token):
             return err("你不是主持人", 403)
     elif pid in r.kicked:
-        return jsonify(kicked=True, name=r.kicked[pid])
+        nm, why = r.kicked[pid]
+        return jsonify(kicked=True, name=nm, reason=why)
     elif pid not in r.players or not same_token(token, r.players[pid]["token"]):
         return err("請重新加入考坊", 403)
     with rooms_lock:
@@ -755,7 +821,8 @@ def stream():
         if not same_token(token, r.host_token):
             return err("你不是主持人", 403)
     elif pid in r.kicked:                       # 被移出的人重新連線:直接告訴他,不要一直重試
-        msg = json.dumps({"kicked": True, "name": r.kicked[pid]}, ensure_ascii=False)
+        nm, why = r.kicked[pid]
+        msg = json.dumps({"kicked": True, "name": nm, "reason": why}, ensure_ascii=False)
         return Response(f"data: {msg}\n\n", mimetype="text/event-stream",
                         headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"})
     elif pid not in r.players or not same_token(token, r.players[pid]["token"]):
@@ -778,7 +845,8 @@ def stream():
                     changed = r.version != last
                     last = r.version
                 if pid != "host" and pid not in r.players:      # 被主持人移出考坊:先通知本人
-                    msg = {"kicked": True, "name": r.kicked.get(pid, "")}
+                    nm, why = r.kicked.get(pid, ("", "kick"))
+                    msg = {"kicked": True, "name": nm, "reason": why}
                     yield f"data: {json.dumps(msg, ensure_ascii=False)}\n\n"
                     return
                 if pid != "host" and r.players[pid].get("conn_gen") != mine:

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>脈衝 PULSE・入口卡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="icon" href="/static/icons/favicon.png" type="image/png">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<style>
+:root{--ink:#12233F; --muted:#5E6A85; --line:#C9D2E2; --blue:#1F53B5; --cinnabar:#E0562A;
+  --display:"LXGW WenKai TC","Noto Sans TC",sans-serif; --mono:"IBM Plex Mono",monospace;}
+*{box-sizing:border-box}
+body{margin:0;background:#EEF2F8;color:var(--ink);font-family:"Noto Sans TC",sans-serif}
+.tools{max-width:760px;margin:24px auto;padding:20px 22px;background:#fff;border-radius:16px;
+  box-shadow:0 8px 28px rgba(18,35,63,.10)}
+.tools h1{font-family:var(--display);font-size:1.5rem;margin:0 0 4px}
+.tools p{color:var(--muted);margin:.3em 0 1em;font-size:.95rem;line-height:1.6}
+.f{display:flex;gap:14px;flex-wrap:wrap}
+.f label{display:block;font-size:.85rem;color:var(--muted);margin-bottom:4px}
+.f input{font:inherit;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;width:100%}
+.f > div{flex:1;min-width:180px}
+button{font:inherit;font-weight:700;padding:11px 22px;border:0;border-radius:10px;cursor:pointer;
+  background:var(--blue);color:#fff;margin-top:14px}
+button.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line);margin-left:8px}
+.err{color:var(--cinnabar);font-size:.9rem;margin-top:8px}
+
+/* ---- 入口卡本體：A4 直式 ---- */
+.card{width:190mm;min-height:267mm;margin:24px auto;background:#fff;padding:18mm 16mm;
+  box-shadow:0 8px 28px rgba(18,35,63,.12);display:flex;flex-direction:column;align-items:center;text-align:center}
+.card .brand{font-family:var(--display);font-size:30pt;letter-spacing:.06em;margin:0}
+.card .brand span{display:inline-grid;place-items:center;width:1.15em;height:1.15em;margin-left:.12em;
+  font-size:.5em;background:var(--cinnabar);color:#fff;border-radius:6px;vertical-align:.35em}
+.card .course{font-family:var(--display);font-size:22pt;margin:6mm 0 0;color:var(--blue)}
+.card .qr{margin:8mm 0 4mm}
+.card .qr svg{width:95mm;height:95mm}
+.card .url{font-family:var(--mono);font-size:12pt;color:var(--blue);word-break:break-all;max-width:150mm}
+.card .entry{font-family:var(--mono);font-size:16pt;letter-spacing:.12em;margin-top:2mm;color:var(--muted)}
+.card ol{text-align:left;max-width:140mm;margin:10mm auto 0;padding-left:1.3em;line-height:2;font-size:12pt}
+.card .blanks{margin-top:auto;padding-top:8mm;border-top:1.5px dashed var(--line);width:100%;
+  display:flex;gap:10mm;justify-content:center;font-size:12pt;color:var(--muted)}
+.card .blanks b{color:var(--ink)}
+.card .blank{display:inline-block;width:32mm;border-bottom:1.5px solid var(--ink);height:1.2em}
+.card .foot{margin-top:6mm;font-size:9pt;color:var(--muted)}
+
+@media print{
+  @page{size:A4;margin:0}
+  body{background:#fff}
+  .tools{display:none}
+  .card{width:auto;min-height:auto;margin:0;box-shadow:none;padding:16mm 14mm}
+}
+</style>
+</head>
+<body>
+
+<div class="tools">
+  <h1>做一張可以印出來的入口卡</h1>
+  <p>印一次就好。學生每週掃同一張 QR，伺服器會自動把他帶進你<b>當下開著</b>的考坊；
+     還沒開考坊時，他的手機會停在等待畫面，你一按「開考坊」他就自動進場。<br>
+     入口代碼要和你開考坊時填的那一組<b>完全一樣</b>。</p>
+  <div class="f">
+    <div><label for="e">入口代碼（英數字）</label><input id="e" maxlength="24" placeholder="例如 PY115"></div>
+    <div><label for="c">課程名稱（印在卡片上）</label><input id="c" maxlength="20" placeholder="例如 程式設計"></div>
+    <div><label for="u">網址（自動帶入，可改成 Render 的網址）</label><input id="u" placeholder="https://..."></div>
+  </div>
+  <button id="make">產生入口卡</button>
+  <button class="ghost" id="print">列印</button>
+  <p class="err" id="err" hidden></p>
+</div>
+
+<div class="card" id="card" hidden>
+  <h1 class="brand">脈衝 PULSE<span>試</span></h1>
+  <div class="course" id="pcourse"></div>
+  <div class="qr" id="pqr"></div>
+  <div class="url" id="purl"></div>
+  <div class="entry" id="pentry"></div>
+  <ol>
+    <li>用手機相機掃上面的 QR code（或直接輸入網址）</li>
+    <li>老師還沒開始的話，畫面會停在等待中，<b>先不要關掉</b></li>
+    <li>老師一開始，你的手機就會自動進入考坊</li>
+    <li>輸入學號與姓名即可作答</li>
+  </ol>
+  <div class="blanks">
+    <span>課程：<b id="bcourse"></b></span>
+    <span>老師：<span class="blank"></span></span>
+    <span>備用房號：<span class="blank"></span></span>
+  </div>
+  <div class="foot">脈衝 PULSE ・ 這張卡整學期都能用，請貼在講義封面或教室公布欄</div>
+</div>
+
+<script>
+const $ = i => document.getElementById(i);
+const clean = s => (s || '').trim().toUpperCase().replace(/\s+/g, '-')
+  .replace(/[^A-Z0-9\-_]/g, '').replace(/-+/g, '-').replace(/^[-_]+|[-_]+$/g, '').slice(0, 24);
+
+const saved = (() => { try { return JSON.parse(localStorage.getItem('pulse_qrcard')) || {}; } catch { return {}; } })();
+$('e').value = saved.e || '';
+$('c').value = saved.c || '';
+$('u').value = saved.u || location.origin;
+
+function make(){
+  const e = clean($('e').value), c = $('c').value.trim();
+  const base = ($('u').value.trim() || location.origin).replace(/\/+$/, '');
+  const err = $('err');
+  if (!e){ err.textContent = '請先填入口代碼，只能用英文字母、數字和 -'; err.hidden = false; $('card').hidden = true; return; }
+  err.hidden = true;
+  $('e').value = e;
+  try { localStorage.setItem('pulse_qrcard', JSON.stringify({e, c, u: base})); } catch {}
+  const url = `${base}/j/${e}`;
+  const q = qrcode(0, 'M'); q.addData(url); q.make();
+  $('pqr').innerHTML = q.createSvgTag({cellSize: 6, margin: 2, scalable: true});
+  $('purl').textContent = url;
+  $('pentry').textContent = '入口代碼　' + e;
+  $('pcourse').textContent = c || '';
+  $('bcourse').textContent = c || '';
+  $('card').hidden = false;
+  $('card').scrollIntoView({behavior: 'smooth'});
+}
+$('make').onclick = make;
+$('print').onclick = () => { if ($('card').hidden) make(); setTimeout(() => window.print(), 250); };
+const p = new URLSearchParams(location.search);
+if (p.get('e')){ $('e').value = p.get('e'); if (p.get('c')) $('c').value = p.get('c'); make(); }
+</script>
+</body>
+</html>

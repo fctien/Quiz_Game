@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-title" content="脈衝 PULSE">
 <link rel="apple-touch-icon" href="/static/icons/icon-180.png">
 <link rel="icon" href="/static/icons/favicon.png" type="image/png">
-<link rel="stylesheet" href="/static/style.css?v=5.3">
+<link rel="stylesheet" href="/static/style.css?v=5.7">
 <!-- QR code 產生器：連不到網路時只會少了 QR code，輸入房號一樣能加入 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 <script>
@@ -30,7 +30,7 @@ if ('serviceWorker' in navigator) window.addEventListener('load', () => navigato
 /* 脈衝 PULSE 主持台：開考坊、分組、控制出題、公布答案、放榜、存入班級積分 */
 const $app = document.getElementById('app');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const SEAL = {python:'蟒', pytorch:'深', geo:'輿', history:'史', human:'文', tech:'科', star:'星', fun:'奇', tt:'桌', news:'聞', mix:'雜'};
+const SEAL = {python:'蟒', pytorch:'深', vba:'巨', geo:'輿', history:'史', human:'文', tech:'科', star:'星', fun:'奇', tt:'桌', news:'聞', mix:'雜'};
 const REGIONS = ['', '台灣', '中國', '世界'];
 const post = async (url, body) => {
   const r = await fetch(url, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
@@ -54,11 +54,12 @@ async function readCsv(file){
 
 /* ---------- 開考坊設定 ---------- */
 async function setup(msg = ''){
-  const pick = ss.get('mp_setup') || {category: 'mix', region: '', count: 10, time: 20, mode: 'solo', team_count: 4, class_code: ''};
+  keepAwake(false);
+  const pick = ss.get('mp_setup') || {category: 'mix', region: '', count: 10, time: 20, mode: 'solo', team_count: 4, class_code: '', entry: ''};
   document.body.dataset.topic = pick.category || '';   // 設定頁就先換上該主題的布景
   const cats = await fetch('/api/categories' + (pick.region ? '?region=' + encodeURIComponent(pick.region) : '')).then(r => r.json()).catch(() => []);
   $app.innerHTML = `<div class="masthead"><div><h1>主持台<span class="seal">試</span></h1>
-      <p class="sub">開一間考坊，學生用手機輸入房號一起搶答　<span style="opacity:.6">v5.3</span></p></div>
+      <p class="sub">開一間考坊，學生用手機輸入房號一起搶答　<span style="opacity:.6">v5.7</span></p></div>
       <a class="back" href="/">← 回首頁</a></div>
     <div class="chips" id="regions" role="group" aria-label="地區">${REGIONS.map(x =>
       `<button data-r="${x}" aria-pressed="${x === pick.region}">${x || '不限地區'}</button>`).join('')}</div>
@@ -87,6 +88,9 @@ async function setup(msg = ''){
           <input class="textin" id="cls" maxlength="30" placeholder="例如 程式設計-115-1" value="${esc(pick.class_code)}"></div>
         <div class="field" style="flex:1;min-width:160px"><label for="adm">管理碼（班級已建立過才要填）</label>
           <input class="textin" id="adm" maxlength="12" placeholder="第一次開班留空"></div>
+        <div class="field" style="flex:1;min-width:200px"><label for="entry">固定入口代碼（可印成 QR）</label>
+          <input class="textin" id="entry" maxlength="24" placeholder="例如 PY115（英數字）" value="${esc(pick.entry || '')}">
+          <small class="sub">填了以後，學生掃 <b>你的網址/j/PY115</b> 就會自動進入當下開著的考坊，這張 QR 印一次整學期都能用。只能用英文字母、數字和 -，留空就是不啟用。</small></div>
       </div>
       <div class="field"><label for="csv">分組名單 CSV（學號,姓名,組別）</label>
         <input type="file" id="csv" accept=".csv,.txt,.tsv"><small class="sub" id="csvinfo">未選擇檔案；沒有名單也可以玩，學生自己選隊。</small></div>
@@ -138,11 +142,13 @@ async function setup(msg = ''){
   };
   document.getElementById('create').onclick = async e => {
     e.currentTarget.disabled = true;
-    pick.class_code = document.getElementById('cls').value.trim(); save();
+    pick.class_code = document.getElementById('cls').value.trim();
+    pick.entry = document.getElementById('entry').value.trim(); save();
     try{
       const r = await post('/api/mp/create', {...pick, admin_code: document.getElementById('adm').value.trim(), roster_text: rosterText});
       H = {code: r.code, token: r.token, join_url: r.join_url, join_urls: r.join_urls || [r.join_url],
-           admin_code: r.admin_code, class_code: r.class_code};
+           admin_code: r.admin_code, class_code: r.class_code,
+           entry: r.entry, entry_url: r.entry_url};
       ss.set('mp_host', H);
       connect();
     }catch(ex){ setup(ex.message); }
@@ -157,6 +163,26 @@ let lastMsg = 0, watch = null, poll = null, esFails = 0, gotAny = false;
 
 function note(txt){ const c = document.getElementById('conn'); if (c) c.textContent = txt; }
 
+/* ---------- 用手機主持時，不要讓螢幕自己鎖掉 ----------
+   考坊開著的時候要求系統保持螢幕亮著,你才不用每按一次「下一題」就先解鎖。
+   關閉考坊、離開頁面就自動解除;瀏覽器不支援的話就當作沒這件事。 */
+let wake = null;
+async function keepAwake(on){
+  try{
+    if (on){
+      if (!('wakeLock' in navigator) || wake) return;
+      wake = await navigator.wakeLock.request('screen');
+      wake.addEventListener('release', () => { wake = null; });
+    }else if (wake){
+      const w = wake; wake = null; await w.release();
+    }
+  }catch{ wake = null; }           // 沒電、不支援、被系統收回都不影響上課
+}
+/* 手機切走再切回來,系統會把 wake lock 收掉,要重新要一次 */
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible' && H) keepAwake(true);
+});
+
 function handle(data){
   lastMsg = Date.now();
   if (data.ping) return note('');
@@ -166,6 +192,7 @@ function handle(data){
 
 function connect(){
   stopPoll();
+  keepAwake(true);
   es?.close();
   gotAny = false;
   es = new EventSource(`/api/mp/stream?code=${H.code}&pid=host&token=${encodeURIComponent(H.token)}`);
@@ -199,6 +226,17 @@ document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === 'visible' && H && Date.now() - lastMsg > 5000) connect();
 });
 window.addEventListener('online', () => { if (H) connect(); });
+
+/* ---------- 把名單整個清掉(測試完要正式開始、或上一班沒關就換班) ---------- */
+async function clearAll(){
+  /* 名單人數要從畫面上讀，不能用畫面剛產生時的那份資料 ——
+     lobby() 只在骨架改變時重畫，之後有人進出只會更新數字。 */
+  const n = parseInt(document.getElementById('rcount')?.textContent || '0', 10);
+  if (!n) return;
+  if (!confirm(`確定把目前 ${n} 位考生全部清除嗎？\n\n房號不變，他們的手機會看到「請重新加入」，重新掃 QR 或輸入房號就能再進來。`)) return;
+  try { await post('/api/mp/clear', {code: H.code, token: H.token}); }
+  catch(e){ alert(e.message); }
+}
 
 /* ---------- 把某位考生移出考坊(學號打錯時用) ---------- */
 async function kick(pid, name){
@@ -240,12 +278,42 @@ function viewKey(v){
 }
 function render(v){
   document.body.dataset.topic = v.topic || '';
-  if (v.state === 'closed'){ ss.del('mp_host'); es?.close(); stopPoll(); clearInterval(watch); H = null; lastKey = ''; return setup(); }
+  if (v.state === 'closed'){ ss.del('mp_host'); es?.close(); stopPoll(); clearInterval(watch); keepAwake(false); H = null; lastKey = ''; return setup(); }
   if (v.state !== 'question') clearInterval(tick);
   const key = viewKey(v), fresh = key !== lastKey;
   lastKey = key;
   ({lobby, question, reveal, final})[v.state]?.(v, fresh);
   if (!fresh) setHTML('barinfo', barText(v));
+}
+
+/* 把 QR 畫成 PNG 讓老師存下來(可以印、可以用 LINE 傳)
+   自己用 canvas 畫,不經過 SVG 轉檔,手機上也存得下來。 */
+function downloadQR(url, filename, caption){
+  if (!window.qrcode) return alert('QR 元件還沒載入，請重新整理一次');
+  const q = qrcode(0, 'M'); q.addData(url); q.make();
+  const n = q.getModuleCount(), cell = 12, pad = 4 * cell;
+  const W = n * cell + pad * 2, foot = 130;
+  const cv = document.createElement('canvas');
+  cv.width = W; cv.height = W + foot;
+  const g = cv.getContext('2d');
+  g.fillStyle = '#fff'; g.fillRect(0, 0, cv.width, cv.height);
+  g.fillStyle = '#12233F';
+  for (let r = 0; r < n; r++) for (let c = 0; c < n; c++)
+    if (q.isDark(r, c)) g.fillRect(pad + c * cell, pad + r * cell, cell, cell);
+  g.textAlign = 'center';
+  g.font = 'bold 34px system-ui, sans-serif';
+  g.fillText(caption || '', W / 2, W + 42);
+  g.font = '22px ui-monospace, monospace';
+  g.fillStyle = '#5E6A85';
+  g.fillText(url.length > 46 ? url.slice(0, 45) + '…' : url, W / 2, W + 82);
+  g.font = '20px system-ui, sans-serif';
+  g.fillText('手機掃描即可加入', W / 2, W + 116);
+  cv.toBlob(b => {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(b); a.download = filename;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+  }, 'image/png');
 }
 
 /* 名單上的一個人:滑鼠移上去(手機是直接看得到)會出現 ✕,可以把他移出考坊 */
@@ -267,6 +335,15 @@ function lobby(v, fresh){
       <div class="bigcode">${v.code}</div>
       <div class="qr" id="qr" hidden></div>
       <div class="joinurl" id="joinurl">${esc(H.join_url)}</div>
+      <div class="row joinacts">
+        <button class="btn ghost" id="copy">複製邀請連結</button>
+        ${navigator.share ? '<button class="btn ghost" id="share">傳給學生</button>' : ''}
+        <button class="btn ghost" id="dlqr">下載 QR 圖片</button>
+      </div>
+      ${H.entry_url ? `<p class="note entryline">固定入口（可印出來重複用）：
+        <span class="joinurl">${esc(H.entry_url)}</span>
+        <a class="back" href="/qrcard?e=${encodeURIComponent(H.entry)}" target="_blank"
+           style="display:inline-block;margin-top:6px">列印入口卡 →</a></p>` : ''}
       ${H.join_urls && H.join_urls.length > 1 ? `<button class="back" id="swap" style="margin-top:6px">手機連不到？換一個網址（${H.join_urls.length} 組）</button>` : ''}
       <p class="note">測試用：手機開 <span class="joinurl">${esc(H.join_url.split('/play')[0])}/api/health</span> 看得到 ok 就表示連得通。</p></div>
     <div class="roster"><h2>已報到 <span id="rcount">${v.roster.length}</span>${v.roster_size ? ` / ${v.roster_size}` : ''} 人</h2>
@@ -277,18 +354,43 @@ function lobby(v, fresh){
 </div>
       <div id="rmiss">${v.missing && v.missing.length ? `<p class="sub" style="margin-top:10px">未到（${v.missing.length}）：${v.missing.slice(0, 12).map(esc).join('、')}${v.missing.length > 12 ? '…' : ''}</p>` : ''}</div>
       <div class="row"><button class="btn" id="go" ${v.roster.length ? '' : 'disabled'}>開始考試（${v.total} 題）</button></div>
-      <div class="row"><button class="btn ghost" id="close">關閉考坊</button></div></div></div>`;
+      <div class="row"><button class="btn ghost" id="clearall" ${v.roster.length ? '' : 'disabled'}>清除名單</button>
+        <button class="btn ghost" id="close">關閉考坊</button></div></div></div>`;
+  /* 畫面上的 QR 走「這一場的房號」，最快；固定入口另外做成可下載的圖片 */
   if (window.qrcode){
     const q = qrcode(0, 'M'); q.addData(H.join_url); q.make();
     const el = document.getElementById('qr'); el.innerHTML = q.createSvgTag(5, 2); el.hidden = false;
   }
+  document.getElementById('dlqr').onclick = () => downloadQR(H.entry_url || H.join_url,
+    H.entry_url ? `PULSE-${H.entry}-入口QR.png` : `PULSE-房號${v.code}-QR.png`,
+    H.entry_url ? H.entry : ('房號 ' + v.code));
   document.getElementById('swap')?.addEventListener('click', () => {
     const i = (H.join_urls.indexOf(H.join_url) + 1) % H.join_urls.length;
     H.join_url = H.join_urls[i]; ss.set('mp_host', H); lobby(v);
   });
   document.getElementById('go').onclick = () => act('/api/mp/start');
   document.getElementById('close').onclick = () => confirm('確定要關閉考坊嗎？') && act('/api/mp/close');
+  document.getElementById('clearall').onclick = () => clearAll();
   bindKick();
+
+  /* 用手機主持時，學生看不到你的螢幕：把連結貼到班級群組最快 */
+  const invite = () => `${H.join_url}\n（房號 ${v.code}）`;
+  document.getElementById('copy').onclick = async e => {
+    const btn = e.currentTarget, before = btn.textContent;
+    try{
+      await navigator.clipboard.writeText(invite());
+    }catch{                                   // 舊瀏覽器或沒有 https 時的備援
+      const ta = document.createElement('textarea');
+      ta.value = invite(); ta.style.position = 'fixed'; ta.style.opacity = 0;
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch {}
+      ta.remove();
+    }
+    btn.textContent = '已複製 ✓';
+    setTimeout(() => { btn.textContent = before; }, 1600);
+  };
+  document.getElementById('share')?.addEventListener('click', () =>
+    navigator.share({title: '脈衝 PULSE 考坊', text: `房號 ${v.code}`, url: H.join_url}).catch(() => {}));
 }
 
 /* 名單有人進出時,只換名單那一塊 */
@@ -305,6 +407,8 @@ function patchLobby(v){
     ? `<p class="sub" style="margin-top:10px">未到（${v.missing.length}）：${v.missing.slice(0, 12).map(esc).join('、')}${v.missing.length > 12 ? '…' : ''}</p>` : '');
   const go = document.getElementById('go');
   if (go) go.disabled = !v.roster.length;
+  const ca = document.getElementById('clearall');
+  if (ca) ca.disabled = !v.roster.length;
   bindKick();
 }
 
@@ -377,6 +481,33 @@ function reveal(v, fresh){
   document.getElementById('nx').onclick = () => act('/api/mp/next');
 }
 
+/* 用手機主持時最方便的一條路:直接叫出系統分享選單,
+   選 LINE、雲端硬碟、或 AirDrop 傳回自己的電腦,不必先下載再去檔案 App 找。 */
+async function shareScores(v, btn){
+  const url = `/api/mp/export?code=${v.code}&token=${encodeURIComponent(H.token)}`;
+  const name = `${v.class_code || 'PULSE'}-${v.category}-成績.csv`;
+  const before = btn.textContent;
+  btn.disabled = true; btn.textContent = '準備中…';
+  try{
+    const blob = await (await fetch(url)).blob();
+    const file = new File([blob], name, {type: 'text/csv'});
+    if (navigator.canShare && navigator.canShare({files: [file]})){
+      await navigator.share({files: [file], title: name});
+      btn.textContent = before; btn.disabled = false;
+      return;
+    }
+    // 這台裝置不支援分享檔案,就退回下載
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = name;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+    btn.textContent = '已下載 ✓';
+    setTimeout(() => { btn.textContent = before; btn.disabled = false; }, 1800);
+  }catch(e){
+    btn.textContent = before; btn.disabled = false;      // 使用者自己取消分享也會走到這裡
+  }
+}
+
 /* ---------- 放榜 ---------- */
 function final(v, fresh){
   if (!fresh) return;
@@ -392,8 +523,9 @@ function final(v, fresh){
     <div class="board">${v.final.map((p, k) => `<div class="entry"><span class="pos ${k < 3 ? 'top' : ''}">${k < 3 ? t[k] : k + 1}</span>
       <span class="who"><b>${esc(p.name)}</b><small>${p.sid ? esc(p.sid) + '・' : ''}${p.team ? esc(p.team) + '・' : ''}答對 ${p.right} / ${v.total}${p.bonus ? `・<b class="fastest">加分 ${p.bonus}</b>` : ''}</small></span>
       <span class="pts">${p.score}</span></div>`).join('')}</div>
-    <div class="row"><a class="btn ghost" style="text-decoration:none;text-align:center"
-      href="/api/mp/export?code=${v.code}&token=${encodeURIComponent(H.token)}">匯出本場成績 CSV</a></div>
+    <div class="row joinacts"><a class="btn ghost" style="text-decoration:none;text-align:center"
+      href="/api/mp/export?code=${v.code}&token=${encodeURIComponent(H.token)}">匯出本場成績 CSV</a>
+      <button class="btn ghost" id="sharecsv">分享成績</button></div>
     ${v.class_code ? `<div class="placed" id="saveslot">${v.saved
       ? `已存入班級「${esc(v.class_code)}」的累積積分。<div class="row"><a class="btn ghost" href="/class" target="_blank" style="text-decoration:none;text-align:center">查看累積積分</a></div>`
       : `這場成績可以存入班級「${esc(v.class_code)}」的累積積分。<div class="row"><button class="btn" id="save">存入班級積分</button></div>`}</div>` : ''}
@@ -401,6 +533,7 @@ function final(v, fresh){
   document.getElementById('save')?.addEventListener('click', e => { e.target.disabled = true; act('/api/mp/save_class'); });
   document.getElementById('again').onclick = () => { lastQ = -1; act('/api/mp/again'); };
   document.getElementById('close').onclick = () => act('/api/mp/close');
+  document.getElementById('sharecsv').onclick = e => shareScores(v, e.currentTarget);
 }
 
 H ? connect() : setup();

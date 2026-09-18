@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>脈衝 PULSE・入場</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#F3F5F8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1729" media="(prefers-color-scheme: dark)">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="脈衝 PULSE">
+<link rel="apple-touch-icon" href="/static/icons/icon-180.png">
+<link rel="icon" href="/static/icons/favicon.png" type="image/png">
+<link rel="stylesheet" href="/static/style.css?v=5.7">
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<script>
+/* 固定入口頁
+   印在講義上的 QR 永遠指向 /j/<課程代碼>，這一頁負責去問伺服器
+   「這門課現在有沒有開著的考坊」，有就直接把學生送進去，沒有就在這裡等。 */
+const $app = document.getElementById('app');
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ENTRY = decodeURIComponent(location.pathname.replace(/^\/j\//, '').replace(/\/$/, ''));
+let tries = 0;
+
+function waiting(msg = ''){
+  $app.innerHTML = `<div class="masthead"><div><h1>入場<span class="seal">試</span></h1>
+      <p class="sub">${esc(ENTRY)}</p></div><a class="back" href="/">← 首頁</a></div>
+    <div class="mp-card" style="margin-top:22px;text-align:center">
+      <p style="font-size:1.15rem;margin:8px 0 4px"><b>老師還沒開始</b></p>
+      <p class="sub">這一頁會自動幫你注意，開始了就直接進去，先不要關掉。</p>
+      <p class="conn" id="tick" style="margin-top:14px">${esc(msg)}</p>
+      <div class="row" style="justify-content:center"><button class="btn ghost" id="manual">我要自己輸入房號</button></div>
+    </div>`;
+  document.getElementById('manual').onclick = () => { location.href = '/play'; };
+}
+
+async function look(){
+  try{
+    const r = await fetch('/api/mp/entry?e=' + encodeURIComponent(ENTRY), {cache: 'no-store'});
+    const j = await r.json();
+    if (j.code){
+      document.getElementById('tick') && (document.getElementById('tick').textContent = '找到了，正在進場…');
+      location.replace('/play?code=' + j.code);
+      return;
+    }
+  }catch{}
+  tries++;
+  const t = document.getElementById('tick');
+  if (t) t.textContent = `已等候 ${tries * 3} 秒…`;
+  setTimeout(look, 3000);
+}
+
+waiting('查詢中…');
+look();
+</script>
+</body>
+</html>

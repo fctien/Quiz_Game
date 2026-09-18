@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-title" content="脈衝 PULSE">
 <link rel="apple-touch-icon" href="/static/icons/icon-180.png">
 <link rel="icon" href="/static/icons/favicon.png" type="image/png">
-<link rel="stylesheet" href="/static/style.css?v=5.3">
+<link rel="stylesheet" href="/static/style.css?v=5.7">
 <script>
 /* 註冊 Service Worker：加到主畫面後可全螢幕開啟、載入更快 */
 if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
@@ -34,8 +34,8 @@ if ('serviceWorker' in navigator) window.addEventListener('load', () => navigato
  * ============================================================ */
 const LIVES = 3;
 const TIME_LIMIT = {choice: 15, order: 25};
-const SEAL = {python:'蟒', pytorch:'深', geo:'輿', history:'史', human:'文', tech:'科', star:'星', fun:'奇', tt:'桌', news:'聞', mix:'雜'};
-const CAT_NAME = {python:'Python', pytorch:'Deep Learning', geo:'地理', history:'歷史', human:'人文', tech:'科技', star:'娛樂', fun:'趣聞', tt:'桌球', news:'即時新聞', mix:'綜合挑戰'};
+const SEAL = {python:'蟒', pytorch:'深', vba:'巨', geo:'輿', history:'史', human:'文', tech:'科', star:'星', fun:'奇', tt:'桌', news:'聞', mix:'雜'};
+const CAT_NAME = {python:'Python', pytorch:'Deep Learning', vba:'VBA', geo:'地理', history:'歷史', human:'人文', tech:'科技', star:'娛樂', fun:'趣聞', tt:'桌球', news:'即時新聞', mix:'綜合挑戰'};
 const REGIONS = ['', '台灣', '中國', '世界'];
 const TOP3 = ['滿格', '高峰', '躍升'];
 const $app = document.getElementById('app');
@@ -204,7 +204,7 @@ async function home(){
   const mode = store.get('quiz_mode') || 'solo';
   let region = store.get('quiz_region') || '';
   $app.innerHTML = `<div class="masthead"><div><h1>脈衝<span class="wordmark">PULSE</span></h1>
-    <p class="sub">Python・Deep Learning・地理・歷史・人文・科技・娛樂・趣聞，十題定名次</p></div>
+    <p class="sub">Python・Deep Learning・VBA・地理・歷史・人文・科技・娛樂・趣聞，十題定名次</p></div>
     ${best ? `<div class="best">個人最高<b>${best}</b></div>` : ''}</div>
     <div class="modes" role="group" aria-label="遊戲模式">
       <button id="m-solo" aria-pressed="${mode === 'solo'}">單人闖關</button>
@@ -220,7 +220,7 @@ async function home(){
       <li>答得越快分數越高；連中 3 題 ×1.5、連中 5 題 ×2</li>
       <li>每局各有一次道具：刪去兩個選項、跳過此題、加時 10 秒</li>
       <li>依正確率評級：滿格、高峰、躍升、穩定、起跳；留下代號就能登上脈衝榜</li>
-    </ul><p class="sub" style="font-size:.78rem;margin-top:10px">脈衝 PULSE v5.3</p></div></div>
+    </ul><p class="sub" style="font-size:.78rem;margin-top:10px">脈衝 PULSE v5.7</p></div></div>
     <div id="multi" class="mp-panel" ${mode === 'multi' ? '' : 'hidden'}>${LOCAL ? `
       <div class="mp-card"><h3>多人對戰</h3><p>多人同場搶答需要執行 Python 伺服器版（app.py），這個單機版只能單人闖關。</p></div>` : `
       <form class="mp-card" id="joinf"><h3>加入考坊</h3><p>輸入主持人畫面上的四位數房號</p>
@@ -498,7 +498,7 @@ function result(){
 
 /* ---------- 脈衝榜 ---------- */
 async function board(category = 'all', period = 'week'){
-  const cats = ['all', 'python', 'pytorch', 'geo', 'history', 'human', 'tech', 'star', 'fun', 'tt', ...(LOCAL ? [] : ['news']), 'mix'];
+  const cats = ['all', 'python', 'pytorch', 'vba', 'geo', 'history', 'human', 'tech', 'star', 'fun', 'tt', ...(LOCAL ? [] : ['news']), 'mix'];
   $app.innerHTML = `<div class="lbhead"><h1>脈衝榜</h1><button class="back" id="back">← 回首頁</button></div>
     <div class="seg" role="group" aria-label="期間">
       <button id="p-week" aria-pressed="${period === 'week'}">本週</button>

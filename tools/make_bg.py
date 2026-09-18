@@ -321,16 +321,76 @@ def art_tt():
                  f'r="{rnd.uniform(2,5):.0f}" fill="#1F53B5" opacity="{rnd.uniform(.10,.24):.2f}"/>')
     return svg("".join(p), d)
 
+
+# ---------------------------------------------------------------- VBA
+def art_vba():
+    """Excel 試算表:格線、欄列標題、選取框、公式列與巨集符號"""
+    rnd = random.Random(21)
+    d = f'<defs>{SOFT}{GLOW}</defs>'
+    p = [blob(200, 160, 320, "#2F9E68", .26), blob(1420, 840, 340, "#1E7A4A", .24),
+         blob(880, 520, 300, "#7ED3A6", .16)]
+    cw, ch = 150, 78                      # 一格的寬高
+    x0, y0 = 90, 130
+    cols, rows = 10, 11
+    # 欄標題(A B C ...)與列標題(1 2 3 ...)
+    for c in range(cols):
+        x = x0 + c * cw
+        p.append(f'<rect x="{x}" y="{y0 - 48}" width="{cw - 4}" height="40" rx="4" '
+                 f'fill="#217346" opacity=".16"/>')
+        p.append(f'<text x="{x + cw / 2 - 2:.0f}" y="{y0 - 18}" font-family="monospace" font-size="26" '
+                 f'fill="#12233F" opacity=".35" text-anchor="middle">{chr(65 + c)}</text>')
+    for r in range(rows):
+        y = y0 + r * ch
+        p.append(f'<text x="{x0 - 26}" y="{y + ch / 2 + 9:.0f}" font-family="monospace" font-size="24" '
+                 f'fill="#12233F" opacity=".30" text-anchor="middle">{r + 1}</text>')
+    # 格線
+    for c in range(cols + 1):
+        x = x0 + c * cw
+        p.append(f'<line x1="{x}" y1="{y0}" x2="{x}" y2="{y0 + rows * ch}" '
+                 f'stroke="#217346" stroke-width="2" opacity=".22"/>')
+    for r in range(rows + 1):
+        y = y0 + r * ch
+        p.append(f'<line x1="{x0}" y1="{y}" x2="{x0 + cols * cw}" y2="{y}" '
+                 f'stroke="#217346" stroke-width="2" opacity=".22"/>')
+    # 有些格子填了資料,長短不一的橫條
+    for _ in range(46):
+        c, r = rnd.randrange(cols), rnd.randrange(rows)
+        w = rnd.uniform(.35, .82) * cw
+        p.append(f'<rect x="{x0 + c * cw + 16:.0f}" y="{y0 + r * ch + ch / 2 - 7:.0f}" '
+                 f'width="{w:.0f}" height="14" rx="7" fill="#12233F" '
+                 f'opacity="{rnd.uniform(.07, .16):.2f}"/>')
+    # 選取中的儲存格:粗綠框加右下角的填滿控點
+    sc, sr = 3, 4
+    sx, sy = x0 + sc * cw, y0 + sr * ch
+    p.append(f'<rect x="{sx}" y="{sy}" width="{cw}" height="{ch}" fill="none" '
+             f'stroke="#217346" stroke-width="7" opacity=".85" filter="url(#glow)"/>')
+    p.append(f'<rect x="{sx + cw - 9}" y="{sy + ch - 9}" width="18" height="18" fill="#217346" opacity=".9"/>')
+    # 公式列
+    p.append(f'<rect x="{x0}" y="{y0 - 118}" width="{cols * cw}" height="52" rx="10" '
+             f'fill="#fff" opacity=".55"/>')
+    p.append(f'<text x="{x0 + 22}" y="{y0 - 82}" font-family="monospace" font-size="30" '
+             f'fill="#217346" opacity=".55">=SUM(A1:A10)</text>')
+    # 右下角:巨集的程式碼片段
+    code = ["Sub Report()", "    For i = 2 To n", "        Cells(i, 3) = _", "    Next i", "End Sub"]
+    bx, by = 1010, 700
+    p.append(f'<rect x="{bx - 26}" y="{by - 46}" width="560" height="250" rx="18" fill="#12233F" opacity=".10"/>')
+    for k, line in enumerate(code):
+        p.append(f'<text x="{bx}" y="{by + k * 44}" font-family="monospace" font-size="30" '
+                 f'fill="#12233F" opacity=".40" xml:space="preserve">{line}</text>')
+    return svg("".join(p), d)
+
+
 ARTS = {"": art_default, "mix": art_default, "pytorch": art_dl, "tech": art_tech,
         "history": art_history, "human": art_human, "geo": art_geo, "star": art_star,
-        "fun": art_fun, "tt": art_tt, "news": art_news, "python": art_python}
+        "fun": art_fun, "tt": art_tt, "news": art_news, "python": art_python,
+        "vba": art_vba}
 
 def build_css():
     lines = ["/* ===== \u4e3b\u984c\u80cc\u666f\u63d2\u756b\uff08\u7531 tools/make_bg.py \u7522\u751f\uff0c\u539f\u5275\u5716\u5f62\uff0c\u52ff\u624b\u6539\uff09 ===== */"]
     # \u6bcf\u5f35\u63d2\u756b\u7684\u6fc3\u6de1\u4e0d\u540c\uff0c\u500b\u5225\u8abf\u5230\u770b\u5f97\u898b\u53c8\u4e0d\u6436\u6587\u5b57
     OPACITY = {"": .62, "mix": .62, "pytorch": .34, "tech": .42, "python": .55,
                "geo": .72, "history": .58, "human": .78, "star": .55,
-               "fun": .58, "tt": .60, "news": .58}
+               "fun": .58, "tt": .60, "news": .58, "vba": .50}
     for key, fn in ARTS.items():
         u = uri(fn())
         sel = "body" if key == "" else f'body[data-topic="{key}"]'

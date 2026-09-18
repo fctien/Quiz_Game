@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-title" content="脈衝 PULSE">
 <link rel="apple-touch-icon" href="/static/icons/icon-180.png">
 <link rel="icon" href="/static/icons/favicon.png" type="image/png">
-<link rel="stylesheet" href="/static/style.css?v=5.3">
+<link rel="stylesheet" href="/static/style.css?v=5.7">
 <script>
 /* 註冊 Service Worker：加到主畫面後可全螢幕開啟、載入更快 */
 if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
@@ -100,7 +100,7 @@ function note(txt){ const c = document.getElementById('conn'); if (c) c.textCont
 function handle(data){
   lastMsg = Date.now();
   if (data.ping) return note('');                 // 只是心跳
-  if (data.kicked) return kicked(data.name);
+  if (data.kicked) return kicked(data.name, data.reason);
   note('');
   render(data);
 }
@@ -149,13 +149,16 @@ document.addEventListener('visibilitychange', () => {
 window.addEventListener('online', () => { if (P) connect(); });
 
 /* ---------- 被主持人移出考坊 ---------- */
-function kicked(name){
+function kicked(name, reason){
   es?.close(); stopPoll(); clearInterval(watch); clearInterval(tick);
   ls.del('mp_' + P.code);
   const code = P.code; P = null;
+  const all = reason === 'clear';          // 老師把名單整個清掉，不是針對你
   $app.innerHTML = `<div class="result"><p class="sub">${esc(name || '')}</p>
-    <div class="bang"><small>PULSE</small><div class="rank">離席</div></div>
-    <p class="sub" style="margin-top:14px">主持人把你移出了這間考坊。<br>如果是學號輸錯，重新輸入正確的學號再加入一次。</p>
+    <div class="bang"><small>PULSE</small><div class="rank">${all ? '重新報到' : '離席'}</div></div>
+    <p class="sub" style="margin-top:14px">${all
+      ? '老師把名單清空了，請重新加入一次。<br>大家都要重新報到，不是只有你。'
+      : '主持人把你移出了這間考坊。<br>如果是學號輸錯，重新輸入正確的學號再加入一次。'}</p>
     <div class="row"><button class="btn" id="again">重新加入</button></div></div>`;
   document.getElementById('again').onclick = () => { location.href = '/play?code=' + code; };
 }

@@ -1,0 +1,5602 @@
+[
+ {
+  "id": "vba-V01-01",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "Excel 預設不會顯示「開發人員」索引標籤。要把它叫出來，正確的操作是？",
+  "options": [
+   "檔案 > 選項 > 自訂功能區，在「主要索引標籤」清單中勾選「開發人員」",
+   "在「檢視」索引標籤中按下「巨集」，再勾選「顯示開發人員索引標籤」這個選項",
+   "插入 > 增益集，安裝名為「開發人員工具」的增益集",
+   "常用 > 儲存格格式 > 自訂 > 開發人員"
+  ],
+  "answer": 0,
+  "explanation": "開發人員索引標籤預設是關閉的，必須到「檔案 > 選項 > 自訂功能區」的主要索引標籤清單中自行勾選。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-02",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在 Excel 中按下 Alt+F11，會開啟下列哪一個畫面？",
+  "options": [
+   "「巨集」對話框",
+   "「錄製巨集」對話框，可以在其中輸入巨集名稱與快速鍵",
+   "VBE（Visual Basic 編輯器）",
+   "信任中心的巨集設定畫面"
+  ],
+  "answer": 2,
+  "explanation": "Alt+F11 是開啟 Microsoft Visual Basic for Applications 編輯器（VBE）的快速鍵。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-03",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "不使用功能區按鈕，要直接叫出可以執行、編輯、刪除巨集的「巨集」對話框，應該按哪一組快速鍵？",
+  "options": [
+   "Alt+F11",
+   "Alt+F8",
+   "Ctrl+F8",
+   "Shift+F5"
+  ],
+  "answer": 1,
+  "explanation": "Alt+F8 會顯示「巨集」對話框，可在其中建立、執行、編輯或刪除巨集。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-04",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "活頁簿裡已經寫好了巨集，若存檔時選擇 .xlsx 格式，會發生什麼事？",
+  "options": [
+   "巨集會被完整保留下來，只是下次開啟這個檔案時必須先按下「啟用內容」按鈕",
+   "Excel 會自動改存成 .xlsm，使用者不必理會",
+   "巨集會被保留，但只能在原來那一台電腦上執行",
+   "Excel 會提出警告，若仍堅持儲存，VBA 程式碼不會被保留在檔案中"
+  ],
+  "answer": 3,
+  "explanation": ".xlsx 是不含巨集的 XML 格式，無法儲存 VBA 程式碼，要保留巨集必須改用其他格式。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-05",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列副檔名與說明的配對，哪一個是正確的？",
+  "options": [
+   ".xltx 是「啟用巨集的範本」，可以存放巨集",
+   ".xlsx 是「啟用巨集的活頁簿」，含巨集檔案都該存成這種格式",
+   ".xlam 是 Excel 增益集格式，可以存放 VBA 專案",
+   ".xlsb 是二進位活頁簿格式，但不能存放巨集"
+  ],
+  "answer": 2,
+  "explanation": ".xlam 是啟用巨集的增益集格式；啟用巨集的範本其實是 .xltm，而 .xlsb 這種二進位格式是可以存放巨集的。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-06",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "在「錄製巨集」對話框中，「將巨集儲存在」選擇「個人巨集活頁簿」，這個巨集會被放到哪裡？",
+  "options": [
+   "一個隱藏的活頁簿 PERSONAL.XLSB，每次啟動 Excel 時都會自動開啟",
+   "存到目前這個活頁簿的 Module1 裡面，因此只有這一個檔案本身用得到它",
+   "Windows 登錄檔(Registry)中，與任何 Excel 檔案都無關",
+   "桌面上自動新建立的一個 .xlsx 檔案裡"
+  ],
+  "answer": 0,
+  "explanation": "個人巨集活頁簿是隱藏檔 PERSONAL.XLSB，隨 Excel 啟動載入，所以其中的巨集在任何活頁簿都能使用。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-07",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "按下「錄製巨集」後直接開始操作，錄製巨集預設採用哪一種位址參照方式？",
+  "options": [
+   "相對位址參照",
+   "R1C1 參照",
+   "跨活頁簿的外部連結參照",
+   "絕對位址參照"
+  ],
+  "answer": 3,
+  "explanation": "錄製巨集預設是絕對位址參照，必須另外按下「使用相對位址參照」按鈕才會改成相對。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-08",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "目前選取的是 B2。按下「錄製巨集」，但沒有按「使用相對位址參照」，接著點選 D5 並輸入 100。錄到的程式碼最接近下列哪一段？",
+  "options": [
+   "ActiveCell.Offset(3, 2).Range(\"A1\").Select\n    ActiveCell.FormulaR1C1 = \"100\"",
+   "Range(\"D5\").Select\n    ActiveCell.FormulaR1C1 = \"100\"",
+   "ActiveCell.Offset(2, 3).Range(\"A1\").Select\n    ActiveCell.FormulaR1C1 = \"100\"",
+   "Selection.Offset(3, 2).Value = 100\n    Selection.Copy"
+  ],
+  "answer": 1,
+  "explanation": "絕對位址參照會把實際的儲存格位址寫死成 Range(\"D5\")，與錄製前選取的是哪一格無關。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-09",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "目前選取的是 B2。先按下「使用相對位址參照」，再開始錄製巨集，過程中點選 D5 並輸入 100。錄到的「選取儲存格」那一行最接近下列哪一段程式碼？",
+  "options": [
+   "Range(\"D5\").Select",
+   "ActiveCell.Offset(3, 2).Range(\"A1\").Select",
+   "ActiveCell.Offset(2, 3).Range(\"A1\").Select",
+   "Range(\"B2\").Offset(5, 4).Select"
+  ],
+  "answer": 1,
+  "explanation": "相對參照記錄的是位移量：由 B2 到 D5 是往下 3 列、往右 2 欄，所以是 Offset(3, 2)。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-10",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "以「使用相對位址參照」錄製出來的巨集如下：\n\nSub MoveDown()\n    ActiveCell.Offset(1, 0).Range(\"A1\").Select\n    ActiveCell.Value = \"OK\"\nEnd Sub\n\n執行前選取的是 C3，執行後哪一格會出現 OK？",
+  "options": [
+   "C3",
+   "D3",
+   "D4",
+   "C4"
+  ],
+  "answer": 3,
+  "explanation": "Offset(1, 0) 表示由作用中儲存格往下移一列、欄不變，所以由 C3 移到 C4。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-11",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "一段以絕對位址參照錄製的巨集如下：\n\nSub FillA1()\n    Range(\"A1\").Select\n    ActiveCell.Value = \"Hi\"\nEnd Sub\n\n若執行前作用中儲存格是 F10，執行後的結果是？",
+  "options": [
+   "A1 出現 Hi",
+   "F10 出現 Hi",
+   "A1 與 F10 兩格都出現 Hi",
+   "因為事先沒有選取 A1，會發生執行階段錯誤"
+  ],
+  "answer": 0,
+  "explanation": "程式碼已把位址寫死為 Range(\"A1\")，執行時會先跳到 A1 再把值填進去。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-12",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "Excel「信任中心 > 巨集設定」的預設值是下列哪一項？",
+  "options": [
+   "停用所有巨集(不事先通知)",
+   "啟用所有巨集(不建議使用，可能會執行有潛在危險的程式碼)",
+   "停用所有巨集(事先通知)",
+   "停用所有巨集，但數位簽署的巨集除外"
+  ],
+  "answer": 2,
+  "explanation": "預設為「停用所有巨集(事先通知)」：巨集先被停用，但會顯示安全性警告，由使用者決定是否啟用。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-13",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "把含巨集的活頁簿放在信任中心設定過的「信任位置」資料夾中，開啟時會如何？",
+  "options": [
+   "仍然會出現黃色的安全性警告訊息列，必須按下「啟用內容」按鈕之後巨集才能執行",
+   "檔案中的巨集會被自動移除，以確保安全",
+   "只有經過數位簽署的巨集才會被允許執行",
+   "Excel 不會再用信任中心的巨集設定去檢查它，巨集可以直接執行"
+  ],
+  "answer": 3,
+  "explanation": "存放在信任位置的檔案被視為可信任，不再經過信任中心的巨集設定檢查。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-14",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "從網路下載或 Email 附件取得的 .xlsm，在 Windows 版 Office 開啟時出現紅色的「安全性風險」訊息列，而且連「啟用內容」按鈕都沒有。最正確的處理方式是？",
+  "options": [
+   "把信任中心的巨集設定改成「啟用所有巨集」，重新開啟檔案後「啟用內容」按鈕就會出現",
+   "在檔案總管對該檔案按右鍵 > 內容，於「一般」頁籤勾選「解除封鎖」後再開啟",
+   "先把副檔名改成 .xlsx 開啟後，再改回 .xlsm",
+   "用「另存新檔」存成 .csv 之後再重新開啟"
+  ],
+  "answer": 1,
+  "explanation": "這是網路標記(Mark of the Web)造成的封鎖，要在檔案內容中解除封鎖，或把檔案放到信任位置。",
+  "fun_fact": "這道封鎖的優先順序高於信任中心的巨集設定，所以把設定改成「啟用所有巨集」也解不開。",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-15",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "信任中心裡的「信任存取 VBA 專案物件模型」這個選項，控制的是什麼？",
+  "options": [
+   "控制巨集是否可以修改工作表上的儲存格內容與格式，避免重要資料被程式誤改",
+   "活頁簿是否可以被另存成 .xlsm 格式",
+   "程式是否可以用程式碼去存取、修改 VBA 專案本身，例如自動新增模組或寫入程式碼",
+   "VBE 是否要顯示專案總管視窗"
+  ],
+  "answer": 2,
+  "explanation": "這個選項專門管制「用程式去改程式」的行為，預設不允許，需要使用者自行開啟。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-16",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "下列哪一個巨集名稱是合法的？",
+  "options": [
+   "Print_Report",
+   "3M報表",
+   "年度 統計",
+   "Total-Sum-Report"
+  ],
+  "answer": 0,
+  "explanation": "Print_Report 以字母開頭，其餘字元只用到字母與底線，符合 VBA 的識別字命名規則。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-17",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "在同一個模組中寫了下面兩個程序，但開啟「巨集」對話框後卻只看得到其中一個。為什麼？\n\nSub ShowTotal()\n    MsgBox \"OK\"\nEnd Sub\n\nSub ShowValue(n As Integer)\n    MsgBox n\nEnd Sub",
+  "options": [
+   "ShowValue 有必要引數，「巨集」對話框無法提供引數值，所以不會列出它",
+   "兩個程序名稱太相似，Excel 只會列出排在前面的那一個",
+   "ShowValue 必須改寫成 Function 才會被列出來",
+   "凡是會用到 MsgBox 顯示訊息的程序都不會被當成巨集，所以不會出現在清單中"
+  ],
+  "answer": 0,
+  "explanation": "「巨集」對話框只列出不需要引數的 Sub；帶有必要引數的程序必須由其他程式碼呼叫。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-18",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "把巨集取名為 C5 時，Excel 顯示名稱無效而不接受。最主要的原因是？",
+  "options": [
+   "巨集名稱不可以少於三個字元",
+   "巨集名稱不可以同時含有英文字母與數字，兩者必須擇一使用才會被接受",
+   "巨集名稱一定要以底線結尾",
+   "C5 與儲存格位址同名，會造成參照上的混淆，因此不被接受"
+  ],
+  "answer": 3,
+  "explanation": "與儲存格位址（例如 A1、C5）相同的名稱會被 Excel 視為無效的巨集名稱。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-19",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下面這段程式碼執行時會出錯，原因是？\n\nSub Test()\n    Range(A1).Value = 10\nEnd Sub",
+  "options": [
+   "Value 這個屬性必須改成 Text 才能寫入資料",
+   "指定給儲存格的數字 10 必須加上雙引號寫成 \"10\"，否則 VBA 無法正確辨識",
+   "Range 的儲存格位址必須是字串，要寫成 Range(\"A1\")",
+   "Sub Test() 後面不可以加上小括號"
+  ],
+  "answer": 2,
+  "explanation": "Range 的引數要用雙引號括起來的字串；沒加引號時 A1 會被當成一個變數而不是位址。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-20",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下面這段程式在 VBE 中會出現「預期 End Sub」的編譯錯誤，正確的修正方式是？\n\nSub A()\n    Range(\"A1\").Value = 1\nSub B()\n    Range(\"A2\").Value = 2\nEnd Sub",
+  "options": [
+   "把 Sub B() 這一行改寫成 Call B",
+   "在 Sub B() 這一行之前補上一行 End Sub，讓兩個程序各自完整",
+   "把兩個 Range 都改寫成 Cells",
+   "把 Sub A() 與 Sub B() 分別放到兩個不同的模組，甚至不同的活頁簿裡面"
+  ],
+  "answer": 1,
+  "explanation": "每個 Sub 都必須以 End Sub 結束，程序也不能巢狀定義在另一個程序裡面。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-21",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "VBE 中的「專案總管」(Project Explorer) 主要顯示什麼？",
+  "options": [
+   "每一行程式碼執行後得到的結果",
+   "被選取物件的所有屬性名稱與目前設定值",
+   "目前開啟的各個活頁簿專案，以及其中的工作表物件、ThisWorkbook、模組與表單",
+   "VBA 所有內建函式與物件的語法說明清單，可以點進去看參數說明與使用範例"
+  ],
+  "answer": 2,
+  "explanation": "專案總管以階層方式列出各專案及其包含的物件與模組，是在 VBE 中切換程式碼位置的地方。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-22",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "VBE 的「屬性視窗」(Properties Window) 有「字母順序」與「性質分類」兩個索引標籤，它的用途是？",
+  "options": [
+   "列出目前專案中所有 Sub 程序的名稱",
+   "在設計階段檢視並修改被選取物件的屬性值",
+   "顯示程式執行時所產生的錯誤訊息紀錄",
+   "設定 Excel 的巨集安全性等級"
+  ],
+  "answer": 1,
+  "explanation": "屬性視窗顯示被選取物件的設計階段屬性與目前設定，可直接在其中修改。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-23",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "在 VBE 中按下 Ctrl+G 會開啟哪一個視窗？",
+  "options": [
+   "立即運算視窗（Immediate Window）",
+   "程式碼視窗（Code Window）",
+   "專案總管（Project Explorer）視窗",
+   "物件瀏覽器（Object Browser）"
+  ],
+  "answer": 0,
+  "explanation": "Ctrl+G 開啟立即運算視窗，可直接輸入單行敘述執行，也會顯示 Debug.Print 的輸出。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-24",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下面這段程式執行後，立即運算視窗會依序顯示什麼？\n\nSub Test()\n    Debug.Print 3 + 4\n    Debug.Print \"3 + 4\"\nEnd Sub",
+  "options": [
+   "7\n7",
+   "3 + 4\n3 + 4",
+   "什麼都不會顯示，Debug.Print 只能把結果寫到工作表上",
+   "7\n3 + 4"
+  ],
+  "answer": 3,
+  "explanation": "第一行是數值運算式，算出 7；第二行被雙引號括起來是字串，會原封不動地輸出。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-25",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "自己撰寫的一般巨集程式碼應該放在哪裡？要如何建立？",
+  "options": [
+   "放在屬性視窗中，直接在欄位裡輸入程式碼",
+   "放在「模組」(Module)，在 VBE 中用「插入 > 模組」建立",
+   "直接在立即運算視窗中輸入即可，關閉活頁簿時系統會自動把這些內容保存下來",
+   "直接打在 Excel 的儲存格裡，用等號開頭輸入程式碼"
+  ],
+  "answer": 1,
+  "explanation": "標準模組是存放一般巨集程序的地方，透過 VBE 的「插入 > 模組」新增。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-26",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "一個最基本的巨集程序，開頭與結尾的關鍵字分別是什麼？",
+  "options": [
+   "Sub ... End Sub",
+   "Begin ... End",
+   "Macro ... End Macro",
+   "Module ... End Module"
+  ],
+  "answer": 0,
+  "explanation": "VBA 的巨集就是 Sub 程序，以 Sub 名稱() 開始、以 End Sub 結束。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-27",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "關於 Sub 與 Function 的差別，下列敘述何者正確？",
+  "options": [
+   "Sub 只能寫在模組裡，Function 只能寫在工作表的程式碼中",
+   "Function 不可以有引數，只有 Sub 才可以有引數",
+   "Sub 一定要寫 End Sub，Function 則不需要任何結尾關鍵字",
+   "Sub 執行動作但不傳回值，Function 則會傳回一個值給呼叫它的地方"
+  ],
+  "answer": 3,
+  "explanation": "兩者都是程序，最大的差別在於 Function 有回傳值而 Sub 沒有。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-28",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "游標停在 VBE 程式碼視窗中某個 Sub 的內部，此時按下 F5 的效果是？",
+  "options": [
+   "儲存目前的活頁簿",
+   "一次只執行一行程式碼",
+   "執行游標所在的那一個 Sub",
+   "開啟 Excel 的「巨集」對話框"
+  ],
+  "answer": 2,
+  "explanation": "在 VBE 中 F5 是「執行 Sub/UserForm」，會執行游標目前所在的程序。",
+  "fun_fact": "同一個 F5 在 Excel 工作表上卻是叫出「到」(Go To) 對話框，兩邊意義完全不同。",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-29",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "想一行一行慢慢看巨集的執行過程，方便找出哪裡出錯，在 VBE 中應該按哪一個鍵？",
+  "options": [
+   "F5",
+   "F9",
+   "Ctrl+Break",
+   "F8"
+  ],
+  "answer": 3,
+  "explanation": "F8 是逐行執行（Step Into），每按一次就往下執行一行程式碼。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-30",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "在 VBE 程式碼視窗中把游標停在某一行後按下 F9，會發生什麼事？",
+  "options": [
+   "從該行開始往下執行程式",
+   "把該行整行變成註解",
+   "在該行設定或取消中斷點，程式執行到該行時會暫停下來",
+   "把該行的執行結果自動印到立即運算視窗中，方便隨時觀察變數值的變化"
+  ],
+  "answer": 2,
+  "explanation": "F9 用來設定或清除中斷點(Breakpoint)，讓程式執行到該行時停下來方便偵錯。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-31",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "想讓使用者按一下工作表上的圓角矩形圖案就執行巨集，正確做法是？",
+  "options": [
+   "把圖案的名稱改成和巨集一樣，就會自動連結",
+   "在圖案上按右鍵，選擇「指定巨集」，再從清單挑選要執行的巨集",
+   "把巨集的程式碼複製貼到圖案的「替代文字」欄位中",
+   "圖案沒有辦法指定巨集，只有從「開發人員」索引標籤插入的表單控制項按鈕才可以"
+  ],
+  "answer": 1,
+  "explanation": "在圖案或圖片上按右鍵選「指定巨集」即可，並不限於表單控制項按鈕。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-32",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "錄製巨集時在「快速鍵」欄位填入小寫的 c（也就是 Ctrl+c）。在含有這個巨集的活頁簿開啟期間，按 Ctrl+C 會怎樣？",
+  "options": [
+   "會執行該巨集，原本「複製」的快速鍵在這段期間被蓋掉",
+   "Excel 會拒絕設定，因為 Ctrl+C 是內建的快速鍵",
+   "Ctrl+C 仍然是複製，巨集不會被觸發",
+   "必須同時按住 Shift 鍵才會觸發這個巨集"
+  ],
+  "answer": 0,
+  "explanation": "巨集快速鍵會覆蓋 Excel 內建的同組快速鍵，只要含該巨集的活頁簿開著就有效，因此應避開常用組合。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-33",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "在「錄製巨集」對話框的快速鍵欄位中輸入大寫的 M，實際觸發這個巨集的按鍵組合是？",
+  "options": [
+   "Ctrl+Shift+M",
+   "Ctrl+M（大寫小寫都一樣）",
+   "Alt+M",
+   "Shift+M"
+  ],
+  "answer": 0,
+  "explanation": "快速鍵欄位輸入大寫字母時，Excel 會自動把組合變成 Ctrl+Shift 加上該字母。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-34",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "錄製出來的巨集常常長得像下面這樣：\n\nSub Macro1()\n'\n' Macro1 Macro\n'\n    Range(\"A1\").Select\nEnd Sub\n\n以單引號 ' 開頭的那幾行有什麼作用？",
+  "options": [
+   "它們會在巨集執行時顯示在視窗下方的狀態列上",
+   "它們是註解，程式執行時會被完全忽略",
+   "它們是錯誤訊息，不刪掉的話程式無法執行",
+   "它們是用來定義這個巨集快速鍵的設定行"
+  ],
+  "answer": 1,
+  "explanation": "VBA 中以單引號開頭的內容是註解，只寫給人看，不會被執行。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V01-35",
+  "topic": "vba",
+  "unit": "V1",
+  "unit_name": "巨集錄製與 VBA 環境",
+  "category": "巨集錄製與 VBA 環境",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "在 VBE 的「工具 > 選項」中勾選「要求變數宣告」之後，新插入的模組最上方會自動出現 Option Explicit。它的作用是？",
+  "options": [
+   "讓所有沒有指定型別的變數都自動變成 Variant 型別，以便節省記憶體",
+   "讓巨集的執行速度自動變快",
+   "使用未經 Dim 宣告的變數時，在編譯階段就會直接報錯",
+   "會自動替專案中已經存在的舊模組也加上這一行"
+  ],
+  "answer": 2,
+  "explanation": "Option Explicit 強制所有變數必須先宣告，可以避免變數名稱打錯字造成的難找錯誤。",
+  "fun_fact": "勾選這個選項只對「之後新增」的模組有效，既有模組要自己手動補上 Option Explicit。",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-01",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在模組最上方寫 Option Explicit，主要的作用是什麼？",
+  "options": [
+   "強制這個模組內的所有變數都必須先宣告才能使用",
+   "讓所有沒有宣告的變數自動變成 Long 型別",
+   "加快程式執行速度，讓變數的存取更有效率",
+   "自動把模組內所有數值變數的初始值設成 0"
+  ],
+  "answer": 0,
+  "explanation": "Option Explicit 會要求模組內每個變數都要明確宣告，遇到沒宣告或打錯字的名稱時會在編譯階段就報錯。",
+  "fun_fact": "沒有 Option Explicit 時，打錯字的變數名會被當成一個全新的 Variant 變數，是最難抓的 bug 之一。",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-02",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "VBA 的 Integer 型別佔 2 個位元組，它能表示的整數範圍是？",
+  "options": [
+   "0 ~ 65,535",
+   "-32,768 ~ 32,767",
+   "-2,147,483,648 ~ 2,147,483,647",
+   "-128 ~ 127"
+  ],
+  "answer": 1,
+  "explanation": "VBA 的 Integer 是 16 位元有號整數，範圍是 -32,768 到 32,767。",
+  "fun_fact": "VB.NET 的 Integer 是 32 位元，跟 VBA 不一樣，看別的語言的範例時要特別注意。",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-03",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "要宣告一個名為 intCount 的 Integer 變數，正確的寫法是？",
+  "options": [
+   "Dim intCount Integer",
+   "Dim intCount = New Integer",
+   "Dim intCount As Integer",
+   "Integer intCount"
+  ],
+  "answer": 2,
+  "explanation": "VBA 的宣告語法是 Dim 變數名稱 As 型別，型別前面一定要有 As 關鍵字。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-04",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "這段程式會印出什麼？\n\nSub Test()\n    Dim flag As Boolean\n    Debug.Print flag\nEnd Sub",
+  "options": [
+   "True",
+   "0",
+   "Empty",
+   "False"
+  ],
+  "answer": 3,
+  "explanation": "Boolean 變數宣告後的預設初始值是 False，Debug.Print 會印出 False。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-05",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在 VBA 中要把兩個字串接起來，建議使用哪一個運算子？",
+  "options": [
+   "&",
+   "+",
+   ".",
+   "&&"
+  ],
+  "answer": 0,
+  "explanation": "& 是專門的字串連接運算子，會先把非字串的運算元轉成字串再接起來，語意最明確。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-06",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "用 Const 宣告的識別字，下列敘述何者正確？",
+  "options": [
+   "程式執行過程中可以隨時再用指定運算式改變它的值，用法跟一般變數完全一樣",
+   "它的值在編譯時就固定了，程式執行中不能被指定新值",
+   "它一定要宣告在程序內部，不可以寫在模組的宣告區",
+   "它只能存放數值，不可以用來存放字串或日期"
+  ],
+  "answer": 1,
+  "explanation": "Const 宣告的是常數，值在編譯時就決定，執行期間不會（也不能）被改變。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-07",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在 VBA 程式碼中要寫出「2024 年 12 月 25 日」這個日期常值，正確的寫法是？",
+  "options": [
+   "\"2024/12/25\"",
+   "@2024/12/25@",
+   "#2024/12/25#",
+   "$2024/12/25$"
+  ],
+  "answer": 2,
+  "explanation": "VBA 的日期常值必須用井字號 # 前後包起來，例如 #2024/12/25#；用雙引號包起來的是字串不是日期。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-08",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "Long 型別佔 4 個位元組，它能表示的整數範圍大約是多少？",
+  "options": [
+   "正負大約 3 萬",
+   "正負大約 65,535",
+   "正負大約 900 兆",
+   "正負大約 21 億"
+  ],
+  "answer": 3,
+  "explanation": "Long 的範圍是 -2,147,483,648 ~ 2,147,483,647，大約正負 21 億。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-09",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "下列哪一個變數名稱在 VBA 中是「不合法」的？",
+  "options": [
+   "My Total",
+   "Total_2024",
+   "intTotal",
+   "x1"
+  ],
+  "answer": 0,
+  "explanation": "VBA 的名稱不能含有空格（也不能含有 . ! @ & $ #），而且必須以字母開頭。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-10",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "看這段宣告，關於變數 a 的型別，下列敘述何者正確？\n\nSub Test()\n    Dim a, b As Long\n    a = 1\n    b = 2\nEnd Sub",
+  "options": [
+   "a 是 Long，因為 As Long 會套用到這一行宣告的所有變數",
+   "a 是 Variant，因為它自己沒有 As 子句",
+   "a 是 Integer，VBA 會自動挑選最省記憶體的整數型別",
+   "這一行會產生編譯錯誤，VBA 不允許一行宣告兩個變數"
+  ],
+  "answer": 1,
+  "explanation": "As Long 只套用到緊接在它前面的 b；沒有寫 As 子句的 a 會變成 Variant。要兩個都是 Long 必須寫成 Dim a As Long, b As Long。",
+  "fun_fact": "這是 VBA 新手最常踩的宣告陷阱，程式不會報錯，只是默默多了一個 Variant。",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-11",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "這段程式會印出什麼？\n\nSub Test()\n    Debug.Print CInt(2.5)\nEnd Sub",
+  "options": [
+   "3",
+   "2.5",
+   "2",
+   "0"
+  ],
+  "answer": 2,
+  "explanation": "CInt 在小數部分剛好是 0.5 時採用「逢五取偶」的銀行家捨入，2.5 會取到最接近的偶數 2。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-12",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "這段程式會印出什麼？\n\nSub Test()\n    Debug.Print Val(\"24 and 57\")\nEnd Sub",
+  "options": [
+   "24",
+   "2457",
+   "0",
+   "執行時發生型別不符錯誤"
+  ],
+  "answer": 0,
+  "explanation": "Val 會從字串開頭往後讀，遇到第一個無法辨識為數字的字元就停止，所以讀到 24 後在 \"a\" 停下來。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-13",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "這段程式會印出什麼？\n\nSub Test()\n    Dim n As Long\n    Debug.Print n\nEnd Sub",
+  "options": [
+   "Empty",
+   "Null",
+   "程式會出錯，因為 n 還沒有被指定任何值",
+   "0"
+  ],
+  "answer": 3,
+  "explanation": "數值型別的變數宣告後就會被初始化為 0，不需要先指定值也能直接讀取。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-14",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "這段程式會印出什麼？\n\nSub Test()\n    Dim s As String\n    Debug.Print Len(s)\nEnd Sub",
+  "options": [
+   "0",
+   "1",
+   "Null",
+   "程式會出錯，因為 s 尚未被指定值"
+  ],
+  "answer": 0,
+  "explanation": "可變長度的 String 變數預設初始值是零長度字串 \"\"，所以 Len 回傳 0。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-15",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "這段程式會印出什麼？\n\nSub Test()\n    Dim v As Variant\n    Debug.Print IsEmpty(v)\nEnd Sub",
+  "options": [
+   "False",
+   "True",
+   "0",
+   "Nothing"
+  ],
+  "answer": 1,
+  "explanation": "Variant 變數宣告後尚未指定值時處於 Empty 狀態，IsEmpty 因此回傳 True。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-16",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列哪一個敘述正確描述 VBA 的物件變數（例如 Dim ws As Worksheet）？",
+  "options": [
+   "宣告後預設值是 Nothing，指定物件時必須用 Set 關鍵字",
+   "宣告後預設值是 Empty，指定物件時直接用等號指定就可以了，不必寫其他關鍵字",
+   "宣告後預設值是 0，指定物件時必須改用 Let 關鍵字來指定",
+   "宣告後預設值是空字串，指定物件時必須加上 New 關鍵字"
+  ],
+  "answer": 0,
+  "explanation": "物件變數的預設值是 Nothing，代表還沒指向任何物件；指定物件參照一定要用 Set。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-17",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "在同一次執行期間(中途沒有按過 VBE 的「重新設定」)連續呼叫 Tally 三次，第三次會印出什麼？\n\nSub Tally()\n    Static n As Integer\n    n = n + 1\n    Debug.Print n\nEnd Sub",
+  "options": [
+   "1",
+   "3",
+   "0",
+   "6"
+  ],
+  "answer": 1,
+  "explanation": "Static 宣告的變數在程序結束後仍保留原值，所以三次呼叫分別累加成 1、2、3。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-18",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "在標準模組的宣告區（所有程序之前）寫 Private mstrName As String，這個變數可以被誰使用？",
+  "options": [
+   "只有第一個用到它的那一個程序",
+   "同一個模組內的所有程序",
+   "整個專案裡所有模組的所有程序",
+   "只有從工作表儲存格呼叫的自訂函式"
+  ],
+  "answer": 1,
+  "explanation": "模組層的 Private 變數對同一個模組內的所有程序可見，但其他模組看不到它。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-19",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "想讓一個變數在整個 VBA 專案的所有模組都能存取，應該在標準模組的宣告區怎麼宣告？",
+  "options": [
+   "Dim gCount As Long",
+   "Static gCount As Long",
+   "Private gCount As Long",
+   "Public gCount As Long"
+  ],
+  "answer": 3,
+  "explanation": "在標準模組的宣告區用 Public 宣告，變數的有效範圍才會擴大到整個專案，其他模組的程序都能直接存取。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-20",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "這段程式會印出什麼？\n\nSub Test()\n    Dim s As String * 3\n    s = \"Excel\"\n    Debug.Print s\nEnd Sub",
+  "options": [
+   "Excel",
+   "Exc",
+   "cel",
+   "程式會出錯，因為字串長度超過宣告的長度"
+  ],
+  "answer": 1,
+  "explanation": "String * 3 是固定長度字串，指定較長的字串時會直接從尾端截掉，只留下前 3 個字元。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-21",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "Byte 型別佔 1 個位元組，可以存放的數值範圍是？",
+  "options": [
+   "-128 ~ 127",
+   "0 ~ 127",
+   "-256 ~ 255",
+   "0 ~ 255"
+  ],
+  "answer": 3,
+  "explanation": "Byte 是無號的 8 位元整數，只能存放 0 到 255，沒有負數。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-22",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "要記錄金額並且避免浮點數帶來的微小誤差，最適合使用哪一種型別？",
+  "options": [
+   "Single",
+   "Double",
+   "Currency",
+   "Variant"
+  ],
+  "answer": 2,
+  "explanation": "Currency 用定點方式儲存、固定保留 4 位小數，適合金額計算，不會有二進位浮點數的尾數誤差。",
+  "fun_fact": "Currency 內部其實是一個放大 10000 倍的 64 位元整數，所以它的小數位數永遠剛好是 4 位。",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-23",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "模組最上方已經寫了 Option Explicit，執行這段程式會發生什麼事？\n\nSub Test()\n    Dim intTotal As Integer\n    intTotal = 10\n    Debug.Print intTotla\nEnd Sub",
+  "options": [
+   "印出 10",
+   "印出 0",
+   "印出 0，因為打錯字的名稱會被自動建立成新變數",
+   "編譯錯誤：變數未定義"
+  ],
+  "answer": 3,
+  "explanation": "最後一行的 intTotla 是打錯字的名稱，在 Option Explicit 之下它沒有被宣告過，編譯時就會報「變數未定義」。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-24",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "關於 Single 與 Double，下列敘述何者正確？",
+  "options": [
+   "Single 佔 4 個位元組、Double 佔 8 個位元組，Double 的精確度較高",
+   "Single 佔 8 個位元組、Double 佔 4 個位元組，Single 的精確度較高",
+   "兩者都佔 8 個位元組，唯一的差別在於 Double 可以存放負數而 Single 不行",
+   "Single 只能存放整數，只有 Double 才可以存放含小數的數值"
+  ],
+  "answer": 0,
+  "explanation": "Single 是 4 位元組的單精度浮點數、Double 是 8 位元組的雙精度浮點數，Double 可表示的位數與範圍都比較大。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-25",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列哪一個函式可以把字串 \"2024/12/25\" 轉換成 Date 型別的值？",
+  "options": [
+   "CStr",
+   "CLng",
+   "CDbl",
+   "CDate"
+  ],
+  "answer": 3,
+  "explanation": "CDate 專門把可以被辨識為日期的運算式轉成 Date 型別。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-26",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "關於 Variant 型別，下列敘述何者正確？",
+  "options": [
+   "Variant 只能存放數值與字串，不能存放日期或物件參照",
+   "Variant 可以存放任何型別的資料，但比其他型別佔用更多記憶體",
+   "Variant 變數一律不需要宣告，如果用 Dim 明確宣告反而會產生編譯錯誤",
+   "Variant 是 VBA 中最節省記憶體的型別"
+  ],
+  "answer": 1,
+  "explanation": "Variant 什麼型別都能裝，彈性最大，但光是數值就要 16 個位元組，比專用型別耗記憶體也比較慢。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-27",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "這段程式會印出什麼？\n\nSub Test()\n    Debug.Print \"10\" + 5\n    Debug.Print \"10\" & 5\nEnd Sub",
+  "options": [
+   "105，然後 105",
+   "15，然後 15",
+   "15，然後 105",
+   "105，然後 15"
+  ],
+  "answer": 2,
+  "explanation": "+ 遇到一邊是數值時會把字串轉成數字做加法得到 15；& 則一律轉成字串連接得到 \"105\"，所以連接字串要用 &。 字串內容必須是數字才行，「abc」+ 5 會得到型態不符錯誤(錯誤 13)。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-28",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "模組最上方有 Option Explicit。執行這段程式會發生什麼？\n\nSub Test()\n    Dim x As Long\n    x = 2000 * 365\n    Debug.Print x\nEnd Sub",
+  "options": [
+   "印出 730000，因為 x 已經宣告成 Long，容納得下這個數字",
+   "印出 0",
+   "發生執行階段錯誤 6：溢位",
+   "編譯錯誤：型別不符"
+  ],
+  "answer": 2,
+  "explanation": "2000 與 365 都落在 Integer 範圍，VBA 會先以 Integer 做乘法，乘積 730000 超出 Integer 上限就溢位了；寫成 CLng(2000) * 365 才安全。",
+  "fun_fact": "這是微軟官方文件在說明「溢位」時親自舉的例子，連變數宣告成 Long 都救不了它。",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-29",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "執行這段程式會發生什麼？\n\nSub Test()\n    Dim i As Integer\n    i = 32767\n    i = i + 1\n    Debug.Print i\nEnd Sub",
+  "options": [
+   "印出 32768",
+   "印出 -32768，數值會繞回最小值",
+   "印出 0",
+   "發生執行階段錯誤 6：溢位"
+  ],
+  "answer": 3,
+  "explanation": "32767 已經是 Integer 的上限，再加 1 就超出可表示範圍，VBA 會拋出溢位錯誤而不是繞回。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-30",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "這段程式會印出什麼？\n\nSub Test()\n    Dim v As Variant\n    Debug.Print v + 1\n    Debug.Print v & \"A\"\nEnd Sub",
+  "options": [
+   "1，然後 A",
+   "0，然後 0A",
+   "Empty，然後 EmptyA",
+   "兩行都會發生執行階段錯誤"
+  ],
+  "answer": 0,
+  "explanation": "尚未指定值的 Variant 是 Empty：參與數值運算時當成 0，參與字串連接時當成零長度字串。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-31",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "這段程式會印出什麼？\n\nSub Test()\n    Debug.Print CInt(True)\nEnd Sub",
+  "options": [
+   "1",
+   "0",
+   "-1",
+   "會發生型別不符錯誤"
+  ],
+  "answer": 2,
+  "explanation": "VBA 內部用 -1 代表 True、0 代表 False，所以轉成整數會得到 -1。",
+  "fun_fact": "-1 的二進位是全部位元都是 1，所以 Not False 剛好就等於 True，這是早年組合語言留下來的設計。",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-32",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "在標準模組的宣告區寫 Const MAX_ROW = 100（前面沒有加任何關鍵字），它的有效範圍是？",
+  "options": [
+   "只有寫在它後面的那些程序看得到",
+   "整個專案的所有模組都看得到，因為常數的預設範圍就是 Public",
+   "只有同一個模組內看得到，等同於 Private",
+   "只有宣告它的那一個程序內看得到"
+  ],
+  "answer": 2,
+  "explanation": "常數預設是 Private；要讓整個專案都看得到必須在標準模組寫成 Public Const。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-33",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "這段程式會印出什麼？\n\nSub Test()\n    Debug.Print Val(\"3.9\")\n    Debug.Print CInt(\"3.9\")\nEnd Sub",
+  "options": [
+   "3.9，然後 4",
+   "3.9，然後 3",
+   "3，然後 3",
+   "3，然後 4"
+  ],
+  "answer": 0,
+  "explanation": "Val 只負責把字串中的數字抓出來、不做捨入，所以得到 3.9；CInt 會把小數捨入成整數，3.9 進位成 4。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-34",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "這個標準模組執行 Test 之後，會印出什麼？\n\nPrivate n As Integer\n\nSub Test()\n    Dim n As Integer\n    n = 5\n    Call Show\nEnd Sub\n\nSub Show()\n    Debug.Print n\nEnd Sub",
+  "options": [
+   "5",
+   "0",
+   "Empty",
+   "編譯錯誤：變數名稱重複宣告"
+  ],
+  "answer": 1,
+  "explanation": "Test 裡的 Dim n 是區域變數，在 Test 內遮蔽了模組層的 n；n = 5 只改到區域的那一個，Show 讀到的模組層 n 仍是初始值。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V02-35",
+  "topic": "vba",
+  "unit": "V2",
+  "unit_name": "變數與資料型別",
+  "category": "變數與資料型別",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "這段程式會印出什麼？\n\nSub Test()\n    Dim x As Integer\n    x = 7 / 2\n    Debug.Print x\nEnd Sub",
+  "options": [
+   "3",
+   "3.5",
+   "4",
+   "會發生型別不符錯誤"
+  ],
+  "answer": 2,
+  "explanation": "7 / 2 得到 3.5，指定給 Integer 變數時會自動做捨入（不是無條件捨去），3.5 取到最接近的偶數 4。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-01",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在 VBA 中執行下列敘述：\n\n    Cells(2, 3).Value = 100\n\n請問 100 被寫進哪一個儲存格？",
+  "options": [
+   "B3",
+   "C2",
+   "C3",
+   "B2"
+  ],
+  "answer": 1,
+  "explanation": "Cells 的參數順序是「先列後欄」，Cells(2, 3) 就是第 2 列第 3 欄，也就是 C2。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-02",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "Cells(row, column) 的兩個參數，正確的順序是什麼？",
+  "options": [
+   "順序沒差別，Excel 會自動判斷哪個是列",
+   "先欄再列",
+   "先列再欄，但欄一定要寫成英文字母",
+   "先列再欄"
+  ],
+  "answer": 3,
+  "explanation": "Cells 一律寫成 Cells(列, 欄)，而且兩個參數都是數字，這也是它適合放進迴圈的原因。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-03",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "Range(\"A1\").Offset(2, 1) 指向哪一個儲存格？",
+  "options": [
+   "B3",
+   "C2",
+   "A3",
+   "C3"
+  ],
+  "answer": 0,
+  "explanation": "Offset(RowOffset, ColumnOffset) 也是先列後欄：從 A1 往下 2 列、往右 1 欄，得到 B3。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-04",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "執行下列敘述後，哪一個範圍會被填入 1？\n\n    Range(\"A1\").Resize(3, 2).Value = 1",
+  "options": [
+   "A1:C3",
+   "A1:C2",
+   "A1:B3",
+   "A1:B2"
+  ],
+  "answer": 2,
+  "explanation": "Resize(RowSize, ColumnSize) 是「變成幾列幾欄」，3 列 2 欄從 A1 展開就是 A1:B3。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-05",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列敘述選到的範圍是什麼？\n\n    Range(Cells(2, 2), Cells(5, 4)).Select",
+  "options": [
+   "B2:D4",
+   "B2:E4",
+   "B2:D5",
+   "B2:E5"
+  ],
+  "answer": 2,
+  "explanation": "Range 可以用兩個 Cells 當左上角與右下角；Cells(2, 2) 是第 2 列第 2 欄 B2，Cells(5, 4) 是第 5 列第 4 欄 D5，合起來就是 B2:D5。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-06",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "Range(\"A1:A10\").Rows.Count 的結果是多少？",
+  "options": [
+   "10",
+   "1",
+   "11",
+   "1048576"
+  ],
+  "answer": 0,
+  "explanation": "對一個 Range 用 .Rows.Count，算的是這個範圍自己有幾列，A1:A10 共 10 列。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-07",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在新版 Excel（.xlsx）中，直接寫工作表層級的 Rows.Count，得到的數字是多少？",
+  "options": [
+   "1000000",
+   "65536",
+   "16384",
+   "1048576"
+  ],
+  "answer": 3,
+  "explanation": "Excel 2007 以後每張工作表有 1,048,576 列；65,536 是舊版 .xls 的列數，16,384 則是欄數。",
+  "fun_fact": "16,384 欄的最後一欄代號是 XFD。",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-08",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "資料放在 A 欄，中間可能夾雜空白列。要取得 A 欄最後一筆資料的列號，下列哪一行最可靠？",
+  "options": [
+   "Range(\"A1\").End(xlDown).Row",
+   "Cells(Rows.Count, 1).End(xlUp).Row",
+   "ActiveSheet.UsedRange.Rows.Count",
+   "Range(\"A1\").CurrentRegion.Rows.Count"
+  ],
+  "answer": 1,
+  "explanation": "從 A 欄最底端往上找第一個有資料的儲存格，不會被中間的空白列擋住，這是業界最通用的寫法。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-09",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "A 欄的狀況是：A1:A5 有值、A6 空白、A7:A10 有值。執行\n\n    MsgBox Range(\"A1\").End(xlDown).Row\n\n會顯示什麼？",
+  "options": [
+   "5",
+   "10",
+   "6",
+   "1048576"
+  ],
+  "answer": 0,
+  "explanation": "End(xlDown) 等同按 Ctrl+↓，只會停在連續區塊的最後一格 A5，空白的 A6 就把它擋住了。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-10",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "A1 放的是日期 2026/9/18。關於 .Value 與 .Value2 的差別，下列敘述何者正確？",
+  "options": [
+   ".Value2 得到 Date 型別，.Value 得到字串",
+   "兩者結果完全相同，Value2 只是比較新的寫法",
+   ".Value 得到 Date 型別，.Value2 得到純數字的序列值",
+   ".Value2 會把日期轉成畫面上顯示的那串文字"
+  ],
+  "answer": 2,
+  "explanation": "官方文件說明 Value2 不使用 Currency 與 Date 兩種資料型別，日期會以浮點數形式回傳。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-11",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "B2 放著數字 1234567，但欄寬被縮得很窄，畫面上顯示 ####。執行\n\n    MsgBox Range(\"B2\").Text\n\n會顯示什麼？",
+  "options": [
+   "1234567",
+   "####",
+   "1.23E+06",
+   "執行階段錯誤"
+  ],
+  "answer": 1,
+  "explanation": ".Text 傳回的是「畫面上看得到的格式化文字」，欄寬不夠時就真的得到 ####；要拿到真正的數值請用 .Value。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-12",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列哪一行會出錯？",
+  "options": [
+   "Range(\"A1\").NumberFormat = \"0.00\"",
+   "Range(\"A1\").Value = \"台北\"",
+   "Range(\"A1\").Formula = \"=1+1\"",
+   "Range(\"A1\").Text = \"台北\""
+  ],
+  "answer": 3,
+  "explanation": ".Text 是唯讀屬性，只能讀不能寫；要把字串寫進儲存格請用 .Value。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-13",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "A1 裡輸入了公式 =SUM(B1:B3)，畫面上顯示 60。下列敘述何者正確？",
+  "options": [
+   "兩者都得到 60",
+   "Range(\"A1\").Value 得到 \"=SUM(B1:B3)\"，Range(\"A1\").Formula 得到 60",
+   "兩者都得到 \"=SUM(B1:B3)\"",
+   "Range(\"A1\").Value 得到 60，Range(\"A1\").Formula 得到 \"=SUM(B1:B3)\""
+  ],
+  "answer": 3,
+  "explanation": ".Value 拿的是公式算完的結果，.Formula 拿的才是公式字串本身。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-14",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "在 B5 執行\n\n    Range(\"B5\").FormulaR1C1 = \"=R[-1]C*2\"\n\nB5 得到的 A1 樣式公式是什麼？",
+  "options": [
+   "=A5*2",
+   "=B4*2",
+   "=B1*2",
+   "=A4*2"
+  ],
+  "answer": 1,
+  "explanation": "R[-1] 有中括號代表相對往上一列，C 沒有中括號代表同一欄，所以指到 B5 正上方的 B4。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-15",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "關於 Select 與 Activate，下列敘述何者正確？",
+  "options": [
+   "加上 Select 可以讓巨集跑得比較快",
+   "一定要先 Select 儲存格才能設定它的值，否則會出錯",
+   "不必 Select 也能直接操作儲存格",
+   "只有 Range 需要先 Select，Cells 不需要"
+  ],
+  "answer": 2,
+  "explanation": "Select/Activate 只是把畫面上的選取狀態改掉，操作儲存格完全不需要它，而且會拖慢速度、讓程式依賴「當下選到誰」而容易出錯。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-16",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式碼\n\n    Sheets(\"Data\").Select\n    Range(\"A1\").Select\n    ActiveCell.Value = 100\n\n改寫成不用 Select 的等價寫法，何者最正確？",
+  "options": [
+   "Sheets(\"Data\").Range(\"A1\").Value = 100",
+   "Range(\"A1\").Value = 100",
+   "ActiveSheet.Range(\"A1\").Value = 100",
+   "Sheets(\"Data\").Select: Range(\"A1\").Value = 100"
+  ],
+  "answer": 0,
+  "explanation": "直接用工作表物件限定範圍最保險；只寫 Range(\"A1\") 會落在當下作用中的工作表，不保證是 Data。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-17",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "執行\n\n    MsgBox Range(\"A1:B2\").Rows(5).Address\n\n會顯示什麼？",
+  "options": [
+   "$A$1:$B$2",
+   "$A$5:$B$5",
+   "$A$5",
+   "執行階段錯誤：索引超出範圍"
+  ],
+  "answer": 1,
+  "explanation": "Rows(n) 是以範圍左上角為基準往下數第 n 列，可以落在原範圍之外，得到 A5:B5，Excel 不會報錯。",
+  "fun_fact": "官方文件特別提醒：Rows 傳回的範圍有可能超出原本指定的範圍。",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-18",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "下列哪一行會把 C5 所在的「整欄」設成黃色底色？",
+  "options": [
+   "Range(\"C5\").EntireColumn.Interior.Color = vbYellow",
+   "Range(\"C5\").EntireRow.Interior.Color = vbYellow",
+   "Range(\"C5\").Columns.Interior.Color = vbYellow",
+   "ActiveSheet.Columns(\"C5\").Interior.Color = vbYellow"
+  ],
+  "answer": 0,
+  "explanation": "EntireColumn 傳回儲存格所在的整欄（C:C）；EntireRow 傳回的才是整列。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-19",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "執行\n\n    Range(\"A1:A3\").Copy Destination:=Range(\"C1\")\n\n結果是什麼？",
+  "options": [
+   "A1:A3 被搬到 C1:C3，原本的 A1:A3 變成空白",
+   "只有 A1 被複製到 C1",
+   "A1:A3 的內容被複製到 C1:C3",
+   "會出錯，Destination 的大小必須和來源完全一樣"
+  ],
+  "answer": 2,
+  "explanation": "Destination 只要指定左上角一格，Excel 會自動把整個來源範圍貼過去；而且 Copy 是複製，不是搬移。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-20",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "Range(\"A1:B5\").Copy 後面沒有接 Destination，會發生什麼事？",
+  "options": [
+   "範圍的內容會被清空並放進剪貼簿",
+   "會出錯，Destination 是必填參數",
+   "等於沒有動作，什麼事都不會發生",
+   "範圍被複製到剪貼簿"
+  ],
+  "answer": 3,
+  "explanation": "省略 Destination 時，Copy 會把範圍放到剪貼簿，之後可以再用 Paste 或 PasteSpecial 貼上。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-21",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "A1:A5 裡放的是公式。執行\n\n    Range(\"A1:A5\").Copy\n    Range(\"C1\").PasteSpecial Paste:=xlPasteValues\n\nC1:C5 會得到什麼？",
+  "options": [
+   "公式加上原本的儲存格格式",
+   "和 A1:A5 一模一樣的公式",
+   "公式當下算出來的數值",
+   "只有格式被貼過去，內容仍是空白"
+  ],
+  "answer": 2,
+  "explanation": "xlPasteValues 只貼值，公式會在貼上時變成當下的計算結果。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-22",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "執行\n\n    Range(\"A1:A4\").Copy\n    Range(\"C1\").PasteSpecial Transpose:=True\n\n貼出來的資料呈現什麼形狀？",
+  "options": [
+   "會出錯，Transpose 一定要搭配 Paste:=xlPasteAll 才能用",
+   "C1:C4，直向 4 格",
+   "C1:D2，2 列 2 欄",
+   "C1:F1，橫向 4 格"
+  ],
+  "answer": 3,
+  "explanation": "Transpose:=True 會把列欄互換，原本 4 列 1 欄貼出來就變成 1 列 4 欄。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-23",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "A1 有數字 100，而且被設成紅色底、粗體。執行 Range(\"A1\").ClearContents 之後會怎樣？",
+  "options": [
+   "數字被清掉，紅色底和粗體還在",
+   "數字和紅色底、粗體都被清掉",
+   "數字還在，紅色底和粗體被清掉",
+   "A1 整格被刪除，下面的儲存格往上遞補"
+  ],
+  "answer": 0,
+  "explanation": "ClearContents 只清掉公式與值，格式會原封不動留著。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-24",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "想把 A1:C10 的格式（顏色、框線、數值格式）清乾淨，但資料要留著，該用哪一個？",
+  "options": [
+   "Range(\"A1:C10\").Clear",
+   "Range(\"A1:C10\").ClearFormats",
+   "Range(\"A1:C10\").ClearContents",
+   "Range(\"A1:C10\").Delete Shift:=xlShiftUp"
+  ],
+  "answer": 1,
+  "explanation": "ClearFormats 只清格式、內容保留；Clear 則是格式和內容一起清掉。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-25",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "A1=10、A2=20、A3=30。執行\n\n    Range(\"A1\").Delete Shift:=xlShiftUp\n\n之後 A1 和 A2 分別是什麼？",
+  "options": [
+   "A1=20、A2=30",
+   "A1 空白、A2=20",
+   "A1=10、A2=20，完全沒有變化",
+   "A1 和 A2 都變成空白，資料整個不見"
+  ],
+  "answer": 0,
+  "explanation": "Delete 是把儲存格整個移除，Shift:=xlShiftUp 指定下方儲存格往上遞補，所以 20 和 30 各往上移一格。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-26",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程式想刪掉 A1:A10 裡所有空白的儲存格：\n\n    For i = 1 To 10\n        If Cells(i, 1).Value = \"\" Then Cells(i, 1).Delete Shift:=xlShiftUp\n    Next i\n\n它最主要的問題是什麼？",
+  "options": [
+   "Delete 不能用在單一儲存格，只能用在整列或整欄",
+   "刪掉一格後下方會往上遞補，導致部分列被跳過而漏刪",
+   "判斷空白應該改成 If Cells(i, 1) Is Nothing Then",
+   "迴圈變數 i 沒有宣告成 Long，跑到一半就會溢位出錯"
+  ],
+  "answer": 1,
+  "explanation": "每刪掉一格，下面的資料就往上遞補一列，但 i 仍然繼續往下加，剛遞補上來的那一格就被跳過了；改成由下往上跑（For i = 10 To 1 Step -1）才安全。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-27",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "MsgBox Range(\"A1:C4\").Count 會顯示多少？",
+  "options": [
+   "7",
+   "4",
+   "3",
+   "12"
+  ],
+  "answer": 3,
+  "explanation": "Range 的 Count 算的是範圍內的儲存格總數，3 欄 × 4 列 = 12；要算列數得改用 .Rows.Count。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-28",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "MsgBox Range(\"A1\").Address 會顯示什麼？",
+  "options": [
+   "$A1",
+   "A1",
+   "$A$1",
+   "R1C1"
+  ],
+  "answer": 2,
+  "explanation": "Address 的 RowAbsolute 與 ColumnAbsolute 兩個參數預設都是 True，所以傳回的是絕對位址。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-29",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "MsgBox Cells(1, 1).Address(RowAbsolute:=False) 會顯示什麼？",
+  "options": [
+   "$A$1",
+   "A$1",
+   "A1",
+   "$A1"
+  ],
+  "answer": 3,
+  "explanation": "只有 RowAbsolute 被設成 False，欄仍維持絕對參照，所以列號前面沒有錢字號、欄號前面還有。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-30",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "假設 Range(\"A1\").CurrentRegion 是 A1:C6（第 1 列是標題）。執行\n\n    Set tbl = Range(\"A1\").CurrentRegion\n    tbl.Offset(1, 0).Resize(tbl.Rows.Count - 1, tbl.Columns.Count).Select\n\n最後選到哪個範圍？",
+  "options": [
+   "A1:C5",
+   "A2:C7",
+   "A2:C6",
+   "A2:C5"
+  ],
+  "answer": 2,
+  "explanation": "Offset(1, 0) 先把整塊往下推一列變成 A2:C7，再 Resize 成 5 列 3 欄，剛好是去掉標題列的資料區 A2:C6。",
+  "fun_fact": "這是微軟官方文件示範「取出不含標題列的資料」的標準寫法。",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-31",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "Range(\"B3\").CurrentRegion 的範圍是由什麼決定的？",
+  "options": [
+   "整張工作表所有用過的儲存格",
+   "從 B3 向外擴張，直到碰到空白列與空白欄為止",
+   "只有 B3 所在的那一整列",
+   "從 B3 一路到該工作表最後一個有資料的儲存格所圍成的矩形"
+  ],
+  "answer": 1,
+  "explanation": "CurrentRegion 是以空白列與空白欄當邊界的連續資料區塊，等同按 Ctrl+A（或 Ctrl+Shift+*）選到的那一塊。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-32",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "關於 UsedRange，下列敘述何者正確？",
+  "options": [
+   "它是 Worksheet 的屬性，不是 Range 的屬性",
+   "它是 Range 的屬性，要寫成 Range(\"A1\").UsedRange",
+   "它一定只會包含目前真的有值的儲存格",
+   "它和 CurrentRegion 完全等價，任何情況下都可以互換"
+  ],
+  "answer": 0,
+  "explanation": "官方文件把 UsedRange 列在 Worksheet 物件底下，寫法是 Worksheets(\"Sheet1\").UsedRange 或 ActiveSheet.UsedRange。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-33",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在 VBA 裡要呼叫工作表的 SUM 函式來加總 A1:A10，正確寫法是？",
+  "options": [
+   "WorksheetFunction(\"SUM\", Range(\"A1:A10\"))",
+   "Application.WorksheetFunction.Sum(Range(\"A1:A10\"))",
+   "Range(\"A1:A10\").WorksheetFunction.Sum",
+   "只能寫成 Range(\"B1\").Formula = \"=SUM(A1:A10)\"，VBA 沒有辦法直接呼叫"
+  ],
+  "answer": 1,
+  "explanation": "工作表函式集中掛在 Application.WorksheetFunction 底下，參數可以直接傳 Range 物件。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-34",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列兩行的差別是什麼？\n\n    Range(\"C1\").Value = Application.WorksheetFunction.Sum(Range(\"A1:A10\"))\n    Range(\"C2\").Formula = \"=SUM(A1:A10)\"",
+  "options": [
+   "C1 存的是公式，C2 存的是固定數值",
+   "兩者結果完全一樣，只是寫法不同而已",
+   "C1 存的是當下算出的固定數值，C2 存的是公式，A 欄改了會自動重算",
+   "C2 會出錯，因為 Formula 屬性不接受字串"
+  ],
+  "answer": 2,
+  "explanation": "WorksheetFunction 是在 VBA 裡「當場算完」再把數字放進去，儲存格裡不會留下公式，所以來源資料改變時不會自動更新。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V03-35",
+  "topic": "vba",
+  "unit": "V3",
+  "unit_name": "儲存格與範圍操作",
+  "category": "儲存格與範圍操作",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程式碼在 Data 以外的工作表執行時會出現錯誤 1004，原因是什麼？\n\n    With Sheets(\"Data\")\n        .Range(Cells(1, 1), Cells(3, 2)).Value = 1\n    End With",
+  "options": [
+   "Cells 前面漏了點，仍指向作用中的工作表",
+   "Range 不接受 Cells 當參數，一定要寫成字串位址",
+   "With 區塊裡面不可以使用 Cells 屬性",
+   "Range(Cells, Cells) 只能指定單一儲存格，多格範圍要改用 Resize"
+  ],
+  "answer": 0,
+  "explanation": "With 區塊裡 .Range 已經限定到 Data，但沒加點的 Cells 屬於作用中的工作表；跨表混用就會引發執行階段錯誤 1004。正確寫法是 .Range(.Cells(1, 1), .Cells(3, 2))。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-01",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在 VBA 中，區塊形式（多行）的 If 判斷式必須用哪一個敘述結尾？",
+  "options": [
+   "End",
+   "EndIf",
+   "End If",
+   "Exit If"
+  ],
+  "answer": 2,
+  "explanation": "區塊形式的 If 一定要以 End If（中間有空白、兩個字）結尾；EndIf 不是合法關鍵字。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-02",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "下面這段程式哪裡有問題？\n\nIf score > 60 Then rank = \"Pass\"\nEnd If",
+  "options": [
+   "單行 If 在那一行就結束了，不可以再寫 End If",
+   "完全正確，沒有任何問題",
+   "Then 後面不可以接指定敘述",
+   "應該把 > 改成 >= 才合法"
+  ],
+  "answer": 0,
+  "explanation": "Then 後面同一行已經有敘述，屬於單行形式 If，單行形式不使用 End If，多寫會出現「End If 沒有 Block If」的編譯錯誤。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-03",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "VBA 中表示「不等於」的比較運算子是哪一個？",
+  "options": [
+   "!=",
+   "><",
+   "=/=",
+   "<>"
+  ],
+  "answer": 3,
+  "explanation": "VBA 的不等於寫成 <>（小於接大於），!= 是 C 系列語言的寫法。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-04",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在區塊 If 中要接「否則如果」的條件，VBA 的正確寫法是？",
+  "options": [
+   "Else If cond Then",
+   "ElseIf cond Then",
+   "ElsIf cond Then",
+   "Else Case cond Then"
+  ],
+  "answer": 1,
+  "explanation": "ElseIf 在 VBA 是一個完整的關鍵字，中間不能有空白。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-05",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "Select Case 區塊必須用哪一個敘述結尾？",
+  "options": [
+   "End Select",
+   "End Case",
+   "End Switch",
+   "Select End"
+  ],
+  "answer": 0,
+  "explanation": "Select Case 的結尾固定是 End Select。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-06",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在 Select Case 中，Case 1 To 5 代表的是什麼？",
+  "options": [
+   "只有 1 和 5 這兩個值，中間的不算",
+   "1 乘以 5 之後的結果",
+   "1 到 5（含頭尾）之間的值",
+   "從 1 開始每次加 5"
+  ],
+  "answer": 2,
+  "explanation": "To 用來寫一段連續範圍，Case 1 To 5 表示 1、2、3、4、5 都符合。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-07",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在 Select Case 裡，Case Else 的作用是什麼？",
+  "options": [
+   "一定要寫，否則會語法錯誤",
+   "用來結束整個 Select Case 區塊",
+   "在每次判斷之前先執行一次",
+   "當前面所有 Case 都不符合時才執行"
+  ],
+  "answer": 3,
+  "explanation": "Case Else 是所有 Case 都沒命中時的預設出口；它可寫可不寫，不寫時就直接跳到 End Select 之後。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-08",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "運算式 True And False 的結果是什麼？",
+  "options": [
+   "True",
+   "False",
+   "-1",
+   "發生執行階段錯誤"
+  ],
+  "answer": 1,
+  "explanation": "And 要兩邊都為 True 結果才是 True，只要有一邊是 False 結果就是 False。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-09",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "運算式 Not (5 > 3) 的結果是什麼？",
+  "options": [
+   "False",
+   "True",
+   "5",
+   "編譯錯誤，Not 只能用在數字上"
+  ],
+  "answer": 0,
+  "explanation": "5 > 3 是 True，Not 把它反轉成 False。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-10",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式會印出什麼？\n\nDim s As Integer\ns = 75\nIf s >= 90 Then\n    Debug.Print \"A\"\nElseIf s >= 80 Then\n    Debug.Print \"B\"\nElseIf s >= 70 Then\n    Debug.Print \"C\"\nElse\n    Debug.Print \"D\"\nEnd If",
+  "options": [
+   "A",
+   "B",
+   "C",
+   "D"
+  ],
+  "answer": 2,
+  "explanation": "75 不滿足前兩個條件，第三個 ElseIf 的 s >= 70 成立，所以印出 C。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-11",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式會印出什麼？\n\nDim n As Integer\nn = 3\nSelect Case n\n    Case 1 To 5\n        Debug.Print \"小\"\n    Case 3\n        Debug.Print \"剛好三\"\n    Case Else\n        Debug.Print \"其他\"\nEnd Select",
+  "options": [
+   "只印出 剛好三",
+   "只印出 小",
+   "先印出 小 再印出 剛好三",
+   "只印出 其他"
+  ],
+  "answer": 1,
+  "explanation": "Select Case 只會執行第一個符合的 Case，3 已經落在 1 To 5，後面的 Case 3 就不會再被檢查。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-12",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下面這段程式為什麼無法編譯？\n\nSelect Case score\n    Case >= 60\n        Debug.Print \"及格\"\n    Case Else\n        Debug.Print \"不及格\"\nEnd Select",
+  "options": [
+   "Select Case 的每一個 Case 後面都一定要用 To 寫成一段連續範圍",
+   "Select Case 區塊裡面不可以出現 Case Else",
+   "Debug.Print 不能直接寫在 Case 底下，要另外包成 If",
+   "Case 後面要用比較運算子時必須加 Is，應寫成 Case Is >= 60"
+  ],
+  "answer": 3,
+  "explanation": "Case 子句要做大小比較時，一定要加上 Is 關鍵字，正確寫法是 Case Is >= 60。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-13",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式會印出什麼？\n\nDim a As Integer, b As Integer\na = 5\nb = 2\nIf a > 3 Then\n    If b > 3 Then\n        Debug.Print \"兩個都大\"\n    Else\n        Debug.Print \"只有 a 大\"\n    End If\nElse\n    Debug.Print \"a 不大\"\nEnd If",
+  "options": [
+   "只有 a 大",
+   "兩個都大",
+   "a 不大",
+   "什麼都不印，直接結束"
+  ],
+  "answer": 0,
+  "explanation": "a > 3 成立進入外層，內層 b > 3 不成立走 Else，所以印出「只有 a 大」。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-14",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "運算式 \"Excel2024\" Like \"Excel*\" 的結果是什麼？",
+  "options": [
+   "Null",
+   "False",
+   "True",
+   "型態不符的執行階段錯誤"
+  ],
+  "answer": 2,
+  "explanation": "萬用字元 * 代表零個或多個字元，所以 \"Excel2024\" 符合樣式 \"Excel*\"。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-15",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "在 Like 的樣式字串中，# 代表什麼？",
+  "options": [
+   "任何單一字元",
+   "任何單一數字（0 到 9）",
+   "零個或多個字元",
+   "任何單一的英文字母（A 到 Z）"
+  ],
+  "answer": 1,
+  "explanation": "Like 的萬用字元中，? 是任一個字元、* 是零個或多個字元、# 是任一個數字。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-16",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列哪一個運算式的結果是 False？",
+  "options": [
+   "\"BAT123\" Like \"B?T*\"",
+   "\"a2a\" Like \"a#a\"",
+   "\"aBBBa\" Like \"a*a\"",
+   "\"BT123\" Like \"B?T*\""
+  ],
+  "answer": 3,
+  "explanation": "? 必須剛好對應一個字元，\"BT123\" 的 B 後面直接就是 T，少了那一個字元，所以不符合樣式。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-17",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式會印出什麼？\n\nDim s As String\ns = \"45 Help\"\nIf IsNumeric(s) Then\n    Debug.Print \"是數字\"\nElse\n    Debug.Print \"不是數字\"\nEnd If",
+  "options": [
+   "不是數字",
+   "是數字",
+   "印出 45",
+   "發生型態不符的執行階段錯誤"
+  ],
+  "answer": 0,
+  "explanation": "IsNumeric 要求「整個」運算式都能被當成一個數字，字串中夾雜文字時就回傳 False。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-18",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式的兩行輸出分別是什麼？\n\nDim v As Variant\nDebug.Print IsEmpty(v)\nv = Null\nDebug.Print IsEmpty(v)",
+  "options": [
+   "True 然後 True",
+   "False 然後 True",
+   "True 然後 False",
+   "False 然後 False"
+  ],
+  "answer": 2,
+  "explanation": "尚未指定值的 Variant 是 Empty 所以第一次為 True；指定成 Null 之後就不再是 Empty，第二次為 False。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-19",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列哪一個運算式會回傳 False？",
+  "options": [
+   "IsDate(\"2014/4/28\")",
+   "IsDate(#4/28/2014#)",
+   "IsDate(Now)",
+   "IsDate(\"13/32/2014\")"
+  ],
+  "answer": 3,
+  "explanation": "IsDate 只有在能被辨識成合法日期時才回傳 True；13 月 32 日不存在，所以是 False。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-20",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式會印出什麼？\n\nDim b As Boolean\nb = True\nDebug.Print CInt(b)",
+  "options": [
+   "1",
+   "-1",
+   "0",
+   "True"
+  ],
+  "answer": 1,
+  "explanation": "VBA 把 Boolean 轉成數值時，True 是 -1、False 是 0。",
+  "fun_fact": "在早期 BASIC 用 -1 是因為它的二進位表示法所有位元都是 1，做位元運算特別方便。",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-21",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "模組最上方寫了 Option Compare Text，則運算式 \"vba\" = \"VBA\" 的結果是什麼？",
+  "options": [
+   "False，VBA 的字串比較永遠分大小寫",
+   "False，Option Compare 只影響 Like，不影響 =",
+   "True，字串比較改成不分大小寫",
+   "會發生編譯錯誤"
+  ],
+  "answer": 2,
+  "explanation": "Option Compare Text 讓整個模組的字串比較改用不分大小寫的文字排序，= 、< 、> 、Like 都適用。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-22",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下面這段程式會發生什麼事？\n\nIf x > 0 Then\n    Debug.Print \"正\"\nElse If x < 0 Then\n    Debug.Print \"負\"\nEnd If",
+  "options": [
+   "編譯錯誤，Else If 被當成 Else 裡面另外開一個 If，少了一個 End If",
+   "正常執行，和寫成 ElseIf 完全一樣",
+   "編譯錯誤，Else 後面不能接任何敘述",
+   "正常執行，但「負」永遠印不出來"
+  ],
+  "answer": 0,
+  "explanation": "Else If 是兩個字，VBA 會把它讀成 Else 子句中再開一個區塊 If，那個 End If 被內層用掉，外層就缺結尾。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-23",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "要判斷 A1 是不是空白儲存格，下列哪個寫法才正確？",
+  "options": [
+   "If Range(\"A1\").Value = \" \" Then",
+   "If Range(\"A1\").Value = 0 Then",
+   "If IsNull(Range(\"A1\").Value) Then",
+   "If IsEmpty(Range(\"A1\").Value) Then"
+  ],
+  "answer": 3,
+  "explanation": "空白儲存格讀出來的 Value 是 Empty，要用 IsEmpty 判斷；它既不是一個空白字元、也不是 Null，而和 0 比較會把真的填 0 的儲存格誤判成空白。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-24",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式會印出什麼？\n\nDim x As Integer\nx = 4\nIf x < 0 Or x Mod 2 = 0 Then\n    Debug.Print \"符合\"\nElse\n    Debug.Print \"不符合\"\nEnd If",
+  "options": [
+   "不符合",
+   "符合",
+   "兩行都印出來",
+   "發生執行階段錯誤"
+  ],
+  "answer": 1,
+  "explanation": "Or 只要有一邊成立就是 True，x < 0 雖然不成立，但 4 Mod 2 = 0 成立，所以印出「符合」。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-25",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "運算式 (3 > 1) Xor (5 > 2) 的結果是什麼？",
+  "options": [
+   "True",
+   "Null",
+   "False",
+   "發生編譯錯誤"
+  ],
+  "answer": 2,
+  "explanation": "Xor 只有在兩邊「恰好一個」為 True 時才是 True，這裡兩邊都是 True，結果是 False。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-26",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式的執行結果是什麼？\n\nDim n As Integer\nn = -3\nIf n >= 0 Then Debug.Print \"非負\" Else Debug.Print \"負數\"",
+  "options": [
+   "印出 負數",
+   "編譯錯誤，單行 If 不能有 Else",
+   "印出 非負",
+   "編譯錯誤，缺少 End If"
+  ],
+  "answer": 0,
+  "explanation": "單行形式 If 可以在同一行接 Else，語法合法；n 是 -3 不滿足條件，所以走 Else 印出「負數」。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-27",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程式會印出什麼？\n\nDim a As Boolean, b As Boolean, c As Boolean\na = True\nb = False\nc = False\nDebug.Print a Or b And c",
+  "options": [
+   "編譯錯誤（一定要加括號）",
+   "False（由左至右先算 a Or b，再 And c）",
+   "Null（布林值不可以混用）",
+   "True（先算 b And c 再算 Or）"
+  ],
+  "answer": 3,
+  "explanation": "邏輯運算子的優先順序是 Not 高於 And、And 高於 Or，所以先算 b And c 得 False，再算 True Or False 得 True。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-28",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程式在 x = 0 時會發生什麼？\n\nDim x As Integer\nx = 0\nIf x <> 0 And 10 / x > 1 Then\n    Debug.Print \"OK\"\nEnd If",
+  "options": [
+   "什麼都不印，因為左邊是 False 就不會再算右邊",
+   "發生執行階段錯誤「除以零」",
+   "印出 OK",
+   "發生編譯錯誤"
+  ],
+  "answer": 1,
+  "explanation": "VBA 的 And 不做短路求值，左右兩邊都會先被計算，所以 10 / x 仍然會執行而除以零。",
+  "fun_fact": "VB.NET 後來補上了 AndAlso 和 OrElse 兩個會短路的運算子，VBA 沒有。",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-29",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程式的執行結果是什麼？\n\nDim n As Integer\nn = 0\nDebug.Print IIf(n = 0, \"無資料\", 100 / n)",
+  "options": [
+   "印出 無資料",
+   "印出 0",
+   "還沒印出任何東西就除以零而中斷",
+   "印出空字串"
+  ],
+  "answer": 2,
+  "explanation": "官方文件明載 IIf 一定會把 truepart 與 falsepart 兩個引數都求值，所以 100 / n 還是會被計算。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-30",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程式會印出什麼？\n\nDim n As Integer\nn = 3\nSelect Case n\n    Case 5 To 1\n        Debug.Print \"在範圍內\"\n    Case Else\n        Debug.Print \"不在範圍內\"\nEnd Select",
+  "options": [
+   "不在範圍內",
+   "在範圍內",
+   "發生編譯錯誤",
+   "發生執行階段錯誤"
+  ],
+  "answer": 0,
+  "explanation": "Case a To b 規定較小的值要寫在 To 前面，寫成 5 To 1 不會自動對調，永遠不會符合，於是落到 Case Else。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-31",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程式會印出什麼？\n\nDim v As Variant\nv = Null\nIf v = Null Then\n    Debug.Print \"是 Null\"\nElse\n    Debug.Print \"不是 Null\"\nEnd If",
+  "options": [
+   "是 Null",
+   "編譯錯誤，Null 不能寫在 If 裡",
+   "發生執行階段錯誤",
+   "不是 Null"
+  ],
+  "answer": 3,
+  "explanation": "任何含有 Null 的運算式結果也是 Null，If 不會把它當成 True，所以走 Else；要判斷必須改用 IsNull。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-32",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "依照 VBA 的 And 真值表，運算式 False And Null 的結果是什麼？",
+  "options": [
+   "Null",
+   "False",
+   "True",
+   "發生執行階段錯誤"
+  ],
+  "answer": 1,
+  "explanation": "只要有一邊確定是 False，And 的結果就確定是 False，不會被 Null 影響。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-33",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程式會印出什麼？\n\nDim x As Integer\nx = 50\nIf 0 < x < 10 Then\n    Debug.Print \"個位數\"\nElse\n    Debug.Print \"不是個位數\"\nEnd If",
+  "options": [
+   "不是個位數",
+   "發生編譯錯誤",
+   "個位數",
+   "發生執行階段錯誤"
+  ],
+  "answer": 2,
+  "explanation": "VBA 先算 0 < x 得到 True（數值 -1），再拿 -1 < 10 比較又是 True，所以這種連寫法永遠成立，必須改寫成 0 < x And x < 10。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-34",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程式會印出什麼？\n\nOption Compare Text\n\nSub Test()\n    Debug.Print \"vba\" Like \"VBA\"\nEnd Sub",
+  "options": [
+   "False",
+   "發生編譯錯誤",
+   "Null",
+   "True"
+  ],
+  "answer": 3,
+  "explanation": "Option Compare Text 讓 Like 改用不分大小寫的文字排序來比對，所以 \"vba\" 符合樣式 \"VBA\"。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V04-35",
+  "topic": "vba",
+  "unit": "V4",
+  "unit_name": "條件判斷",
+  "category": "條件判斷",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程式會印出什麼？\n\nDim x As Integer\nx = 5\nIf Not x > 3 And x < 10 Then\n    Debug.Print \"A\"\nElse\n    Debug.Print \"B\"\nEnd If",
+  "options": [
+   "B",
+   "A",
+   "發生編譯錯誤",
+   "發生執行階段錯誤"
+  ],
+  "answer": 0,
+  "explanation": "比較運算子比邏輯運算子先算，所以條件是 Not (x > 3) And (x < 10)，也就是 False And True，結果為 False 而走 Else。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-01",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "下列程式碼中，Debug.Print 會被執行幾次？\n\nDim i As Integer\nFor i = 1 To 10\n    Debug.Print i\nNext i",
+  "options": [
+   "9 次",
+   "10 次",
+   "11 次",
+   "1 次"
+  ],
+  "answer": 1,
+  "explanation": "起始值 1、終值 10，計數器每跑完一輪就往上加，依序取 1、2、…、10，因此主體執行 10 次。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-02",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "For ... Next 敘述如果沒有寫出 Step，VBA 會採用的預設增量是多少？",
+  "options": [
+   "0",
+   "1",
+   "-1",
+   "沒有預設值，Step 一定要自己寫出來"
+  ],
+  "answer": 1,
+  "explanation": "官方文件指出 Step 省略時預設為 1，所以計數器每跑完一輪就自動加 1。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-03",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "關於 Do While ... Loop，下列敘述何者正確？",
+  "options": [
+   "它是前測迴圈，條件一開始就不成立時，迴圈主體一次都不會執行",
+   "它是後測迴圈，先執行迴圈主體再判斷條件，所以一定至少執行一次",
+   "它只能搭配數值大小的條件，不可以使用字串比較運算式",
+   "它會自動幫計數器加 1，程式裡不必自己寫遞增的敘述"
+  ],
+  "answer": 0,
+  "explanation": "Do While 把條件寫在 Do 的同一行，屬於前測迴圈：先判斷再決定要不要執行主體。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-04",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在 For ... Next 迴圈中執行到 Exit For 時，程式會怎麼做？",
+  "options": [
+   "跳過這一次剩下的敘述，直接進行下一次迴圈",
+   "結束整個 Sub 程序，後面的程式都不再執行",
+   "立即離開該 For 迴圈，從 Next 的下一行繼續執行",
+   "回到 For 那一行，把計數器重設為起始值後重新開始"
+  ],
+  "answer": 2,
+  "explanation": "Exit For 會把控制權直接交給 Next 之後的敘述，等於提前結束這個迴圈。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-05",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "下列哪一段程式可以逐一走訪目前活頁簿中的每一張工作表？",
+  "options": [
+   "For Each ws In Workbooks",
+   "For Each ws In Sheets.Count",
+   "For ws = 1 To Worksheets",
+   "For Each ws In Worksheets"
+  ],
+  "answer": 3,
+  "explanation": "Worksheets 是工作表集合，For Each ... In Worksheets 會依序取得集合中的每一張工作表物件。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-06",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "程式不小心寫成無限迴圈而停不下來時，在 Excel／VBE 中通常按哪一組按鍵中斷執行？",
+  "options": [
+   "Ctrl + C",
+   "Ctrl + Break",
+   "Ctrl + Shift + Enter",
+   "F5"
+  ],
+  "answer": 1,
+  "explanation": "Ctrl + Break 會中斷正在執行的 VBA 程式並進入中斷模式，方便檢查是哪一行卡住。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-07",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "VBA 舊語法 While ... 迴圈的結尾必須使用哪一個關鍵字？",
+  "options": [
+   "End While",
+   "Wend",
+   "Loop",
+   "Next While"
+  ],
+  "answer": 1,
+  "explanation": "While ... Wend 是成對的舊語法，結尾關鍵字是 Wend，不是 End While 也不是 Loop。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-08",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "下列程式碼中，迴圈主體會執行幾次？\n\nDim i As Integer\nFor i = 1 To 10 Step 2\n    Debug.Print i\nNext i",
+  "options": [
+   "10 次",
+   "4 次",
+   "5 次",
+   "6 次"
+  ],
+  "answer": 2,
+  "explanation": "Step 2 讓 i 依序取 1、3、5、7、9，下一個 11 已超過終值，所以共執行 5 次。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-09",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "Do ... Loop While 條件 這種後測迴圈，迴圈主體最少會執行幾次？",
+  "options": [
+   "0 次，條件一開始不成立就完全不執行",
+   "視條件內容而定，事先無法確定最少次數",
+   "2 次",
+   "1 次"
+  ],
+  "answer": 3,
+  "explanation": "後測迴圈把條件寫在 Loop 那一行，先執行主體再判斷，所以不論條件如何都至少執行一次。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-10",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式執行後，最後一行會印出什麼？\n\nDim i As Integer\nFor i = 1 To 5\n    ' 這裡不做任何事\nNext i\nDebug.Print i",
+  "options": [
+   "5",
+   "6",
+   "1",
+   "0"
+  ],
+  "answer": 1,
+  "explanation": "每跑完一輪會先把 Step 加到計數器再判斷，i 變成 6 時條件不成立才離開，所以迴圈結束後 i 是 6。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-11",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式碼中，迴圈主體會執行幾次？\n\nDim i As Integer\nFor i = 5 To 1\n    Debug.Print i\nNext i",
+  "options": [
+   "0 次",
+   "5 次",
+   "1 次",
+   "程式會在編譯時就出現語法錯誤"
+  ],
+  "answer": 0,
+  "explanation": "沒有寫 Step 時採用預設的正增量，而正增量要 counter <= end 才執行；起始值 5 已大於終值 1，因此一次都不跑。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-12",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式碼中，迴圈主體會執行幾次？\n\nDim i As Integer\nFor i = 10 To 2 Step -2\n    Debug.Print i\nNext i",
+  "options": [
+   "4 次",
+   "0 次",
+   "5 次",
+   "6 次"
+  ],
+  "answer": 2,
+  "explanation": "負的 Step 以 counter >= end 作為繼續條件，i 依序為 10、8、6、4、2，共 5 次。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-13",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式碼中，Debug.Print 會執行幾次？\n\nDim n As Integer\nn = 10\nDo While n < 5\n    Debug.Print n\n    n = n + 1\nLoop",
+  "options": [
+   "5 次",
+   "10 次",
+   "1 次",
+   "0 次"
+  ],
+  "answer": 3,
+  "explanation": "Do While 進入迴圈前就先判斷 n < 5，n 初值 10 讓條件不成立，主體完全不執行。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-14",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式碼中，Debug.Print 會執行幾次？\n\nDim n As Integer\nn = 10\nDo\n    Debug.Print n\n    n = n + 1\nLoop While n < 5",
+  "options": [
+   "1 次",
+   "0 次",
+   "5 次",
+   "無限次"
+  ],
+  "answer": 0,
+  "explanation": "條件寫在 Loop 那一行屬於後測，先印一次後 n 變成 11，條件不成立而結束，總共只印 1 次。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-15",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列巢狀迴圈中，Debug.Print 總共會執行幾次？\n\nDim i As Integer, j As Integer\nFor i = 1 To 3\n    For j = 1 To 4\n        Debug.Print i * j\n    Next j\nNext i",
+  "options": [
+   "7 次",
+   "3 次",
+   "12 次",
+   "4 次"
+  ],
+  "answer": 2,
+  "explanation": "外層跑 3 輪，每一輪內層跑 4 次，內層主體共執行 3 × 4 = 12 次。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-16",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式碼無法通過編譯，原因是什麼？\n\nDim c As Integer\nFor Each c In Range(\"A1:A5\")\n    Debug.Print c.Value\nNext c",
+  "options": [
+   "Range(\"A1:A5\") 是多個儲存格組成的範圍，不是集合物件，因此無法用 For Each 逐一走訪",
+   "For Each 的元素變數必須宣告成 Variant 或物件型別（例如 Range），不可以是 Integer",
+   "Next 後面不可以再加上變數名稱 c",
+   "Debug.Print 不能印出儲存格的 Value 屬性"
+  ],
+  "answer": 1,
+  "explanation": "For Each 每次取出的是一個 Range 物件，元素變數只能宣告成 Variant 或物件型別；宣告成 Integer 在編譯階段就會被擋下來。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-17",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "要把工作表第 2 列到第 100 列中「A 欄為空白」的整列刪掉，下列哪一段寫法才不會漏刪？",
+  "options": [
+   "For i = 2 To 100\n    If Cells(i, 1).Value = \"\" Then Rows(i).Delete\nNext i",
+   "For Each c In Range(\"A2:A100\")\n    If c.Value = \"\" Then c.EntireRow.Delete\nNext c",
+   "For i = 2 To 100\n    If Cells(i, 1).Value = \"\" Then Rows(i).ClearContents\nNext i",
+   "For i = 100 To 2 Step -1\n    If Cells(i, 1).Value = \"\" Then Rows(i).Delete\nNext i"
+  ],
+  "answer": 3,
+  "explanation": "由上往下刪除時，刪掉一列後下方的列會往上遞補而被跳過；必須用 Step -1 由下往上處理才不會漏刪。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-18",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "在兩層巢狀的 Do ... Loop 中，若內層迴圈執行到 Exit Do，程式會如何？",
+  "options": [
+   "只離開內層迴圈，外層迴圈仍會繼續執行",
+   "同時離開內層與外層兩個迴圈",
+   "離開內層之後直接結束整個 Sub 程序",
+   "Exit Do 不可以用在巢狀迴圈裡面，會產生編譯錯誤"
+  ],
+  "answer": 0,
+  "explanation": "官方文件說明 Exit Do 只會把控制權交給緊接在該層 Loop 之後的敘述，也就是只跳出它所在的那一層。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-19",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列巢狀迴圈為什麼無法通過編譯？\n\nFor i = 1 To 3\n    For j = 1 To 2\n        Debug.Print i, j\n    Next i\nNext j",
+  "options": [
+   "Debug.Print 一次只能印出一個變數的內容",
+   "巢狀迴圈的內外層計數器不可以同時使用 i 和 j 這種單一字母的名稱",
+   "Next 的配對寫反了：內層應該是 Next j、外層才是 Next i",
+   "For 迴圈最多只能巢狀一層"
+  ],
+  "answer": 2,
+  "explanation": "巢狀迴圈必須內外對稱收尾，先結束內層再結束外層，寫成 Next i / Next j 會造成配對錯誤。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-20",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "工作表 A1:A5 依序填入 2、4、6、8、10。下列程式執行後 s 的值是多少？\n\nDim i As Integer, s As Long\nFor i = 1 To 5\n    s = s + Cells(i, 1).Value\nNext i",
+  "options": [
+   "15",
+   "30",
+   "10",
+   "5"
+  ],
+  "answer": 1,
+  "explanation": "Cells(i, 1) 在 i = 1 到 5 時分別代表 A1 到 A5，累加 2+4+6+8+10 得到 30。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-21",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式執行後，Debug.Print 印出的最後一個數字是多少？\n\nDim k As Integer\nk = 1\nDo\n    Debug.Print k\n    k = k + 2\nLoop Until k > 7",
+  "options": [
+   "9",
+   "5",
+   "8",
+   "7"
+  ],
+  "answer": 3,
+  "explanation": "k 依序印出 1、3、5、7；印完 7 之後 k 變成 9，此時 k > 7 成立才離開，所以最後印出的是 7。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-22",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "使用 For Each ... Next 走訪一個「陣列」時，元素變數的型別有什麼限制？",
+  "options": [
+   "只能宣告成 Variant",
+   "可以是 Variant，也可以是任何物件型別",
+   "必須和陣列的元素型別完全相同，例如 Integer 陣列就要宣告成 Integer",
+   "必須宣告成 Object"
+  ],
+  "answer": 0,
+  "explanation": "官方文件說明：走訪集合時元素變數可以是 Variant 或物件變數，但走訪陣列時只能是 Variant。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-23",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式執行後會印出多少？\n\nDim i As Integer, s As Integer\ns = 0\nDo While i < 10\n    i = i + 1\n    s = s + i\nLoop\nDebug.Print s",
+  "options": [
+   "45",
+   "10",
+   "55",
+   "0"
+  ],
+  "answer": 2,
+  "explanation": "i 由 0 開始，每輪先加 1 再累加到 s，等於累加 1 到 10，總和為 55。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-24",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式執行後，哪些儲存格會被填入文字？\n\nDim i As Integer\nFor i = 2 To 10 Step 4\n    Cells(i, 1).Value = \"OK\"\nNext i",
+  "options": [
+   "A2、A4、A6、A8、A10",
+   "A2、A6、A10",
+   "A2、A5、A8",
+   "A2 到 A10 全部"
+  ],
+  "answer": 1,
+  "explanation": "i 從 2 開始每次加 4，依序為 2、6、10，因此 Cells(i, 1) 只會寫到 A2、A6、A10 三格。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-25",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式碼執行後會發生什麼結果？\n\nDim n As Integer\nn = 1\nDo While n < 5\n    Debug.Print n\nLoop",
+  "options": [
+   "依序印出 1、2、3、4 之後正常結束，因為 n 會自動遞增",
+   "完全不執行，因為 n 沒有事先設定好終值",
+   "只印出 1 一次就結束",
+   "無限迴圈，只能靠使用者手動中斷程式"
+  ],
+  "answer": 3,
+  "explanation": "迴圈主體裡沒有任何敘述改變 n 的值，條件 n < 5 永遠成立，因此程式會一直卡在迴圈中。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-26",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "某活頁簿有 3 張工作表。下列程式執行後 n 的值是多少？\n\nDim ws As Worksheet, n As Integer\nFor Each ws In Worksheets\n    n = n + 1\nNext ws",
+  "options": [
+   "3",
+   "1",
+   "0",
+   "4"
+  ],
+  "answer": 0,
+  "explanation": "For Each 會逐一取出 Worksheets 集合中的每一個成員，3 張工作表就累加 3 次。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-27",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程式執行後，Debug.Print 總共執行了幾次？\n\nDim i As Integer, j As Integer\nFor i = 1 To 3\n    For j = 1 To 5\n        If j = 2 Then Exit For\n        Debug.Print i, j\n    Next j\nNext i",
+  "options": [
+   "1 次",
+   "15 次",
+   "3 次",
+   "6 次"
+  ],
+  "answer": 2,
+  "explanation": "Exit For 只離開最內層迴圈，外層 i 仍跑滿 3 輪，而每一輪只在 j = 1 時印出一次，共 3 次。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-28",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程式碼中，迴圈主體會執行幾次？\n\nDim i As Integer\nFor i = 3 To 100 Step 7\n    Debug.Print i\nNext i",
+  "options": [
+   "14 次",
+   "13 次",
+   "15 次",
+   "98 次"
+  ],
+  "answer": 0,
+  "explanation": "i 的值為 3 + 7k 且必須小於等於 100，k 可取 0 到 13 共 14 個值，所以執行 14 次。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-29",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程式執行後，最後一行會印出多少？\n\nDim i As Integer\nFor i = 1 To 10\n    If i = 4 Then Exit For\nNext i\nDebug.Print i",
+  "options": [
+   "11",
+   "5",
+   "3",
+   "4"
+  ],
+  "answer": 3,
+  "explanation": "Exit For 是在 i = 4 那一輪中途離開，還沒執行到 Next 的加 1 動作，所以計數器停在 4。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-30",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程式碼會產生什麼問題？\n\nDim i As Integer\nFor i = 1 To 10 Step 0\n    Debug.Print i\nNext i",
+  "options": [
+   "Step 後面不可以寫 0，這一行在編譯階段就會被 VBA 擋下來",
+   "迴圈完全不會執行，因為增量是 0",
+   "i 永遠停在 1 而條件一直成立，形成無限迴圈",
+   "只會執行一次就自動結束"
+  ],
+  "answer": 2,
+  "explanation": "官方文件把 Step 為 0 歸在「正值或 0」那一類，繼續條件是 counter <= end；i 不會改變所以條件永遠成立。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-31",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "A1:A4 原本依序是 1、2、3、4。下列程式執行後這四格的內容變成什麼？\n\nDim c As Range\nFor Each c In Range(\"A1:A4\")\n    c.Value = c.Value * 2\nNext c",
+  "options": [
+   "2、4、6、8",
+   "1、2、3、4，內容不會有任何改變",
+   "2、2、2、2",
+   "1、4、9、16"
+  ],
+  "answer": 0,
+  "explanation": "For Each 取出的 c 是真正的 Range 物件，指派 c.Value 會直接寫回該儲存格，所以每格都變成兩倍。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-32",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程式執行後 n 的值是多少？\n\nDim i As Integer, j As Integer, n As Integer\nFor i = 1 To 4\n    For j = 1 To i\n        n = n + 1\n    Next j\nNext i",
+  "options": [
+   "16",
+   "10",
+   "4",
+   "6"
+  ],
+  "answer": 1,
+  "explanation": "內層的終值是 i，因此四輪分別跑 1、2、3、4 次，合計 1+2+3+4 = 10。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-33",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程式碼中，迴圈主體會執行幾次？\n\nDim i As Integer\nFor i = 1 To 0 Step -1\n    Debug.Print i\nNext i",
+  "options": [
+   "0 次",
+   "1 次",
+   "2 次",
+   "無限次"
+  ],
+  "answer": 2,
+  "explanation": "Step 為負時的繼續條件是 counter >= end，i 依序取 1 和 0 都成立，共執行 2 次。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-34",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "關於 While ... Wend 這個舊語法，下列敘述何者正確？",
+  "options": [
+   "它是後測迴圈，主體至少會執行一次",
+   "它和 Do ... Loop 一樣可以使用 Exit While 敘述提前離開迴圈的執行",
+   "它必須搭配 Step 指定增量，否則 VBA 無法判斷何時結束",
+   "它沒有提供中途離開的專用敘述，官方也建議改用 Do ... Loop"
+  ],
+  "answer": 3,
+  "explanation": "While ... Wend 是前測迴圈且沒有對應 Exit Do 的中途離開敘述，官方文件建議改用更有彈性的 Do ... Loop。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V05-35",
+  "topic": "vba",
+  "unit": "V5",
+  "unit_name": "迴圈",
+  "category": "迴圈",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "想要把 1 累加到 100，下列哪一段程式才是正確的？",
+  "options": [
+   "Dim i As Integer, s As Long\ni = 1\nDo Until i > 100\n    s = s + i\n    i = i + 1\nLoop",
+   "Dim i As Integer, s As Long\ni = 1\nDo Until i <= 100\n    s = s + i\n    i = i + 1\nLoop",
+   "Dim i As Integer, s As Long\ni = 1\nDo While i > 100\n    s = s + i\n    i = i + 1\nLoop",
+   "Dim i As Integer, s As Long\ni = 1\nDo Until i > 100\n    s = s + i\nLoop"
+  ],
+  "answer": 0,
+  "explanation": "Do Until 的意思是「直到條件成立才停」，在 i 超過 100 之前持續累加，而且主體內必須自己讓 i 遞增。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-01",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在沒有寫 Option Base 的模組中，`Dim arr(5) As Long` 宣告出來的陣列，合法索引與元素個數為何？",
+  "options": [
+   "合法索引 0~4，共 5 個元素",
+   "合法索引 1~5，共 5 個元素",
+   "合法索引 0~5，共 6 個元素",
+   "合法索引 1~6，共 6 個元素"
+  ],
+  "answer": 2,
+  "explanation": "VBA 陣列預設下界是 0，括號裡的 5 是「上界」而不是元素個數，所以索引 0 到 5 一共 6 個元素。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-02",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "`Dim arr(1 To 5) As String` 這行宣告，下列敘述何者正確？",
+  "options": [
+   "共 5 個元素，LBound(arr) 回傳 1",
+   "共 5 個元素，LBound(arr) 回傳 0",
+   "共 6 個元素，LBound(arr) 回傳 0",
+   "共 4 個元素，LBound(arr) 回傳 1"
+  ],
+  "answer": 0,
+  "explanation": "用 `1 To 5` 明確指定下界 1、上界 5，因此 LBound 是 1、UBound 是 5，共 5 個元素。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-03",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "某模組最上方寫了 `Option Base 1`，接著宣告 `Dim arr(5) As Long`。此時 arr 的索引範圍與元素個數是？",
+  "options": [
+   "索引 0~5，共 6 個元素",
+   "索引 1~5，共 5 個元素",
+   "索引 1~6，共 6 個元素",
+   "編譯錯誤：使用 Option Base 1 之後就不可以再用 Dim 宣告固定大小的陣列"
+  ],
+  "answer": 1,
+  "explanation": "Option Base 1 會把該模組中「沒有明寫下界」的陣列下界改成 1，上界仍是括號裡的 5，故索引 1~5 共 5 個。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-04",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "模組開頭有 `Option Base 1`，之後寫 `Dim a(0 To 5) As Long`。請問 `LBound(a)` 回傳多少？",
+  "options": [
+   "1，因為 Option Base 1 會蓋掉括號裡寫的下界",
+   "編譯錯誤：宣告 Option Base 1 之後，所有陣列的下界一定要寫成 1 才行",
+   "0 或 1 都有可能，要看 Excel 的版本與地區設定而定",
+   "0，因為明確寫出的 To 子句優先於 Option Base"
+  ],
+  "answer": 3,
+  "explanation": "Option Base 只影響沒有明寫下界的宣告；只要用了 To 子句指定下界，就以 To 子句為準。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-05",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "對於 `Dim a(3 To 9) As Long`，運算式 `UBound(a) - LBound(a) + 1` 的結果是多少？",
+  "options": [
+   "4",
+   "6",
+   "7",
+   "9"
+  ],
+  "answer": 2,
+  "explanation": "LBound 是 3、UBound 是 9，9 - 3 + 1 = 7，正好就是元素個數。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-06",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "對於 `Dim a(1 To 3, 1 To 2) As Long`，`UBound(a, 2)` 會回傳多少？",
+  "options": [
+   "1",
+   "2",
+   "3",
+   "6"
+  ],
+  "answer": 1,
+  "explanation": "第二個引數 2 表示「第二維」，第二維宣告為 1 To 2，所以上界是 2。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-07",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "`Dim b(1 To 4, 0 To 2) As Double` 這個二維陣列一共有幾個元素？",
+  "options": [
+   "7",
+   "8",
+   "12",
+   "15"
+  ],
+  "answer": 2,
+  "explanation": "第一維 1~4 有 4 個、第二維 0~2 有 3 個，4 × 3 = 12 個元素。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-08",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式執行後會發生什麼事？\n\nSub T08()\n    Dim arr() As Long\n    arr(1) = 100\n    Debug.Print arr(1)\nEnd Sub",
+  "options": [
+   "發生執行階段錯誤 9（註標超出範圍），因為動態陣列還沒有配置大小",
+   "印出 100，因為 VBA 會自動把未指定大小的動態陣列先配置成 0 To 10 再存值",
+   "印出 0，因為 Long 型別陣列的預設值就是 0",
+   "編譯錯誤：動態陣列不可以用 Dim 宣告"
+  ],
+  "answer": 0,
+  "explanation": "`Dim arr()` 只是宣告一個尚未配置的動態陣列，必須先用 ReDim 給定大小才能存取元素。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-09",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "下列程式 `Debug.Print` 會印出什麼？\n\nSub T09()\n    Dim arr() As Long\n    ReDim arr(1 To 3)\n    arr(1) = 10\n    ReDim arr(1 To 5)\n    Debug.Print arr(1)\nEnd Sub",
+  "options": [
+   "10",
+   "5",
+   "Empty（空值）",
+   "0"
+  ],
+  "answer": 3,
+  "explanation": "沒有加 Preserve 的 ReDim 會把整個陣列重新初始化，Long 型別的元素因此回到 0。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-10",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式會印出什麼？\n\nSub T10()\n    Dim arr() As String\n    ReDim arr(1 To 3)\n    arr(2) = \"IE\"\n    ReDim Preserve arr(1 To 6)\n    Debug.Print arr(2) & \"/\" & UBound(arr)\nEnd Sub",
+  "options": [
+   "/6",
+   "IE/6",
+   "IE/3",
+   "執行階段錯誤，因為 Preserve 不能把陣列的上界往上加大"
+  ],
+  "answer": 1,
+  "explanation": "ReDim Preserve 會保留原有內容並把上界改成 6，所以 arr(2) 仍是 \"IE\"、UBound 變成 6。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-11",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程式執行結果為何？\n\nSub T11()\n    Dim a() As Long\n    ReDim a(1 To 3, 1 To 2)\n    ReDim Preserve a(1 To 5, 1 To 2)\nEnd Sub",
+  "options": [
+   "執行階段錯誤，Preserve 只能改最後一維，這裡改到的是第一維",
+   "正常執行，陣列會變成 5 列 2 欄，而且原本已經存進去的值都會完整保留下來",
+   "正常執行，但原本的內容都會被清空成 0",
+   "編譯錯誤，二維陣列不能使用 ReDim"
+  ],
+  "answer": 0,
+  "explanation": "官方規定 ReDim Preserve 只能調整「最後一維」的上界，改第一維會在執行時期出錯。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-12",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式會印出什麼？\n\nSub T12()\n    Dim a() As Long\n    ReDim a(1 To 3, 1 To 2)\n    a(3, 1) = 99\n    ReDim Preserve a(1 To 3, 1 To 4)\n    Debug.Print a(3, 1) & \",\" & UBound(a, 2)\nEnd Sub",
+  "options": [
+   "0,4",
+   "99,2",
+   "99,4",
+   "執行階段錯誤，因為 ReDim Preserve 對二維陣列一律不能使用"
+  ],
+  "answer": 2,
+  "explanation": "這裡改的是最後一維（第二維）的上界，屬於合法用法，原值保留且 UBound(a, 2) 變成 4。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-13",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "關於 `ReDim Preserve` 的限制，下列敘述何者正確？",
+  "options": [
+   "可以改任何一維的大小，只是不能改下界",
+   "可以把原本的一維陣列 ReDim Preserve 成二維陣列來使用",
+   "只能改第一維的上界，其他維都不能動",
+   "只能改最後一維的上界，而且完全不能改變維數"
+  ],
+  "answer": 3,
+  "explanation": "Preserve 的兩個限制是：只能調整最後一維的上界，且維數必須維持不變。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-14",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程式執行結果為何？\n\nSub T14()\n    Dim arr() As Long\n    ReDim arr(1 To 5)\n    ReDim Preserve arr(0 To 5)\nEnd Sub",
+  "options": [
+   "正常執行，下界會變成 0，而且原本 1 到 5 的元素值都會完整保留",
+   "執行階段錯誤，使用 Preserve 時只能改上界，改下界會出錯",
+   "正常執行，但所有元素都會被清成 0",
+   "編譯錯誤，ReDim 裡面不可以寫 To"
+  ],
+  "answer": 1,
+  "explanation": "使用 Preserve 時只允許改變最後一維的「上界」，變更下界會產生執行階段錯誤。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-15",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "`Array(10, 20, 30)` 這個函式回傳的是什麼？",
+  "options": [
+   "一個內含陣列的 Variant，在預設情況下下界是 0",
+   "一個 Long 型別的陣列，下界固定是 1",
+   "一個 String 陣列，三個元素分別是 \"10\"、\"20\"、\"30\"",
+   "一個 Collection 物件"
+  ],
+  "answer": 0,
+  "explanation": "Array 函式一律回傳「含有陣列的 Variant」，因此接收端的變數必須宣告成 Variant。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-16",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在沒有寫 Option Base 的模組中，下列程式會印出多少？\n\nSub T16()\n    Dim v As Variant\n    v = Array(\"A\", \"B\", \"C\", \"D\")\n    Debug.Print UBound(v)\nEnd Sub",
+  "options": [
+   "1",
+   "2",
+   "3",
+   "4"
+  ],
+  "answer": 2,
+  "explanation": "四個元素、下界為 0，索引是 0~3，所以 UBound 回傳 3（不是元素個數 4）。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-17",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "`Split(\"a,b,c\", \",\")` 回傳的陣列，其合法下標範圍是？",
+  "options": [
+   "1 到 3",
+   "0 到 3",
+   "1 到 2",
+   "0 到 2"
+  ],
+  "answer": 3,
+  "explanation": "Split 固定回傳從 0 起算的一維陣列，三個子字串的索引就是 0、1、2。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-18",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式會印出什麼？\n\nSub T18()\n    Dim p As Variant\n    p = Split(\"2024/09/18\", \"/\")\n    Debug.Print UBound(p) & \"-\" & p(1)\nEnd Sub",
+  "options": [
+   "3-09",
+   "2-09",
+   "2-2024",
+   "3-18"
+  ],
+  "answer": 1,
+  "explanation": "切出 3 段且下標從 0 起算，故 UBound 為 2；p(0) 是 \"2024\"、p(1) 是 \"09\"。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-19",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程式會印出什麼？\n\nSub T19()\n    Dim s As Variant\n    s = Split(\"a-b-c-d\", \"-\", 3)\n    Debug.Print UBound(s) & \" 和 \" & s(2)\nEnd Sub",
+  "options": [
+   "2 和 c-d",
+   "2 和 c",
+   "3 和 d",
+   "1 和 b-c-d"
+  ],
+  "answer": 0,
+  "explanation": "第三個引數 limit 限制最多只切出 3 段，剩下沒切完的部分會整段留在最後一個元素。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-20",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式會印出什麼？\n\nSub T20()\n    Dim v As Variant\n    v = Array(\"IE\", \"IM\", \"NTUT\")\n    Debug.Print Join(v)\nEnd Sub",
+  "options": [
+   "IE,IM,NTUT",
+   "IEIMNTUT",
+   "IE IM NTUT",
+   "執行階段錯誤，呼叫 Join 的時候一定要自己指定分隔字串"
+  ],
+  "answer": 2,
+  "explanation": "Join 的 delimiter 引數是選擇性的，省略時預設使用一個空白字元當分隔。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-21",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式會印出什麼？\n\nSub T21()\n    Dim t As String\n    t = Join(Split(\"1,2,3,4\", \",\"), \"-\")\n    Debug.Print t\nEnd Sub",
+  "options": [
+   "1,2,3,4",
+   "1234",
+   "-1-2-3-4",
+   "1-2-3-4"
+  ],
+  "answer": 3,
+  "explanation": "Split 先把字串切成 4 個元素，Join 再用 \"-\" 把它們串回去，分隔符只會出現在元素之間。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-22",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "工作表 A1:C10 有資料，下列程式會印出什麼？\n\nSub T22()\n    Dim v As Variant\n    v = Range(\"A1:C10\").Value\n    Debug.Print LBound(v, 1) & \",\" & UBound(v, 1) & \",\" & UBound(v, 2)\nEnd Sub",
+  "options": [
+   "0,9,2",
+   "1,10,3",
+   "1,3,10",
+   "0,10,3"
+  ],
+  "answer": 1,
+  "explanation": "把多格範圍一次讀進 Variant 會得到 1 起算的二維陣列，第一維是列數 10、第二維是欄數 3。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-23",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "接續 `v = Range(\"A1:C10\").Value` 之後，`v(2, 3)` 取到的是哪一個儲存格的值？",
+  "options": [
+   "C2",
+   "B3",
+   "C3",
+   "B2"
+  ],
+  "answer": 0,
+  "explanation": "這個二維陣列的索引順序是（列, 欄），第 2 列第 3 欄就是 C2。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-24",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "執行 `v = Range(\"A1\").Value`（只有單一儲存格）之後，下列敘述何者正確？",
+  "options": [
+   "v 會是一個 v(1 To 1, 1 To 1) 的二維陣列，可以用 v(1, 1) 取值",
+   "v 會是一個 v(0 To 0) 的一維陣列",
+   "v 只是單一個值而不是陣列，寫成 v(1, 1) 會發生錯誤",
+   "v 會是 Nothing"
+  ],
+  "answer": 2,
+  "explanation": "只有「多格」範圍的 Value 才會回傳二維陣列；單一儲存格取到的是純量值。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-25",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式執行後，工作表上會變成什麼樣子？\n\nSub T25()\n    Dim v As Variant\n    v = Array(10, 20, 30)\n    Range(\"A1:C1\").Value = v\nEnd Sub",
+  "options": [
+   "A1、A2、A3 分別是 10、20、30",
+   "只有 A1 會是 10，其餘兩格維持空白",
+   "發生執行階段錯誤，陣列不可以直接指派給 Range 的 Value",
+   "A1、B1、C1 分別是 10、20、30"
+  ],
+  "answer": 3,
+  "explanation": "一維陣列寫回工作表時預設視為「橫向的一列」，因此會依序填入同一列的相鄰欄位。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-26",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "想把 `Array(1, 2, 3)` 這種一維陣列一次寫進「直的一欄」A1:A3，最常見的正確做法是？",
+  "options": [
+   "先對陣列執行 Erase，再指派給 Range",
+   "用 Application.WorksheetFunction.Transpose 把它轉成 3 列 1 欄的陣列再寫回",
+   "直接寫 Range(\"A1:A3\").Value = Array(1, 2, 3) 就可以了，VBA 會自動判斷應該要直向填入",
+   "把陣列元素型別宣告成 Long，寫回時就會變成直的"
+  ],
+  "answer": 1,
+  "explanation": "一維陣列預設是橫向的一列，要變成直向就得先轉置成「n 列 1 欄」的二維形狀。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-27",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式會印出什麼？\n\nSub T27()\n    Dim n(1 To 3) As Long\n    n(1) = 5\n    n(2) = 6\n    n(3) = 7\n    Erase n\n    Debug.Print n(2)\nEnd Sub",
+  "options": [
+   "0",
+   "6",
+   "Empty",
+   "執行階段錯誤 9，因為 Erase 之後陣列就不能再被存取"
+  ],
+  "answer": 0,
+  "explanation": "對固定大小的數值陣列使用 Erase，只是把每個元素重新初始化成 0，陣列本身仍然存在。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-28",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "對一個「動態陣列」執行 Erase 之後，會發生什麼事？",
+  "options": [
+   "所有元素會被設成 0 或空字串，但是陣列本身配置的大小維持不變",
+   "陣列會自動縮小成只剩下一個元素",
+   "記憶體會被釋放，必須重新 ReDim 才能再使用",
+   "Erase 對動態陣列不會有任何作用"
+  ],
+  "answer": 2,
+  "explanation": "Erase 對動態陣列是釋放其配置的記憶體，之後要再使用必須重新以 ReDim 配置。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-29",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程式會印出什麼？\n\nSub T29()\n    Dim v(1 To 2) As Variant\n    v(1) = \"IE\"\n    v(2) = 100\n    Erase v\n    Debug.Print IsEmpty(v(1)) & \"/\" & IsEmpty(v(2))\nEnd Sub",
+  "options": [
+   "False/False",
+   "True/False",
+   "False/True",
+   "True/True"
+  ],
+  "answer": 3,
+  "explanation": "固定大小的 Variant 陣列被 Erase 之後，每個元素都會回到 Empty 狀態。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-30",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式會發生什麼事？\n\nSub Caller30()\n    Dim a(1 To 3) As Long\n    ShowIt a\nEnd Sub\n\nSub ShowIt(ByVal x() As Long)\n    Debug.Print UBound(x)\nEnd Sub",
+  "options": [
+   "正常執行並印出 3",
+   "編譯錯誤：整個陣列必須以 ByRef 傳遞，不能宣告成 ByVal",
+   "正常執行並印出 1",
+   "執行階段錯誤 9（註標超出範圍），因為被呼叫端拿不到原本陣列的大小資訊"
+  ],
+  "answer": 1,
+  "explanation": "VBA 規定整個陣列只能 ByRef 傳遞，把參數寫成 `ByVal x() As Long` 會在編譯時就被擋下來。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-31",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式會印出什麼？\n\nSub Caller31()\n    Dim a(1 To 3) As Long\n    a(1) = 1\n    Bump a\n    Debug.Print a(1)\nEnd Sub\n\nSub Bump(x() As Long)\n    x(1) = x(1) + 10\nEnd Sub",
+  "options": [
+   "11",
+   "1",
+   "0",
+   "編譯錯誤"
+  ],
+  "answer": 0,
+  "explanation": "陣列參數預設是 ByRef，被呼叫端拿到的是同一個陣列，修改會直接反映回原本的變數。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-32",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列自訂函式常被用來判斷動態陣列是否已經配置，它能成立的原理是什麼？\n\nFunction IsAllocated(a As Variant) As Boolean\n    On Error Resume Next\n    IsAllocated = (UBound(a) >= LBound(a))\n    On Error GoTo 0\nEnd Function",
+  "options": [
+   "因為尚未配置的陣列，UBound 一定會回傳 -1",
+   "因為 On Error Resume Next 會讓 UBound 和 LBound 都一律回傳 0，比較之後結果就會是 False",
+   "因為尚未配置的動態陣列呼叫 UBound 會產生執行階段錯誤 9，函式就維持預設值 False",
+   "因為 VBA 內建了 IsAllocated 函式可以直接呼叫"
+  ],
+  "answer": 2,
+  "explanation": "尚未 ReDim 的動態陣列取 UBound 會觸發「註標超出範圍」錯誤，被 On Error Resume Next 略過後回傳值仍是 False。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-33",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "工作表 A1:A5 有資料。下列程式有什麼問題？\n\nSub T33()\n    Dim v As Variant\n    Dim i As Long\n    v = Range(\"A1:A5\").Value\n    For i = 0 To UBound(v)\n        Debug.Print v(i, 1)\n    Next i\nEnd Sub",
+  "options": [
+   "完全沒問題，會正確印出 5 個值",
+   "會多印出一個值，總共印出 6 個",
+   "程式其實沒有錯，只是 UBound(v) 應該改寫成 UBound(v, 2) 才會取到列數",
+   "i 從 0 開始會出錯，應該改成 LBound(v, 1) To UBound(v, 1)"
+  ],
+  "answer": 3,
+  "explanation": "從 Range 讀進來的陣列是 1 起算，i = 0 時就會發生註標超出範圍；用 LBound 起頭最保險。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-34",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程式會印出多少？\n\nSub T34()\n    Dim a(1 To 2, 1 To 3) As Long\n    Dim i As Long, j As Long, c As Long\n    For i = LBound(a, 1) To UBound(a, 1)\n        For j = LBound(a, 2) To UBound(a, 2)\n            c = c + 1\n        Next j\n    Next i\n    Debug.Print c\nEnd Sub",
+  "options": [
+   "6",
+   "5",
+   "3",
+   "2"
+  ],
+  "answer": 0,
+  "explanation": "外層跑 2 次、內層跑 3 次，巢狀迴圈總共執行 2 × 3 = 6 次。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V06-35",
+  "topic": "vba",
+  "unit": "V6",
+  "unit_name": "陣列",
+  "category": "陣列",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程式執行結果為何？\n\nSub T35()\n    Dim arr(5) As Long\n    ReDim arr(10)\nEnd Sub",
+  "options": [
+   "正常執行，陣列大小會從 0 To 5 變成 0 To 10，原本的值也一併保留",
+   "編譯錯誤，已經指定大小的固定陣列不能再用 ReDim 重新配置",
+   "正常執行，但陣列內容會被清空",
+   "執行階段錯誤 9"
+  ],
+  "answer": 1,
+  "explanation": "只有用 `Dim arr()` 宣告成動態陣列才能 ReDim；對已指定大小的固定陣列使用會在編譯時報錯。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-01",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在 VBA 中，Sub 程序與 Function 程序最主要的差別是什麼？",
+  "options": [
+   "Sub 可以接受參數，Function 不能接受參數",
+   "Function 可以把運算結果回傳給呼叫端，Sub 不行",
+   "Sub 只能寫在一般模組，Function 只能寫在表單模組",
+   "Function 一定要用 Call 呼叫，Sub 則不用"
+  ],
+  "answer": 1,
+  "explanation": "Function 會把值傳回呼叫端，Sub 只執行動作不回傳值；兩者都可以宣告參數。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-02",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "一般模組中有 Function Area(w As Double, h As Double) As Double。下列哪一種寫法才能讓它把計算結果傳回呼叫端？",
+  "options": [
+   "Return w * h",
+   "Set Area = w * h",
+   "Area = w * h",
+   "Exit Function w * h"
+  ],
+  "answer": 2,
+  "explanation": "VBA 沒有 Return 陳述式，回傳值的做法是把值指定給函式名稱本身；Set 只用於物件參考。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-03",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "已知 Sub ShowSum(a As Integer, b As Integer)。\n\n若不使用 Call 關鍵字，正確的呼叫寫法是哪一個？",
+  "options": [
+   "ShowSum 3, 5",
+   "ShowSum(3, 5)",
+   "ShowSum = 3, 5",
+   "Run ShowSum(3, 5)"
+  ],
+  "answer": 0,
+  "explanation": "省略 Call 關鍵字時必須同時省略括號，引數之間用逗號分隔。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-04",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "使用 Call 關鍵字呼叫一個有引數的 Sub 時，引數清單必須怎麼寫？",
+  "options": [
+   "完全不能加任何括號",
+   "用中括號 [] 把引數包起來",
+   "每一個引數各自加上一組括號",
+   "用小括號 () 把整個引數清單包起來"
+  ],
+  "answer": 3,
+  "explanation": "官方語法規定：使用 Call 就必須加括號，省略 Call 就必須省略括號，兩者要嘛都用、要嘛都不用。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-05",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在 VBA 中，程序的參數如果沒有特別加上關鍵字，預設的傳遞方式是什麼？",
+  "options": [
+   "ByVal（傳值）",
+   "ByRef（傳址）",
+   "由 VBA 依參數的資料型別自動決定",
+   "Variant 型別用傳值，其他型別用傳址"
+  ],
+  "answer": 1,
+  "explanation": "VBA 預設為 ByRef，所以在程序中修改參數會連帶改到呼叫端的變數，這點與多數程式語言相反。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-06",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在一般模組中把程序宣告成 Private Sub，代表什麼意思？",
+  "options": [
+   "只有同一個模組裡的其他程序可以呼叫它",
+   "它完全不能被任何程序呼叫",
+   "它只能被工作表的事件程序呼叫",
+   "它的程式碼會變成唯讀，不能再修改"
+  ],
+  "answer": 0,
+  "explanation": "Private 把程序的可見範圍限制在宣告它的模組之內；Public（未指定時的預設）則整個專案都能呼叫。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-07",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "Exit Function 這個敘述的作用是什麼？",
+  "options": [
+   "結束整個 Excel 應用程式",
+   "清除函式名稱上已經設定好的回傳值",
+   "立即離開該 Function，把控制權交回呼叫它的那個敘述繼續執行",
+   "暫停函式，等使用者按下任意鍵後再繼續"
+  ],
+  "answer": 2,
+  "explanation": "Exit Function 會立刻離開函式，控制權回到呼叫它的敘述；若該函式寫在運算式裡，那一行會把算式算完再往下走。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-08",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在程序的參數清單中使用 Optional 關鍵字時，下列敘述何者正確？",
+  "options": [
+   "Optional 參數必須放在參數清單的第一個",
+   "一個程序最多只能宣告一個 Optional 參數",
+   "Optional 參數一定要宣告成 String 型別",
+   "Optional 參數之後的所有參數也都必須宣告為 Optional"
+  ],
+  "answer": 3,
+  "explanation": "官方規定一旦某個參數用了 Optional，其後的每一個參數都必須是 Optional。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-09",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "自訂函式（UDF）要能在工作表儲存格中直接使用、並出現在「插入函數」的清單裡，應該寫在哪裡？",
+  "options": [
+   "工作表 Sheet1 的程式碼模組",
+   "ThisWorkbook 模組",
+   "UserForm 的程式碼模組",
+   "一般模組（Module）"
+  ],
+  "answer": 3,
+  "explanation": "只有寫在一般模組的 Public Function 才會被 Excel 當成工作表函數；寫在物件模組裡的函式儲存格看不到。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-10",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "閱讀下列程式碼：\n\nSub Main()\n    Dim x As Integer\n    x = 10\n    AddFive x\n    MsgBox x\nEnd Sub\n\nSub AddFive(n As Integer)\n    n = n + 5\nEnd Sub\n\n執行 Main 後，MsgBox 會顯示什麼？",
+  "options": [
+   "10",
+   "15",
+   "5",
+   "編譯錯誤，不能這樣呼叫"
+  ],
+  "answer": 1,
+  "explanation": "參數 n 沒寫關鍵字，預設是 ByRef，改 n 就等於改呼叫端的 x，所以 x 變成 15。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-11",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "閱讀下列程式碼：\n\nSub Main()\n    Dim x As Integer\n    x = 10\n    AddFive x\n    MsgBox x\nEnd Sub\n\nSub AddFive(ByVal n As Integer)\n    n = n + 5\nEnd Sub\n\n執行 Main 後，MsgBox 會顯示什麼？",
+  "options": [
+   "10",
+   "15",
+   "0",
+   "5"
+  ],
+  "answer": 0,
+  "explanation": "加了 ByVal 之後，程序拿到的是 x 的複本，改 n 不會影響呼叫端的 x，所以仍是 10。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-12",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "閱讀下列程式碼：\n\nFunction GetScore(n As Integer) As Integer\n    If n > 100 Then\n        GetScore = 100\n    End If\nEnd Function\n\n若呼叫 GetScore(50)，回傳值會是什麼？",
+  "options": [
+   "Null",
+   "Empty",
+   "0",
+   "會發生執行階段錯誤"
+  ],
+  "answer": 2,
+  "explanation": "函式名稱從頭到尾沒被指定值時，會回傳該資料型別的預設值，Integer 的預設值是 0。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-13",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "一般模組中有下列函式：\n\nFunction Price(p As Double, Optional rate As Double = 0.9) As Double\n    Price = p * rate\nEnd Function\n\n在儲存格輸入 =Price(200) 會得到什麼結果？",
+  "options": [
+   "180",
+   "200",
+   "0",
+   "#VALUE!"
+  ],
+  "answer": 0,
+  "explanation": "省略 rate 時會採用宣告時指定的預設值 0.9，200 * 0.9 = 180。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-14",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "關於 IsMissing 函式，下列敘述何者正確？",
+  "options": [
+   "它可以檢查任何資料型別的 Optional 參數是否被省略",
+   "它只能用來判斷 Variant 型別的 Optional 參數是否被省略",
+   "它用來檢查某個變數是否已經用 Dim 宣告過",
+   "它用來檢查傳入的儲存格是不是空白"
+  ],
+  "answer": 1,
+  "explanation": "IsMissing 只對宣告成 Variant 的 Optional 參數有效；若參數宣告了明確型別，IsMissing 永遠傳回 False。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-15",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "閱讀下列程式碼：\n\nFunction AddAll(ParamArray nums() As Variant) As Double\n    Dim i As Integer\n    For i = LBound(nums) To UBound(nums)\n        AddAll = AddAll + nums(i)\n    Next i\nEnd Function\n\n呼叫 AddAll(1, 2, 3, 4) 的結果是什麼？",
+  "options": [
+   "4",
+   "1",
+   "10",
+   "編譯錯誤，ParamArray 不能這樣使用"
+  ],
+  "answer": 2,
+  "explanation": "ParamArray 把不定個數的引數收成一個 Variant 陣列，迴圈累加後得到 1+2+3+4=10。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-16",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "閱讀下列程式碼：\n\nSub Check(n As Integer)\n    If n < 0 Then\n        MsgBox \"負數\"\n        Exit Sub\n    End If\n    MsgBox \"處理中\"\n    MsgBox \"完成\"\nEnd Sub\n\n呼叫 Check(-3) 時會依序出現哪些訊息？",
+  "options": [
+   "只有「負數」",
+   "「負數」、「處理中」、「完成」",
+   "「處理中」、「完成」",
+   "只有「完成」"
+  ],
+  "answer": 0,
+  "explanation": "Exit Sub 會立刻結束這個程序，寫在它後面的兩行不會被執行。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-17",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "一般模組中寫了 Sub PrintRow(r As Integer)，但在 Excel 的「巨集」對話方塊中卻找不到它。原因是什麼？",
+  "options": [
+   "因為程序名稱含有大寫字母",
+   "因為 Sub 一定要加上 Public 關鍵字才會顯示",
+   "因為它沒有加上 Application.Volatile",
+   "因為它宣告了引數，有引數的 Sub 不會列在巨集清單中"
+  ],
+  "answer": 3,
+  "explanation": "巨集清單只列出一般模組裡不含引數的 Public Sub，有引數的 Sub 只能由其他程序呼叫。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-18",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "一般模組中的自訂函式 MyFunc 內含一行 Range(\"B1\").Value = 99。若在儲存格 C1 輸入 =MyFunc(A1)，結果會如何？",
+  "options": [
+   "B1 會被改成 99",
+   "Excel 會跳出執行階段錯誤訊息",
+   "B1 維持原狀，這行更動不會生效",
+   "整個活頁簿會進入無窮迴圈"
+  ],
+  "answer": 2,
+  "explanation": "從儲存格呼叫的 UDF 只能把值回傳給自己所在的儲存格，不能更動其他儲存格的值或格式，該敘述會被忽略。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-19",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "閱讀下列程式碼：\n\nFunction NowPlus() As Double\n    Application.Volatile\n    NowPlus = Rnd()\nEnd Function\n\n加上 Application.Volatile 這一行的目的是什麼？",
+  "options": [
+   "讓這個函式在工作表每一次重算時都重新計算一次",
+   "讓函式的計算結果不會被四捨五入",
+   "讓函式取得修改其他儲存格的權限",
+   "讓這個函式同時出現在 Excel 的巨集清單中供直接執行"
+  ],
+  "answer": 0,
+  "explanation": "Application.Volatile 會把 UDF 標記為揮發性函式，只要工作表重算就重新執行，即使引數沒有改變。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-20",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "閱讀下列程式碼：\n\nFunction Grade(s As Integer) As String\n    Grade = \"不及格\"\n    If s < 60 Then Exit Function\n    Grade = \"及格\"\nEnd Function\n\n呼叫 Grade(45) 的回傳值是什麼？",
+  "options": [
+   "及格",
+   "不及格",
+   "長度為 0 的空字串",
+   "Empty"
+  ],
+  "answer": 1,
+  "explanation": "已經指定給函式名稱的值會被保留，Exit Function 只是提前離開，所以傳回「不及格」。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-21",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "閱讀下列遞迴函式：\n\nFunction Fact(n As Integer) As Double\n    If n <= 1 Then\n        Fact = 1\n    Else\n        Fact = n * Fact(n - 1)\n    End If\nEnd Function\n\nFact(5) 的值是多少？",
+  "options": [
+   "15",
+   "3125",
+   "120",
+   "5"
+  ],
+  "answer": 2,
+  "explanation": "遞迴展開後是 5*4*3*2*1 = 120，If n <= 1 那一段就是遞迴的終止條件。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-22",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "閱讀下列程式碼：\n\nPublic total As Integer\n\nSub Main()\n    total = 100\n    Calc\n    MsgBox total\nEnd Sub\n\nSub Calc()\n    Dim total As Integer\n    total = 5\nEnd Sub\n\n執行 Main 會顯示什麼？",
+  "options": [
+   "5",
+   "100",
+   "105",
+   "0"
+  ],
+  "answer": 1,
+  "explanation": "Calc 裡用 Dim 宣告的區域變數 total 遮蔽了同名的模組層級變數，被改的是區域變數，模組變數仍是 100。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-23",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "一般模組中有 Function BMI(w As Double, h As Double) As Double。\n\n想在儲存格 C2 算出 A2、B2 的 BMI，正確的公式是哪一個？",
+  "options": [
+   "=Call BMI(A2,B2)",
+   "=RUN(\"BMI\",A2,B2)",
+   "=Module1.BMI(A2,B2)",
+   "=BMI(A2,B2)"
+  ],
+  "answer": 3,
+  "explanation": "自訂函式在儲存格中的用法和內建函數完全一樣，直接寫「=函式名稱(引數)」即可。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-24",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "一般模組中有 Function Sum2(a As Integer, b As Integer) As Integer。\n\n若只想執行它、不使用它的回傳值，下列哪個寫法是合法的？",
+  "options": [
+   "Sum2 3, 4",
+   "Return Sum2(3, 4)",
+   "Sum2 = 3, 4",
+   "Exit Sum2(3, 4)"
+  ],
+  "answer": 0,
+  "explanation": "Function 也可以像 Sub 一樣當成一行敘述來呼叫，此時回傳值會被丟棄，引數清單不加括號。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-25",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "Module1 中有 Private Function Tax(x As Double) As Double。\n\n若在 Module2 裡寫 y = Tax(100)，會發生什麼事？",
+  "options": [
+   "正常執行並取得回傳值",
+   "回傳 0，但不會顯示任何錯誤",
+   "VBA 會自動把 Tax 改成 Public 後執行",
+   "出現編譯錯誤：Sub 或 Function 未定義"
+  ],
+  "answer": 3,
+  "explanation": "Private 程序只在宣告它的模組內可見，其他模組根本看不到這個名稱。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-26",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "閱讀下列程式碼：\n\nSub Grow(ByVal a As Integer, b As Integer)\n    a = a * 2\n    b = b * 2\nEnd Sub\n\nSub Main()\n    Dim p As Integer, q As Integer\n    p = 3\n    q = 4\n    Grow p, q\n    MsgBox p & \",\" & q\nEnd Sub\n\n顯示的結果是什麼？",
+  "options": [
+   "6,8",
+   "3,4",
+   "3,8",
+   "6,4"
+  ],
+  "answer": 2,
+  "explanation": "a 宣告成 ByVal，p 不受影響仍是 3；b 沒寫關鍵字預設 ByRef，所以 q 被改成 8。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-27",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "閱讀下列程式碼，注意呼叫時多了一組括號：\n\nSub Main()\n    Dim x As Integer\n    x = 10\n    AddOne (x)\n    MsgBox x\nEnd Sub\n\nSub AddOne(n As Integer)\n    n = n + 1\nEnd Sub\n\n執行 Main 會顯示什麼？",
+  "options": [
+   "11",
+   "10",
+   "0",
+   "編譯錯誤"
+  ],
+  "answer": 1,
+  "explanation": "把變數包在括號裡會先把它當成運算式求值，改以傳值方式傳入，所以即使參數是 ByRef，呼叫端的 x 仍然是 10。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-28",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "已知 Sub Draw(x As Integer, y As Integer)。\n\n下列哪一行呼叫會造成編譯錯誤？",
+  "options": [
+   "Call Draw(3, 4)",
+   "Draw 3, 4",
+   "Draw(3, 4)",
+   "Call Draw(y:=4, x:=3)"
+  ],
+  "answer": 2,
+  "explanation": "沒有寫 Call 關鍵字時就不可以加括號，所以 Draw(3, 4) 這種寫法對兩個引數的 Sub 會出現編譯錯誤。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-29",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "閱讀下列程式碼：\n\nSub ShowArgs(ParamArray items() As Variant)\n    MsgBox LBound(items) & \"-\" & UBound(items)\nEnd Sub\n\n呼叫 ShowArgs \"a\", \"b\", \"c\" 會顯示什麼？",
+  "options": [
+   "1-3",
+   "0-3",
+   "1-2",
+   "0-2"
+  ],
+  "answer": 3,
+  "explanation": "ParamArray 接到的 Variant 陣列下界固定是 0，傳入三個引數時索引為 0 到 2。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-30",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "閱讀下列遞迴函式：\n\nFunction Rev(s As String) As String\n    If Len(s) <= 1 Then\n        Rev = s\n    Else\n        Rev = Rev(Mid(s, 2)) & Left(s, 1)\n    End If\nEnd Function\n\nRev(\"ABCD\") 的回傳值是什麼？",
+  "options": [
+   "ABCD",
+   "DCBA",
+   "A",
+   "DCB"
+  ],
+  "answer": 1,
+  "explanation": "每一層把「去掉首字後的反轉結果」接上原本的首字，一路展開後得到 DCBA。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-31",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "閱讀下列程式碼：\n\nFunction Disc(price As Double, Optional n As Long) As Double\n    If n = 0 Then\n        Disc = price\n    Else\n        Disc = price - n * 10\n    End If\nEnd Function\n\n呼叫 Disc(500) 的回傳值是多少？",
+  "options": [
+   "500",
+   "490",
+   "0",
+   "執行階段錯誤，因為 n 沒有值"
+  ],
+  "answer": 0,
+  "explanation": "被省略又沒有指定預設值的 Optional 參數，會取得該型別的預設值，Long 是 0，因此走 If 的第一條路徑。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-32",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "一般模組中有 Sub Report(t As String, Optional a As Boolean = True, Optional b As Boolean = True)。\n\n若只想把 b 設成 False、a 維持預設值，下列哪個呼叫是正確的？",
+  "options": [
+   "Report \"月報\", False",
+   "Report(\"月報\", b:=False)",
+   "Call Report \"月報\", b:=False",
+   "Report \"月報\", b:=False"
+  ],
+  "answer": 3,
+  "explanation": "用具名引數 b:=False 就能跳過中間的 Optional 參數；若只寫 False 會被當成第二個參數 a。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-33",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "一個從工作表儲存格被呼叫的自訂函式（UDF），下列哪一件事是它真的做得到的？",
+  "options": [
+   "在活頁簿中新增一張工作表",
+   "讀取其他儲存格的值來參與計算",
+   "把自己所在儲存格的字型顏色改成紅色",
+   "刪除目前選取範圍的整列"
+  ],
+  "answer": 1,
+  "explanation": "UDF 可以讀取儲存格的值，但不能新增或刪除工作表、也不能改變任何儲存格的值或格式。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-34",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "閱讀下列程式碼：\n\nFunction CountDown(n As Integer) As Long\n    CountDown = n + CountDown(n - 1)\nEnd Function\n\n呼叫 CountDown(5) 會發生什麼事？",
+  "options": [
+   "回傳 15",
+   "回傳 0",
+   "出現「堆疊空間不足」的執行階段錯誤",
+   "VBA 會在 n = 0 時自動停止並回傳 0"
+  ],
+  "answer": 2,
+  "explanation": "這個遞迴函式少了終止條件，會一直呼叫自己直到堆疊耗盡而發生執行階段錯誤。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V07-35",
+  "topic": "vba",
+  "unit": "V7",
+  "unit_name": "程序與自訂函式",
+  "category": "程序與自訂函式",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列關於 ParamArray 的敘述，何者正確？",
+  "options": [
+   "它必須是參數清單中的最後一個參數，而且不能與 ByVal、ByRef、Optional 併用",
+   "它必須放在參數清單的第一個位置",
+   "它可以宣告成任何資料型別的陣列",
+   "同一個程序中可以宣告兩個以上的 ParamArray"
+  ],
+  "answer": 0,
+  "explanation": "官方規定 ParamArray 只能當最後一個引數、必須是 Variant 陣列，且不能和 ByVal、ByRef、Optional 一起使用。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-01",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在 VBA 程序中寫下 On Error GoTo ErrHandler 這一行，它的作用是什麼？",
+  "options": [
+   "啟用錯誤處理；之後這個程序若發生執行階段錯誤，就會跳到 ErrHandler 標籤",
+   "不管有沒有發生錯誤，程式讀到這一行就立刻跳去執行 ErrHandler 標籤下面的敘述",
+   "宣告 ErrHandler 這個名稱是一個錯誤代碼的代號，供 Err 物件使用",
+   "只在編譯階段檢查是否有語法錯誤，對執行階段發生的錯誤沒有任何效果"
+  ],
+  "answer": 0,
+  "explanation": "On Error GoTo 標籤 是「啟用」錯誤處理，只有真的發生執行階段錯誤時才會轉移到該標籤，正常流程不會跳過去。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-02",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "On Error Resume Next 的行為是什麼？",
+  "options": [
+   "顯示錯誤訊息後立刻中止整個程序",
+   "發生錯誤時不顯示錯誤訊息，直接從出錯那一行的下一行繼續執行",
+   "發生錯誤時重新執行出錯的那一行，直到成功為止",
+   "發生錯誤時自動跳到程序中最接近的標籤處繼續執行"
+  ],
+  "answer": 1,
+  "explanation": "On Error Resume Next 會讓錯誤不中斷程式，執行權移到出錯敘述的「下一個敘述」。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-03",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "On Error GoTo 0 的意思是什麼？",
+  "options": [
+   "讓程式跳回第 0 行，也就是從程序的開頭重新執行一次",
+   "讓程式忽略之後所有的錯誤，效果與 On Error Resume Next 完全相同",
+   "關閉（停用）目前程序中已啟用的錯誤處理",
+   "把所有錯誤都當成第 0 號錯誤，統一交給預設的錯誤處理常式"
+  ],
+  "answer": 2,
+  "explanation": "GoTo 0 中的 0 不是行號；這行敘述是用來停用目前程序裡已啟用的錯誤處理。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-04",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在錯誤處理常式中檢查 Err.Number，發現它的值是 0，代表什麼？",
+  "options": [
+   "代表剛剛發生的是第 0 號錯誤，屬於系統保留的未知錯誤",
+   "代表錯誤雖然已經被記錄下來，但還沒有被處理完畢",
+   "代表 Err 物件尚未被建立，必須先用 Set 建立才能使用",
+   "代表目前沒有錯誤"
+  ],
+  "answer": 3,
+  "explanation": "Err.Number 為 0 就是「無錯誤」的狀態，所以常用 If Err.Number <> 0 Then 來判斷是否出錯。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-05",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "執行階段錯誤代碼 11 代表哪一種錯誤？",
+  "options": [
+   "溢位（Overflow），數值超過該型態能表示的範圍",
+   "除以零（Division by zero）",
+   "型態不符（Type mismatch），資料型態彼此不相容",
+   "註標超出範圍（Subscript out of range），陣列索引不合法"
+  ],
+  "answer": 1,
+  "explanation": "11 是除以零；6 是溢位、13 是型態不符、9 是註標超出範圍。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-06",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "程式出現錯誤代碼 9，最可能的原因是什麼？",
+  "options": [
+   "存取陣列或集合時用了超出範圍的註標（索引）",
+   "運算式中應該要放物件，卻放了不是物件的東西",
+   "物件變數或 With 區塊變數還沒有用 Set 指定對象",
+   "Excel 應用程式或物件本身定義的錯誤，例如工作表名稱重複"
+  ],
+  "answer": 0,
+  "explanation": "9 是「註標超出範圍」，常見於陣列索引越界或用不存在的名稱去取集合成員。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-07",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在 VBE 中，要在某一行程式碼設定或取消中斷點，最直接的快速鍵是哪一個？",
+  "options": [
+   "F5",
+   "F8",
+   "F9",
+   "Ctrl+G"
+  ],
+  "answer": 2,
+  "explanation": "F9 是切換中斷點（Toggle Breakpoint）；F5 是執行、F8 是逐行執行、Ctrl+G 是叫出立即運算視窗。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-08",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "程式中寫了 Debug.Print total，執行後這個輸出會出現在哪個視窗？",
+  "options": [
+   "立即運算視窗（Immediate）",
+   "監看視窗（Watch）",
+   "區域變數視窗（Locals）",
+   "專案總管視窗（Project Explorer）"
+  ],
+  "answer": 0,
+  "explanation": "Debug.Print 的輸出固定送到立即運算視窗，可用 Ctrl+G 叫出來看。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-09",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在模組最上方寫 Option Explicit 的主要好處是什麼？",
+  "options": [
+   "讓所有沒宣告的變數自動被建立成 Variant 型態，寫起來比較方便",
+   "強制變數必須先宣告才能使用，因此打錯的變數名稱會在編譯時被抓出來",
+   "程式執行時會自動把拼錯的變數名稱更正成最相近的那一個",
+   "關閉 VBA 的資料型態檢查機制，藉此加快程式的執行速度"
+  ],
+  "answer": 1,
+  "explanation": "Option Explicit 強制宣告變數，打錯字的變數名會變成「變數未定義」的編譯錯誤，最能防止難找的錯字 bug。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-10",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "以下程序在完全沒有發生錯誤的情況下執行，結果是什麼？\n\nSub Demo()\n    On Error GoTo ErrH\n    MsgBox \"OK\"\nErrH:\n    MsgBox \"發生錯誤\"\nEnd Sub",
+  "options": [
+   "只會跳出「OK」一個訊息方塊，程序就正常結束了",
+   "只會跳出「發生錯誤」一個訊息方塊，「OK」被略過",
+   "先跳出「OK」，接著又跳出「發生錯誤」",
+   "編譯時就會出現錯誤，這個程序根本無法執行"
+  ],
+  "answer": 2,
+  "explanation": "錯誤處理常式前面沒有 Exit Sub，正常流程執行完後會「掉進」ErrH 標籤繼續往下跑。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-11",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "在錯誤處理常式中，Resume 與 Resume Next 的差別是什麼？",
+  "options": [
+   "Resume 跳到出錯那行的下一行，Resume Next 則重新執行出錯的那一行",
+   "兩者的效果完全一樣，只是新舊版本的不同寫法而已",
+   "Resume 重新執行「出錯的那一行」，Resume Next 則跳到出錯那行的「下一行」",
+   "Resume 會立刻結束程序，Resume Next 才會讓程式繼續往下執行"
+  ],
+  "answer": 2,
+  "explanation": "Resume 回到出錯的那一行重跑（適合錯誤已修正的情況），Resume Next 則略過出錯那行往下走。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-12",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程序執行後，立即運算視窗會印出什麼？\n\nSub T()\n    Dim a As Integer\n    On Error GoTo ErrH\n    a = 10 / 0\n    Debug.Print \"A\"\n    Debug.Print \"B\"\n    Exit Sub\nErrH:\n    Resume Next\nEnd Sub",
+  "options": [
+   "什麼都不會印出，因為程序在除以零時就中止了",
+   "只印出 A，印完之後程序就結束了",
+   "只印出 B，因為 A 那一行被 Resume Next 略過了",
+   "印出 A 和 B"
+  ],
+  "answer": 3,
+  "explanation": "a = 10 / 0 出錯後跳到 ErrH，Resume Next 讓執行權回到出錯那行的下一行，所以 A、B 兩行都會執行。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-13",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "呼叫 Err.Clear 會做什麼事？",
+  "options": [
+   "把 Err 物件的所有屬性重設為 0 或空字串",
+   "把立即運算視窗裡先前印出的所有內容全部清空",
+   "取消目前程序中用 On Error 設定的錯誤處理，等同 On Error GoTo 0",
+   "清除專案中已經設定的所有中斷點，等同 Ctrl+Shift+F9"
+  ],
+  "answer": 0,
+  "explanation": "Err.Clear 是明確地把 Err 物件歸零（Number 變 0、Description 變空字串），和清視窗或取消錯誤處理無關。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-14",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程序執行時會產生哪一個執行階段錯誤？\n\nSub T()\n    Dim n As Integer\n    n = \"五十\"\nEnd Sub",
+  "options": [
+   "6 溢位，因為字串長度超過 Integer 能存的範圍",
+   "13 型態不符",
+   "9 註標超出範圍，因為字串被當成陣列來存取了",
+   "91 物件變數或 With 區塊變數尚未設定"
+  ],
+  "answer": 1,
+  "explanation": "「五十」這個字串無法轉成數字，指定給 Integer 變數會產生 13 型態不符。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-15",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程序執行時會產生哪一個執行階段錯誤？\n\nSub T()\n    Dim ws As Worksheet\n    ws.Range(\"A1\").Value = 100\nEnd Sub",
+  "options": [
+   "424 需要物件，因為 ws 根本不是一個物件型態的變數",
+   "438 物件不支援此屬性或方法，因為 Worksheet 沒有 Range 屬性",
+   "1004 應用程式定義或物件定義的錯誤，因為 A1 這個位址無效",
+   "91 物件變數或 With 區塊變數尚未設定"
+  ],
+  "answer": 3,
+  "explanation": "ws 已宣告為 Worksheet 但從未用 Set 指定對象，此時值為 Nothing，存取其成員就是 91。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-16",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程序執行時會產生哪一個執行階段錯誤？\n\nSub T()\n    Dim obj As Object\n    Set obj = Worksheets(\"Sheet1\")\n    obj.Caption = \"報表\"\nEnd Sub",
+  "options": [
+   "438 物件不支援此屬性或方法",
+   "91 物件變數或 With 區塊變數尚未設定，因為 obj 宣告成 Object 太籠統了",
+   "424 需要物件，因為等號右邊的「報表」不是一個物件",
+   "13 型態不符，因為不能把字串指定給工作表物件的屬性"
+  ],
+  "answer": 0,
+  "explanation": "obj 已成功指向工作表，但 Worksheet 物件並沒有 Caption 這個屬性，所以是 438。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-17",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "若活頁簿中「已經」存在一張名為 Sheet1 的工作表，下列程序會產生哪一個錯誤？\n\nSub T()\n    Worksheets.Add.Name = \"Sheet1\"\nEnd Sub",
+  "options": [
+   "9 註標超出範圍，因為找不到可以新增工作表的位置",
+   "1004 應用程式定義或物件定義的錯誤",
+   "13 型態不符，因為工作表名稱不可以用數字結尾",
+   "438 物件不支援此屬性或方法，因為新增的工作表還沒有 Name 屬性"
+  ],
+  "answer": 1,
+  "explanation": "工作表名稱不可重複，Excel 會丟出 1004「應用程式定義或物件定義的錯誤」，這類錯誤來自 Excel 物件本身而非 VBA 語言。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-18",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程序執行時會發生什麼事？\n\nSub T()\n    Dim n As Integer\n    n = 200 * 200\nEnd Sub",
+  "options": [
+   "不會出錯，n 的值會變成 40000",
+   "產生 13 型態不符，因為乘法結果不是整數",
+   "產生 11 除以零",
+   "產生 6 溢位"
+  ],
+  "answer": 3,
+  "explanation": "Integer 的範圍是 -32768 到 32767，40000 已經超過，因此產生 6 溢位。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-19",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "在中斷模式下按 Shift+F8，會做什麼？",
+  "options": [
+   "逐行執行，而且會進入被呼叫的程序內部，一行一行看它怎麼跑",
+   "把目前這一行呼叫的程序一次執行完畢，不進入該程序內部（逐程序）",
+   "把整個專案中已設定的中斷點全部清除掉",
+   "直接執行到游標目前所在的那一行才停下來"
+  ],
+  "answer": 1,
+  "explanation": "F8 是逐行執行（Step Into）會進入被呼叫程序；Shift+F8 是逐程序（Step Over），把被呼叫的程序當成一行執行完。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-20",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "要一次清除專案中所有已設定的中斷點，應該按哪個快速鍵？",
+  "options": [
+   "Ctrl+Shift+F9",
+   "Ctrl+F9",
+   "Ctrl+Shift+F8",
+   "Ctrl+Break"
+  ],
+  "answer": 0,
+  "explanation": "Ctrl+Shift+F9 是清除所有中斷點；Ctrl+F9 是設定下一個陳述式，Ctrl+Shift+F8 是跳出程序。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-21",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "在 VBE 中按 Ctrl+G 會叫出哪一個視窗？",
+  "options": [
+   "監看視窗（Watch）",
+   "區域變數視窗（Locals）",
+   "立即運算視窗（Immediate）",
+   "呼叫堆疊視窗（Call Stack）"
+  ],
+  "answer": 2,
+  "explanation": "Ctrl+G 開啟立即運算視窗，可以看 Debug.Print 的輸出，也可以直接輸入 ?變數名 查值。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-22",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "關於監看視窗（Watch Window），下列敘述何者正確？",
+  "options": [
+   "它會列出專案中所有已設定的中斷點，方便一次管理",
+   "它會自動列出目前程序中的所有變數，不需要自己新增任何項目",
+   "它可以把 Debug.Print 的輸出自動存成一個文字檔",
+   "你可以自行加入想追蹤的運算式，還能設定在運算式為 True 或值改變時自動中斷"
+  ],
+  "answer": 3,
+  "explanation": "監看視窗要自己新增監看運算式，並可選擇「監看運算式」「當值為 True 時中斷」「當值改變時中斷」三種類型。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-23",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "關於區域變數視窗（Locals Window），下列敘述何者正確？",
+  "options": [
+   "它會自動顯示目前程序中所有已宣告的變數及其值",
+   "它只會顯示你自己手動加進去的那幾個變數",
+   "它會顯示整個專案中所有模組的全域變數與其他專案的變數",
+   "它會列出程式從開始執行到現在所發生過的所有錯誤"
+  ],
+  "answer": 0,
+  "explanation": "區域變數視窗會自動列出目前程序中的變數及其值，不需手動加入；其他專案的變數則不會顯示在這裡。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-24",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "在程式碼中插入 Stop 這一行，執行時會發生什麼事？",
+  "options": [
+   "直接關閉 Excel 並把目前的活頁簿一起關掉",
+   "暫停執行進入中斷模式，變數的值與已開啟的檔案都會保留下來",
+   "立刻結束目前這個程序，效果和 Exit Sub 完全相同",
+   "清除所有變數的值並關閉已開啟的檔案，然後結束程式"
+  ],
+  "answer": 1,
+  "explanation": "Stop 相當於寫死在程式裡的中斷點，只是暫停；會清除變數並關檔的是 End 陳述式。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-25",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "Debug.Assert x > 0 這一行，會在什麼情況下讓程式中斷？",
+  "options": [
+   "當 x > 0 成立（True）時中斷",
+   "當 x > 0 不成立（False）時中斷",
+   "不論運算式的結果是什麼，執行到這一行一定會中斷",
+   "任何情況都不會中斷，它只是把結果印到立即運算視窗而已"
+  ],
+  "answer": 1,
+  "explanation": "Debug.Assert 是在「斷言失敗」時才中斷，也就是運算式為 False 時進入中斷模式。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-26",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列程序最大的問題是什麼？\n\nSub T()\n    Dim x As Integer\n    On Error Resume Next\n    x = 10 / 0\n    Debug.Print x\nEnd Sub",
+  "options": [
+   "程式會照常跳出 11 除以零的錯誤訊息，On Error Resume Next 完全沒有生效",
+   "錯誤被無聲地吞掉，程式繼續往下印出 0，讓人誤以為一切正常而查不出 bug",
+   "程式會停在 x = 10 / 0 這一行不動，變成無窮等待的狀態",
+   "On Error Resume Next 會讓除以零的結果變成無限大，x 會得到一個很大的值"
+  ],
+  "answer": 1,
+  "explanation": "指定失敗後 x 仍是 0，錯誤完全沒有留下痕跡，這正是濫用 On Error Resume Next 最危險的地方。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-27",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列兩個程序，執行 Main 之後會發生什麼事？\n\nSub Main()\n    On Error GoTo ErrH\n    Call Child\n    Exit Sub\nErrH:\n    MsgBox \"Main 攔到錯誤：\" & Err.Number\nEnd Sub\n\nSub Child()\n    Dim a As Integer\n    a = 1 / 0\nEnd Sub",
+  "options": [
+   "Child 沒有自己的錯誤處理，所以會直接出現未處理的執行階段錯誤，Main 的 ErrH 幫不上忙",
+   "因為 On Error 只在同一個程序內有效，這段程式在編譯時就會出錯",
+   "錯誤會往上傳給呼叫者 Main，由 ErrH 處理，顯示「Main 攔到錯誤：11」",
+   "錯誤會被自動忽略，Main 什麼訊息都不顯示就正常結束"
+  ],
+  "answer": 2,
+  "explanation": "錯誤處理的「設定」只在該程序內有效，但程序內未被處理的錯誤會沿著呼叫堆疊往上傳，交給呼叫者已啟用的處理常式。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-28",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程序執行後，MsgBox 會顯示什麼？\n\nSub T()\n    On Error GoTo ErrH\n    Dim score As Integer\n    score = 120\n    If score > 100 Then\n        Err.Raise vbObjectError + 513, \"T\", \"分數不可超過 100\"\n    End If\n    Exit Sub\nErrH:\n    MsgBox Err.Description\nEnd Sub",
+  "options": [
+   "顯示 vbObjectError + 513 這個數值，因為那是 Raise 的第一個引數",
+   "顯示 T，因為那是引發錯誤的來源程序名稱",
+   "顯示「分數不可超過 100」",
+   "顯示「應用程式定義或物件定義的錯誤」這個系統預設的說明文字"
+  ],
+  "answer": 2,
+  "explanation": "Err.Raise 的引數順序是 number, source, description，所以 Err.Description 取到的是第三個引數。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-29",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程序執行後，立即運算視窗會依序印出什麼？\n\nSub T()\n    On Error Resume Next\n    Err.Raise 13\n    Debug.Print Err.Number\n    Err.Clear\n    Debug.Print Err.Number\nEnd Sub",
+  "options": [
+   "13 和 13",
+   "0 和 0",
+   "0 和 13",
+   "13 和 0"
+  ],
+  "answer": 3,
+  "explanation": "On Error Resume Next 讓錯誤不中斷程式，但 Err 仍保有 13；Err.Clear 之後 Err.Number 才歸零。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-30",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程序中，ErrH 裡面第二次的除以零會造成什麼結果？\n\nSub T()\n    On Error GoTo ErrH\n    Dim a As Integer\n    a = 1 / 0\n    Exit Sub\nErrH:\n    a = 2 / 0\n    Resume Next\nEnd Sub",
+  "options": [
+   "會再次跳回 ErrH 標籤，形成不斷重複的無窮迴圈",
+   "會被最後那一行的 Resume Next 事先攔下來並自動忽略掉",
+   "ErrH 正在作用中（active），無法處理自己內部的錯誤，該錯誤會往上傳；沒有上層處理常式時就以未處理錯誤中止",
+   "會被 On Error GoTo ErrH 再攔一次，顯示錯誤訊息之後繼續往下執行"
+  ],
+  "answer": 2,
+  "explanation": "一個處理常式在「作用中」時無法處理自己引發的新錯誤，這也是錯誤處理常式裡通常會加 On Error Resume Next 的原因。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-31",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程序執行後，立即運算視窗會印出什麼？\n\nSub T()\n    On Error GoTo ErrH\n    Dim a As Integer\n    a = 1 / 0\n    Debug.Print \"X\"\n    Exit Sub\nRetry:\n    Debug.Print \"Y\"\n    Exit Sub\nErrH:\n    Resume Retry\nEnd Sub",
+  "options": [
+   "只印出 X，因為 Resume 會回到出錯的下一行繼續執行",
+   "先印出 X 再印出 Y，兩個標籤區段都會被執行到",
+   "什麼都不會印，因為 Resume Retry 是不合法的寫法",
+   "只印出 Y"
+  ],
+  "answer": 3,
+  "explanation": "Resume 標籤 會把執行權轉到指定的標籤處（必須在同一程序內），因此直接跳到 Retry 印出 Y。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-32",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程序執行後的結果是什麼？\n\nSub T()\n    On Error Resume Next\n    Debug.Print 1 / 0\n    On Error GoTo 0\n    Debug.Print 2 / 0\n    Debug.Print \"結束\"\nEnd Sub",
+  "options": [
+   "第一次除以零被忽略，第二次則出現未處理的執行階段錯誤而中止，不會印出「結束」",
+   "兩次除以零都被忽略，最後順利印出「結束」",
+   "兩次除以零都會跳出錯誤訊息方塊，使用者要按兩次確定",
+   "On Error GoTo 0 會讓程式跳回第一行，整個程序從頭重新執行一次"
+  ],
+  "answer": 0,
+  "explanation": "On Error GoTo 0 停用了先前的 Resume Next，所以第二個除以零沒有任何處理常式可接，成為未處理錯誤。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-33",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程序執行後會顯示什麼？\n\nSub T()\n    On Error GoTo ErrA\n    On Error GoTo ErrB\n    Dim a As Integer\n    a = 1 / 0\n    Exit Sub\nErrA:\n    MsgBox \"A\"\n    Exit Sub\nErrB:\n    MsgBox \"B\"\nEnd Sub",
+  "options": [
+   "顯示 A，因為先設定的錯誤處理常式擁有較高的優先權",
+   "先顯示 A 再顯示 B，兩個錯誤處理常式都會被執行一次",
+   "顯示 B",
+   "無法執行，因為同一個程序裡不允許出現兩個 On Error 敘述"
+  ],
+  "answer": 2,
+  "explanation": "一個程序同時只會有一個啟用中的錯誤處理常式，後執行到的 On Error GoTo 會取代前面的設定。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-34",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列模組執行 T 時會發生什麼事？\n\nOption Explicit\n\nSub T()\n    Dim total As Long\n    total = 100\n    toatl = total + 50\n    Debug.Print total\nEnd Sub",
+  "options": [
+   "順利執行並印出 150，因為 toatl 和 total 會被視為同一個變數",
+   "順利執行並印出 100，因為 toatl 被自動建立成一個新的 Variant 變數",
+   "執行到 toatl 那一行時跳出 91 物件變數或 With 區塊變數尚未設定",
+   "編譯時就出現「變數未定義」的錯誤，程序根本不會開始執行"
+  ],
+  "answer": 3,
+  "explanation": "有 Option Explicit 時，打錯的 toatl 因未宣告而成為編譯錯誤，這正是它防止錯字 bug 的方式。",
+  "fun_fact": "",
+  "region": "VBA"
+ },
+ {
+  "id": "vba-V08-35",
+  "topic": "vba",
+  "unit": "V8",
+  "unit_name": "錯誤處理與除錯",
+  "category": "錯誤處理與除錯",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列程序中，On Error GoTo 0 那一行的用意是什麼？\n\nSub T()\n    Dim ws As Worksheet\n    On Error Resume Next\n    Set ws = Worksheets(\"報表\")\n    On Error GoTo 0\n    If ws Is Nothing Then\n        MsgBox \"找不到工作表\"\n    Else\n        MsgBox ws.Name\n    End If\nEnd Sub",
+  "options": [
+   "把 ws 重新設定回 Nothing，好讓後面的 If ws Is Nothing 判斷成立",
+   "把 Err.Number 強制設成 0，這樣後面的 If 條件才判斷得出來",
+   "完全沒有作用，把這一行刪掉程式的行為也不會有任何改變",
+   "把忽略錯誤的範圍限縮在 Set 那一行，之後若再出錯就能正常回報，不會被一路吞掉"
+  ],
+  "answer": 3,
+  "explanation": "On Error Resume Next 應該只包住可能出錯的那一小段，用 On Error GoTo 0 及時關掉，避免後面的真錯誤被無聲吞掉。",
+  "fun_fact": "",
+  "region": "VBA"
+ }
+]

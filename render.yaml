@@ -9,7 +9,7 @@ services:
     region: singapore              # 可選 oregon / ohio / virginia / frankfurt / singapore，新加坡離台灣最近
     buildCommand: pip install -r requirements.txt gunicorn
     # 考坊狀態存在記憶體，所以只能一個 worker；多執行緒才能同時服務多位學生的即時連線（SSE）
-    startCommand: gunicorn -w 1 --threads 200 --timeout 0 -b 0.0.0.0:$PORT app:app
+    startCommand: gunicorn -w 1 --threads 400 --timeout 0 -b 0.0.0.0:$PORT app:app
     healthCheckPath: /api/health
     autoDeployTrigger: commit      # 只要 push 到 main 就自動重新部署
     envVars:

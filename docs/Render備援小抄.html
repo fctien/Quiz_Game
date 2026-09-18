@@ -55,7 +55,7 @@ footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:va
 <body>
 <header>
   <h1>脈衝 PULSE<span class="seal">雲</span></h1>
-  <div class="sub">Render 雲端備援小抄 ・ 學生用 4G 就能加入<br>v5.3　印出來夾在講義裡</div>
+  <div class="sub">Render 雲端備援小抄 ・ 學生用 4G 就能加入<br>v5.7　印出來夾在講義裡</div>
 </header>
 
 <div class="cols">
@@ -104,7 +104,7 @@ footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:va
     <li>手機<b>關掉 Wi-Fi</b>，只用 4G/5G。</li>
     <li>開 <span class="k">你的網址/api/health</span>。</li>
     <li>看到 <span class="k">{"ok": true, ...}</span> 就成功。</li>
-    <li>再開首頁，版本要看到 <b>v5.3</b>。</li>
+    <li>再開首頁，版本要看到 <b>v5.7</b>。</li>
   </ol>
   <div class="ok">測過一次以後，上課當天只要開主持台就好。</div>
 </section>
@@ -124,6 +124,31 @@ footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:va
     <li>放榜後先按 <span class="btn red">匯出本場成績 CSV</span>，再存入班級積分，最後關閉考坊。</li>
   </ol>
   <div class="warn">先匯出，再關閉。雲端版的資料庫會被清掉，關了就下載不到。</div>
+</section>
+
+<section>
+  <h2>四之一、印一張 QR 用整學期</h2>
+  <ol class="flow">
+    <li>開考坊時，在「固定入口代碼」填一組英數字，例如 <span class="k">PY115</span>（每門課一組）。</li>
+    <li>開 <span class="k">你的網址/qrcard</span>，輸入同一組代碼與課程名稱 → <span class="btn out">列印</span>。</li>
+    <li>把這張 A4 貼在講義封面或教室公布欄。</li>
+    <li>之後每週學生掃同一張 QR，就會自動進入你當下開著的考坊。</li>
+  </ol>
+  <div class="warn">還沒開考坊時，學生手機會停在「老師還沒開始」的等待畫面，你一按開考坊他就自動進場。
+  <b>代碼要和開考坊時填的完全一樣</b>，而且這張卡指向雲端網址，那天要用雲端版。</div>
+</section>
+
+<section>
+  <h2>四之二、只有手機也能主持</h2>
+  <ol class="flow">
+    <li>手機瀏覽器開 <span class="k">你的網址/host</span>，介面跟電腦一樣，不用另外裝東西。</li>
+    <li>設定好按 <span class="btn red">開考坊</span>。</li>
+    <li>學生看不到你的螢幕，所以按 <span class="btn out">複製邀請連結</span>，貼到班級 LINE 群組
+      （或直接念房號）。</li>
+    <li>考坊開著的時候<b>螢幕不會自己鎖掉</b>，你不用一直解鎖才能按「下一題」。</li>
+    <li>放榜後按 <span class="btn out">分享成績</span>，直接把 CSV 傳到 LINE 或雲端硬碟，不用先下載再找檔案。</li>
+  </ol>
+  <p class="note">沒有投影機時就用這個方式。記得上課前 5 分鐘先開一次網址叫醒服務。</p>
 </section>
 
 <section>
@@ -153,7 +178,7 @@ footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:va
     <tr><td class="sym">學生加不進來</td><td>網址有沒有打錯、房號是四位數字、是不是剛好在冷啟動</td></tr>
     <tr><td class="sym">說「這個學號正在線上」</td><td>同一個學號在別台裝置上。用同一個學號重新加入就會接手原本的位子</td></tr>
     <tr><td class="sym">學生畫面停在上一題</td><td>解鎖手機、切回那個分頁,十幾秒內會自己接回來</td></tr>
-    <tr><td class="sym">畫面還是舊版</td><td>版本不是 v5.3 就是快取，按 Ctrl+Shift+R</td></tr>
+    <tr><td class="sym">畫面還是舊版</td><td>版本不是 v5.7 就是快取，按 Ctrl+Shift+R</td></tr>
     <tr><td class="sym">房號突然失效</td><td>服務重啟會清掉進行中的考坊，重開一間即可</td></tr>
   </table>
 </section>
@@ -174,7 +199,7 @@ footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:va
 </div>
 
 <footer>
-  <span>脈衝 PULSE v5.3 ・ 題庫 2090 題（Python 500、Deep Learning 708、桌球 125）</span>
+  <span>脈衝 PULSE v5.7 ・ 題庫 2370 題（Python 500、Deep Learning 708、VBA 280）</span>
   <span>github.com/fctien/Quiz_Game　・　render.com</span>
 </footer>
 </body>
