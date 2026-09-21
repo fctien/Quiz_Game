@@ -1,0 +1,3022 @@
+[
+ {
+  "id": "geo-AM-001",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "五大湖中，唯一完全位於美國境內的是哪一座湖？",
+  "options": [
+   "蘇必略湖",
+   "休倫湖",
+   "密西根湖",
+   "伊利湖"
+  ],
+  "answer": 2,
+  "explanation": "其餘四座五大湖都有一部分屬於加拿大，只有密西根湖全部在美國境內。",
+  "fun_fact": "它也是世界上完全位於單一國家內、面積最大的湖泊。"
+ },
+ {
+  "id": "geo-AM-002",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "五大湖中面積最大的是哪一座湖？",
+  "options": [
+   "蘇必略湖",
+   "密西根湖",
+   "休倫湖",
+   "安大略湖"
+  ],
+  "answer": 0,
+  "explanation": "蘇必略湖水面約三萬一千平方英里，是五大湖中最大也最深的一座。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-003",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "北美洲最高峰位於美國的哪一州？",
+  "options": [
+   "科羅拉多州",
+   "華盛頓州",
+   "蒙大拿州",
+   "阿拉斯加州"
+  ],
+  "answer": 3,
+  "explanation": "北美最高峰高逾六千公尺，聳立於阿拉斯加州內陸的阿拉斯加山脈。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-004",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "分隔美國阿拉斯加與俄羅斯的海峽是哪一條？",
+  "options": [
+   "戴維斯海峽",
+   "白令海峽",
+   "丹麥海峽",
+   "哈德遜海峽"
+  ],
+  "answer": 1,
+  "explanation": "白令海峽把阿拉斯加的蘇華德半島與俄羅斯的楚科奇半島隔開，並連通太平洋與北冰洋。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-005",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "美國本土四十八州中，面積最大的是哪一州？",
+  "options": [
+   "德克薩斯州",
+   "加利福尼亞州",
+   "蒙大拿州",
+   "新墨西哥州"
+  ],
+  "answer": 0,
+  "explanation": "扣除不相連的阿拉斯加後，德克薩斯州是美國本土面積最大的州。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-006",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "大峽谷是由哪一條河流長期侵蝕而成？",
+  "options": [
+   "格蘭德河",
+   "哥倫比亞河",
+   "科羅拉多河",
+   "密蘇里河"
+  ],
+  "answer": 2,
+  "explanation": "亞利桑那州的大峽谷是科羅拉多河歷經數百萬年下切岩層形成的深邃峽谷。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-007",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "加拿大唯一以法語為單一官方語言的省份是？",
+  "options": [
+   "安大略省",
+   "魁北克省",
+   "曼尼托巴省",
+   "新斯科細亞省"
+  ],
+  "answer": 1,
+  "explanation": "魁北克省是加拿大唯一把法語列為單一官方語言的省份。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-008",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "美國與加拿大西部的大部分邊界，沿著哪一條緯線？",
+  "options": [
+   "北緯38度",
+   "北緯42度",
+   "北緯45度",
+   "北緯49度"
+  ],
+  "answer": 3,
+  "explanation": "亞伯達省與薩克其萬省一帶的美加邊界，整段都沿著北緯四十九度線。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-009",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "黃石國家公園約九成六的面積位於哪一州？",
+  "options": [
+   "蒙大拿州",
+   "愛達荷州",
+   "南達科他州",
+   "懷俄明州"
+  ],
+  "answer": 3,
+  "explanation": "黃石橫跨三州，但約百分之九十六的土地在懷俄明州內。",
+  "fun_fact": "它被公認是世界上第一座國家公園，一八七二年設立。"
+ },
+ {
+  "id": "geo-AM-010",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "加拿大第一座國家公園「班夫」位於哪個省？",
+  "options": [
+   "卑詩省",
+   "亞伯達省",
+   "薩克其萬省",
+   "安大略省"
+  ],
+  "answer": 1,
+  "explanation": "班夫國家公園一八八五年設立，座落於亞伯達省的加拿大洛磯山區。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-011",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "北美洲陸地最低點「惡水盆地」位於哪座國家公園？",
+  "options": [
+   "死谷國家公園",
+   "約書亞樹國家公園",
+   "大盆地國家公園",
+   "拱門國家公園"
+  ],
+  "answer": 0,
+  "explanation": "惡水盆地低於海平面，位在加州莫哈維沙漠北緣的死谷國家公園內。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-012",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "美國首都華盛頓特區位於哪一條河的河畔？",
+  "options": [
+   "哈德遜河",
+   "德拉瓦河",
+   "波多馬克河",
+   "薩斯奎哈納河"
+  ],
+  "answer": 2,
+  "explanation": "華盛頓特區座落於波多馬克河畔，本身不隸屬任何一州。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-013",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "流經加拿大西北地區的馬更些河，最後注入哪個大洋？",
+  "options": [
+   "大西洋",
+   "北冰洋",
+   "太平洋",
+   "印度洋"
+  ],
+  "answer": 1,
+  "explanation": "馬更些河向北流入北冰洋的波弗特海，形成廣大的河口三角洲。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-014",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "加拿大面積最大的省或地區是哪一個？",
+  "options": [
+   "魁北克省",
+   "卑詩省",
+   "安大略省",
+   "努納福特地區"
+  ],
+  "answer": 3,
+  "explanation": "若把地區一併計入，努納福特地區面積最大；只算「省」則以魁北克省居首。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-015",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "美國唯一完全由島嶼組成的州是哪一州？",
+  "options": [
+   "阿拉斯加州",
+   "佛羅里達州",
+   "夏威夷州",
+   "羅德島州"
+  ],
+  "answer": 2,
+  "explanation": "夏威夷州由太平洋上的火山島群構成，是唯一不在美洲大陸上的州。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-016",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "美國的「大鹽湖」位於哪一州？",
+  "options": [
+   "猶他州",
+   "內華達州",
+   "亞利桑那州",
+   "愛達荷州"
+  ],
+  "answer": 0,
+  "explanation": "大鹽湖是內流盆地形成的鹹水湖，位於猶他州西北部。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-017",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "中美洲面積最大的國家是哪一個？",
+  "options": [
+   "尼加拉瓜",
+   "宏都拉斯",
+   "瓜地馬拉",
+   "哥斯大黎加"
+  ],
+  "answer": 0,
+  "explanation": "尼加拉瓜約十三萬平方公里，是中美洲七國中面積最大的。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-018",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "一九四八年宣布廢除常備軍隊的中美洲國家是？",
+  "options": [
+   "巴拿馬",
+   "貝里斯",
+   "宏都拉斯",
+   "哥斯大黎加"
+  ],
+  "answer": 3,
+  "explanation": "哥斯大黎加一九四八年廢除軍隊，並把原本的軍費轉投入醫療與教育。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-019",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "加勒比海面積最大的島嶼是哪一個？",
+  "options": [
+   "牙買加島",
+   "古巴島",
+   "波多黎各島",
+   "伊斯帕尼奧拉島"
+  ],
+  "answer": 1,
+  "explanation": "古巴島面積居加勒比海之冠，伊斯帕尼奧拉島居次。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-020",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "海地與哪個國家共享同一座島嶼？",
+  "options": [
+   "古巴",
+   "牙買加",
+   "多明尼加",
+   "千里達及托巴哥"
+  ],
+  "answer": 2,
+  "explanation": "海地在西、多明尼加在東，兩國同處伊斯帕尼奧拉島上。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-021",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "中美洲唯一以英語為官方語言的國家是？",
+  "options": [
+   "宏都拉斯",
+   "哥斯大黎加",
+   "貝里斯",
+   "巴拿馬"
+  ],
+  "answer": 2,
+  "explanation": "貝里斯曾是英國屬地，是中美洲唯一以英語為官方語言的國家。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-022",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "貝里斯把首都遷往內陸的貝爾墨潘，主因是什麼？",
+  "options": [
+   "火山爆發",
+   "颶風重創",
+   "地震毀城",
+   "河川氾濫"
+  ],
+  "answer": 1,
+  "explanation": "一九六一年颶風重創沿海的貝里斯市，促使政府把首都內遷到貝爾墨潘。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-023",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "中美洲面積最大的淡水湖是哪一座？",
+  "options": [
+   "阿蒂特蘭湖",
+   "馬納瓜湖",
+   "伊薩瓦爾湖",
+   "尼加拉瓜湖"
+  ],
+  "answer": 3,
+  "explanation": "尼加拉瓜湖是中美洲最大的淡水湖，湖中還住著罕見的淡水鯊。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-024",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "墨西哥市的前身特諾奇提特蘭，建在哪座湖的湖心島上？",
+  "options": [
+   "特斯科科湖",
+   "查帕拉湖",
+   "帕茲夸羅湖",
+   "卡特馬科湖"
+  ],
+  "answer": 0,
+  "explanation": "阿茲特克人把城市建在特斯科科湖中的島上，西班牙人後來把湖排乾。",
+  "fun_fact": "建在舊湖床上的墨西哥市至今仍持續下陷。"
+ },
+ {
+  "id": "geo-AM-025",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "位於猶加敦半島與古巴之間的海峽叫什麼？",
+  "options": [
+   "向風海峽",
+   "莫納海峽",
+   "佛羅里達海峽",
+   "猶加敦海峽"
+  ],
+  "answer": 3,
+  "explanation": "猶加敦海峽把墨西哥灣與加勒比海連接起來。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-026",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "加勒比海的聖馬丁島由哪兩個歐洲國家分治？",
+  "options": [
+   "法國與荷蘭",
+   "英國與法國",
+   "西班牙與荷蘭",
+   "英國與西班牙"
+  ],
+  "answer": 0,
+  "explanation": "聖馬丁島自一六四八年起北半屬法國、南半屬荷蘭王國，一島兩制至今。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-027",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "波多黎各目前是哪個國家的海外領地？",
+  "options": [
+   "西班牙",
+   "法國",
+   "美國",
+   "英國"
+  ],
+  "answer": 2,
+  "explanation": "波多黎各是美國的未合併領地，居民具美國公民身分。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-028",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "牙買加的首都是哪一座城市？",
+  "options": [
+   "蒙特哥貝",
+   "金斯敦",
+   "西班牙城",
+   "波特羅亞"
+  ],
+  "answer": 1,
+  "explanation": "金斯敦是牙買加的首都與最大城，位於島的南岸。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-029",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "巴哈馬群島嚴格來說位於哪一個海域？",
+  "options": [
+   "加勒比海",
+   "大西洋",
+   "墨西哥灣",
+   "太平洋"
+  ],
+  "answer": 1,
+  "explanation": "巴哈馬屬於盧卡揚群島，位在大西洋上，並不在加勒比海範圍內。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-030",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "加勒比海群島被稱為「西印度群島」，源自誰的誤認？",
+  "options": [
+   "麥哲倫",
+   "達伽馬",
+   "哥倫布",
+   "庫克船長"
+  ],
+  "answer": 2,
+  "explanation": "哥倫布誤以為自己抵達亞洲的印度，因此把當地稱為印度群島。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-031",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "大安地列斯群島包含古巴、牙買加、伊斯帕尼奧拉島和哪一個？",
+  "options": [
+   "波多黎各",
+   "千里達及托巴哥",
+   "巴貝多",
+   "阿魯巴"
+  ],
+  "answer": 0,
+  "explanation": "大安地列斯群島由古巴、伊斯帕尼奧拉、牙買加與波多黎各四大島組成。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-032",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "船隻通過巴拿馬運河時，途中會航行過哪座人工湖？",
+  "options": [
+   "馬拉開波湖",
+   "阿拉胡埃拉湖",
+   "尼加拉瓜湖",
+   "加通湖"
+  ],
+  "answer": 3,
+  "explanation": "加通湖由加通水壩攔截查格雷斯河形成，船隻要在湖面航行約三十公里。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-033",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "世界上最長的陸上山脈是哪一條？",
+  "options": [
+   "安地斯山脈",
+   "洛磯山脈",
+   "喜馬拉雅山脈",
+   "阿帕拉契山脈"
+  ],
+  "answer": 0,
+  "explanation": "安地斯山脈沿南美洲西岸綿延約七千公里，是世界最長的陸上山系。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-034",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "美洲最高峰阿空加瓜山位於哪個國家？",
+  "options": [
+   "智利",
+   "阿根廷",
+   "秘魯",
+   "玻利維亞"
+  ],
+  "answer": 1,
+  "explanation": "阿空加瓜山海拔近七千公尺（各測量值約六九六〇至六九六七公尺），位於阿根廷門多薩省境內。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-035",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "玻利維亞的憲法首都（法定首都）是哪一座城市？",
+  "options": [
+   "拉巴斯",
+   "聖克魯斯",
+   "科恰班巴",
+   "蘇克雷"
+  ],
+  "answer": 3,
+  "explanation": "蘇克雷是憲法明訂的首都與最高法院所在地，行政與立法機關則設在拉巴斯。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-036",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "世界最大的鹽沼「烏尤尼鹽沼」位於哪個國家？",
+  "options": [
+   "智利",
+   "阿根廷",
+   "玻利維亞",
+   "秘魯"
+  ],
+  "answer": 2,
+  "explanation": "烏尤尼鹽沼位在玻利維亞西南部的安地斯高原，也是重要的鋰礦來源。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-037",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "巴西在一九六〇年把首都從哪座城市遷到巴西利亞？",
+  "options": [
+   "聖保羅",
+   "薩爾瓦多",
+   "里約熱內盧",
+   "貝洛奧里藏特"
+  ],
+  "answer": 2,
+  "explanation": "為了開發內陸，巴西一九六〇年把首都由沿海的里約熱內盧遷往新建的巴西利亞。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-038",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "南美洲唯一以葡萄牙語為官方語言的國家是？",
+  "options": [
+   "阿根廷",
+   "哥倫比亞",
+   "委內瑞拉",
+   "巴西"
+  ],
+  "answer": 3,
+  "explanation": "巴西曾是葡萄牙殖民地，是南美洲唯一以葡萄牙語為官方語言的國家。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-039",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "的的喀喀湖位於哪兩個國家之間？",
+  "options": [
+   "秘魯與玻利維亞",
+   "智利與阿根廷",
+   "巴西與巴拉圭",
+   "厄瓜多與哥倫比亞"
+  ],
+  "answer": 0,
+  "explanation": "的的喀喀湖西側屬秘魯、東側屬玻利維亞，海拔逾三千八百公尺。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-040",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "南美洲的兩個內陸國家是玻利維亞和哪一國？",
+  "options": [
+   "烏拉圭",
+   "巴拉圭",
+   "厄瓜多",
+   "蓋亞那"
+  ],
+  "answer": 1,
+  "explanation": "巴拉圭與玻利維亞是南美洲僅有的兩個沒有海岸線的國家。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-041",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "以達爾文研究聞名的加拉巴哥群島屬於哪個國家？",
+  "options": [
+   "秘魯",
+   "厄瓜多",
+   "哥倫比亞",
+   "智利"
+  ],
+  "answer": 1,
+  "explanation": "加拉巴哥群島位於東太平洋赤道附近，行政上是厄瓜多的一個省。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-042",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "伊瓜蘇瀑布位於哪兩個國家的交界？",
+  "options": [
+   "阿根廷與巴西",
+   "巴西與巴拉圭",
+   "玻利維亞與巴西",
+   "阿根廷與烏拉圭"
+  ],
+  "answer": 0,
+  "explanation": "伊瓜蘇瀑布橫跨伊瓜蘇河上的阿根廷與巴西邊界，最壯觀的一段稱為魔鬼咽喉。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-043",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "拉布拉他河是由巴拉那河與哪條河匯流而成？",
+  "options": [
+   "巴拉圭河",
+   "聖法蘭西斯科河",
+   "烏拉圭河",
+   "奧里諾科河"
+  ],
+  "answer": 2,
+  "explanation": "巴拉那河與烏拉圭河匯流形成拉布拉他河口灣，兩岸分屬阿根廷與烏拉圭。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-044",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "巴塔哥尼亞高原主要由哪兩個國家分享？",
+  "options": [
+   "秘魯與玻利維亞",
+   "巴西與巴拉圭",
+   "烏拉圭與阿根廷",
+   "阿根廷與智利"
+  ],
+  "answer": 3,
+  "explanation": "巴塔哥尼亞位於南美南端，約九成在阿根廷、其餘在智利。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-045",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "麥哲倫海峽主要位於哪個國家境內？",
+  "options": [
+   "智利",
+   "阿根廷",
+   "烏拉圭",
+   "巴西"
+  ],
+  "answer": 0,
+  "explanation": "麥哲倫海峽位在智利南部，分隔南美大陸與火地島群島。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-AM-046",
+  "topic": "geo",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "地理",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "南美洲唯一以荷蘭語為官方語言的國家是？",
+  "options": [
+   "蓋亞那",
+   "蘇利南",
+   "委內瑞拉",
+   "厄瓜多"
+  ],
+  "answer": 1,
+  "explanation": "蘇利南曾是荷蘭殖民地，獨立後仍以荷蘭語為唯一官方語言。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-AM-001",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "英國人在北美建立的第一個永久殖民地是哪裡？",
+  "options": [
+   "詹姆斯敦",
+   "波士頓",
+   "羅安諾克",
+   "普利茅斯"
+  ],
+  "answer": 0,
+  "explanation": "1607 年建於維吉尼亞的詹姆斯敦，是英國在美洲第一個撐下來的殖民地。",
+  "fun_fact": "頭幾年鬧飢荒，靠約翰·羅爾夫種菸草才轉虧為盈。"
+ },
+ {
+  "id": "history-AM-002",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "1620 年五月花號上的清教徒登陸在今天哪一州？",
+  "options": [
+   "康乃狄克州",
+   "麻薩諸塞州",
+   "維吉尼亞州",
+   "紐約州"
+  ],
+  "answer": 1,
+  "explanation": "他們原本要去維吉尼亞，卻被吹到今天麻州的鱈魚角一帶落腳。",
+  "fun_fact": "上岸前船上乘客簽下《五月花號公約》，被視為自治政府的雛形。"
+ },
+ {
+  "id": "history-AM-003",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1692 年北美著名的獵巫審判發生在哪個小鎮？",
+  "options": [
+   "康科德",
+   "列星頓",
+   "塞勒姆",
+   "普洛威頓斯"
+  ],
+  "answer": 2,
+  "explanation": "麻薩諸塞灣殖民地的塞勒姆在 1692 年掀起獵巫風潮，二十人因此喪命。",
+  "fun_fact": "當年被指控的多半是鄰里糾紛的對象，指控者常是少女。"
+ },
+ {
+  "id": "history-AM-004",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "1773 年波士頓茶葉事件中被倒進海裡的貨物是什麼？",
+  "options": [
+   "蔗糖",
+   "棉花",
+   "菸草",
+   "茶葉"
+  ],
+  "answer": 3,
+  "explanation": "示威者裝扮成原住民登船，把東印度公司的整批茶葉倒進波士頓港。",
+  "fun_fact": "他們抗議的與其說是茶稅，不如說是東印度公司的銷售專賣權。"
+ },
+ {
+  "id": "history-AM-005",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "美國《獨立宣言》的主要起草人是誰？",
+  "options": [
+   "湯瑪斯·傑佛遜",
+   "班傑明·富蘭克林",
+   "喬治·華盛頓",
+   "約翰·亞當斯"
+  ],
+  "answer": 0,
+  "explanation": "五人委員會推舉傑佛遜執筆，他在 1776 年六月完成初稿。",
+  "fun_fact": "他晚年最得意的三件事之一，就是寫了這份宣言。"
+ },
+ {
+  "id": "history-AM-006",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "美國獨立戰爭中英軍主力投降的決定性戰役是哪一場？",
+  "options": [
+   "邦克山戰役",
+   "約克鎮戰役",
+   "長島戰役",
+   "薩拉托加戰役"
+  ],
+  "answer": 1,
+  "explanation": "1781 年康瓦利斯在維吉尼亞的約克鎮投降，英國自此無心再戰。",
+  "fun_fact": "美法聯軍圍城時，法國艦隊先封鎖了海口，英軍才無路可退。"
+ },
+ {
+  "id": "history-AM-007",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "1787 年制定美國憲法的制憲會議在哪座城市召開？",
+  "options": [
+   "巴爾的摩",
+   "紐約",
+   "費城",
+   "波士頓"
+  ],
+  "answer": 2,
+  "explanation": "各州代表齊聚費城的獨立廳，整個夏天閉門討論出新憲法。",
+  "fun_fact": "會議全程保密，連窗戶都釘死，代表們熱得滿頭大汗。"
+ },
+ {
+  "id": "history-AM-008",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1803 年美國的路易斯安那購地是向哪一國買的？",
+  "options": [
+   "西班牙",
+   "英國",
+   "荷蘭",
+   "法國"
+  ],
+  "answer": 3,
+  "explanation": "拿破崙急需戰費，把這片廣大土地賣給了傑佛遜政府。",
+  "fun_fact": "這筆交易讓美國國土一口氣增加了將近一倍。"
+ },
+ {
+  "id": "history-AM-009",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "隨路易斯與克拉克遠征隊擔任翻譯與嚮導的原住民女性是誰？",
+  "options": [
+   "薩卡加維亞",
+   "瑪拉琳切",
+   "南西·沃德",
+   "波卡虹塔斯"
+  ],
+  "answer": 0,
+  "explanation": "休休尼族的薩卡加維亞隨隊西行，靠她溝通才換得越山的馬匹。",
+  "fun_fact": "她一路揹著襁褓中的兒子走完全程。"
+ },
+ {
+  "id": "history-AM-010",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1812 年戰爭期間放火燒掉白宮的是哪一國軍隊？",
+  "options": [
+   "西班牙",
+   "英國",
+   "墨西哥",
+   "法國"
+  ],
+  "answer": 1,
+  "explanation": "1814 年英軍攻進華盛頓，燒了白宮與國會大廈才撤走。",
+  "fun_fact": "據說一場突如其來的暴風雨澆熄了大火，救下不少建築。"
+ },
+ {
+  "id": "history-AM-011",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1823 年宣示反對歐洲列強再插手美洲的外交主張是什麼？",
+  "options": [
+   "昭昭天命",
+   "睦鄰政策",
+   "門羅主義",
+   "杜魯門主義"
+  ],
+  "answer": 2,
+  "explanation": "門羅總統在國情咨文中畫下界線：美洲不再是歐洲可殖民的地方。",
+  "fun_fact": "當時美國海軍其實不強，真正在海上撐腰的是英國。"
+ },
+ {
+  "id": "history-AM-012",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1830 年代切羅基人被迫西遷的慘劇通稱為什麼？",
+  "options": [
+   "西進之路",
+   "傷膝河事件",
+   "大遷徙",
+   "淚之路"
+  ],
+  "answer": 3,
+  "explanation": "《印地安人遷移法案》通過後，切羅基人被押解到今奧克拉荷馬，沿途大量死亡。",
+  "fun_fact": "切羅基人曾打贏最高法院官司，行政部門卻沒有照著執行。"
+ },
+ {
+  "id": "history-AM-013",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "1848 年薩特磨坊發現黃金，引爆哪一州的淘金熱？",
+  "options": [
+   "加利福尼亞州",
+   "奧勒岡州",
+   "內華達州",
+   "科羅拉多州"
+  ],
+  "answer": 0,
+  "explanation": "消息傳開後，1849 年湧入大批淘金客，被稱為「四九人」。",
+  "fun_fact": "真正賺到錢的常是賣鏟子和牛仔褲的商人。"
+ },
+ {
+  "id": "history-AM-014",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "美國南北戰爭的第一砲是在哪座要塞打響的？",
+  "options": [
+   "提康德羅加堡",
+   "桑特堡",
+   "麥克亨利堡",
+   "諾克斯堡"
+  ],
+  "answer": 1,
+  "explanation": "1861 年南軍砲擊查爾斯頓港的桑特堡，內戰正式爆發。",
+  "fun_fact": "三十多小時的砲擊竟然沒有人陣亡，死者出現在受降儀式上。"
+ },
+ {
+  "id": "history-AM-015",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1962 年古巴飛彈危機發生時的美國總統是誰？",
+  "options": [
+   "詹森",
+   "杜魯門",
+   "甘迺迪",
+   "艾森豪"
+  ],
+  "answer": 2,
+  "explanation": "甘迺迪下令海上封鎖，十三天後雙方各退一步化解僵局。",
+  "fun_fact": "美國私下也答應撤走部署在土耳其的飛彈。"
+ },
+ {
+  "id": "history-AM-016",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "林肯發布《解放奴隸宣言》是在哪一年？",
+  "options": [
+   "1865 年",
+   "1867 年",
+   "1861 年",
+   "1863 年"
+  ],
+  "answer": 3,
+  "explanation": "宣言於 1863 年 1 月 1 日生效，宣告叛亂各州的奴隸獲得自由。",
+  "fun_fact": "它只適用於南方叛亂地區，邊境蓄奴州並不在內。"
+ },
+ {
+  "id": "history-AM-017",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "正式廢除奴隸制的是美國憲法第幾條修正案？",
+  "options": [
+   "第十三條",
+   "第十五條",
+   "第十九條",
+   "第十條"
+  ],
+  "answer": 0,
+  "explanation": "第十三條修正案於 1865 年通過，讓廢奴成為憲法層次的規定。",
+  "fun_fact": "眾議院表決通過那天，旁聽席上歡聲雷動。"
+ },
+ {
+  "id": "history-AM-018",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "林肯 1865 年遇刺身亡的地點是哪裡？",
+  "options": [
+   "白宮陽台",
+   "福特劇院",
+   "國會大廈",
+   "火車站月台"
+  ],
+  "answer": 1,
+  "explanation": "他在華盛頓的福特劇院看戲時，被演員布斯從背後開槍。",
+  "fun_fact": "行刺發生在南軍投降後不到一週。"
+ },
+ {
+  "id": "history-AM-019",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1867 年美國從哪一國手中買下阿拉斯加？",
+  "options": [
+   "加拿大",
+   "英國",
+   "俄國",
+   "丹麥"
+  ],
+  "answer": 2,
+  "explanation": "國務卿蘇爾德向俄國買下阿拉斯加，當時被嘲笑為「蘇爾德的蠢事」。",
+  "fun_fact": "沒過幾十年，那裡就先後挖出黃金和石油。"
+ },
+ {
+  "id": "history-AM-020",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1869 年第一條橫貫大陸鐵路在哪一州接軌完工？",
+  "options": [
+   "懷俄明州",
+   "加利福尼亞州",
+   "內布拉斯加州",
+   "猶他州"
+  ],
+  "answer": 3,
+  "explanation": "東西兩段鐵路在猶他州的普羅蒙特里會合，敲下著名的金道釘。",
+  "fun_fact": "西段工程有大批華工參與，鑿山開路最為艱險。"
+ },
+ {
+  "id": "history-AM-021",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1898 年美西戰爭後，美國從西班牙手中取得哪一個群島？",
+  "options": [
+   "菲律賓",
+   "印尼",
+   "越南",
+   "馬來亞"
+  ],
+  "answer": 0,
+  "explanation": "《巴黎條約》把菲律賓、波多黎各與關島交給美國。",
+  "fun_fact": "條約中美國付給西班牙兩千萬美元作為「補償」。"
+ },
+ {
+  "id": "history-AM-022",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "1929 年華爾街股市崩盤揭開了哪一段時期的序幕？",
+  "options": [
+   "咆哮的二十年代",
+   "經濟大恐慌",
+   "重建時期",
+   "進步時代"
+  ],
+  "answer": 1,
+  "explanation": "十月的「黑色星期二」股價狂瀉，全球陷入長達十年的大蕭條。",
+  "fun_fact": "崩盤前不少人是借錢炒股，股價一跌就血本無歸。"
+ },
+ {
+  "id": "history-AM-023",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "1930 年代推行「新政」的美國總統是誰？",
+  "options": [
+   "威爾遜",
+   "杜魯門",
+   "小羅斯福",
+   "胡佛"
+  ],
+  "answer": 2,
+  "explanation": "小羅斯福上任後推動一連串救濟、改革與公共工程措施。",
+  "fun_fact": "他透過廣播「爐邊談話」直接對全國人民說明政策。"
+ },
+ {
+  "id": "history-AM-024",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "二戰期間美國研發原子彈的計畫代號叫什麼？",
+  "options": [
+   "阿波羅計畫",
+   "霸王行動",
+   "雪崩行動",
+   "曼哈頓計畫"
+  ],
+  "answer": 3,
+  "explanation": "曼哈頓計畫在新墨西哥州的洛斯阿拉莫斯完成設計，1945 年七月試爆成功。",
+  "fun_fact": "參與人數達十多萬，多數人並不知道自己在造什麼。"
+ },
+ {
+  "id": "history-AM-025",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "金恩博士發表「我有一個夢想」演說的地點是哪裡？",
+  "options": [
+   "林肯紀念堂前",
+   "白宮南草坪",
+   "自由鐘廣場",
+   "國會大廈前"
+  ],
+  "answer": 0,
+  "explanation": "1963 年華盛頓大遊行時，他站在林肯紀念堂台階上發表這場演說。",
+  "fun_fact": "最後那段「我有一個夢想」據說是他臨場即興加上去的。"
+ },
+ {
+  "id": "history-AM-026",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1969 年阿波羅 11 號任務中，獨自留在指揮艙繞月的太空人是誰？",
+  "options": [
+   "艾德林",
+   "柯林斯",
+   "葛倫",
+   "阿姆斯壯"
+  ],
+  "answer": 1,
+  "explanation": "阿姆斯壯與艾德林登陸月面時，柯林斯留在指揮艙「哥倫比亞號」待命。",
+  "fun_fact": "他繞到月球背面時完全收不到訊號，被稱為最孤獨的人。"
+ },
+ {
+  "id": "history-AM-027",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1608 年建立魁北克城的法國探險家是誰？",
+  "options": [
+   "卡伯特",
+   "卡蒂埃",
+   "尚普蘭",
+   "拉薩爾"
+  ],
+  "answer": 2,
+  "explanation": "尚普蘭在聖羅倫斯河畔設立據點，後人稱他為「新法蘭西之父」。",
+  "fun_fact": "他選的位置正好扼住河道最窄處，易守難攻。"
+ },
+ {
+  "id": "history-AM-028",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1759 年亞伯拉罕平原戰役中擊敗法軍的是哪一國？",
+  "options": [
+   "西班牙",
+   "荷蘭",
+   "美國",
+   "英國"
+  ],
+  "answer": 3,
+  "explanation": "英軍在魁北克城外的亞伯拉罕平原取勝，新法蘭西自此易主。",
+  "fun_fact": "英法兩軍主將沃爾夫與蒙卡爾姆都在這場戰役中傷重不治。"
+ },
+ {
+  "id": "history-AM-029",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "加拿大自治領是在哪一年正式成立的？",
+  "options": [
+   "1867 年",
+   "1931 年",
+   "1776 年",
+   "1812 年"
+  ],
+  "answer": 0,
+  "explanation": "1867 年 7 月 1 日，四個省合組為加拿大自治領，這天成為加拿大國慶日。",
+  "fun_fact": "最初只有安大略、魁北克、新斯科細亞與新伯倫瑞克四省。"
+ },
+ {
+  "id": "history-AM-030",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1999 年從西北地區分出、以因紐特人為主的地區是哪裡？",
+  "options": [
+   "育空",
+   "努納福特",
+   "拉布拉多",
+   "亞伯達"
+  ],
+  "answer": 1,
+  "explanation": "努納福特於 1999 年成立，名稱在因紐特語中意為「我們的土地」。",
+  "fun_fact": "它的面積佔加拿大國土的五分之一左右。"
+ },
+ {
+  "id": "history-AM-031",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1896 年的克朗代克淘金熱發生在加拿大哪一個地區？",
+  "options": [
+   "薩克其萬",
+   "紐芬蘭",
+   "育空",
+   "曼尼托巴"
+  ],
+  "answer": 2,
+  "explanation": "育空的克朗代克河支流發現金礦，引來數萬人翻山越嶺湧入道森市。",
+  "fun_fact": "警方規定入境者得自備一年份糧食，否則不准過關。"
+ },
+ {
+  "id": "history-AM-032",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "第一次世界大戰中加拿大軍團一戰成名的是哪場戰役？",
+  "options": [
+   "馬恩河戰役",
+   "索姆河戰役",
+   "凡爾登戰役",
+   "維米嶺戰役"
+  ],
+  "answer": 3,
+  "explanation": "1917 年四月，加拿大四個師首次並肩作戰攻下維米嶺。",
+  "fun_fact": "許多加拿大人把這場勝仗視為國族意識的起點。"
+ },
+ {
+  "id": "history-AM-033",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "哥倫布首次橫渡大西洋抵達美洲是在哪一年？",
+  "options": [
+   "1492 年",
+   "1519 年",
+   "1588 年",
+   "1453 年"
+  ],
+  "answer": 0,
+  "explanation": "1492 年十月，他的船隊在今巴哈馬群島登陸，稱之為聖薩爾瓦多。",
+  "fun_fact": "他到死都還以為自己抵達的是亞洲的邊緣。"
+ },
+ {
+  "id": "history-AM-034",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「美洲」這個名字是取自哪位航海家？",
+  "options": [
+   "瓦斯科·達伽馬",
+   "亞美利哥·維斯普奇",
+   "喬瓦尼·卡伯特",
+   "巴爾托洛梅烏·迪亞士"
+  ],
+  "answer": 1,
+  "explanation": "德國製圖師瓦爾德澤米勒 1507 年繪製世界地圖時，用他的名字標示新大陸。",
+  "fun_fact": "他最早主張這片土地是「新大陸」，不是亞洲。"
+ },
+ {
+  "id": "history-AM-035",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1494 年《托爾德西利亞斯條約》瓜分新世界的是哪兩國？",
+  "options": [
+   "英格蘭與法蘭西",
+   "荷蘭與葡萄牙",
+   "西班牙與葡萄牙",
+   "葡萄牙與法蘭西"
+  ],
+  "answer": 2,
+  "explanation": "兩國在大西洋上畫一條分界線，線東歸葡萄牙、線西歸西班牙。",
+  "fun_fact": "這條線剛好切到南美東端，巴西因此說葡萄牙語。"
+ },
+ {
+  "id": "history-AM-036",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "阿茲提克首都特諾奇提特蘭的遺址位於今天哪座城市？",
+  "options": [
+   "利馬",
+   "波哥大",
+   "瓜地馬拉市",
+   "墨西哥城"
+  ],
+  "answer": 3,
+  "explanation": "西班牙人摧毀這座湖上都城後，就地蓋起了今天的墨西哥城。",
+  "fun_fact": "當年全城靠堤道對外聯絡，還有引水道送淡水進城。"
+ },
+ {
+  "id": "history-AM-037",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1521 年率兵消滅阿茲提克帝國的西班牙征服者是誰？",
+  "options": [
+   "科爾特斯",
+   "皮薩羅",
+   "德索托",
+   "巴爾波亞"
+  ],
+  "answer": 0,
+  "explanation": "科爾特斯結合周邊不滿阿茲提克的城邦，圍城數月後攻陷首都。",
+  "fun_fact": "天花在圍城期間橫掃守軍，成了隱形的幫兇。"
+ },
+ {
+  "id": "history-AM-038",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "印加帝國的首都設在哪座城市？",
+  "options": [
+   "基多",
+   "庫斯科",
+   "利馬",
+   "波托西"
+  ],
+  "answer": 1,
+  "explanation": "庫斯科是印加人心目中的世界中心，四大地區由此向外輻射。",
+  "fun_fact": "印加語把帝國叫作「四方之地」。"
+ },
+ {
+  "id": "history-AM-039",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "在卡哈馬卡俘虜印加皇帝阿塔瓦爾帕的西班牙人是誰？",
+  "options": [
+   "巴爾波亞",
+   "德索托",
+   "皮薩羅",
+   "阿爾瓦拉多"
+  ],
+  "answer": 2,
+  "explanation": "1532 年皮薩羅以不到兩百人設伏擒王，印加帝國從此崩解。",
+  "fun_fact": "印加人交出滿屋黃金贖人，皇帝最後仍遭處死。"
+ },
+ {
+  "id": "history-AM-040",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "沒有文字的印加人靠什麼工具記錄數字與帳目？",
+  "options": [
+   "彩繪陶片",
+   "貝殼串珠",
+   "刻痕骨片",
+   "奇普結繩"
+  ],
+  "answer": 3,
+  "explanation": "奇普用不同顏色的繩子打結，以結的位置和形式表示數量。",
+  "fun_fact": "專門解讀奇普的官員在帝國裡是受敬重的專業人士。"
+ },
+ {
+  "id": "history-AM-041",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "前哥倫布時代的美洲，唯一發展出完整文字系統的是哪個文明？",
+  "options": [
+   "馬雅",
+   "奧爾梅克",
+   "印加",
+   "阿茲提克"
+  ],
+  "answer": 0,
+  "explanation": "馬雅文字兼有表音與表意符號，能完整記錄語言與歷史。",
+  "fun_fact": "多數馬雅古籍在殖民初期被燒毀，只剩下四本抄本。"
+ },
+ {
+  "id": "history-AM-042",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "被視為中美洲「母文化」、以巨石人頭聞名的是哪個文明？",
+  "options": [
+   "米斯特克",
+   "奧爾梅克",
+   "薩波特克",
+   "托爾特克"
+  ],
+  "answer": 1,
+  "explanation": "奧爾梅克活躍於墨西哥灣沿岸，許多中美洲文化的元素可追到他們。",
+  "fun_fact": "巨石人頭最重的超過五十噸，石材卻來自數十公里外。"
+ },
+ {
+  "id": "history-AM-043",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "著名的「太陽金字塔」位於墨西哥哪一座古城遺址？",
+  "options": [
+   "帕倫克",
+   "蒙特阿爾萬",
+   "特奧蒂瓦坎",
+   "圖拉"
+  ],
+  "answer": 2,
+  "explanation": "特奧蒂瓦坎在西元前後興起，太陽金字塔是全城最大的建築。",
+  "fun_fact": "阿茲提克人來到時此城早已荒廢，他們替它取了現在的名字。"
+ },
+ {
+  "id": "history-AM-044",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "只有從高空才看得出圖案的納斯卡線位於哪一國？",
+  "options": [
+   "玻利維亞",
+   "厄瓜多",
+   "智利",
+   "秘魯"
+  ],
+  "answer": 3,
+  "explanation": "納斯卡線刻在秘魯南部的乾旱高原上，因幾乎不下雨才保存至今。",
+  "fun_fact": "圖案包括蜂鳥、猴子和蜘蛛，最大的長達數百公尺。"
+ },
+ {
+  "id": "history-AM-045",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "西班牙殖民美洲時強制原住民勞動與納貢的制度叫什麼？",
+  "options": [
+   "委託監護制",
+   "大莊園制",
+   "分配勞役制",
+   "米塔制"
+  ],
+  "answer": 0,
+  "explanation": "殖民者取得委託監護權，名義上保護與教化原住民，實際上是強制勞役。",
+  "fun_fact": "傳教士拉斯·卡薩斯畢生奔走，力促廢除這套制度。"
+ },
+ {
+  "id": "history-AM-046",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "殖民時期供應西班牙巨量白銀的波托西銀礦，位於今天哪一國？",
+  "options": [
+   "秘魯",
+   "玻利維亞",
+   "智利",
+   "墨西哥"
+  ],
+  "answer": 1,
+  "explanation": "波托西的「富山」在十六世紀中葉開採，白銀經由西班牙流向全世界。",
+  "fun_fact": "大量美洲白銀最後輾轉流入中國，成為明清的通用貨幣。"
+ },
+ {
+  "id": "history-AM-047",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "拉丁美洲第一個脫離殖民統治而獨立的國家是哪一國？",
+  "options": [
+   "阿根廷",
+   "墨西哥",
+   "海地",
+   "巴西"
+  ],
+  "answer": 2,
+  "explanation": "海地在 1804 年宣布獨立，是由奴隸起義建立的第一個共和國。",
+  "fun_fact": "起義初期的靈魂人物杜桑·盧維杜爾，被捕後死於法國獄中。"
+ },
+ {
+  "id": "history-AM-048",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "被尊稱為南美「解放者」的獨立運動領袖是誰？",
+  "options": [
+   "蘇克雷",
+   "聖馬丁",
+   "伊達爾戈",
+   "玻利瓦"
+  ],
+  "answer": 3,
+  "explanation": "玻利瓦率軍解放今委內瑞拉、哥倫比亞等地，曾建立大哥倫比亞。",
+  "fun_fact": "玻利維亞這個國名就是為了紀念他而取的。"
+ },
+ {
+  "id": "history-AM-049",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1810 年喊出「多洛雷斯吶喊」揭開墨西哥獨立序幕的是誰？",
+  "options": [
+   "伊達爾戈神父",
+   "莫雷洛斯神父",
+   "伊圖爾比德將軍",
+   "胡亞雷斯總統"
+  ],
+  "answer": 0,
+  "explanation": "伊達爾戈在多洛雷斯鎮敲鐘號召起義，九月十六日成為墨西哥國慶日。",
+  "fun_fact": "起義隔年他就被捕處決，獨立要到 1821 年才真正達成。"
+ },
+ {
+  "id": "history-AM-050",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1822 年宣布巴西獨立並登基稱帝的是誰？",
+  "options": [
+   "卡布拉爾",
+   "佩德羅一世",
+   "若昂六世",
+   "佩德羅二世"
+  ],
+  "answer": 1,
+  "explanation": "葡萄牙王儲佩德羅拒絕返國，宣布獨立後成為巴西第一位皇帝。",
+  "fun_fact": "拿破崙進逼時，葡萄牙王室曾整批搬到里約熱內盧。"
+ },
+ {
+  "id": "history-AM-051",
+  "topic": "history",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "歷史",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "連通大西洋與太平洋的巴拿馬運河在哪一年正式通航？",
+  "options": [
+   "1869 年",
+   "1898 年",
+   "1914 年",
+   "1936 年"
+  ],
+  "answer": 2,
+  "explanation": "美國接手法國未竟的工程，1904 年動工、1914 年通航。",
+  "fun_fact": "工程最大的難關不是挖土，而是黃熱病與瘧疾。"
+ },
+ {
+  "id": "human-AM-001",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "美國的感恩節固定在十一月的哪一天？",
+  "options": [
+   "第四個星期四",
+   "第一個星期四",
+   "第二個星期四",
+   "最後一個星期五"
+  ],
+  "answer": 0,
+  "explanation": "美國一九四一年立法把感恩節定在十一月的第四個星期四，隔天就是購物節「黑色星期五」。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-002",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "加拿大的感恩節比美國早，落在哪個月？",
+  "options": [
+   "九月",
+   "十月",
+   "十一月",
+   "十二月"
+  ],
+  "answer": 1,
+  "explanation": "加拿大感恩節定在十月的第二個星期一，因為北方收成季節較早。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-003",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "萬聖節的南瓜燈傳統，最早在歐洲是用什麼雕的？",
+  "options": [
+   "南瓜",
+   "甜菜",
+   "蕪菁",
+   "洋蔥"
+  ],
+  "answer": 2,
+  "explanation": "愛爾蘭與英國原本把蕪菁等根莖類挖空雕臉，移民到美洲後才改用又大又好刻的南瓜。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-004",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "爵士樂公認的發源城市是哪一座？",
+  "options": [
+   "芝加哥",
+   "曼菲斯",
+   "底特律",
+   "紐奧良"
+  ],
+  "answer": 3,
+  "explanation": "十九世紀末到二十世紀初，紐奧良的非裔社群把藍調、繁音拍子與進行曲融合，催生了爵士樂。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-005",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "藍調最經典的曲式結構是哪一種？",
+  "options": [
+   "十二小節藍調",
+   "四小節藍調",
+   "八小節藍調",
+   "二十小節藍調"
+  ],
+  "answer": 0,
+  "explanation": "十二小節藍調用三個和弦循環十二個小節，是藍調與早期搖滾最常見的骨架。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-006",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "擁有「大奧普里」劇院、被稱為鄉村音樂之都的城市是？",
+  "options": [
+   "奧斯汀",
+   "納許維爾",
+   "路易維爾",
+   "亞特蘭大"
+  ],
+  "answer": 1,
+  "explanation": "大奧普里電台現場秀讓田納西州的納許維爾成為鄉村音樂的大本營。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-007",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "摩城(Motown)唱片的名字，來自哪座城市的別稱？",
+  "options": [
+   "芝加哥",
+   "克里夫蘭",
+   "底特律",
+   "匹茲堡"
+  ],
+  "answer": 2,
+  "explanation": "Motown 是 motor town 的縮寫，指汽車工業重鎮底特律。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-008",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "嘻哈文化誕生於紐約市的哪一區？",
+  "options": [
+   "布魯克林",
+   "皇后區",
+   "曼哈頓",
+   "布朗克斯"
+  ],
+  "answer": 3,
+  "explanation": "一九七〇年代初布朗克斯的街區派對孕育出饒舌、DJ、霹靂舞與塗鴉四大元素。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-009",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "籃球剛發明時，最早的「籃框」其實是什麼？",
+  "options": [
+   "桃子籃",
+   "木酒桶",
+   "鐵圈環",
+   "魚網袋"
+  ],
+  "answer": 0,
+  "explanation": "奈史密斯把裝桃子的籃子釘在高處當球門，起初還得爬梯子把球取出來。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-010",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "加拿大法律明定的「夏季國技」是哪一項運動？",
+  "options": [
+   "冰球",
+   "長曲棍球",
+   "棒球",
+   "美式足球"
+  ],
+  "answer": 1,
+  "explanation": "加拿大一九九四年立法把冰球定為冬季國技、長曲棍球定為夏季國技，後者源自原住民。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-011",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "加拿大魁北克省唯一的官方語言是什麼？",
+  "options": [
+   "英語",
+   "西班牙語",
+   "法語",
+   "原住民語"
+  ],
+  "answer": 2,
+  "explanation": "魁北克是北美法語文化的中心，省內以法語為唯一官方語言。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-012",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "魁北克省的省格言「Je me souviens」意思是？",
+  "options": [
+   "我自由",
+   "我相信",
+   "我在此",
+   "我記得"
+  ],
+  "answer": 3,
+  "explanation": "這句法文格言刻在魁北克的車牌上，提醒省民不要忘記自己的法語傳統。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-013",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "楓糖漿主要取自哪種樹的樹液？",
+  "options": [
+   "糖楓",
+   "白樺",
+   "銀杏",
+   "橡樹"
+  ],
+  "answer": 0,
+  "explanation": "糖楓樹液含糖量最高，早春晝暖夜寒時採集，熬煮後就是楓糖漿。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-014",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "自由女神像內部的鐵骨架，由哪位名人設計？",
+  "options": [
+   "巴托爾迪",
+   "艾菲爾",
+   "奧斯曼",
+   "勒柯比意"
+  ],
+  "answer": 1,
+  "explanation": "雕像外型由巴托爾迪設計，撐住銅皮的內部骨架則出自後來蓋鐵塔的艾菲爾之手。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-015",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "拉什莫爾山的巨型石雕上，沒有下列哪位美國總統？",
+  "options": [
+   "林肯",
+   "傑佛遜",
+   "艾森豪",
+   "老羅斯福"
+  ],
+  "answer": 2,
+  "explanation": "山壁上刻的是華盛頓、傑佛遜、老羅斯福與林肯四人。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-016",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "世界遺產「獨立廳」與自由鐘位於哪座城市？",
+  "options": [
+   "波士頓",
+   "紐約",
+   "華盛頓",
+   "費城"
+  ],
+  "answer": 3,
+  "explanation": "費城的獨立廳一九七九年列入世界遺產，對街就是自由鐘展館。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-017",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "北美西北海岸原住民最著名的木雕文化是什麼？",
+  "options": [
+   "圖騰柱",
+   "面具舞",
+   "沙畫",
+   "樹皮畫"
+  ],
+  "answer": 0,
+  "explanation": "海達族、特林吉特族等用西部紅雪松雕刻高柱，記錄家族世系與傳說，並非拿來膜拜的神像。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-018",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "世界遺產梅薩維德以什麼樣的景觀聞名？",
+  "options": [
+   "沙漠中的巨大石陣",
+   "崖壁上的古代石屋",
+   "湖畔的圓形木屋",
+   "山頂的階梯金字塔"
+  ],
+  "answer": 1,
+  "explanation": "科羅拉多州的梅薩維德保存了古普韋布洛人蓋在峭壁凹處的石造聚落，最大的一處叫「懸崖宮」。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-019",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "全美面積最大的原住民保留地屬於哪一族？",
+  "options": [
+   "切羅基族",
+   "蘇族",
+   "納瓦荷族",
+   "阿帕契族"
+  ],
+  "answer": 2,
+  "explanation": "納瓦荷保留地橫跨亞利桑那、新墨西哥與猶他三州，是全美最大的一片。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-020",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "奧斯卡金像獎是由哪個機構主辦？",
+  "options": [
+   "美國電影協會",
+   "好萊塢外國記者協會",
+   "美國電影導演工會",
+   "美國影藝學院"
+  ],
+  "answer": 3,
+  "explanation": "奧斯卡由美國影藝學院頒發；選項中的好萊塢外國記者協會則是金球獎的創辦單位（該協會已於二〇二三年解散改組）。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-021",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "藍草音樂(bluegrass)最具代表性的樂器是哪一種？",
+  "options": [
+   "五弦班鳩琴",
+   "薩克斯風",
+   "手風琴",
+   "電吉他"
+  ],
+  "answer": 0,
+  "explanation": "班鳩琴的滾奏加上曼陀林、提琴，構成阿帕拉契山區藍草樂團的招牌音色。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-022",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "貓王艾維斯的故居「雅園」(Graceland)位於哪座城市？",
+  "options": [
+   "納許維爾",
+   "曼菲斯",
+   "紐奧良",
+   "亞特蘭大"
+  ],
+  "answer": 1,
+  "explanation": "田納西州曼菲斯的雅園是貓王生前的豪宅，如今是全美最多人參觀的名人故居之一。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-023",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "秋葵濃湯(gumbo)是美國哪一州最具代表性的料理？",
+  "options": [
+   "德克薩斯州",
+   "喬治亞州",
+   "路易斯安那州",
+   "佛羅里達州"
+  ],
+  "answer": 2,
+  "explanation": "gumbo 融合法國、西班牙、非洲與原住民的做法，是路易斯安那卡津與克里奧料理的代表。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-024",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「世界大賽」(World Series)是哪一項運動的年度總冠軍賽？",
+  "options": [
+   "籃球",
+   "冰球",
+   "美式足球",
+   "棒球"
+  ],
+  "answer": 3,
+  "explanation": "世界大賽由美國職棒大聯盟的美聯與國聯冠軍對決，採七戰四勝制。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-025",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "超級盃(Super Bowl)是哪個職業聯盟的冠軍賽？",
+  "options": [
+   "NFL",
+   "NBA",
+   "MLB",
+   "NHL"
+  ],
+  "answer": 0,
+  "explanation": "超級盃是美式足球聯盟 NFL 的年度總冠軍賽，中場秀往往比比賽還受矚目。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-026",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "六十六號公路「母親之路」的稱號，出自哪一部小說？",
+  "options": [
+   "《大亨小傳》",
+   "《憤怒的葡萄》",
+   "《麥田捕手》",
+   "《白鯨記》"
+  ],
+  "answer": 1,
+  "explanation": "史坦貝克在小說裡描寫沙塵暴難民沿這條公路西遷，從此「母親之路」不脛而走。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-027",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "麥當勞兄弟開的第一家麥當勞餐廳，位於美國哪一州？",
+  "options": [
+   "伊利諾州",
+   "德州",
+   "加州",
+   "紐約州"
+  ],
+  "answer": 2,
+  "explanation": "麥當勞兄弟一九四〇年在加州聖伯納迪諾開店，後來由克洛克推向全國連鎖。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-028",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "好萊塢星光大道上的紀念標誌是什麼形狀？",
+  "options": [
+   "圓形",
+   "手印",
+   "方塊",
+   "五角星"
+  ],
+  "answer": 3,
+  "explanation": "星光大道用粉紅色的五角星嵌在人行道上；水泥手印則是中國戲院前的另一項傳統。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-029",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "百老匯戲劇界最高榮譽的獎項是什麼？",
+  "options": [
+   "東尼獎",
+   "葛萊美獎",
+   "艾美獎",
+   "普立茲獎"
+  ],
+  "answer": 0,
+  "explanation": "東尼獎表揚百老匯的舞台劇與音樂劇，地位相當於電影界的奧斯卡。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-030",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "美國國歌〈星條旗〉的旋律，原本借用自哪一國的歌曲？",
+  "options": [
+   "法國",
+   "英國",
+   "德國",
+   "愛爾蘭"
+  ],
+  "answer": 1,
+  "explanation": "歌詞配的是英國作曲家史密斯所寫的飲酒歌旋律，音域寬得出名，很難唱。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-031",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "墨西哥亡靈節的祭壇上，最具代表性的花是哪一種？",
+  "options": [
+   "玫瑰",
+   "百合",
+   "萬壽菊",
+   "向日葵"
+  ],
+  "answer": 2,
+  "explanation": "橘黃色的萬壽菊香氣濃烈，被認為能替亡者指路，回家享用供桌上的食物。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-032",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "里約嘉年華的花車遊行，主要在哪裡舉行？",
+  "options": [
+   "糖麵包山",
+   "伊帕內瑪海灘",
+   "馬拉卡納球場",
+   "森巴大道"
+  ],
+  "answer": 3,
+  "explanation": "森巴大道是一條兩側設看台的專用場地，各森巴學校在此比拚遊行。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-033",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "探戈起源於哪兩個國家交界的拉普拉塔河口地區？",
+  "options": [
+   "阿根廷與烏拉圭",
+   "智利與秘魯",
+   "巴西與巴拉圭",
+   "古巴與墨西哥"
+  ],
+  "answer": 0,
+  "explanation": "探戈在布宜諾斯艾利斯與蒙特維多的移民港區成形，兩國並列申請登錄無形文化遺產。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-034",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "波薩諾瓦(Bossa Nova)是由哪種巴西音樂演變而來？",
+  "options": [
+   "雷鬼",
+   "森巴",
+   "探戈",
+   "騷莎"
+  ],
+  "answer": 1,
+  "explanation": "波薩諾瓦把森巴的節奏放慢、和聲變複雜，用古典吉他輕聲吟唱，一九五〇年代末誕生於里約。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-035",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "雷鬼樂(Reggae)起源於哪一個加勒比海國家？",
+  "options": [
+   "古巴",
+   "海地",
+   "牙買加",
+   "巴哈馬"
+  ],
+  "answer": 2,
+  "explanation": "雷鬼一九六〇年代末在牙買加成形，經巴布馬利之手紅遍全世界。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-036",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "墨西哥街頭樂隊「馬里亞奇」公認的發源地是哪一州？",
+  "options": [
+   "猶加敦州",
+   "瓦哈卡州",
+   "奇瓦瓦州",
+   "哈利斯科州"
+  ],
+  "answer": 3,
+  "explanation": "馬里亞奇被認為源自哈利斯科州的科庫拉一帶，編制包含小提琴、小號與大小吉他。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-037",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "巴西的「卡波耶拉」最招牌的伴奏樂器是什麼？",
+  "options": [
+   "貝林包",
+   "阿塔巴克",
+   "卡宏鼓",
+   "響葫蘆"
+  ],
+  "answer": 0,
+  "explanation": "貝林包是一把裝了共鳴葫蘆的單弦弓，由它決定卡波耶拉圈子的節奏快慢。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-038",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "巴西的官方語言是什麼？",
+  "options": [
+   "西班牙語",
+   "葡萄牙語",
+   "法語",
+   "英語"
+  ],
+  "answer": 1,
+  "explanation": "巴西曾是葡萄牙殖民地，是拉丁美洲唯一以葡萄牙語為官方語言的大國。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-039",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "巴拉圭與西班牙語並列官方語言的原住民語是哪一種？",
+  "options": [
+   "蓋楚瓦語",
+   "艾馬拉語",
+   "瓜拉尼語",
+   "納瓦特爾語"
+  ],
+  "answer": 2,
+  "explanation": "瓜拉尼語在巴拉圭被多數人口使用，是美洲少見由非原住民也普遍講的原住民語言。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-040",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "印加帝國通行、今日仍是秘魯官方語言之一的是哪種語言？",
+  "options": [
+   "瓜拉尼語",
+   "馬雅語",
+   "納瓦特爾語",
+   "蓋楚瓦語"
+  ],
+  "answer": 3,
+  "explanation": "蓋楚瓦語隨印加帝國擴散到安地斯山區，秘魯、玻利維亞與厄瓜多都給予官方地位。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-041",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "中美洲唯一以英語為官方語言的國家是哪一個？",
+  "options": [
+   "貝里斯",
+   "宏都拉斯",
+   "哥斯大黎加",
+   "巴拿馬"
+  ],
+  "answer": 0,
+  "explanation": "貝里斯曾是英國殖民地「英屬宏都拉斯」，獨立後仍以英語為官方語言。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-042",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "世界遺產馬丘比丘是哪個古文明留下的遺址？",
+  "options": [
+   "馬雅",
+   "印加",
+   "阿茲特克",
+   "奧爾梅克"
+  ],
+  "answer": 1,
+  "explanation": "馬丘比丘是十五世紀印加人在秘魯高山上建的城，一九一一年才廣為外界所知。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-043",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "奇琴伊察那座名為「城堡」的階梯金字塔，是哪個文明的傑作？",
+  "options": [
+   "印加",
+   "阿茲特克",
+   "馬雅",
+   "查文"
+  ],
+  "answer": 2,
+  "explanation": "奇琴伊察位於墨西哥猶加敦半島，主金字塔又稱庫庫爾坎神廟。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-044",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "復活節島上的摩艾石像，屬於哪一個國家？",
+  "options": [
+   "秘魯",
+   "厄瓜多",
+   "阿根廷",
+   "智利"
+  ],
+  "answer": 3,
+  "explanation": "復活節島由智利管轄，摩艾是島上拉帕努伊人用火山凝灰岩雕成的巨大人像。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-045",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "里約熱內盧的救世基督像矗立在哪一座山上？",
+  "options": [
+   "科科瓦多山",
+   "糖麵包山",
+   "加維亞石山",
+   "兩兄弟山"
+  ],
+  "answer": 0,
+  "explanation": "基督像立在七百公尺高的科科瓦多山頂，以鋼筋混凝土為體、外覆皂石馬賽克。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-046",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "用檸檬汁醃漬生魚的「檸檬漬生魚」(ceviche)是哪一國的國菜？",
+  "options": [
+   "智利",
+   "秘魯",
+   "墨西哥",
+   "巴西"
+  ],
+  "answer": 1,
+  "explanation": "秘魯的 ceviche 以魚肉、萊姆汁、洋蔥與辣椒調味，二〇二三年列入無形文化遺產。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-047",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "龍舌蘭酒(Tequila)依法只能用哪種植物釀造？",
+  "options": [
+   "仙人掌",
+   "甘蔗",
+   "藍色龍舌蘭",
+   "玉米"
+  ],
+  "answer": 2,
+  "explanation": "墨西哥法律規定 Tequila 只能用藍色龍舌蘭製造，且限定在哈利斯科等指定產區。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-048",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "墨西哥的「塔馬利」(tamale)傳統上用什麼包起來蒸？",
+  "options": [
+   "竹葉",
+   "荷葉",
+   "芭蕉皮",
+   "玉米葉"
+  ],
+  "answer": 3,
+  "explanation": "玉米麵團包餡後用玉米葉或香蕉葉裹住蒸熟，做法可追溯到中美洲的古文明。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-049",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "巴西烤肉餐廳的「rodízio」指的是什麼樣的服務？",
+  "options": [
+   "服務生輪流上桌現切",
+   "客人自己動手燒烤",
+   "按重量計價自取",
+   "廚房一次全部上齊"
+  ],
+  "answer": 0,
+  "explanation": "rodízio 就是服務生拿著一串串烤肉在桌邊巡迴、現場替客人切下來，吃到飽為止。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-050",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "馬黛茶是用哪種植物的葉子沖泡的？",
+  "options": [
+   "茶樹",
+   "巴拉圭冬青",
+   "咖啡樹",
+   "可可樹"
+  ],
+  "answer": 1,
+  "explanation": "馬黛茶取自南美原生的巴拉圭冬青葉，傳統上裝在葫蘆裡、用金屬吸管吸著喝。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-051",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "馬奎斯《百年孤寂》裡那個虛構的小鎮叫什麼名字？",
+  "options": [
+   "馬瑙斯",
+   "科馬拉",
+   "馬康多",
+   "聖塔瑪莉亞"
+  ],
+  "answer": 2,
+  "explanation": "馬康多的原型是作者的故鄉阿拉卡塔卡，也是魔幻寫實文學最有名的舞台。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-052",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "寫下《二十首情詩和一首絕望的歌》的詩人聶魯達是哪一國人？",
+  "options": [
+   "阿根廷",
+   "墨西哥",
+   "古巴",
+   "智利"
+  ],
+  "answer": 3,
+  "explanation": "聶魯達是智利詩人兼外交官，一九七一年獲頒諾貝爾文學獎。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-053",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "海明威《老人與海》的故事，發生在哪一個國家的海邊？",
+  "options": [
+   "古巴",
+   "墨西哥",
+   "巴拿馬",
+   "委內瑞拉"
+  ],
+  "answer": 0,
+  "explanation": "小說以古巴漁村為背景，老漁夫出海與一條大馬林魚搏鬥了三天。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-AM-054",
+  "topic": "human",
+  "unit": "AM",
+  "unit_name": "美洲",
+  "category": "人文",
+  "region": "美洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "以大量自畫像聞名、丈夫是壁畫家里維拉的女畫家是誰？",
+  "options": [
+   "卡蜜兒·克羅岱",
+   "芙烈達·卡蘿",
+   "塔瑪拉·藍碧嘉",
+   "喬治亞·歐姬芙"
+  ],
+  "answer": 1,
+  "explanation": "芙烈達·卡蘿是墨西哥畫家，作品大量取材自身傷痛與墨西哥民間文化。",
+  "fun_fact": ""
+ }
+]

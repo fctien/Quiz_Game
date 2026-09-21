@@ -10,6 +10,7 @@
 import csv
 import io
 import json
+import os
 import re
 import secrets
 import sqlite3
@@ -17,6 +18,7 @@ import time
 from pathlib import Path
 
 DB_PATH = Path(__file__).parent / "leaderboard.db"
+ADMIN_LOG = Path(__file__).parent / "班級管理碼.txt"   # 管理碼備份,忘記時可以來這裡翻
 
 
 def conn():
@@ -65,18 +67,42 @@ def clean_id(s):
     return re.sub(r"[^\w\-]", "", str(s or ""))[:20]
 
 
+def clean_admin(s):
+    """老師自訂的管理碼:只留英數,轉大寫,最多 12 字。太短(或空的)就當作沒設"""
+    return re.sub(r"[^A-Za-z0-9]", "", str(s or "")).upper()[:12]
+
+
+def master_code():
+    """萬用鑰匙:設在環境變數 MASTER_CODE,任何班級都能用它通過驗證。
+    至少 6 碼才算數,免得不小心設成空字串就整個門戶洞開。"""
+    m = str(os.environ.get("MASTER_CODE", "")).strip().upper()
+    return m if len(m) >= 6 else ""
+
+
+def _log_admin(code, admin):
+    """管理碼在畫面上只顯示一次,忘了很麻煩,所以同時在資料庫旁邊留一份純文字備份"""
+    try:
+        with open(ADMIN_LOG, "a", encoding="utf-8") as f:
+            f.write("%s\t%s\t%s\n" % (time.strftime("%Y-%m-%d %H:%M"), code, admin))
+    except Exception:
+        pass        # 雲端的檔案系統可能是唯讀的,寫不進去就算了,不能害開班失敗
+
+
 def get(code):
     with conn() as c:
         r = c.execute("SELECT * FROM classes WHERE code = ?", (code,)).fetchone()
     return dict(r) if r else None
 
 
-def create(code):
-    """建立班級,回傳管理碼"""
-    admin = secrets.token_hex(3).upper()      # 例如 A3F9C1
+def create(code, admin=None):
+    """建立班級,回傳管理碼。admin 留空就隨機產生六碼,填了就用老師自己取的"""
+    admin = clean_admin(admin)
+    if len(admin) < 3:
+        admin = secrets.token_hex(3).upper()      # 例如 A3F9C1
     with conn() as c:
         c.execute("INSERT INTO classes(code, admin_code, roster, created) VALUES (?,?,'[]',?)",
                   (code, admin, time.time()))
+    _log_admin(code, admin)
     return admin
 
 
@@ -84,11 +110,31 @@ def check(code, admin_code):
     cls = get(code)
     if not cls:
         return False
+    given = str(admin_code or "").upper().strip()
     try:    # 老師把管理碼打成中文時,compare_digest 會丟例外,不能讓伺服器噴 500
+        m = master_code()
+        if m and secrets.compare_digest(m.encode("utf-8"), given.encode("utf-8")):
+            return True                 # 萬用鑰匙:忘記管理碼時的備用入口
         return secrets.compare_digest(cls["admin_code"].encode("utf-8"),
-                                      str(admin_code or "").upper().strip().encode("utf-8"))
+                                      given.encode("utf-8"))
     except Exception:
         return False
+
+
+def recover(master):
+    """忘記管理碼:用萬用鑰匙把所有班級的管理碼查出來。鑰匙沒設或不對都回 None"""
+    m = master_code()
+    if not m:
+        return None
+    try:
+        if not secrets.compare_digest(m.encode("utf-8"),
+                                      str(master or "").upper().strip().encode("utf-8")):
+            return None
+    except Exception:
+        return None
+    with conn() as c:
+        return [{"code": r["code"], "admin_code": r["admin_code"], "created": r["created"]}
+                for r in c.execute("SELECT code, admin_code, created FROM classes ORDER BY created DESC")]
 
 
 # ---------------------------------------------------------------- 分組名單

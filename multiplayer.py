@@ -66,6 +66,7 @@ class Room:
         self.teams = list(teams or [])
         self.class_code = class_code          # 課堂累積積分用
         self.entry = entry                    # 固定入口代碼,學生掃印好的 QR 就會進這一間
+        self.notice = ""                      # 一句話提示(例如老師中斷了這一場),學生的等待畫面會看到
         self.roster = list(roster or [])      # [{"sid","name","team"}]
         self.saved = False
         self.created = self.touched = time.time()
@@ -94,6 +95,7 @@ class Room:
         self.prev_rank = {}
         self.round_id = 0
         self.saved = False
+        self.soft_at = 0
         for p in self.players.values():
             p.update(score=0, streak=0, right=0, bonus=0.0, last=None, rank=None, move=0)
 
@@ -133,6 +135,7 @@ class Room:
 
     def start_question(self):
         self.soft_at = 0                  # 新的一題,節流重新計算
+        self.notice = ""
         self.qi += 1
         if self.qi >= len(self.questions):
             return self.finish()
@@ -257,6 +260,7 @@ class Room:
              "region": self.region or "", "unit": self.unit or "", "unit_name": self.unit_name,
              "mode": self.mode, "teams": self.teams,
              "class_code": self.class_code, "has_roster": bool(self.roster),
+             "notice": self.notice, "count": self.count,
              "players": len(self.players), "limit": self.limit, "total": len(self.questions)}
         if self.state in ("question", "reveal"):
             v["q"] = self.public_question()
@@ -622,6 +626,55 @@ def again():
         r.new_round()
         r.bump()
     return jsonify(ok=True)
+
+
+@bp.post("/api/mp/abort")
+def abort_game():
+    """考到一半要中斷:回到等待畫面,學生留在原位,分數清零,題目重抽"""
+    with rooms_lock:
+        r = _host_room(_body())
+        if not r:
+            return err("考場不存在或你不是主持人", 403)
+        if r.state == "lobby":
+            return err("現在沒有進行中的考試")
+        r.new_round()
+        r.notice = "老師中斷了這一場，請稍等一下，等老師重新開始。"
+        r.bump()
+    return jsonify(ok=True)
+
+
+@bp.post("/api/mp/reconfig")
+def reconfig():
+    """不關考坊、不趕人,直接換一套題目(主題、單元、題數、秒數)"""
+    b = _body()
+    with rooms_lock:
+        r = _host_room(b)
+        if not r:
+            return err("考場不存在或你不是主持人", 403)
+        if r.state != "lobby":
+            return err("請先中斷目前這一場,再換題目")
+        cat = b.get("category", r.category)
+        if cat not in categories:
+            return err("沒有這個主題")
+        count = int(b.get("count", r.count))
+        limit = int(b.get("time", r.limit))
+        if count not in COUNTS or limit not in TIMES:
+            return err("題數或秒數不在可選範圍內")
+        old = (r.category, r.region, r.unit, r.unit_name, r.count, r.limit)
+        r.category = cat
+        r.region = b.get("region") or None
+        r.unit = b.get("unit") or None
+        r.unit_name = str(b.get("unit_name", ""))[:40]
+        r.count, r.limit = count, limit
+        r.new_round()
+        if not r.questions:                       # 抽不到題就整組還原
+            (r.category, r.region, r.unit, r.unit_name, r.count, r.limit) = old
+            r.new_round()
+            return err("這個主題或單元目前沒有可用的題目", 503)
+        r.notice = "老師換了一套題目，等老師開始。"
+        r.bump()
+    return jsonify(ok=True, total=len(r.questions),
+                   category=categories.get(r.category, {}).get("name", r.category))
 
 
 @bp.post("/api/mp/close")

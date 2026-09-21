@@ -1,0 +1,1202 @@
+[
+ {
+  "id": "geo-TW-001",
+  "topic": "geo",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "地理",
+  "region": "台灣",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "台灣規模最大、貨櫃裝卸量最高的國際商港是哪一座？",
+  "options": [
+   "基隆港",
+   "高雄港",
+   "臺中港",
+   "臺北港"
+  ],
+  "answer": 1,
+  "explanation": "高雄港是台灣最大的國際港埠，港區水域遼闊、腹地廣，貨櫃吞吐量長年居全國之冠。",
+  "fun_fact": "高雄港航道全長約18公里，港內水域面積超過26平方公里。"
+ },
+ {
+  "id": "geo-TW-002",
+  "topic": "geo",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "地理",
+  "region": "台灣",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "以日出、雲海與森林小火車聞名的阿里山國家森林遊樂區，位於哪一個縣市？",
+  "options": [
+   "嘉義縣",
+   "南投縣",
+   "雲林縣",
+   "高雄市"
+  ],
+  "answer": 0,
+  "explanation": "阿里山國家森林遊樂區位於嘉義縣阿里山鄉，園區海拔約2200至2700公尺。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-TW-003",
+  "topic": "geo",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "地理",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "宜蘭的蘭陽平原，主要是由哪一條河川的堆積作用形成的？",
+  "options": [
+   "大漢溪",
+   "頭前溪",
+   "和平溪",
+   "蘭陽溪"
+  ],
+  "answer": 3,
+  "explanation": "蘭陽溪從山谷進入低地後沉積物快速堆積，形成大型沖積扇與三角形平原，面積約400平方公里。",
+  "fun_fact": "蘭陽平原呈南北較長、東西較短的三角形，北起頭城、南到蘇澳。"
+ },
+ {
+  "id": "geo-TW-004",
+  "topic": "geo",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "地理",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "中央氣象署發布「陸上颱風警報」，是因為預測颱風的暴風圈將在多久之內侵襲陸地？",
+  "options": [
+   "6小時",
+   "12小時",
+   "18小時",
+   "24小時"
+  ],
+  "answer": 2,
+  "explanation": "依中央氣象署規定，預測七級風暴風範圍可能侵襲陸地前18小時發布陸上颱風警報，之後每小時更新一次。",
+  "fun_fact": "海上颱風警報則是在暴風圈可能侵襲台灣近海前24小時發布。"
+ },
+ {
+  "id": "geo-TW-005",
+  "topic": "geo",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "地理",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "日治時期由八田與一主持興建、成為嘉南大圳主要水源的水庫是哪一座？",
+  "options": [
+   "烏山頭水庫",
+   "曾文水庫",
+   "白河水庫",
+   "石門水庫"
+  ],
+  "answer": 0,
+  "explanation": "烏山頭水庫位於台南官田，與嘉南大圳同屬八田與一規劃的水利工程，供應嘉南平原灌溉用水。",
+  "fun_fact": "八田與一因此被稱為「嘉南大圳之父」，水庫北側設有他的紀念園區。"
+ },
+ {
+  "id": "geo-TW-006",
+  "topic": "geo",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "地理",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列離島中，哪一個不是火山活動造成，而是由海底珊瑚礁抬升形成的？",
+  "options": [
+   "綠島",
+   "蘭嶼",
+   "龜山島",
+   "小琉球"
+  ],
+  "answer": 3,
+  "explanation": "綠島、蘭嶼、龜山島都是火山島，小琉球（琉球嶼）則是由珊瑚礁露出海面抬升而成的珊瑚礁島。",
+  "fun_fact": "小琉球是台灣本島周邊少見的珊瑚礁島嶼，面積約6.8平方公里。"
+ },
+ {
+  "id": "geo-TW-007",
+  "topic": "geo",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "地理",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "台灣哪一座國家公園，是第一座以維護戰役史蹟與閩南傳統聚落為主要目標的國家公園？",
+  "options": [
+   "台江國家公園",
+   "金門國家公園",
+   "東沙環礁國家公園",
+   "澎湖南方四島國家公園"
+  ],
+  "answer": 1,
+  "explanation": "金門國家公園1995年成立，是台灣第六座、也是第一座設於離島的國家公園，以戰役紀念史蹟和傳統聚落保存為主。",
+  "fun_fact": "園區面積約3529公頃，約占大、小金門四分之一的土地。"
+ },
+ {
+  "id": "geo-TW-008",
+  "topic": "geo",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "地理",
+  "region": "台灣",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "台灣本島的最西端「國聖港燈塔」，位在哪一個行政區？",
+  "options": [
+   "雲林縣口湖鄉",
+   "彰化縣芳苑鄉",
+   "台南市七股區",
+   "高雄市茄萣區"
+  ],
+  "answer": 2,
+  "explanation": "國聖港燈塔立於台南市七股區的頂頭額汕沙洲上，是台灣本島極西點，也是本島最西邊的燈塔。",
+  "fun_fact": "頂頭額汕沙洲風沙景觀特殊，常被遊客稱為「台版撒哈拉」。"
+ },
+ {
+  "id": "geo-TW-009",
+  "topic": "geo",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "地理",
+  "region": "台灣",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "澎湖跨海大橋橫跨吼門水道，連接的是哪兩個鄉？",
+  "options": [
+   "白沙鄉與西嶼鄉",
+   "馬公市與湖西鄉",
+   "湖西鄉與白沙鄉",
+   "望安鄉與七美鄉"
+  ],
+  "answer": 0,
+  "explanation": "澎湖跨海大橋架在白沙島與西嶼島之間的吼門水道上，是兩島唯一的聯絡通道。",
+  "fun_fact": "吼門水道水流湍急，流速可達每秒約3公尺，是澎湖海域著名的險流。"
+ },
+ {
+  "id": "history-TW-001",
+  "topic": "history",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "歷史",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "台灣新石器時代最早、被認為可能是南島語族祖先的史前文化是？",
+  "options": [
+   "圓山文化",
+   "大坌坑文化",
+   "卑南文化",
+   "十三行文化"
+  ],
+  "answer": 1,
+  "explanation": "大坌坑文化距今約七千至四千七百年，是台灣新石器時代最早的一層，學界多認為與南島語族起源有關。",
+  "fun_fact": "它最早在新北八里的大坌坑遺址被發現，因此得名。"
+ },
+ {
+  "id": "history-TW-002",
+  "topic": "history",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "歷史",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "每兩年舉行一次的傳統祭典「矮靈祭」，是哪一族的祭典？",
+  "options": [
+   "阿美族",
+   "布農族",
+   "賽夏族",
+   "排灣族"
+  ],
+  "answer": 2,
+  "explanation": "矮靈祭（paSta'ay）是賽夏族紀念矮人的祭典，每兩年一次、每十年一次大祭。",
+  "fun_fact": "祭場分南北兩處，分別在苗栗向天湖與新竹五峰大隘。"
+ },
+ {
+  "id": "history-TW-003",
+  "topic": "history",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "歷史",
+  "region": "台灣",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "荷蘭人在赤崁蓋的「普羅民遮城」，是今天台南的哪個古蹟？",
+  "options": [
+   "赤崁樓",
+   "億載金城",
+   "安平古堡",
+   "延平郡王祠"
+  ],
+  "answer": 0,
+  "explanation": "普羅民遮城建於一六五〇年代，後來在原址上改建成今日的赤崁樓。",
+  "fun_fact": "赤崁樓下的九座御龜碑，是清代乾隆皇帝為平定民變所立。"
+ },
+ {
+  "id": "history-TW-004",
+  "topic": "history",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "歷史",
+  "region": "台灣",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "荷蘭時代統治台灣、經營大員商館的，是哪一個組織？",
+  "options": [
+   "英國東印度公司",
+   "葡萄牙皇家商會",
+   "西班牙東印度公司",
+   "荷蘭東印度公司"
+  ],
+  "answer": 3,
+  "explanation": "一六二四到一六六二年的台灣，是由荷蘭聯合東印度公司（VOC）代表尼德蘭共和國經營的貿易據點。",
+  "fun_fact": "VOC 是世界最早發行股票的股份公司之一。"
+ },
+ {
+  "id": "history-TW-005",
+  "topic": "history",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "歷史",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1661 年鄭成功船隊趁漲潮通過哪個水道，開進台江內海？",
+  "options": [
+   "鹿耳門",
+   "安平港",
+   "打狗港",
+   "笨港口"
+  ],
+  "answer": 0,
+  "explanation": "鄭軍避開荷蘭砲台，趁大潮由鹿耳門水道進入台江內海，再由禾寮港登陸。",
+  "fun_fact": "鹿耳門因此有「台灣之門」的稱號。"
+ },
+ {
+  "id": "history-TW-006",
+  "topic": "history",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "歷史",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "建議鄭經蓋孔廟、設學校，替台灣打下教育基礎的明鄭重臣是？",
+  "options": [
+   "馮錫範",
+   "陳永華",
+   "劉國軒",
+   "沈光文"
+  ],
+  "answer": 1,
+  "explanation": "陳永華主張先建聖廟、立學校以培養人才，一六六五年台南孔子廟因此落成。",
+  "fun_fact": "民間傳說中的天地會「陳近南」，常被附會成陳永華。"
+ },
+ {
+  "id": "history-TW-007",
+  "topic": "history",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "歷史",
+  "region": "台灣",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1664 年鄭經把父親所設的「東都」改名為什麼？",
+  "options": [
+   "東瀛",
+   "明京",
+   "東寧",
+   "承天"
+  ],
+  "answer": 2,
+  "explanation": "鄭經重劃行政區，把東都改稱東寧，並將天興、萬年兩縣升格為州。",
+  "fun_fact": "因此明鄭政權也常被稱作「東寧王國」。"
+ },
+ {
+  "id": "history-TW-008",
+  "topic": "history",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "歷史",
+  "region": "台灣",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "清代台灣三大民變中，1862 年在彰化起事、歷時最久的是？",
+  "options": [
+   "朱一貴事件",
+   "林爽文事件",
+   "郭懷一事件",
+   "戴潮春事件"
+  ],
+  "answer": 3,
+  "explanation": "戴潮春事件從一八六二年延燒到一八六五年，前後三年多，是清代台灣持續最久的民變。",
+  "fun_fact": "戴潮春原本是協助官府維持地方治安的地方頭人。"
+ },
+ {
+  "id": "history-TW-009",
+  "topic": "history",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "歷史",
+  "region": "台灣",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1875 年清朝「開山撫番」時，總兵吳光亮開闢的中路古道是？",
+  "options": [
+   "八通關古道",
+   "淡蘭古道",
+   "浸水營古道",
+   "蘇花古道"
+  ],
+  "answer": 0,
+  "explanation": "吳光亮率兵自竹山林圯埔向東開路，翻越中央山脈抵達璞石閣（今玉里），即八通關古道。",
+  "fun_fact": "日治時期另闢的八通關越嶺道，路線幾乎與清代古道完全不重疊。"
+ },
+ {
+  "id": "history-TW-010",
+  "topic": "history",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "歷史",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "日治時期的第一任台灣總督是誰？",
+  "options": [
+   "乃木希典",
+   "樺山資紀",
+   "兒玉源太郎",
+   "明石元二郎"
+  ],
+  "answer": 1,
+  "explanation": "海軍大將樺山資紀於一八九五年五月就任首任台灣總督，任期約一年。",
+  "fun_fact": "他早在一八七三年就曾來台調查，替日本出兵台灣預作準備。"
+ },
+ {
+  "id": "history-TW-011",
+  "topic": "history",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "歷史",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1921 年起由林獻堂等人發起、向日本帝國議會請願的運動是？",
+  "options": [
+   "六三法撤廢運動",
+   "台灣農民組合運動",
+   "台灣議會設置請願運動",
+   "台灣地方自治聯盟運動"
+  ],
+  "answer": 2,
+  "explanation": "台灣議會設置請願運動自一九二一年到一九三四年共提出十五回請願，要求設置民選的台灣議會。",
+  "fun_fact": "十五次請願全被以「不採擇」或「審議未了」擱置。"
+ },
+ {
+  "id": "history-TW-012",
+  "topic": "history",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "歷史",
+  "region": "台灣",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1945 年 10 月 25 日的台灣省受降典禮，在台北哪棟建築舉行？",
+  "options": [
+   "台灣總督府",
+   "台北州廳",
+   "台北賓館",
+   "台北公會堂"
+  ],
+  "answer": 3,
+  "explanation": "中國戰區台灣省受降典禮在台北公會堂舉行，該建築戰後改名為中山堂。",
+  "fun_fact": "舉行典禮的大廳因此被命名為「光復廳」。"
+ },
+ {
+  "id": "history-TW-013",
+  "topic": "history",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "歷史",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1949 年幣制改革，舊台幣多少元才能換到新台幣一元？",
+  "options": [
+   "四萬元",
+   "四千元",
+   "四百元",
+   "四十萬元"
+  ],
+  "answer": 0,
+  "explanation": "一九四九年六月發行新台幣，規定舊台幣四萬元折合新台幣一元，用以收拾惡性通膨。",
+  "fun_fact": "「四萬換一塊」因此成為長輩口中的時代記憶。"
+ },
+ {
+  "id": "history-TW-014",
+  "topic": "history",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "歷史",
+  "region": "台灣",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "台灣把國民義務教育從六年延長為九年，是哪一年開始實施？",
+  "options": [
+   "1958 年",
+   "1968 年",
+   "1978 年",
+   "1988 年"
+  ],
+  "answer": 1,
+  "explanation": "一九六八年起實施九年國民義務教育，國民學校改稱國民小學，並增設國民中學。",
+  "fun_fact": "政策上路後，初中入學考試也隨之走入歷史。"
+ },
+ {
+  "id": "human-TW-001",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "台灣原住民族中，人口最多的是哪一族？",
+  "options": [
+   "泰雅族",
+   "排灣族",
+   "布農族",
+   "阿美族"
+  ],
+  "answer": 3,
+  "explanation": "阿美族主要分布在花東縱谷與海岸山脈一帶，是台灣原住民族中人數最多的族群。",
+  "fun_fact": "阿美族傳統上偏向母系社會，家族事務多由女性繼承。"
+ },
+ {
+  "id": "human-TW-002",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "鄒族的「庫巴」（kuba）是什麼樣的建築？",
+  "options": [
+   "男子集會訓練的會所",
+   "族人共用的小米穀倉",
+   "頭目家族居住的宅邸",
+   "安放祖先遺骨的家屋"
+  ],
+  "answer": 0,
+  "explanation": "庫巴是高架干欄式的男子會所，是鄒族學習文化知識與狩獵、戰鬥訓練的場所，重要祭儀也在此舉行。",
+  "fun_fact": "庫巴旁通常種有一棵神聖的赤榕，祭典時族人會圍繞它進行儀式。"
+ },
+ {
+  "id": "human-TW-003",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "排灣族五年祭（Maljeveq）最著名的儀式是什麼？",
+  "options": [
+   "射日",
+   "賽跑",
+   "刺球",
+   "盪鞦韆"
+  ],
+  "answer": 2,
+  "explanation": "族人手持十幾公尺長的竹竿，爭相刺向祭司拋向空中的藤球，用以祈福並趨吉避凶。",
+  "fun_fact": "每顆祭球代表不同涵義，從象徵邪靈的第一顆，到象徵健康、財富與豐收的後續各球。"
+ },
+ {
+  "id": "human-TW-004",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "魯凱族視為聖花、常配戴在頭飾上的是哪一種花？",
+  "options": [
+   "山櫻花",
+   "朱槿花",
+   "百合花",
+   "野薑花"
+  ],
+  "answer": 2,
+  "explanation": "百合花在魯凱族文化中象徵貞潔、勇氣與榮譽，男子要有狩獵功績、女子要品行端正才能配戴。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-TW-005",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "邵族的傳統居住地位在哪一座湖泊周邊？",
+  "options": [
+   "鯉魚潭",
+   "日月潭",
+   "龍鑾潭",
+   "澄清湖"
+  ],
+  "answer": 1,
+  "explanation": "邵族世居南投日月潭一帶，主要聚落在魚池鄉伊達邵。",
+  "fun_fact": "邵族婦女以木杵敲擊石板演奏的「杵音」，原本是用來召喚山上打獵的男人回部落。"
+ },
+ {
+  "id": "human-TW-006",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "噶瑪蘭族原本的居住地是哪一片平原？",
+  "options": [
+   "蘭陽平原",
+   "嘉南平原",
+   "屏東平原",
+   "彰化平原"
+  ],
+  "answer": 0,
+  "explanation": "噶瑪蘭族原居宜蘭的蘭陽平原，十八世紀末後被迫南遷到花蓮、台東沿海一帶。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-TW-007",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "台灣原住民族的語言屬於哪一個語系？",
+  "options": [
+   "南島語系",
+   "漢藏語系",
+   "阿爾泰語系",
+   "南亞語系"
+  ],
+  "answer": 0,
+  "explanation": "台灣原住民族語言全屬南島語系，且保留了該語系中最分歧的語言分支。",
+  "fun_fact": "不少語言學者認為台灣是南島語族向太平洋與印度洋擴散的起點。"
+ },
+ {
+  "id": "human-TW-008",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "台語裡說的「牽手」，指的是誰？",
+  "options": [
+   "自己的太太",
+   "自己的母親",
+   "自己的姊姊",
+   "自己的女兒"
+  ],
+  "answer": 0,
+  "explanation": "台語「牽手」（khan-tshiú）是妻子、太太的意思。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-TW-009",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "台語「鬥跤手」的意思最接近下列哪一個？",
+  "options": [
+   "吵架",
+   "散步",
+   "偷懶",
+   "幫忙"
+  ],
+  "answer": 3,
+  "explanation": "「鬥跤手」（tàu-kha-tshiú）是幫忙、幫人做事或解決困難的意思。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-TW-010",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "台語裡的「歐巴桑」「多桑」是從哪種語言借來的？",
+  "options": [
+   "日語",
+   "英語",
+   "荷蘭語",
+   "西班牙語"
+  ],
+  "answer": 0,
+  "explanation": "台語在日治時期吸收了大量日語借詞，「歐巴桑」「多桑」都是其中的例子。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-TW-011",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "客語裡向人道謝時說的「承蒙你」，意思是？",
+  "options": [
+   "對不起",
+   "請進來",
+   "恭喜你",
+   "謝謝你"
+  ],
+  "answer": 3,
+  "explanation": "「承蒙你」是客語中受人幫助時表達感謝的客套話。",
+  "fun_fact": "這句話主要是海陸腔的講法，四縣腔道謝多說「恁仔細」。"
+ },
+ {
+  "id": "human-TW-012",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "台灣客語的兩大優勢腔是哪兩種？",
+  "options": [
+   "四縣腔與海陸腔",
+   "大埔腔與饒平腔",
+   "詔安腔與永定腔",
+   "長樂腔與詔安腔"
+  ],
+  "answer": 0,
+  "explanation": "台灣客語以四縣腔與海陸腔使用人口最多，公共場合的客語播音多採四縣腔。",
+  "fun_fact": "客語各腔調常被合稱為「四海永樂大平安」，各取一字而成。"
+ },
+ {
+  "id": "human-TW-013",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "屏東東港的迎王平安祭典多久舉行一次？",
+  "options": [
+   "每年一次",
+   "五年一次",
+   "十年一次",
+   "三年一次"
+  ],
+  "answer": 3,
+  "explanation": "東港迎王平安祭典為「三年一科」，祭典尾聲的燒王船最為震撼。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-TW-014",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "大甲媽祖遶境進香的折返點是哪一間廟？",
+  "options": [
+   "北港朝天宮",
+   "新港奉天宮",
+   "鹿港天后宮",
+   "彰化南瑤宮"
+  ],
+  "answer": 1,
+  "explanation": "大甲鎮瀾宮媽祖九天八夜的遶境，南下的終點是嘉義新港奉天宮，再折返大甲。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-TW-015",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "白沙屯媽祖進香最特別的地方是什麼？",
+  "options": [
+   "路線由神轎臨時決定",
+   "全程都在夜間行進",
+   "每年都走同一條路",
+   "只走高速公路"
+  ],
+  "answer": 0,
+  "explanation": "白沙屯媽祖進香沒有事先規劃的固定路線，行進方向由神轎當下決定；又因鑾轎頂覆蓋粉紅色帆布、行進速度極快，信眾暱稱為「粉紅超跑」。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-TW-016",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "台南著名的「做十六歲」成年禮，通常在哪個節日舉行？",
+  "options": [
+   "端午節",
+   "七夕（七娘媽生）",
+   "中元節",
+   "冬至"
+  ],
+  "answer": 1,
+  "explanation": "府城在農曆七月七日七娘媽生日這天為滿十六歲的青少年舉行成年禮，一生只做一次。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-TW-017",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "民俗活動「搶孤」中最著名的頭城搶孤，在哪一個縣市？",
+  "options": [
+   "新竹縣",
+   "雲林縣",
+   "宜蘭縣",
+   "台東縣"
+  ],
+  "answer": 2,
+  "explanation": "頭城搶孤在宜蘭縣頭城鎮舉行，參賽者要攀上塗滿牛油的孤棚搶奪祭品與順風旗。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-TW-018",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "台東元宵節「炮炸寒單爺」裡的寒單爺，被視為哪一類神明？",
+  "options": [
+   "醫藥神",
+   "武財神",
+   "海神",
+   "土地神"
+  ],
+  "answer": 1,
+  "explanation": "寒單爺一般被認為是趙公明，民間視為武財神；相傳他怕冷，所以信眾投擲鞭炮為他驅寒。",
+  "fun_fact": "肉身寒單爺只穿短褲、手持榕樹葉，站在四人扛的椅轎上接受炮炸。"
+ },
+ {
+  "id": "human-TW-019",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "三山國王常被視為台灣哪一個族群帶來的守護神？",
+  "options": [
+   "泉州人",
+   "客家人",
+   "漳州人",
+   "福州人"
+  ],
+  "answer": 1,
+  "explanation": "三山國王源自廣東潮州一帶的巾山、明山、獨山三位山神，隨潮州移民傳入台灣。因早期潮州移民中客家人比例高，民間常把它當成客家人的守護神；但學者指出宜蘭等地的三山國王廟多由福佬人興建，並非客家專屬信仰。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-TW-020",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "有「全臺首學」之稱的是下列哪一座建築？",
+  "options": [
+   "彰化孔廟",
+   "臺北孔廟",
+   "臺南孔廟",
+   "高雄孔廟"
+  ],
+  "answer": 2,
+  "explanation": "臺南孔廟創建於明鄭時期，清領初期曾是全台童生唯一的入學之處，故有「全臺首學」之譽。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-TW-021",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "民間信仰中的保生大帝，主要掌管什麼？",
+  "options": [
+   "科舉功名",
+   "航海平安",
+   "醫藥治病",
+   "農作豐收"
+  ],
+  "answer": 2,
+  "explanation": "保生大帝本名吳夲，是北宋泉州同安的名醫，過世後被奉為醫神，俗稱「大道公」。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-TW-022",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "被譽為「台灣交趾陶第一人」的匠師是誰？",
+  "options": [
+   "洪坤福",
+   "葉王",
+   "林添木",
+   "陳三火"
+  ],
+  "answer": 1,
+  "explanation": "葉王是嘉義人，也是第一位台灣本地出身的交趾陶藝師，作品被讚為「台灣絕技」。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-TW-023",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "廟宇屋脊上色彩鮮豔的「剪黏」，主要用什麼材料拼貼？",
+  "options": [
+   "彩色瓷片",
+   "彩色玻璃",
+   "貝殼碎片",
+   "琉璃磚塊"
+  ],
+  "answer": 0,
+  "explanation": "剪黏又稱剪瓷雕，工匠把彩色瓷碗瓷盤剪敲成小片，再拼貼成人物花鳥，耐曬耐鹹風不褪色。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-TW-024",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "傳統三合院裡，正身兩側的廂房通常稱為什麼？",
+  "options": [
+   "門樓",
+   "燕尾",
+   "護龍",
+   "埕斗"
+  ],
+  "answer": 2,
+  "explanation": "三合院由正身與兩側的護龍（廂房）組成，因房屋分立三個方向而得名。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-TW-025",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "台北大稻埕的霞海城隍廟，以求姻緣拜哪位神明最為出名？",
+  "options": [
+   "註生娘娘",
+   "月下老人",
+   "文昌帝君",
+   "關聖帝君"
+  ],
+  "answer": 1,
+  "explanation": "霞海城隍廟的月下老人香火鼎盛，是許多人求姻緣必訪之處。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-TW-026",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "布袋戲在台灣還常被稱為什麼戲？",
+  "options": [
+   "皮影戲",
+   "傀儡戲",
+   "掌中戲",
+   "車鼓戲"
+  ],
+  "answer": 2,
+  "explanation": "因為演師是用雙手掌控戲偶演出，所以布袋戲又叫掌中戲。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-TW-027",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "恆春民謠大師陳達，最著名的伴奏樂器是什麼？",
+  "options": [
+   "二胡",
+   "嗩吶",
+   "洞簫",
+   "月琴"
+  ],
+  "answer": 3,
+  "explanation": "陳達彈月琴自彈自唱，把恆春民謠的說唱傳統帶進當代，是台灣民謠採集的代表人物。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-TW-028",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "台語歌〈望春風〉的作曲者是誰？",
+  "options": [
+   "李臨秋",
+   "周添旺",
+   "鄧雨賢",
+   "楊三郎"
+  ],
+  "answer": 2,
+  "explanation": "〈望春風〉1933年問世，由鄧雨賢譜曲，是傳唱最久的台語歌謠之一。",
+  "fun_fact": "鄧雨賢也寫了〈雨夜花〉〈四季紅〉〈月夜愁〉，合稱「四月望雨」。"
+ },
+ {
+  "id": "human-TW-029",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "被尊為「台灣新文學之父」的作家是誰？",
+  "options": [
+   "楊逵",
+   "鍾理和",
+   "龍瑛宗",
+   "賴和"
+  ],
+  "answer": 3,
+  "explanation": "彰化醫師賴和以白話文寫作、提攜後進，被譽為台灣新文學之父，也有「台灣的魯迅」之稱。",
+  "fun_fact": "他行醫仁厚，鄉親叫他「彰化媽祖」。"
+ },
+ {
+  "id": "human-TW-030",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "小說《亞細亞的孤兒》的作者是誰？",
+  "options": [
+   "張文環",
+   "吳濁流",
+   "呂赫若",
+   "王禎和"
+  ],
+  "answer": 1,
+  "explanation": "新竹客家作家吳濁流以主角胡太明的遭遇，寫出殖民地知識分子的身分困境。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-TW-031",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "侯孝賢的電影《悲情城市》在哪個影展奪下最高獎？",
+  "options": [
+   "坎城影展",
+   "威尼斯影展",
+   "柏林影展",
+   "東京影展"
+  ],
+  "answer": 1,
+  "explanation": "《悲情城市》1989年在威尼斯影展獲得金獅獎，是首部在世界三大影展奪下首獎的台灣電影。",
+  "fun_fact": "電影帶動了拍攝場景九份的再一次繁榮。"
+ },
+ {
+  "id": "human-TW-032",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "電影《海角七號》的故事發生在哪一個小鎮？",
+  "options": [
+   "屏東恆春",
+   "台東成功",
+   "花蓮玉里",
+   "雲林口湖"
+  ],
+  "answer": 0,
+  "explanation": "魏德聖執導的《海角七號》以台灣最南端的屏東恆春鎮為背景。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-TW-033",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "台南「擔仔麵」名稱中的「擔仔」，在台語裡指什麼？",
+  "options": [
+   "一種大陶碗",
+   "路邊的攤位",
+   "挑東西的扁擔",
+   "小份量的意思"
+  ],
+  "answer": 2,
+  "explanation": "「擔仔」（tàⁿ-á）就是挑肩擔的意思，早年小販挑著扁擔沿街叫賣而得名。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-TW-034",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "刈包在台灣民間的俗稱是什麼？",
+  "options": [
+   "龍含珠",
+   "貓吞魚",
+   "獅咬球",
+   "虎咬豬"
+  ],
+  "answer": 3,
+  "explanation": "刈包形狀像老虎張口咬住一塊滷豬肉，因此台語俗稱「虎咬豬」。",
+  "fun_fact": "刈包也是尾牙宴常見的菜色，因外型像鼓鼓的錢包，象徵來年發財。"
+ },
+ {
+  "id": "human-TW-035",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "清涼消暑的「愛玉」，名字是怎麼來的？",
+  "options": [
+   "一位清代官員的封號",
+   "原住民族語的音譯",
+   "日本人取的商品名",
+   "賣愛玉的商人之女的名字"
+  ],
+  "answer": 3,
+  "explanation": "連橫《臺灣通史》記載，清道光年間有商人在嘉義山區發現此物，由名叫愛玉的女兒販售而得名。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-TW-036",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "傳統鳳梨酥的內餡，除了鳳梨還常混入什麼？",
+  "options": [
+   "南瓜",
+   "冬瓜",
+   "山藥",
+   "蘋果"
+  ],
+  "answer": 1,
+  "explanation": "傳統鳳梨酥多用冬瓜醬混合鳳梨製成，口感較不酸也更軟綿。",
+  "fun_fact": "純土鳳梨製作的則酸度較高，另稱土鳳梨酥。"
+ },
+ {
+  "id": "human-TW-037",
+  "topic": "human",
+  "unit": "TW",
+  "unit_name": "台灣",
+  "category": "人文",
+  "region": "台灣",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "擂茶是台灣哪一個族群的傳統飲食？",
+  "options": [
+   "閩南人",
+   "原住民族",
+   "荷蘭移民",
+   "客家人"
+  ],
+  "answer": 3,
+  "explanation": "擂茶是客家人的傳統茶食，把茶葉、芝麻、花生等材料放進擂缽研磨後沖泡，新竹北埔最為知名。",
+  "fun_fact": ""
+ }
+]

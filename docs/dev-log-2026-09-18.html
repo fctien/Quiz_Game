@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>脈衝 PULSE 開發紀錄 2026-09-18</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --surface: #fff; --border: #e3e6ea; --text: #1a1d21;
+    --muted: #656d76; --accent: #2563eb; --ok: #16a34a; --bad: #dc2626;
+    --warn: #b45309; --warn-bg: #fef3c7; --code-bg: #f1f3f5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1115; --surface: #171a1f; --border: #2b3038; --text: #e6e8eb;
+      --muted: #9aa4b0; --accent: #60a5fa; --ok: #4ade80; --bad: #f87171;
+      --warn: #fbbf24; --warn-bg: #3a2a06; --code-bg: #1e2229;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 32px 20px 64px; background: var(--bg); color: var(--text);
+    font-family: system-ui, -apple-system, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    line-height: 1.7; font-size: 15px;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; }
+  header { border-bottom: 2px solid var(--accent); padding-bottom: 16px; margin-bottom: 28px; }
+  h1 { font-size: 25px; margin: 0 0 6px; }
+  .meta { color: var(--muted); font-size: 13px; }
+  .meta code { background: var(--code-bg); padding: 2px 6px; border-radius: 4px; font-size: 12px; }
+  h2 { font-size: 18px; margin: 36px 0 12px; padding-left: 11px; border-left: 4px solid var(--accent); }
+  h3 { font-size: 15px; margin: 22px 0 8px; }
+  section { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 22px; margin-bottom: 18px; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+  th, td { border: 1px solid var(--border); padding: 8px 11px; text-align: left; vertical-align: top; }
+  th { background: var(--code-bg); font-weight: 600; }
+  code { background: var(--code-bg); padding: 2px 5px; border-radius: 4px; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 13px; }
+  pre { background: var(--code-bg); padding: 12px 14px; border-radius: 8px; overflow-x: auto; font-size: 13px; line-height: 1.5; }
+  pre code { background: none; padding: 0; }
+  ul, ol { padding-left: 22px; }
+  li { margin: 5px 0; }
+  .pill { display: inline-block; border-radius: 999px; padding: 2px 11px; font-size: 12px; font-weight: 600; }
+  .pill.ok { background: rgba(22,163,74,.14); color: var(--ok); }
+  .pill.bad { background: rgba(220,38,38,.14); color: var(--bad); }
+  .bug { border-left: 4px solid var(--bad); padding-left: 14px; margin: 18px 0; }
+  .bug h3 { margin-top: 0; }
+  .bug dl { margin: 8px 0 0; display: grid; grid-template-columns: max-content 1fr; gap: 5px 14px; font-size: 14px; }
+  .bug dt { color: var(--muted); }
+  .bug dd { margin: 0; }
+  .note { background: var(--warn-bg); color: var(--warn); border-radius: 8px; padding: 11px 14px; font-size: 14px; margin: 14px 0; }
+  .muted { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>脈衝 PULSE 開發紀錄 &mdash; 2026-09-18</h1>
+  <div class="meta">
+    本次主題：<strong>兩件「怕忘記」的事 &mdash; 忘記管理碼、忘記匯出成績</strong><br>
+    起點 commit <code>a2a18f9</code>（15:46）&nbsp;·&nbsp;
+    工作區<strong>同時有另一個 session 的未提交改動</strong>（中斷本場／換題目功能）&nbsp;·&nbsp;
+    本機伺服器 <code>http://127.0.0.1:5000</code>
+  </div>
+</header>
+
+<section>
+<h2>1. 需求與範圍</h2>
+<p>
+兩個問題，性質不同：
+</p>
+<ul>
+  <li><strong>管理碼忘了怎麼辦？</strong>六碼管理碼由 <code>secrets.token_hex(3)</code> 產生，
+      <strong>開班時只顯示一次</strong>，之後開考坊存分、查看與匯出累積積分都要它。</li>
+  <li><strong>成績怕忘記存。</strong>Render 免費方案掛不了硬碟，重新部署或休眠重啟後
+      <code>leaderboard.db</code> 歸零 &mdash; 也就是說「存入班級積分」在雲端只是暫存，
+      真正安全的是把 CSV 匯出到老師自己的裝置，<strong>而那一步原本完全靠人記得按</strong>。</li>
+</ul>
+<p>
+另外釐清了「固定入口代碼」：它是老師自己取的，<strong>不是密碼</strong>，忘了看印出來的入口卡即可，
+真找不到就重取一組重印，不影響任何資料。只有管理碼需要救援機制。
+</p>
+</section>
+
+<section>
+<h2>2. 管理碼：三道保險</h2>
+
+<h3>2.1 萬用鑰匙 <code>MASTER_CODE</code>（核心）</h3>
+<p>
+環境變數，至少六碼（太短視同沒設，免得不小心設成空字串就門戶洞開）。
+加在 <code>classroom.check()</code> 裡，所以<strong>開考坊、查積分、匯出 CSV 全部自動生效</strong>，
+<code>multiplayer.py</code> 一行都不用改 &mdash; 這點在當下很重要（見第 4 節）。
+</p>
+<table>
+<tr><th>環境</th><th>設定方式</th></tr>
+<tr><td>本機 Windows</td><td><code>set MASTER_CODE=...</code> 後再啟動，或寫進 <code>啟動-Windows.bat</code></td></tr>
+<tr><td>Render</td><td>服務頁面 &rarr; Environment &rarr; 新增 <code>MASTER_CODE</code></td></tr>
+</table>
+
+<h3>2.2 管理碼自動落檔</h3>
+<p>
+<code>classroom.create()</code> 產生管理碼的同時，附一行到 <code>quiz_game/班級管理碼.txt</code>
+（時間、班級代碼、管理碼），已加進 <code>.gitignore</code>。
+寫檔失敗（雲端唯讀）一律吞掉 &mdash; <strong>備份不能害開班失敗</strong>。
+</p>
+
+<h3>2.3 <code>/class</code> 的「忘記管理碼？」</h3>
+<p>
+新端點 <code>POST /api/class/recover</code>：輸入萬用鑰匙，列出資料庫裡所有班級與其管理碼。
+沒設 <code>MASTER_CODE</code> 時回 404 並說明原因，2.1 與 2.3 自動關閉，行為與原本完全相同。
+</p>
+
+<h3>2.4 順手做的：<code>create()</code> 支援自訂管理碼</h3>
+<p>
+<code>create(code, admin=None)</code>，留空才隨機。<strong>但還沒接到主持台的欄位上</strong> &mdash;
+接線需要改 <code>multiplayer.py</code> 第 454 行，當時該檔被另一個 session 佔用（見第 4 節）。
+</p>
+</section>
+
+<section>
+<h2>3. 成績備份：新增 <code>static/backup.js</code></h2>
+<p>
+放榜的瞬間自動做三件事，全部在主持台的瀏覽器裡完成，<strong>與伺服器無關</strong>：
+</p>
+<table>
+<tr><th>層</th><th>做什麼</th><th>擋掉什麼情況</th></tr>
+<tr><td>1</td><td>自動下載 CSV 到主持台這台電腦</td><td>忘記按「匯出本場成績」</td></tr>
+<tr><td>2</td><td>存進 localStorage，保留最近 20 場，可隨時補匯出</td><td>自動下載被瀏覽器擋掉；考坊已關；Render 重新部署</td></tr>
+<tr><td>3</td><td>還有場次沒匯出時，關閉考坊與關分頁都先確認</td><td>當場關掉就再也找不回來</td></tr>
+</table>
+<p>
+CSV 欄位刻意與伺服器的 <code>/api/mp/export</code> <strong>完全一致</strong>
+（名次／學號／姓名／組別／分數／答對題數／總題數／課堂加分，含 BOM），兩邊匯出的檔案可以直接互換。
+</p>
+<p>
+「這一場」用指紋辨識：<code>房號 + 班級 + 主題 + 題數 + 每個人的分數</code>。
+重新整理放榜頁不會重複存，「再來一局」分數不同會算成新的一場。
+</p>
+<div class="note">
+這層備份綁在「這台電腦的這個瀏覽器」。換電腦或清瀏覽器資料就沒了 &mdash;
+它是保險，不是主檔，正式成績仍以匯出的 CSV 為準。
+</div>
+<p class="muted">
+localStorage 的每一次讀寫都包在 try/catch 裡：無痕視窗、關閉 cookie、空間滿都會丟例外，
+一律降級成「顯示警告、請老師手動匯出」，絕不讓備份機制把上課弄壞。
+</p>
+</section>
+
+<section>
+<h2>4. 兩個 session 同時改同一個專案</h2>
+<p>
+動手前先查工作區，發現另一個 session 正在做「中斷本場／不關考坊換題目」，且<strong>尚未提交</strong>：
+<code>multiplayer.py</code>（+53 行，新增 <code>/api/mp/abort</code>、<code>/api/mp/reconfig</code>）、
+<code>static/host.html</code>（+84 行）、<code>docs/</code>、<code>standalone.html</code>。
+</p>
+<div class="note">
+<code>git status</code> 顯示 48 個檔案全部 M（連 PNG 都是）&mdash;
+那是 <strong>掛載造成的權限模式變化</strong>（100644 &rarr; 100755），不是真的改動。
+真正有內容差異的要用 <code>git diff --numstat</code> 過濾才看得出來。
+</div>
+<p>
+真正的危險不是「同時寫同一行」，而是<strong>整檔重寫</strong>：
+對方若持有舊版 <code>multiplayer.py</code>，存檔就會把新增的東西蓋掉。
+<code>standalone.html</code> 更明顯 &mdash; 誰最後跑 <code>build_standalone.py</code>，誰的版本就是最終版。
+</p>
+<p>採取的策略：</p>
+<ol>
+  <li><strong>先只改乾淨的檔</strong>：<code>classroom.py</code>、<code>app.py</code>、
+      <code>static/class.html</code>、<code>README.md</code>、<code>.gitignore</code></li>
+  <li>萬用鑰匙刻意加在 <code>classroom.check()</code>，讓 <code>multiplayer.py</code> 不用改也生效</li>
+  <li>備份邏輯<strong>全部寫進新檔 <code>static/backup.js</code></strong>，
+      <code>host.html</code> 只動 3 行：一行 <code>&lt;script src&gt;</code>、關閉按鈕包一層確認、
+      <code>final()</code> 結尾呼叫 <code>PulseBackup.onFinal(v)</code></li>
+  <li>動 <code>host.html</code> 前先備份到 <code>_備份_20260918/</code>（已 gitignore）</li>
+  <li>全程不碰 <code>multiplayer.py</code>、<code>standalone.html</code>、<code>style.css</code>、<code>sw.js</code></li>
+</ol>
+<p class="muted">
+另外提醒未來的自己：這段期間<strong>不能用 <code>git checkout</code> 或 <code>git stash</code></strong>，
+會把對方沒提交的半成品整個清掉。
+</p>
+</section>
+
+<section>
+<h2>5. 過程中的問題</h2>
+
+<div class="bug">
+<h3>5.1 備份綁在畫面掛載點上 &mdash; 找不到位置就整個不備份</h3>
+<dl>
+  <dt>症狀</dt><dd>單元測試「自動下載被觸發」失敗，但「存進去一場」是過的</dd>
+  <dt>原因</dt><dd><code>onFinal()</code> 開頭是
+      <code>var anchor = querySelector('.joinacts') || getElementById('app'); if (!anchor) return;</code>
+      &mdash; 下載寫在這行<strong>後面</strong>。放榜頁版型一改、class 名一換，備份就靜靜地整個跳過</dd>
+  <dt>修法</dt><dd>把「備份」和「畫面」徹底拆開：先 record &rarr; 先 download &rarr; 產生狀態文字，
+      最後才找掛載點；找不到就只是沒有那塊 UI，成績照樣已經存好</dd>
+  <dt>教訓</dt><dd>保險機制不可以依賴它要顯示的那塊畫面</dd>
+</dl>
+</div>
+
+<div class="bug">
+<h3>5.2 測試時碰到了本機的 leaderboard.db</h3>
+<dl>
+  <dt>症狀</dt><dd><code>import app</code> 測端點時噴 <code>sqlite3.OperationalError: disk I/O error</code></dd>
+  <dt>原因</dt><dd>兩件事疊在一起：一是 <code>app.py</code> 在 import 時就會呼叫
+      <code>leaderboard.init()</code> 與 <code>classroom.init()</code>，
+      直接開了專案裡的真實 DB；二是這次的掛載檔案系統不支援 SQLite 的鎖</dd>
+  <dt>後果</dt><dd>DB 內容沒變（本來就是空的，integrity_check 通過），但留下一個
+      <code>leaderboard.db-journal</code>。下次啟動程式時 SQLite 會自己回滾並清掉</dd>
+  <dt>教訓</dt><dd>測 <code>app.py</code> 一律複製到暫存資料夾再跑，不要在專案資料夾原地 import</dd>
+</dl>
+</div>
+
+<div class="bug">
+<h3>5.3 <code>_private()</code> 不認得校園實體 IP</h3>
+<dl>
+  <dt>發現</dt><dd>討論課堂區網時查到的，<strong>本次未修</strong></dd>
+  <dt>內容</dt><dd><code>multiplayer.py</code> 的 <code>_private()</code> 只認
+      <code>192.168.</code> / <code>10.</code> / <code>172.16~31.</code>。
+      學校配的是 <code>140.124.x.x</code> 這種 TANet 實體 IP 時，
+      <code>lan_ips()</code> 會把其他網卡全濾掉，主持台那顆
+      <strong>「手機連不到？換一個網址」按鈕就不會出現</strong>，現場等於沒有備援網址可切</dd>
+  <dt>修法</dt><dd>改成「非 127.x、非 169.254.x 的都算候選」。要動 <code>multiplayer.py</code>，留待下次</dd>
+</dl>
+</div>
+</section>
+
+<section>
+<h2>6. 驗證</h2>
+<table>
+<tr><th>項目</th><th>結果</th></tr>
+<tr><td><code>classroom</code> 單元檢查（自訂／隨機管理碼、大小寫、中文不噴 500、萬用鑰匙、recover、鑰匙太短、沒設鑰匙）</td>
+    <td><span class="pill ok">13 / 13</span></td></tr>
+<tr><td>HTTP 端點檢查（recover 200/403/404、萬用鑰匙查積分與匯出 CSV、錯的碼 403）</td>
+    <td><span class="pill ok">8 / 8</span></td></tr>
+<tr><td><code>backup.js</code> 邏輯測試（node + 替身：CSV 欄位、BOM、逗號引號跳脫、指紋去重、20 場上限、下載被擋、localStorage 壞掉）</td>
+    <td><span class="pill ok">18 / 18</span></td></tr>
+<tr><td><code>backup.js</code> DOM 測試（真實 Chromium：自動下載檔名與內容、區塊插入位置、歷史面板開關與補下載、重載後右下角入口、無痕情境）</td>
+    <td><span class="pill ok">19 / 19</span></td></tr>
+<tr><td><code>python -m ast</code> / <code>node --check</code></td>
+    <td><span class="pill ok">全過</span></td></tr>
+</table>
+<p class="muted">
+DOM 測試是把 <code>backup.js</code> 放進一份最小 harness.html，用 Playwright 開真實 Chromium 跑的，
+包含攔截下載檔案並逐行比對 CSV 內容。5.1 那個缺陷就是單元測試抓出來的。
+</p>
+</section>
+
+<section>
+<h2>7. 順帶釐清的：課堂網路</h2>
+<p>
+上課實測過「有的同學連得上、有的連不上」。這個結果本身就排除了 AP 全面隔離（那樣會全部連不上），
+差異出在學生端。依發生率排序：<strong>手機偷偷走 4G</strong>（iOS 的 Wi-Fi 輔助預設開啟）、
+連到不同 SSID（不同 VLAN）、跨 AP 不通、VPN 或私人 DNS。
+現場最快的驗證是請連不上的人<strong>把行動網路整個關掉再試一次</strong>。
+</p>
+<div class="note">
+關鍵限制：<strong>不能一半人連區網、一半人連雲端。</strong>
+兩台是獨立的伺服器，房號、考坊、積分都不共用 &mdash;
+只要有一個人連不上，唯一的處理方式就是整班切雲端重開一場。
+</div>
+<p>
+結論：<strong>雲端版當主力、區網當備援</strong>。區網在校園 Wi-Fi 上變數太多，
+而零星失敗在課堂上最難處理。
+</p>
+</section>
+
+<section>
+<h2>8. 本次改動的檔案</h2>
+<table>
+<tr><th>檔案</th><th>異動</th></tr>
+<tr><td><code>static/backup.js</code></td><td><span class="pill ok">新增</span> 257 行</td></tr>
+<tr><td><code>docs/dev-log-2026-09-18.html</code></td><td><span class="pill ok">新增</span> 本檔</td></tr>
+<tr><td><code>classroom.py</code></td><td>+50 / &minus;4：<code>clean_admin</code>、<code>master_code</code>、<code>_log_admin</code>、<code>recover</code>；<code>create</code> 與 <code>check</code> 改寫</td></tr>
+<tr><td><code>app.py</code></td><td>+12：<code>/api/class/recover</code></td></tr>
+<tr><td><code>static/class.html</code></td><td>+31 / &minus;2：「忘記管理碼？」區塊</td></tr>
+<tr><td><code>static/host.html</code></td><td>+4 / &minus;1：載入 backup.js、關閉前確認、放榜掛備份</td></tr>
+<tr><td><code>README.md</code></td><td>+21：忘記管理碼、成績自動備份兩節</td></tr>
+<tr><td><code>.gitignore</code></td><td>+2：<code>班級管理碼.txt</code>、<code>_備份_*/</code></td></tr>
+</table>
+</section>
+
+<section>
+<h2>9. 尚未處理</h2>
+<ul>
+  <li><strong>還沒 commit。</strong>工作區同時有另一個 session 的未提交改動，
+      要等對方收工才能一起提交</li>
+  <li><strong><code>multiplayer.py</code> 第 454 行</strong>：
+      <code>classroom.create(class_code, b.get("admin_code", ""))</code>，
+      自訂管理碼才會真的生效</li>
+  <li><strong><code>_private()</code> 支援校園實體 IP</strong>（見 5.3）</li>
+  <li><strong><code>host.html</code> 管理碼欄位</strong>的提示文字（目前只寫「開班時顯示的六碼」）</li>
+  <li><strong><code>standalone.html</code> 要重跑 <code>build_standalone.py</code></strong>：
+      本次改了 <code>class.html</code>。注意該檔對方也動過</li>
+  <li><strong><code>DEPLOY-Render.md</code></strong> 補 <code>MASTER_CODE</code> 設定步驟 &mdash;
+      該檔有對方的未提交改動，沒動</li>
+  <li><strong>真正的持久化</strong>：目前四層保險都在「老師這台電腦」。
+      要讓雲端資料本身不掉，得外接免費 Postgres（Supabase／Neon）把
+      <code>classes</code> / <code>class_points</code> / <code>class_games</code> 搬過去。
+      附帶查到：Render 免費（Hobby）方案的 <strong>log 保留 7 天</strong>且可搜尋，
+      若把成績也印進 stdout，等於多一道 7 天內撈得回來的保險</li>
+  <li><strong>改過 <code>backup.js</code> 記得把 <code>host.html</code> 裡的
+      <code>backup.js?v=1</code> 版號加一</strong>，否則 Service Worker 會一直吃舊快取</li>
+</ul>
+</section>
+
+</div>
+</body>
+</html>

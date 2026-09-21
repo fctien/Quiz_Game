@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-title" content="脈衝 PULSE">
 <link rel="apple-touch-icon" href="/static/icons/icon-180.png">
 <link rel="icon" href="/static/icons/favicon.png" type="image/png">
-<link rel="stylesheet" href="/static/style.css?v=5.8">
+<link rel="stylesheet" href="/static/style.css?v=6.0">
 <script>
 /* 註冊 Service Worker：加到主畫面後可全螢幕開啟、載入更快 */
 if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
@@ -36,7 +36,6 @@ const LIVES = 3;
 const TIME_LIMIT = {choice: 15, order: 25};
 const SEAL = {python:'蟒', pytorch:'深', vba:'巨', geo:'輿', history:'史', human:'文', tech:'科', star:'星', fun:'奇', tt:'桌', news:'聞', mix:'雜'};
 const CAT_NAME = {python:'Python', pytorch:'Deep Learning', vba:'VBA', geo:'地理', history:'歷史', human:'人文', tech:'科技', star:'娛樂', fun:'趣聞', tt:'桌球', news:'即時新聞', mix:'綜合挑戰'};
-const REGIONS = ['', '台灣', '中國', '世界'];
 const TOP3 = ['滿格', '高峰', '躍升'];
 const $app = document.getElementById('app');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -53,7 +52,15 @@ const post = async (url, body) => {
 
 /* ---------- 後端版 API ---------- */
 const remote = {
-  categories: region => fetch('/api/categories' + (region ? '?region=' + encodeURIComponent(region) : '')).then(r => r.json()),
+  categories: async region => {
+    // 伺服器剛啟動時題庫要載入一下,撲空就重試,不要讓主題那一排變空白
+    const url = '/api/categories' + (region ? '?region=' + encodeURIComponent(region) : '');
+    for (let i = 0; i < 8; i++){
+      try{ const r = await fetch(url, {cache: 'no-store'}); if (r.ok) return await r.json(); }catch(e){}
+      await new Promise(go => setTimeout(go, 400));
+    }
+    throw new Error('讀不到題庫，伺服器可能還在啟動。請稍等幾秒再重新整理。');
+  },
   units: topic => fetch('/api/units?topic=' + encodeURIComponent(topic)).then(r => r.json()),
   start: (category, region, unit) => post('/api/start', {category, region, unit}),
   show: (session, index) => post('/api/show', {session, index}),
@@ -202,7 +209,9 @@ async function home(){
   document.body.dataset.topic = '';
   const best = store.get('quiz_best') || 0;
   const mode = store.get('quiz_mode') || 'solo';
-  let region = store.get('quiz_region') || '';
+  // 地區改成在主題裡面選(第二層),不再有全域的地區篩選
+  let region = '';
+  try { localStorage.removeItem('quiz_region'); } catch {}
   $app.innerHTML = `<div class="masthead"><div><h1>脈衝<span class="wordmark">PULSE</span></h1>
     <p class="sub">Python・Deep Learning・VBA・地理・歷史・人文・科技・娛樂・趣聞，十題定名次</p></div>
     ${best ? `<div class="best">個人最高<b>${best}</b></div>` : ''}</div>
@@ -210,8 +219,6 @@ async function home(){
       <button id="m-solo" aria-pressed="${mode === 'solo'}">單人闖關</button>
       <button id="m-multi" aria-pressed="${mode === 'multi'}">多人對戰</button></div>
     <div id="solo" ${mode === 'solo' ? '' : 'hidden'}>
-    <div class="chips" id="regions" role="group" aria-label="地區">${REGIONS.map(x =>
-      `<button data-r="${x}" aria-pressed="${x === region}">${x || '不限地區'}</button>`).join('')}</div>
     <div class="grid" id="cats"><p class="sub">載入中…</p></div>
     <button class="linkbtn" id="to-board"><span>看本週脈衝榜</span><span class="arrow">→</span></button>
     <div class="rules"><h2>應試規則</h2><ul>
@@ -220,7 +227,7 @@ async function home(){
       <li>答得越快分數越高；連中 3 題 ×1.5、連中 5 題 ×2</li>
       <li>每局各有一次道具：刪去兩個選項、跳過此題、加時 10 秒</li>
       <li>依正確率評級：滿格、高峰、躍升、穩定、起跳；留下代號就能登上脈衝榜</li>
-    </ul><p class="sub" style="font-size:.78rem;margin-top:10px">脈衝 PULSE v5.8</p></div></div>
+    </ul><p class="sub" style="font-size:.78rem;margin-top:10px">脈衝 PULSE v6.0</p></div></div>
     <div id="multi" class="mp-panel" ${mode === 'multi' ? '' : 'hidden'}>${LOCAL ? `
       <div class="mp-card"><h3>多人對戰</h3><p>多人同場搶答需要執行 Python 伺服器版（app.py），這個單機版只能單人闖關。</p></div>` : `
       <form class="mp-card" id="joinf"><h3>加入考坊</h3><p>輸入主持人畫面上的四位數房號</p>
@@ -249,11 +256,6 @@ async function home(){
       </button>`).join('');
     document.querySelectorAll('.cat').forEach(b => b.onclick = () => pickUnit(b.dataset.k, region));
   };
-  document.querySelectorAll('#regions button').forEach(b => b.onclick = async () => {
-    region = b.dataset.r; store.set('quiz_region', region);
-    document.querySelectorAll('#regions button').forEach(x => x.setAttribute('aria-pressed', x === b));
-    await loadCats();
-  });
   try{
     await loadCats();
   }catch(e){
@@ -261,21 +263,30 @@ async function home(){
   }
 }
 
-/* ---------- 有分單元的主題(例如 Python 課程週次),先選單元 ---------- */
+/* 地區的印章字與說明:主題是地理/歷史/人文時,「單元」就是地區 */
+const REGION_SEAL = {TW:'台', CN:'中', EA:'東', SEA:'南', EU:'歐', AM:'美', OTH:'他',
+                     GLOBAL:'球', POEM:'詩'};
+const REGION_TOPICS = ['geo', 'history', 'human'];
+const unitSeal = k => REGION_SEAL[k] || (k === 'GEN' ? '綜' : k.replace(/^W/, ''));
+
+/* ---------- 有分單元的主題,先選單元;地理/歷史/人文則是先選地區 ---------- */
 async function pickUnit(cat, region){
   document.body.dataset.topic = cat;
   const units = await api.units(cat).catch(() => []);
   if (!units.length) return startGame(cat, region);
+  const byRegion = REGION_TOPICS.includes(cat);
   $app.innerHTML = `<div class="masthead"><div><h1>${esc(CAT_NAME[cat] || cat)}</h1>
-      <p class="sub">選一個單元，或直接全部一起考</p></div><button class="back" id="back">← 回首頁</button></div>
+      <p class="sub">${byRegion ? '選一個地區，或整個主題一起考' : '選一個單元，或直接全部一起考'}</p></div>
+      <button class="back" id="back">← 回首頁</button></div>
     <div class="grid" style="grid-template-columns:1fr">
-      <button class="cat" data-u=""><span class="sealbox">全</span><span><b>不分單元</b><small>全部題目一起出</small></span></button></div>
+      <button class="cat" data-u=""><span class="sealbox">全</span>
+        <span><b>${byRegion ? '不分地區' : '不分單元'}</b><small>全部題目一起出</small></span></button></div>
     <div class="grid">${units.map(u => {
-      const tag = u.key === 'GEN' ? '綜' : u.key.replace(/^W/, '');
+      const tag = unitSeal(u.key);
       const size = tag.length >= 4 ? ' xlong' : tag.length >= 3 ? ' long' : '';
       return `<button class="cat" data-u="${u.key}">
       <span class="sealbox${size}">${esc(tag)}</span>
-      <span><b>${esc(u.name)}</b><small>${u.key} ・ ${u.count} 題</small></span></button>`;
+      <span><b>${esc(u.name)}</b><small>${u.count} 題</small></span></button>`;
     }).join('')}</div>`;
   document.getElementById('back').onclick = home;
   document.querySelectorAll('.cat').forEach(b => b.onclick = () => startGame(cat, region, b.dataset.u));

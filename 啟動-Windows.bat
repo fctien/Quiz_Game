@@ -49,7 +49,9 @@ echo.
 echo 要停止伺服器：在這個視窗按 Ctrl+C，或直接關閉視窗。
 echo ================================================
 echo.
-start "" http://127.0.0.1:5000/host
+rem 先等伺服器真的起來再開瀏覽器。題庫有三千多題,載入要一兩秒;
+rem 以前直接開瀏覽器,常常比伺服器早一步,主題清單抓不到就變成空白畫面。
+start "" powershell -NoProfile -WindowStyle Hidden -Command "for($i=0;$i -lt 90;$i++){try{$r=Invoke-WebRequest -UseBasicParsing -Uri 'http://127.0.0.1:5000/api/categories' -TimeoutSec 2; if($r.StatusCode -eq 200){Start-Process 'http://127.0.0.1:5000/host'; break}}catch{}; Start-Sleep -Milliseconds 400}"
 %PY% app.py
 
 echo.

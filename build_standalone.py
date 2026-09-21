@@ -14,7 +14,7 @@ import json
 import re
 from pathlib import Path
 
-from app import BANK, TOPICS
+from app import BANK, REGION_ORDER, REGION_TOPICS, TOPICS
 
 HERE = Path(__file__).parent
 # 公開版要藏起來的主題(課程教材)
@@ -43,6 +43,11 @@ SUB = re.compile(r'(<p class="sub">)[^<]*?(，十題定名次</p>)')
 def build(hide=()):
     """hide 裡的主題會整個從這一份網頁裡拿掉:題庫、主題清單、排行榜的分類籤、首頁副標都不會出現"""
     bank = {k: v for k, v in BANK.items() if k not in hide}
+    # 單機版的地區按鈕是照題庫順序長出來的,先把地理/歷史/人文按 REGION_ORDER 排好
+    for k in REGION_TOPICS:
+        if k in bank:
+            bank[k] = sorted(bank[k], key=lambda q: REGION_ORDER.index(q["unit"])
+                             if q.get("unit") in REGION_ORDER else len(REGION_ORDER))
     cats = [{"key": k, "name": v["name"], "seal": v["seal"],
              "count": len(bank[k]) if k in bank else sum(len(b) for b in bank.values())}
             for k, v in TOPICS.items() if k != "news" and k not in hide]

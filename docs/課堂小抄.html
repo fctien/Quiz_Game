@@ -57,7 +57,7 @@ footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:va
 <body>
 <header>
   <h1>脈衝 PULSE<span class="seal">試</span></h1>
-  <div class="sub">課堂操作小抄 ・ 個人賽・老師控題<br>v5.8　印出來放在講桌上</div>
+  <div class="sub">課堂操作小抄 ・ 個人賽・老師控題<br>v6.0　印出來放在講桌上</div>
 </header>
 
 <div class="cols">
@@ -88,18 +88,23 @@ footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:va
   <h2>二、開考坊設定</h2>
   <table>
     <tr><th>項目</th><th>選什麼</th></tr>
-    <tr><td>主題</td><td><b>Python</b>（500 題）、<b>Deep Learning</b>（708 題）或 <b>VBA</b>（280 題）</td></tr>
+    <tr><td>主題</td><td><b>Python</b> 500、<b>Deep Learning</b> 708、<b>VBA</b> 280 題；換口味選<b>地理／歷史／人文</b></td></tr>
+    <tr><td>單元／地區</td><td>選完主題才出現：Python／DL／VBA 是<b>週次</b>，地理／歷史／人文是<b>七大地區</b>（各 55 題）。不選＝全主題一起出</td></tr>
     <tr><td>題數</td><td>5 或 10（10 題約 15 分鐘）</td></tr>
     <tr><td>每題秒數</td><td><b>手動</b>　← 由你控制開始與結束</td></tr>
     <tr><td>賽制</td><td><b>個人賽</b></td></tr>
     <tr><td>班級代碼</td><td>例如 <span class="k">Python-115-1</span>（要累積成績才填）</td></tr>
     <tr><td>管理碼</td><td>第一次開班<b>留空</b>，之後填抄下來的六碼</td></tr>
-    <tr><td>名單 CSV</td><td>選填。<b>還沒分組也可以</b>：只有「學號,姓名」兩欄就好<br>
-      沒有組別時會自動用個人賽；分好組再補上第三欄</td></tr>
+    <tr><td>名單 CSV</td><td>選填。只有「學號,姓名」兩欄也行（自動改個人賽），分好組再補第三欄</td></tr>
   </table>
   <p class="note">按 <span class="btn">開考坊</span> → 畫面出現四位數房號與 QR code，投影給全班看。</p>
   <p class="note"><b>固定入口</b>：填了「固定入口代碼」以後，學生掃印好的那張 QR 就會自動進來，不必念房號。
   入口卡從 <span class="k">你的網址/qrcard</span> 印。</p>
+  <div class="warn" style="margin-top:6px"><b>考到一半要中斷</b>：出題中或公布答案時，右邊有
+  <span class="btn out">中斷考試</span>。按下去回到等待畫面，<b>學生不用重新加入</b>，
+  這一場分數歸零、題目重抽。接著可以直接按「開始考試」再考一次，
+  或先按 <span class="btn out">換一套題目</span> 改主題、單元、題數、秒數。<br>
+  ⚠ 中斷前如果還沒存入班級積分，這一場的成績就沒有了。</div>
   <p class="note"><b>要把名單重來</b>（測試完要正式開始、或上一班沒關就換班）：按
   <span class="btn out">清除名單</span>，房號不變，學生手機會看到「請重新加入」，重新掃 QR 就能再進來。</p>
   <div class="warn" style="margin-top:6px"><b>學號打錯的人</b>：在「已報到」名單上點他名字旁邊的 <b>✕</b>，
@@ -171,7 +176,7 @@ footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:va
 </div>
 
 <footer>
-  <span>脈衝 PULSE v5.8 ・ 題庫 2370 題（Python 500、Deep Learning 708、VBA 280）</span>
+  <span>脈衝 PULSE v6.0 ・ 題庫 3230 題（Python 500、Deep Learning 708、VBA 280、地理／歷史／人文 1242）</span>
   <span>伺服器：<span class="k">python app.py</span>　停止：在視窗按 Ctrl+C</span>
 </footer>
 </body>

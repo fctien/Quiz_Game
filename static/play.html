@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-title" content="脈衝 PULSE">
 <link rel="apple-touch-icon" href="/static/icons/icon-180.png">
 <link rel="icon" href="/static/icons/favicon.png" type="image/png">
-<link rel="stylesheet" href="/static/style.css?v=5.8">
+<link rel="stylesheet" href="/static/style.css?v=6.0">
 <script>
 /* 註冊 Service Worker：加到主畫面後可全螢幕開啟、載入更快 */
 if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
@@ -130,8 +130,8 @@ function startPoll(){
   if (poll) return;
   note('連線較慢，改用備援模式');
   const tickOnce = () => fetch(`/api/mp/view?code=${P.code}&pid=${P.pid}&token=${encodeURIComponent(P.token)}`)
-    .then(r => r.json().then(j => r.ok ? j : Promise.reject(j)))
-    .then(d => { if (d.gone){ ls.del('mp_' + P.code); return closed(); } handle(d); })
+    .then(r => r.json().then(j => (r.ok || j.gone) ? j : Promise.reject(j)))
+    .then(d => { if (d.gone){ stopPoll(); clearInterval(watch); ls.del('mp_' + P.code); return closed(); } handle(d); })
     .catch(j => {
       /* 這個座位已經被自己在別台裝置上接手了(或被移出),請他重新加入 */
       if (j && j.error){ stopPoll(); clearInterval(watch); ls.del('mp_' + P.code);
@@ -181,7 +181,8 @@ let lastKey = '';
    正在選答案的同學會看到按鈕閃一下,手指剛好按下去還會被吃掉。
    所以畫面骨架沒變時,只更新會動的那幾個字。 */
 function viewKey(v){
-  if (v.state === 'lobby')    return 'lobby:' + (v.mode === 'team' && !v.team ? 'pick' : 'wait');
+  if (v.state === 'lobby')    return 'lobby:' + (v.mode === 'team' && !v.team ? 'pick' : 'wait')
+                                    + ':' + (v.notice || '') + ':' + v.total + ':' + v.category;
   if (v.state === 'question') return 'q' + v.q.index + ':' + (v.my_answer === null || v.my_answer === undefined ? 'open' : 'sent');
   if (v.state === 'reveal')   return 'r' + v.q.index;
   return v.state;
@@ -219,6 +220,7 @@ function lobby(v, fresh){
     <div class="bigstamp pass" style="font-size:2.4rem">入場</div>
     <h2 style="font-family:var(--display)">${esc(v.name)}，你已報到</h2>
     ${v.team ? `<p class="pill">${esc(v.team)}</p>` : ''}
+    ${v.notice ? `<p class="pill notice">${esc(v.notice)}</p>` : ''}
     <p class="sub">${esc(v.category)} ・ 共 ${v.total} 題 ・ 目前 <span id="pcount">${v.players}</span> 人<br>等主持人開始，題目會直接出現在這裡</p>
     ${v.mode === 'team' && v.teams.length > 1 ? '<div class="row"><button class="btn ghost" id="chg">換隊</button></div>' : ''}</div>`;
   document.getElementById('chg')?.addEventListener('click', () => {

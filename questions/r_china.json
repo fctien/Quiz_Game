@@ -1,0 +1,1302 @@
+[
+ {
+  "id": "geo-CN-001",
+  "topic": "geo",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "地理",
+  "region": "中國",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "廣東省的省會是哪一座城市？",
+  "options": [
+   "廣州",
+   "深圳",
+   "東莞",
+   "珠海"
+  ],
+  "answer": 0,
+  "explanation": "廣東省的省會是廣州；深圳、東莞、珠海雖然同屬珠江三角洲的大城市，但都不是省會。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-CN-002",
+  "topic": "geo",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "地理",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "河北省的省會是哪一座城市？",
+  "options": [
+   "秦皇島",
+   "保定",
+   "石家莊",
+   "唐山"
+  ],
+  "answer": 2,
+  "explanation": "河北省的省會是石家莊。保定曾是河北舊省會，唐山、秦皇島則是省內著名的工業與港口城市。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-CN-003",
+  "topic": "geo",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "地理",
+  "region": "中國",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "吉林省的省會是哪一座城市？",
+  "options": [
+   "長春",
+   "吉林市",
+   "四平",
+   "延吉"
+  ],
+  "answer": 0,
+  "explanation": "吉林省的省會是長春，而不是同名的吉林市；吉林是少數「省名與省內城市同名、但該城市並非省會」的例子。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-CN-004",
+  "topic": "geo",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "地理",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "內蒙古自治區的首府是哪一座城市？",
+  "options": [
+   "呼和浩特",
+   "包頭",
+   "鄂爾多斯",
+   "赤峰"
+  ],
+  "answer": 0,
+  "explanation": "內蒙古自治區的首府是呼和浩特；包頭、鄂爾多斯、赤峰都是自治區內的大城市，但不是首府。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-CN-005",
+  "topic": "geo",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "地理",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡稱「晉」的是下列哪一個省？",
+  "options": [
+   "陝西省",
+   "山西省",
+   "河北省",
+   "河南省"
+  ],
+  "answer": 1,
+  "explanation": "山西省因春秋時代的晉國而簡稱「晉」；陝西簡稱「陝」或「秦」，河北簡稱「冀」，河南簡稱「豫」。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-CN-006",
+  "topic": "geo",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "地理",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "在中國大陸的省級行政區劃中，「自治區」共有幾個？",
+  "options": [
+   "3個",
+   "4個",
+   "5個",
+   "6個"
+  ],
+  "answer": 2,
+  "explanation": "中國大陸現行省級行政區包含22個省、5個自治區、4個直轄市與2個特別行政區；5個自治區是內蒙古、新疆、西藏、廣西和寧夏。（中共另將台灣列為其第23省，但實際並未管轄。）",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-CN-007",
+  "topic": "geo",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "地理",
+  "region": "中國",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "若只看名稱為「省」的行政區（不含自治區），面積最大的是哪一個？",
+  "options": [
+   "四川省",
+   "青海省",
+   "黑龍江省",
+   "甘肅省"
+  ],
+  "answer": 1,
+  "explanation": "青海省約72萬平方公里，是面積最大的「省」；比它更大的新疆、西藏、內蒙古都屬於自治區。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-CN-008",
+  "topic": "geo",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "地理",
+  "region": "中國",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "中國四大高原中，石灰岩分布廣、地表崎嶇並發育出峰林與溶洞（喀斯特地形）的是哪一個？",
+  "options": [
+   "青藏高原",
+   "內蒙古高原",
+   "黃土高原",
+   "雲貴高原"
+  ],
+  "answer": 3,
+  "explanation": "雲貴高原石灰岩層厚、溶蝕作用旺盛，形成峰林、石林與地下溶洞等典型喀斯特景觀。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-CN-009",
+  "topic": "geo",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "地理",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "五嶽之中，位於陝西省、以山勢險峻著稱的「西嶽」是哪一座山？",
+  "options": [
+   "衡山",
+   "華山",
+   "恆山",
+   "嵩山"
+  ],
+  "answer": 1,
+  "explanation": "五嶽為東嶽泰山、西嶽華山、南嶽衡山、北嶽恆山、中嶽嵩山，其中華山在陝西，素有「奇險天下第一山」之稱。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-CN-010",
+  "topic": "geo",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "地理",
+  "region": "中國",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列哪一個「不是」中國四大盆地之一？",
+  "options": [
+   "塔里木盆地",
+   "準噶爾盆地",
+   "柴達木盆地",
+   "渭河盆地"
+  ],
+  "answer": 3,
+  "explanation": "四大盆地是塔里木盆地、準噶爾盆地、柴達木盆地與四川盆地；渭河盆地（關中平原）範圍小得多，不在其列。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-CN-011",
+  "topic": "geo",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "地理",
+  "region": "中國",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "中國三大平原中，面積最大的是哪一個？",
+  "options": [
+   "華北平原",
+   "東北平原",
+   "長江中下游平原",
+   "成都平原"
+  ],
+  "answer": 1,
+  "explanation": "依一般地理教科書的界定，東北平原約35萬平方公里，大於華北平原（約30萬平方公里）與長江中下游平原（約20萬平方公里），是中國面積最大的平原；成都平原則不屬於三大平原。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-CN-012",
+  "topic": "geo",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "地理",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "中國五大淡水湖中，面積最大的是哪一個？",
+  "options": [
+   "洞庭湖",
+   "太湖",
+   "鄱陽湖",
+   "洪澤湖"
+  ],
+  "answer": 2,
+  "explanation": "位於江西省北部、長江南岸的鄱陽湖面積約3,900多平方公里，是中國第一大淡水湖，洞庭湖居次。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-CN-013",
+  "topic": "geo",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "地理",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "長江是中國最長的河流，它的全長大約是多少公里？",
+  "options": [
+   "約3,600公里",
+   "約4,500公里",
+   "約5,500公里",
+   "約6,300公里"
+  ],
+  "answer": 3,
+  "explanation": "長江全長約6,300公里，是亞洲第一長河、世界第三長河；約5,464公里的是黃河。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-CN-014",
+  "topic": "geo",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "地理",
+  "region": "中國",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "中國大陸年降水量的空間分布，總趨勢是下列何者？",
+  "options": [
+   "由東南沿海向西北內陸遞減",
+   "由西北內陸向東南沿海遞減",
+   "由北方向南方遞減",
+   "全國各地大致相同"
+  ],
+  "answer": 0,
+  "explanation": "水氣主要來自太平洋與印度洋的夏季季風，愈往西北內陸水氣愈難到達，因此降水由東南沿海向西北內陸遞減。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-CN-015",
+  "topic": "geo",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "地理",
+  "region": "中國",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "下列哪一個國家「沒有」與中國大陸接壤？",
+  "options": [
+   "哈薩克",
+   "尼泊爾",
+   "泰國",
+   "緬甸"
+  ],
+  "answer": 2,
+  "explanation": "中國大陸的14個陸上鄰國包含哈薩克、尼泊爾、緬甸等，但泰國與中國之間隔著緬甸與寮國，並不相鄰。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-CN-001",
+  "topic": "history",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "歷史",
+  "region": "中國",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "東漢時改良造紙術、用樹皮和破布造紙的是誰？",
+  "options": [
+   "蔡倫",
+   "張仲景",
+   "華佗",
+   "許慎"
+  ],
+  "answer": 0,
+  "explanation": "蔡倫是東漢宦官，約在西元 105 年用樹皮、麻頭、破布和魚網造出便宜好用的紙，後世稱「蔡侯紙」。",
+  "fun_fact": "在他之前，官方文書多寫在竹簡或昂貴的絲帛上，一部書可能要用一整車竹簡來載。"
+ },
+ {
+  "id": "history-CN-002",
+  "topic": "history",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "歷史",
+  "region": "中國",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "秦始皇陵的兵馬俑，是在今天哪一個省出土的？",
+  "options": [
+   "河南省",
+   "山西省",
+   "陝西省",
+   "甘肅省"
+  ],
+  "answer": 2,
+  "explanation": "兵馬俑坑位於陝西省西安市臨潼區，緊鄰秦始皇陵，1974 年由當地農民打井時意外挖到。",
+  "fun_fact": "考古發現這些陶俑原本都有彩繪，只是顏料接觸空氣後很快剝落。"
+ },
+ {
+  "id": "history-CN-003",
+  "topic": "history",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "歷史",
+  "region": "中國",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "以休養生息、輕徭薄賦著稱的「文景之治」，出現在哪個朝代？",
+  "options": [
+   "秦朝",
+   "漢朝",
+   "唐朝",
+   "南北朝"
+  ],
+  "answer": 1,
+  "explanation": "「文景之治」指西漢文帝與景帝在位期間，減輕賦稅徭役、與民休息所形成的治世。",
+  "fun_fact": "這段累積下來的國力，成為後來大規模對外用兵的本錢。"
+ },
+ {
+  "id": "history-CN-004",
+  "topic": "history",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "歷史",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "戰國時代主持修築都江堰水利工程的蜀郡太守是誰？",
+  "options": [
+   "西門豹",
+   "鄭國",
+   "史祿",
+   "李冰"
+  ],
+  "answer": 3,
+  "explanation": "李冰任秦國蜀郡太守時，率眾在岷江上修築都江堰，以無壩引水的方式分洪灌溉。",
+  "fun_fact": "都江堰運作兩千多年到今天仍在灌溉成都平原，已列入世界文化遺產。"
+ },
+ {
+  "id": "history-CN-005",
+  "topic": "history",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "歷史",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "出土青銅縱目面具的四川三星堆遺址，屬於哪一個古文明？",
+  "options": [
+   "良渚文明",
+   "古蜀文明",
+   "紅山文明",
+   "二里頭文明"
+  ],
+  "answer": 1,
+  "explanation": "三星堆位於四川廣漢，年代大致與商代同時，一般認為是古蜀王國留下的遺址。",
+  "fun_fact": "縱目面具的眼球像圓柱一樣往外凸出，造型和中原的青銅器風格差很多。"
+ },
+ {
+  "id": "history-CN-006",
+  "topic": "history",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "歷史",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "曹操「挾天子以令諸侯」，他挾持的天子是哪位皇帝？",
+  "options": [
+   "漢靈帝",
+   "漢少帝",
+   "漢獻帝",
+   "漢光武帝"
+  ],
+  "answer": 2,
+  "explanation": "西元 196 年曹操把漢獻帝迎到許，以皇帝名義發號施令，取得政治上的正當性。",
+  "fun_fact": "漢獻帝退位後被封為山陽公，反而比曹操本人多活了十幾年。"
+ },
+ {
+  "id": "history-CN-007",
+  "topic": "history",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "歷史",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "北宋編成的編年體通史《資治通鑑》，主編者是誰？",
+  "options": [
+   "歐陽脩",
+   "范仲淹",
+   "蘇軾",
+   "司馬光"
+  ],
+  "answer": 3,
+  "explanation": "《資治通鑑》由北宋司馬光主持編纂，歷時十九年完成，按年月順序記事。",
+  "fun_fact": "全書從戰國寫到五代，共 294 卷、約三百萬字，書名是宋神宗取的。"
+ },
+ {
+  "id": "history-CN-008",
+  "topic": "history",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "歷史",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "唐代六次東渡、把佛教戒律傳入日本的高僧是誰？",
+  "options": [
+   "鑑真",
+   "鳩摩羅什",
+   "法顯",
+   "義淨"
+  ],
+  "answer": 0,
+  "explanation": "鑑真前後嘗試六次才成功抵達日本，把律宗戒律制度傳入，後於奈良開創唐招提寺。",
+  "fun_fact": "他在多次失敗的航行途中失明，仍堅持完成最後一次東渡。"
+ },
+ {
+  "id": "history-CN-009",
+  "topic": "history",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "歷史",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "春秋時代最早稱霸、任用管仲改革的國君是誰？",
+  "options": [
+   "齊桓公",
+   "晉文公",
+   "楚莊王",
+   "吳王闔閭"
+  ],
+  "answer": 0,
+  "explanation": "齊桓公重用管仲推行改革，打出「尊王攘夷」旗號會盟諸侯，成為春秋最早的霸主。",
+  "fun_fact": "管仲原本是敵對陣營的人，還曾經射過齊桓公一箭。"
+ },
+ {
+  "id": "history-CN-010",
+  "topic": "history",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "歷史",
+  "region": "中國",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "明成祖朱棣是靠哪一場戰事奪得皇位的？",
+  "options": [
+   "奪門之變",
+   "靖難之役",
+   "土木堡之變",
+   "玄武門之變"
+  ],
+  "answer": 1,
+  "explanation": "1399 至 1402 年，燕王朱棣以「靖難」為名起兵，攻入南京推翻建文帝後即位，年號永樂。",
+  "fun_fact": "他即位後把首都從南京遷到北京，今天的紫禁城就是在他任內動工的。"
+ },
+ {
+  "id": "history-CN-011",
+  "topic": "history",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "歷史",
+  "region": "中國",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "清朝與俄國劃定東北邊界的《尼布楚條約》，簽於哪位皇帝在位時？",
+  "options": [
+   "順治帝",
+   "雍正帝",
+   "康熙帝",
+   "乾隆帝"
+  ],
+  "answer": 2,
+  "explanation": "《尼布楚條約》簽訂於 1689 年康熙年間，是中國與歐洲國家簽訂的第一個正式邊界條約。",
+  "fun_fact": "條約正本用拉丁文寫成，談判時還請了耶穌會傳教士當翻譯。"
+ },
+ {
+  "id": "history-CN-012",
+  "topic": "history",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "歷史",
+  "region": "中國",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "漢武帝採納主父偃的建議，用哪項政策削弱諸侯王？",
+  "options": [
+   "察舉制",
+   "均輸法",
+   "鹽鐵官營",
+   "推恩令"
+  ],
+  "answer": 3,
+  "explanation": "推恩令要求諸侯把封地分給各個兒子，封國越分越小，中央不必動武就削弱了地方勢力。",
+  "fun_fact": "後世常說這是「陽謀」：諸侯明知吃虧，卻很難拒絕分給自家兒子。"
+ },
+ {
+  "id": "human-CN-001",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「日、月、山、水」這類直接描摹外形的造字法，六書中稱為？",
+  "options": [
+   "指事",
+   "會意",
+   "象形",
+   "形聲"
+  ],
+  "answer": 2,
+  "explanation": "象形是依物體外形描畫而成的造字法，日、月、山、水都是典型例子。",
+  "fun_fact": "六書另有指事、會意、形聲、轉注、假借五類。"
+ },
+ {
+  "id": "human-CN-002",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "中國第一部系統分析字形字義的字典《說文解字》，作者是誰？",
+  "options": [
+   "班固",
+   "許慎",
+   "鄭玄",
+   "劉向"
+  ],
+  "answer": 1,
+  "explanation": "《說文解字》為東漢許慎所編，以部首統攝全書，是漢字研究的奠基之作。",
+  "fun_fact": "書中首創的五百四十個部首，是後世字典部首制度的源頭。"
+ },
+ {
+  "id": "human-CN-003",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "成語「刻舟求劍」的故事出自哪一部古籍？",
+  "options": [
+   "《戰國策》",
+   "《淮南子》",
+   "《世說新語》",
+   "《呂氏春秋》"
+  ],
+  "answer": 3,
+  "explanation": "這則寓言見於《呂氏春秋．察今》，比喻拘泥舊法、不知變通。",
+  "fun_fact": "故事裡的人在船舷刻記號，上岸後才下水找劍，當然撈不到。"
+ },
+ {
+  "id": "human-CN-004",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「守株待兔」的寓言出自下列哪一部子書？",
+  "options": [
+   "《韓非子》",
+   "《戰國策》",
+   "《莊子》",
+   "《列子》"
+  ],
+  "answer": 0,
+  "explanation": "《韓非子．五蠹》記載宋國農夫因兔子撞樹而死，從此守著樹樁不再耕田。",
+  "fun_fact": "韓非用這個故事諷刺一味效法古制的人。"
+ },
+ {
+  "id": "human-CN-005",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "「陵、陡、陽」這些字左邊的「阝」，本義是指什麼？",
+  "options": [
+   "城市聚落",
+   "高山土丘",
+   "流水河川",
+   "房屋屋簷"
+  ],
+  "answer": 1,
+  "explanation": "左邊的「阝」是「阜」的變形，本義為土山，所以這類字多與高地、坡度有關。",
+  "fun_fact": "同樣寫法的「阝」放在右邊時是「邑」，與城鎮有關，例如「郡」「都」。"
+ },
+ {
+  "id": "human-CN-006",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "已知最早成體系的漢字，主要刻寫在什麼材料上？",
+  "options": [
+   "青銅禮器",
+   "竹簡木牘",
+   "絲綢帛書",
+   "龜甲獸骨"
+  ],
+  "answer": 3,
+  "explanation": "甲骨文是商代晚期王室占卜時刻在龜甲和獸骨上的文字，為目前所見最早的成熟漢字系統。",
+  "fun_fact": "甲骨文十九世紀末才在河南安陽殷墟被大量發現。"
+ },
+ {
+  "id": "human-CN-007",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "中秋節是農曆哪一天？",
+  "options": [
+   "七月十五",
+   "八月十五",
+   "九月十五",
+   "正月十五"
+  ],
+  "answer": 1,
+  "explanation": "農曆八月十五恰逢秋季正中，月亮最圓，因而稱為中秋。",
+  "fun_fact": "古代把農曆八月稱作仲秋，中秋之名即由此而來。"
+ },
+ {
+  "id": "human-CN-008",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "元宵節除了賞花燈，最有名的傳統活動是？",
+  "options": [
+   "猜燈謎",
+   "放風箏",
+   "賽龍舟",
+   "盪鞦韆"
+  ],
+  "answer": 0,
+  "explanation": "元宵夜把謎題貼在燈上供人猜射，稱為猜燈謎，是元宵最具代表性的遊戲。",
+  "fun_fact": "元宵節是農曆新年後第一個月圓之夜，又叫上元節、燈節。"
+ },
+ {
+  "id": "human-CN-009",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "重陽節登高時，傳統上會佩戴哪一種植物？",
+  "options": [
+   "艾草",
+   "菖蒲",
+   "茱萸",
+   "桂花"
+  ],
+  "answer": 2,
+  "explanation": "重陽節有登高、佩茱萸的習俗，古人相信茱萸可以避邪去災。",
+  "fun_fact": "重陽在農曆九月初九，兩個陽數相重，故名重陽。"
+ },
+ {
+  "id": "human-CN-010",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "七夕傳說中，牛郎織女相會的橋是由哪種鳥搭成的？",
+  "options": [
+   "喜鵲",
+   "白鶴",
+   "燕子",
+   "鴻雁"
+  ],
+  "answer": 0,
+  "explanation": "傳說每年七月初七，成群喜鵲飛上銀河搭成鵲橋，讓牛郎織女渡河相見。",
+  "fun_fact": "七夕又稱乞巧節，古代女子會在這天向織女祈求手藝靈巧。"
+ },
+ {
+  "id": "human-CN-011",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "端午節時，民間習慣在門口懸掛哪兩種植物驅邪？",
+  "options": [
+   "柳枝與桃枝",
+   "艾草與菖蒲",
+   "茱萸與菊花",
+   "松枝與梅花"
+  ],
+  "answer": 1,
+  "explanation": "端午正值初夏疫病易生，民間便懸掛氣味濃烈的艾草與菖蒲來驅蟲避邪。",
+  "fun_fact": "菖蒲葉形似劍，又被稱為「蒲劍」。"
+ },
+ {
+  "id": "human-CN-012",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "名菜「佛跳牆」屬於八大菜系中的哪一系？",
+  "options": [
+   "粵菜",
+   "蘇菜",
+   "閩菜",
+   "浙菜"
+  ],
+  "answer": 2,
+  "explanation": "佛跳牆是福州名菜，屬閩菜系，以多種山珍海味慢火煨製而成。",
+  "fun_fact": "菜名相傳出自「罈啟葷香飄四鄰，佛聞棄禪跳牆來」的讚語。"
+ },
+ {
+  "id": "human-CN-013",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「西湖醋魚」屬於哪一個菜系？",
+  "options": [
+   "湘菜",
+   "徽菜",
+   "魯菜",
+   "浙菜"
+  ],
+  "answer": 3,
+  "explanation": "西湖醋魚是杭州名菜，屬浙菜系，以糖醋芡汁淋草魚著稱。",
+  "fun_fact": "浙菜講究鮮嫩清爽，與同屬江南的蘇菜風格相近。"
+ },
+ {
+  "id": "human-CN-014",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列哪一項「不屬於」中國八大菜系？",
+  "options": [
+   "徽菜",
+   "湘菜",
+   "魯菜",
+   "京菜"
+  ],
+  "answer": 3,
+  "explanation": "八大菜系是魯、川、粵、蘇、閩、浙、湘、徽，並不包含京菜。",
+  "fun_fact": "八大菜系的說法大致在清末民初定型。"
+ },
+ {
+  "id": "human-CN-015",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "烏龍茶（青茶）的發酵程度屬於下列哪一種？",
+  "options": [
+   "不發酵",
+   "半發酵",
+   "全發酵",
+   "後發酵"
+  ],
+  "answer": 1,
+  "explanation": "烏龍茶介於綠茶與紅茶之間，屬半發酵茶，香氣濃郁而滋味醇厚。",
+  "fun_fact": "綠茶不發酵、紅茶全發酵，普洱則屬後發酵茶。"
+ },
+ {
+  "id": "human-CN-016",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "北京傳統民居「四合院」的「四合」是指什麼？",
+  "options": [
+   "四面房屋圍成一院",
+   "四戶人家共住一院",
+   "四進院落層層相通",
+   "四層樓高的院落"
+  ],
+  "answer": 0,
+  "explanation": "四合院由正房、廂房、倒座四面房屋圍合而成，中間留出天井院落。",
+  "fun_fact": "坐北朝南的正房採光最好，通常由長輩居住。"
+ },
+ {
+  "id": "human-CN-017",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "中國古代建築中，等級最高的屋頂形式是？",
+  "options": [
+   "歇山頂",
+   "硬山頂",
+   "懸山頂",
+   "廡殿頂"
+  ],
+  "answer": 3,
+  "explanation": "廡殿頂四面斜坡、沒有山牆，等級最高，多用於宮殿與重要壇廟。",
+  "fun_fact": "北京故宮太和殿用的是規格更高的重檐廡殿頂。"
+ },
+ {
+  "id": "human-CN-018",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「白牆黑瓦」是哪一派傳統民居最鮮明的招牌？",
+  "options": [
+   "徽派民居",
+   "客家土樓",
+   "陝北窯洞",
+   "蒙古氈包"
+  ],
+  "answer": 0,
+  "explanation": "徽派建築以白牆黑瓦著稱，高聳的馬頭牆是其最顯眼的特徵。",
+  "fun_fact": "徽派民居主要分布在皖南的歙縣、黟縣一帶。"
+ },
+ {
+  "id": "human-CN-019",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "蘇州拙政園是下列哪一類園林的代表作？",
+  "options": [
+   "北方皇家園林",
+   "寺廟附屬園林",
+   "江南私家園林",
+   "陵墓紀念園林"
+  ],
+  "answer": 2,
+  "explanation": "拙政園始建於明代，是江南私家園林的典範，也被列入世界文化遺產。",
+  "fun_fact": "它與留園、獅子林、滄浪亭同為蘇州名園。"
+ },
+ {
+  "id": "human-CN-020",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "崑曲名劇《牡丹亭》的作者是誰？",
+  "options": [
+   "關漢卿",
+   "湯顯祖",
+   "王實甫",
+   "孔尚任"
+  ],
+  "answer": 1,
+  "explanation": "《牡丹亭》是明代湯顯祖的代表作，敘述杜麗娘為情而死、又因情復生的故事。",
+  "fun_fact": "《牡丹亭》與《紫釵記》等合稱「臨川四夢」。"
+ },
+ {
+  "id": "human-CN-021",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "元雜劇《竇娥冤》的作者是誰？",
+  "options": [
+   "馬致遠",
+   "白樸",
+   "鄭光祖",
+   "關漢卿"
+  ],
+  "answer": 3,
+  "explanation": "《竇娥冤》是關漢卿的代表作，寫竇娥含冤被斬、六月飛雪的故事。",
+  "fun_fact": "關漢卿被視為元曲四大家之首。"
+ },
+ {
+  "id": "human-CN-022",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "名畫《清明上河圖》描繪的是哪個朝代都城的市井風貌？",
+  "options": [
+   "唐朝",
+   "北宋",
+   "元朝",
+   "明朝"
+  ],
+  "answer": 1,
+  "explanation": "《清明上河圖》為北宋張擇端所繪，描寫都城汴京的街市與虹橋景象。",
+  "fun_fact": "畫中密密麻麻的攤販、船隻與行人，是研究古代城市生活的珍貴材料。"
+ },
+ {
+  "id": "human-CN-023",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "傳統樂器「二胡」有幾條弦？",
+  "options": [
+   "兩條",
+   "三條",
+   "四條",
+   "五條"
+  ],
+  "answer": 0,
+  "explanation": "二胡只有兩條弦，琴弓夾在兩弦之間拉奏，音色近似人聲。",
+  "fun_fact": "二胡由唐宋時期的奚琴演變而來，屬拉弦樂器。"
+ },
+ {
+  "id": "human-CN-024",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "下列哪一部「不是」中國古典四大名著？",
+  "options": [
+   "《紅樓夢》",
+   "《水滸傳》",
+   "《聊齋誌異》",
+   "《三國演義》"
+  ],
+  "answer": 2,
+  "explanation": "四大名著指《三國演義》《水滸傳》《西遊記》《紅樓夢》，《聊齋誌異》是文言短篇小說集。",
+  "fun_fact": "《聊齋誌異》的作者是清代的蒲松齡。"
+ },
+ {
+  "id": "human-CN-025",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "《紅樓夢》一般認為的作者是誰？",
+  "options": [
+   "施耐庵",
+   "羅貫中",
+   "蒲松齡",
+   "曹雪芹"
+  ],
+  "answer": 3,
+  "explanation": "《紅樓夢》前八十回一般認為出自清代曹雪芹之手，又名《石頭記》。",
+  "fun_fact": "後四十回通常認為由高鶚整理續補。"
+ },
+ {
+  "id": "human-CN-026",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "《水滸傳》中梁山泊聚義的好漢一共有幾位？",
+  "options": [
+   "三十六位",
+   "七十二位",
+   "一百零八位",
+   "一百二十位"
+  ],
+  "answer": 2,
+  "explanation": "梁山好漢共一百零八位，對應三十六天罡星與七十二地煞星。",
+  "fun_fact": "故事以宋江為首，最後接受朝廷招安。"
+ },
+ {
+  "id": "human-CN-027",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "《西遊記》中孫悟空的兵器是什麼？",
+  "options": [
+   "如意金箍棒",
+   "方天畫戟",
+   "青龍偃月刀",
+   "丈八蛇矛"
+  ],
+  "answer": 0,
+  "explanation": "孫悟空的武器是從東海龍宮取得的如意金箍棒，可隨心意變大變小。",
+  "fun_fact": "金箍棒原名「定海神針鐵」。"
+ },
+ {
+  "id": "human-CN-028",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "神話中女媧補天，煉的是什麼材料？",
+  "options": [
+   "崑崙玉",
+   "五色石",
+   "黃金砂",
+   "青銅塊"
+  ],
+  "answer": 1,
+  "explanation": "傳說天崩地裂後，女媧煉五色石補住蒼天，又斷鰲足立為四極。",
+  "fun_fact": "女媧的另一項功績是摶土造人。"
+ },
+ {
+  "id": "human-CN-029",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "傳說后羿一共射下了幾個太陽？",
+  "options": [
+   "七個",
+   "八個",
+   "九個",
+   "十個"
+  ],
+  "answer": 2,
+  "explanation": "傳說天上同時出現十個太陽，后羿射落九個，只留下一個照耀大地。",
+  "fun_fact": "這則神話較完整的記載見於《淮南子》。"
+ },
+ {
+  "id": "human-CN-030",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "「精衛填海」故事中，精衛原本是誰？",
+  "options": [
+   "炎帝的小女兒",
+   "黃帝的小女兒",
+   "東海龍王之女",
+   "西王母的侍女"
+  ],
+  "answer": 0,
+  "explanation": "精衛原是炎帝的小女兒女娃，溺死於東海後化為神鳥，日日銜木石填海。",
+  "fun_fact": "這則神話最早見於《山海經．北山經》。"
+ },
+ {
+  "id": "human-CN-031",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "潑水節是哪一個民族最重要的新年節日？",
+  "options": [
+   "苗族",
+   "彝族",
+   "白族",
+   "傣族"
+  ],
+  "answer": 3,
+  "explanation": "潑水節是雲南傣族的新年，人們互相潑水祝福、洗去舊年的晦氣。",
+  "fun_fact": "東南亞的泰國、緬甸等地也過同一個節日。"
+ },
+ {
+  "id": "human-CN-032",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「那達慕」大會是哪一個民族的傳統盛會？",
+  "options": [
+   "藏族",
+   "蒙古族",
+   "維吾爾族",
+   "哈薩克族"
+  ],
+  "answer": 1,
+  "explanation": "那達慕是蒙古族一年一度的競技盛會，意思就是「遊戲」或「比賽」。",
+  "fun_fact": "大會上的摔角、賽馬、射箭合稱「男兒三藝」。"
+ },
+ {
+  "id": "human-CN-033",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "「火把節」是哪一個民族最盛大的傳統節日？",
+  "options": [
+   "彝族",
+   "侗族",
+   "壯族",
+   "瑤族"
+  ],
+  "answer": 0,
+  "explanation": "火把節是彝族最隆重的節日，人們舉著火把繞行村寨田間，祈求驅蟲豐收。",
+  "fun_fact": "白族、納西族等西南民族也有過火把節的習俗。"
+ },
+ {
+  "id": "human-CN-034",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "青花瓷上的藍色花紋，主要來自哪一種金屬的礦物顏料？",
+  "options": [
+   "銅",
+   "鐵",
+   "錳",
+   "鈷"
+  ],
+  "answer": 3,
+  "explanation": "青花是以含鈷的礦料在胎上繪畫，再罩透明釉高溫燒成的釉下彩瓷。",
+  "fun_fact": "青花瓷白地藍花的組合，成為外銷世界的中國瓷器代表。"
+ },
+ {
+  "id": "human-CN-035",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "工藝品「景泰藍」的學名是什麼？",
+  "options": [
+   "銅胎掐絲琺瑯",
+   "青銅錯金銀器",
+   "剔紅雕漆工藝",
+   "釉裡紅瓷器"
+  ],
+  "answer": 0,
+  "explanation": "景泰藍學名銅胎掐絲琺瑯，先以銅絲掐出花紋，再填入琺瑯釉料燒製磨光。",
+  "fun_fact": "名稱相傳與明代景泰年間盛行、釉色多藍有關。"
+ },
+ {
+  "id": "human-CN-036",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「唐三彩」的三彩，主要是指哪三種顏色？",
+  "options": [
+   "紅、藍、黑",
+   "黃、綠、白",
+   "青、紫、金",
+   "灰、粉、橙"
+  ],
+  "answer": 1,
+  "explanation": "唐三彩釉色雖多，但以黃、綠、白（褐）三色為主，因而得名。",
+  "fun_fact": "唐三彩多作為陪葬明器，駱駝與馬俑最為著名。"
+ },
+ {
+  "id": "human-CN-037",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "十二生肖中「沒有」下列哪一種動物？",
+  "options": [
+   "蛇",
+   "羊",
+   "貓",
+   "猴"
+  ],
+  "answer": 2,
+  "explanation": "十二生肖依序是鼠、牛、虎、兔、龍、蛇、馬、羊、猴、雞、狗、豬，其中並沒有貓。",
+  "fun_fact": "民間才有「貓被老鼠騙了才錯過報名」的傳說。"
+ },
+ {
+  "id": "human-CN-038",
+  "topic": "human",
+  "unit": "CN",
+  "unit_name": "中國",
+  "category": "人文",
+  "region": "中國",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "天干與地支兩兩相配，一輪循環共有幾年？",
+  "options": [
+   "十二年",
+   "三十年",
+   "六十年",
+   "一百二十年"
+  ],
+  "answer": 2,
+  "explanation": "十天干配十二地支，可組成六十組不重複的干支，因此一輪為六十年，稱為一甲子。",
+  "fun_fact": "「花甲之年」指的就是滿六十歲。"
+ }
+]

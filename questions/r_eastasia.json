@@ -1,0 +1,3222 @@
+[
+ {
+  "id": "geo-EA-001",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "日本的「四大島」中，面積最大、也是政治經濟核心的是哪一座？",
+  "options": [
+   "本州",
+   "北海道",
+   "九州",
+   "四國"
+  ],
+  "answer": 0,
+  "explanation": "本州約占日本國土面積六成，東京、大阪、名古屋等大都市都在本州。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-002",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "日本四大島依面積由大到小排列，第二名是哪一座島？",
+  "options": [
+   "九州",
+   "北海道",
+   "四國",
+   "沖繩本島"
+  ],
+  "answer": 1,
+  "explanation": "四大島面積排序為本州、北海道、九州、四國；沖繩本島並不屬於四大島。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-003",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "日本最高峰富士山的標高最接近下列哪一個數字？",
+  "options": [
+   "約 3,776 公尺",
+   "約 2,776 公尺",
+   "約 3,193 公尺",
+   "約 4,776 公尺"
+  ],
+  "answer": 0,
+  "explanation": "富士山標高 3,776 公尺，是日本無可爭議的第一高峰。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-004",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "日本的第二高峰、位於南阿爾卑斯的是哪一座山？",
+  "options": [
+   "奧穗高岳",
+   "槍岳",
+   "北岳",
+   "御嶽山"
+  ],
+  "answer": 2,
+  "explanation": "北岳標高 3,193 公尺，僅次於富士山；奧穗高岳 3,190 公尺以三公尺之差屈居第三。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-005",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "通稱「日本阿爾卑斯」的，是本州中部哪三條山脈的合稱？",
+  "options": [
+   "奧羽、出羽、越後",
+   "鈴鹿、丹波、紀伊",
+   "日高、北見、夕張",
+   "飛驒、木曾、赤石"
+  ],
+  "answer": 3,
+  "explanation": "飛驒山脈是北阿爾卑斯、木曾山脈是中央阿爾卑斯、赤石山脈是南阿爾卑斯。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-006",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "縱貫東北地方、被稱為「東北脊梁」的日本最長山脈是哪一條？",
+  "options": [
+   "赤石山脈",
+   "奧羽山脈",
+   "日高山脈",
+   "越後山脈"
+  ],
+  "answer": 1,
+  "explanation": "奧羽山脈自青森延伸到栃木，長約 500 公里，把東北分成日本海側與太平洋側。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-007",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "日本面積最大的湖泊是哪一座？",
+  "options": [
+   "猪苗代湖",
+   "十和田湖",
+   "洞爺湖",
+   "琵琶湖"
+  ],
+  "answer": 3,
+  "explanation": "琵琶湖面積約 670 平方公里，遠遠大於日本其他湖泊。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-008",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "日本最大的湖泊琵琶湖位於哪一個縣境內？",
+  "options": [
+   "滋賀縣",
+   "京都府",
+   "岐阜縣",
+   "福井縣"
+  ],
+  "answer": 0,
+  "explanation": "琵琶湖幾乎占滋賀縣面積的六分之一，湖水經淀川流向大阪灣。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-009",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "日本面積第二大的湖泊「霞浦」位於哪一個縣？",
+  "options": [
+   "茨城縣",
+   "秋田縣",
+   "島根縣",
+   "北海道"
+  ],
+  "answer": 0,
+  "explanation": "霞浦（霞ヶ浦）橫跨茨城縣東南部，面積僅次於琵琶湖。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-010",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "日本水深最深的湖泊是下列哪一座？",
+  "options": [
+   "支笏湖",
+   "田澤湖",
+   "琵琶湖",
+   "中禪寺湖"
+  ],
+  "answer": 1,
+  "explanation": "秋田縣的田澤湖最深處超過 423 公尺，是日本第一深湖；支笏湖則排名第二。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-011",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "日本最長的河川是下列哪一條？",
+  "options": [
+   "利根川",
+   "石狩川",
+   "信濃川",
+   "北上川"
+  ],
+  "answer": 2,
+  "explanation": "信濃川全長約 367 公里，源自長野縣、在新潟縣注入日本海。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-012",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "日本流域面積最大的河川是哪一條？",
+  "options": [
+   "信濃川",
+   "木曾川",
+   "利根川",
+   "淀川"
+  ],
+  "answer": 2,
+  "explanation": "利根川流域涵蓋整個關東平原，流域面積居日本之冠，最長的則是信濃川。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-013",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "日本的「都道府縣」一共有幾個？",
+  "options": [
+   "43 個",
+   "50 個",
+   "23 個",
+   "47 個"
+  ],
+  "answer": 3,
+  "explanation": "日本地方行政區為 1 都、1 道、2 府、43 縣，合計 47 個。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-014",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "日本「一都一道二府四十三縣」中的「二府」是指哪兩個？",
+  "options": [
+   "大阪府與兵庫府",
+   "大阪府與京都府",
+   "京都府與奈良府",
+   "東京府與大阪府"
+  ],
+  "answer": 1,
+  "explanation": "目前只有大阪府與京都府保留「府」的稱呼，東京早在戰時就改制為「都」。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-015",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在日本的都道府縣中，唯一稱為「道」的是哪一個？",
+  "options": [
+   "東海道",
+   "九州道",
+   "南海道",
+   "北海道"
+  ],
+  "answer": 3,
+  "explanation": "北海道是日本唯一的「道」；東海道、南海道是古代的區域名稱，並非現行行政區。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-016",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列哪一個縣「不」屬於日本的關東地方？",
+  "options": [
+   "群馬縣",
+   "栃木縣",
+   "靜岡縣",
+   "茨城縣"
+  ],
+  "answer": 2,
+  "explanation": "關東地方是一都六縣：東京、神奈川、埼玉、千葉、茨城、栃木、群馬；靜岡屬於中部地方。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-017",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列哪一個縣「不」屬於日本的東北地方？",
+  "options": [
+   "秋田縣",
+   "山形縣",
+   "新潟縣",
+   "福島縣"
+  ],
+  "answer": 2,
+  "explanation": "東北六縣為青森、岩手、宮城、秋田、山形、福島；新潟一般劃入中部（北陸）地方。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-018",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "如果不算北海道，日本面積最大的「縣」是哪一個？",
+  "options": [
+   "長野縣",
+   "福島縣",
+   "新潟縣",
+   "岩手縣"
+  ],
+  "answer": 3,
+  "explanation": "岩手縣面積約 1.5 萬平方公里，是北海道以外最大的都府縣，福島、長野緊追在後。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-019",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "日本面積最小的都道府縣是哪一個？",
+  "options": [
+   "大阪府",
+   "香川縣",
+   "東京都",
+   "鳥取縣"
+  ],
+  "answer": 1,
+  "explanation": "香川縣面積不到 1,900 平方公里，是全日本最小；鳥取則是人口最少的縣。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-020",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列「縣名－縣廳所在地」的配對，哪一組是錯誤的？",
+  "options": [
+   "石川縣－金澤市",
+   "兵庫縣－姬路市",
+   "愛知縣－名古屋市",
+   "宮城縣－仙台市"
+  ],
+  "answer": 1,
+  "explanation": "兵庫縣的縣廳位於神戶市，姬路市雖有名城卻不是縣廳所在地。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-021",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "以金礦與傳統藝能聞名的佐渡島，屬於哪一個縣？",
+  "options": [
+   "新潟縣",
+   "島根縣",
+   "長崎縣",
+   "石川縣"
+  ],
+  "answer": 0,
+  "explanation": "佐渡島位於新潟縣外海的日本海上，是本州外海面積相當大的島嶼。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-022",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "日本領土的最東端，是下列哪一座島？",
+  "options": [
+   "擇捉島",
+   "南鳥島",
+   "沖之鳥島",
+   "與那國島"
+  ],
+  "answer": 1,
+  "explanation": "南鳥島是日本最東端，沖之鳥島最南端，兩者都屬東京都；與那國島則是最西端。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-023",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "世界第一條高速鐵路、日本最早通車的新幹線，連接的是哪兩地？",
+  "options": [
+   "東京與新青森",
+   "大阪與博多",
+   "東京與名古屋",
+   "東京與新大阪"
+  ],
+  "answer": 3,
+  "explanation": "東海道新幹線連接東京與新大阪，是日本最早、運量最大的新幹線路線。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-024",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "日本第一條新幹線通車的年份，剛好配合哪一場國際賽事？",
+  "options": [
+   "1970 年大阪萬博",
+   "1972 年札幌冬奧",
+   "1964 年東京奧運",
+   "1998 年長野冬奧"
+  ],
+  "answer": 2,
+  "explanation": "東海道新幹線在 1964 年東京奧運開幕前數日通車，成為戰後日本復興的象徵。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-025",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "連接本州與北海道的青函隧道，是從哪一個海峽的海底下方通過？",
+  "options": [
+   "宗谷海峽",
+   "根室海峽",
+   "津輕海峽",
+   "關門海峽"
+  ],
+  "answer": 2,
+  "explanation": "青函隧道全長約 53.85 公里，貫穿津輕海峽海底，現在由北海道新幹線行駛。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-026",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "跨越瀨戶內海的「瀨戶大橋」，連接的是哪兩個縣？",
+  "options": [
+   "兵庫縣與德島縣",
+   "廣島縣與愛媛縣",
+   "山口縣與福岡縣",
+   "岡山縣與香川縣"
+  ],
+  "answer": 3,
+  "explanation": "瀨戶大橋由岡山縣倉敷市兒島連到香川縣坂出市，是本州四國連絡橋中唯一公路鐵路兩用的一條。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-027",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "分隔本州與九州、下方有隧道通過的海峽是哪一個？",
+  "options": [
+   "豐後水道",
+   "紀伊水道",
+   "鳴門海峽",
+   "關門海峽"
+  ],
+  "answer": 3,
+  "explanation": "關門海峽位於山口縣下關與福岡縣門司之間，最窄處僅約 700 公尺。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-028",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "分隔日本九州與朝鮮半島、中間有對馬島的海峽叫什麼？",
+  "options": [
+   "津輕海峽",
+   "宗谷海峽",
+   "渤海海峽",
+   "對馬海峽"
+  ],
+  "answer": 3,
+  "explanation": "對馬海峽位於九州與朝鮮半島之間，自古就是日本與大陸往來的孔道。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-029",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "日本標準時間以東經 135 度為基準，這條子午線通過哪一個城市？",
+  "options": [
+   "京都府京都市",
+   "東京都新宿區",
+   "兵庫縣明石市",
+   "愛知縣名古屋市"
+  ],
+  "answer": 2,
+  "explanation": "明石市有「時之城」之稱，市立天文科學館就蓋在東經 135 度線上。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-030",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "日本氣象單位每年公布的「櫻前線」，推進的方向大致是？",
+  "options": [
+   "由南往北、由低地往高地",
+   "由北往南、由高地往低地",
+   "由西往東、沿太平洋岸",
+   "由內陸往沿海擴散"
+  ],
+  "answer": 0,
+  "explanation": "櫻花開花受氣溫影響，因此從溫暖的南方與低地先開，逐步往北方與高地推進。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-031",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "日本氣象廳每年發布各地的「入梅」「出梅」，但哪一個地方不在發布範圍內？",
+  "options": [
+   "九州",
+   "四國",
+   "北海道",
+   "近畿"
+  ],
+  "answer": 2,
+  "explanation": "梅雨鋒面通常北上到本州後就減弱，氣象廳因此不對北海道發布梅雨相關資訊。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-032",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "日本海沿岸冬季成為世界知名豪雪地帶，主要原因是什麼？",
+  "options": [
+   "受颱風帶來的暖溼氣流影響",
+   "西北季風吹過日本海吸飽水氣，被山脈抬升後降雪",
+   "黑潮暖流在冬季往北推進",
+   "太平洋高壓在冬季增強"
+  ],
+  "answer": 1,
+  "explanation": "來自西伯利亞的乾冷季風越過相對溫暖的日本海獲得水氣，遇脊梁山脈抬升，在日本海側大量降雪。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-033",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "日本火山多、地震頻繁，是因為位於哪一個火山地震帶上？",
+  "options": [
+   "環太平洋火山帶",
+   "阿爾卑斯－喜馬拉雅地震帶",
+   "大西洋中洋脊",
+   "東非大裂谷帶"
+  ],
+  "answer": 0,
+  "explanation": "日本位處數個板塊交界，屬於環太平洋火山帶（俗稱火環）的一部分。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-034",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "擁有世界最大級破火山口（カルデラ）的阿蘇山，位於哪一個縣？",
+  "options": [
+   "熊本縣",
+   "鹿兒島縣",
+   "長崎縣",
+   "岩手縣"
+  ],
+  "answer": 0,
+  "explanation": "阿蘇山的巨大破火山口東西約 18 公里、南北約 25 公里，內部還有城鎮與鐵路。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-035",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "隔著錦江灣與鹿兒島市區相望、經常噴發落灰的活火山是哪一座？",
+  "options": [
+   "雲仙岳",
+   "櫻島",
+   "有珠山",
+   "淺間山"
+  ],
+  "answer": 1,
+  "explanation": "櫻島原本是離島，1914 年大噴發後與大隅半島相連，至今仍頻繁噴發。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-036",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "朝鮮半島西側所面對的海域是哪一個？",
+  "options": [
+   "黃海",
+   "日本海",
+   "東海（東中國海）",
+   "鄂霍次克海"
+  ],
+  "answer": 0,
+  "explanation": "朝鮮半島西臨黃海、東臨日本海（韓國稱東海）、南接朝鮮海峽。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-037",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "流經南韓首都首爾市區、把城市分成江南與江北的河川是哪一條？",
+  "options": [
+   "洛東江",
+   "錦江",
+   "大同江",
+   "漢江"
+  ],
+  "answer": 3,
+  "explanation": "漢江橫貫首爾後向西注入黃海，江南、江北的說法就是以漢江為界。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-038",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "南韓面積最大的島嶼，同時也是著名度假勝地的是哪一座？",
+  "options": [
+   "鬱陵島",
+   "濟州島",
+   "江華島",
+   "巨濟島"
+  ],
+  "answer": 1,
+  "explanation": "濟州島是火山島，島上的漢拏山與熔岩洞窟群已列入世界自然遺產。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-039",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "南韓境內的最高峰是下列哪一座山？",
+  "options": [
+   "智異山",
+   "雪嶽山",
+   "漢拏山",
+   "太白山"
+  ],
+  "answer": 2,
+  "explanation": "漢拏山位於濟州島，標高約 1,947 公尺，是一座盾狀火山。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-040",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "整個朝鮮半島的最高峰、被視為聖山的是哪一座？",
+  "options": [
+   "漢拏山",
+   "金剛山",
+   "白頭山",
+   "妙香山"
+  ],
+  "answer": 2,
+  "explanation": "白頭山（中國稱長白山）標高約 2,744 公尺，坐落在北韓與中國的邊界上。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-041",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "朝鮮半島最高峰的山頂有一座著名的火山口湖，它叫什麼？",
+  "options": [
+   "天池",
+   "鏡泊湖",
+   "青海湖",
+   "華清池"
+  ],
+  "answer": 0,
+  "explanation": "這座火山口湖水深數百公尺，一半屬中國、一半屬北韓；湖水經二道白河外流，是松花江的源頭，白頭山山體則同時是鴨綠江與圖們江的發源地。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-042",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "劃分南北韓的非軍事區（DMZ），沿軍事分界線南北各退多少距離？",
+  "options": [
+   "各約 5 公里，總寬約 10 公里",
+   "各約 1 公里，總寬約 2 公里",
+   "各約 20 公里，總寬約 40 公里",
+   "各約 2 公里，總寬約 4 公里"
+  ],
+  "answer": 3,
+  "explanation": "非軍事區長約 250 公里、寬約 4 公里，而且它並非完全沿著北緯 38 度線走。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-043",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "南北韓舉行會談、著名的「共同警備區」所在的板門店，位於下列何處？",
+  "options": [
+   "非軍事區西段、靠近首爾一側",
+   "非軍事區東段、靠近日本海一側",
+   "北韓首都平壤市郊",
+   "南韓釜山近郊的港口"
+  ],
+  "answer": 0,
+  "explanation": "板門店位於非軍事區靠西邊的位置，距離首爾不到六十公里。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-044",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "完全位於南韓境內、長度最長的河川是哪一條？",
+  "options": [
+   "漢江",
+   "鴨綠江",
+   "豆滿江",
+   "洛東江"
+  ],
+  "answer": 3,
+  "explanation": "洛東江縱貫嶺南地區、在釜山附近注入大海；鴨綠江與豆滿江則在北韓邊界上。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-045",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "南韓為分散首都圈機能，把多個中央行政機關遷往哪一座計畫新市？",
+  "options": [
+   "仁川廣域市",
+   "世宗特別自治市",
+   "大田廣域市",
+   "水原市"
+  ],
+  "answer": 1,
+  "explanation": "世宗市以朝鮮世宗大王命名，是專為承接中央行政機關而興建的計畫城市。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-046",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "北韓首都平壤，坐落在哪一條河的兩岸？",
+  "options": [
+   "漢江",
+   "鴨綠江",
+   "清川江",
+   "大同江"
+  ],
+  "answer": 3,
+  "explanation": "大同江貫穿平壤市區後注入黃海，是北韓西部的重要河川。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-047",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "蒙古國是內陸國，它只與哪兩個國家接壤？",
+  "options": [
+   "中國與哈薩克",
+   "俄羅斯與中國",
+   "俄羅斯與哈薩克",
+   "中國與吉爾吉斯"
+  ],
+  "answer": 1,
+  "explanation": "蒙古北接俄羅斯、南接中國，沒有其他鄰國，也完全沒有海岸線。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-048",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "以國土面積計算，蒙古是世界第幾大的內陸國？",
+  "options": [
+   "最大的內陸國",
+   "第三大，僅次於哈薩克與查德",
+   "第二大，僅次於哈薩克",
+   "第五大"
+  ],
+  "answer": 2,
+  "explanation": "哈薩克是世界最大的內陸國，蒙古居次。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-049",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "橫跨蒙古南部與中國北部的大沙漠叫什麼名字？",
+  "options": [
+   "塔克拉瑪干沙漠",
+   "卡拉庫姆沙漠",
+   "戈壁沙漠",
+   "柴達木盆地"
+  ],
+  "answer": 2,
+  "explanation": "戈壁沙漠橫跨蒙古南部與中國內蒙古一帶；塔克拉瑪干則位於中國新疆。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-050",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "戈壁沙漠在氣候上的一大特色是什麼？",
+  "options": [
+   "屬於冬季嚴寒、會結冰下雪的寒漠",
+   "全年高溫、幾乎不見霜雪",
+   "雨量豐沛、季節性積水成湖",
+   "位於赤道附近、日夜溫差極小"
+  ],
+  "answer": 0,
+  "explanation": "戈壁緯度高、海拔也高，冬季氣溫可降到攝氏零下三十度以下，是典型的寒漠。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-051",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "蒙古西部與中國、俄羅斯交界一帶，聳立著哪一座大山脈？",
+  "options": [
+   "興安嶺",
+   "天山山脈",
+   "崑崙山脈",
+   "阿爾泰山脈"
+  ],
+  "answer": 3,
+  "explanation": "阿爾泰山脈橫跨蒙古西部，蒙古最高峰就在這條山脈上；東部則以草原和戈壁為主。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-052",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "烏蘭巴托常被稱為「世界上最冷的首都」，它坐落在哪一條河的河谷？",
+  "options": [
+   "圖拉河",
+   "色楞格河",
+   "鄂爾渾河",
+   "克魯倫河"
+  ],
+  "answer": 0,
+  "explanation": "烏蘭巴托位於圖拉河河谷、四周群山環抱，年均溫僅約攝氏零度。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EA-053",
+  "topic": "geo",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "地理",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「烏蘭巴托」這個城市名稱在蒙古語中是什麼意思？",
+  "options": [
+   "草原之心",
+   "紅色英雄",
+   "金色宮帳",
+   "永恆蒼天"
+  ],
+  "answer": 1,
+  "explanation": "1924 年蒙古人民共和國成立後，首都改名為烏蘭巴托，意為「紅色英雄」。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-001",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "中國史書《魏志倭人傳》記載的倭國女王是誰？",
+  "options": [
+   "推古天皇",
+   "神功皇后",
+   "卑彌呼",
+   "持統天皇"
+  ],
+  "answer": 2,
+  "explanation": "《三國志．魏志倭人傳》記載邪馬台國女王卑彌呼曾遣使到魏，是日本最早見於文獻的統治者。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-002",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "制定「十七條憲法」、輔佐推古天皇的攝政者是誰？",
+  "options": [
+   "聖德太子",
+   "中大兄皇子",
+   "藤原鎌足",
+   "桓武天皇"
+  ],
+  "answer": 0,
+  "explanation": "聖德太子任推古天皇的攝政，推行冠位十二階與十七條憲法，並派遣使節前往隋朝。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-003",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "645年大化革新中被打倒的豪族是哪一家？",
+  "options": [
+   "物部氏",
+   "大伴氏",
+   "葛城氏",
+   "蘇我氏"
+  ],
+  "answer": 3,
+  "explanation": "中大兄皇子與中臣鎌足在乙巳之變中誅殺蘇我入鹿，終結蘇我氏專權，隨即展開大化革新。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-004",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "日本奈良時代的都城平城京，位於今天的哪座城市？",
+  "options": [
+   "京都",
+   "奈良",
+   "大阪",
+   "名古屋"
+  ],
+  "answer": 1,
+  "explanation": "平城京於710年成為都城，格局仿照唐代長安，遺址就在今天的奈良市。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-005",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "794年桓武天皇遷都的平安京，就是今天的哪座城市？",
+  "options": [
+   "京都",
+   "鎌倉",
+   "東京",
+   "名古屋"
+  ],
+  "answer": 0,
+  "explanation": "桓武天皇把都城遷到平安京，此後一千多年這裡都是天皇所在地，也就是今日的京都。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-006",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "日本在894年決定停止派遣、前往中國的使節團是？",
+  "options": [
+   "遣隋使",
+   "遣明使",
+   "遣唐使",
+   "朱印船隊"
+  ],
+  "answer": 2,
+  "explanation": "遣唐使自七世紀起赴唐學習，894年在菅原道真建議下停派，日本文化隨後走向國風化。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-007",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1185年壇之浦之戰後，哪一個家族幾乎被消滅？",
+  "options": [
+   "源氏",
+   "平氏",
+   "北條氏",
+   "藤原氏"
+  ],
+  "answer": 1,
+  "explanation": "壇之浦海戰是源平合戰的最後決戰，平氏一族戰敗覆滅，年幼的安德天皇也隨之沉海。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-008",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "日本第一個幕府「鎌倉幕府」的創立者是誰？",
+  "options": [
+   "平清盛",
+   "足利尊氏",
+   "德川家康",
+   "源賴朝"
+  ],
+  "answer": 3,
+  "explanation": "源賴朝在源平合戰後掌握實權，於鎌倉開設幕府，開啟武家政權統治日本的時代。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-009",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "元軍兩度渡海攻日失敗，日本把摧毀元軍的颱風稱為？",
+  "options": [
+   "黑潮",
+   "季風",
+   "龍捲風",
+   "神風"
+  ],
+  "answer": 3,
+  "explanation": "1274與1281年元軍兩次征日，船隊都遇上颱風潰散，日本人視之為神明護佑的「神風」。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-010",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "被視為日本戰國時代開端的內亂是哪一場？",
+  "options": [
+   "承久之亂",
+   "應仁之亂",
+   "保元之亂",
+   "治承壽永之亂"
+  ],
+  "answer": 1,
+  "explanation": "1467年爆發的應仁之亂打了十年，幕府權威崩壞、各地大名割據，日本進入戰國時代。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-011",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "室町幕府的創立者是哪一位？",
+  "options": [
+   "足利尊氏",
+   "足利義滿",
+   "新田義貞",
+   "後醍醐天皇"
+  ],
+  "answer": 0,
+  "explanation": "足利尊氏推翻建武新政後在京都開設幕府，因第三代將軍居於室町而稱室町幕府。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-012",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1575年長篠之戰中，織田、德川聯軍大敗哪一家？",
+  "options": [
+   "今川氏",
+   "毛利氏",
+   "武田氏",
+   "長宗我部氏"
+  ],
+  "answer": 2,
+  "explanation": "長篠之戰中織田信長大量運用鐵炮，擊潰以騎兵著稱的武田軍，武田家從此一蹶不振。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-013",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1582年本能寺之變中背叛織田信長的家臣是誰？",
+  "options": [
+   "柴田勝家",
+   "明智光秀",
+   "前田利家",
+   "佐久間信盛"
+  ],
+  "answer": 1,
+  "explanation": "明智光秀突襲京都本能寺逼死織田信長，十多天後即在山崎之戰中敗亡。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-014",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "統一日本後兩度出兵朝鮮的日本統治者是誰？",
+  "options": [
+   "織田信長",
+   "德川家康",
+   "伊達政宗",
+   "豐臣秀吉"
+  ],
+  "answer": 3,
+  "explanation": "豐臣秀吉統一日本後，於1592與1597年兩度派兵渡海攻打朝鮮，最後無功而返。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-015",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1600年德川家康獲勝、奠定幕府基礎的戰役是？",
+  "options": [
+   "桶狹間之戰",
+   "川中島之戰",
+   "關原之戰",
+   "大坂夏之陣"
+  ],
+  "answer": 2,
+  "explanation": "關原之戰中德川家康率領的東軍擊敗石田三成的西軍，三年後開創江戶幕府。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-016",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "江戶幕府要求各藩大名輪流到江戶居住的制度稱為？",
+  "options": [
+   "參勤交代",
+   "版籍奉還",
+   "樂市樂座",
+   "武家諸法度"
+  ],
+  "answer": 0,
+  "explanation": "參勤交代規定大名隔年往返領地與江戶，妻子留在江戶為質，龐大開銷也削弱了大名財力。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-017",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "鎖國時期唯一獲准在長崎出島通商的歐洲國家是？",
+  "options": [
+   "葡萄牙",
+   "西班牙",
+   "荷蘭",
+   "英國"
+  ],
+  "answer": 2,
+  "explanation": "江戶幕府鎖國後只允許荷蘭人在長崎出島貿易，西洋知識因而以「蘭學」之名傳入日本。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-018",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1853年率黑船艦隊駛入江戶灣、迫使日本開國的是誰？",
+  "options": [
+   "培里",
+   "哈里斯",
+   "柯提斯",
+   "史坦利"
+  ],
+  "answer": 0,
+  "explanation": "美國海軍准將培里率艦隊叩關，隔年日本簽訂神奈川條約開港，長達兩百年的鎖國就此結束。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-019",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1867年實行大政奉還、把政權交還天皇的將軍是誰？",
+  "options": [
+   "德川家茂",
+   "德川吉宗",
+   "德川綱吉",
+   "德川慶喜"
+  ],
+  "answer": 3,
+  "explanation": "第十五代將軍德川慶喜宣布大政奉還，結束江戶幕府兩百六十多年的統治。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-020",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "明治政府1871年廢除各藩、改設府縣的政策叫什麼？",
+  "options": [
+   "版籍奉還",
+   "廢藩置縣",
+   "殖產興業",
+   "徵兵令實施"
+  ],
+  "answer": 1,
+  "explanation": "廢藩置縣把全國舊有的藩改組為府縣、由中央派官治理，確立了明治政府的中央集權。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-021",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "明治維新後，江戶這座城市改名為什麼？",
+  "options": [
+   "東京",
+   "橫濱",
+   "大阪",
+   "名古屋"
+  ],
+  "answer": 0,
+  "explanation": "1868年江戶改名東京，天皇隔年由京都遷居於此，東京成為日本新的政治中心。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-022",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1877年率領不滿的士族發動西南戰爭的是誰？",
+  "options": [
+   "木戶孝允",
+   "大隈重信",
+   "西鄉隆盛",
+   "大久保利通"
+  ],
+  "answer": 2,
+  "explanation": "西鄉隆盛在鹿兒島舉兵，最後兵敗自盡；徵兵制的新式軍隊獲勝，象徵武士階級走入歷史。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-023",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1889年的大日本帝國憲法，主要模仿哪一國的憲法？",
+  "options": [
+   "英國",
+   "德國",
+   "法國",
+   "奧匈帝國"
+  ],
+  "answer": 1,
+  "explanation": "伊藤博文赴歐考察後認為普魯士（德國）的君主立憲體制最適合日本，據以起草明治憲法。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-024",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1904至1905年日俄戰爭結束時，雙方簽訂的和約是？",
+  "options": [
+   "聖彼得堡條約",
+   "華盛頓海軍條約",
+   "日內瓦議定書",
+   "樸茨茅斯條約"
+  ],
+  "answer": 3,
+  "explanation": "在美國總統羅斯福斡旋下，日俄兩國於美國樸茨茅斯簽約，日本取得在南滿與朝鮮的優勢。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-025",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1946年元旦昭和天皇發表否定自身神格的文告，史稱？",
+  "options": [
+   "終戰詔書",
+   "五條誓文",
+   "國體明徵聲明",
+   "人間宣言"
+  ],
+  "answer": 3,
+  "explanation": "天皇在新年詔書中否定自己是「現人神」，這份文告後來被稱為人間宣言。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-026",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "現行《日本國憲法》中宣示放棄戰爭的是第幾條？",
+  "options": [
+   "第一條",
+   "第九條",
+   "第十一條",
+   "第二十一條"
+  ],
+  "answer": 1,
+  "explanation": "日本國憲法第九條規定放棄以戰爭作為解決國際爭端的手段，也不保有陸海空軍等戰力。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-027",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1923年重創東京與橫濱、傷亡慘重的大地震是哪一場？",
+  "options": [
+   "關東大地震",
+   "阪神大地震",
+   "濃尾大地震",
+   "明治三陸大地震"
+  ],
+  "answer": 0,
+  "explanation": "1923年9月1日的關東大地震使東京與橫濱幾成廢墟，日本後來訂9月1日為防災日。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-028",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "1945年8月美軍先後對日本哪兩座城市投下原子彈？",
+  "options": [
+   "東京與大阪",
+   "名古屋與神戶",
+   "廣島與長崎",
+   "京都與奈良"
+  ],
+  "answer": 2,
+  "explanation": "8月6日廣島、8月9日長崎相繼遭原子彈轟炸，數日後日本宣布接受波茨坦宣言投降。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-029",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "朝鮮半島的三國時代，指高句麗、百濟與哪一國？",
+  "options": [
+   "伽倻",
+   "新羅",
+   "渤海",
+   "後百濟"
+  ],
+  "answer": 1,
+  "explanation": "高句麗、百濟、新羅三國並立數百年，史稱朝鮮半島的三國時代。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-030",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "李舜臣在壬辰倭亂中用來大破日軍的著名戰船是？",
+  "options": [
+   "板屋船",
+   "安宅船",
+   "朱印貿易船",
+   "龜甲船"
+  ],
+  "answer": 3,
+  "explanation": "龜甲船船背覆蓋木板與尖刺，能衝入敵陣而不怕被跳幫，是李舜臣海戰連勝的利器。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-031",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "1392年推翻高麗、建立朝鮮王朝的將領是誰？",
+  "options": [
+   "王建",
+   "大祚榮",
+   "李成桂",
+   "金春秋"
+  ],
+  "answer": 2,
+  "explanation": "李成桂在威化島回軍後掌握政權，1392年取代高麗建立朝鮮王朝，定都漢陽（今首爾）。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-032",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "1910年朝鮮半島被哪一個國家正式併吞為殖民地？",
+  "options": [
+   "日本",
+   "清朝",
+   "俄羅斯",
+   "英國"
+  ],
+  "answer": 0,
+  "explanation": "日本在1905年使朝鮮成為保護國，1910年簽訂合併條約正式併吞，殖民統治持續到1945年。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-033",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "二次大戰後，朝鮮半島以哪一條線劃分為南北？",
+  "options": [
+   "北緯17度線",
+   "北緯49度線",
+   "北緯38度線",
+   "鴨綠江與圖們江"
+  ],
+  "answer": 2,
+  "explanation": "二戰結束時美蘇以北緯38度線分別受降，這條線後來成為南北韓分治的起點。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-034",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "918年建立高麗王朝的是哪一位？",
+  "options": [
+   "王建",
+   "大祚榮",
+   "李成桂",
+   "金富軾"
+  ],
+  "answer": 0,
+  "explanation": "後高句麗的將領王建取代弓裔即位，定國號高麗、以開京為都，後來統一了後三國。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-035",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "高麗為祈求擊退蒙古而雕造的大批佛經雕版通稱？",
+  "options": [
+   "三國史記",
+   "高麗史",
+   "東國輿地勝覽",
+   "八萬大藏經"
+  ],
+  "answer": 3,
+  "explanation": "高麗高宗時重雕大藏經，共八萬多塊木版，如今保存在海印寺，已列入世界記憶名錄。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-036",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1636年丙子胡亂之後，朝鮮被迫向哪一個政權稱臣？",
+  "options": [
+   "明朝",
+   "清朝",
+   "元朝",
+   "日本幕府"
+  ],
+  "answer": 1,
+  "explanation": "丙子胡亂中仁祖困守南漢山城後出降，朝鮮斷絕與明朝的關係，轉而向清朝朝貢。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-037",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1919年3月1日朝鮮半島爆發的大規模獨立運動是？",
+  "options": [
+   "三一運動",
+   "四一九革命",
+   "光州事件",
+   "東學農民運動"
+  ],
+  "answer": 0,
+  "explanation": "三一運動由民族代表發表獨立宣言引發，示威蔓延全島，之後促成大韓民國臨時政府成立。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-038",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "韓戰中麥克阿瑟指揮的著名兩棲登陸，地點在哪裡？",
+  "options": [
+   "釜山",
+   "元山",
+   "仁川",
+   "鎮南浦"
+  ],
+  "answer": 2,
+  "explanation": "1950年9月的仁川登陸切斷北韓軍補給線，使聯合國軍迅速由守轉攻。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-039",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "韓戰的停戰協定於1953年在哪個地方簽署？",
+  "options": [
+   "開城",
+   "板門店",
+   "平壤",
+   "新義州"
+  ],
+  "answer": 1,
+  "explanation": "停戰協定在板門店簽署，雙方沿戰線劃出非軍事區，至今仍未簽訂正式和約。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-040",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1948年成立的大韓民國，首任總統是誰？",
+  "options": [
+   "金九",
+   "朴正熙",
+   "尹潽善",
+   "李承晚"
+  ],
+  "answer": 3,
+  "explanation": "李承晚由制憲國會選出，成為大韓民國首任總統，1960年因四一九革命而下台。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-041",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "傳說中建立朝鮮半島最早國家「古朝鮮」的是誰？",
+  "options": [
+   "朱蒙",
+   "溫祚",
+   "赫居世",
+   "檀君"
+  ],
+  "answer": 3,
+  "explanation": "《三國遺事》記載檀君建立古朝鮮，韓國把傳說中的建國之年訂為檀紀元年。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-042",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "新羅在唐朝協助下於668年滅掉哪一王國而統一三國？",
+  "options": [
+   "百濟",
+   "高句麗",
+   "伽倻",
+   "渤海王國"
+  ],
+  "answer": 1,
+  "explanation": "新羅先聯合唐軍滅百濟，再於668年攻滅高句麗，隨後逐退唐軍，完成半島的統一。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-043",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "朝鮮王朝中透過科舉出仕的世襲統治階層稱為？",
+  "options": [
+   "兩班",
+   "中人",
+   "常民",
+   "白丁賤民"
+  ],
+  "answer": 0,
+  "explanation": "兩班原指文班與武班，後來成為壟斷科舉與官職的世襲士大夫階層。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-044",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1377年印行的《直指心體要節》創下什麼世界紀錄？",
+  "options": [
+   "現存最早的木刻版佛經全集",
+   "現存最長的手抄佛經卷軸",
+   "現存最早的金屬活字印本",
+   "現存最早的漢字銅活字盤"
+  ],
+  "answer": 2,
+  "explanation": "《直指》比古騰堡印製聖經早了約七十八年，2001年列入世界記憶名錄，現藏於法國國家圖書館。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-045",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1876年日本藉江華島事件與朝鮮簽訂的條約是？",
+  "options": [
+   "漢城條約",
+   "江華島條約",
+   "天津條約",
+   "朝鮮通商章程"
+  ],
+  "answer": 1,
+  "explanation": "江華島條約是朝鮮第一個不平等條約，開放釜山等港口，也否定了清朝對朝鮮的宗主權。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-046",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1894年爆發、間接引發甲午戰爭的朝鮮民變是？",
+  "options": [
+   "壬午軍亂",
+   "甲申政變",
+   "乙未義兵抗日運動",
+   "東學農民運動"
+  ],
+  "answer": 3,
+  "explanation": "東學農民軍起事後朝鮮向清朝求援，日本也隨即出兵，兩國衝突最終演成一場大戰。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-047",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1897年高宗稱帝後，把國號改成什麼？",
+  "options": [
+   "朝鮮帝國",
+   "高麗帝國",
+   "大韓帝國",
+   "大朝鮮帝國"
+  ],
+  "answer": 2,
+  "explanation": "高宗在圜丘壇即皇帝位，改國號為大韓帝國、年號光武，宣示脫離與清朝的宗藩關係。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-048",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "吉林的巨大石碑「好太王碑」紀念哪一位高句麗君主？",
+  "options": [
+   "廣開土王",
+   "長壽王",
+   "東明聖王",
+   "故國原王"
+  ],
+  "answer": 0,
+  "explanation": "好太王碑由長壽王在414年為父親廣開土王所立，碑文記錄了高句麗的建國傳說與征戰。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-049",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "1206年統一蒙古各部、被推舉為成吉思汗的人本名是？",
+  "options": [
+   "忽必烈",
+   "窩闊台",
+   "鐵木真",
+   "脫斡鄰勒"
+  ],
+  "answer": 2,
+  "explanation": "鐵木真統一蒙古諸部後，在斡難河源舉行的大會上被推舉為「成吉思汗」。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-050",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "琉球王國在1879年被日本併吞後，改設為哪一個縣？",
+  "options": [
+   "沖繩縣",
+   "鹿兒島縣",
+   "長崎縣",
+   "宮崎縣"
+  ],
+  "answer": 0,
+  "explanation": "明治政府推行琉球處分，廢除琉球藩並設置沖繩縣，四百多年的琉球王國就此終結。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-051",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "成吉思汗之孫拔都西征後，在欽察草原建立的汗國是？",
+  "options": [
+   "察合台汗國",
+   "伊兒汗國",
+   "窩闊台汗國",
+   "金帳汗國"
+  ],
+  "answer": 3,
+  "explanation": "拔都西征橫掃東歐後建立金帳汗國（欽察汗國），統治俄羅斯各公國達兩百多年。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-052",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1924年成立的蒙古人民共和國，是世界第幾個社會主義國家？",
+  "options": [
+   "第一個",
+   "第二個",
+   "第三個",
+   "第五個"
+  ],
+  "answer": 1,
+  "explanation": "蒙古人民共和國僅次於蘇聯成立，是全世界第二個社會主義國家。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-053",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1609年入侵琉球、使琉球王國成為附庸的日本藩是？",
+  "options": [
+   "薩摩藩",
+   "長州藩",
+   "土佐藩",
+   "肥前佐賀藩"
+  ],
+  "answer": 0,
+  "explanation": "薩摩藩出兵俘虜琉球國王尚寧，此後琉球一面向中國朝貢，一面受薩摩藩支配。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-054",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1911年外蒙古宣布獨立時擁立的宗教領袖稱號是什麼？",
+  "options": [
+   "達賴喇嘛",
+   "章嘉呼圖克圖",
+   "博克多汗",
+   "班禪額爾德尼"
+  ],
+  "answer": 2,
+  "explanation": "清朝覆亡之際外蒙古宣布獨立，由第八世哲布尊丹巴呼圖克圖即位，稱博克多汗。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EA-055",
+  "topic": "history",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "歷史",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "蒙古帝國在窩闊台汗時期營建的首都是哪一座城市？",
+  "options": [
+   "大都",
+   "哈拉和林",
+   "上都",
+   "撒馬爾罕"
+  ],
+  "answer": 1,
+  "explanation": "窩闊台在1235年築城建宮，哈拉和林成為蒙古帝國的政治中心，遺址在今蒙古國中部。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EA-001",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "現代日語中，片假名最主要用來書寫什麼？",
+  "options": [
+   "外來語與擬聲詞",
+   "助詞與動詞語尾",
+   "人名地名的漢字",
+   "佛經與古典漢文"
+  ],
+  "answer": 0,
+  "explanation": "片假名主要用於轉寫外來語（外來語）、擬聲擬態詞與強調，相當於歐語的斜體用法。",
+  "fun_fact": "片假名是九世紀僧侶擷取漢字「片」段筆畫當速記符號而來，名字就叫「片假名」。"
+ },
+ {
+  "id": "human-EA-002",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "日語的平假名是由漢字的哪一種書體簡化而來？",
+  "options": [
+   "楷書",
+   "隸書",
+   "草書",
+   "篆書"
+  ],
+  "answer": 2,
+  "explanation": "平假名是經由萬葉假名的草書體逐步簡化而成，字形圓潤流暢。",
+  "fun_fact": "平假名早期被稱為「女手」，因為它先在宮廷女性之間流行起來。"
+ },
+ {
+  "id": "human-EA-003",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "日語敬語中，「です・ます」的說法屬於哪一類？",
+  "options": [
+   "尊敬語",
+   "謙讓語",
+   "丁寧語",
+   "美化語"
+  ],
+  "answer": 2,
+  "explanation": "以句尾「です」「ます」表達對聽話者的禮貌，屬於丁寧語（禮貌語）。",
+  "fun_fact": "丁寧語可以和其他敬語疊用，所以句子常常同時出現兩種敬語形式。"
+ },
+ {
+  "id": "human-EA-004",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "立在神社入口、象徵神域與人間分界的牌坊叫什麼？",
+  "options": [
+   "狛犬",
+   "鳥居",
+   "石燈籠",
+   "注連繩"
+  ],
+  "answer": 1,
+  "explanation": "鳥居是神道神社的門，通過它代表從世俗進入神聖空間。",
+  "fun_fact": "日本地圖與 Google 地圖上，神社的符號畫的就是一座鳥居。"
+ },
+ {
+  "id": "human-EA-005",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "參拜日本神社時，最通行的禮法是下列哪一種？",
+  "options": [
+   "一禮一拍手一禮",
+   "二禮二拍手一禮",
+   "三禮三拍手三禮",
+   "二禮四拍手二禮"
+  ],
+  "answer": 1,
+  "explanation": "一般神社的標準作法是鞠躬兩次、拍手兩次，最後再深深一鞠躬。",
+  "fun_fact": "少數神社有自己的規矩，例如出雲大社就要拍四次手。"
+ },
+ {
+  "id": "human-EA-006",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "日本人在除夕夜有吃哪一種麵的習慣？",
+  "options": [
+   "烏龍麵",
+   "素麵",
+   "拉麵",
+   "蕎麥麵"
+  ],
+  "answer": 3,
+  "explanation": "「年越蕎麥麵」在十二月三十一日吃，蕎麥麵易斷，象徵斬斷一年的厄運。",
+  "fun_fact": "蕎麥能耐惡劣天候，所以也被拿來象徵堅韌；細長的麵條則代表長壽。"
+ },
+ {
+  "id": "human-EA-007",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "日本「節分」這一天，人們撒的是什麼？",
+  "options": [
+   "炒過的黃豆",
+   "曬乾的紅豆",
+   "生的白米",
+   "炒過的芝麻"
+  ],
+  "answer": 0,
+  "explanation": "節分的「撒豆」用炒過的黃豆（福豆），一邊喊「鬼在外、福在內」。",
+  "fun_fact": "撒完之後要撿豆子來吃，吃的數量是自己的歲數再加一顆。"
+ },
+ {
+  "id": "human-EA-008",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "日本的盂蘭盆節（お盆）主要是為了迎接什麼？",
+  "options": [
+   "保佑豐收的田神",
+   "鎮守村莊的山神",
+   "驅趕疫病的瘟神",
+   "返家的祖先靈魂"
+  ],
+  "answer": 3,
+  "explanation": "盂蘭盆節結合了日本固有的祖靈信仰與佛教供養習俗，相信祖先靈魂會回到家中。",
+  "fun_fact": "盆舞（盆踊）已有近六百年歷史，各地舞法與配樂都不一樣。"
+ },
+ {
+  "id": "human-EA-009",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "日本在五月五日兒童節當天會懸掛什麼？",
+  "options": [
+   "風鈴",
+   "雛人形",
+   "破魔矢",
+   "鯉魚旗"
+  ],
+  "answer": 3,
+  "explanation": "鯉魚旗（鯉幟）在端午／兒童節懸掛，祝福孩子像鯉魚躍龍門一樣健康成長。",
+  "fun_fact": "一整組通常是黑鯉代表父親、紅鯉代表母親，小鯉則代表每個孩子。"
+ },
+ {
+  "id": "human-EA-010",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "京都著名的祇園祭，是哪一座神社的祭典？",
+  "options": [
+   "伏見稻荷大社",
+   "八坂神社",
+   "北野天滿宮",
+   "下鴨神社"
+  ],
+  "answer": 1,
+  "explanation": "祇園祭是坐落於祇園一帶的八坂神社的祭典，每年七月整月舉行。",
+  "fun_fact": "祭典的主角是稱為「山鉾」的巨大花車，大型的叫鉾、小型的叫山。"
+ },
+ {
+  "id": "human-EA-011",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "集日本「侘茶」之大成、奠定茶道精神的茶人是誰？",
+  "options": [
+   "松尾芭蕉",
+   "世阿彌",
+   "千利休",
+   "狩野永德"
+  ],
+  "answer": 2,
+  "explanation": "千利休把樸素簡約的美學帶進茶會，是茶道史上影響最深遠的人物。",
+  "fun_fact": "他設計的草庵茶室極小，其中僅兩張榻榻米的「待庵」現在是日本國寶。"
+ },
+ {
+  "id": "human-EA-012",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列哪一種日本傳統表演藝術，演員是戴著面具演出的？",
+  "options": [
+   "能劇",
+   "歌舞伎",
+   "文樂",
+   "落語"
+  ],
+  "answer": 0,
+  "explanation": "能劇的主角（仕手）戴著以日本檜木雕成的「能面」演出。",
+  "fun_fact": "能面約有六十個基本類型、四百五十種以上的變化，角度一變表情就跟著變。"
+ },
+ {
+  "id": "human-EA-013",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "歌舞伎中專門扮演女性角色的男演員稱作什麼？",
+  "options": [
+   "立役",
+   "黑衣",
+   "太夫",
+   "女形"
+  ],
+  "answer": 3,
+  "explanation": "自女性被禁止登台後，歌舞伎的女性角色改由稱為「女形」的男演員擔任。",
+  "fun_fact": "女形要專門受訓，學習女性的化妝、身段與假聲說話方式。"
+ },
+ {
+  "id": "human-EA-014",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "浮世繪名作《神奈川沖浪裏》的作者是誰？",
+  "options": [
+   "歌川廣重",
+   "葛飾北齋",
+   "喜多川歌麿",
+   "東洲齋寫樂"
+  ],
+  "answer": 1,
+  "explanation": "《神奈川沖浪裏》是葛飾北齋《富嶽三十六景》系列的第一幅。",
+  "fun_fact": "這套版畫太受歡迎，北齋後來又追加了十幅，所以「三十六景」其實有四十六幅。"
+ },
+ {
+  "id": "human-EA-015",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "日本俳句的標準音節格式是？",
+  "options": [
+   "七五七",
+   "五七七",
+   "五七五",
+   "七七五"
+  ],
+  "answer": 2,
+  "explanation": "俳句由五、七、五共十七個音節（音拍）組成。",
+  "fun_fact": "俳句通常還要放入表示季節的「季語」，季語有專門的辭典可查。"
+ },
+ {
+  "id": "human-EA-016",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "平安時代的長篇小說《源氏物語》作者是誰？",
+  "options": [
+   "紫式部",
+   "清少納言",
+   "和泉式部",
+   "小野小町"
+  ],
+  "answer": 0,
+  "explanation": "《源氏物語》成書於十一世紀初，作者紫式部是平安宮廷的女官。",
+  "fun_fact": "它常被視為世界上第一部長篇小說，也是最早獲得國際聲譽的女性作品。"
+ },
+ {
+  "id": "human-EA-017",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "日本傳統樂器「三味線」有幾條弦？",
+  "options": [
+   "兩條",
+   "三條",
+   "四條",
+   "五條"
+  ],
+  "answer": 1,
+  "explanation": "三味線的名字就來自它的三條弦，用稱為「撥」的大型撥子彈奏。",
+  "fun_fact": "琴身前後蒙皮，敲到皮面時會發出明顯的打擊聲，音色帶點沙啞。"
+ },
+ {
+  "id": "human-EA-018",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "日本花道歷史最悠久的流派是哪一個？",
+  "options": [
+   "池坊",
+   "草月流",
+   "小原流",
+   "嵯峨御流"
+  ],
+  "answer": 0,
+  "explanation": "池坊是花道最古老也最大的流派，以京都六角堂為根據地。",
+  "fun_fact": "流派名稱來自六角堂旁的水池（池）與僧人居住的小屋（坊）。"
+ },
+ {
+  "id": "human-EA-019",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "白川鄉「合掌造」民家的屋頂做得特別陡，主要原因是？",
+  "options": [
+   "方便屋內採光",
+   "加強抗震能力",
+   "便於通風除濕",
+   "讓厚重積雪滑落"
+  ],
+  "answer": 3,
+  "explanation": "當地冬季豪雪，陡峭的茅草屋頂能讓積雪自然滑落、減輕屋頂負荷。",
+  "fun_fact": "屋頂形狀像雙手合十，「合掌造」的名字就是這麼來的。"
+ },
+ {
+  "id": "human-EA-020",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "京都龍安寺最著名的是哪一種庭園？",
+  "options": [
+   "池泉迴遊式庭園",
+   "茶庭（露地）",
+   "枯山水石庭",
+   "淨土式庭園"
+  ],
+  "answer": 2,
+  "explanation": "龍安寺的方丈庭園是枯山水（乾式山水）的代表作，只用白砂與石組。",
+  "fun_fact": "庭中十五顆石頭刻意排成從任何一個角度都看不全的位置。"
+ },
+ {
+  "id": "human-EA-021",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "京都金閣寺的正式名稱是什麼？",
+  "options": [
+   "慈照寺",
+   "鹿苑寺",
+   "相國寺",
+   "建仁寺"
+  ],
+  "answer": 1,
+  "explanation": "金閣寺是俗稱，正式寺名為鹿苑寺，意思是「鹿苑之寺」。",
+  "fun_fact": "銀閣寺同樣也是俗稱，兩座寺院都屬於相國寺派。"
+ },
+ {
+  "id": "human-EA-022",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "被列為世界遺產的姬路城，因外觀潔白而有什麼別稱？",
+  "options": [
+   "金烏城",
+   "舞鶴城",
+   "青葉城",
+   "白鷺城"
+  ],
+  "answer": 3,
+  "explanation": "姬路城外牆雪白、姿態像展翅的白鷺，因此有「白鷺城」（Shirasagi-jō）的別稱。",
+  "fun_fact": "它在一九九三年入選，是日本最早一批登錄的世界遺產之一。"
+ },
+ {
+  "id": "human-EA-023",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "富士山是以哪一個類別登錄世界遺產的？",
+  "options": [
+   "文化遺產",
+   "自然遺產",
+   "複合遺產",
+   "文化景觀"
+  ],
+  "answer": 0,
+  "explanation": "富士山以「信仰對象與藝術泉源」的名義登錄為文化遺產，不是自然遺產。",
+  "fun_fact": "登錄範圍包含山體以外的神社、登山道與周邊湖泊等多處構成資產。"
+ },
+ {
+  "id": "human-EA-024",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "日本和菓子「羊羹」主要是用什麼做成的？",
+  "options": [
+   "糯米與黃豆粉",
+   "雞蛋與麵粉",
+   "紅豆餡與寒天",
+   "地瓜與砂糖"
+  ],
+  "answer": 2,
+  "explanation": "羊羹是把紅豆餡加糖，再用寒天（洋菜）凝固成塊的傳統和菓子。",
+  "fun_fact": "它的名字來自中國的羊肉羹，傳到日本後才變成完全植物性的甜點。"
+ },
+ {
+  "id": "human-EA-025",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「豚骨拉麵」乳白色的湯頭發源於日本哪個地方？",
+  "options": [
+   "北海道",
+   "東北地方",
+   "關西地方",
+   "九州地方"
+  ],
+  "answer": 3,
+  "explanation": "豚骨拉麵源自九州福岡縣久留米，是九州的代表性拉麵。",
+  "fun_fact": "豬骨要熬上十幾個小時，湯才會乳化成不透明的白色。"
+ },
+ {
+  "id": "human-EA-026",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "現在常見的「握壽司」最早是在哪座城市誕生的？",
+  "options": [
+   "大坂",
+   "江戶",
+   "京都",
+   "長崎"
+  ],
+  "answer": 1,
+  "explanation": "握壽司在十九世紀前期的江戶（今東京）出現，屬於快速供應的庶民食物。",
+  "fun_fact": "「江戶前」原指江戶灣捕到的海鮮，現在則成了高品質壽司的代名詞。"
+ },
+ {
+  "id": "human-EA-027",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "浴衣與一般和服最大的差別是什麼？",
+  "options": [
+   "無襯裡的棉質單衣",
+   "以絲綢織成的禮服",
+   "冬季專用的厚外衣",
+   "只有男性可以穿著"
+  ],
+  "answer": 0,
+  "explanation": "浴衣是不加襯裡的棉或麻製單衣，屬於夏季祭典等場合的休閒穿著。",
+  "fun_fact": "浴衣字面意思是「沐浴用的衣服」，現在溫泉旅館還會提供給房客。"
+ },
+ {
+  "id": "human-EA-028",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "被譽為「漫畫之神」、創作《原子小金剛》的日本漫畫家是誰？",
+  "options": [
+   "水木茂",
+   "宮崎駿",
+   "手塚治虫",
+   "赤塚不二夫"
+  ],
+  "answer": 2,
+  "explanation": "手塚治虫確立了現代日本漫畫與動畫的形式，被尊稱為漫畫之神。",
+  "fun_fact": "他一生留下的原稿超過十五萬頁，常被拿來和華特迪士尼相提並論。"
+ },
+ {
+  "id": "human-EA-029",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "韓文字母原本的名稱《訓民正音》意思是什麼？",
+  "options": [
+   "百姓通用的方便文字",
+   "教導百姓的正確聲音",
+   "朝鮮王朝的官方語言",
+   "由漢字簡化來的字母"
+  ],
+  "answer": 1,
+  "explanation": "「訓民正音」直譯就是「教導百姓的正確聲音」，是這套文字最初的名稱。",
+  "fun_fact": "《訓民正音》解例本在一九九七年被登錄為聯合國教科文組織的世界記憶遺產。"
+ },
+ {
+  "id": "human-EA-030",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "現代韓文（諺文）的基本字母共有幾個？",
+  "options": [
+   "14個",
+   "20個",
+   "24個",
+   "28個"
+  ],
+  "answer": 2,
+  "explanation": "現代諺文使用二十四個基本字母，其中子音十四個、母音十個。",
+  "fun_fact": "創制之初其實有二十八個字母，有幾個後來廢棄不用了。"
+ },
+ {
+  "id": "human-EA-031",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "諺文的字母在書寫時是怎麼排列的？",
+  "options": [
+   "由左至右排成一直線",
+   "像漢字一樣一字一音",
+   "由上而下排成一直行",
+   "組合成方塊狀的音節"
+  ],
+  "answer": 3,
+  "explanation": "諺文採「聚寫」原則，把初聲、中聲、終聲組合成一個方塊狀的音節。",
+  "fun_fact": "母音筆畫直的排在子音右邊、橫的排在下面，收尾的子音則放最底下。"
+ },
+ {
+  "id": "human-EA-032",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "諺文的基本子音字形是模仿什麼設計出來的？",
+  "options": [
+   "發音時的口腔器官",
+   "天地人三才的形狀",
+   "漢字偏旁的簡化形",
+   "八卦符號的排列法"
+  ],
+  "answer": 0,
+  "explanation": "ㄱ、ㄴ、ㅁ、ㅅ、ㅇ 五個基本子音分別描摹牙（舌根）、舌、唇、齒、喉的發音器官形狀，再加筆畫衍生其他字母。",
+  "fun_fact": "母音則是另一套設計原理，靈感來源和子音完全不同。"
+ },
+ {
+  "id": "human-EA-033",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "韓國傳統說唱藝術「盤索里」的標準演出組合是？",
+  "options": [
+   "兩名歌手輪流對唱",
+   "一名唱者與一名鼓手",
+   "一名唱者加伴舞群",
+   "四人小組合唱伴奏"
+  ],
+  "answer": 1,
+  "explanation": "盤索里由一名手持摺扇的唱者，搭配一名擊鼓的「鼓手」共同演出。",
+  "fun_fact": "韓國有句話說「一鼓手抵兩名唱者」，可見鼓手的分量。"
+ },
+ {
+  "id": "human-EA-034",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "韓國假面舞（탈춤）最常拿來嘲諷的對象是？",
+  "options": [
+   "異國來的商人",
+   "市集的小販",
+   "兩班貴族階級",
+   "邊境的軍官"
+  ],
+  "answer": 2,
+  "explanation": "假面舞常用詩句與雙關語揶揄兩班，反映庶民對特權階級的不滿。",
+  "fun_fact": "假面舞在二〇二二年被列入聯合國教科文組織的人類非物質文化遺產名錄。"
+ },
+ {
+  "id": "human-EA-035",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "韓國大量醃製越冬泡菜的「Kimjang（김장）」通常在何時進行？",
+  "options": [
+   "春耕前的初春",
+   "盛夏的三伏天",
+   "梅雨結束之後",
+   "入冬前的晚秋"
+  ],
+  "answer": 3,
+  "explanation": "Kimjang（越冬泡菜醃製）是入冬前、約陽曆十一月由家族與鄰里一起大量醃製泡菜，以備整個冬天食用，二○一三年列入聯合國教科文組織人類非物質文化遺產。",
+  "fun_fact": "這項共同醃製的習俗在二〇一三年登錄為人類非物質文化遺產。"
+ },
+ {
+  "id": "human-EA-036",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "韓國中秋節必吃的傳統米糕是哪一種？",
+  "options": [
+   "年糕湯",
+   "打糕",
+   "炒年糕",
+   "松片"
+  ],
+  "answer": 3,
+  "explanation": "松片（송편）是包餡的半月形米糕，蒸的時候會鋪上一層松針。",
+  "fun_fact": "松針不只防沾黏，還會把香氣帶進米糕裡。"
+ },
+ {
+  "id": "human-EA-037",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "韓國人把農曆八月十五的中秋節稱作什麼？",
+  "options": [
+   "寒食",
+   "秋夕",
+   "端午",
+   "冬至"
+  ],
+  "answer": 1,
+  "explanation": "秋夕是韓國最重要的秋收節日，在農曆八月十五滿月之日。",
+  "fun_fact": "南韓的秋夕連前後一天共放三天假，是一年中返鄉人潮最多的時候。"
+ },
+ {
+  "id": "human-EA-038",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "韓國人在農曆新年喝年糕湯，傳統上代表什麼意思？",
+  "options": [
+   "祈求整年不生病",
+   "感謝祖先的庇佑",
+   "代表又長了一歲",
+   "希望五穀能豐收"
+  ],
+  "answer": 2,
+  "explanation": "韓國人相信喝完年糕湯就算多長一歲，所以新年一定要吃。",
+  "fun_fact": "湯裡的年糕是長條狀切片，長長的形狀被拿來象徵福氣延伸。"
+ },
+ {
+  "id": "human-EA-039",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "韓國傳統住宅裡的「溫突」是什麼設備？",
+  "options": [
+   "地板下的暖房系統",
+   "牆內的通風管道",
+   "屋頂上的集水槽",
+   "廚房用的醃菜缸"
+  ],
+  "answer": 0,
+  "explanation": "溫突是把灶火的煙引到厚石板地板底下流通的地暖系統。",
+  "fun_fact": "現代韓國公寓雖然改用熱水管，但仍沿用「溫突」這個名字。"
+ },
+ {
+  "id": "human-EA-040",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "韓國哪一座城市以拌飯（비빔밥）聞名？",
+  "options": [
+   "安東",
+   "全州",
+   "慶州",
+   "水原"
+  ],
+  "answer": 1,
+  "explanation": "全州拌飯是最有名的地方版本，米飯用牛腱高湯炊煮，還會加生拌牛肉。",
+  "fun_fact": "拌飯的韓文字面意思就是「拌起來的飯」，非常直白。"
+ },
+ {
+  "id": "human-EA-041",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "韓國人習慣在什麼時節吃蔘雞湯？",
+  "options": [
+   "寒流來襲的隆冬",
+   "梅雨綿綿的初夏",
+   "農曆新年的假期",
+   "最炎熱的三伏天"
+  ],
+  "answer": 3,
+  "explanation": "蔘雞湯是三伏天的進補食物，用以補回流汗消耗掉的體力。",
+  "fun_fact": "一整隻童子雞肚子裡塞了糯米、人參、紅棗與大蒜一起燉。"
+ },
+ {
+  "id": "human-EA-042",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "女性韓服由上衣「赤古里」搭配什麼組成？",
+  "options": [
+   "長裙",
+   "寬褲",
+   "披風",
+   "圍裙"
+  ],
+  "answer": 0,
+  "explanation": "女性韓服是短上衣「赤古里」（저고리）加上蓬鬆的長裙「치마（chima）」。",
+  "fun_fact": "男性韓服則是赤古里配上便於盤腿而坐的寬鬆長褲。"
+ },
+ {
+  "id": "human-EA-043",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "韓國傳統樂器「伽倻琴」通常有幾條弦？",
+  "options": [
+   "六條",
+   "八條",
+   "十二條",
+   "二十五條"
+  ],
+  "answer": 2,
+  "explanation": "傳統伽倻琴有十二條弦，右手撥弦、左手在琴橋左側按壓製造餘韻。",
+  "fun_fact": "現代為了演奏西洋曲目，也出現十八、二十一甚至二十五弦的改良琴。"
+ },
+ {
+  "id": "human-EA-044",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "佛國寺與石窟庵這組世界遺產位於韓國哪座城市？",
+  "options": [
+   "扶餘",
+   "慶州",
+   "開城",
+   "江陵"
+  ],
+  "answer": 1,
+  "explanation": "佛國寺與石窟庵都在慶州吐含山一帶，一九九五年共同登錄世界遺產。",
+  "fun_fact": "佛國寺至今仍是韓國佛教曹溪宗的重要寺院。"
+ },
+ {
+  "id": "human-EA-045",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "首爾的景福宮是哪一個王朝的正宮？",
+  "options": [
+   "朝鮮王朝",
+   "高麗王朝",
+   "新羅王朝",
+   "百濟王朝"
+  ],
+  "answer": 0,
+  "explanation": "景福宮建於一三九五年，是朝鮮王朝的第一座也是最主要的王宮。",
+  "fun_fact": "宮名取自《詩經》，意思是「盛大的福氣」。"
+ },
+ {
+  "id": "human-EA-046",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "被列入世界遺產的韓國「書院」，是哪一種思想的教育機構？",
+  "options": [
+   "佛教禪宗",
+   "道教全真",
+   "薩滿信仰",
+   "儒家性理學"
+  ],
+  "answer": 3,
+  "explanation": "書院是朝鮮時代結合孔廟與私學的性理學（新儒學）書院。",
+  "fun_fact": "九處書院在二〇一九年以「韓國新儒學書院」之名一起登錄世界遺產。"
+ },
+ {
+  "id": "human-EA-047",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "韓國國旗「太極旗」中央的圓形圖案代表什麼？",
+  "options": [
+   "日月的運行",
+   "陰陽的調和",
+   "四季的循環",
+   "五行的相生"
+  ],
+  "answer": 1,
+  "explanation": "中央的太極由紅藍兩半組成，紅為陽、藍為陰，象徵陰陽調和。",
+  "fun_fact": "四角的四個卦象分別是乾、坤、坎、離，各自對應天地與日月。"
+ },
+ {
+  "id": "human-EA-048",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "韓國人在春節與秋夕早上舉行的祭祖儀式叫什麼？",
+  "options": [
+   "歲拜",
+   "祭祀",
+   "茶禮",
+   "告祀"
+  ],
+  "answer": 2,
+  "explanation": "重要節日早上舉行的祖先祭祀稱為「茶禮（차례）」，一年數次。",
+  "fun_fact": "忌日當天舉行的那一種祭祖儀式名稱不同，別搞混了。"
+ },
+ {
+  "id": "human-EA-049",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "蒙古包的蒙古語名稱「ger」原本是什麼意思？",
+  "options": [
+   "家屋",
+   "圓形",
+   "草原",
+   "白色"
+  ],
+  "answer": 0,
+  "explanation": "蒙古語的 ger 就是「家」的意思，指這種可搬遷的氈製住屋。",
+  "fun_fact": "牆體用木條編成可折疊的格柵，外面再包上羊毛擀成的氈。"
+ },
+ {
+  "id": "human-EA-050",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "蒙古「那達慕」大會的三項傳統競技是什麼？",
+  "options": [
+   "賽駱駝、角力、狩獵",
+   "射箭、賽馬、馴鷹",
+   "摔跤、賽馬、射箭",
+   "馬球、摔跤、射箭"
+  ],
+  "answer": 2,
+  "explanation": "那達慕的「男兒三藝」就是摔跤、賽馬與射箭。",
+  "fun_fact": "那達慕在二〇一〇年被列入人類非物質文化遺產代表名錄。"
+ },
+ {
+  "id": "human-EA-051",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "蒙古的「呼麥」唱法最特別的地方是什麼？",
+  "options": [
+   "兩人同時唱不同旋律",
+   "一人同時發出兩個音",
+   "完全不使用任何歌詞",
+   "模仿馬匹奔跑的節奏"
+  ],
+  "answer": 1,
+  "explanation": "呼麥靠改變口腔共鳴，讓一個人在低音持續音之上同時唱出泛音旋律。",
+  "fun_fact": "呼麥也流行於圖瓦、內蒙古與阿爾泰一帶，遼闊草原讓歌聲能傳得很遠。"
+ },
+ {
+  "id": "human-EA-052",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "沖繩傳統樂器「三線」的琴身包覆著什麼？",
+  "options": [
+   "牛皮",
+   "貓皮",
+   "狗皮",
+   "蛇皮"
+  ],
+  "answer": 3,
+  "explanation": "三線的琴身蒙的是蟒蛇皮，音色溫厚而清晰。",
+  "fun_fact": "三線在十六世紀傳到大阪堺港，後來演變成日本本土的三味線。"
+ },
+ {
+  "id": "human-EA-053",
+  "topic": "human",
+  "unit": "EA",
+  "unit_name": "日韓・東亞",
+  "category": "人文",
+  "region": "日韓・東亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "沖繩的首里城曾經是哪一個王國的王宮？",
+  "options": [
+   "琉球王國",
+   "高麗王國",
+   "渤海王國",
+   "大理王國"
+  ],
+  "answer": 0,
+  "explanation": "首里城從一四二九年起是琉球王國的王宮與政治、外交中心。",
+  "fun_fact": "它在二〇〇〇年以「琉球王國的城堡及相關遺產群」的一部分登錄世界遺產。"
+ }
+]

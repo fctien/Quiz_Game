@@ -1,0 +1,3062 @@
+[
+ {
+  "id": "geo-SEA-001",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "麻六甲海峽主要分隔馬來半島與下列哪一座島嶼？",
+  "options": [
+   "爪哇島",
+   "蘇門答臘島",
+   "峇里島",
+   "蘇拉威西島"
+  ],
+  "answer": 1,
+  "explanation": "麻六甲海峽夾在馬來半島與印尼的蘇門答臘島之間，是連接印度洋與南海的關鍵航道。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-002",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1883 年劇烈噴發的喀拉喀托火山，位於分隔爪哇島與蘇門答臘島的哪一條海峽？",
+  "options": [
+   "麻六甲海峽",
+   "巽他海峽",
+   "龍目海峽",
+   "望加錫海峽"
+  ],
+  "answer": 1,
+  "explanation": "喀拉喀托火山島座落於巽他海峽中，該海峽正好把爪哇島與蘇門答臘島分開。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-003",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "泰國的首都是哪一座城市？",
+  "options": [
+   "金邊",
+   "仰光",
+   "永珍",
+   "曼谷"
+  ],
+  "answer": 3,
+  "explanation": "曼谷是泰國的首都與最大城市，位於昭披耶河下游的平原上。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-004",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1815 年大噴發、造成隔年北半球出現「無夏之年」的坦博拉火山，位於印尼哪一座島？",
+  "options": [
+   "爪哇島",
+   "峇里島",
+   "龍目島",
+   "松巴哇島"
+  ],
+  "answer": 3,
+  "explanation": "坦博拉火山位於小巽他群島中的松巴哇島，那次噴發把大量火山灰送入平流層，使全球氣溫明顯下降。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-005",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "世界最高峰聖母峰（珠穆朗瑪峰）位於中國與哪一個國家的邊界上？",
+  "options": [
+   "尼泊爾",
+   "不丹",
+   "印度",
+   "巴基斯坦"
+  ],
+  "answer": 0,
+  "explanation": "聖母峰坐落在喜馬拉雅山脈上，山脊線正是中國與尼泊爾的國界。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-006",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "世界第二高峰 K2 屬於下列哪一座山脈？",
+  "options": [
+   "喜馬拉雅山脈",
+   "興都庫什山脈",
+   "喀喇崑崙山脈",
+   "阿爾卑斯山脈"
+  ],
+  "answer": 2,
+  "explanation": "K2 位於喀喇崑崙山脈，不屬於喜馬拉雅山脈，它橫跨巴基斯坦與中國邊界。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-007",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "著名的「湄公河三角洲」位於下列哪一個國家境內？",
+  "options": [
+   "柬埔寨",
+   "泰國",
+   "越南",
+   "寮國"
+  ],
+  "answer": 2,
+  "explanation": "湄公河在越南南部分流入海，形成廣大的湄公河三角洲，是越南最重要的稻米產區。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-008",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "寮國首都永珍座落在哪一條大河的河畔？",
+  "options": [
+   "紅河",
+   "昭披耶河",
+   "薩爾溫江",
+   "湄公河"
+  ],
+  "answer": 3,
+  "explanation": "永珍緊臨湄公河，河道同時是寮國與泰國之間的一段國界。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-009",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "湄公河從源頭到出海口，總共流經幾個國家？",
+  "options": [
+   "三個",
+   "四個",
+   "六個",
+   "九個"
+  ],
+  "answer": 2,
+  "explanation": "湄公河發源於中國青藏高原，依序流經中國、緬甸、寮國、泰國、柬埔寨與越南，共六國。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-010",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "菲律賓的首都馬尼拉位於哪一座島嶼上？",
+  "options": [
+   "呂宋島",
+   "民答那峨島",
+   "宿霧島",
+   "巴拉望島"
+  ],
+  "answer": 0,
+  "explanation": "馬尼拉位於菲律賓北部最大島呂宋島的西岸，面向馬尼拉灣。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-011",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "伊洛瓦底江是下列哪一個國家最重要的河川？",
+  "options": [
+   "泰國",
+   "越南",
+   "柬埔寨",
+   "緬甸"
+  ],
+  "answer": 3,
+  "explanation": "伊洛瓦底江自北向南縱貫緬甸，是該國的交通與農業命脈。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-012",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "觀光勝地峇里島屬於下列哪一個國家？",
+  "options": [
+   "馬來西亞",
+   "菲律賓",
+   "汶萊",
+   "印尼"
+  ],
+  "answer": 3,
+  "explanation": "峇里島是印尼的一個省，位於爪哇島東側，以印度教文化與梯田景觀聞名。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-013",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "布拉馬普特拉河在中國西藏境內被稱為什麼？",
+  "options": [
+   "雅魯藏布江",
+   "瀾滄江",
+   "怒江",
+   "金沙江"
+  ],
+  "answer": 0,
+  "explanation": "這條河在西藏叫雅魯藏布江，進入印度後改稱布拉馬普特拉河，最後在南亞注入孟加拉灣。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-014",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "恆河下游主要流經印度與哪一個國家後注入孟加拉灣？",
+  "options": [
+   "尼泊爾",
+   "孟加拉",
+   "緬甸",
+   "斯里蘭卡"
+  ],
+  "answer": 1,
+  "explanation": "恆河離開印度後進入孟加拉，與其他大河會合形成廣大的三角洲再入海。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-015",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "世界最大的紅樹林濕地「孫德爾本斯」，位於哪一（組）河川的三角洲上？",
+  "options": [
+   "印度河",
+   "恆河—布拉馬普特拉河",
+   "伊洛瓦底江",
+   "湄公河"
+  ],
+  "answer": 1,
+  "explanation": "孫德爾本斯橫跨印度與孟加拉，坐落在恆河與布拉馬普特拉河共同堆積出的三角洲濱海地帶。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-016",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "以海上林立的石灰岩島嶼聞名的「下龍灣」位於哪一個國家？",
+  "options": [
+   "泰國",
+   "越南",
+   "菲律賓",
+   "印尼"
+  ],
+  "answer": 1,
+  "explanation": "下龍灣在越南北部的北部灣一帶，數千座喀斯特石灰岩島礁構成獨特海上地景。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-017",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "汶萊的國土被馬來西亞哪一州從中分隔成互不相連的兩塊？",
+  "options": [
+   "沙巴州",
+   "砂拉越州",
+   "柔佛州",
+   "檳城州"
+  ],
+  "answer": 1,
+  "explanation": "汶萊四周被馬來西亞的砂拉越州包圍，砂拉越的林夢一帶把汶萊切成東西兩塊。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-018",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "婆羅洲（加里曼丹島）由三個國家分割統治，下列哪一國「不」在其中？",
+  "options": [
+   "汶萊",
+   "馬來西亞",
+   "菲律賓",
+   "印尼"
+  ],
+  "answer": 2,
+  "explanation": "婆羅洲由汶萊、馬來西亞與印尼三國共同分割，菲律賓並未占有這座島。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-019",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "分隔印度南端與斯里蘭卡的海峽是？",
+  "options": [
+   "荷莫茲海峽",
+   "曼德海峽",
+   "保克海峽",
+   "巽他海峽"
+  ],
+  "answer": 2,
+  "explanation": "保克海峽位於印度半島南端與斯里蘭卡之間，水淺而多沙洲。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-020",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "東南亞十一國中，唯一的「城市國家」是？",
+  "options": [
+   "汶萊",
+   "東帝汶",
+   "馬來西亞",
+   "新加坡"
+  ],
+  "answer": 3,
+  "explanation": "新加坡的國土幾乎就是一座城市與周邊小島，是典型的城市國家。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-021",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "新加坡與馬來半島之間那條狹窄的水道稱為？",
+  "options": [
+   "柔佛海峽",
+   "麻六甲海峽",
+   "新加坡海峽",
+   "卡里馬塔海峽"
+  ],
+  "answer": 0,
+  "explanation": "柔佛海峽把新加坡島與馬來半島南端分開，兩岸之間靠長堤與大橋相連。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-022",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "印度河（Indus River）今日的主要河道與下游灌溉平原，絕大部分位於哪一個國家？",
+  "options": [
+   "印度",
+   "巴基斯坦",
+   "孟加拉",
+   "阿富汗"
+  ],
+  "answer": 1,
+  "explanation": "印度河雖以印度為名，但其主幹下游與旁遮普、信德的灌溉平原今日幾乎都在巴基斯坦境內；若以整個流域面積計，巴基斯坦約占 47%、印度約 39%，其餘屬中國與阿富汗。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-023",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "位於孟加拉灣中、行政上隸屬印度的群島是？",
+  "options": [
+   "安達曼-尼科巴群島",
+   "蘇祿群島",
+   "馬魯古群島",
+   "明打威群島"
+  ],
+  "answer": 0,
+  "explanation": "安達曼-尼科巴群島是印度的聯邦屬地，位置反而更靠近中南半島與蘇門答臘。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-024",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "由珊瑚礁島構成的島國馬爾地夫，位於哪一個大洋？",
+  "options": [
+   "太平洋",
+   "大西洋",
+   "北冰洋",
+   "印度洋"
+  ],
+  "answer": 3,
+  "explanation": "馬爾地夫散布在印度洋上，由上千座低平的珊瑚島與環礁組成。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-025",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "柬埔寨的洞里薩湖有什麼世界罕見的水文現象？",
+  "options": [
+   "湖水鹽度比海水更高",
+   "雨季時連通的河水倒流入湖，湖面大幅擴張",
+   "每年冬天整座湖完全結冰",
+   "湖面每天出現兩次明顯潮汐"
+  ],
+  "answer": 1,
+  "explanation": "雨季時湄公河水位暴漲，使連接的洞里薩河改為倒流入湖，湖面可擴張到旱季的數倍大。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-026",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "印度半島中部那片古老而廣闊的高原稱為？",
+  "options": [
+   "伊朗高原",
+   "蒙古高原",
+   "德干高原",
+   "青藏高原"
+  ],
+  "answer": 2,
+  "explanation": "德干高原占據印度半島大部分面積，由古老的玄武岩與結晶岩構成，東西兩側各有一列山脈。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-027",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "馬來半島最狹窄處、位於泰國南部的地峽稱為？",
+  "options": [
+   "蘇伊士地峽",
+   "克拉地峽",
+   "巴拿馬地峽",
+   "科林斯地峽"
+  ],
+  "answer": 1,
+  "explanation": "克拉地峽是馬來半島最窄的一段，長期被討論是否開鑿運河以取代繞行麻六甲的航線。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-028",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "馬來西亞的國土被哪一個海分隔成「西馬」與「東馬」兩部分？",
+  "options": [
+   "安達曼海",
+   "爪哇海",
+   "南海",
+   "蘇祿海"
+  ],
+  "answer": 2,
+  "explanation": "馬來西亞由馬來半島上的西馬與婆羅洲北部的東馬組成，兩者隔著南海相望。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-029",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "位於喜馬拉雅山南麓的內陸王國不丹，首都是哪一座城市？",
+  "options": [
+   "加德滿都",
+   "達卡",
+   "廷布",
+   "拉薩"
+  ],
+  "answer": 2,
+  "explanation": "廷布是不丹的首都，座落在喜馬拉雅山區的河谷之中。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-030",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "巴基斯坦的首都是哪一座城市？",
+  "options": [
+   "喀拉蚩",
+   "拉合爾",
+   "白沙瓦",
+   "伊斯蘭瑪巴德"
+  ],
+  "answer": 3,
+  "explanation": "伊斯蘭瑪巴德是 20 世紀中期規劃興建的新首都，位於巴基斯坦北部，取代了原本沿海的舊首都。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-031",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列哪一個國家「不」位於環太平洋火山帶（火環帶）上？",
+  "options": [
+   "印尼",
+   "菲律賓",
+   "泰國",
+   "日本"
+  ],
+  "answer": 2,
+  "explanation": "泰國位於歐亞板塊內部較穩定的地帶，沒有活火山；其餘各國都在火環帶上，地震與火山活動頻繁。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-032",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列哪一組南亞國家「兩者都是」沒有海岸線的內陸國？",
+  "options": [
+   "尼泊爾與不丹",
+   "孟加拉與斯里蘭卡",
+   "巴基斯坦與尼泊爾",
+   "不丹與馬爾地夫"
+  ],
+  "answer": 0,
+  "explanation": "尼泊爾與不丹都夾在中國與印度之間，完全沒有出海口。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-033",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "橫跨印度與巴基斯坦邊界的大沙漠是？",
+  "options": [
+   "戈壁沙漠",
+   "塔克拉瑪干沙漠",
+   "魯卜哈利沙漠",
+   "塔爾沙漠"
+  ],
+  "answer": 3,
+  "explanation": "塔爾沙漠又稱大印度沙漠，主要分布在印度拉賈斯坦邦與巴基斯坦信德、旁遮普一帶。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-034",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "越南南部、舊稱「西貢」的第一大城是？",
+  "options": [
+   "河內",
+   "峴港",
+   "海防",
+   "胡志明市"
+  ],
+  "answer": 3,
+  "explanation": "胡志明市位於越南南部、湄公河三角洲北緣，舊名西貢，是越南人口與經濟規模最大的都市。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-035",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "南亞地區夏季的豐沛降雨，主要由哪一種季風帶來？",
+  "options": [
+   "西南季風",
+   "東北季風",
+   "西北季風",
+   "極地東風"
+  ],
+  "answer": 0,
+  "explanation": "夏季時陸地增溫，來自印度洋的西南季風帶入大量水氣，形成南亞的雨季。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-036",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "印尼與巴布亞紐幾內亞之間的陸上國界，位於哪一座島上？",
+  "options": [
+   "蘇拉威西島",
+   "新幾內亞島",
+   "帝汶島",
+   "婆羅洲"
+  ],
+  "answer": 1,
+  "explanation": "新幾內亞島西半部屬於印尼，東半部是巴布亞紐幾內亞，兩國以近乎筆直的經線為界。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-037",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列四條河川由「西」到「東」排列，正確的是？",
+  "options": [
+   "印度河 → 恆河 → 伊洛瓦底江 → 湄公河",
+   "恆河 → 印度河 → 湄公河 → 伊洛瓦底江",
+   "湄公河 → 伊洛瓦底江 → 恆河 → 印度河",
+   "伊洛瓦底江 → 印度河 → 恆河 → 湄公河"
+  ],
+  "answer": 0,
+  "explanation": "由西往東依序是巴基斯坦的印度河、印度北部的恆河、緬甸的伊洛瓦底江，最東邊是中南半島的湄公河。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-038",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列四座山峰由「高」到「低」排列，正確的是？",
+  "options": [
+   "聖母峰 → K2 → 干城章嘉峰 → 道拉吉里峰",
+   "K2 → 聖母峰 → 道拉吉里峰 → 干城章嘉峰",
+   "聖母峰 → 干城章嘉峰 → K2 → 道拉吉里峰",
+   "干城章嘉峰 → 聖母峰 → K2 → 道拉吉里峰"
+  ],
+  "answer": 0,
+  "explanation": "全球最高的三座山依序是聖母峰（8,848 公尺）、K2（8,611 公尺）與干城章嘉峰（8,586 公尺），道拉吉里峰（8,167 公尺）則是世界第七高峰。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-039",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "生物地理學上的「華萊士線」是亞洲與澳洲動物相的分界，它在峇里島與哪一座島之間通過？",
+  "options": [
+   "爪哇島",
+   "龍目島",
+   "松巴哇島",
+   "佛羅勒斯島"
+  ],
+  "answer": 1,
+  "explanation": "峇里島與龍目島之間雖然只隔著狹窄而深的水道，動物種類卻明顯不同，這條界線即以博物學家華萊士命名。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-040",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "位於婆羅洲與蘇拉威西島之間的海峽是？",
+  "options": [
+   "望加錫海峽",
+   "卡里馬塔海峽",
+   "龍目海峽",
+   "巴士海峽"
+  ],
+  "answer": 0,
+  "explanation": "望加錫海峽把婆羅洲與蘇拉威西島分開，是印尼重要的南北向深水航道。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-041",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "東帝汶有一塊被印尼領土完全包圍、與本土不相連的「飛地」，它的名稱是？",
+  "options": [
+   "狄力",
+   "包考",
+   "歐庫西",
+   "阿陶羅"
+  ],
+  "answer": 2,
+  "explanation": "歐庫西位於帝汶島西半部的印尼領土之中，是殖民時期邊界劃分留下的歷史產物。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-042",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "斯里蘭卡的行政首都、國會所在地是哪一座城市？",
+  "options": [
+   "可倫坡",
+   "康提",
+   "加勒",
+   "斯里賈亞瓦德納普拉科特"
+  ],
+  "answer": 3,
+  "explanation": "斯里蘭卡把行政中心遷到可倫坡近郊的斯里賈亞瓦德納普拉科特，商業與港口機能仍留在可倫坡。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-043",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "以極端多雨聞名的乞拉朋吉（Cherrapunji），位於印度的哪一邦？",
+  "options": [
+   "喀拉拉邦",
+   "梅加拉亞邦",
+   "阿薩姆邦",
+   "西孟加拉邦"
+  ],
+  "answer": 1,
+  "explanation": "乞拉朋吉在印度東北部的梅加拉亞邦，位於卡西丘陵迎風坡，西南季風在此被抬升而降下驚人雨量。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-044",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "馬來西亞的最高峰京那巴魯山（神山）位於哪一州？",
+  "options": [
+   "沙巴州",
+   "砂拉越州",
+   "彭亨州",
+   "霹靂州"
+  ],
+  "answer": 0,
+  "explanation": "京那巴魯山矗立在婆羅洲北端的沙巴州，是馬來西亞境內最高的山峰。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-045",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "越南北部、流經河內並注入北部灣（東京灣）的主要河川是？",
+  "options": [
+   "湄公河",
+   "薩爾溫江",
+   "紅河",
+   "珠江"
+  ],
+  "answer": 2,
+  "explanation": "紅河源自中國雲南，穿越越南北部的河內後注入北部灣，其沖積平原是越南北部的農業核心。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-SEA-046",
+  "topic": "geo",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "地理",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "世界最深的海溝之一「菲律賓海溝」，其最深點「恩登深淵」位於哪一座大島的東側外海？",
+  "options": [
+   "呂宋島",
+   "巴拉望島",
+   "薩馬島",
+   "民答那峨島"
+  ],
+  "answer": 3,
+  "explanation": "菲律賓海溝沿菲律賓群島東側延伸，最深處在民答那峨島以東外海，深度超過一萬公尺。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-SEA-001",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "吳哥窟是哪一位高棉國王在十二世紀所興建的？",
+  "options": [
+   "蘇利耶跋摩二世",
+   "闍耶跋摩七世",
+   "闍耶跋摩二世",
+   "因陀羅跋摩一世"
+  ],
+  "answer": 0,
+  "explanation": "吳哥窟約在西元 1113 至 1150 年間、蘇利耶跋摩二世在位時建成，是高棉帝國國力的高峰之作。",
+  "fun_fact": "它原名意思是「毗濕奴的神聖居所」，本來是一座印度教神殿，後來才改為佛寺。"
+ },
+ {
+  "id": "history-SEA-002",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "吳哥城中央、以巨大人面石塔聞名的寺廟是哪一座？",
+  "options": [
+   "巴肯寺",
+   "巴戎寺",
+   "塔普倫寺",
+   "女王宮"
+  ],
+  "answer": 1,
+  "explanation": "巴戎寺位於大吳哥（吳哥城）正中央，塔上雕著數十張巨大的微笑人面，是闍耶跋摩七世時期的代表作。",
+  "fun_fact": "那些石雕人面常被說成「高棉的微笑」，一座塔往往四面都有臉，朝向東西南北。"
+ },
+ {
+  "id": "history-SEA-003",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "世界最大的佛教遺跡婆羅浮屠位於印尼哪一座島上？",
+  "options": [
+   "爪哇島",
+   "蘇門答臘",
+   "峇里島",
+   "蘇拉威西"
+  ],
+  "answer": 0,
+  "explanation": "婆羅浮屠位於中爪哇的日惹附近，是九世紀夏連特拉王朝留下的大乘佛教建築。",
+  "fun_fact": "整座塔是一個立體的壇城，信徒要繞著層層迴廊往上走，等於走完一趟修行之路。"
+ },
+ {
+  "id": "history-SEA-004",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "以海上貿易稱霸的室利佛逝王國，中心在哪一座島？",
+  "options": [
+   "蘇門答臘",
+   "爪哇島",
+   "婆羅洲",
+   "蘇拉威西"
+  ],
+  "answer": 0,
+  "explanation": "室利佛逝以蘇門答臘的巨港（巴鄰旁）為核心，七到十一世紀控制麻六甲海峽一帶的海路。",
+  "fun_fact": "唐代高僧義淨西行取經時曾在這裡停留，稱讚當地僧人上千、佛學風氣極盛。"
+ },
+ {
+  "id": "history-SEA-005",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "十四世紀稱霸南洋的滿者伯夷王國，核心位於哪座島？",
+  "options": [
+   "峇里島",
+   "婆羅洲",
+   "爪哇島",
+   "蘇門答臘"
+  ],
+  "answer": 2,
+  "explanation": "滿者伯夷以東爪哇的滿者伯夷城（今特羅武蘭一帶）為都城，是印尼史上勢力最大的印度教王國。",
+  "fun_fact": "今天印尼的國家格言「殊途同歸」，就出自滿者伯夷時代的古爪哇文詩篇。"
+ },
+ {
+  "id": "history-SEA-006",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "立下「不統一群島誓不安享」誓言的滿者伯夷宰相是誰？",
+  "options": [
+   "拉登巴達",
+   "加查馬達",
+   "哈奄武祿",
+   "肯阿羅"
+  ],
+  "answer": 1,
+  "explanation": "加查馬達是滿者伯夷的權相，相傳他就職時立下誓言，不完成群島統一絕不享樂。",
+  "fun_fact": "印尼把他的名字用在最負盛名的大學上，日惹的加查馬達大學就是這樣來的。"
+ },
+ {
+  "id": "history-SEA-007",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "十一世紀統一伊洛瓦底江流域、開創蒲甘王朝的國王是誰？",
+  "options": [
+   "江喜陀",
+   "莽應龍",
+   "那羅梯訶波帝",
+   "阿奴律陀"
+  ],
+  "answer": 3,
+  "explanation": "阿奴律陀在 1044 年即位，把一個小邦擴張成緬甸史上第一個統一王朝，並大力推行上座部佛教。",
+  "fun_fact": "蒲甘平原上至今還留著兩千多座磚塔，密度高到日出時放眼望去整片都是塔尖。"
+ },
+ {
+  "id": "history-SEA-008",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "緬甸古都蒲甘坐落在哪一條大河的沿岸？",
+  "options": [
+   "伊洛瓦底江",
+   "薩爾溫江",
+   "湄公河",
+   "昭披耶河"
+  ],
+  "answer": 0,
+  "explanation": "蒲甘位於緬甸中部的伊洛瓦底江東岸，這條河自古就是緬甸的南北交通命脈。",
+  "fun_fact": "蒲甘王朝十三世紀末在蒙古大軍的壓力下瓦解，塔林卻留了下來。"
+ },
+ {
+  "id": "history-SEA-009",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "被認為創制了泰文字母的素可泰王朝國王是誰？",
+  "options": [
+   "那萊王",
+   "鄭信",
+   "蘭甘亨",
+   "拉瑪一世"
+  ],
+  "answer": 2,
+  "explanation": "蘭甘亨大帝在位於十三世紀後期，傳世的 1292 年石碑被視為泰文字母的起點。",
+  "fun_fact": "那塊「蘭甘亨碑」已經被聯合國教科文組織列入世界記憶名錄。"
+ },
+ {
+  "id": "history-SEA-010",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "泰國大城（阿瑜陀耶）王朝的首都在 1767 年被哪一國攻陷？",
+  "options": [
+   "越南",
+   "寮國",
+   "緬甸",
+   "高棉"
+  ],
+  "answer": 2,
+  "explanation": "1767 年緬甸貢榜王朝的軍隊圍城十四個月後攻破大城，結束了這個延續四百多年的王朝。",
+  "fun_fact": "大城被燒毀後，暹羅很快在吞武里、曼谷重建政權，古城廢墟今天是世界遺產。"
+ },
+ {
+  "id": "history-SEA-011",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "今天泰國的王室，屬於下列哪一個王朝？",
+  "options": [
+   "大城王朝",
+   "吞武里王朝",
+   "卻克里王朝",
+   "素可泰王朝"
+  ],
+  "answer": 2,
+  "explanation": "卻克里王朝由拉瑪一世在 1782 年建立，同時把首都遷到曼谷，一直延續至今。",
+  "fun_fact": "泰國國王的稱號一律叫「拉瑪某世」，這個用法就是從卻克里王朝開始的。"
+ },
+ {
+  "id": "history-SEA-012",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "東南亞唯一從未被歐洲列強殖民的國家是哪一國？",
+  "options": [
+   "緬甸",
+   "越南",
+   "菲律賓",
+   "泰國"
+  ],
+  "answer": 3,
+  "explanation": "泰國（暹羅）夾在英國與法國的勢力之間，靠著割地、改革與外交手腕維持住獨立地位。",
+  "fun_fact": "英法在 1896 年講好把昭披耶河流域當成兩國之間的緩衝地帶，泰國因此保住主權。"
+ },
+ {
+  "id": "history-SEA-013",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1428 年擊退明朝大軍、開創後黎朝的越南領袖是誰？",
+  "options": [
+   "阮惠",
+   "陳興道",
+   "李公蘊",
+   "黎利"
+  ],
+  "answer": 3,
+  "explanation": "黎利領導藍山起義，1427 年逼退明軍，隔年稱帝建立後黎朝，恢復大越的獨立。",
+  "fun_fact": "河內市中心的還劍湖，傳說就是黎利把神劍還給湖中金龜的地方。"
+ },
+ {
+  "id": "history-SEA-014",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "越南最後一個王朝阮朝，把首都設在哪一座城市？",
+  "options": [
+   "峴港",
+   "順化",
+   "河內",
+   "西貢"
+  ],
+  "answer": 1,
+  "explanation": "1802 年阮福映稱帝（嘉隆帝）建立阮朝，定都順化，這是越南史上最後一個王朝。",
+  "fun_fact": "順化的皇城仿照北京紫禁城的格局興建，現在是越南第一處世界文化遺產。"
+ },
+ {
+  "id": "history-SEA-015",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "古代的占婆王國，領域大致位於今天哪一個國家？",
+  "options": [
+   "柬埔寨",
+   "泰國",
+   "寮國",
+   "越南"
+  ],
+  "answer": 3,
+  "explanation": "占婆人自二世紀起在今越南中南部沿海建國，長期信奉印度教，留下美山聖地等磚砌塔群。",
+  "fun_fact": "美山的磚塔不用灰漿黏合，工法至今仍沒有被完全解開。"
+ },
+ {
+  "id": "history-SEA-016",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "1954 年法軍在哪一場戰役慘敗，被迫退出印度支那？",
+  "options": [
+   "溪山戰役",
+   "諒山戰役",
+   "奠邊府戰役",
+   "順化春節戰役"
+  ],
+  "answer": 2,
+  "explanation": "1954 年 3 到 5 月，越盟在武元甲指揮下圍殲奠邊府的法軍據點，直接促成法國撤出中南半島。",
+  "fun_fact": "越盟把大砲拆解後用人力和單車搬上山，法軍完全沒料到山頭會出現重砲。"
+ },
+ {
+  "id": "history-SEA-017",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1521 年在麥克坦島擊敗並殺死麥哲倫的當地酋長是誰？",
+  "options": [
+   "西卡圖納",
+   "拉普拉普",
+   "荷馬本",
+   "蘇萊曼"
+  ],
+  "answer": 1,
+  "explanation": "麥哲倫率領的船隊抵達菲律賓後介入當地紛爭，在麥克坦島被酋長拉普拉普的戰士擊殺。",
+  "fun_fact": "麥哲倫本人沒能繞完地球，他的船隊由部下接手，才完成人類第一次環球航行。"
+ },
+ {
+  "id": "history-SEA-018",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1896 年被西班牙殖民當局槍決、被視為菲律賓國父的作家是誰？",
+  "options": [
+   "阿奎納多",
+   "波尼法秀",
+   "馬比尼",
+   "黎剎"
+  ],
+  "answer": 3,
+  "explanation": "黎剎以小說揭露西班牙教會與殖民體制的弊病，1896 年在馬尼拉被以叛亂罪處決，成為革命象徵。",
+  "fun_fact": "他是個標準的通才，會醫學、雕塑、詩文，還通曉十幾種語言。"
+ },
+ {
+  "id": "history-SEA-019",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "1898 年美西戰爭後，西班牙依巴黎條約把菲律賓割讓給哪一國？",
+  "options": [
+   "荷蘭",
+   "美國",
+   "英國",
+   "日本"
+  ],
+  "answer": 1,
+  "explanation": "1898 年的巴黎條約結束美西戰爭，西班牙放棄古巴，並把菲律賓、關島、波多黎各交給美國。",
+  "fun_fact": "美國為了菲律賓付給西班牙兩千萬美元，菲律賓人卻沒被問過意見，隨即爆發美菲戰爭。"
+ },
+ {
+  "id": "history-SEA-020",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1986 年菲律賓的「人民力量革命」推翻了哪一位總統？",
+  "options": [
+   "奎松",
+   "馬可仕",
+   "艾斯特拉達",
+   "阿羅育"
+  ],
+  "answer": 1,
+  "explanation": "1986 年 2 月馬尼拉數十萬民眾湧上街頭，迫使統治二十年的馬可仕流亡海外，由艾奎諾夫人接任總統。",
+  "fun_fact": "群眾當時擠在一條叫 EDSA 的大道上，所以這場革命也被稱作「EDSA 革命」。"
+ },
+ {
+  "id": "history-SEA-021",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "1945 年 8 月宣布印尼脫離荷蘭獨立的領導人是誰？",
+  "options": [
+   "哈比比",
+   "蘇卡諾",
+   "蘇哈托",
+   "尤多約諾"
+  ],
+  "answer": 1,
+  "explanation": "1945 年 8 月 17 日，蘇卡諾在雅加達宣讀獨立宣言，成為印尼共和國的第一任總統。",
+  "fun_fact": "宣言只有短短兩句話，念完不到一分鐘，卻換來四年的獨立戰爭。"
+ },
+ {
+  "id": "history-SEA-022",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "荷蘭東印度公司在亞洲的總部「巴達維亞」，是今天哪座城市？",
+  "options": [
+   "雅加達",
+   "馬尼拉",
+   "新加坡",
+   "麻六甲"
+  ],
+  "answer": 0,
+  "explanation": "1619 年荷蘭人在爪哇建立巴達維亞，作為東印度公司的亞洲營運中心；1942 年日軍占領後把市名改為雅加達，1945 年印尼獨立後沿用至今。",
+  "fun_fact": "荷蘭人把運河城市的規劃直接搬到熱帶，結果水道成了瘧蚊溫床，死亡率高得嚇人。"
+ },
+ {
+  "id": "history-SEA-023",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1511 年攻佔麻六甲、掌握麻六甲海峽的歐洲國家是哪一國？",
+  "options": [
+   "荷蘭",
+   "英國",
+   "葡萄牙",
+   "西班牙"
+  ],
+  "answer": 2,
+  "explanation": "1511 年葡萄牙印度總督阿布奎克率軍攻下麻六甲蘇丹國，在當地築起「法摩沙堡」控制海峽。",
+  "fun_fact": "麻六甲後來又被荷蘭、英國接手，一座小城換了三個歐洲主人。"
+ },
+ {
+  "id": "history-SEA-024",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "寮國歷史上的「瀾滄王國」，國名的意思是什麼？",
+  "options": [
+   "萬佛之邦",
+   "百萬大象",
+   "千島之國",
+   "金色高原"
+  ],
+  "answer": 1,
+  "explanation": "瀾滄意為「百萬大象與白傘」，由法昂王在 1353 年建立，是寮國民族認同的源頭。",
+  "fun_fact": "大象在當時是戰力也是王權象徵，寮國的舊王室旗幟上就畫著三頭白象。"
+ },
+ {
+  "id": "history-SEA-025",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "緬甸獨立運動領袖翁山，和翁山蘇姬是什麼關係？",
+  "options": [
+   "兄妹",
+   "夫妻",
+   "叔姪",
+   "父女"
+  ],
+  "answer": 3,
+  "explanation": "翁山是緬甸獨立運動的核心人物，1947 年遭暗殺身亡，當時翁山蘇姬只有兩歲。",
+  "fun_fact": "他談成獨立協議後半年就被刺殺，沒能親眼看到 1948 年緬甸正式獨立。"
+ },
+ {
+  "id": "history-SEA-026",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "新加坡在 1965 年脫離哪一個國家、成為獨立共和國？",
+  "options": [
+   "英國",
+   "汶萊",
+   "馬來西亞",
+   "印度尼西亞"
+  ],
+  "answer": 2,
+  "explanation": "新加坡 1963 年併入馬來西亞，兩年後因政治與族群問題分道揚鑣，1965 年 8 月 9 日獨立建國。",
+  "fun_fact": "李光耀宣布分家的記者會上一度哽咽落淚，那段影像成了新加坡的集體記憶。"
+ },
+ {
+  "id": "history-SEA-027",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1955 年第一次亞非會議（萬隆會議）在哪一個國家舉行？",
+  "options": [
+   "印度",
+   "埃及",
+   "緬甸",
+   "印尼"
+  ],
+  "answer": 3,
+  "explanation": "萬隆會議 1955 年 4 月在印尼西爪哇的萬隆召開，二十九個亞非國家出席，主張反殖民與和平共處。",
+  "fun_fact": "這場會議奠下的原則，六年後促成了「不結盟運動」正式成立。"
+ },
+ {
+  "id": "history-SEA-028",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "東南亞國家協會（東協）1967 年在哪一座城市宣告成立？",
+  "options": [
+   "雅加達",
+   "馬尼拉",
+   "新加坡",
+   "曼谷"
+  ],
+  "answer": 3,
+  "explanation": "1967 年 8 月 8 日，五國外長在曼谷簽署《東協宣言》，創始成員是印尼、馬來西亞、菲律賓、新加坡和泰國。",
+  "fun_fact": "所以八月八日被訂為「東協日」，成員後來慢慢擴充到十國。"
+ },
+ {
+  "id": "history-SEA-029",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1975 至 1979 年統治柬埔寨的紅色高棉，最高領導人是誰？",
+  "options": [
+   "施亞努",
+   "龍諾",
+   "洪森",
+   "波布"
+  ],
+  "answer": 3,
+  "explanation": "紅色高棉在波布領導下把國名改為「民主柬埔寨」，強制清空城市、廢除貨幣，最後被越南出兵推翻。",
+  "fun_fact": "他們把 1975 年定為「元年」，等於宣稱歷史要從頭重算。"
+ },
+ {
+  "id": "history-SEA-030",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "東帝汶在 2002 年獨立之前，最早的殖民母國是哪一國？",
+  "options": [
+   "荷蘭",
+   "西班牙",
+   "英國",
+   "葡萄牙"
+  ],
+  "answer": 3,
+  "explanation": "東帝汶自十六世紀起就是葡萄牙殖民地，1975 年葡萄牙撤出後被印尼併吞，2002 年才正式獨立。",
+  "fun_fact": "同一個帝汶島被切成兩半，西半部走荷蘭路線成了印尼領土，東半部講葡萄牙語。"
+ },
+ {
+  "id": "history-SEA-031",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "印度河流域文明的摩亨佐達羅和哈拉帕，位於今天哪一國？",
+  "options": [
+   "斯里蘭卡",
+   "尼泊爾",
+   "巴基斯坦",
+   "印度"
+  ],
+  "answer": 2,
+  "explanation": "這兩座青銅時代大城的遺址都在今天的巴基斯坦境內，以棋盤式街道和完善的下水道聞名。",
+  "fun_fact": "他們留下的印章文字至今沒有人能解讀，連那是不是一種語言都還有爭論。"
+ },
+ {
+  "id": "history-SEA-032",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "印度史上第一個統一次大陸大部分地區的王朝是哪一個？",
+  "options": [
+   "孔雀王朝",
+   "笈多王朝",
+   "貴霜王朝",
+   "巽伽王朝"
+  ],
+  "answer": 0,
+  "explanation": "孔雀王朝由旃陀羅笈多在西元前四世紀末建立，以摩揭陀的華氏城為都，版圖涵蓋次大陸絕大部分。",
+  "fun_fact": "旃陀羅笈多的謀士考底利耶寫下《政事論》，被稱為古印度版的權謀教科書。"
+ },
+ {
+  "id": "history-SEA-033",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "阿育王是在哪一場戰爭之後深感悔悟、轉而護持佛教的？",
+  "options": [
+   "普拉西戰役",
+   "羯陵伽戰爭",
+   "俱盧之戰",
+   "帕尼帕特戰役"
+  ],
+  "answer": 1,
+  "explanation": "阿育王征服東岸的羯陵伽時死傷慘重，他在自己的石刻詔書中表達悔意，此後改以佛法治國。",
+  "fun_fact": "印度國徽上的四隻獅子，就是取自他豎立在鹿野苑的石柱柱頭。"
+ },
+ {
+  "id": "history-SEA-034",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "佛陀的誕生地藍毘尼，位於今天哪一個國家？",
+  "options": [
+   "尼泊爾",
+   "印度",
+   "不丹",
+   "斯里蘭卡"
+  ],
+  "answer": 0,
+  "explanation": "藍毘尼在尼泊爾南部的平原上，阿育王曾親自來此立柱，柱上銘文確認這裡就是佛陀出生地。",
+  "fun_fact": "這根石柱在十九世紀末被重新發現，等於用考古證據替傳說蓋章。"
+ },
+ {
+  "id": "history-SEA-035",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "佛陀是在下列哪一個地方悟道成佛的？",
+  "options": [
+   "菩提伽耶",
+   "鹿野苑",
+   "拘尸那羅",
+   "王舍城"
+  ],
+  "answer": 0,
+  "explanation": "佛陀在菩提伽耶的菩提樹下悟道，這裡與出生地、初轉法輪處、涅槃處並列佛教四大聖地。",
+  "fun_fact": "鹿野苑是他第一次說法的地方，拘尸那羅則是涅槃之地，四個點串起他的一生。"
+ },
+ {
+  "id": "history-SEA-036",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "玄奘在印度求法時留學的那爛陀寺，遺址位於今天哪一邦？",
+  "options": [
+   "比哈爾邦",
+   "旁遮普邦",
+   "拉賈斯坦邦",
+   "喀拉拉邦"
+  ],
+  "answer": 0,
+  "explanation": "那爛陀寺是古代最著名的佛教大學，遺址在印度東部的比哈爾邦，玄奘曾在此隨戒賢學習約兩年。",
+  "fun_fact": "玄奘回國時帶走六百多部梵文經典，靠的是馬隊一路馱回長安。"
+ },
+ {
+  "id": "history-SEA-037",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "被稱為印度「黃金時代」、出了阿耶波多等學者的王朝是哪一個？",
+  "options": [
+   "笈多王朝",
+   "孔雀王朝",
+   "貴霜王朝",
+   "遮婁其王朝"
+  ],
+  "answer": 0,
+  "explanation": "笈多王朝時期文學、藝術與數學都有突破，世界上最早的十進位位值記數法就源於這個時代的印度。",
+  "fun_fact": "阿耶波多在那時就主張地球會自轉，還把圓周率算到小數點後四位。"
+ },
+ {
+  "id": "history-SEA-038",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "德里的顧特卜塔是哪一個政權留下的勝利塔？",
+  "options": [
+   "蒙兀兒帝國",
+   "笈多王朝",
+   "馬拉塔聯盟",
+   "德里蘇丹國"
+  ],
+  "answer": 3,
+  "explanation": "顧特卜塔由德里蘇丹國的開國者庫特布丁・艾伊拜克在 1199 年動工，是南亞現存最高的磚砌尖塔。",
+  "fun_fact": "塔旁邊有一根一千六百年前的鐵柱，露天立到今天卻幾乎不生鏽。"
+ },
+ {
+  "id": "history-SEA-039",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1526 年在帕尼帕特擊敗德里蘇丹、開創蒙兀兒帝國的是誰？",
+  "options": [
+   "奧朗則布",
+   "巴布爾",
+   "阿克巴",
+   "沙賈汗"
+  ],
+  "answer": 1,
+  "explanation": "巴布爾在 1526 年第一次帕尼帕特戰役中以火砲與騎兵擊潰易卜拉欣・洛迪，就此建立蒙兀兒帝國。",
+  "fun_fact": "他來自中亞的費爾干納，父系出自帖木兒、母系出自成吉思汗。"
+ },
+ {
+  "id": "history-SEA-040",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "蒙兀兒皇帝阿克巴為了爭取非穆斯林支持，廢除了什麼？",
+  "options": [
+   "關稅",
+   "鹽稅",
+   "人頭稅",
+   "土地稅"
+  ],
+  "answer": 2,
+  "explanation": "阿克巴廢除向非穆斯林徵收的人頭稅（吉茲亞），並任用印度教貴族擔任高官與將領。",
+  "fun_fact": "他還在宮中辦跨宗教辯論會，找來印度教、耆那教、祆教甚至耶穌會士同場論道。"
+ },
+ {
+  "id": "history-SEA-041",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "泰姬瑪哈陵是蒙兀兒皇帝沙賈汗為誰而建的？",
+  "options": [
+   "他的父親",
+   "他的長子",
+   "他的愛妻",
+   "他的母親"
+  ],
+  "answer": 2,
+  "explanation": "沙賈汗為紀念過世的愛妻慕塔芝瑪哈，在阿格拉的亞穆納河畔以白色大理石建造這座陵墓。",
+  "fun_fact": "陵墓的鑲嵌花紋用上二十多種寶石與半寶石，材料從中亞、西藏甚至中國運來。"
+ },
+ {
+  "id": "history-SEA-042",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "把父親沙賈汗囚禁在阿格拉堡、奪得皇位的蒙兀兒皇帝是誰？",
+  "options": [
+   "奧朗則布",
+   "賈汗季",
+   "胡馬雍",
+   "巴哈杜爾沙"
+  ],
+  "answer": 0,
+  "explanation": "奧朗則布在 1658 年的繼位鬥爭中勝出，宣稱父親無力理政而將他軟禁在阿格拉堡直到過世。",
+  "fun_fact": "蒙兀兒帝國的版圖在他手上達到最大，卻也因長年征戰把國庫掏空。"
+ },
+ {
+  "id": "history-SEA-043",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1757 年普拉西戰役中率領英國東印度公司軍隊獲勝的是誰？",
+  "options": [
+   "黑斯廷斯",
+   "威靈頓",
+   "寇松",
+   "克萊夫"
+  ],
+  "answer": 3,
+  "explanation": "克萊夫在普拉西擊敗孟加拉的納瓦布，讓東印度公司實際掌握孟加拉的財政與行政大權。",
+  "fun_fact": "這場仗其實靠收買對方將領才贏，真正的戰鬥只打了幾個小時。"
+ },
+ {
+  "id": "history-SEA-044",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1857 年印度民族起義之後，統治印度的權力落到了誰手上？",
+  "options": [
+   "英國王室",
+   "東印度公司",
+   "蒙兀兒皇帝",
+   "地方土邦聯盟"
+  ],
+  "answer": 0,
+  "explanation": "起義被鎮壓後，英國國會通過法案解散東印度公司，改由英國政府直接統治印度，開啟「英屬印度」時期。",
+  "fun_fact": "起義的導火線是新式子彈的塗油傳聞，士兵得用嘴咬開，印度教徒與穆斯林都無法接受。"
+ },
+ {
+  "id": "history-SEA-045",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1857 年起義失敗後，末代蒙兀兒皇帝被英國流放到哪裡？",
+  "options": [
+   "加爾各答",
+   "倫敦",
+   "錫蘭",
+   "仰光"
+  ],
+  "answer": 3,
+  "explanation": "巴哈杜爾沙二世被英軍逮捕後流放到緬甸仰光，並在當地過世，蒙兀兒帝國就此走入歷史。",
+  "fun_fact": "他其實是個相當有名的烏爾都語詩人，晚年在流放地寫下不少哀嘆之作。"
+ },
+ {
+  "id": "history-SEA-046",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1919 年英軍屠殺群眾的札連瓦拉園慘案發生在哪座城市？",
+  "options": [
+   "孟買",
+   "阿姆利則",
+   "德里",
+   "加爾各答"
+  ],
+  "answer": 1,
+  "explanation": "1919 年 4 月，戴爾准將下令封住出口向園內群眾開火，這場慘案發生在旁遮普的阿姆利則。",
+  "fun_fact": "這件事讓許多原本溫和的印度知識分子徹底轉向，泰戈爾因此退回英國授予的爵位。"
+ },
+ {
+  "id": "history-SEA-047",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "甘地 1930 年「食鹽進軍」的終點，是哪一個海邊村莊？",
+  "options": [
+   "蘇拉特",
+   "孟買",
+   "丹地",
+   "果阿"
+  ],
+  "answer": 2,
+  "explanation": "甘地率眾徒步約 380 公里走到古吉拉特海邊的丹地，親手取鹽，公開違反英國的食鹽專賣法。",
+  "fun_fact": "他說除了空氣和水，鹽大概是最不可少的東西，拿它開刀最能讓每個人都有感。"
+ },
+ {
+  "id": "history-SEA-048",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1947 年印巴分治時，負責劃定兩國邊界的英國律師是誰？",
+  "options": [
+   "寇松勳爵",
+   "雷德克里夫",
+   "蒙巴頓勳爵",
+   "羅伯・克萊夫"
+  ],
+  "answer": 1,
+  "explanation": "英國律師雷德克里夫在短短數週內畫出印巴邊界，旁遮普與孟加拉因此被一刀切成兩半。",
+  "fun_fact": "他在動筆之前從沒到過印度，畫完之後也再沒回去過。"
+ },
+ {
+  "id": "history-SEA-049",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "印度獨立後的第一任總理是誰？",
+  "options": [
+   "拉達克里希南",
+   "尼赫魯",
+   "甘地",
+   "帕特爾"
+  ],
+  "answer": 1,
+  "explanation": "尼赫魯在 1947 年印度獨立後出任第一任總理，任職到 1964 年過世為止。",
+  "fun_fact": "他女兒甘地夫人與外孫拉吉夫後來也都當過印度總理。"
+ },
+ {
+  "id": "history-SEA-050",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "被尊為巴基斯坦國父的政治領袖是誰？",
+  "options": [
+   "阿尤布汗",
+   "布托",
+   "真納",
+   "伊克巴爾"
+  ],
+  "answer": 2,
+  "explanation": "真納長期領導全印穆斯林聯盟，主張穆斯林建國，1947 年出任巴基斯坦第一任總督。",
+  "fun_fact": "巴基斯坦人稱他「偉大領袖」，他的頭像出現在幾乎每一種面額的鈔票上。"
+ },
+ {
+  "id": "history-SEA-051",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "孟加拉在 1971 年獨立之前，原本是哪一個國家的一部分？",
+  "options": [
+   "巴基斯坦",
+   "印度",
+   "緬甸",
+   "斯里蘭卡"
+  ],
+  "answer": 0,
+  "explanation": "孟加拉原本是與西巴基斯坦相隔一千多公里的「東巴基斯坦」，1971 年在印度介入下打贏獨立戰爭。",
+  "fun_fact": "語言問題是導火線之一：東邊講孟加拉語，卻被要求以烏爾都語為唯一國語。"
+ },
+ {
+  "id": "history-SEA-052",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "舊稱「錫蘭」的，是今天哪一個國家？",
+  "options": [
+   "孟加拉",
+   "緬甸",
+   "斯里蘭卡",
+   "馬爾地夫"
+  ],
+  "answer": 2,
+  "explanation": "這座島在英國統治時期稱為錫蘭，1948 年獨立，1972 年改制共和後正式改名斯里蘭卡。",
+  "fun_fact": "它先後被葡萄牙、荷蘭、英國統治過，內陸的康提王國一直撐到 1815 年才失守。"
+ },
+ {
+  "id": "history-SEA-053",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "19 世紀在旁遮普建立錫克帝國、定都拉合爾的君主是誰？",
+  "options": [
+   "蘭吉特·辛格",
+   "提普蘇丹",
+   "希瓦吉",
+   "巴哈杜爾沙二世"
+  ],
+  "answer": 0,
+  "explanation": "蘭吉特·辛格 1801 年稱王，以拉合爾為都建立錫克帝國，是英國在印度西北最難對付的對手。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-SEA-054",
+  "topic": "history",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "歷史",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "統一尼泊爾的沙阿王朝，原本是哪一個山城小國？",
+  "options": [
+   "帕坦",
+   "廓爾喀",
+   "加德滿都",
+   "巴克塔布"
+  ],
+  "answer": 1,
+  "explanation": "十八世紀廓爾喀國王普利特維・納拉揚・沙阿逐一併吞加德滿都谷地各邦，建立統一的尼泊爾王國。",
+  "fun_fact": "「廓爾喀兵」的名號就從這裡來，英軍打過幾場硬仗後乾脆開始招募他們。"
+ },
+ {
+  "id": "human-SEA-001",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "泰國、緬甸、柬埔寨主要信奉哪一支佛教？",
+  "options": [
+   "上座部佛教",
+   "漢傳大乘佛教",
+   "藏傳金剛乘",
+   "東亞禪宗"
+  ],
+  "answer": 0,
+  "explanation": "中南半島的泰、緬、柬、寮以巴利語經典為本的上座部佛教為主流。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-002",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "印尼峇里島居民多數信仰的宗教是？",
+  "options": [
+   "基督新教",
+   "印度教",
+   "伊斯蘭教",
+   "上座部佛教"
+  ],
+  "answer": 1,
+  "explanation": "峇里島是印尼唯一以印度教為主的島嶼，形成獨特的峇里印度教。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-003",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "汶萊憲法規定的國教是？",
+  "options": [
+   "羅馬天主教",
+   "印度教",
+   "伊斯蘭教",
+   "上座部佛教"
+  ],
+  "answer": 2,
+  "explanation": "汶萊以遜尼派伊斯蘭教為國教，馬來語為官方語言。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-004",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "菲律賓人數最多的宗教信仰是？",
+  "options": [
+   "伊斯蘭教",
+   "上座部佛教",
+   "印度教",
+   "天主教"
+  ],
+  "answer": 3,
+  "explanation": "菲律賓因長期受西班牙統治，成為亞洲少見的天主教為主國家。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-005",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "寮國琅勃拉邦每天清晨最著名的景象是？",
+  "options": [
+   "僧侶列隊托缽化緣",
+   "湄公河龍舟競渡",
+   "市集拍賣新鮮漁獲",
+   "山區部落的迎神祭典"
+  ],
+  "answer": 0,
+  "explanation": "琅勃拉邦保存三十多座佛寺，清晨布施（tak bat）是延續至今的日常儀式。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-006",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "泰國水燈節（Loy Krathong）的主要活動是？",
+  "options": [
+   "在海邊放煙火",
+   "在河上放水燈",
+   "在街頭互相潑水",
+   "在寺廟放天燈"
+  ],
+  "answer": 1,
+  "explanation": "人們把裝飾成蓮花的小舟放上河面，向水神表達感謝。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-007",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "越南一年中最重要的傳統節日是？",
+  "options": [
+   "端午節 Đoan Ngọ",
+   "雄王節 Giỗ Tổ",
+   "春節 Tết",
+   "中秋節 Trung Thu"
+  ],
+  "answer": 2,
+  "explanation": "Tết 是越南農曆新年，家家團圓祭祖，假期長達數日。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-008",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "峇里島「安寧日」Nyepi 當天全島會怎樣？",
+  "options": [
+   "徹夜舉行遊行慶典",
+   "燃放鞭炮驅趕惡靈",
+   "集體到海邊淨身",
+   "靜默停止一切活動"
+  ],
+  "answer": 3,
+  "explanation": "Nyepi 是峇里印度教的新年靜默日，不外出、不點燈、不工作，連機場都關閉。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-009",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "佛教的衛塞節同時紀念佛陀的哪三件事？",
+  "options": [
+   "誕生、悟道、涅槃",
+   "出家、說法、涅槃",
+   "誕生、出家、初次說法",
+   "悟道、說法、火化"
+  ],
+  "answer": 0,
+  "explanation": "南傳佛教把佛陀的誕生、成道與入滅合併在同一天紀念。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-010",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "泰國名菜「冬蔭功」是哪一種料理？",
+  "options": [
+   "綠咖哩雞",
+   "酸辣蝦湯",
+   "涼拌青木瓜",
+   "炭烤豬頸肉"
+  ],
+  "answer": 1,
+  "explanation": "Tom Yum Goong 是以香茅、南薑、檸檬葉煮成的酸辣蝦湯。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-011",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "越南河粉（phở）的麵條是用什麼做的？",
+  "options": [
+   "蕎麥",
+   "樹薯",
+   "米",
+   "小麥"
+  ],
+  "answer": 2,
+  "explanation": "phở 用扁平的米製粉條，搭配牛骨高湯與生鮮香草。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-012",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "印尼沙嗲（satay）最常搭配的醬料是？",
+  "options": [
+   "蝦醬",
+   "泰式甜辣醬",
+   "酸豆醬",
+   "花生醬"
+  ],
+  "answer": 3,
+  "explanation": "沙嗲是炭烤肉串，最典型的沾醬是濃稠的花生醬。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-013",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "越南 bánh mì 長棍麵包源自哪一國的影響？",
+  "options": [
+   "法國",
+   "美國",
+   "荷蘭",
+   "葡萄牙"
+  ],
+  "answer": 0,
+  "explanation": "法國殖民時期把長棍麵包帶進越南，演變成外皮酥脆的越式三明治。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-014",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "被稱為「水果之王」、氣味濃烈的東南亞水果是？",
+  "options": [
+   "波羅蜜",
+   "榴槤",
+   "山竹",
+   "紅毛丹"
+  ],
+  "answer": 1,
+  "explanation": "榴槤果肉濃郁、氣味強烈，許多旅館與大眾運輸都禁止攜入。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-015",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "緬甸仰光最著名的鍍金大佛塔是？",
+  "options": [
+   "曼德勒摩訶牟尼佛塔",
+   "蒲甘阿難陀寺",
+   "雪達根大金塔",
+   "瑞喜宮金塔"
+  ],
+  "answer": 2,
+  "explanation": "雪達根大金塔（Shwedagon）矗立於仰光，是緬甸最重要的佛教聖地。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-016",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "柬埔寨國旗中央畫的是哪座建築？",
+  "options": [
+   "巴戎寺",
+   "塔普倫寺",
+   "女王宮",
+   "吳哥窟"
+  ],
+  "answer": 3,
+  "explanation": "吳哥窟是柬埔寨的國家象徵，也是世界上規模最大的宗教建築群。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-017",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "吳哥窟最初興建時是供奉哪一位神祇？",
+  "options": [
+   "毗濕奴",
+   "濕婆",
+   "釋迦牟尼",
+   "梵天"
+  ],
+  "answer": 0,
+  "explanation": "吳哥窟由蘇利耶跋摩二世興建為毗濕奴神廟，後來才逐漸改為佛寺。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-018",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "印尼爪哇的婆羅浮屠屬於哪個宗教的遺跡？",
+  "options": [
+   "耆那教",
+   "大乘佛教",
+   "印度教",
+   "遜尼派伊斯蘭教"
+  ],
+  "answer": 1,
+  "explanation": "婆羅浮屠是九世紀的大乘佛教建築，以層層迴廊浮雕與佛塔聞名。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-019",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "緬甸蒲甘平原以什麼景觀聞名於世？",
+  "options": [
+   "巨大的岩石雕像",
+   "層疊的水稻梯田",
+   "成千上萬座佛塔",
+   "綿延的白沙海灘"
+  ],
+  "answer": 2,
+  "explanation": "蒲甘曾是蒲甘王朝首都，平原上至今仍留存兩千多座佛塔與寺廟。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-020",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "菲律賓呂宋島山區的著名世界遺產是？",
+  "options": [
+   "巴洛克式教堂群",
+   "地下河國家公園",
+   "西班牙城牆遺跡",
+   "古代水稻梯田"
+  ],
+  "answer": 3,
+  "explanation": "伊富高人祖先在山坡開鑿的梯田，靠古老灌溉系統引水。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-021",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "印尼傳統樂團「甘美朗」主要由哪類樂器組成？",
+  "options": [
+   "金屬打擊樂器",
+   "弓弦樂器",
+   "竹製的吹管樂器",
+   "撥弦樂器"
+  ],
+  "answer": 0,
+  "explanation": "甘美朗以排鑼、金屬鍵琴等打擊樂器為主，搭配手鼓掌控節奏。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-022",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "爪哇皮影戲（wayang kulit）的劇情多取材自？",
+  "options": [
+   "日本能劇劇本",
+   "印度兩大史詩",
+   "中國章回小說",
+   "阿拉伯民間故事"
+  ],
+  "answer": 1,
+  "explanation": "皮影戲常演出《羅摩衍那》與《摩訶婆羅多》的情節，並融入在地傳說。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-023",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "印尼蠟染（batik）的核心技法是？",
+  "options": [
+   "以金線繡花",
+   "用植物汁液手繪",
+   "用蠟防染上色",
+   "用木板壓印花"
+  ],
+  "answer": 2,
+  "explanation": "工匠先以蠟在布上描繪圖案阻擋染料，去蠟後便浮現花紋。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-024",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "在水上操作木偶演出的傳統戲劇來自哪個國家？",
+  "options": [
+   "泰國",
+   "印尼",
+   "柬埔寨",
+   "越南"
+  ],
+  "answer": 3,
+  "explanation": "水上木偶戲起源於越南北部紅河三角洲的村落，操偶師站在水中幕後。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-025",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "現代越南文使用哪一種文字書寫？",
+  "options": [
+   "拉丁字母",
+   "漢字",
+   "梵文字母",
+   "阿拉伯字母"
+  ],
+  "answer": 0,
+  "explanation": "越南國語字是傳教士以拉丁字母設計的拼音系統，加上多個聲調符號。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-026",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "新加坡有幾種官方語言？",
+  "options": [
+   "兩種",
+   "三種",
+   "四種",
+   "五種"
+  ],
+  "answer": 2,
+  "explanation": "新加坡的官方語言是英語、華語、馬來語與坦米爾語，其中馬來語為國語。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-027",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "越南女性的傳統服裝「奧黛」是什麼樣子？",
+  "options": [
+   "寬袖直筒棉布袍",
+   "長開衩上衣配長褲",
+   "對襟短衫配長裙",
+   "無袖連身及地長袍"
+  ],
+  "answer": 1,
+  "explanation": "áo dài 是兩側開高衩的合身長衫，內搭絲質長褲。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-028",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "東南亞常見、圍在腰間的筒狀布裙稱為？",
+  "options": [
+   "可峇雅",
+   "巴隆衫",
+   "紗籠",
+   "紗麗"
+  ],
+  "answer": 2,
+  "explanation": "紗籠（sarong）是一大塊布圍成的裙子，緬甸的籠基（longyi）與南亞的倫吉（lungi）都屬同類服飾。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-029",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "緬甸婦女臉上塗抹的黃白色粉末叫什麼？",
+  "options": [
+   "薑黃粉",
+   "印度檀香粉",
+   "蘆薈膏",
+   "塔納卡"
+  ],
+  "answer": 3,
+  "explanation": "塔納卡由樹皮研磨而成，能防曬並帶來清涼感，是緬甸的文化標誌。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-030",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "泰國合十禮「wai」中，手舉得越高代表什麼？",
+  "options": [
+   "表達越高的敬意",
+   "表示越急著離開",
+   "表示身份越尊貴",
+   "表示關係越親近"
+  ],
+  "answer": 0,
+  "explanation": "wai 源自印度的合十手勢，手位越高、身體越低，敬意就越深。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-031",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "印度教三大主神中，被稱為「毀滅之神」的是？",
+  "options": [
+   "因陀羅",
+   "濕婆",
+   "梵天",
+   "毗濕奴"
+  ],
+  "answer": 1,
+  "explanation": "三相神中梵天創造、毗濕奴維持、濕婆負責毀滅與再生。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-032",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "印度教徒到瓦拉納西沐浴淨身的聖河是？",
+  "options": [
+   "布拉馬普特拉河",
+   "訥爾默達河",
+   "恆河",
+   "印度河"
+  ],
+  "answer": 2,
+  "explanation": "恆河被視為女神化身，瓦拉納西是恆河邊最重要的朝聖與喪葬聖城。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-033",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "錫克教的創始人是誰？",
+  "options": [
+   "古魯戈賓德辛格",
+   "羅摩克里希那",
+   "摩訶毗羅",
+   "古魯那納克"
+  ],
+  "answer": 3,
+  "explanation": "那納克是錫克教十位古魯中的第一位，主張唯一神與眾生平等。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-034",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "錫克教最神聖的「金廟」位於印度哪座城市？",
+  "options": [
+   "阿姆利則",
+   "粉紅之城齋浦爾",
+   "瓦拉納西",
+   "阿格拉"
+  ],
+  "answer": 0,
+  "explanation": "金廟（Harmandir Sahib）在旁遮普邦的阿姆利則，設有免費供餐的公共廚房。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-035",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "釋迦牟尼在哪個地方的菩提樹下悟道？",
+  "options": [
+   "拘尸那羅",
+   "菩提伽耶",
+   "藍毗尼",
+   "鹿野苑"
+  ],
+  "answer": 1,
+  "explanation": "菩提伽耶位於印度比哈爾邦，是佛教四大聖地中紀念成道的一處。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-036",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "哪一個印度宗教把「不殺生」實踐得最徹底？",
+  "options": [
+   "印度教",
+   "佛教",
+   "耆那教",
+   "錫克教"
+  ],
+  "answer": 2,
+  "explanation": "耆那教以不殺生、多元觀點與不執著為三大倫理支柱，嚴格素食。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-037",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "印度教中象頭人身、象徵排除障礙的神祇是？",
+  "options": [
+   "哈奴曼",
+   "克里希那",
+   "伐樓拿",
+   "甘尼薩"
+  ],
+  "answer": 3,
+  "explanation": "甘尼薩（象頭神）在開工、考試、婚禮前最常受到祈求。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-038",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "斯里蘭卡多數人口信仰的宗教是？",
+  "options": [
+   "上座部佛教",
+   "漢傳大乘佛教",
+   "伊斯蘭教",
+   "印度教"
+  ],
+  "answer": 0,
+  "explanation": "斯里蘭卡與泰、緬、柬、寮同為上座部佛教占多數的國家。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-039",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "印度教的排燈節（Diwali）又稱為什麼節？",
+  "options": [
+   "新月齋戒節",
+   "光明節",
+   "色彩節",
+   "豐收節"
+  ],
+  "answer": 1,
+  "explanation": "排燈節點亮油燈象徵光明戰勝黑暗、善良戰勝邪惡。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-040",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "印度哪個節日以互相潑灑彩色粉末聞名？",
+  "options": [
+   "十勝節",
+   "象頭神節",
+   "荷麗節",
+   "排燈節"
+  ],
+  "answer": 2,
+  "explanation": "荷麗節在春天舉行，人們互相塗抹彩粉、潑灑彩水同慶。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-041",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "伊斯蘭教的開齋節標誌著什麼結束？",
+  "options": [
+   "朝覲之旅",
+   "宰牲節",
+   "聖紀月",
+   "齋戒月"
+  ],
+  "answer": 3,
+  "explanation": "開齋節是伊斯蘭曆十月的第一天，慶祝為期一個月的齋戒圓滿結束。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-042",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "咖哩呈現黃色，主要來自哪一種香料？",
+  "options": [
+   "薑黃",
+   "孜然籽",
+   "肉桂",
+   "荳蔻"
+  ],
+  "answer": 0,
+  "explanation": "薑黃是薑科植物的根莖，磨粉後帶來鮮明的金黃色澤。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-043",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "印度的「饢」（naan）傳統上用什麼烤製？",
+  "options": [
+   "露天炭火鐵網",
+   "泥製坦都爐",
+   "厚底平煎鐵鍋",
+   "竹編蒸籠"
+  ],
+  "answer": 1,
+  "explanation": "饢是發酵麵團貼在坦都泥爐內壁烤成，表面會有金褐色焦斑。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-044",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "印度的「瑪薩拉茶」是什麼飲料？",
+  "options": [
+   "冰鎮的現榨蔗汁",
+   "玫瑰糖漿汽水",
+   "加香料的奶茶",
+   "加鹽的優格飲"
+  ],
+  "answer": 2,
+  "explanation": "masala chai 以紅茶加牛奶熬煮，再放入小荳蔻、肉桂、薑等香料。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-045",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "印度的泰姬瑪哈陵原本是什麼性質的建築？",
+  "options": [
+   "皇帝的宮殿",
+   "印度教的神廟",
+   "伊斯蘭學校",
+   "王后的陵墓"
+  ],
+  "answer": 3,
+  "explanation": "蒙兀兒皇帝沙賈汗為紀念愛妻慕塔芝而建的白色大理石陵墓，位於阿格拉。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-046",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "斯里蘭卡蓋在巨大岩石頂上的古代遺跡是？",
+  "options": [
+   "獅子岩",
+   "佛牙寺",
+   "丹布勒石窟",
+   "加勒古堡"
+  ],
+  "answer": 0,
+  "explanation": "獅子岩（Sigiriya）建在一塊近兩百公尺高的花崗岩巨石上。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-047",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "印度女性點在額頭中央的圓點稱為？",
+  "options": [
+   "提拉克",
+   "賓迪",
+   "漢娜",
+   "紗麗"
+  ],
+  "answer": 1,
+  "explanation": "賓迪傳統上以硃砂點在眉心，現代多用貼紙代替。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-048",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「寶萊塢」指的是哪裡的電影工業？",
+  "options": [
+   "加爾各答的孟加拉電影",
+   "海德拉巴的泰盧固電影",
+   "孟買的印地語電影",
+   "清奈的坦米爾電影"
+  ],
+  "answer": 2,
+  "explanation": "Bollywood 是 Bombay 與 Hollywood 的合成詞，專指孟買的印地語片。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-049",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "印度古典音樂中最著名的長頸撥弦樂器是？",
+  "options": [
+   "塔布拉鼓",
+   "薩朗吉琴",
+   "竹笛班蘇里",
+   "西塔琴"
+  ],
+  "answer": 3,
+  "explanation": "西塔琴有共鳴弦，音色綿長，是北印度古典音樂的代表樂器。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-050",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "喀拉拉邦以誇張濃妝聞名的古典舞劇是？",
+  "options": [
+   "卡達卡利",
+   "婆羅多納天舞",
+   "卡塔克舞",
+   "奧迪西舞"
+  ],
+  "answer": 0,
+  "explanation": "卡達卡利以厚重彩繪臉譜、巨大頭飾與誇張手勢演出史詩故事。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-051",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "印度的官方語言印地語使用哪種文字？",
+  "options": [
+   "孟加拉文",
+   "天城文",
+   "阿拉伯字母",
+   "坦米爾文"
+  ],
+  "answer": 1,
+  "explanation": "天城文由古代婆羅米文演變而來，也用來書寫尼泊爾語與梵語。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-052",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "巴基斯坦的國語是哪一種語言？",
+  "options": [
+   "孟加拉語",
+   "旁遮普方言",
+   "烏爾都語",
+   "印地語"
+  ],
+  "answer": 2,
+  "explanation": "烏爾都語是巴基斯坦的國語與通用語，以波斯─阿拉伯字母書寫。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-SEA-053",
+  "topic": "human",
+  "unit": "SEA",
+  "unit_name": "東南亞・南亞",
+  "category": "人文",
+  "region": "東南亞・南亞",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "印度女性傳統服裝「紗麗」的特色是？",
+  "options": [
+   "以金線刺繡的短衫",
+   "上下兩件式的套裝",
+   "由皮革縫製的長袍",
+   "一整塊未縫製的布"
+  ],
+  "answer": 3,
+  "explanation": "紗麗是一塊數公尺長的布，纏繞腰身後把一端披在肩上。",
+  "fun_fact": ""
+ }
+]

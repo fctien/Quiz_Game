@@ -217,6 +217,9 @@ h1 .wordmark{display:inline-block;margin-left:.35em;padding:.18em .5em;font-size
 .joinacts .btn{flex:none;padding:8px 16px;font-size:.92rem}
 .entryline{margin-top:10px;padding-top:8px;border-top:1px dashed var(--line)}
 .placed.warnnote{border-color:var(--cinnabar);background:var(--cinnabar-soft)}
+.btn.ghost.abort{color:var(--cinnabar);border-color:var(--cinnabar)}
+.btn.ghost.abort:hover{background:var(--cinnabar);color:#fff}
+.pill.notice{background:var(--cinnabar-soft);color:var(--cinnabar);margin:10px auto;display:inline-block}
 .roster h2{font-family:var(--display);margin:0 0 10px;font-size:1.3rem;letter-spacing:.08em}
 .roster h2 span{font-family:var(--mono);color:var(--cinnabar)}
 .chipset{display:flex;flex-wrap:wrap;gap:8px}

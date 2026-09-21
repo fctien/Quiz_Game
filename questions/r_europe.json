@@ -1,0 +1,2442 @@
+[
+ {
+  "id": "geo-EU-001",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "阿爾卑斯山脈的最高峰是哪一座山？",
+  "options": [
+   "白朗峰",
+   "馬特洪峰",
+   "少女峰",
+   "大格洛克納山"
+  ],
+  "answer": 0,
+  "explanation": "白朗峰海拔約4808公尺，是阿爾卑斯山脈的最高峰。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-002",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "白朗峰位於哪兩個國家的交界？",
+  "options": [
+   "瑞士與奧地利",
+   "義大利與瑞士",
+   "法國與義大利",
+   "法國與西班牙"
+  ],
+  "answer": 2,
+  "explanation": "白朗峰坐落在法國上薩瓦省與義大利奧斯塔谷的邊界上。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-003",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "庇里牛斯山脈是哪兩個國家的天然邊界？",
+  "options": [
+   "義大利與法國",
+   "西班牙與法國",
+   "葡萄牙與西班牙",
+   "瑞士與義大利"
+  ],
+  "answer": 1,
+  "explanation": "庇里牛斯山脈橫亙伊比利半島北緣，長期是西班牙與法國的天然界線。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-004",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "外型如金字塔、位於瑞士與義大利邊界的名峰是？",
+  "options": [
+   "白朗峰",
+   "少女峰",
+   "大帕拉迪索峰",
+   "馬特洪峰"
+  ],
+  "answer": 3,
+  "explanation": "馬特洪峰以四面錐體外形聞名，山脊正好是瑞士與義大利的國界。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-005",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "西元79年埋沒古羅馬城市龐貝的火山是？",
+  "options": [
+   "埃特納火山",
+   "維蘇威火山",
+   "斯特龍伯利火山",
+   "武爾卡諾火山"
+  ],
+  "answer": 1,
+  "explanation": "維蘇威火山在西元79年爆發，火山灰將龐貝整座城市掩埋。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-006",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "義大利著名活火山埃特納火山位於哪一座島？",
+  "options": [
+   "薩丁尼亞島",
+   "科西嘉島",
+   "克里特島",
+   "西西里島"
+  ],
+  "answer": 3,
+  "explanation": "埃特納火山位於義大利西西里島東岸，已列入世界遺產。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-007",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "歐洲最長的河流是哪一條？",
+  "options": [
+   "窩瓦河",
+   "多瑙河",
+   "萊茵河",
+   "第聶伯河"
+  ],
+  "answer": 0,
+  "explanation": "窩瓦河全長約3500公里，是歐洲最長的河流，最後注入裏海。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-008",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "流經法國巴黎市區的河流是？",
+  "options": [
+   "隆河",
+   "羅亞爾河",
+   "塞納河",
+   "加倫河"
+  ],
+  "answer": 2,
+  "explanation": "塞納河貫穿巴黎，西堤島就位於河中央。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-009",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "多瑙河最後注入哪一個海？",
+  "options": [
+   "地中海",
+   "亞得里亞海",
+   "黑海",
+   "波羅的海"
+  ],
+  "answer": 2,
+  "explanation": "多瑙河向東流，在羅馬尼亞形成三角洲後注入黑海。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-010",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "萊茵河在荷蘭境內注入哪一個海？",
+  "options": [
+   "北海",
+   "波羅的海",
+   "挪威海",
+   "愛爾蘭海"
+  ],
+  "answer": 0,
+  "explanation": "萊茵河在荷蘭與馬士河形成三角洲，最後注入北海。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-011",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "歐洲面積最大的湖泊是哪一個？",
+  "options": [
+   "日內瓦湖",
+   "奧涅加湖",
+   "巴拉頓湖",
+   "拉多加湖"
+  ],
+  "answer": 3,
+  "explanation": "拉多加湖位於俄羅斯西北部，是歐洲面積最大的淡水湖。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-012",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "日內瓦湖是瑞士與哪一個國家共有的湖泊？",
+  "options": [
+   "德國",
+   "法國",
+   "奧地利",
+   "義大利"
+  ],
+  "answer": 1,
+  "explanation": "日內瓦湖南岸屬於法國，北岸屬於瑞士。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-013",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "歐洲面積最大的島嶼是哪一座？",
+  "options": [
+   "冰島",
+   "愛爾蘭島",
+   "西西里島",
+   "大不列顛島"
+  ],
+  "answer": 3,
+  "explanation": "大不列顛島是歐洲面積最大的島嶼，也是全球第九大島。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-014",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "拿破崙的出生地科西嘉島屬於哪一個國家？",
+  "options": [
+   "義大利",
+   "法國",
+   "西班牙",
+   "希臘"
+  ],
+  "answer": 1,
+  "explanation": "科西嘉島自18世紀起由法國統治，是法國的大區之一。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-015",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "米諾斯文明發源地克里特島屬於哪一個國家？",
+  "options": [
+   "土耳其",
+   "義大利",
+   "希臘",
+   "賽普勒斯"
+  ],
+  "answer": 2,
+  "explanation": "克里特島是希臘最大的島嶼，米諾斯文明即發源於此。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-016",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "英國由英格蘭、蘇格蘭、威爾斯與哪一部分組成？",
+  "options": [
+   "北愛爾蘭",
+   "愛爾蘭共和國",
+   "曼島",
+   "海峽群島"
+  ],
+  "answer": 0,
+  "explanation": "英國全名為大不列顛暨北愛爾蘭聯合王國，由四個構成國組成。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-017",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "北大西洋上的法羅群島是哪一個國家的自治領地？",
+  "options": [
+   "丹麥",
+   "挪威",
+   "冰島",
+   "瑞典"
+  ],
+  "answer": 0,
+  "explanation": "法羅群島是丹麥王國下的自治領地，擁有自己的議會與語言。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-018",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "瑞士的首都是哪一座城市？",
+  "options": [
+   "蘇黎世",
+   "日內瓦",
+   "伯恩",
+   "巴塞爾"
+  ],
+  "answer": 2,
+  "explanation": "瑞士聯邦政府所在地是伯恩，蘇黎世與日內瓦則是經濟與國際組織重鎮。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-019",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "荷蘭的首都是阿姆斯特丹，但政府與國會設在哪一座城市？",
+  "options": [
+   "鹿特丹",
+   "海牙",
+   "烏特勒支",
+   "埃因霍芬"
+  ],
+  "answer": 1,
+  "explanation": "荷蘭憲法定阿姆斯特丹為首都，但內閣、國會與王室辦公都在海牙。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-020",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "除了梵蒂岡，還有哪一個國家被義大利完全包圍？",
+  "options": [
+   "摩納哥",
+   "安道爾",
+   "馬爾他",
+   "聖馬利諾"
+  ],
+  "answer": 3,
+  "explanation": "聖馬利諾位於義大利中北部山區，四周全被義大利國土環繞。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-021",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "小國安道爾夾在哪兩個國家之間？",
+  "options": [
+   "西班牙與葡萄牙",
+   "法國與西班牙",
+   "法國與義大利",
+   "義大利與瑞士"
+  ],
+  "answer": 1,
+  "explanation": "安道爾位於庇里牛斯山中，由法國總統與西班牙的烏赫爾主教共同擔任元首。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-022",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "摩納哥唯一的陸上鄰國是哪一個國家？",
+  "options": [
+   "義大利",
+   "西班牙",
+   "瑞士",
+   "法國"
+  ],
+  "answer": 3,
+  "explanation": "摩納哥三面被法國包圍，另一面臨地中海。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-023",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "歐盟主要機構所在、常被稱為「歐盟首都」的城市是？",
+  "options": [
+   "布魯塞爾",
+   "史特拉斯堡",
+   "盧森堡市",
+   "法蘭克福"
+  ],
+  "answer": 0,
+  "explanation": "歐盟執委會與理事會都設在比利時布魯塞爾。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-024",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "俄羅斯夾在波蘭與立陶宛之間的外飛地是？",
+  "options": [
+   "克里米亞半島",
+   "聶斯特河沿岸",
+   "加里寧格勒州",
+   "卡累利阿共和國"
+  ],
+  "answer": 2,
+  "explanation": "加里寧格勒州與俄羅斯本土不相連，是波羅的海岸邊的外飛地。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-025",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "英法海底隧道通過的是哪一片水域下方？",
+  "options": [
+   "北海",
+   "愛爾蘭海",
+   "英吉利海峽",
+   "波羅的海"
+  ],
+  "answer": 2,
+  "explanation": "英法海底隧道從英國福克斯通穿越英吉利海峽（多佛海峽），通往法國加萊附近的科克勒。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-026",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "連接丹麥哥本哈根與瑞典馬爾默的跨海大橋是？",
+  "options": [
+   "厄勒海峽大橋",
+   "大貝爾特橋",
+   "卡爾馬海峽橋",
+   "波羅的海跨海橋"
+  ],
+  "answer": 0,
+  "explanation": "厄勒海峽大橋以橋梁加人工島加隧道的方式跨越厄勒海峽。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-027",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "分隔西西里島與義大利本土的海峽是？",
+  "options": [
+   "奧特朗托海峽",
+   "科西嘉海峽",
+   "西西里海峽",
+   "墨西拿海峽"
+  ],
+  "answer": 3,
+  "explanation": "墨西拿海峽最窄處僅約3公里，隔開西西里島與義大利半島。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-028",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "以六角形玄武岩柱聞名的「巨人堤道」位於哪裡？",
+  "options": [
+   "蘇格蘭",
+   "北愛爾蘭",
+   "威爾斯",
+   "愛爾蘭共和國"
+  ],
+  "answer": 1,
+  "explanation": "巨人堤道位於北愛爾蘭安特里姆郡海岸，由火山熔岩冷卻收縮形成。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-029",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "漲潮時會變成孤島的聖米歇爾山位於哪一個國家？",
+  "options": [
+   "英國",
+   "比利時",
+   "西班牙",
+   "法國"
+  ],
+  "answer": 3,
+  "explanation": "聖米歇爾山位於法國諾曼第海岸，潮差極大，漲潮時與陸地隔絕。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-030",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "使西北歐冬季比同緯度地區溫暖的洋流是？",
+  "options": [
+   "加那利寒流",
+   "北大西洋暖流",
+   "親潮",
+   "本格拉寒流"
+  ],
+  "answer": 1,
+  "explanation": "北大西洋暖流是墨西哥灣流的延伸，帶來暖水使西北歐冬季不致嚴寒。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-031",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "地中海型氣候最典型的特徵是？",
+  "options": [
+   "夏雨冬乾",
+   "全年多雨",
+   "夏乾冬雨",
+   "全年乾燥"
+  ],
+  "answer": 2,
+  "explanation": "地中海型氣候夏季受副熱帶高壓籠罩而乾燥，冬季受西風帶影響而多雨。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-032",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "荷蘭築堤排水、從海中造出的耕地稱為什麼？",
+  "options": [
+   "圩田",
+   "梯田",
+   "沖積扇",
+   "三角洲"
+  ],
+  "answer": 0,
+  "explanation": "荷蘭以堤防圍住淺海或湖泊後抽乾積水，造出低於海平面的圩田。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-033",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "有「千湖之國」之稱的北歐國家是？",
+  "options": [
+   "芬蘭",
+   "瑞典",
+   "挪威",
+   "丹麥"
+  ],
+  "answer": 0,
+  "explanation": "芬蘭境內冰河遺留下的湖泊數以萬計，因而有千湖之國的別稱。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-034",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "伊比利半島上的兩個主要國家是？",
+  "options": [
+   "法國與西班牙",
+   "義大利與希臘",
+   "西班牙與葡萄牙",
+   "希臘與土耳其"
+  ],
+  "answer": 2,
+  "explanation": "伊比利半島大部分為西班牙，西側則是葡萄牙。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-035",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "斯堪地那維亞半島主要由哪兩個國家組成？",
+  "options": [
+   "瑞典與芬蘭",
+   "挪威與瑞典",
+   "丹麥與挪威",
+   "芬蘭與丹麥"
+  ],
+  "answer": 1,
+  "explanation": "斯堪地那維亞半島西側為挪威、東側為瑞典，北端一小部分屬芬蘭。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-036",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "以鬱金香與風車聞名的歐洲國家是？",
+  "options": [
+   "比利時",
+   "丹麥",
+   "德國",
+   "荷蘭"
+  ],
+  "answer": 3,
+  "explanation": "荷蘭是全球最大的鬱金香球根產地，風車則用於抽水與磨坊。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-037",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "香檳（Champagne）法定產區位於哪一個國家？",
+  "options": [
+   "義大利",
+   "法國",
+   "西班牙",
+   "德國"
+  ],
+  "answer": 1,
+  "explanation": "只有法國香檳區依規定製成的氣泡酒才能標示為香檳。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-038",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "德國以煤礦與鋼鐵重工業起家的著名工業區是？",
+  "options": [
+   "薩爾區",
+   "巴伐利亞",
+   "黑森林",
+   "魯爾區"
+  ],
+  "answer": 3,
+  "explanation": "魯爾區靠豐富煤礦發展鋼鐵業，是德國工業化的核心地帶。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-039",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "冰島跨坐在大西洋中洋脊上，屬於哪一種板塊邊界？",
+  "options": [
+   "張裂邊界",
+   "聚合邊界",
+   "錯動邊界",
+   "隱沒帶邊界"
+  ],
+  "answer": 0,
+  "explanation": "中洋脊是板塊互相分離的張裂邊界，岩漿上湧造成冰島多火山與地熱。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-040",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "夏季在北極圈內出現太陽終夜不落的現象稱為？",
+  "options": [
+   "極光",
+   "海市蜃樓",
+   "午夜太陽",
+   "日環食"
+  ],
+  "answer": 2,
+  "explanation": "地軸傾斜使北極圈內夏季太陽整日不落入地平線，形成午夜太陽。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-041",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "歐洲大陸最西端的羅卡角位於哪一個國家？",
+  "options": [
+   "西班牙",
+   "愛爾蘭",
+   "葡萄牙",
+   "法國"
+  ],
+  "answer": 2,
+  "explanation": "羅卡角位於葡萄牙里斯本西方海岸，是歐洲大陸的最西點。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-042",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "挪威、瑞典、芬蘭北部薩米人居住的地區通稱為？",
+  "options": [
+   "拉普蘭",
+   "波希米亞",
+   "西伯利亞",
+   "加利西亞"
+  ],
+  "answer": 0,
+  "explanation": "拉普蘭橫跨北歐三國與俄羅斯西北部，是原住民族薩米人的傳統居地。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-043",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "波羅的海三小國由北到南依序是？",
+  "options": [
+   "立陶宛、拉脫維亞、愛沙尼亞",
+   "拉脫維亞、愛沙尼亞、立陶宛",
+   "愛沙尼亞、立陶宛、拉脫維亞",
+   "愛沙尼亞、拉脫維亞、立陶宛"
+  ],
+  "answer": 3,
+  "explanation": "由北往南依序是愛沙尼亞、拉脫維亞、立陶宛。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-EU-044",
+  "topic": "geo",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "地理",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "一般認為的歐洲大陸最高峰厄爾布魯斯山位於哪條山脈？",
+  "options": [
+   "阿爾卑斯山脈",
+   "高加索山脈",
+   "庇里牛斯山脈",
+   "喀爾巴阡山脈"
+  ],
+  "answer": 1,
+  "explanation": "厄爾布魯斯山位於俄羅斯境內的大高加索山脈，海拔5642公尺，是一座休眠火山。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-001",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "雅典衛城上的帕德嫩神廟，主要供奉哪一位神祇？",
+  "options": [
+   "阿波羅",
+   "波賽頓",
+   "雅典娜",
+   "阿特米斯"
+  ],
+  "answer": 2,
+  "explanation": "帕德嫩神廟是為雅典守護神雅典娜而建，神廟內原本立有巨大的雅典娜神像。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-002",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "西元前 490 年雅典擊退波斯大軍的著名戰役是哪一場？",
+  "options": [
+   "溫泉關戰役",
+   "薩拉米斯海戰",
+   "普拉提亞戰役",
+   "馬拉松戰役"
+  ],
+  "answer": 3,
+  "explanation": "馬拉松戰役中雅典重裝步兵大敗來犯的波斯軍，是波希戰爭中希臘人的第一場大勝。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-003",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "長達近三十年的伯羅奔尼撒戰爭，最後由哪一方獲勝？",
+  "options": [
+   "雅典",
+   "斯巴達",
+   "科林斯",
+   "馬其頓王國"
+  ],
+  "answer": 1,
+  "explanation": "戰爭從西元前 431 年打到前 404 年，雅典投降，由斯巴達領導的伯羅奔尼撒聯盟取得勝利。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-004",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "古羅馬最早的成文法，因刻在銅牌上公布而得名，稱為什麼？",
+  "options": [
+   "漢摩拉比法典",
+   "十二銅表法",
+   "查士丁尼法典",
+   "拿破崙法典"
+  ],
+  "answer": 1,
+  "explanation": "十二銅表法約制定於西元前 450 年，刻在十二塊銅牌上公開展示，被視為羅馬法的源頭。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-005",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "西元前 44 年在元老院被一群議員刺殺的羅馬領袖是誰？",
+  "options": [
+   "屋大維",
+   "凱撒",
+   "龐培",
+   "西塞羅"
+  ],
+  "answer": 1,
+  "explanation": "終身獨裁官凱撒於西元前 44 年 3 月 15 日在元老院集會時，被以布魯圖斯為首的議員刺殺身亡。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-006",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "一般公認羅馬帝國的第一位皇帝是誰？",
+  "options": [
+   "尼祿",
+   "圖拉真",
+   "屋大維",
+   "哈德良"
+  ],
+  "answer": 2,
+  "explanation": "屋大維在西元前 27 年獲元老院獻上「奧古斯都」尊號，被視為羅馬帝國的開端。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-007",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1066 年黑斯廷斯戰役後入主英格蘭的是哪一位統治者？",
+  "options": [
+   "諾曼第公爵威廉",
+   "丹麥國王克努特",
+   "挪威國王哈拉爾",
+   "法蘭西國王路易"
+  ],
+  "answer": 0,
+  "explanation": "諾曼第公爵威廉在黑斯廷斯擊敗英王哈羅德，隨後加冕為英格蘭國王，史稱諾曼征服。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-008",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1215 年英格蘭貴族逼迫約翰王用印、限制王權的文件是什麼？",
+  "options": [
+   "大憲章",
+   "權利法案",
+   "獨立宣言",
+   "人身保護令"
+  ],
+  "answer": 0,
+  "explanation": "大憲章於 1215 年由約翰王用印，確立國王也須受法律約束，後世視為憲政傳統的起點。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-009",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "14 世紀中葉橫掃歐洲、奪走大量人口的大瘟疫俗稱什麼？",
+  "options": [
+   "西班牙流感",
+   "霍亂大流行",
+   "黑死病",
+   "天花大流行"
+  ],
+  "answer": 2,
+  "explanation": "黑死病是 1347 年起蔓延全歐的鼠疫大流行，估計奪走當時歐洲三分之一以上的人口。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-010",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1095 年在克萊蒙會議上號召發動第一次十字軍東征的教宗是誰？",
+  "options": [
+   "格列高利七世",
+   "英諾森三世",
+   "烏爾班二世",
+   "良十世"
+  ],
+  "answer": 2,
+  "explanation": "教宗烏爾班二世在 1095 年的克萊蒙會議演說中呼籲西歐騎士出兵，掀起了十字軍東征。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-011",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "英法百年戰爭中率軍解除奧爾良之圍的法國少女是誰？",
+  "options": [
+   "瑪蒂達",
+   "艾蓮諾",
+   "布蘭琪",
+   "貞德"
+  ],
+  "answer": 3,
+  "explanation": "1429 年貞德帶兵解圍奧爾良，扭轉了法國在百年戰爭中的頹勢，後世稱她為聖女貞德。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-012",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "雕出《大衛像》、又畫了西斯汀禮拜堂天頂畫的藝術家是誰？",
+  "options": [
+   "米開朗基羅",
+   "波提且利",
+   "多那太羅",
+   "布魯內雷斯基"
+  ],
+  "answer": 0,
+  "explanation": "米開朗基羅既是雕刻家也是畫家，《大衛像》與西斯汀禮拜堂天頂畫都出自他之手。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-013",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "寫下《哈姆雷特》與《羅密歐與茱麗葉》的英國劇作家是誰？",
+  "options": [
+   "威廉·莎士比亞",
+   "克里斯多福·馬羅",
+   "傑佛瑞·喬叟",
+   "查爾斯·狄更斯"
+  ],
+  "answer": 0,
+  "explanation": "莎士比亞是伊莉莎白時代的劇作家，這兩部劇本都是他最著名的作品。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-014",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "1492 年在西班牙王室資助下橫渡大西洋、抵達美洲的航海家是誰？",
+  "options": [
+   "達伽馬",
+   "狄亞士",
+   "哥倫布",
+   "卡布拉爾"
+  ],
+  "answer": 2,
+  "explanation": "哥倫布在西班牙伊莎貝拉女王資助下於 1492 年西航，抵達加勒比海的島嶼。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-015",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "繞過好望角、開通歐洲直達印度海路的葡萄牙航海家是誰？",
+  "options": [
+   "狄亞士",
+   "卡布拉爾",
+   "巴爾波亞",
+   "達伽馬"
+  ],
+  "answer": 3,
+  "explanation": "達伽馬的船隊繞過非洲南端，於 1498 年抵達印度西岸的卡利卡特，打通了歐印航線。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-016",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "1494 年《托爾德西利亞斯條約》是由哪兩國瓜分海外世界？",
+  "options": [
+   "西班牙與葡萄牙",
+   "英格蘭與法蘭西",
+   "荷蘭與英格蘭",
+   "法蘭西與西班牙"
+  ],
+  "answer": 0,
+  "explanation": "西班牙與葡萄牙以大西洋上一條子午線為界，協議瓜分線東西兩側新發現的土地。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-017",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "為了離婚而與羅馬教廷決裂、成立英國國教會的國王是誰？",
+  "options": [
+   "查理一世",
+   "亨利八世",
+   "愛德華六世",
+   "詹姆士一世"
+  ],
+  "answer": 1,
+  "explanation": "亨利八世因離婚案與教宗翻臉，1534 年頒布至尊法案，自任英格蘭教會最高領袖。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-018",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "在日內瓦推動宗教改革、主張「預定論」的神學家是誰？",
+  "options": [
+   "慈運理",
+   "諾克斯",
+   "喀爾文",
+   "梅蘭希通"
+  ],
+  "answer": 2,
+  "explanation": "喀爾文在日內瓦建立改革派教會，著有《基督教要義》，預定論是其神學核心主張。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-019",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "法國大革命期間被送上斷頭台處死的法國國王是誰？",
+  "options": [
+   "路易十四",
+   "路易十六",
+   "路易十五",
+   "查理十世"
+  ],
+  "answer": 1,
+  "explanation": "路易十六於 1793 年 1 月被國民公會判處死刑，在巴黎的斷頭台上被處決。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-020",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "主導法國大革命「恐怖統治」、最後在熱月政變中被處死的是誰？",
+  "options": [
+   "拉法葉侯爵",
+   "喬治·丹敦",
+   "羅伯斯比爾",
+   "米拉波伯爵"
+  ],
+  "answer": 2,
+  "explanation": "雅各賓派領袖羅伯斯比爾推行恐怖統治，1794 年熱月政變後隨即被送上斷頭台。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-021",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "打造蒸汽機車「火箭號」、被稱為「鐵路之父」的英國人是誰？",
+  "options": [
+   "特里維西克",
+   "史蒂芬生",
+   "阿克萊特",
+   "哈格里夫斯"
+  ],
+  "answer": 1,
+  "explanation": "史蒂芬生父子打造的「火箭號」在 1829 年雷恩希爾機車競賽中勝出，奠定了蒸汽鐵路的基礎。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-022",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1851 年倫敦萬國博覽會以鋼鐵和玻璃搭建的主場館叫什麼？",
+  "options": [
+   "白金漢宮",
+   "皇家亞伯特廳",
+   "西敏寺",
+   "水晶宮"
+  ],
+  "answer": 3,
+  "explanation": "水晶宮由帕克斯頓設計，用鑄鐵骨架與大量玻璃組成，是 1851 年萬國博覽會的展覽館。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-023",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在塞拉耶佛遇刺、引爆第一次世界大戰的斐迪南大公是哪國皇儲？",
+  "options": [
+   "德意志帝國",
+   "俄羅斯帝國",
+   "鄂圖曼帝國",
+   "奧匈帝國"
+  ],
+  "answer": 3,
+  "explanation": "斐迪南大公是奧匈帝國皇位繼承人，1914 年在塞拉耶佛遇刺後，奧匈向塞爾維亞宣戰。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-024",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "一戰中被稱為「絞肉機」、1916 年法德長期血戰的戰役是？",
+  "options": [
+   "索姆河戰役",
+   "馬恩河戰役",
+   "坦能堡戰役",
+   "凡爾登戰役"
+  ],
+  "answer": 3,
+  "explanation": "凡爾登戰役從 1916 年 2 月打到 12 月，雙方死傷慘重，被稱為「凡爾登絞肉機」。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-025",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1941 年納粹德國大舉入侵蘇聯，這場作戰的代號是什麼？",
+  "options": [
+   "市場花園行動",
+   "巴巴羅薩行動",
+   "大君主行動",
+   "海獅行動"
+  ],
+  "answer": 1,
+  "explanation": "巴巴羅薩行動於 1941 年 6 月 22 日展開，是二戰中規模最大的陸上入侵行動。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-026",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "第二次世界大戰期間率領英國對抗納粹德國的首相是誰？",
+  "options": [
+   "張伯倫",
+   "艾德禮",
+   "邱吉爾",
+   "勞合喬治"
+  ],
+  "answer": 2,
+  "explanation": "邱吉爾於 1940 年接任首相，以強硬演說與堅持抵抗帶領英國度過二戰最艱難的階段。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-027",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "二戰後美國大規模援助西歐重建的經濟方案通稱為什麼？",
+  "options": [
+   "布列敦森林協定",
+   "杜魯門主義",
+   "道斯計畫",
+   "馬歇爾計畫"
+  ],
+  "answer": 3,
+  "explanation": "馬歇爾計畫又稱歐洲復興計畫，由美國國務卿馬歇爾在 1947 年提出，援助西歐戰後重建。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-028",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "冷戰期間由蘇聯主導、用來對抗北約的東歐軍事同盟是什麼？",
+  "options": [
+   "華沙公約組織",
+   "經濟互助委員會",
+   "歐洲共同體",
+   "獨立國協"
+  ],
+  "answer": 0,
+  "explanation": "華沙公約組織成立於 1955 年，由蘇聯與東歐社會主義國家組成，與北約長期對峙。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-EU-029",
+  "topic": "history",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "歷史",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1962 年美蘇險些爆發核戰的飛彈危機，發生在哪個國家？",
+  "options": [
+   "古巴",
+   "越南",
+   "土耳其",
+   "韓國"
+  ],
+  "answer": 0,
+  "explanation": "蘇聯在古巴部署飛彈引發危機，美蘇對峙十三天後達成協議，是冷戰中最接近核戰的時刻。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-001",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列哪一個歐洲語言不屬於印歐語系？",
+  "options": [
+   "匈牙利語",
+   "葡萄牙語",
+   "希臘語",
+   "立陶宛語"
+  ],
+  "answer": 0,
+  "explanation": "匈牙利語與芬蘭語、愛沙尼亞語同屬烏拉爾語系，其餘三者都是印歐語系成員。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-002",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "法語、西班牙語、義大利語同屬哪一個語族？",
+  "options": [
+   "日耳曼語族",
+   "斯拉夫語族",
+   "羅曼語族",
+   "凱爾特語族"
+  ],
+  "answer": 2,
+  "explanation": "這三種語言都由通俗拉丁語演變而來，合稱羅曼語族。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-003",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列哪一種斯拉夫語言用拉丁字母而非西里爾字母書寫？",
+  "options": [
+   "俄語",
+   "保加利亞語",
+   "波蘭語",
+   "烏克蘭語"
+  ],
+  "answer": 2,
+  "explanation": "波蘭語屬西斯拉夫語支，長期受天主教文化影響，採用加了附加符號的拉丁字母。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-004",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "瑞士的四種國家語言中，除了德語、法語、義大利語還有哪一種？",
+  "options": [
+   "加泰隆尼亞語",
+   "佛萊明語",
+   "羅曼什語",
+   "巴斯克語"
+  ],
+  "answer": 2,
+  "explanation": "羅曼什語通行於瑞士東南部山區，一九三八年起成為國家語言，也是一種羅曼語。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-005",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "西歐哪一種語言被認為是「孤立語言」，與周邊語言毫無親屬關係？",
+  "options": [
+   "愛爾蘭語",
+   "巴斯克語",
+   "加泰隆尼亞語",
+   "冰島語"
+  ],
+  "answer": 1,
+  "explanation": "巴斯克語通行於西班牙與法國交界的庇里牛斯山西端，是歐洲唯一公認的孤立語言。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-006",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "荷蘭語在語言分類上屬於哪一個語族？",
+  "options": [
+   "羅曼語族",
+   "斯拉夫語族",
+   "日耳曼語族",
+   "烏拉爾語族"
+  ],
+  "answer": 2,
+  "explanation": "荷蘭語是西日耳曼語言，常被形容為介於德語與英語之間。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-007",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "部分東正教會的耶誕節落在一月七日，主要原因是什麼？",
+  "options": [
+   "沿用儒略曆",
+   "紀念東方三博士",
+   "避開新年假期",
+   "配合月亮的盈虧"
+  ],
+  "answer": 0,
+  "explanation": "這些教會的節期仍依儒略曆，其十二月二十五日相當於現行公曆的一月七日。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-008",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "以「奔牛」聞名的聖費爾明節，在西班牙哪一座城市舉行？",
+  "options": [
+   "塞維亞",
+   "瓦倫西亞",
+   "潘普洛納",
+   "畢爾包"
+  ],
+  "answer": 2,
+  "explanation": "潘普洛納每年七月的聖費爾明節，清晨的奔牛活動吸引世界各地遊客。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-009",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "德國慕尼黑啤酒節最早是為了慶祝什麼而舉辦？",
+  "options": [
+   "一場葡萄豐收祭",
+   "新教堂的落成",
+   "王儲的婚禮",
+   "啤酒稅正式取消"
+  ],
+  "answer": 2,
+  "explanation": "一八一○年巴伐利亞王儲路德維希成婚，慶典辦在特蕾西亞草坪，後來演變成年度啤酒節。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-010",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "以華麗面具與斗篷聞名的嘉年華，在義大利哪一座城市舉行？",
+  "options": [
+   "威尼斯",
+   "佛羅倫斯",
+   "拿坡里",
+   "波隆那"
+  ],
+  "answer": 0,
+  "explanation": "威尼斯嘉年華以造型誇張的面具著稱，於四旬期前的懺悔星期二落幕。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-011",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "瑞典的仲夏節慶祝的是一年當中的哪個時刻？",
+  "options": [
+   "春分時節",
+   "秋收結束",
+   "初雪降臨",
+   "夏至時節"
+  ],
+  "answer": 3,
+  "explanation": "仲夏節在六月下旬舉行，慶祝北歐白晝最長、近乎不夜的時節，人們豎起花柱唱歌跳舞。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-012",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "傳統義式培根蛋麵（Carbonara）靠什麼做出滑順的醬汁？",
+  "options": [
+   "雞蛋",
+   "鮮奶油",
+   "奶油麵糊",
+   "原味優格"
+  ],
+  "answer": 0,
+  "explanation": "正統作法用蛋液與 Pecorino 起司拌入熱麵，靠餘溫乳化成醬，義大利本地食譜並不加鮮奶油。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-013",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "米其林指南最早是由什麼樣的公司推出的？",
+  "options": [
+   "鐵路公司",
+   "輪胎公司",
+   "報社",
+   "釀酒廠"
+  ],
+  "answer": 1,
+  "explanation": "一九○○年米其林兄弟的輪胎公司免費發送這本手冊，想鼓勵人多開車、多換輪胎。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-014",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "西班牙安達魯西亞的名菜 Gazpacho 是哪一種料理？",
+  "options": [
+   "炭烤的羊肉串",
+   "油炸的海鮮盤",
+   "冰涼的蔬菜湯",
+   "燉煮的豆子湯"
+  ],
+  "answer": 2,
+  "explanation": "用番茄、小黃瓜、甜椒、麵包與橄欖油打成後冰鎮飲用，是夏日消暑的冷湯。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-015",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "瑞典以氣味驚人聞名的罐頭 surströmming，裡面裝的是什麼？",
+  "options": [
+   "醃漬鮭魚",
+   "發酵鯡魚",
+   "燻烤鰻魚",
+   "鹽漬鱈魚"
+  ],
+  "answer": 1,
+  "explanation": "波羅的海鯡魚以淡鹽水發酵數月後裝罐，罐內持續發酵而鼓脹，開罐時氣味極為濃烈。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-016",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "帕瑪森起司（Parmigiano Reggiano）主要產自義大利哪一個大區？",
+  "options": [
+   "托斯卡尼",
+   "西西里",
+   "艾米利亞-羅馬涅",
+   "皮埃蒙特"
+  ],
+  "answer": 2,
+  "explanation": "這款硬質牛乳起司的法定產區以帕爾馬、雷焦艾米利亞等省為核心。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-017",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "義大利麵 spaghetti 一詞的字面意思是什麼？",
+  "options": [
+   "小耳朵",
+   "小舌頭",
+   "小蝴蝶",
+   "小繩子"
+  ],
+  "answer": 3,
+  "explanation": "spaghetti 是 spago（繩子）的複數指小詞，形容它細長如繩的外形。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-018",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "丹麥的傳統食物 smørrebrød 是什麼？",
+  "options": [
+   "裹粉炸魚薯條",
+   "開放式三明治",
+   "肉桂口味甜捲",
+   "牛肉燉煮濃湯"
+  ],
+  "answer": 1,
+  "explanation": "在抹了奶油的深色黑麥麵包上鋪魚、肉、起司與配菜，只用一片麵包，不加蓋。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-019",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「飛扶壁」是哪一種建築風格的標誌性構件？",
+  "options": [
+   "哥德式",
+   "羅馬式",
+   "巴洛克",
+   "新古典主義"
+  ],
+  "answer": 0,
+  "explanation": "飛扶壁把拱頂的側推力導向外側支柱，讓牆面得以變薄、開出巨大的彩繪玻璃窗。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-020",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "羅馬式教堂的拱多半是什麼形狀？",
+  "options": [
+   "尖頭形",
+   "半圓形",
+   "馬蹄形",
+   "三葉形"
+  ],
+  "answer": 1,
+  "explanation": "羅馬式以厚牆、粗柱與半圓拱為特徵，尖拱要到後來的哥德式才成為主角。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-021",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "十七世紀盛行、以繁複裝飾與戲劇性光影著稱的建築風格是？",
+  "options": [
+   "羅馬式",
+   "哥德式",
+   "新藝術",
+   "巴洛克"
+  ],
+  "answer": 3,
+  "explanation": "巴洛克源自義大利，天主教會用這種令人目眩的華麗風格營造震撼與莊嚴感。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-022",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "高第接手設計的聖家堂位於哪一座城市？",
+  "options": [
+   "馬德里",
+   "巴塞隆納",
+   "里斯本",
+   "聖地牙哥"
+  ],
+  "answer": 1,
+  "explanation": "聖家堂坐落於西班牙加泰隆尼亞的巴塞隆納，高第自一八八三年起主持設計直到過世。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-023",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「新藝術」（Art Nouveau）最鮮明的視覺特徵是什麼？",
+  "options": [
+   "對稱的古典柱式",
+   "裸露的清水混凝土",
+   "流動的植物曲線",
+   "幾何化的方塊量體"
+  ],
+  "answer": 2,
+  "explanation": "新藝術盛行於十九世紀末到二十世紀初，愛用花草般的蜿蜒線條，並大量使用鑄鐵與玻璃。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-024",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "梵蒂岡西斯汀禮拜堂的天頂畫是誰的作品？",
+  "options": [
+   "達文西",
+   "拉斐爾",
+   "多那太羅",
+   "米開朗基羅"
+  ],
+  "answer": 3,
+  "explanation": "米開朗基羅於一五○八至一五一二年完成天頂壁畫，《創造亞當》是其中最著名的一幕。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-025",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列哪一位畫家並不屬於「文藝復興三傑」？",
+  "options": [
+   "達文西",
+   "米開朗基羅",
+   "拉斐爾",
+   "波提且利"
+  ],
+  "answer": 3,
+  "explanation": "文藝復興三傑指達文西、米開朗基羅與拉斐爾，波提且利雖同期活躍，但不在此列。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-026",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "「印象派」這個名稱源自哪一位畫家的作品標題？",
+  "options": [
+   "竇加",
+   "莫內",
+   "塞尚",
+   "雷諾瓦"
+  ],
+  "answer": 1,
+  "explanation": "評論家從莫內的《印象．日出》借用「印象」一詞來嘲諷，後來反而成了畫派正名。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-027",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "畢卡索的《格爾尼卡》在用色上最大的特點是什麼？",
+  "options": [
+   "只用黑白灰",
+   "大面積金箔",
+   "鮮豔的原色",
+   "單一的藍調"
+  ],
+  "answer": 0,
+  "explanation": "全畫以黑、白、灰構成，近似報紙照片的色調，強化了戰爭的殘酷與冷峻。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-028",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "立體派主要由哪兩位畫家共同開創？",
+  "options": [
+   "馬諦斯與德朗",
+   "莫內與雷諾瓦",
+   "畢卡索與布拉克",
+   "康丁斯基與克利"
+  ],
+  "answer": 2,
+  "explanation": "二十世紀初兩人在巴黎密切合作，把物體拆解成幾何面，同時呈現多個視角。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-029",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "波提且利的《維納斯的誕生》收藏在哪一座美術館？",
+  "options": [
+   "羅浮宮",
+   "普拉多美術館",
+   "艾米塔吉博物館",
+   "烏菲茲美術館"
+  ],
+  "answer": 3,
+  "explanation": "這幅名作藏於義大利佛羅倫斯的烏菲茲美術館，是文藝復興的代表作之一。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-030",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "莫札特出生於哪一座城市？",
+  "options": [
+   "薩爾茲堡",
+   "維也納",
+   "布達佩斯",
+   "萊比錫"
+  ],
+  "answer": 0,
+  "explanation": "莫札特一七五六年生於今日奧地利的薩爾茲堡，屬古典樂派作曲家。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-031",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "歌劇《阿伊達》的作曲者是誰？",
+  "options": [
+   "普契尼",
+   "羅西尼",
+   "董尼采第",
+   "威爾第"
+  ],
+  "answer": 3,
+  "explanation": "《阿伊達》是威爾第受託創作、以古埃及為背景的歌劇，一八七一年在開羅首演。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-032",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "德國拜魯特音樂節主要上演哪一位作曲家的作品？",
+  "options": [
+   "華格納",
+   "布拉姆斯",
+   "舒伯特",
+   "孟德爾頌"
+  ],
+  "answer": 0,
+  "explanation": "華格納親自催生這個音樂節，並蓋了專屬劇院來演出《尼貝龍指環》等大型樂劇。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-033",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "蕭邦幾乎只為哪一種樂器創作？",
+  "options": [
+   "小提琴",
+   "鋼琴",
+   "大提琴",
+   "長笛"
+  ],
+  "answer": 1,
+  "explanation": "這位波蘭作曲家的作品全都有鋼琴，他也把馬厝卡與波蘭舞曲寫進了藝術音樂。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-034",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "小提琴協奏曲《四季》是哪一位作曲家的作品？",
+  "options": [
+   "韋瓦第",
+   "韓德爾",
+   "巴哈",
+   "柯賴里"
+  ],
+  "answer": 0,
+  "explanation": "《四季》是韋瓦第以四首小提琴協奏曲描寫春夏秋冬的巴洛克名作。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-035",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "巴哈屬於西方音樂史上的哪一個時期？",
+  "options": [
+   "文藝復興",
+   "古典",
+   "浪漫",
+   "巴洛克"
+  ],
+  "answer": 3,
+  "explanation": "巴哈是巴洛克晚期的德國作曲家，以對位法的高度成就著稱。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-036",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列哪一部是莎士比亞的喜劇，而不是悲劇？",
+  "options": [
+   "《哈姆雷特》",
+   "《仲夏夜之夢》",
+   "《羅密歐與茱麗葉》",
+   "《馬克白》"
+  ],
+  "answer": 1,
+  "explanation": "《仲夏夜之夢》是莎士比亞最受歡迎的喜劇之一，講森林裡的精靈與錯亂的戀情。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-037",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "《浮士德》是哪一位德國作家的代表作？",
+  "options": [
+   "席勒",
+   "海涅",
+   "歌德",
+   "卡夫卡"
+  ],
+  "answer": 2,
+  "explanation": "歌德花了大半生完成這部兩部曲詩劇，寫浮士德與魔鬼梅菲斯特的賭約。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-038",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "杜斯妥也夫斯基《罪與罰》的主角原本是什麼身分？",
+  "options": [
+   "窮困的大學生",
+   "退伍的軍官",
+   "破產的商人",
+   "流浪的修士"
+  ],
+  "answer": 0,
+  "explanation": "主角拉斯柯尼科夫是被貧窮逼得休學的法律系學生，全書聚焦他犯案後的心理煎熬。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-039",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "《唐吉訶德》裡，主角把風車誤認成什麼而衝上去攻擊？",
+  "options": [
+   "惡龍",
+   "海盜",
+   "幽靈",
+   "巨人"
+  ],
+  "answer": 3,
+  "explanation": "這段情節太有名，英文因此有了「向風車衝鋒」這個比喻，指與假想敵搏鬥。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-040",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "但丁《神曲》分成哪三個部分？",
+  "options": [
+   "地獄、煉獄、天堂",
+   "過去、現在、未來",
+   "天堂、人間、冥府",
+   "春天、夏天、冬天"
+  ],
+  "answer": 0,
+  "explanation": "但丁用托斯卡尼方言寫成，先由維吉爾帶他走過地獄與煉獄，再由貝雅特麗采引向天堂。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-041",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "《小美人魚》《醜小鴨》的作者是哪一國人？",
+  "options": [
+   "瑞典",
+   "丹麥",
+   "挪威",
+   "芬蘭"
+  ],
+  "answer": 1,
+  "explanation": "安徒生生於丹麥歐登塞，哥本哈根港邊的小美人魚銅像就取材自他的童話。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-042",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "羅浮宮入口的玻璃金字塔由哪一位建築師設計？",
+  "options": [
+   "柯比意",
+   "高第",
+   "法蘭克．蓋瑞",
+   "貝聿銘"
+  ],
+  "answer": 3,
+  "explanation": "華裔美籍建築師貝聿銘在一九八○年代為羅浮宮設計了這座玻璃與金屬構成的入口。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-043",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "解讀古埃及象形文字的關鍵文物「羅塞塔石碑」收藏在哪裡？",
+  "options": [
+   "羅浮宮",
+   "大英博物館",
+   "柏林新博物館",
+   "梵蒂岡博物館"
+  ],
+  "answer": 1,
+  "explanation": "石碑自一八○二年起幾乎持續在倫敦的大英博物館展出，碑上刻有三種文字。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-044",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "艾米塔吉博物館的主體建築，原本是俄國沙皇的哪一座宮殿？",
+  "options": [
+   "夏宮",
+   "克里姆林宮",
+   "冬宮",
+   "葉卡捷琳娜宮"
+  ],
+  "answer": 2,
+  "explanation": "位於聖彼得堡涅瓦河畔的冬宮曾是沙皇寢宮，如今是艾米塔吉博物館的核心建築。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-045",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "以十二月七日開季著稱的史卡拉歌劇院位於哪一座城市？",
+  "options": [
+   "羅馬",
+   "威尼斯",
+   "杜林",
+   "米蘭"
+  ],
+  "answer": 3,
+  "explanation": "史卡拉歌劇院每年在米蘭主保聖人聖安博日開季，是義大利歌劇的重鎮。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-046",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "法國人見面時的「la bise」是什麼樣的問候方式？",
+  "options": [
+   "貼臉頰輕吻",
+   "互相鞠躬致意",
+   "雙手合十行禮",
+   "以拳頭互碰"
+  ],
+  "answer": 0,
+  "explanation": "左右臉頰輪流輕吻，次數依地區而異，有人說數親幾下就知道身在哪座城市。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-047",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "哪一項芬蘭生活傳統被列入聯合國教科文組織非物質文化遺產？",
+  "options": [
+   "馴鹿放牧傳統",
+   "冰上釣魚技藝",
+   "仲夏營火晚會",
+   "桑拿浴文化"
+  ],
+  "answer": 3,
+  "explanation": "芬蘭桑拿在二○二○年入列，它在當地不只是洗澡，更是社交與身心整頓的場所。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-048",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "西班牙的阿爾罕布拉宮是哪一個文化留下的建築傑作？",
+  "options": [
+   "伊斯蘭文化",
+   "古羅馬文化",
+   "維京文化",
+   "拜占庭文化"
+  ],
+  "answer": 0,
+  "explanation": "這座宮殿由格拉納達的納斯里王朝興建，庭院、水景與繁複灰泥雕飾都是摩爾式伊斯蘭風格。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-EU-049",
+  "topic": "human",
+  "unit": "EU",
+  "unit_name": "歐洲",
+  "category": "人文",
+  "region": "歐洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "著名的史前巨石陣位於英國的哪一個部分？",
+  "options": [
+   "愛爾蘭",
+   "英格蘭",
+   "蘇格蘭",
+   "威爾斯"
+  ],
+  "answer": 1,
+  "explanation": "巨石陣立在英格蘭威爾特郡的索爾茲伯里平原上，一九八六年列入世界遺產。",
+  "fun_fact": ""
+ }
+]

@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-title" content="脈衝 PULSE">
 <link rel="apple-touch-icon" href="/static/icons/icon-180.png">
 <link rel="icon" href="/static/icons/favicon.png" type="image/png">
-<link rel="stylesheet" href="/static/style.css?v=5.8">
+<link rel="stylesheet" href="/static/style.css?v=6.0">
 <!-- QR code 產生器：連不到網路時只會少了 QR code，輸入房號一樣能加入 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 <script>
@@ -31,7 +31,6 @@ if ('serviceWorker' in navigator) window.addEventListener('load', () => navigato
 const $app = document.getElementById('app');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const SEAL = {python:'蟒', pytorch:'深', vba:'巨', geo:'輿', history:'史', human:'文', tech:'科', star:'星', fun:'奇', tt:'桌', news:'聞', mix:'雜'};
-const REGIONS = ['', '台灣', '中國', '世界'];
 const post = async (url, body) => {
   const r = await fetch(url, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
   const j = await r.json().catch(() => ({}));
@@ -69,16 +68,41 @@ async function readCsv(file){
 }
 
 /* ---------- 開考坊設定 ---------- */
+/* 會重試的 fetch。
+   啟動-Windows.bat 會先開瀏覽器再啟動伺服器,題庫變大之後載入要一兩秒,
+   第一次要主題清單常常會撲空;以前撲空就默默給一個空陣列,畫面上主題那一整排
+   就整個不見,而且不會自己好。現在改成重試幾次,真的拿不到才明講。 */
+async function getJSON(url, tries = 8){
+  for (let i = 0; i < tries; i++){
+    try{
+      const r = await fetch(url, {cache: 'no-store'});
+      if (r.ok) return await r.json();
+    }catch(e){ /* 伺服器還沒起來 */ }
+    await new Promise(go => setTimeout(go, 400));
+  }
+  return null;
+}
+
 async function setup(msg = ''){
   keepAwake(false);
   const pick = ss.get('mp_setup') || {category: 'mix', region: '', count: 10, time: 20, mode: 'solo', team_count: 4, class_code: '', entry: ''};
+  pick.region = '';                                    // 全域地區已經改用單元,舊設定殘留會讓每個主題都變 0 題
   document.body.dataset.topic = pick.category || '';   // 設定頁就先換上該主題的布景
-  const cats = await fetch('/api/categories' + (pick.region ? '?region=' + encodeURIComponent(pick.region) : '')).then(r => r.json()).catch(() => []);
+  const cats = await getJSON('/api/categories');
+  if (!cats || !cats.length){
+    $app.innerHTML = `<div class="masthead"><div><h1>主持台<span class="seal">試</span></h1>
+        <p class="sub">連不上題庫　<span style="opacity:.6">v6.0</span></p></div>
+        <a class="back" href="/">← 回首頁</a></div>
+      <div class="mp-card"><h3>讀不到主題清單</h3>
+        <p>伺服器可能還在啟動（題庫有三千多題，第一次要幾秒），或是已經停掉了。
+           等一下再按「重新載入」；如果一直這樣，看一下啟動伺服器的那個黑底視窗有沒有錯誤訊息。</p>
+        <div class="row"><button class="btn" id="retry">重新載入</button></div></div>`;
+    document.getElementById('retry').onclick = () => setup();
+    return;
+  }
   $app.innerHTML = `<div class="masthead"><div><h1>主持台<span class="seal">試</span></h1>
-      <p class="sub">開一間考坊，學生用手機輸入房號一起搶答　<span style="opacity:.6">v5.8</span></p></div>
+      <p class="sub">開一間考坊，學生用手機輸入房號一起搶答　<span style="opacity:.6">v6.0</span></p></div>
       <a class="back" href="/">← 回首頁</a></div>
-    <div class="chips" id="regions" role="group" aria-label="地區">${REGIONS.map(x =>
-      `<button data-r="${x}" aria-pressed="${x === pick.region}">${x || '不限地區'}</button>`).join('')}</div>
     <div class="chips multi" id="units" role="group" aria-label="單元"></div>
     <div class="grid" id="cats">${cats.map(c => `
       <button class="cat" data-k="${c.key}" aria-pressed="${c.key === pick.category}" ${c.count === 0 ? 'disabled style="opacity:.4"' : ''}>
@@ -122,14 +146,15 @@ async function setup(msg = ''){
   style.textContent = '.cat[aria-pressed="true"]{border-color:var(--cinnabar);box-shadow:0 0 0 2px var(--cinnabar)}';
   $app.appendChild(style);
   const save = () => ss.set('mp_setup', pick);
-  document.querySelectorAll('#regions button').forEach(b => b.onclick = () => { pick.region = b.dataset.r; save(); setup(); });
   const loadUnits = async () => {
     const box = document.getElementById('units');
     const list = await fetch('/api/units?topic=' + encodeURIComponent(pick.category)).then(r => r.json()).catch(() => []);
     if (!list.length){ box.innerHTML = ''; pick.unit = ''; pick.unit_name = ''; save(); return; }
     if (!list.some(u => u.key === pick.unit)) { pick.unit = ''; pick.unit_name = ''; save(); }
-    box.innerHTML = `<button data-u="" aria-pressed="${!pick.unit}">不分單元</button>` + list.map(u =>
-      `<button data-u="${u.key}" data-n="${esc(u.name)}" aria-pressed="${u.key === pick.unit}">${u.key === 'GEN' ? '綜合' : u.key}　${esc(u.name)}（${u.count}）</button>`).join('');
+    const byRegion = REGION_TOPICS.includes(pick.category);
+    box.innerHTML = `<button data-u="" aria-pressed="${!pick.unit}">${byRegion ? '不分地區' : '不分單元'}</button>`
+      + list.map(u => `<button data-u="${u.key}" data-n="${esc(u.name)}" aria-pressed="${u.key === pick.unit}">`
+        + `${byRegion ? '' : (u.key === 'GEN' ? '綜合' : u.key) + '　'}${esc(u.name)}（${u.count}）</button>`).join('');
     box.querySelectorAll('button').forEach(b => b.onclick = () => {
       pick.unit = b.dataset.u; pick.unit_name = b.dataset.n || ''; save();
       box.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
@@ -242,8 +267,8 @@ function startPoll(){
   if (poll) return;
   note('連線較慢，改用備援模式');
   const tickOnce = () => fetch(`/api/mp/view?code=${H.code}&pid=host&token=${encodeURIComponent(H.token)}`)
-    .then(r => r.ok ? r.json() : Promise.reject())
-    .then(d => handle(d)).catch(() => {});
+    .then(r => r.status === 404 ? 'gone' : (r.ok ? r.json() : Promise.reject()))
+    .then(d => d === 'gone' ? leaveRoom() : handle(d)).catch(() => {});
   tickOnce();
   poll = setInterval(tickOnce, 2000);
 }
@@ -253,6 +278,78 @@ document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === 'visible' && H && Date.now() - lastMsg > 5000) connect();
 });
 window.addEventListener('online', () => { if (H) connect(); });
+
+/* ---------- 考到一半要中斷 ----------
+   回到等待畫面,學生都還在原位,分數清零、題目重抽。
+   接著可以直接按「開始考試」再考一次,或先按「換一套題目」改主題與題數。 */
+function bindAbort(){
+  const b = document.getElementById('ab');
+  if (!b) return;
+  b.onclick = async () => {
+    if (!confirm('確定要中斷這一場嗎？\n\n會回到等待畫面，學生不用重新加入，'
+               + '但這一場的分數會歸零、題目重新抽。\n（還沒存入班級積分的話，這一場成績就沒有了）')) return;
+    try { await post('/api/mp/abort', {code: H.code, token: H.token}); }
+    catch(e){ alert(e.message); }
+  };
+}
+
+/* ---------- 不關考坊就換一套題目 ---------- */
+async function reconfig(v){
+  const box = document.getElementById('recfg');
+  if (!box) return;
+  box.hidden = !box.hidden;
+  if (box.hidden) return;
+  const cats = (await getJSON('/api/categories')) || [];
+  const pick = {category: v.topic, unit: '', unit_name: '', count: v.count, time: v.limit};
+  box.innerHTML = `<h3>換一套題目</h3>
+    <div class="chips" id="rcat">${cats.filter(c => c.count !== 0).map(c =>
+      `<button data-k="${c.key}" aria-pressed="${c.key === pick.category}">${esc(c.name)}</button>`).join('')}</div>
+    <div class="chips multi" id="runit"></div>
+    <div class="row" style="flex-wrap:wrap;gap:18px;margin-top:10px">
+      <div><div class="sub" style="margin:0 0 4px">題數</div><div class="seg" id="rcnt" style="margin:0">
+        ${[5, 10, 15, 20].map(n => `<button data-v="${n}" aria-pressed="${n === pick.count}">${n}</button>`).join('')}</div></div>
+      <div><div class="sub" style="margin:0 0 4px">每題秒數</div><div class="seg" id="rtm" style="margin:0">
+        ${[10, 15, 20, 30].map(n => `<button data-v="${n}" aria-pressed="${n === pick.time}">${n}</button>`).join('')}
+        <button data-v="0" aria-pressed="${pick.time === 0}">手動</button></div></div>
+    </div>
+    <div class="row"><button class="btn" id="rgo">換上這一套</button>
+      <button class="btn ghost" id="rcancel">取消</button></div>
+    <p class="err" id="rerr" hidden></p>`;
+  const loadUnits = async () => {
+    const el = document.getElementById('runit');
+    const list = await fetch('/api/units?topic=' + encodeURIComponent(pick.category))
+      .then(r => r.ok ? r.json() : []).catch(() => []);
+    pick.unit = ''; pick.unit_name = '';
+    const byRegion = REGION_TOPICS.includes(pick.category);
+    el.innerHTML = list.length ? `<button data-u="" aria-pressed="true">${byRegion ? '不分地區' : '不分單元'}</button>`
+      + list.map(u => `<button data-u="${u.key}" data-n="${esc(u.name)}">`
+        + `${byRegion ? '' : (u.key === 'GEN' ? '綜合' : u.key) + '　'}${esc(u.name)}（${u.count}）</button>`).join('') : '';
+    el.querySelectorAll('button').forEach(b => b.onclick = () => {
+      pick.unit = b.dataset.u; pick.unit_name = b.dataset.n || '';
+      el.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    });
+  };
+  loadUnits();
+  document.querySelectorAll('#rcat button').forEach(b => b.onclick = () => {
+    pick.category = b.dataset.k;
+    document.querySelectorAll('#rcat button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    loadUnits();
+  });
+  const seg2 = (id, key) => document.querySelectorAll(`#${id} button`).forEach(b => b.onclick = () => {
+    pick[key] = +b.dataset.v;
+    document.querySelectorAll(`#${id} button`).forEach(x => x.setAttribute('aria-pressed', x === b));
+  });
+  seg2('rcnt', 'count'); seg2('rtm', 'time');
+  document.getElementById('rcancel').onclick = () => { box.hidden = true; };
+  document.getElementById('rgo').onclick = async e => {
+    const err = document.getElementById('rerr');
+    e.currentTarget.disabled = true; err.hidden = true;
+    try{
+      await post('/api/mp/reconfig', {code: H.code, token: H.token, ...pick});
+      box.hidden = true;
+    }catch(ex){ err.textContent = ex.message; err.hidden = false; e.currentTarget.disabled = false; }
+  };
+}
 
 /* ---------- 把名單整個清掉(測試完要正式開始、或上一班沒關就換班) ---------- */
 async function clearAll(){
@@ -276,6 +373,14 @@ function bindKick(){
     b.onclick = () => kick(b.dataset.kick, b.dataset.name));
 }
 const act = (path, extra = {}) => post(path, {code: H.code, token: H.token, ...extra}).catch(e => alert(e.message));
+
+/* 收掉這一場,回到開考坊畫面。
+   不管是伺服器推播說已關閉、備援輪詢發現房間不見了,還是主持人自己按「關閉考坊」,
+   都走這一條;按了就走,不必等伺服器再推一次狀態回來(備援模式下根本等不到)。 */
+function leaveRoom(){
+  ss.del('mp_host'); es?.close(); stopPoll(); clearInterval(watch); clearInterval(tick);
+  keepAwake(false); H = null; lastKey = ''; setup();
+}
 
 function barText(v){
   return `房號 <b class="score">${v.code}</b> ・ ${esc(v.category)}${v.region ? '・' + esc(v.region) : ''}
@@ -305,7 +410,7 @@ function viewKey(v){
 }
 function render(v){
   document.body.dataset.topic = v.topic || '';
-  if (v.state === 'closed'){ ss.del('mp_host'); es?.close(); stopPoll(); clearInterval(watch); keepAwake(false); H = null; lastKey = ''; return setup(); }
+  if (v.state === 'closed') return leaveRoom();
   if (v.state !== 'question') clearInterval(tick);
   const key = viewKey(v), fresh = key !== lastKey;
   lastKey = key;
@@ -342,6 +447,12 @@ function downloadQR(url, filename, caption){
     setTimeout(() => URL.revokeObjectURL(a.href), 4000);
   }, 'image/png');
 }
+
+/* 地區的印章字與說明:主題是地理/歷史/人文時,「單元」就是地區 */
+const REGION_SEAL = {TW:'台', CN:'中', EA:'東', SEA:'南', EU:'歐', AM:'美', OTH:'他',
+                     GLOBAL:'球', POEM:'詩'};
+const REGION_TOPICS = ['geo', 'history', 'human'];
+const unitSeal = k => REGION_SEAL[k] || (k === 'GEN' ? '綜' : k.replace(/^W/, ''));
 
 /* 名單上的一個人:滑鼠移上去(手機是直接看得到)會出現 ✕,可以把他移出考坊 */
 function chip(p){
@@ -382,8 +493,10 @@ function lobby(v, fresh){
 </div>
       <div id="rmiss">${v.missing && v.missing.length ? `<p class="sub" style="margin-top:10px">未到（${v.missing.length}）：${v.missing.slice(0, 12).map(esc).join('、')}${v.missing.length > 12 ? '…' : ''}</p>` : ''}</div>
       <div class="row"><button class="btn" id="go" ${v.roster.length ? '' : 'disabled'}>開始考試（${v.total} 題）</button></div>
-      <div class="row"><button class="btn ghost" id="clearall" ${v.roster.length ? '' : 'disabled'}>清除名單</button>
-        <button class="btn ghost" id="close">關閉考坊</button></div></div></div>`;
+      <div class="row"><button class="btn ghost" id="recfgbtn">換一套題目</button>
+        <button class="btn ghost" id="clearall" ${v.roster.length ? '' : 'disabled'}>清除名單</button>
+        <button class="btn ghost" id="close">關閉考坊</button></div>
+      <div class="mp-card" id="recfg" hidden style="margin-top:12px"></div></div></div>`;
   /* 畫面上的 QR 走「這一場的房號」，最快；固定入口另外做成可下載的圖片 */
   if (window.qrcode){
     const q = qrcode(0, 'M'); q.addData(H.join_url); q.make();
@@ -397,8 +510,11 @@ function lobby(v, fresh){
     H.join_url = H.join_urls[i]; ss.set('mp_host', H); lobby(v);
   });
   document.getElementById('go').onclick = () => act('/api/mp/start');
-  document.getElementById('close').onclick = () => confirm('確定要關閉考坊嗎？') && act('/api/mp/close');
+  document.getElementById('close').onclick = () => {
+    if (confirm('確定要關閉考坊嗎？')) act('/api/mp/close').then(() => leaveRoom());
+  };
   document.getElementById('clearall').onclick = () => clearAll();
+  document.getElementById('recfgbtn').onclick = () => reconfig(v);
   bindKick();
 
   /* 用手機主持時，學生看不到你的螢幕：把連結貼到班級群組最快 */
@@ -434,7 +550,7 @@ function patchLobby(v){
   setHTML('rmiss', v.missing && v.missing.length
     ? `<p class="sub" style="margin-top:10px">未到（${v.missing.length}）：${v.missing.slice(0, 12).map(esc).join('、')}${v.missing.length > 12 ? '…' : ''}</p>` : '');
   const go = document.getElementById('go');
-  if (go) go.disabled = !v.roster.length;
+  if (go){ go.disabled = !v.roster.length; go.textContent = `開始考試（${v.total} 題）`; }
   const ca = document.getElementById('clearall');
   if (ca) ca.disabled = !v.roster.length;
   bindKick();
@@ -462,8 +578,10 @@ function question(v, fresh){
     <div class="hqtext">${esc(q.question)}</div>
     ${opts(q)}
     <div class="row" style="align-items:center"><span class="answered" id="acount">已作答 <b>${v.answered}</b> / ${v.players}</span>
-      <button class="btn${v.manual ? '' : ' ghost'}" id="rv" style="flex:none">${v.manual ? '結束本題，公布答案' : '提前公布'}</button></div></div>`;
+      <button class="btn${v.manual ? '' : ' ghost'}" id="rv" style="flex:none">${v.manual ? '結束本題，公布答案' : '提前公布'}</button>
+      <button class="btn ghost abort" id="ab" style="flex:none">中斷考試</button></div></div>`;
   document.getElementById('rv').onclick = () => act('/api/mp/reveal');
+  bindAbort();
   clearInterval(tick);
   tick = setInterval(() => {
     const el = document.getElementById('cd');
@@ -505,8 +623,10 @@ function reveal(v, fresh){
           <div class="board" id="tboard">${boardRows(v.team_board, true)}</div>` : ''}
         <div class="rules" style="border:0;padding:0"><h2>個人前五名</h2></div>
         <div class="board" id="pboard">${boardRows(v.top)}</div>
-        <div class="row"><button class="btn" id="nx">${v.last_q ? '放榜' : '下一題'}</button></div></div></div></div>`;
+        <div class="row"><button class="btn" id="nx">${v.last_q ? '放榜' : '下一題'}</button>
+          <button class="btn ghost abort" id="ab" style="flex:none">中斷考試</button></div></div></div></div>`;
   document.getElementById('nx').onclick = () => act('/api/mp/next');
+  bindAbort();
 }
 
 /* 用手機主持時最方便的一條路:直接叫出系統分享選單,
@@ -560,7 +680,10 @@ function final(v, fresh){
     <div class="row"><button class="btn ghost" id="close">關閉考坊</button><button class="btn" id="again">再來一局</button></div>`;
   document.getElementById('save')?.addEventListener('click', e => { e.target.disabled = true; act('/api/mp/save_class'); });
   document.getElementById('again').onclick = () => { lastQ = -1; act('/api/mp/again'); };
-  document.getElementById('close').onclick = () => act('/api/mp/close');
+  document.getElementById('close').onclick = e => {
+    e.currentTarget.disabled = true;
+    act('/api/mp/close').then(() => leaveRoom());
+  };
   document.getElementById('sharecsv').onclick = e => shareScores(v, e.currentTarget);
 }
 

@@ -1,0 +1,2962 @@
+[
+ {
+  "id": "geo-OTH-001",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "貫穿伊斯坦堡、分隔歐亞兩洲的海峽是？",
+  "options": [
+   "達達尼爾海峽",
+   "荷莫茲海峽",
+   "博斯普魯斯海峽",
+   "曼德海峽"
+  ],
+  "answer": 2,
+  "explanation": "博斯普魯斯海峽連接黑海與馬爾馬拉海，海峽兩岸分屬歐洲與亞洲，伊斯坦堡正好跨在兩側。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-002",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "世界面積最大的半島是哪一個？",
+  "options": [
+   "阿拉伯半島",
+   "印度半島",
+   "中南半島",
+   "巴爾幹半島"
+  ],
+  "answer": 0,
+  "explanation": "阿拉伯半島面積約三百萬平方公里，是全球最大的半島，遠超其他候選者。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-003",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "阿拉伯半島南部那片世界最大的連續沙質沙漠叫什麼？",
+  "options": [
+   "大內夫得沙漠",
+   "卡維爾沙漠",
+   "內蓋夫沙漠",
+   "魯卜哈利沙漠"
+  ],
+  "answer": 3,
+  "explanation": "魯卜哈利沙漠意為「空白之地」，是世界上面積最大的連續沙質沙漠。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-004",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "兩河流域的底格里斯河與幼發拉底河最後注入哪裡？",
+  "options": [
+   "地中海",
+   "波斯灣",
+   "紅海",
+   "黑海"
+  ],
+  "answer": 1,
+  "explanation": "兩河在伊拉克南部匯流成阿拉伯河，再注入波斯灣。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-005",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "波斯灣要出海通往阿曼灣，必須經過哪個海峽？",
+  "options": [
+   "曼德海峽",
+   "蘇伊士運河",
+   "荷莫茲海峽",
+   "達達尼爾海峽"
+  ],
+  "answer": 2,
+  "explanation": "荷莫茲海峽北岸是伊朗、南岸是阿曼與阿聯，是波斯灣唯一的出海口。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-006",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "連接紅海與亞丁灣的海峽是？",
+  "options": [
+   "曼德海峽",
+   "荷莫茲海峽",
+   "博斯普魯斯海峽",
+   "麻六甲海峽"
+  ],
+  "answer": 0,
+  "explanation": "曼德海峽位於葉門與非洲之角之間，是紅海南端通往印度洋的門戶。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-007",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "土耳其的首都是哪一座城市？",
+  "options": [
+   "伊斯坦堡",
+   "伊茲密爾",
+   "布爾薩",
+   "安卡拉"
+  ],
+  "answer": 3,
+  "explanation": "一九二三年土耳其共和國成立時把首都遷到內陸的安卡拉，伊斯坦堡不再是首都。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-008",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "土耳其最高峰、傳說中諾亞方舟停靠之處是？",
+  "options": [
+   "黎巴嫩山",
+   "阿拉拉特山",
+   "西奈山",
+   "厄爾布爾士山"
+  ],
+  "answer": 1,
+  "explanation": "阿拉拉特山海拔約五千一百公尺，是土耳其最高峰，也是一座休眠的層狀火山。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-009",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "土耳其中部以「精靈煙囪」奇岩和熱氣球聞名的地區是？",
+  "options": [
+   "帕慕卡麗",
+   "內姆魯特山",
+   "卡帕多奇亞",
+   "番紅花城"
+  ],
+  "answer": 2,
+  "explanation": "卡帕多奇亞的火山灰岩層受風雨侵蝕，形成一根根柱狀的「精靈煙囪」。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-010",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "約旦河在注入死海之前，會先流經哪一座湖？",
+  "options": [
+   "凡湖",
+   "烏爾米耶湖",
+   "塔納湖",
+   "加利利海"
+  ],
+  "answer": 3,
+  "explanation": "約旦河由北向南先穿過淡水的加利利海（提比里亞湖），再往南流。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-011",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "沙烏地阿拉伯的首都是哪一座城市？",
+  "options": [
+   "利雅德",
+   "吉達",
+   "麥加",
+   "麥地那"
+  ],
+  "answer": 0,
+  "explanation": "利雅德位於阿拉伯半島中部的內志高原，是沙烏地阿拉伯的政治中心。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-012",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "阿拉伯聯合大公國的首都是？",
+  "options": [
+   "杜拜",
+   "阿布達比",
+   "哈伊馬角",
+   "富吉拉"
+  ],
+  "answer": 1,
+  "explanation": "阿聯由七個酋長國組成，首都設在面積最大的阿布達比，而非名氣更響的杜拜。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-013",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "地中海第三大島、島上首府尼古西亞被一分為二的島嶼是？",
+  "options": [
+   "薩丁尼亞島",
+   "西西里島",
+   "賽普勒斯島",
+   "羅得島"
+  ],
+  "answer": 2,
+  "explanation": "賽普勒斯島是地中海第三大島，首府尼古西亞被綠線一分為二，南北至今分治。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-014",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "埃及西奈半島東側、與沙烏地阿拉伯隔水相望的海灣是？",
+  "options": [
+   "蘇伊士灣",
+   "亞喀巴灣",
+   "亞丁灣",
+   "阿曼灣"
+  ],
+  "answer": 1,
+  "explanation": "西奈半島西側是蘇伊士灣、東側是亞喀巴灣，兩者都是紅海北端的分支。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-015",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "葉門外海、以「龍血樹」奇景聞名的島嶼是？",
+  "options": [
+   "法拉桑群島",
+   "馬西拉島",
+   "基什島",
+   "索科特拉島"
+  ],
+  "answer": 3,
+  "explanation": "索科特拉島位於印度洋，長期與大陸隔離而演化出龍血樹等大量特有種。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-016",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "白尼羅河的源頭是哪一座湖泊？",
+  "options": [
+   "坦干伊喀湖",
+   "維多利亞湖",
+   "馬拉威湖",
+   "查德湖"
+  ],
+  "answer": 1,
+  "explanation": "白尼羅河發源自維多利亞湖，另一支青尼羅河則來自衣索比亞高原。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-017",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "世界上唯一兩次穿越赤道的大河是？",
+  "options": [
+   "尼羅河",
+   "尼日河",
+   "剛果河",
+   "尚比西河"
+  ],
+  "answer": 2,
+  "explanation": "剛果河在流域中畫出一個大弧線，因此前後兩次跨過赤道。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-018",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "形成維多利亞瀑布的是哪一條河？",
+  "options": [
+   "剛果河",
+   "林波波河",
+   "奧蘭治河",
+   "尚比西河"
+  ],
+  "answer": 3,
+  "explanation": "尚比西河在尚比亞與辛巴威交界處墜入峽谷，形成維多利亞瀑布。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-019",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "非洲最深、也是世界第二深的湖泊是？",
+  "options": [
+   "坦干伊喀湖",
+   "維多利亞湖",
+   "馬拉威湖",
+   "圖爾卡納湖"
+  ],
+  "answer": 0,
+  "explanation": "坦干伊喀湖最深近一千五百公尺，深度僅次於俄羅斯的貝加爾湖。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-020",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "哪個國家的國土完全被南非包圍？",
+  "options": [
+   "史瓦帝尼",
+   "波札那",
+   "賴索托",
+   "納米比亞"
+  ],
+  "answer": 2,
+  "explanation": "賴索托四面都與南非接壤，是世界上少數被單一國家完全包圍的主權國家。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-021",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "南非中央政府（行政部門）所在的首都是？",
+  "options": [
+   "開普敦",
+   "普利托利亞",
+   "約翰尼斯堡",
+   "布隆泉"
+  ],
+  "answer": 1,
+  "explanation": "南非有三個首都，行政首都是普利托利亞，立法與司法機關則設在另外兩座城市。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-022",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "開普敦旁那座平頂山，山頂雲霧被暱稱為「桌巾」，它是？",
+  "options": [
+   "獅頭山",
+   "魔鬼峰",
+   "德拉肯斯山",
+   "桌山"
+  ],
+  "answer": 3,
+  "explanation": "桌山山頂是一片平坦台地，潮濕東南風翻越時凝結成雲，像鋪上一層桌巾。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-023",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "非洲大陸真正的最南端是哪個海角？",
+  "options": [
+   "好望角",
+   "厄加勒斯角",
+   "瓜達富伊角",
+   "布蘭科角"
+  ],
+  "answer": 1,
+  "explanation": "厄加勒斯角比名氣更大的好望角還要再南約五十公里，也是兩大洋的傳統分界。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-024",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "分隔馬達加斯加與非洲大陸的海峽是？",
+  "options": [
+   "莫三比克海峽",
+   "曼德海峽",
+   "荷莫茲海峽",
+   "直布羅陀海峽"
+  ],
+  "answer": 0,
+  "explanation": "莫三比克海峽是印度洋的一部分，把馬達加斯加島與莫三比克隔開。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-025",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "縱貫非洲東部、造就一連串狹長湖泊與火山的地形是？",
+  "options": [
+   "剛果盆地",
+   "德拉肯斯山脈",
+   "阿哈加爾高原",
+   "東非大裂谷"
+  ],
+  "answer": 3,
+  "explanation": "東非大裂谷由板塊張裂拉開地殼而成，沿線出現許多深長湖泊與活火山。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-026",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "橫亙摩洛哥、阿爾及利亞與突尼西亞的山脈是？",
+  "options": [
+   "亞特拉斯山脈",
+   "衣索比亞高原",
+   "德拉肯斯山脈",
+   "魯文佐里山脈"
+  ],
+  "answer": 0,
+  "explanation": "亞特拉斯山脈橫貫北非三國，把地中海沿岸和撒哈拉沙漠隔開。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-027",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "波札那境內那片河水不入海、幾乎全部蒸發掉的內陸三角洲是？",
+  "options": [
+   "尼日河內三角洲",
+   "尼羅河三角洲",
+   "奧卡萬哥三角洲",
+   "尚比西三角洲"
+  ],
+  "answer": 2,
+  "explanation": "奧卡萬哥河注入喀拉哈里盆地後散成沼澤與沙洲，水分幾乎全靠蒸發散失。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-028",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "沿納米比亞海岸分布、號稱世界最古老的沙漠是？",
+  "options": [
+   "喀拉哈里沙漠",
+   "努比亞沙漠",
+   "利比亞沙漠",
+   "納米比沙漠"
+  ],
+  "answer": 3,
+  "explanation": "納米比沙漠乾旱狀態已持續數千萬年，成因之一是沿岸寒冷的本吉拉洋流。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-029",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "迦納在獨立前的殖民地名稱是？",
+  "options": [
+   "黃金海岸",
+   "象牙海岸",
+   "奴隸海岸",
+   "胡椒海岸"
+  ],
+  "answer": 0,
+  "explanation": "迦納獨立前稱為黃金海岸，一九五七年成為撒哈拉以南第一個獨立的英國殖民地。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-030",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "二〇一一年公投後從蘇丹分離獨立的國家是？",
+  "options": [
+   "厄利垂亞",
+   "吉布地",
+   "南蘇丹",
+   "索馬利蘭"
+  ],
+  "answer": 2,
+  "explanation": "南蘇丹於二〇一一年七月正式獨立建國，首都設在朱巴。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-031",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "牛羚大遷徙的舞台「塞倫蓋蒂」草原主要位於哪一國？",
+  "options": [
+   "莫三比克",
+   "烏干達",
+   "坦尚尼亞",
+   "尚比亞"
+  ],
+  "answer": 2,
+  "explanation": "塞倫蓋蒂主要在坦尚尼亞境內，獸群會循雨季北移到肯亞的馬賽馬拉再折返。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-032",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "紐西蘭的首都是哪一座城市？",
+  "options": [
+   "奧克蘭",
+   "基督城",
+   "威靈頓",
+   "但尼丁"
+  ],
+  "answer": 2,
+  "explanation": "威靈頓位於北島南端，靠近全國地理中心，是紐西蘭的首都。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-033",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "分隔紐西蘭南、北島的海峽是？",
+  "options": [
+   "庫克海峽",
+   "巴斯海峽",
+   "托雷斯海峽",
+   "福沃海峽"
+  ],
+  "answer": 0,
+  "explanation": "庫克海峽以航海家庫克命名，兩岸有渡輪往返威靈頓與皮克頓。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-034",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "澳洲最長的單一河流是？",
+  "options": [
+   "達令河",
+   "墨累河",
+   "天鵝河",
+   "雪河"
+  ],
+  "answer": 1,
+  "explanation": "墨累河全長約二千五百公里，是澳洲最長的單一河流，最後注入南澳海岸；若把達令河連同上游支流合計，則是澳洲最長的河系。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-035",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "巨石烏魯魯（艾爾斯岩）位於澳洲哪一個行政區？",
+  "options": [
+   "西澳",
+   "南澳",
+   "昆士蘭",
+   "北領地"
+  ],
+  "answer": 3,
+  "explanation": "烏魯魯矗立在北領地的紅色中部沙漠，是原住民阿南古人的聖地。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-036",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "分隔澳洲大陸與新幾內亞島的海峽是？",
+  "options": [
+   "巴斯海峽",
+   "托雷斯海峽",
+   "庫克海峽",
+   "望加錫海峽"
+  ],
+  "answer": 1,
+  "explanation": "托雷斯海峽位於約克角半島與新幾內亞之間，海峽中的島嶼由昆士蘭管轄。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-037",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "澳洲唯一完全由島嶼構成的州是？",
+  "options": [
+   "塔斯馬尼亞",
+   "新南威爾斯",
+   "維多利亞",
+   "昆士蘭"
+  ],
+  "answer": 0,
+  "explanation": "塔斯馬尼亞隔著巴斯海峽與澳洲大陸相望，是唯一不在大陸上的州。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-038",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "澳洲大陸最高峰科修斯科山屬於哪一條山脈？",
+  "options": [
+   "南阿爾卑斯山",
+   "麥克唐納山脈",
+   "弗林德斯山脈",
+   "大分水嶺"
+  ],
+  "answer": 3,
+  "explanation": "科修斯科山位於大分水嶺南段的雪山山區，海拔約二千二百公尺。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-039",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "紐西蘭最高峰、毛利語稱作 Aoraki 的是哪一座山？",
+  "options": [
+   "魯阿佩胡山",
+   "庫克山",
+   "塔拉納基山",
+   "阿斯派靈山"
+  ],
+  "answer": 1,
+  "explanation": "庫克山海拔約三千七百公尺，聳立在南島的南阿爾卑斯山脈中。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-040",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "澳洲地勢最低處、平時多半乾涸的巨大鹽湖是？",
+  "options": [
+   "托倫斯湖",
+   "麥覺理湖",
+   "艾爾湖",
+   "甘比爾湖"
+  ],
+  "answer": 2,
+  "explanation": "艾爾湖湖面低於海平面約十五公尺，只有內陸大洪水時才會真正蓄滿水。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-041",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "紐西蘭北島以間歇泉與沸騰泥漿池聞名的地熱城市是？",
+  "options": [
+   "陶波",
+   "納皮爾",
+   "漢密爾頓",
+   "羅托魯瓦"
+  ],
+  "answer": 3,
+  "explanation": "羅托魯瓦坐落在火山口窪地上，硫磺味與地熱景觀是它的招牌。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-042",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "紐西蘭地震與火山頻繁，因為它正位於哪兩大板塊的交界？",
+  "options": [
+   "太平洋板塊與澳洲板塊",
+   "歐亞板塊與印度板塊",
+   "北美板塊與太平洋板塊",
+   "南極板塊與納茲卡板塊"
+  ],
+  "answer": 0,
+  "explanation": "太平洋板塊與澳洲板塊在紐西蘭一帶相互擠壓隱沒，造就火山、地震與南阿爾卑斯山。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-043",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "世界第二大島新幾內亞島由哪兩個國家分治？",
+  "options": [
+   "澳洲與印尼",
+   "印尼與巴布亞紐幾內亞",
+   "東帝汶與印尼",
+   "澳洲與巴布亞紐幾內亞"
+  ],
+  "answer": 1,
+  "explanation": "新幾內亞島西半部屬印尼，東半部是一九七五年獨立的巴布亞紐幾內亞。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-044",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "大洋洲三大島群中，名稱意為「黑色群島」的是？",
+  "options": [
+   "密克羅尼西亞",
+   "玻里尼西亞",
+   "美拉尼西亞",
+   "澳大拉西亞"
+  ],
+  "answer": 2,
+  "explanation": "美拉尼西亞源自希臘文「黑色的島」，範圍包括斐濟、萬那杜與索羅門群島等地。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-045",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "以摩艾石像聞名的復活節島，在行政上屬於哪一個國家？",
+  "options": [
+   "秘魯",
+   "智利",
+   "紐西蘭",
+   "法國"
+  ],
+  "answer": 1,
+  "explanation": "復活節島原住民稱之為拉帕努伊，一八八八年被智利併入版圖至今。",
+  "fun_fact": ""
+ },
+ {
+  "id": "geo-OTH-046",
+  "topic": "geo",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "地理",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "一九九五年把國際換日線往東挪、讓全國同屬一天的太平洋島國是？",
+  "options": [
+   "吉里巴斯",
+   "吐瓦魯",
+   "索羅門群島",
+   "馬紹爾群島"
+  ],
+  "answer": 0,
+  "explanation": "吉里巴斯橫跨換日線兩側，為了全國同步作息而自行把換日線東移繞過國土。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-001",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "楔形文字最早是由哪一個民族發明的？",
+  "options": [
+   "蘇美人",
+   "亞述人",
+   "西臺人",
+   "腓尼基人"
+  ],
+  "answer": 0,
+  "explanation": "蘇美人在兩河流域南部率先用蘆葦筆在泥板上壓出楔形符號，是已知最早的文字系統之一。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-002",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "《吉爾伽美什史詩》的主角，是哪一座古城邦的國王？",
+  "options": [
+   "拉格什",
+   "烏魯克",
+   "尼尼微",
+   "巴比倫"
+  ],
+  "answer": 1,
+  "explanation": "吉爾伽美什被記載為烏魯克的國王，這部史詩也是現存最古老的敘事文學。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-003",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "圖坦卡門的陵墓是由哪一位考古學家發現的？",
+  "options": [
+   "亞瑟·伊文斯",
+   "弗林德斯·皮特里",
+   "霍華德·卡特",
+   "海因里希·施里曼"
+  ],
+  "answer": 2,
+  "explanation": "英國考古學家霍華德·卡特於一九二二年在帝王谷找到幾乎未被盜掘的圖坦卡門墓。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-004",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "古埃及新王國時期最著名的女法老是誰？",
+  "options": [
+   "索貝克涅弗魯",
+   "娜芙蒂蒂",
+   "阿爾西諾伊二世",
+   "哈特謝普蘇特"
+  ],
+  "answer": 3,
+  "explanation": "哈特謝普蘇特是第十八王朝法老，以和平繁榮的統治與蓬特之地的遠航貿易聞名。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-005",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "哪一位法老為了推行一神信仰，把首都遷到新建的阿瑪納？",
+  "options": [
+   "阿肯那頓",
+   "塞提一世",
+   "圖特摩斯三世",
+   "拉美西斯二世"
+  ],
+  "answer": 0,
+  "explanation": "阿肯那頓獨尊太陽圓盤神，並在尼羅河畔另建新都，是古埃及史上罕見的宗教革命。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-006",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "阿布辛貝神廟因為興建哪一座水壩，被切割搬到高處？",
+  "options": [
+   "卡里巴水壩",
+   "亞斯文高壩",
+   "阿塔圖克水壩",
+   "三角洲攔河堰"
+  ],
+  "answer": 1,
+  "explanation": "水壩蓄水形成的納瑟湖將淹沒神廟，聯合國教科文組織發起國際行動把它整體遷移。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-007",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "阿契美尼德波斯帝國的創建者是誰？",
+  "options": [
+   "大流士一世",
+   "薛西斯一世",
+   "居魯士大帝",
+   "岡比西斯二世"
+  ],
+  "answer": 2,
+  "explanation": "居魯士先後擊敗米底、呂底亞與新巴比倫，建立橫跨西亞的大帝國，並以寬容政策聞名。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-008",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "被亞歷山大大帝焚毀的波斯帝國禮儀首都是哪一座？",
+  "options": [
+   "埃克巴坦那",
+   "帕薩爾加德",
+   "泰西封",
+   "波斯波利斯"
+  ],
+  "answer": 3,
+  "explanation": "波斯波利斯是阿契美尼德王朝舉行大典的都城，西元前三三○年毀於大火。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-009",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "古代波斯帝國長期奉行的國教是下列哪一個宗教？",
+  "options": [
+   "祆教",
+   "摩尼教",
+   "猶太教",
+   "景教"
+  ],
+  "answer": 0,
+  "explanation": "祆教又稱瑣羅亞斯德教或拜火教，尊阿胡拉·馬茲達為至高神，是波斯歷代王朝的國教。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-010",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "伊斯蘭教先知穆罕默德出生於哪一座城市？",
+  "options": [
+   "麥地那",
+   "麥加",
+   "大馬士革",
+   "耶路撒冷"
+  ],
+  "answer": 1,
+  "explanation": "穆罕默德約在西元五七○年生於麥加，該城的天房至今仍是穆斯林朝聖的中心。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-011",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "伊斯蘭曆的元年，紀念的是下列哪一件事？",
+  "options": [
+   "穆斯林攻下耶路撒冷",
+   "古蘭經正式編纂完成",
+   "穆罕默德遷往麥地那",
+   "麥加天房重新落成"
+  ],
+  "answer": 2,
+  "explanation": "這趟被稱為「聖遷」的遷徙發生在西元六二二年，後來被定為伊斯蘭曆的起算年。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-012",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "阿拔斯王朝在西元七六二年興建哪一座城市作為首都？",
+  "options": [
+   "大馬士革",
+   "伊斯坦堡",
+   "開羅",
+   "巴格達"
+  ],
+  "answer": 3,
+  "explanation": "哈里發曼蘇爾在底格里斯河畔建城，取名「和平之城」，後來成為伊斯蘭世界的學術重鎮。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-013",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "倭馬亞王朝把首都設在下列哪一座城市？",
+  "options": [
+   "大馬士革",
+   "巴格達",
+   "麥地那",
+   "科爾多瓦"
+  ],
+  "answer": 0,
+  "explanation": "倭馬亞王朝自敘利亞起家，以大馬士革為都，直到西元七五○年被推翻。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-014",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "鄂圖曼帝國在一四五三年攻陷哪一座城市，終結了東羅馬帝國？",
+  "options": [
+   "賽薩洛尼基",
+   "君士坦丁堡",
+   "亞歷山卓",
+   "安條克"
+  ],
+  "answer": 1,
+  "explanation": "蘇丹穆罕默德二世圍城五十餘日後破城，這座城市此後成為鄂圖曼的首都。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-015",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "鄂圖曼帝國國力達到頂峰，土耳其人尊稱為「立法者」的蘇丹是誰？",
+  "options": [
+   "塞利姆一世",
+   "巴耶濟德二世",
+   "蘇萊曼一世",
+   "穆拉德四世"
+  ],
+  "answer": 2,
+  "explanation": "蘇萊曼一世在位四十六年，西方稱他「大帝」，鄂圖曼人則因他整理法典而稱「立法者」。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-016",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "鄂圖曼帝國從基督徒少年中徵召、訓練而成的精銳步兵叫什麼？",
+  "options": [
+   "西帕希騎兵",
+   "馬木路克",
+   "哥薩克騎兵",
+   "耶尼切里"
+  ],
+  "answer": 3,
+  "explanation": "這支新軍透過「德夫希爾梅」少年徵集制組成，直屬蘇丹，是早期的常備軍典型。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-017",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "連接地中海與紅海的蘇伊士運河在哪一年通航？",
+  "options": [
+   "1869 年",
+   "1798 年",
+   "1914 年",
+   "1956 年"
+  ],
+  "answer": 0,
+  "explanation": "運河由法國人雷賽布主導開鑿，一八六九年正式通航，大幅縮短歐亞之間的航程。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-018",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "土耳其共和國的首任總統是誰？",
+  "options": [
+   "伊諾努",
+   "凱末爾",
+   "恩瓦爾",
+   "塔拉特"
+  ],
+  "answer": 1,
+  "explanation": "凱末爾領導獨立戰爭後於一九二三年建立共和國並出任首任總統，推動一連串世俗化改革。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-019",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "最早發明二十二個子音字母、深深影響歐洲字母的是哪一個古代民族？",
+  "options": [
+   "米諾斯人",
+   "伊特拉斯坎人",
+   "腓尼基人",
+   "西臺人"
+  ],
+  "answer": 2,
+  "explanation": "腓尼基商人把簡便的字母系統傳到地中海各地，希臘字母與拉丁字母都由此演變而來。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-020",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "約旦著名的佩特拉古城，是由哪一個古代民族開鑿的？",
+  "options": [
+   "帕提亞人",
+   "亞蘭人",
+   "亞述人",
+   "納巴泰人"
+  ],
+  "answer": 3,
+  "explanation": "納巴泰人靠香料商路致富，在紅色砂岩峽谷中鑿出神殿與陵墓，佩特拉曾是其王國首都。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-021",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "率領軍隊帶著戰象翻越阿爾卑斯山進攻羅馬的迦太基名將是誰？",
+  "options": [
+   "漢尼拔",
+   "哈斯德魯巴",
+   "馬西尼薩",
+   "西庇阿"
+  ],
+  "answer": 0,
+  "explanation": "漢尼拔在第二次布匿戰爭中率軍翻越阿爾卑斯山突襲義大利，並在坎尼會戰大敗羅馬軍。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-022",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "古代迦太基城的遺址位於今天哪一個國家？",
+  "options": [
+   "阿爾及利亞",
+   "突尼西亞",
+   "摩洛哥",
+   "利比亞"
+  ],
+  "answer": 1,
+  "explanation": "迦太基由腓尼基人建於北非海岸，遺址就在今天突尼西亞首都附近的海邊。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-023",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "十四世紀以豪奢麥加朝聖聞名的西非國王曼薩·穆薩，統治哪一個帝國？",
+  "options": [
+   "迦納帝國",
+   "桑海帝國",
+   "馬利帝國",
+   "貝南王國"
+  ],
+  "answer": 2,
+  "explanation": "曼薩·穆薩在位時馬利帝國達到極盛，他一三二四年的朝聖隊伍沿途散金而傳為佳話。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-024",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "中世紀以伊斯蘭學術與古手稿聞名的撒哈拉南緣城市是哪一座？",
+  "options": [
+   "摩加迪休",
+   "蒙巴薩",
+   "桑吉巴",
+   "廷巴克圖"
+  ],
+  "answer": 3,
+  "explanation": "廷巴克圖位於尼日河北岸，是跨撒哈拉商路的樞紐，也因桑科雷清真寺與大量手稿而著稱。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-025",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "以不用灰泥的巨大石牆聞名的「大辛巴威」遺址，是由哪一個民族建造的？",
+  "options": [
+   "紹納人",
+   "祖魯人",
+   "班巴拉人",
+   "斯瓦希里人"
+  ],
+  "answer": 0,
+  "explanation": "大辛巴威從十一世紀起由紹納人陸續興建，乾砌石牆最高可達十一公尺。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-026",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "一八九六年衣索比亞在阿杜瓦戰役中擊敗了哪一國的軍隊？",
+  "options": [
+   "葡萄牙",
+   "義大利",
+   "英國",
+   "法國"
+  ],
+  "answer": 1,
+  "explanation": "孟尼利克二世率軍取得決定性勝利，使衣索比亞成為當時少數維持獨立的非洲國家。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-027",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "一八八四到一八八五年歐洲列強召開哪一場會議，訂下瓜分非洲的規則？",
+  "options": [
+   "維也納會議",
+   "雅爾達會議",
+   "柏林會議",
+   "巴黎和會"
+  ],
+  "answer": 2,
+  "explanation": "在俾斯麥主持下，與會各國議定占領非洲領土的規則，開啟了「瓜分非洲」的高峰。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-028",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "西元四世紀就把基督教定為國教的非洲古國是哪一個？",
+  "options": [
+   "努米底亞王國",
+   "迦太基帝國",
+   "庫施王國",
+   "阿克蘇姆王國"
+  ],
+  "answer": 3,
+  "explanation": "阿克蘇姆位於今衣索比亞與厄利垂亞一帶，國王埃扎納改信基督教，並留下巨大的石碑群。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-029",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "南非第一位黑人總統是誰？",
+  "options": [
+   "曼德拉",
+   "布特萊齊",
+   "姆貝基",
+   "圖圖"
+  ],
+  "answer": 0,
+  "explanation": "曼德拉被囚禁二十七年後獲釋，一九九四年在首次全民選舉中當選總統。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-030",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "南非種族隔離制度的原文 Apartheid，字面意思最接近下列哪一個？",
+  "options": [
+   "白人至上",
+   "彼此分離",
+   "自治家園",
+   "純淨血統"
+  ],
+  "answer": 1,
+  "explanation": "Apartheid 是南非荷蘭語，字面就是「分開的狀態」，用來包裝依膚色劃分社會的法律。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-031",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "一九五七年成為撒哈拉以南非洲第一個脫離殖民統治獨立的國家是哪一國？",
+  "options": [
+   "奈及利亞",
+   "剛果",
+   "迦納",
+   "肯亞"
+  ],
+  "answer": 2,
+  "explanation": "在恩克魯瑪領導下，原稱黃金海岸的殖民地脫離英國獨立，掀起非洲獨立浪潮。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-032",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "西非國家賴比瑞亞最初是由哪一群人建立的？",
+  "options": [
+   "英國解放的西印度群島奴隸",
+   "葡萄牙的混血商人後裔",
+   "法國殖民公司的職員",
+   "從美國移居的解放黑奴"
+  ],
+  "answer": 3,
+  "explanation": "美國殖民協會自一八二二年起把自由黑人送往該地，一八四七年當地宣布獨立建國。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-033",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "記者史坦利深入非洲內陸，是為了尋找哪一位失去音訊的探險家？",
+  "options": [
+   "李文斯頓",
+   "蒙戈·帕克",
+   "史匹克",
+   "伯頓"
+  ],
+  "answer": 0,
+  "explanation": "李文斯頓在中非傳教與探險多年後與外界失聯，史坦利一八七一年在坦干伊喀湖畔找到他。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-034",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "著名的南猿化石「露西」是在哪一個國家出土的？",
+  "options": [
+   "坦尚尼亞",
+   "衣索比亞",
+   "肯亞",
+   "南非"
+  ],
+  "answer": 1,
+  "explanation": "露西一九七四年出土於衣索比亞的阿法爾地區，屬於距今約三百二十萬年的阿法南猿。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-035",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "西元前八世紀征服埃及、被稱為「黑法老」的是哪一個王國的君主？",
+  "options": [
+   "利比亞王國",
+   "米坦尼王國",
+   "庫施王國",
+   "腓尼基城邦"
+  ],
+  "answer": 2,
+  "explanation": "來自今蘇丹的庫施國王北上統治埃及，形成埃及第二十五王朝，定都納帕塔。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-036",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "十九世紀末的剛果自由邦，實際上是哪一國國王的私人領地？",
+  "options": [
+   "葡萄牙",
+   "荷蘭",
+   "德國",
+   "比利時"
+  ],
+  "answer": 3,
+  "explanation": "利奧波德二世以個人名義取得剛果，並非由國家統治，殘酷的橡膠榨取後來引發國際譴責。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-037",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "十九世紀初以「牛角陣」戰術壯大祖魯王國的國王是誰？",
+  "options": [
+   "夏卡",
+   "丁干",
+   "莫舒舒",
+   "塞奇瓦約"
+  ],
+  "answer": 0,
+  "explanation": "夏卡改良短柄刺矛與盾牌戰法，並用中央與兩翼包抄的陣形，使祖魯成為南非強權。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-038",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "阿爾及利亞在一九六二年脫離哪一個國家獨立？",
+  "options": [
+   "義大利",
+   "法國",
+   "西班牙",
+   "英國"
+  ],
+  "answer": 1,
+  "explanation": "法國自一八三○年起統治阿爾及利亞，歷經長期戰爭後於一九六二年承認其獨立。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-039",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "庫克船長一七七○年在澳洲東岸首次登陸的地點是哪裡？",
+  "options": [
+   "墨爾本港",
+   "摩頓灣",
+   "植物學灣",
+   "雪梨港"
+  ],
+  "answer": 2,
+  "explanation": "庫克在此上岸，隨行博物學家採集到大量新奇植物，因而得名植物學灣。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-040",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "一七八八年抵達澳洲的英國「第一艦隊」，主要載運的是哪些人？",
+  "options": [
+   "淘金的礦工",
+   "傳教的教士",
+   "逃荒的農民",
+   "流放的囚犯"
+  ],
+  "answer": 3,
+  "explanation": "英國在失去北美殖民地後改把囚犯送往澳洲，第一艦隊抵達後建立了雪梨的最早聚落。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-041",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "澳洲原住民描述祖先創造世界的宇宙觀 The Dreaming，中文譯名之一是下列哪一個？",
+  "options": [
+   "夢世紀",
+   "歌之路",
+   "圖騰祭",
+   "祖靈祭"
+  ],
+  "answer": 0,
+  "explanation": "夢世紀（The Dreaming，亦譯夢創時代）指祖先精靈塑造山川與律法的時空，對原住民而言是持續存在的真實。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-042",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "一八四○年英國王室與毛利酋長簽訂哪一份條約，成為紐西蘭的建國文件？",
+  "options": [
+   "威靈頓條約",
+   "懷唐伊條約",
+   "奧克蘭條約",
+   "北島條約"
+  ],
+  "answer": 1,
+  "explanation": "條約在北島懷唐伊簽署，因毛利文與英文版本意涵不同，至今仍是紐西蘭重要的憲政課題。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-043",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "澳洲六個殖民地在哪一年組成聯邦？",
+  "options": [
+   "1788 年",
+   "1851 年",
+   "1901 年",
+   "1931 年"
+  ],
+  "answer": 2,
+  "explanation": "一九○一年一月一日澳洲憲法生效，各殖民地改為州，組成澳大利亞聯邦。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-044",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "澳洲把首都設在坎培拉，主要是為了調解哪兩座城市的競爭？",
+  "options": [
+   "雪梨與布里斯本",
+   "墨爾本與阿得雷德",
+   "伯斯與雪梨",
+   "雪梨與墨爾本"
+  ],
+  "answer": 3,
+  "explanation": "兩大城互不相讓，最後折衷在新南威爾斯境內、距雪梨一百英里以外的內陸另建新都。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-045",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "紐西蘭在一八九三年成為世界上第一個做到下列哪件事的自治國家？",
+  "options": [
+   "賦予婦女投票權",
+   "實施八小時工時",
+   "廢除君主制度",
+   "廢除全國死刑"
+  ],
+  "answer": 0,
+  "explanation": "紐西蘭一八九三年通過選舉法，成為全球第一個讓婦女在國會選舉中投票的自治國家。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-046",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "復活節島上的摩艾巨像是由哪一個民族雕刻的？",
+  "options": [
+   "美拉尼西亞人",
+   "拉帕努伊人",
+   "查莫洛人",
+   "毛利人"
+  ],
+  "answer": 1,
+  "explanation": "拉帕努伊人是島上的波里尼西亞原住民，約在十三到十五世紀雕出這些祖先石像。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-047",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "庫克船長最後在哪一個群島遇害身亡？",
+  "options": [
+   "大溪地群島",
+   "索羅門群島",
+   "夏威夷群島",
+   "紐西蘭北島"
+  ],
+  "answer": 2,
+  "explanation": "一七七九年庫克在第三次航行途中，於夏威夷的凱阿拉凱夸灣與當地人衝突中身亡。",
+  "fun_fact": ""
+ },
+ {
+  "id": "history-OTH-048",
+  "topic": "history",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "歷史",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "一八五四年澳洲維多利亞礦區的尤瑞卡柵欄事件，礦工主要在抗議什麼？",
+  "options": [
+   "過低的黃金收購價",
+   "華人礦工的競爭",
+   "禁止私人持槍",
+   "昂貴的採礦執照費"
+  ],
+  "answer": 3,
+  "explanation": "礦工不滿高額執照費與強硬的臨檢方式，在巴拉瑞特築柵欄反抗，成為澳洲民主發展的象徵。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-001",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "伊斯蘭教規定信徒每天要禮拜幾次？",
+  "options": [
+   "五次",
+   "三次",
+   "七次",
+   "十次"
+  ],
+  "answer": 0,
+  "explanation": "禮拜（salah）是伊斯蘭教五功之一，每日五次分別在黎明、中午、下午、日落與夜晚進行。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-002",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "伊斯蘭教五功中，前往麥加朝聖的那一項稱為？",
+  "options": [
+   "唸功",
+   "朝功",
+   "課功",
+   "齋功"
+  ],
+  "answer": 1,
+  "explanation": "五功分別是唸、禮、齋、課、朝；有能力的穆斯林一生至少要到麥加朝聖一次。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-003",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "穆斯林在齋戒月結束後慶祝的節日，中文通稱為？",
+  "options": [
+   "宰牲節",
+   "登霄節",
+   "開齋節",
+   "聖紀節"
+  ],
+  "answer": 2,
+  "explanation": "齋戒月（Ramadan）結束後的第一天即為開齋節，是伊斯蘭世界最重要的節慶之一。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-004",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "麥加禁寺中央、穆斯林禮拜時朝向的立方體建築是？",
+  "options": [
+   "阿克薩寺",
+   "圓頂清真寺",
+   "先知清真寺",
+   "卡巴天房"
+  ],
+  "answer": 3,
+  "explanation": "卡巴（Kaaba）在阿拉伯文中就是「立方體」的意思，外覆黑色金線織錦的罩幕（kiswa），每年更換一次。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-005",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "清真寺牆上那個指示麥加方向的凹壁，稱為什麼？",
+  "options": [
+   "米哈拉布",
+   "敏拜爾",
+   "宣禮塔",
+   "沙赫恩"
+  ],
+  "answer": 0,
+  "explanation": "米哈拉布（mihrab）標示朝拜方向（qibla），通常是清真寺內裝飾最華麗的部分。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-006",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "伊斯蘭曆屬於下列哪一種曆法？",
+  "options": [
+   "純陽曆",
+   "純陰曆",
+   "陰陽合曆",
+   "回歸年曆"
+  ],
+  "answer": 1,
+  "explanation": "伊斯蘭曆一年十二個月約354天，比陽曆少約十一天，所以齋戒月會在四季之間逐年往前移動。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-007",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "清真寺內部裝飾多用書法與幾何圖案，主要原因是？",
+  "options": [
+   "沙漠地區顏料取得困難",
+   "幾何圖案的造價較低廉",
+   "教義避免描繪人物形象",
+   "當地工匠不擅長畫人像"
+  ],
+  "answer": 2,
+  "explanation": "伊斯蘭教反對偶像崇拜，宗教空間因此發展出高度成熟的書法與幾何紋樣藝術。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-008",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "阿拉伯文的書寫方向是？",
+  "options": [
+   "由左至右",
+   "由上至下",
+   "由下至上",
+   "由右至左"
+  ],
+  "answer": 3,
+  "explanation": "阿拉伯文與希伯來文同屬閃語系文字，都是由右向左橫書。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-009",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "現代希伯來語能從經書語言變成日常口語，主要推手是誰？",
+  "options": [
+   "本-耶胡達",
+   "邁蒙尼德",
+   "馬丁·布伯",
+   "赫茲爾"
+  ],
+  "answer": 0,
+  "explanation": "本-耶胡達編纂第一部現代希伯來語辭典，並堅持只用希伯來語養育兒子，讓它重新成為母語。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-010",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "猶太教的安息日是從什麼時候開始的？",
+  "options": [
+   "週六日落",
+   "週五日落",
+   "週四日落",
+   "週日日出"
+  ],
+  "answer": 1,
+  "explanation": "猶太曆的一天從日落起算，安息日因此是週五日落到週六日落。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-011",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "猶太教經典《妥拉》指的是聖經的哪一部分？",
+  "options": [
+   "先知書",
+   "詩篇",
+   "摩西五經",
+   "塔木德"
+  ],
+  "answer": 2,
+  "explanation": "《妥拉》即《創世記》到《申命記》五卷，會抄寫成羊皮卷軸供會堂誦讀。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-012",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "逾越節紀念猶太人從哪一個地方出走？",
+  "options": [
+   "巴比倫",
+   "波斯",
+   "羅馬",
+   "埃及"
+  ],
+  "answer": 3,
+  "explanation": "逾越節（Passover）紀念《出埃及記》中以色列人脫離埃及為奴的經歷。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-013",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "逾越節期間猶太人食用的無酵餅稱為？",
+  "options": [
+   "馬佐",
+   "哈拉",
+   "皮塔",
+   "貝果"
+  ],
+  "answer": 0,
+  "explanation": "馬佐（matzah）是不發酵的薄餅，象徵出走時來不及等麵團發起就得上路。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-014",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "光明節（哈努卡）使用的燭台總共有幾個燭座？",
+  "options": [
+   "七個",
+   "九個",
+   "八個",
+   "十二個"
+  ],
+  "answer": 1,
+  "explanation": "節期八天每天多點一支，再加上一支用來點燃其他蠟燭的「侍者」燭，共九座。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-015",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "猶太教「潔食」戒律禁止同時食用哪兩類食物？",
+  "options": [
+   "麵包與葡萄酒",
+   "雞蛋與海鮮類",
+   "肉類與乳製品",
+   "蔬菜與堅果類"
+  ],
+  "answer": 2,
+  "explanation": "潔食（Kosher）規定肉與奶不可同食，講究的家庭連鍋具餐具都分開兩套。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-016",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "波斯新年「諾魯茲」對應的天文時刻是？",
+  "options": [
+   "夏至",
+   "秋分",
+   "冬至",
+   "春分"
+  ],
+  "answer": 3,
+  "explanation": "諾魯茲（Nowruz）在北半球春分開始，落在三月二十日前後，是伊朗與中亞的新年。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-017",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "伊朗的官方語言是下列哪一種？",
+  "options": [
+   "波斯語",
+   "阿拉伯語",
+   "土耳其語",
+   "庫德語"
+  ],
+  "answer": 0,
+  "explanation": "波斯語屬印歐語系，與屬閃語系的阿拉伯語不同，只是借用阿拉伯字母書寫。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-018",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "中東小吃「法拉費」是用什麼油炸成的丸子？",
+  "options": [
+   "馬鈴薯",
+   "鷹嘴豆",
+   "羊絞肉",
+   "白米飯"
+  ],
+  "answer": 1,
+  "explanation": "法拉費（falafel）把泡軟的鷹嘴豆打碎調味後油炸，常夾在皮塔餅裡吃。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-019",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "阿拉伯男性常戴、用頭箍固定的方格頭巾稱為？",
+  "options": [
+   "希賈布",
+   "尼卡布",
+   "庫菲亞",
+   "恰朵爾"
+  ],
+  "answer": 2,
+  "explanation": "庫菲亞（keffiyeh）是男性頭巾，用黑色頭箍固定；其餘三者都是女性的頭巾或罩袍。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-020",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "在中東與伊斯蘭世界的餐桌禮儀中，通常用哪隻手取食？",
+  "options": [
+   "左手",
+   "雙手",
+   "不用手",
+   "右手"
+  ],
+  "answer": 3,
+  "explanation": "傳統上左手被視為處理不潔事務的手，取食、遞物與握手都應使用右手。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-021",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "斯瓦希里語主要通行於非洲的哪一個區域？",
+  "options": [
+   "東非",
+   "西非",
+   "北非",
+   "南部非洲"
+  ],
+  "answer": 0,
+  "explanation": "斯瓦希里語是坦尚尼亞、肯亞等東非國家的通用語，名稱本身源自阿拉伯文的「沿岸」。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-022",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "斯瓦希里語的「Hakuna Matata」意思最接近下列哪一句？",
+  "options": [
+   "歡迎來到我的家鄉",
+   "沒有問題不必擔心",
+   "再見了我的老朋友",
+   "前方有危險要小心"
+  ],
+  "answer": 1,
+  "explanation": "這句話因動畫《獅子王》而廣為人知，在東非是相當日常的口語表達。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-023",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "科普特正教會主要分布在哪一個國家？",
+  "options": [
+   "摩洛哥",
+   "蘇丹",
+   "埃及",
+   "利比亞"
+  ],
+  "answer": 2,
+  "explanation": "科普特教會相傳由使徒馬可在亞歷山卓創立，禮儀仍保留古埃及語演變而來的科普特語。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-024",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "衣索比亞的主食薄餅「英吉拉」是用哪種穀物做的？",
+  "options": [
+   "小麥",
+   "玉米",
+   "稻米",
+   "苔麩"
+  ],
+  "answer": 3,
+  "explanation": "苔麩（teff）磨粉後發酵數日再攤成薄餅，帶有明顯酸味，可撕下來包菜餚吃。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-025",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "一般認為咖啡樹的原產地是哪一個國家？",
+  "options": [
+   "衣索比亞",
+   "巴西",
+   "哥倫比亞",
+   "越南"
+  ],
+  "answer": 0,
+  "explanation": "阿拉比卡咖啡的野生族群集中在衣索比亞西南部高地森林，當地至今保有隆重的咖啡儀式。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-026",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "北非的「塔吉鍋」最特別的設計是什麼？",
+  "options": [
+   "雙層中空的鍋底",
+   "圓錐形的高鍋蓋",
+   "可以折疊的把手",
+   "鍋內附金屬濾網"
+  ],
+  "answer": 1,
+  "explanation": "高聳的錐形蓋讓蒸氣凝結後沿壁流回鍋底，在缺水的乾燥地區能用極少的水慢燉食材。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-027",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "北非常見、外形像小米粒的澱粉類主食是？",
+  "options": [
+   "義大利麵",
+   "米線",
+   "庫斯庫斯",
+   "烤餅"
+  ],
+  "answer": 2,
+  "explanation": "庫斯庫斯（couscous）其實是杜蘭小麥粉搓成的細粒，蒸熟後配燉菜一起吃。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-028",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "北非原住民族「柏柏人」自稱為什麼？",
+  "options": [
+   "努比亞人",
+   "貝都因人",
+   "科普特人",
+   "阿馬齊格"
+  ],
+  "answer": 3,
+  "explanation": "Amazigh（複數 Imazighen）一般解釋為「自由的人」，摩洛哥與阿爾及利亞都有大量人口。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-029",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "柏柏語使用的傳統文字稱為？",
+  "options": [
+   "提非納文",
+   "科普特文",
+   "吉茲文",
+   "阿拉姆文"
+  ],
+  "answer": 0,
+  "explanation": "提非納文（Tifinagh）源自古利比亞文字，摩洛哥已把它定為標準阿馬齊格語的官方正字。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-030",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "撒哈拉的圖阿雷格人有什麼特別的服飾習俗？",
+  "options": [
+   "女性終年戴金面具",
+   "男性外出時戴面紗",
+   "男女都不可以穿鞋",
+   "只在婚禮才穿黑衣"
+  ],
+  "answer": 1,
+  "explanation": "圖阿雷格由男性配戴靛藍色頭面巾，染料常把皮膚染藍，因而被稱為「藍色人」。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-031",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "馬賽人主要生活在哪兩個國家？",
+  "options": [
+   "奈及利亞與迦納",
+   "埃及與衣索比亞",
+   "肯亞與坦尚尼亞",
+   "南非與納米比亞"
+  ],
+  "answer": 2,
+  "explanation": "馬賽人是東非大裂谷一帶的半游牧民族，以放牧牛群與鮮紅的披布聞名。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-032",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "馬賽人成年禮上最著名的舞蹈動作是？",
+  "options": [
+   "繞著火堆快走",
+   "踏地擊掌轉圈",
+   "兩人對摔較勁",
+   "原地垂直跳高"
+  ],
+  "answer": 3,
+  "explanation": "青年戰士排成一列輪流原地跳躍，跳得越高越能展現體能與吸引注意。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-033",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "西非社會中負責口述歷史、頌唱家族譜系的傳統職業稱為？",
+  "options": [
+   "格里奧",
+   "伊瑪目",
+   "薩滿",
+   "祭司"
+  ],
+  "answer": 0,
+  "explanation": "格里奧（griot）身兼史官、詩人與樂師，常邊彈可拉琴邊敘述部族世系。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-034",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "西非沙漏形的「會說話的鼓」，靠什麼方式改變音高？",
+  "options": [
+   "更換不同的鼓皮",
+   "擠壓鼓身的鼓繩",
+   "在鼓內加水調音",
+   "改敲鼓框的側面"
+  ],
+  "answer": 1,
+  "explanation": "演奏者把鼓夾在腋下，擠壓連接兩面鼓皮的繩索就能改變張力，模仿聲調語言的抑揚。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-035",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "迦納最著名的傳統手織彩色布料稱為？",
+  "options": [
+   "蠟染布",
+   "克什米爾",
+   "肯特布",
+   "紗麗"
+  ],
+  "answer": 2,
+  "explanation": "肯特布（Kente）由阿散蒂人以窄長布條織成後縫合，原是王室與貴族的禮服。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-036",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "馬利的傑內大清真寺，是世界上最大的哪一種建築？",
+  "options": [
+   "木造建築",
+   "石灰岩建築",
+   "竹構造建築",
+   "泥磚建築"
+  ],
+  "answer": 3,
+  "explanation": "它以曬乾的土磚砌成，每年雨季來臨前（約四月）全城居民會一起動手為外牆重新塗泥，以修補前一年雨水的侵蝕，也是世界遺產。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-037",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "衣索比亞的拉利貝拉教堂群，最特別之處在於？",
+  "options": [
+   "由整塊岩石向下鑿出",
+   "以彩色玻璃全面覆蓋",
+   "建在湖中的木樁上方",
+   "懸掛於峭壁半空之中"
+  ],
+  "answer": 0,
+  "explanation": "工匠從地表往下開鑿壕溝，讓整座教堂從母岩中被「雕」出來，其中聖喬治堂呈十字形。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-038",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "衣索比亞的阿姆哈拉語使用哪一種文字書寫？",
+  "options": [
+   "阿拉伯字母",
+   "吉茲字母",
+   "拉丁字母",
+   "西里爾字母"
+  ],
+  "answer": 1,
+  "explanation": "吉茲字母屬於元音附標文字，每個符號代表一個「輔音＋元音」的音節，由左向右書寫。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-039",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "二十世紀初，非洲面具的造型深深影響了哪一位畫家？",
+  "options": [
+   "莫內",
+   "林布蘭",
+   "畢卡索",
+   "透納"
+  ],
+  "answer": 2,
+  "explanation": "非洲雕刻誇張分割的五官啟發了他，《亞維儂的少女》中的臉孔就明顯帶有面具的影子。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-040",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "在摩洛哥，待客時最常端出的飲料是？",
+  "options": [
+   "冰鎮椰子汁",
+   "熱可可亞",
+   "氣泡礦泉水",
+   "加糖薄荷茶"
+  ],
+  "answer": 3,
+  "explanation": "摩洛哥薄荷茶以綠茶加新鮮薄荷與大量糖沖泡，倒茶時還會高高拉起水柱衝出泡沫。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-041",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "毛利語稱紐西蘭為 Aotearoa，最常見的解釋是？",
+  "options": [
+   "長白雲之鄉",
+   "南方的大島",
+   "眾神的故鄉",
+   "黑石的國度"
+  ],
+  "answer": 0,
+  "explanation": "傳說航海家庫佩遠遠看見島上懸著一道長長的白雲，因而得名。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-042",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "毛利語問候語「Kia ora」的意思最接近？",
+  "options": [
+   "再見",
+   "你好",
+   "謝謝",
+   "抱歉"
+  ],
+  "answer": 1,
+  "explanation": "Kia ora 字面有「祝你健康」之意，在紐西蘭日常生活中被廣泛使用。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-043",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "毛利人最具代表性的傳統問候禮是？",
+  "options": [
+   "互相拍肩膀",
+   "相互深鞠躬",
+   "互相碰鼻子",
+   "連續握手三次"
+  ],
+  "answer": 2,
+  "explanation": "這個禮節稱為 hongi，雙方額頭與鼻尖相觸，象徵交換「生命的氣息」。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-044",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "紐西蘭全黑隊在比賽前表演的毛利傳統舞蹈稱為？",
+  "options": [
+   "呼拉舞",
+   "桑巴舞",
+   "波卡舞",
+   "哈卡舞"
+  ],
+  "answer": 3,
+  "explanation": "哈卡（haka）是配合吼唱、跺腳與表情的群體舞，除了戰舞，也用於迎賓與喪禮。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-045",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "毛利部落聚會場所「馬雷」的核心建築是什麼？",
+  "options": [
+   "大型會堂",
+   "獨立廚房",
+   "瞭望高塔",
+   "獨木舟棚"
+  ],
+  "answer": 0,
+  "explanation": "會堂（wharenui）被視為祖先身體的化身，樑柱雕刻常代表部族的先人。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-046",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "毛利人臉上的傳統刺青「塔摩可」主要表達什麼？",
+  "options": [
+   "抵禦疾病的護身",
+   "身分與家族系譜",
+   "參戰次數的紀錄",
+   "宗教戒律的象徵"
+  ],
+  "answer": 1,
+  "explanation": "塔摩可（tā moko）的紋樣是個人的身分證明，記錄所屬部族、地位與家族來歷。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-047",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "毛利傳統料理「杭伊」是用什麼方式烹調的？",
+  "options": [
+   "把食物塞進竹筒放火堆燒",
+   "用大鐵鍋在火上長時間燉煮",
+   "把食物埋進地坑用熱石悶熟",
+   "靠陽光長時間曝曬自然熟成"
+  ],
+  "answer": 2,
+  "explanation": "先把石頭燒熱放入地坑，食材籃放在石上再覆土數小時，取出時帶有煙燻土香。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-048",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "澳洲原住民最具代表性的傳統管樂器是？",
+  "options": [
+   "蘇格蘭風笛",
+   "安地斯排笛",
+   "日本尺八",
+   "迪吉里杜管"
+  ],
+  "answer": 3,
+  "explanation": "迪吉里杜管（didgeridoo）出自澳洲北部，尤以阿納姆地一帶為代表。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-049",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "迪吉里杜管的管身中空，主要是怎麼來的？",
+  "options": [
+   "白蟻蛀蝕樹幹",
+   "工匠鑽孔挖空",
+   "竹子天然中空",
+   "以火燒穿樹心"
+  ],
+  "answer": 0,
+  "explanation": "製作者會尋找被白蟻蛀空心材的尤加利樹，砍下後略加修整即成樂器。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-050",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "吹奏迪吉里杜管時最關鍵的技巧是？",
+  "options": [
+   "雙簧震動",
+   "循環呼吸",
+   "快速換指",
+   "踏板轉調"
+  ],
+  "answer": 1,
+  "explanation": "演奏者用鼻子吸氣的同時以頰部肌肉把口中存氣擠出，就能讓低鳴聲持續不斷。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-051",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "澳洲原住民世界觀中，祖靈創造萬物的概念稱為？",
+  "options": [
+   "大洪水時期",
+   "天狼星之紀",
+   "夢創時代",
+   "漫長黑夜紀"
+  ],
+  "answer": 2,
+  "explanation": "夢創時代（The Dreaming）不是一段過去的歷史，而是同時涵蓋過去、現在與未來的秩序。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-052",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "澳洲聖地烏魯魯的傳統擁有者是哪一個原住民族群？",
+  "options": [
+   "毛利人",
+   "巴布亞人",
+   "查莫洛人",
+   "阿南古人"
+  ],
+  "answer": 3,
+  "explanation": "阿南古人（Aṉangu）視烏魯魯為聖地，園區已與國家共管並列入世界遺產。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-053",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "英文 tattoo（刺青）一詞源自哪個地區的語言？",
+  "options": [
+   "玻里尼西亞",
+   "北歐斯堪地",
+   "東南亞群島",
+   "中南美洲"
+  ],
+  "answer": 0,
+  "explanation": "它來自 tatau 一字，隨庫克船長的南太平洋航行被帶回歐洲而成為英文詞彙。",
+  "fun_fact": ""
+ },
+ {
+  "id": "human-OTH-054",
+  "topic": "human",
+  "unit": "OTH",
+  "unit_name": "中東・非洲・大洋洲",
+  "category": "人文",
+  "region": "中東・非洲・大洋洲",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "南太平洋島國在迎賓與儀式場合飲用的傳統飲料是？",
+  "options": [
+   "馬黛茶",
+   "卡瓦酒",
+   "椰花酒",
+   "小米酒"
+  ],
+  "answer": 1,
+  "explanation": "卡瓦（kava）以胡椒科植物的根磨碎加水調製，入口令口腔微麻並帶來放鬆感。",
+  "fun_fact": ""
+ }
+]

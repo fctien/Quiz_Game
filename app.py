@@ -53,9 +53,19 @@ TOPICS = {
 CATEGORIES = TOPICS            # 舊名稱,保留相容
 # 題庫檔案 -> 這個檔的題目屬於哪個地區(顯示在題目上,也可以當篩選條件)
 FILES = {"taiwan": "台灣", "china": "中國", "world": "世界", "poetry": "古典詩詞",
+         "r_taiwan": "台灣", "r_china": "中國", "r_eastasia": "日韓・東亞",
+         "r_southasia": "東南亞・南亞", "r_europe": "歐洲", "r_america": "美洲",
+         "r_other": "中東・非洲・大洋洲",
          "stars": "娛樂", "fun": "趣聞", "tech": "科技", "python": "Python", "pytorch": "Deep Learning",
          "vba": "VBA", "pingpong": "桌球"}
-REGIONS = ["台灣", "中國", "世界"]   # 地理、歷史、人文可再依地區篩選
+# 地理、歷史、人文的題目再依地區分成幾個單元,主持台是「先選主題,再選地區」。
+# 地區直接用單元(unit)的機制,和 Python 的週次共用同一套,不必多一套東西。
+REGIONS = ["台灣", "中國", "日韓・東亞", "東南亞・南亞", "歐洲", "美洲",
+           "中東・非洲・大洋洲", "全球・跨區", "古典詩詞"]
+# 主持台上地區按鈕的排列順序(地理、歷史、人文三個主題共用)
+REGION_ORDER = ["TW", "CN", "EA", "SEA", "EU", "AM", "OTH", "GLOBAL", "POEM"]
+REGION_TOPICS = ("geo", "history", "human")
+COUNTS_MIN = 5                      # 一場最少 5 題,單元少於這個數就不列出來
 
 
 def load_all():
@@ -95,6 +105,10 @@ def units_of(topic):
             seen.add(u)
             out.append({"key": u, "name": q.get("unit_name", u),
                         "count": len(active_bank(topic, None, u))})
+    out = [u for u in out if u["count"] >= min(COUNTS_MIN, 5)]   # 題數太少的單元不顯示,免得一開場就湊不滿
+    if topic in REGION_TOPICS:          # 地區按鈕固定照 REGION_ORDER 排,不受題庫檔順序影響
+        out.sort(key=lambda d: REGION_ORDER.index(d["key"])
+                 if d["key"] in REGION_ORDER else len(REGION_ORDER))
     return out
 
 

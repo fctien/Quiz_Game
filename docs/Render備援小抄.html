@@ -55,7 +55,7 @@ footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:va
 <body>
 <header>
   <h1>脈衝 PULSE<span class="seal">雲</span></h1>
-  <div class="sub">Render 雲端備援小抄 ・ 學生用 4G 就能加入<br>v5.8　印出來夾在講義裡</div>
+  <div class="sub">Render 雲端備援小抄 ・ 學生用 4G 就能加入<br>v6.0　印出來夾在講義裡</div>
 </header>
 
 <div class="cols">
@@ -104,7 +104,7 @@ footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:va
     <li>手機<b>關掉 Wi-Fi</b>，只用 4G/5G。</li>
     <li>開 <span class="k">你的網址/api/health</span>。</li>
     <li>看到 <span class="k">{"ok": true, ...}</span> 就成功。</li>
-    <li>再開首頁，版本要看到 <b>v5.8</b>。</li>
+    <li>再開首頁，版本要看到 <b>v6.0</b>。</li>
   </ol>
   <div class="ok">測過一次以後，上課當天只要開主持台就好。</div>
 </section>
@@ -121,6 +121,8 @@ footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:va
     <li>按 <span class="btn red">開考坊</span>，螢幕出現四位數房號與 QR code。</li>
     <li>學生掃 QR 或輸入房號加入；QR 會自動是雲端網址。</li>
     <li>每題按 <span class="btn">結束本題，公布答案</span> → <span class="btn">下一題</span>。</li>
+    <li>要臨時中斷改考別的：按 <span class="btn out">中斷考試</span> → 回到等待畫面（學生留在原位）→
+      <span class="btn out">換一套題目</span> → 重新開始。</li>
     <li>放榜後先按 <span class="btn red">匯出本場成績 CSV</span>，再存入班級積分，最後關閉考坊。</li>
   </ol>
   <div class="warn">先匯出，再關閉。雲端版的資料庫會被清掉，關了就下載不到。</div>
@@ -178,7 +180,7 @@ footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:va
     <tr><td class="sym">學生加不進來</td><td>網址有沒有打錯、房號是四位數字、是不是剛好在冷啟動</td></tr>
     <tr><td class="sym">說「這個學號正在線上」</td><td>同一個學號在別台裝置上。用同一個學號重新加入就會接手原本的位子</td></tr>
     <tr><td class="sym">學生畫面停在上一題</td><td>解鎖手機、切回那個分頁,十幾秒內會自己接回來</td></tr>
-    <tr><td class="sym">畫面還是舊版</td><td>版本不是 v5.8 就是快取，按 Ctrl+Shift+R</td></tr>
+    <tr><td class="sym">畫面還是舊版</td><td>版本不是 v6.0 就是快取，按 Ctrl+Shift+R</td></tr>
     <tr><td class="sym">房號突然失效</td><td>服務重啟會清掉進行中的考坊，重開一間即可</td></tr>
   </table>
 </section>
@@ -199,7 +201,7 @@ footer{margin-top:10px;border-top:1px solid var(--line);padding-top:5px;color:va
 </div>
 
 <footer>
-  <span>脈衝 PULSE v5.8 ・ 題庫 2370 題（Python 500、Deep Learning 708、VBA 280）</span>
+  <span>脈衝 PULSE v6.0 ・ 題庫 3230 題（Python 500、Deep Learning 708、VBA 280、地理／歷史／人文 1242）</span>
   <span>github.com/fctien/Quiz_Game　・　render.com</span>
 </footer>
 </body>

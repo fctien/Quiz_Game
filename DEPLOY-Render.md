@@ -49,7 +49,7 @@ Render 是從 GitHub 讀程式的，所以先把資料夾推上去。
    ```json
    {"ok": true, "rooms": 0, "time": "14:03:21", "ips": [...]}
    ```
-4. 再開 `https://<你的網址>/` 確認首頁正常，版本字樣應該是 **v5.8**。
+4. 再開 `https://<你的網址>/` 確認首頁正常，版本字樣應該是 **v6.0**。
 
 ---
 
@@ -136,5 +136,5 @@ Render 設定了 `autoDeployTrigger: commit`，只要 main 分支有新的 commi
 | Build 失敗，log 出現 `ModuleNotFoundError` | `requirements.txt` 沒推上去。確認 GitHub 上看得到這個檔，再推一次 |
 | 一直停在 `Deploying...` | 看 log 最後一行。若是 `Address already in use`，表示 start command 被改過，確認是 `-b 0.0.0.0:$PORT` |
 | 網頁開得起來但學生加不進來 | 檢查網址有沒有打錯；房號是四位數字；或服務剛好在冷啟動，等 1 分鐘再試 |
-| 畫面還是舊版 | 右上角看版本字樣。不是 v5.8 就是瀏覽器快取，按 Ctrl+Shift+R |
+| 畫面還是舊版 | 右上角看版本字樣。不是 v6.0 就是瀏覽器快取，按 Ctrl+Shift+R |
 | 房號突然失效 | 服務重啟會清掉進行中的考坊（狀態存在記憶體），重開一間即可 |

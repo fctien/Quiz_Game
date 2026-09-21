@@ -400,6 +400,606 @@
   "region": "Deep Learning"
  },
  {
+  "id": "pt-L0-1-01",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "類神經網路在資訊處理上最根本的特點是什麼？",
+  "options": [
+   "只能處理線性可分的簡單問題",
+   "必須先把每一條判斷規則寫成程式",
+   "必須由專家逐條定義推論流程",
+   "不需事先寫出規則，直接從資料學"
+  ],
+  "answer": 3,
+  "explanation": "簡報的英文定義：An approach to information processing that does not require algorithm or rule development。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-02",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "生物神經元中，負責「接收」其他神經元傳來訊號的是哪個部位？",
+  "options": [
+   "細胞體 Soma",
+   "樹突 Dendrites",
+   "突觸 Synapse",
+   "軸突 Axon"
+  ],
+  "answer": 1,
+  "explanation": "樹突由細胞體向外分支，負責接收訊號；軸突則負責把脈波送出去。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-03",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "類神經網路目前主要模仿的是人腦四大功能中的哪兩項？",
+  "options": [
+   "感知 Perception 與推理 Reasoning",
+   "思考 Think 與推理 Reasoning",
+   "感知 Perception 與記憶 Memory",
+   "記憶 Memory 與思考 Think"
+  ],
+  "answer": 2,
+  "explanation": "簡報（投影片 7）列出的人腦四大功能為 Perception、Memory、Think、Reasoning，ANN 目前主要模仿前兩項。註：這是本簡報的教學分法，不是認知科學的公認分類。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-04",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "1943 年提出、被視為第一個類神經網路的模型是哪一個？",
+  "options": [
+   "Hopfield 聯想記憶網路",
+   "Widrow 的 ADALINE",
+   "McCulloch-Pitts 模型",
+   "Rosenblatt 的感知機"
+  ],
+  "answer": 2,
+  "explanation": "McCulloch 與 Pitts 在 1943 年提出的模型是第一個類神經網路，也是整條時間軸的起點。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-05",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "1958 年提出感知機 Perceptron 的人是誰？",
+  "options": [
+   "John Hopfield",
+   "Donald Hebb",
+   "Frank Rosenblatt",
+   "Marvin Minsky"
+  ],
+  "answer": 2,
+  "explanation": "Rosenblatt 於 1958 年提出感知機（投影片 9、34），是第一個具備學習能力的神經網路模型；更早的起點是 1943 年的 McCulloch-Pitts 模型，但它沒有學習機制。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-06",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "Hebb 假說「Neurons that fire together, wire together」的白話意思是？",
+  "options": [
+   "相鄰的兩個細胞會互相抑制，以維持整體平衡",
+   "輸出與目標不符時，把權重調回上一輪的值",
+   "激發頻率愈高的細胞，會逐漸被網路抑制淘汰",
+   "兩個相連的細胞同時被激發，連結強度就會增加"
+  ],
+  "answer": 3,
+  "explanation": "這是 Hebb 於 1949 年《The Organization of Behavior》提出的假說，是第一個「學習」的數學描述。註：「Neurons that fire together, wire together」這句順口溜並非 Hebb 原文，而是 Carla Shatz（1992）的通俗改寫。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-07",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1969 年指出 XOR 問題、使類神經網路進入第一次黑暗期的是誰？",
+  "options": [
+   "Widrow 與 Hoff",
+   "Minsky 與 Papert",
+   "Kohonen 與 Grossberg",
+   "Rumelhart 與 PDP 研究群"
+  ],
+  "answer": 1,
+  "explanation": "Minsky 與 Papert 在 1969 年證明單層感知機無法解 XOR，研究經費因此中斷。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-08",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1986 年讓類神經網路重新復活的關鍵演算法是什麼？",
+  "options": [
+   "倒傳遞類神經網路 BP",
+   "自我組織特徵映射 SOFM",
+   "雙向聯想記憶 BAM",
+   "輻射基底函數網路 RBF"
+  ],
+  "answer": 0,
+  "explanation": "Rumelhart、Hinton 與 PDP 研究群在 1986 年以倒傳遞 BP 證明多層網路訓練得起來，讓 ANN 復活。註：BP 的數學更早即已出現（Linnainmaa 1970、Werbos 1974），1986 年是使其普及的關鍵。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-09",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1995–2006 年類神經網路第二次沉寂期間，取代它成為主流的機器學習方法是哪一種？",
+  "options": [
+   "支援向量機 SVM",
+   "決策樹 Decision Tree",
+   "K-means 分群",
+   "隱藏式馬可夫模型 HMM"
+  ],
+  "answer": 0,
+  "explanation": "SVM 理論嚴謹、有唯一最佳解、超參數少，當時論文寫 neural network 容易被退稿。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-10",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "2012 年 AlexNet 把 ImageNet 的錯誤率從 26% 降到多少？",
+  "options": [
+   "6%",
+   "16%",
+   "21%",
+   "11%"
+  ],
+  "answer": 1,
+  "explanation": "AlexNet 用 GPU + ReLU + Dropout 把 ImageNet top-5 錯誤率從約 26% 一舉降到簡報所列的 16%（實際官方數據為 15.3%，亞軍約 26.1%），Deep Learning 正式進入主流。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-11",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1980 年 Fukushima 提出的新認知機 Neocognitron，是哪一種現代架構的前身？",
+  "options": [
+   "生成對抗網路 GAN",
+   "圖神經網路 GNN",
+   "卷積神經網路 CNN",
+   "遞迴神經網路 RNN"
+  ],
+  "answer": 2,
+  "explanation": "Neocognitron 是 CNN 的前身，出現在黑暗期，說明基礎工作其實沒有停。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-12",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報用來取代 1990 年代舊分類樹的現代三個分類軸是什麼？",
+  "options": [
+   "輸入型態、輸出型態、損失函數",
+   "層數深淺、參數多寡、訓練時間",
+   "監督式、非監督式、強化式",
+   "學習範式、網路架構、任務型態"
+  ],
+  "answer": 3,
+  "explanation": "現代以學習範式、網路架構、任務型態三軸重新整理；舊版則以靜態／動態、單層／多層為主軸。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-13",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "異常偵測 Anomaly Detection 這個任務最適合產線的原因是什麼？",
+  "options": [
+   "運算量比影像分類小上許多",
+   "只需要正常樣本就能訓練",
+   "不需要任何訓練資料就能直接使用",
+   "可以完全免除人工複檢的流程"
+  ],
+  "answer": 1,
+  "explanation": "PatchCore、EfficientAD、GLASS 這類方法只需少量正常影像即可訓練，最貼近產線實務。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-14",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "從舊分類到新分類，簡報所說的「典範轉移」指的是什麼？",
+  "options": [
+   "從設計一個網路解一個問題，到訓練大模型適應多種問題",
+   "從監督式學習，全面轉為完全不需人工標註的非監督式學習",
+   "從數值運算為主，轉為以符號邏輯推理為主",
+   "從淺層網路，轉為一律堆疊到上千層才算深度學習"
+  ],
+  "answer": 0,
+  "explanation": "傳統是每個任務從零訓練；現代是下載預訓練模型再微調或提示。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-15",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "感知機 Perceptron 學習法則的學習訊號 r 是什麼？",
+  "options": [
+   "目前輸入與權重向量之差 p − w",
+   "目標與實際輸出之差 t − a",
+   "輸出本身 a",
+   "目標值 t 本身"
+  ],
+  "answer": 1,
+  "explanation": "輸出本身是 Hebbian、目標值本身是 Correlation、p − w 是 Competitive。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-16",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "Delta 法則的學習訊號，與感知機法則差在哪裡？",
+  "options": [
+   "改用輸入向量 x 直接取代誤差項",
+   "把誤差先取平方後再拿來更新",
+   "多乘了轉換函數的導數 f′(net)",
+   "多乘了一個固定的學習率 η"
+  ],
+  "answer": 2,
+  "explanation": "Delta 的學習訊號是 (t − a)·f′(net)，適用於連續型神經元；感知機則只用 t − a。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-17",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "hardlim 轉換函數在淨輸入 n ≥ 0 時的輸出是多少？",
+  "options": [
+   "−1",
+   "n 本身",
+   "0",
+   "1"
+  ],
+  "answer": 3,
+  "explanation": "hardlim：n ≥ 0 時輸出 1，否則輸出 0；W·p + b = 0 在平面上就是決策直線。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-18",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "AND 閘手算範例從 W = [1, 2]、b = 0 開始，收斂後的權重與偏權值是多少？",
+  "options": [
+   "W = [0, 1]、b = −1",
+   "W = [1, 2]、b = −1",
+   "W = [1, 1]、b = −2",
+   "W = [2, 2]、b = −3"
+  ],
+  "answer": 2,
+  "explanation": "第 1 個 epoch 修正兩次即得 W = [1, 1]、b = −2，第 2 個 epoch 四筆全對，決策邊界為 p₁ + p₂ − 2 = 0。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-19",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "感知機訓練時誤差 e = −1，代表發生了什麼事？",
+  "options": [
+   "學習率設得太大而發散",
+   "該輸出 0 卻輸出 1，權重遠離該樣本",
+   "判斷正確，權重維持不動",
+   "該輸出 1 卻輸出 0，權重朝該樣本靠近"
+  ],
+  "answer": 1,
+  "explanation": "誤差只有三種：e = 0 不動、e = +1 靠近該樣本、e = −1 遠離該樣本。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-20",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "Novikoff 收斂定理對感知機保證了什麼？",
+  "options": [
+   "只要學習率設得夠小，就一定會收斂",
+   "不論資料是否可分，都能在有限次修正內收斂",
+   "收斂後一定是全域最佳的決策邊界",
+   "只要資料線性可分，必在有限次修正內收斂"
+  ],
+  "answer": 3,
+  "explanation": "線性可分才保證收斂；像 XOR 這種不可分的資料會永遠震盪。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-21",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "反向傳播 Backpropagation 所依據的數學工具是什麼？",
+  "options": [
+   "拉格朗日乘數法 Lagrange",
+   "鏈鎖律 Chain Rule",
+   "傅立葉轉換",
+   "泰勒展開式"
+  ],
+  "answer": 1,
+  "explanation": "BP 不是新的學習法則，而是用鏈鎖律有效率地把 Delta Rule 套用到多層網路。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-22",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "2-2-1 手算範例中，第一次前向運算得到 a = 0.7514、目標 t = 0.99。更新一次權重後誤差如何變化？",
+  "options": [
+   "誤差不變，要等多次迭代才會動",
+   "誤差下降約 6%",
+   "誤差直接降到接近 0",
+   "誤差上升，因為學習率設得太大"
+  ],
+  "answer": 1,
+  "explanation": "E 從 0.028473 降到 0.026776，下降 5.96%；重複 1000 次後 E ≈ 0.00013190。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-23",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "手算範例中，隱藏層的梯度比輸出層小了約 100 倍，這是哪個問題的雛形？",
+  "options": [
+   "梯度消失",
+   "過度擬合",
+   "類別不平衡",
+   "局部最小值"
+  ],
+  "answer": 0,
+  "explanation": "隱藏層梯度遠小於輸出層，正是梯度消失的雛形：誤差每往回傳一層都要乘上 f′(net)（Sigmoid 最大僅 0.25）與權重，本例 δh/δo 約只有 0.1；再加上輸入值本身很小（x = 0.05、0.10），∂E/∂w 才會相差約 100 倍。層數一多梯度就趨近於零。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-24",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "PyTorch 的 loss.backward() 對應到 BP 五個步驟中的哪幾步？",
+  "options": [
+   "從 ① 到 ⑤ 的全部五個步驟都包含",
+   "只有第 ① 步的前向運算",
+   "第 ②～④ 步，也就是算梯度的部分",
+   "只有第 ⑤ 步的權重更新"
+  ],
+  "answer": 2,
+  "explanation": "backward() 做的是輸出層誤差、反向推導與求梯度；第 ⑤ 步權重更新是 optimizer.step() 的工作。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-25",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "2017 年〈Attention Is All You Need〉這篇論文提出了什麼架構？",
+  "options": [
+   "生成對抗網路 GAN",
+   "LSTM 長短期記憶",
+   "ResNet 殘差網路",
+   "Transformer"
+  ],
+  "answer": 3,
+  "explanation": "Transformer 拿掉遞迴、只留注意力，取代 RNN 並奠定今天所有 LLM 的基礎。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-26",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "Vision Transformer (ViT) 是怎麼把一張影像轉成 token 的？",
+  "options": [
+   "切成 16×16 的 patch 再線性投影",
+   "把每一個像素各自當成一個 token",
+   "把整張影像展平成一維向量",
+   "先用 CNN 抽完特徵再送進去"
+  ],
+  "answer": 0,
+  "explanation": "只要能把資料切成一串 token，Transformer 就能學，這是它能跨模態通用的關鍵。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-27",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "大型語言模型訓練的第一階段（預訓練）屬於哪一種學習範式？",
+  "options": [
+   "自監督學習",
+   "非監督式分群",
+   "強化學習",
+   "監督式學習"
+  ],
+  "answer": 0,
+  "explanation": "預訓練是自監督、不需人工標註，這正是規模得以放大到兆級 token 的關鍵。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-28",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "2015 年 ResNet 把 ImageNet top-5 錯誤率降到 3.57%，首度超越人類。簡報所列的人類辨識錯誤率是多少？",
+  "options": [
+   "5.1%",
+   "10.2%",
+   "8.4%",
+   "1.2%"
+  ],
+  "answer": 0,
+  "explanation": "人類在 ImageNet 上的錯誤率約 5.1%，ResNet 的殘差連接讓 152 層可以訓練得起來。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-29",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "傳統類神經網路與深度學習最根本的分野是什麼？",
+  "options": [
+   "特徵是人設計的，還是網路自己學的",
+   "一個用 CPU、一個用 GPU",
+   "兩者的學習法則在數學基礎上完全不同",
+   "使用的神經元模型完全不同"
+  ],
+  "answer": 0,
+  "explanation": "神經元模型與學習法則兩者同源；真正的分野在特徵工程 vs 表徵學習，以及規模。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
+  "id": "pt-L0-1-30",
+  "topic": "pytorch",
+  "unit": "L0-1",
+  "unit_name": "Lab0-1 神經網路之簡介",
+  "category": "Lab0-1 神經網路之簡介",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "為什麼「局部最小值」在今天已經不是深度學習的主要障礙？",
+  "options": [
+   "現代的損失函數都已被設計成凸函數",
+   "層數夠多之後，損失函數只會剩一個極小值",
+   "Adam 最佳化器會先掃過整個參數空間，再決定從哪裡出發",
+   "高維空間中鞍點多於局部極小值，SGD 的隨機性即可脫離"
+  ],
+  "answer": 3,
+  "explanation": "這是 1990 年代五大難題之一，今天已非主要障礙；隱藏層數、學習率也都被工程化解決了。",
+  "fun_fact": "",
+  "region": "Deep Learning"
+ },
+ {
   "id": "pt-L1-01",
   "topic": "pytorch",
   "unit": "L1",
