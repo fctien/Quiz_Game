@@ -684,37 +684,49 @@ function final(v, fresh){
       : `這場成績可以存入班級「${esc(v.class_code)}」的累積積分。<div class="row"><button class="btn" id="save">存入班級積分</button></div>`}</div>` : ''}
     <div class="row"><button class="btn ghost" id="close">關閉考坊</button><button class="btn" id="again">再來一局</button></div>`;
   document.getElementById('save')?.addEventListener('click', e => { e.target.disabled = true; act('/api/mp/save_class'); });
-  document.getElementById('again').onclick = () => { lastQ = -1; act('/api/mp/again'); };
   document.getElementById('sharecsv').onclick = e => shareScores(v, e.currentTarget);
 
-  /* 關掉考坊 = 這一場的成績就沒了。按下去先看成績收好了沒。 */
   const expLink = document.getElementById('expcsv');
   const markGot = () => { gotCsv = true; expLink.textContent = '成績已匯出 ✓　再按可重新下載'; };
   expLink.addEventListener('click', markGot);
   if (gotCsv) markGot();
 
-  const doClose = () => { document.getElementById('close').disabled = true;
-                          act('/api/mp/close').then(() => leaveRoom()); };
-  document.getElementById('close').onclick = () => {
+  /* 「關閉考坊」和「再來一局」都會讓這一場的成績消失,按下去先檢查收好了沒。
+     缺東西就不做,在畫面上列出缺哪幾項,讓老師先收;真的要硬做也要再確認一次。 */
+  function guard(w){
     const miss = [];
     if (!gotCsv) miss.push('這一場的成績還沒匯出 CSV');
     if (v.class_code && !v.saved) miss.push(`還沒存入班級「${esc(v.class_code)}」的累積積分`);
-    if (!miss.length) return confirm('成績都收好了。確定要關閉考坊嗎？') && doClose();
+    if (!miss.length) return confirm(w.ask) && w.go();
     const box = document.getElementById('closewarn');
     box.hidden = false;
-    box.innerHTML = `<b>先把成績收好，再關考坊</b>
-      <p>${miss.map(m => '・' + m).join('<br>')}<br>
-         <b>關閉之後這一場的成績就拿不回來了</b>，考坊一關，房號與名單都會消失。</p>
+    box.innerHTML = `<b>${w.title}</b>
+      <p>${miss.map(m => '・' + m).join('<br>')}<br>${w.why}</p>
       <div class="row"><button class="btn" id="fixfirst">回去收成績</button>
-        <button class="btn ghost" id="closeanyway">我已經存好了，直接關閉</button></div>`;
+        <button class="btn ghost" id="goanyway">${w.anyway}</button></div>`;
     box.scrollIntoView({behavior: 'smooth', block: 'center'});
     document.getElementById('fixfirst').onclick = () => { box.hidden = true; box.innerHTML = '';
       (v.class_code && !v.saved ? document.getElementById('save') : expLink)
         ?.scrollIntoView({behavior: 'smooth', block: 'center'}); };
-    document.getElementById('closeanyway').onclick = () => {
-      if (confirm('確定？這一場的成績關掉就找不回來了。')) doClose();
-    };
-  };
+    document.getElementById('goanyway').onclick = () => { if (confirm(w.sure)) w.go(); };
+  }
+
+  document.getElementById('close').onclick = () => guard({
+    title: '先把成績收好，再關考坊',
+    why: '<b>關閉之後這一場的成績就拿不回來了</b>，考坊一關，房號與名單都會消失。',
+    anyway: '我已經存好了，直接關閉',
+    ask: '成績都收好了。確定要關閉考坊嗎？',
+    sure: '確定？這一場的成績關掉就找不回來了。',
+    go: () => { document.getElementById('close').disabled = true;
+                act('/api/mp/close').then(() => leaveRoom()); }});
+
+  document.getElementById('again').onclick = () => guard({
+    title: '先把成績收好，再開下一局',
+    why: '<b>再來一局會把這一場的分數歸零、題目重抽</b>，這一份成績就被蓋掉了（房號與名單會留著）。',
+    anyway: '我已經存好了，開下一局',
+    ask: '成績都收好了。要開下一局嗎？',
+    sure: '確定？這一場的成績會被下一局蓋掉。',
+    go: () => { lastQ = -1; act('/api/mp/again'); }});
 }
 
 H ? connect() : setup();
