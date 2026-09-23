@@ -1,0 +1,3003 @@
+[
+ {
+  "id": "emba-MV-01",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "機器視覺的四大應用領域是哪四項？",
+  "options": [
+   "量測、計數、搜尋定位、解碼",
+   "拍照、儲存、傳輸、列印",
+   "設計、製造、檢驗、包裝",
+   "打光、取像、運算、顯示"
+  ],
+  "answer": 0,
+  "explanation": "Measurement、Counting、Location、Decoding 是教材歸納的四大領域，其他應用多半是這四類的組合。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-02",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "四大領域中的「解碼（Decoding）」，指的是哪一類工作？",
+  "options": [
+   "把彩色影像轉成灰階",
+   "把類比訊號轉成數位訊號",
+   "讀取條碼、二維碼與印刷字元",
+   "解開加密過的影像檔案"
+  ],
+  "answer": 2,
+  "explanation": "解碼泛指把影像上的編碼資訊讀成資料，包括 1D／2D 條碼；廣義上也常把印刷字元辨識（OCR）一併歸入這一類。教材電子產業的 OCR 與家電業的 1維／2維／QR 條碼辨識都是這類讀取應用的例子。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-03",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "機器視覺應用範圍中的「Present／Absent」是什麼意思？",
+  "options": [
+   "檢查產品是否準時出貨",
+   "檢查該有的東西在不在",
+   "檢查顏色是否偏移",
+   "檢查表面是否平整"
+  ],
+  "answer": 1,
+  "explanation": "也就是有無檢測，例如零件有沒有漏裝、標籤有沒有貼上，是最基本也最常見的一類檢測。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-04",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "教材把哪些項目歸在「Dimension（尺寸）」這一類？",
+  "options": [
+   "小孔、刮傷、污染、裂痕、磨損",
+   "組裝正確性與異物",
+   "顏色與樣式",
+   "長寬高、半徑、形狀、位置、真圓度"
+  ],
+  "answer": 3,
+  "explanation": "刮傷裂痕屬於表面瑕疵、組裝正確性屬於結構性檢測，各自是不同的類別。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-05",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "下列哪一組全部屬於教材所說的「表面瑕疵」？",
+  "options": [
+   "長度、半徑、真圓度、位置",
+   "小孔、刮傷、裂痕、磨損",
+   "條碼、字元、顏色、樣式",
+   "漏件、錯件、異物、反裝"
+  ],
+  "answer": 1,
+  "explanation": "英文對應是 pits、scratches、cracks、wear、finish、roughness、texture。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-06",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "教材舉了哪一個例子，說明「人力無法確實檢驗」？",
+  "options": [
+   "外箱有沒有破損",
+   "真圓度的 Go／No-Go 判定",
+   "包裝盒的顏色是否正確",
+   "產品有沒有貼標籤"
+  ],
+  "answer": 1,
+  "explanation": "另外還有半徑、微小產品量測與瑕疵面積，這些都超出人眼穩定判讀的能力。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-07",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "依教材，下列何者**不是**適合導入機器視覺的時機？",
+  "options": [
+   "產品太小、移動太快或數量太多",
+   "檢驗環境危險，不適合人員靠近",
+   "需要線上全檢但人力做不來",
+   "產品規格經常大幅變動、換線頻繁"
+  ],
+  "answer": 3,
+  "explanation": "教材在實踐步驟中特別提醒：要挑產品穩定成熟、換線變化較少、Spec 變異不可太大的對象。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-08",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "食品加工與包裝業的典型機器視覺應用是什麼？",
+  "options": [
+   "皮革表面特性檢測",
+   "白車身尺寸檢驗",
+   "鋼板表面瑕疵檢測",
+   "瓶內液位與異物檢測"
+  ],
+  "answer": 3,
+  "explanation": "教材另列了包裝印刷辨識、打印字形與零件編號的檢測與識別。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-09",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "導入機器視覺的第一步是什麼？",
+  "options": [
+   "先買最高規格的相機與鏡頭",
+   "分析製程、確認要實施的對象",
+   "先找設備商報價比價",
+   "先訂出可接受的不良率"
+  ],
+  "answer": 1,
+  "explanation": "選錯對象，後面的光學與演算法再強也救不回來。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-10",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "教材強調檢測規範（Spec）應該怎麼訂？",
+  "options": [
+   "直接沿用現行的 QA 規格，不必另訂",
+   "以 AOI 的量測能力與變異訂定，不照搬 QA 規格",
+   "先不訂規範，等設備上線後再說",
+   "由設備商全權決定，使用者不介入"
+  ],
+  "answer": 1,
+  "explanation": "先了解量測系統本身的變異，訂出 AOI 做得到的標準，再談和品管規格如何銜接。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-11",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "教材列出的機器視覺三大效益是什麼？",
+  "options": [
+   "成本、時效、效能三項",
+   "省電、省空間、省材料",
+   "減少庫存、縮短交期、降低運費",
+   "提高售價、擴大市占、增加品牌價值"
+  ],
+  "answer": 0,
+  "explanation": "口訣是 Never Get Tired、Faster & Reliable、Cost & Quality。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-12",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "教材把導入機器視覺的目標寫成哪一句話？",
+  "options": [
+   "用視覺完全取代現場作業員",
+   "用視覺達成零缺陷的產品良率",
+   "用視覺檢查品質，並回頭追溯原因",
+   "用視覺自動產生生產排程"
+  ],
+  "answer": 2,
+  "explanation": "原文是 Vision to check Quality → trace causes，檢測只是手段，找出問題根源才是目的。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-13",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "教材提到導入時的「合作」指的是什麼？",
+  "options": [
+   "不同產線班別之間的輪值合作",
+   "使用者與 AOI 設備商的團隊合作",
+   "學校與企業之間的產學合作",
+   "品管部門與業務部門的合作"
+  ],
+  "answer": 1,
+  "explanation": "使用者最懂製程與缺陷定義，設備商最懂光學與演算法，兩邊要一起把規格談出來。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-14",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "教材用「5W2H」來問 AOI，其中的 2H 指的是什麼？",
+  "options": [
+   "How fast 與 How many",
+   "How to 與 How much",
+   "How often 與 How hard",
+   "How good 與 How long"
+  ],
+  "answer": 1,
+  "explanation": "另外五個 W 是 Why、Who、What、When、Where，用來把導入前該想清楚的問題問過一遍。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-15",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "這門課設定的學習目標是什麼？",
+  "options": [
+   "讓學員未來能有效運用或選用視覺系統",
+   "讓學員取得機器視覺的國際證照",
+   "讓學員能自行設計光學鏡頭",
+   "讓學員能自行撰寫影像處理演算法"
+  ],
+  "answer": 0,
+  "explanation": "課程從基本架構、元件、打光一路談到應用與案例，目的是建立選用與運用的判斷力。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-16",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "教材逐頁說明的美國工業案例（Problem 1～16）共有幾個？",
+  "options": [
+   "30 個",
+   "24 個",
+   "10 個",
+   "16 個"
+  ],
+  "answer": 3,
+  "explanation": "從巧克力包裝、雞胸肉分切、檸檬與花生篩選，一路到 3D 重建與逆向工程，逐頁編號為 Problem 1～16。（原始投影片標題寫 19、條列清單 18 項，與實際案例頁對不上，已在修正版統一為 16。）",
+  "fun_fact": "",
+  "region": "EMBA",
+  "note": "若不想保留這種數字爭議，建議直接刪除本題，或改問案例內容（如 emba-MV-19 的作法）；另請老師確認投影片標題的 19 與實際 16 個案例是否需要更新一致。"
+ },
+ {
+  "id": "emba-MV-17",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "案例中的「Reverse Engineering」是為哪一個單位做的？",
+  "options": [
+   "美國海軍（US Navy）",
+   "美國食品藥物管理局（FDA）",
+   "美國國家標準局（NIST）",
+   "美國太空總署（NASA）"
+  ],
+  "answer": 0,
+  "explanation": "逆向工程用三維量測把既有零件還原成數位模型，常見於老舊裝備缺乏圖面時的備料需求。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-18",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "案例「Crown and Bottle Inspection」中的 Crown 指的是什麼？",
+  "options": [
+   "玻璃瓶的瓶底",
+   "瓶身的商標",
+   "包裝箱的封口",
+   "瓶蓋"
+  ],
+  "answer": 3,
+  "explanation": "皇冠蓋的密封面若有缺口或變形就會漏氣，是飲料產線常見的檢測項目。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-19",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "下列哪一個案例**不在**教材列出的美國案例清單中？",
+  "options": [
+   "尿布檢測",
+   "點焊檢測",
+   "晶圓切割道檢測",
+   "香菸包裝檢測"
+  ],
+  "answer": 2,
+  "explanation": "清單涵蓋食品、飲料、菸草、汽車、電子與民生用品，但沒有晶圓製程的案例。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-20",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "AOI 這個縮寫的全稱是什麼？",
+  "options": [
+   "Automatic Object Identification",
+   "Automated Optical Inspection",
+   "Advanced Optical Imaging",
+   "Applied Optics Instrument"
+  ],
+  "answer": 1,
+  "explanation": "中文是自動光學檢測，泛指用光學取像加上電腦判讀來取代人眼檢查的系統。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-21",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "要量測工件的外形尺寸與輪廓，最適合的打光方式是什麼？",
+  "options": [
+   "背光（Backlight）",
+   "同軸光（Coaxial）",
+   "暗視野（Dark field）",
+   "結構光（Structured light）"
+  ],
+  "answer": 0,
+  "explanation": "背光讓工件成為黑色剪影，邊緣對比最強、最穩定，是尺寸量測的首選。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-22",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "檢查平整且反光的表面（例如晶圓或鏡面）時，通常會用哪一種打光？",
+  "options": [
+   "低角度環形光",
+   "背光（Backlight）",
+   "同軸光（Coaxial）",
+   "漫射穹頂光"
+  ],
+  "answer": 2,
+  "explanation": "同軸光讓光線與鏡頭同軸入射，反射回來的亮度均勻，適合鏡面類表面。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-23",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "低角度或暗視野打光最擅長凸顯什麼？",
+  "options": [
+   "刮傷與凹凸等表面起伏",
+   "透明容器內的液位",
+   "工件的外形輪廓",
+   "彩色標籤的色差"
+  ],
+  "answer": 0,
+  "explanation": "光幾乎平行表面射入，平坦處不反光呈暗、起伏處散射成亮，缺陷因此被凸顯出來。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-24",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "若視野（FOV）寬 100 mm，相機水平方向有 2,000 個像素，每個像素對應多少實際尺寸？",
+  "options": [
+   "0.05 mm",
+   "0.2 mm",
+   "0.5 mm",
+   "2 mm"
+  ],
+  "answer": 0,
+  "explanation": "100 mm ÷ 2,000 = 0.05 mm。實務上要辨識一個缺陷，通常需要好幾個像素涵蓋它。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-25",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "遠心鏡頭（Telecentric lens）相對於一般鏡頭的主要好處是什麼？",
+  "options": [
+   "視野可以做得特別大",
+   "成本比一般鏡頭低很多",
+   "不需要任何打光就能取像",
+   "物體遠近改變，成像大小幾乎不變"
+  ],
+  "answer": 3,
+  "explanation": "一般鏡頭有透視誤差，物體靠近就變大；遠心鏡頭消除這個誤差，量測尺寸才會穩定。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-26",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "要拍攝高速移動中的產品而不模糊，關鍵是什麼？",
+  "options": [
+   "把鏡頭光圈開到最大",
+   "縮短曝光時間並搭配頻閃光源",
+   "改用彩色相機取代黑白相機",
+   "把相機解析度調到最低"
+  ],
+  "answer": 1,
+  "explanation": "曝光時間內工件移動的距離必須小於一個像素所對應的實際尺寸，影像才不會拖影。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-27",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "檢測系統把不良品判成良品，一般稱為什麼？",
+  "options": [
+   "誤報（False alarm）",
+   "過殺（Over-kill）",
+   "漏檢（Under-kill）",
+   "重工（Rework）"
+  ],
+  "answer": 2,
+  "explanation": "反過來把良品判成不良品叫過殺；兩者互為消長，調門檻時必須一起看。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-28",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "相較於人眼，機器視覺最明顯的優勢是什麼？",
+  "options": [
+   "能理解產品的設計意圖",
+   "能自行判斷該不該停線",
+   "不會疲勞，能長時間維持一致的判定",
+   "遇到沒看過的缺陷也一定判得出來"
+  ],
+  "answer": 2,
+  "explanation": "這正是教材的 Never Get Tired；但也代表沒教過的缺陷型態，系統不會自己學會。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-29",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "在 IC 與電子產業的應用中，Wire Bonding 檢測看的是什麼？",
+  "options": [
+   "晶片的溫度是否過高",
+   "打線的位置與形狀是否正確",
+   "電路板的阻抗是否合格",
+   "包裝盒的印刷是否清晰"
+  ],
+  "answer": 1,
+  "explanation": "教材另列了 IC 腳位檢測、Die Bonding 的 2D／3D 檢測與 Lead scan 快速六面檢測。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-30",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "教材提到的紅外線熱影像檢測，是用來看什麼？",
+  "options": [
+   "元件表面的刮傷",
+   "元件表面的溫度分布",
+   "元件的尺寸公差",
+   "元件的條碼內容"
+  ],
+  "answer": 1,
+  "explanation": "以顏色深淺表示溫差，可用來找出異常發熱的位置，常見於控制器與電子元件檢測。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-31",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "線掃描相機（Line scan camera）最適合什麼場合？",
+  "options": [
+   "靜止不動的小零件，做抽樣檢驗",
+   "需要一次拍下彩色全景畫面的場合",
+   "連續捲料的檢測，例如鋼捲、紙張、布料",
+   "光線極暗、又完全無法補光的場合"
+  ],
+  "answer": 2,
+  "explanation": "線掃描一次只取一列像素，靠工件或相機移動把影像一列一列拼起來，適合連續料帶與超長工件。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-32",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "拍攝高速移動的物體時，為什麼通常選用全域快門（Global shutter）？",
+  "options": [
+   "所有像素同時曝光，不會產生歪斜變形",
+   "耗電量比捲簾快門低很多，適合長時間運轉",
+   "可以拍出飽和度更高、更鮮豔的色彩",
+   "感測器的成本比捲簾快門便宜許多"
+  ],
+  "answer": 0,
+  "explanation": "捲簾快門逐列曝光，物體在曝光期間移動就會歪斜（果凍效應），量測尺寸會失真。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-33",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "檢測系統若要辨識 0.1 mm 的缺陷，一般的經驗法則是什麼？",
+  "options": [
+   "一個像素剛好等於 0.1 mm 即可",
+   "一個缺陷至少要涵蓋 3 到 5 個像素",
+   "解析度愈低愈好，才不會受雜訊干擾",
+   "與解析度無關，靠演算法即可補足"
+  ],
+  "answer": 1,
+  "explanation": "只用一個像素去涵蓋缺陷，雜訊或位置偏移就會讓它消失；留幾個像素的餘裕，判定才穩。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-34",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "在感測器尺寸固定的情況下，把鏡頭換成焦距更長的，視野會如何變化？",
+  "options": [
+   "視野變大，看到的範圍變寬",
+   "視野不變，只有亮度改變",
+   "視野不變，只有景深改變",
+   "視野變小，看到的範圍變窄"
+  ],
+  "answer": 3,
+  "explanation": "焦距愈長放大率愈高、視野愈小；要同時兼顧視野與解析度，就得從工作距離與感測器尺寸一起算。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-35",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "把光圈縮小（F 值調大），對成像會有什麼影響？",
+  "options": [
+   "景深變深，但進光量變少",
+   "景深與進光量都不受影響",
+   "景深與進光量都變大",
+   "景深變淺，進光量變多"
+  ],
+  "answer": 0,
+  "explanation": "工件高低起伏大時常需要縮光圈換景深，代價是要補更多光或拉長曝光時間。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-36",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "漫射式穹頂光（Dome light）最適合用在什麼工件上？",
+  "options": [
+   "完全透明、幾乎不反光的玻璃基板",
+   "需要精確量測外形輪廓的薄片零件",
+   "曲面或有光澤、容易產生反光亮點的工件",
+   "在產線上高速移動的連續料帶"
+  ],
+  "answer": 2,
+  "explanation": "穹頂光從各個角度均勻照射，把反光亮點抹平，適合罐頭蓋、曲面金屬件這類工件。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-37",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "二值化（Thresholding）在機器視覺中的作用是什麼？",
+  "options": [
+   "把彩色影像轉換成灰階影像",
+   "把影像等比例放大成兩倍大小",
+   "用灰階門檻把前景與背景分開",
+   "把影像中的雜訊完全消除乾淨"
+  ],
+  "answer": 2,
+  "explanation": "門檻值的選擇直接影響後續量測；打光不穩定時，固定門檻很容易失效。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-38",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "Blob 分析（Blob analysis）通常用來取得什麼資訊？",
+  "options": [
+   "鏡頭本身的幾何失真參數",
+   "整張影像的色溫與白平衡參數",
+   "工件表面各處的溫度分布狀況",
+   "連通區域的面積、重心、數量與形狀"
+  ],
+  "answer": 3,
+  "explanation": "計數與瑕疵面積這兩類應用大量依賴 Blob 分析，它算的是二值化之後連在一起的像素群。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-39",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "樣板比對（Template matching）最常被用來做什麼？",
+  "options": [
+   "在影像中找出特定圖樣的位置",
+   "量測工件的絕對尺寸與公差",
+   "解讀二維條碼裡編碼的內容",
+   "判斷工件表面的粗糙度等級"
+  ],
+  "answer": 0,
+  "explanation": "這正是四大領域中「搜尋／定位」的典型手法，找到位置之後才能進一步量測或對位。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-40",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "所謂「次像素（Sub-pixel）」精度，指的是什麼？",
+  "options": [
+   "把影像放大好幾倍之後再重新量測",
+   "改用解析度更高的相機重新拍攝一次",
+   "用灰階變化推算出比一個像素更細的邊緣位置",
+   "把連續多張影像疊合起來以降低雜訊"
+  ],
+  "answer": 2,
+  "explanation": "邊緣通常不會剛好落在像素格線上；利用邊緣附近的灰階梯度內插，可以把精度推到零點幾個像素。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-41",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "形態學運算中的「開運算（Opening）」主要用來做什麼？",
+  "options": [
+   "把斷開的線條重新連接起來",
+   "加強整張影像的明暗對比",
+   "去除小顆粒雜訊，保留主體形狀",
+   "偵測影像中所有的直線段"
+  ],
+  "answer": 2,
+  "explanation": "先侵蝕再膨脹；反過來的閉運算（Closing）則用來填補小孔洞與接合細縫。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-42",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "機器視覺系統的「工作距離（Working distance）」指的是什麼？",
+  "options": [
+   "鏡頭前端到被測物表面的距離",
+   "相機到電腦主機的距離",
+   "光源到相機的距離",
+   "產線兩個工站之間的距離"
+  ],
+  "answer": 0,
+  "explanation": "工作距離、焦距、感測器尺寸與視野四者互相牽動，設計時要一起決定，不能事後硬改。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-43",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "相機校正（Calibration）用棋盤格板的主要目的是什麼？",
+  "options": [
+   "調整影像的色彩飽和度與白平衡",
+   "確認現場光源的照度是否足夠",
+   "測試相機能達到的最高拍攝速度",
+   "建立像素與實際尺寸的對應，並修正鏡頭失真"
+  ],
+  "answer": 3,
+  "explanation": "沒有校正，量出來的只是像素數；校正之後才談得上公釐，鏡頭的桶狀／枕狀失真也才能補償。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-44",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "評估要不要導入 AOI 時，「節拍時間（Takt time）」為什麼重要？",
+  "options": [
+   "檢測速度必須跟得上產線節拍，否則會變成瓶頸",
+   "它直接決定了整套系統的採購預算",
+   "它決定了要選用彩色相機還是黑白相機",
+   "它決定了缺陷判定門檻要設在哪裡"
+  ],
+  "answer": 0,
+  "explanation": "取像、傳輸與運算的總時間若超過單件節拍，再準的系統也只能讓產線停下來等它。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-45",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "調整判定門檻時，漏檢與過殺之間的關係是什麼？",
+  "options": [
+   "兩者互不相干，可以各自分別最佳化",
+   "兩者會同時下降，不必做任何取捨",
+   "互為消長，壓低一邊通常會讓另一邊上升",
+   "只要把解析度提高，兩者就都會歸零"
+  ],
+  "answer": 2,
+  "explanation": "所以驗收時要同時給兩個指標，並依漏檢與過殺的實際成本來決定門檻要偏哪一邊。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-46",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "現場最常見、卻最容易被忽略的系統不穩定來源是什麼？",
+  "options": [
+   "環境光變化與鏡頭、光源積灰",
+   "檢測電腦的作業系統版本太舊",
+   "檢測結果報表的匯出與歸檔頻率",
+   "影像檔案採用的儲存格式不同"
+  ],
+  "answer": 0,
+  "explanation": "打光一變，門檻就失準；所以實務上會加遮光罩、定期清潔，並把光源亮度納入保養項目。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-47",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "相較於傳統規則式 AOI，深度學習的優勢主要在哪裡？",
+  "options": [
+   "完全不需要任何影像資料就能上線",
+   "能處理外觀變異大、難以用規則描述的缺陷",
+   "需要的運算量比傳統方法小很多",
+   "判定的結果一定比傳統方法更容易解釋"
+  ],
+  "answer": 1,
+  "explanation": "代價是需要資料與標註，而且判定過程較難解釋，產線上通常兩者並用而非互相取代。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-48",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "以「只用良品訓練」為特色的異常偵測方法，最適合什麼情況？",
+  "options": [
+   "每一種缺陷都已經蒐集到上萬張影像",
+   "蒐集到的缺陷樣本比良品還要多",
+   "良品之間的外觀變異極大、無一致的正常樣態",
+   "缺陷樣本很少、而且缺陷型態難以窮舉"
+  ],
+  "answer": 3,
+  "explanation": "產線上良品好收、缺陷難收，這類方法學會「正常長什麼樣」，偏離就給高異常分數。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-49",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "依教材的產業清單，金屬鋼鐵業的典型應用不包含下列何者？",
+  "options": [
+   "鋼板尺寸與表面瑕疵檢測",
+   "3D 真圓度量測",
+   "鑄件瑕疵檢測",
+   "瓶內液位高度檢測"
+  ],
+  "answer": 3,
+  "explanation": "瓶內液位屬於食品加工與包裝業；金屬鋼鐵業另有材料金像檢測與球面檢測。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-MV-50",
+  "topic": "emba",
+  "unit": "MV",
+  "unit_name": "機器視覺檢測技術",
+  "category": "機器視覺檢測技術",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "保全與監視系統這一類應用，教材列出的項目是什麼？",
+  "options": [
+   "鋼板的尺寸與表面瑕疵檢測",
+   "熔焊接點的品質檢測",
+   "皮革的表面特性與色差檢測",
+   "人像特徵、指紋與虹膜辨識"
+  ],
+  "answer": 3,
+  "explanation": "這是廣義 AOI 的延伸——同樣是用影像取代人眼判讀，只是對象從產品換成了人。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-01",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "簡報中熱熔保險絲自動檢測系統主要抓哪些瑕疵？",
+  "options": [
+   "錫不足、空焊、錫橋、假焊",
+   "缺角、崩邊、白點、彎腳",
+   "氧化、變色、龜裂、翹曲",
+   "毛邊、大小頭、鏟絲、黑點"
+  ],
+  "answer": 3,
+  "explanation": "熱熔保險絲案以光學系統取像，鎖定毛邊、大小頭、鏟絲與黑點這幾類內部瑕疵。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-02",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報的再生晶圓瑕疵辨識與分類採用哪類方法？",
+  "options": [
+   "SVM 與隨機森林等分類器",
+   "BPN 與 CNN 類神經網路",
+   "傅立葉轉換與小波分析法",
+   "模板比對與霍夫轉換法"
+  ],
+  "answer": 1,
+  "explanation": "再生晶圓案標示為 BPN 與 CNN，屬於倒傳遞網路與卷積網路兩種類神經網路。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-03",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報的 Wire bonding 3D AOI 主要量測哪些項目？",
+  "options": [
+   "金線線徑與銲點表面顏色差異",
+   "晶片翹曲量與封膠厚度",
+   "銲點 stitch 與 ball height",
+   "基板平整度與導孔孔徑"
+  ],
+  "answer": 2,
+  "explanation": "該案用 3D AOI 做銲線精密量測，項目包含 stitch 與 ball height 等高度相關尺寸。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-04",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "簡報的精密鋼珠檢測，檢測項目包含下列何者？",
+  "options": [
+   "圓度、真圓度、直徑、表面粗糙度",
+   "鏽蝕、孔洞、平台、刮傷、髒污",
+   "裂紋、缺口、毛邊、翹曲、變形",
+   "色差、光澤、鍍層厚度、硬度"
+  ],
+  "answer": 1,
+  "explanation": "自動化鋼珠檢測系統列出的項目為鏽蝕、孔洞、平台、刮傷與髒污等表面瑕疵。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-05",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "簡報的玻璃瓶光學檢測，檢測項目包含下列何者？",
+  "options": [
+   "異物、刮傷、燒傷、結石、破泡",
+   "瓶口崩角、瓶身歪斜、容量不足",
+   "標籤貼歪、噴碼模糊、封蓋鬆動",
+   "色差、透光率、厚度、重量偏差"
+  ],
+  "answer": 0,
+  "explanation": "玻璃瓶案列出異物、刮傷、髒污、燒傷、結石、晶體、破泡等玻璃本體瑕疵。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-06",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報的「自動六面檢測系統」主要是針對哪一類產品做外觀檢測？",
+  "options": [
+   "IC 封裝基板",
+   "被動元件",
+   "連接器端子",
+   "LED 晶粒"
+  ],
+  "answer": 1,
+  "explanation": "簡報寫明該機台「主要檢測被動元件六面之瑕疵」，案例清單中也列有 Chip Inductor Inspection；因 microcrack 不易檢出，才另外加入 DNN。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-07",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "簡報的自動化瓶蓋檢測系統會檢測瓶蓋的哪些面？",
+  "options": [
+   "正面、反面與側面",
+   "只檢測正面與反面",
+   "只檢測正面與側面",
+   "正面、反面與內壁螺紋"
+  ],
+  "answer": 0,
+  "explanation": "瓶蓋案主要檢測正、反、側三面的髒污與印刷不良等瑕疵。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-08",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報的 Hiwin 滑塊 AOI 檢測哪些項目？",
+  "options": [
+   "滑軌的直線度、預壓量與噪音值",
+   "螺紋數量、髒污與側面螺絲鎖緊",
+   "鋼珠循環順暢度與潤滑油量",
+   "端蓋外觀、雷射雕刻字與包裝"
+  ],
+  "answer": 1,
+  "explanation": "滑塊檢測案列出的項目是螺紋數量、髒污，以及側面螺絲是否鎖緊。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-09",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報的智能焊錫檢測（DIP 加 ANN）針對哪些不良？",
+  "options": [
+   "錫橋短路、偏移與立碑",
+   "焊點氧化、變色與龜裂",
+   "元件極性反向與缺件",
+   "露底材、無線尾與錫不足"
+  ],
+  "answer": 3,
+  "explanation": "智能焊錫檢測做的是 2D 表面檢測，項目為露底材、無線尾、錫不足等。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-10",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "簡報中 UCC 鍵盤軟板檢測系統整合了哪些硬體？",
+  "options": [
+   "六軸機械手臂與線掃描相機模組",
+   "轉盤式送料機與三台彩色相機",
+   "共軛焦顯微鏡與雷射位移感測",
+   "XY 平台、兩台 CCD 與光源控制"
+  ],
+  "answer": 3,
+  "explanation": "該案的系統整合為伺服馬達驅動的 XY-Table、兩台 CCD 以及光源控制。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-11",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "簡報中的 RAVIS 指的是什麼系統？",
+  "options": [
+   "機器人輔助視覺檢測系統",
+   "快速自動視覺檢驗軟體",
+   "隨機取樣視覺分析系統",
+   "遠端輔助視覺量測平台"
+  ],
+  "answer": 0,
+  "explanation": "RAVIS 全稱 Robot Aided Vision Inspection System，是與 Foxconn 合作的機器人輔助檢測案。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-12",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報指出 TSMC 現行 Probe Card 的量測方式為何？",
+  "options": [
+   "人工抽檢，用顯微鏡加光學尺判讀",
+   "全檢，由自動探針台逐針自動量測",
+   "抽檢，用雷射干涉儀自動量測",
+   "全檢，以 3D 白光干涉儀掃描"
+  ],
+  "answer": 0,
+  "explanation": "簡報寫明廠內是人工抽檢，用 20 倍顯微鏡搭配光學尺，並由人工判定對焦準確度。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-13",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報的熱敏組檢測中，哪一項不良是靠 DNN 才突破的？",
+  "options": [
+   "無晶片的判定",
+   "晶片歪斜的判定",
+   "吃錫不足的判定",
+   "錫黑的判定"
+  ],
+  "answer": 2,
+  "explanation": "熱敏組案以 DIP 處理多數不良，另以深度學習突破吃錫不足這一項的檢測。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-14",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "簡報的油封檢測，要抓多大以上的表面突起氣泡？",
+  "options": [
+   "0.5 mm 以上",
+   "0.01 mm 以上",
+   "0.05 mm 以上",
+   "1 mm 以上"
+  ],
+  "answer": 2,
+  "explanation": "油封案以 3D 掃描設備結合影像處理與深度學習，檢測 0.05 mm 以上的突起氣泡。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-15",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報中 Microcrack 瑕疵檢測（CNN）案的目的是什麼？",
+  "options": [
+   "補足六面檢測機台看不到細微裂痕",
+   "取代六面檢測機台的全部檢測項目",
+   "加快六面檢測機台的取像與換料速度",
+   "讓六面檢測機台可以量測元件的尺寸"
+  ],
+  "answer": 0,
+  "explanation": "該案定位是補強既有機台，針對微細表面裂痕這個既有做法的死角。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-16",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報指出一般 AOI 機台仍需大量人力介入在哪些環節？",
+  "options": [
+   "光源選型、鏡頭採購與機構設計",
+   "ROI 設定、編程修正與人工覆判",
+   "產線排程、物料配送與良率統計",
+   "電源配置、網路布線與資安稽核"
+  ],
+  "answer": 1,
+  "explanation": "PCBA 案點出一般 AOI 元件數量多，ROI 設定、編程與修正、事後人工覆判與補修都很耗人力。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-17",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "簡報的 PCBA 漏件及多件偵測採用哪一種模型？",
+  "options": [
+   "YOLOv3",
+   "ResNet50",
+   "U-Net",
+   "LSTM"
+  ],
+  "answer": 0,
+  "explanation": "該案建構自動化取像系統，搭配 YOLOv3 做即時的元件漏件或多件物件偵測。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-18",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "簡報的電容定位案以 800x600 影像標記訓練、再以 1024x800 影像測試，簡報說明這代表什麼？",
+  "options": [
+   "模型可容許不同尺度的影像做學習與測試",
+   "訓練與測試影像的解析度必須完全一致",
+   "測試影像越大準確率一定越高",
+   "標記影像越小訓練速度越快"
+  ],
+  "answer": 0,
+  "explanation": "簡報寫「以 800x600 標記作學習，另以 1024x800 之影像作測試，故可允許不同尺度之影像作學習及測試」。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-19",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "簡報的馬達 bearing 異音偵測，流程順序為何？",
+  "options": [
+   "收音 → 小波轉換 → 決策樹建模",
+   "收音 → FFT → PCA 加 SVM 建模",
+   "收音 → 頻譜圖 → CNN 影像分類",
+   "收音 → 自相關 → 門檻值判定"
+  ],
+  "answer": 1,
+  "explanation": "該案在產線用麥克風收音，轉成 FFT 頻譜後，結合 PCA 與 SVM 學習良品與不良品特徵。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-20",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報的爭鮮壽司辨識案，可辨識幾種壽司、準確率多少？",
+  "options": [
+   "30 種常備壽司，準確率 75% 以上",
+   "50 種常備壽司，準確率 92% 以上",
+   "50 種常備壽司，準確率 99% 以上",
+   "30 種常備壽司，準確率 92% 以上"
+  ],
+  "answer": 3,
+  "explanation": "在不偏移、外蓋位置正確的正常情況下，可即時辨識三十種常備壽司，準確率超過九成二。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-21",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "簡報自承爭鮮案最大的缺點是什麼？",
+  "options": [
+   "無法即時增加菜色，也不能自動學習",
+   "辨識速度太慢，無法跟上迴轉台速度",
+   "需要昂貴的 3D 相機才能正常運作",
+   "只能在光線充足的環境下正確辨識"
+  ],
+  "answer": 0,
+  "explanation": "簡報直言新菜色必須重新學習，且沒有自動學習功能，並自評這是該案的敗筆。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-22",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "玻璃基板檢測的 PatchCore 異常偵測用了多少訓練樣本？",
+  "options": [
+   "只用 10 片不良品",
+   "一千片良品與不良品",
+   "一萬片以上的標記影像",
+   "只用 10 片良品"
+  ],
+  "answer": 3,
+  "explanation": "該案標明 AD 以 PatchCore 進行，僅使用 10 片 good samples 即可建模。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-23",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "簡報的玻璃基板檢測是怎麼取像的？",
+  "options": [
+   "滑台移動，相機每隔 5 mm 拍一次",
+   "相機固定，用線掃描一次拍完整片板",
+   "滑台移動，相機每隔 0.5 mm 拍一次",
+   "旋轉台帶動，每轉 10 度拍一張"
+  ],
+  "answer": 2,
+  "explanation": "檢測物由馬達螺桿滑台帶動，相機每 0.5 mm 拍一次，再經透視變換裁切拼接成整張影像。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-24",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "簡報的鋼珠亮傷檢測，用什麼取像技巧凸顯瑕疵？",
+  "options": [
+   "打背光，讓瑕疵形成黑色的剪影",
+   "用同軸光，讓瑕疵反射出高亮點",
+   "用紫外光，激發瑕疵處的螢光",
+   "投影線條，利用線條在凹凸面扭曲"
+  ],
+  "answer": 3,
+  "explanation": "線條投影到鋼珠凹凸不平的表面會產生扭曲，藉此讓亮傷的樣貌被突顯出來。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-25",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報介紹的 DRAEM 由哪兩個子網路組成？",
+  "options": [
+   "生成子網路與對抗子網路",
+   "編碼子網路與分割子網路",
+   "重建子網路與判別子網路",
+   "定位子網路與分類子網路"
+  ],
+  "answer": 2,
+  "explanation": "DRAEM 先由重建網路把影像修回正常樣貌，再由判別網路比較原圖與重建圖的差異。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-26",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "簡報用 SPADE 生成 PCB 瑕疵影像，是為了解決什麼問題？",
+  "options": [
+   "瑕疵樣本數量不足",
+   "檢測機台速度不夠",
+   "標記人員成本太高",
+   "相機解析度不足"
+  ],
+  "answer": 0,
+  "explanation": "深度學習瑕疵分類常因瑕疵樣本太少而訓練效果不佳，故以生成方式做資料擴增。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-27",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "簡報中 SPADE 生成瑕疵影像時，輸入的是什麼？",
+  "options": [
+   "不良品影像加上文字描述提示",
+   "兩張良品影像做內插與混合",
+   "隨機雜訊加上類別標籤向量",
+   "OK 背景影像加上瑕疵 Mask"
+  ],
+  "answer": 3,
+  "explanation": "流程是把 OK 背景影像與瑕疵 Mask 經程式轉成邊緣圖與語意分割圖，再餵給模型生成。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-28",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報用 Heatmap 分析生成影像後，發現 DNN 其實是看什麼？",
+  "options": [
+   "瑕疵的邊緣輪廓，而不是內部紋理",
+   "背景或其他特徵，而不是瑕疵本身",
+   "影像的色彩分布，而不是空間位置",
+   "整張影像的平均亮度與對比度"
+  ],
+  "answer": 1,
+  "explanation": "人眼分不出的生成影像，DNN 卻輕易分辨，熱力圖顯示它其實抓到了背景等非瑕疵線索。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-29",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報用 Diffusion Model 生成瑕疵影像的做法是？",
+  "options": [
+   "Stable Diffusion 的超解析度放大",
+   "Stable Diffusion 的影像風格轉換",
+   "Stable Diffusion 的文字轉影像生成",
+   "Stable Diffusion 的 Inpainting"
+  ],
+  "answer": 3,
+  "explanation": "做法是輸入良品底圖與 mask，再以文字提示在遮罩區域生成指定的瑕疵。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-30",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報認為，為何要用深度學習取代商業定位軟體？",
+  "options": [
+   "安裝複雜、教育訓練久、售後服務不佳",
+   "記憶體佔用大、當機頻繁、難以整合",
+   "版權費高昂、適應性不足、檢測效率低",
+   "只支援彩色影像、無法處理金屬反光"
+  ],
+  "answer": 2,
+  "explanation": "簡報列出商業定位軟體的三個痛點：版權費高昂、適應性不足，以及多模型導致檢測效率低。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-31",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報選用 RTMDet-R 做 Panel 定位的主要理由是什麼？",
+  "options": [
+   "完全不需要標記資料即可訓練",
+   "可直接輸出文字辨識的結果",
+   "模型小、速度快且部署容易",
+   "內建商業軟體的授權可免費用"
+  ],
+  "answer": 2,
+  "explanation": "簡報列的理由是模型設計較小、運算速度快、原始性能高，且部署簡單、開發容易。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-32",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報指出腳踏車車架編碼難以辨識，主要卡在什麼？",
+  "options": [
+   "金屬材質、光線不均與污損",
+   "編碼字元數量多達上百碼",
+   "車架在產線上移動速度太快",
+   "編碼使用多國語言的字元"
+  ],
+  "answer": 0,
+  "explanation": "車架編碼受金屬材質、光線不均與污損影響，傳統條碼與 OCR 都難以正確辨識。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-33",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報的無人機偵測案用了哪一組技術？",
+  "options": [
+   "Faster R-CNN 加上卡爾曼濾波追蹤",
+   "YOLO11（簡報寫 Yolov11）加 Deep SORT 與 TensorRT",
+   "PatchCore 加 DRAEM 做異常偵測",
+   "OpenPose 加光流法做軌跡追蹤"
+  ],
+  "answer": 1,
+  "explanation": "該案以 YOLO（簡報寫 Yolov11，Ultralytics 官方名稱為 YOLO11）做偵測、Deep SORT 做跨影格追蹤，並以 TensorRT 加速，在 RTX 3060 上每秒 20~35 張。註：YOLO 系列版本更新快，此處指簡報製作當時採用的版本。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-34",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "簡報的 MV Tools 系統校正模組包含哪些功能？",
+  "options": [
+   "產能統計、良率分析與工單排程管理",
+   "機械手臂校正與輸送帶速度同步",
+   "資料庫備份、帳號權限與報表輸出",
+   "對焦偵測、像素長度與光源均勻度偵測"
+  ],
+  "answer": 3,
+  "explanation": "MV Tools 的目標是建立 AOI 的系統校正模組，含 Pattern 設計、對焦偵測、像素長度與光源均勻度偵測。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-35",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "異常偵測（AD）與一般分類器最大的差別是什麼？",
+  "options": [
+   "訓練時必須蒐集並標記齊全的各類瑕疵樣本",
+   "只能判斷整張影像是否異常，無法指出瑕疵位置",
+   "訓練時主要只用正常（良品）樣本建立模型",
+   "只適用於固定背景，無法處理有紋理的表面"
+  ],
+  "answer": 2,
+  "explanation": "工業異常偵測多屬 cold-start：只用良品建立正常樣態，偏離者即判為異常，不必事先蒐齊各種瑕疵；PatchCore、DRAEM 等方法也都能輸出像素級的瑕疵位置圖。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-36",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "PatchCore 是靠什麼判斷一張影像是否異常？",
+  "options": [
+   "直接用分類層輸出的異常機率值",
+   "計算影像與模板的像素差異總和",
+   "統計整張影像的亮度直方圖偏移量",
+   "比對正常 patch 特徵記憶庫的距離"
+  ],
+  "answer": 3,
+  "explanation": "PatchCore 用預訓練模型抽取良品的區塊特徵存成記憶庫（並以 coreset 精簡），測試時比對最近鄰距離。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-37",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "DRAEM 訓練時所用的異常樣本從哪裡來？",
+  "options": [
+   "必須從產線蒐集足量的真實瑕疵樣本",
+   "由另一個 GAN 網路先學會再生成",
+   "用合成方式模擬產生，不需真實瑕疵",
+   "由人工在良品影像上用繪圖軟體逐張描繪"
+  ],
+  "answer": 2,
+  "explanation": "DRAEM 用 Perlin 雜訊產生隨機形狀遮罩，再貼上外部紋理資料集（DTD）的紋理並隨機調整透明度，合成「接近分布外（just-out-of-distribution）」的假異常；訓練完全不需要真實瑕疵，且自動得到完美的像素級標註。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-38",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報用來生成 PCB 瑕疵影像的 SPADE（空間自適應標準化），原本是為了什麼任務而提出？",
+  "options": [
+   "由低解析度影像重建高解析度",
+   "由語意分割圖合成照片級影像",
+   "由影像自動產生文字描述句子",
+   "由多張影像拼接成全景大圖"
+  ],
+  "answer": 1,
+  "explanation": "SPADE 是空間自適應標準化層（Park 等人，2019），用語意布局去調變正規化層的參數，避免語意資訊在正規化時被洗掉，任務是由語意分割圖合成照片級影像。註：異常偵測領域另有同名但不同的 SPADE（Sub-Image Anomaly Detection, 2020），兩者不要混淆。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-39",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "DeepSORT 比原本的 SORT 多了什麼？",
+  "options": [
+   "加入雷達測距，提升定位精度",
+   "加入外觀特徵，減少身分跳換",
+   "改用三維座標，支援多攝影機",
+   "改用規則判斷，不需訓練資料"
+  ],
+  "answer": 1,
+  "explanation": "DeepSORT 以行人重識別資料集學到的外觀關聯度量輔助配對，原論文回報身分跳換減少約四成五。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-AOI-40",
+  "topic": "emba",
+  "unit": "AOI",
+  "unit_name": "AOI 案例分享",
+  "category": "AOI 案例分享",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "Grad-CAM 這類熱力圖主要是用來做什麼？",
+  "options": [
+   "顯示影像中每個像素的實際溫度分布",
+   "自動描出瑕疵的精確輪廓，可直接當成分割結果",
+   "看出模型判斷時依據影像哪些區域",
+   "在不重新訓練的情況下直接提升模型準確率"
+  ],
+  "answer": 2,
+  "explanation": "Grad-CAM 用流入最後一層卷積層的梯度做出「粗略」的定位圖，只能看出模型關注哪些區域，不是精確分割，也不會改變模型效能；常被用來檢查模型是不是學到了資料集偏誤——正如簡報用 Heatmap 發現 DNN 其實在看背景。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-01",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "簡報開場引用的《日本第一》（Japan as Number One）作者是誰？",
+  "options": [
+   "杭亭頓（Samuel Huntington）",
+   "佛里曼（Thomas Friedman）",
+   "傅高義（Ezra Vogel）",
+   "奈伊（Joseph Nye）"
+  ],
+  "answer": 2,
+  "explanation": "簡報以 1980 年代美國對日本的經濟施壓，作為理解今天美中科技競爭的歷史對照。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-02",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "1985 年《廣場協議》對日本造成的最直接效果是什麼？",
+  "options": [
+   "日圓大幅貶值",
+   "日圓大幅升值",
+   "日本被迫開放農產品市場",
+   "日本關稅全面調降"
+  ],
+  "answer": 1,
+  "explanation": "美國希望藉日圓升值降低對日貿易逆差；後續出現房地產泡沫、工時縮減與生產效率停滯。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-03",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "1987 年的「東芝事件」，美國制裁的理由是什麼？",
+  "options": [
+   "違反 CoCom 協議，向蘇聯出口九軸 CNC 工具機",
+   "東芝竊取美國企業的半導體專利技術",
+   "東芝在美國市場進行傾銷，售價低於成本",
+   "東芝拒絕配合美國的出口配額管制"
+  ],
+  "answer": 0,
+  "explanation": "違規出口的是東芝子公司東芝機械（夥同挪威 Kongsberg）；工具機被用於提升蘇聯攻擊核潛艇螺旋槳的加工精度、降低噪音。美方制裁包括禁止東芝機械產品輸美 3 年、禁止東芝集團參與美國政府採購 3 年，東芝董事長與總裁請辭。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-04",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報指出 1987 年日本的 DRAM 產值約占全球多少？",
+  "options": [
+   "約 40%",
+   "約 80%",
+   "約 60%",
+   "約 20%"
+  ],
+  "answer": 1,
+  "explanation": "1987 年日本廠商合計約占全球 DRAM 產值 80%，東芝是當時全球最大的 DRAM 生產商（單一公司市占約一至二成）。三十年後的 2018 年，東芝才把記憶體事業賣給貝恩資本（Bain Capital）領銜的財團，即今日的 Kioxia。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-05",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "簡報提到 1995 年日本的人均 GDP 與美國相比如何？",
+  "options": [
+   "高出美國約 54%",
+   "與美國大致相當",
+   "高出美國約 21%",
+   "低於美國約 20%"
+  ],
+  "answer": 0,
+  "explanation": "1990 年日本人均 GDP 已反超美國約 10%，1995 年更高出逾 50%（世銀現價美元：日本 44,947 vs 美國 28,691），這正是美日競爭最激烈的時期。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-06",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "中國 2017 年提出的《新一代人工智能發展規劃》，設定的目標是什麼？",
+  "options": [
+   "2030 年成為世界 AI 領先國",
+   "2030 年完成晶片全面國產化",
+   "2025 年 AI 產值超越美國",
+   "2035 年建成全球最大算力中心"
+  ],
+  "answer": 0,
+  "explanation": "這份規劃引發美國安全界與學術界高度警覺，被視為科技競爭的關鍵轉折點。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-07",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "2018 至 2020 年間，美國科技戰的主要制裁對象是哪些中國企業？",
+  "options": [
+   "阿里巴巴與騰訊",
+   "中芯與華為",
+   "比亞迪與寧德時代",
+   "小米與 OPPO"
+  ],
+  "answer": 1,
+  "explanation": "美國限制 AI 與晶片相關技術輸出；中國則強化「自主可控」戰略，扶持中芯國際與華為海思。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-08",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報比較中美 AI 硬體時，指出兩者的製程差距大約是多少？",
+  "options": [
+   "中國在先進製程上反而領先美國",
+   "兩者製程已經完全同步",
+   "中國約落後一個世代（4 奈米 vs 7 奈米）",
+   "中國約落後三個世代（3 奈米 vs 14 奈米）"
+  ],
+  "answer": 2,
+  "explanation": "簡報的判斷是：美國 4 奈米（NVIDIA GB200／NVL72，台積電 4NP）體積小、單位面積可放更多電晶體、耗能低；中國 7 奈米（中芯 N+2、華為昇騰）體積大、成本低、耗能高，約落後一個世代。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-09",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "華為創辦人任正非 2025 年受訪時，如何形容華為的晶片實力？",
+  "options": [
+   "落後美國三個世代，短期內無法追趕",
+   "已經完全追上美國最先進的製程",
+   "不再需要先進製程，改走量子運算路線",
+   "仍落後美國一個世代，但北京有許多 AI 優勢"
+  ],
+  "answer": 3,
+  "explanation": "任正非 2025 年 6 月 10 日接受《人民日報》頭版專訪，稱華為單晶片仍落後美國一代，但可用疊加（先進封裝）與集群運算彌補，且中國具備許多 AI 優勢。輝達執行長黃仁勳另在受訪時解讀：即使美國不參與中國市場，華為仍有實力覆蓋中國甚至其他市場的需求。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-10",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "簡報歸納的「AI War 五大關鍵」是哪五項？",
+  "options": [
+   "晶片、能源、土地、法規、人口",
+   "人才、算力、市場、資金、數據",
+   "演算法、專利、通路、品牌、資本",
+   "教育、國防、外交、貿易、金融"
+  ],
+  "answer": 1,
+  "explanation": "簡報也請學生自己給 1 到 10 分，比較中美在這五項上的相對強弱。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-11",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "在中美 AI 戰略對照表中，美國在「數據」這一項的重點是什麼？",
+  "options": [
+   "由政府統一調度全國的數據資源",
+   "強調隱私合規與商業化的數據資產",
+   "以開放數據為主，不設任何使用限制",
+   "主要依賴向其他國家購買數據"
+  ],
+  "answer": 1,
+  "explanation": "中國那一欄則是政府與企業合力、擁有龐大用戶數據，兩邊的數據治理模式相當不同。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-12",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "關於中美的 AI 人才，簡報的分析是什麼？",
+  "options": [
+   "中國在論文數量與頂尖人才上都已超越美國",
+   "美國在論文數量與頂尖人才上都仍大幅領先",
+   "中國論文數量第一，但尖端帶頭人仍集中在美國",
+   "兩國的人才結構已經沒有明顯差異"
+  ],
+  "answer": 2,
+  "explanation": "美國靠頂尖大學、國際人才磁吸與產學研一體化；中國人才總量龐大，但頂尖人才集中度仍偏低。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-13",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報列出的美國對中國三大手段，不包含下列何者？",
+  "options": [
+   "晶片與 EDA、光刻機的出口管制",
+   "禁止美國資金投入中國先進半導體與 AI",
+   "與日本、荷蘭協調管制高階半導體設備",
+   "直接沒收中國企業在美資產"
+  ],
+  "answer": 3,
+  "explanation": "三大手段是出口管制（卡算力與技術）、投資限制（卡資金）與聯盟合作（卡技術與市場）。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-14",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "中國的三大對應策略是什麼？",
+  "options": [
+   "自主可控、數據優勢、政策扶持",
+   "全面開放外資、加入更多貿易協定",
+   "貨幣貶值、擴大出口、壓低工資",
+   "減少研發支出、專注傳統製造"
+  ],
+  "answer": 0,
+  "explanation": "包括推進國產 GPU／CPU 與國內算力平台、利用內需市場的龐大數據訓練本土大模型、以基金與地方優惠扶持 AI 新創。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-15",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "面對美國的技術封鎖，簡報提到中國手上最關鍵的一張資源牌是什麼？",
+  "options": [
+   "黃金儲備",
+   "稀土出口管制",
+   "糧食出口管制",
+   "航運港口控制"
+  ],
+  "answer": 1,
+  "explanation": "稀土是製造手機、電動車、半導體與先進武器不可或缺的材料，中國是全球最大供應國。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-16",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "簡報附註說明，稀土（Rare Earth Elements）指的是什麼？",
+  "options": [
+   "地殼中含量極低的 7 種貴金屬",
+   "鈧、釔與鑭系共 17 種金屬元素",
+   "週期表最後一列的所有放射性元素",
+   "只存在於深海礦床的 12 種元素"
+  ],
+  "answer": 1,
+  "explanation": "稀土＝15 種鑭系元素（La 到 Lu）＋ 鈧（Sc）＋ 釔（Y），共 17 種。名字有「稀」，但地殼含量其實不低，難在開採與提煉困難且有環境污染風險，全球分布不均。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-17",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "簡報列出的資料中心 GPU（H200、H100、H20、L20）中，記憶體最大的是哪一款？",
+  "options": [
+   "H100（80GB HBM3）",
+   "L20",
+   "H200（141GB HBM3e）",
+   "H20（96GB HBM3）"
+  ],
+  "answer": 2,
+  "explanation": "H200 記憶體 141GB HBM3e、頻寬 4.8 TB/s，是 Hopper 世代記憶體最大的版本，可同時開啟大量上下文視窗；它的算力其實與 H100 相同（FP16 1,979 TFLOPS），差別在記憶體容量與頻寬。（註：2025 年後的 Blackwell B200 已達 192GB。）",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-18",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "有趣的是，H20 的記憶體比 H100 還多。兩者分別是多少？",
+  "options": [
+   "H20 96GB、H100 80GB",
+   "H20 80GB、H100 96GB",
+   "H20 141GB、H100 96GB",
+   "H20 40GB、H100 80GB"
+  ],
+  "answer": 0,
+  "explanation": "H20 是 Hopper 的最佳化變體：原始算力低很多，但記憶體與頻寬表現不差。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-19",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "簡報認為，美國管制高階 AI 晶片時對 H20 相對寬鬆，主要理由是什麼？",
+  "options": [
+   "H20 無法用於訓練大模型，只能用於繪圖",
+   "H20 的製程較舊，中國已有同級產品可以自製",
+   "H20 的產量太低，開放也沒有實質影響",
+   "H20 算力低很多，但推論快、記憶體更大、價格約一半"
+  ],
+  "answer": 3,
+  "explanation": "簡報的理由是：H20 原始算力低很多（296 vs 1,979 TFLOPS，同口徑約 6.7 倍差距），但推論速度快、記憶體 96GB 大於 H100 的 80GB、功耗僅 400W、價格約一半（約 1.2～1.5 萬美元）。（史實補充：H100／H200 自 2023 年 10 月起即禁輸中國；H20 則在 2025 年 4 月被加上出口許可要求、7～8 月才恢復出貨。）",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-20",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "H20 的功耗約 400W，這大約是 H100 的多少？",
+  "options": [
+   "與 H100 相同",
+   "約四分之一",
+   "約一半",
+   "約兩倍"
+  ],
+  "answer": 2,
+  "explanation": "H100 SXM 功耗最高 700W，H200 SXM 同樣是 700W（NVL 版 600W）；H20 只要 400W，約為 H100 的一半，這正是它被稱為「效率驚喜」的原因。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-21",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "任正非提出用來彌補晶片劣勢的三個方向是什麼？",
+  "options": [
+   "數學彌補物理、非摩爾補摩爾、群計算補單晶片",
+   "全面轉向軟體服務，放棄硬體",
+   "改用量子運算、光子晶片、類腦晶片",
+   "低價搶市、擴大產能、併購對手"
+  ],
+  "answer": 0,
+  "explanation": "也就是靠演算法、先進封裝與叢集運算，繞過單顆晶片製程落後的限制。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-22",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "華為 CloudMatrix 384 與輝達 GB200 NVL72 相比，簡報的結論是什麼？",
+  "options": [
+   "算力約一半，但耗電只有四分之一",
+   "算力與耗電都與 NVL72 相當",
+   "算力約 2 倍，且耗電更低",
+   "算力約 2 倍，但要 16 機櫃、耗電 4.1 倍"
+  ],
+  "answer": 3,
+  "explanation": "用 384 片昇騰晶片以光纖串接，硬是用數量換算力——代價是體積與電力。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-23",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "簡報對「叢集運算（Cluster Computing）」的定義是什麼？",
+  "options": [
+   "多台電腦連線協同工作，表現如同單一系統",
+   "把多顆晶片堆疊封裝在同一個基板上",
+   "把運算工作拆給使用者的裝置分散處理",
+   "用雲端服務取代本地端的運算"
+  ],
+  "answer": 0,
+  "explanation": "這是華為「群計算彌補單晶片」的具體作法，和先進封裝（垂直堆疊）是兩件不同的事。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-24",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「杭州六小龍」不包含下列哪一家公司？",
+  "options": [
+   "深度求索（DeepSeek）",
+   "遊戲科學（Game Science）",
+   "月之暗面（Moonshot AI）",
+   "宇樹科技（Unitree）"
+  ],
+  "answer": 2,
+  "explanation": "杭州六小龍是 DeepSeek（深度求索）、遊戲科學、宇樹科技（Unitree）、強腦科技（BrainCo）、群核科技（Manycore）與雲深處科技（DEEPRobotics）；月之暗面（Moonshot AI）總部在北京，屬於大模型「六小虎」。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-25",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「六小虎」之中，主打百萬字長文本處理的是哪一家？",
+  "options": [
+   "月之暗面（Kimi）",
+   "零一萬物（Yi）",
+   "百川智能",
+   "智譜 AI（GLM）"
+  ],
+  "answer": 0,
+  "explanation": "「六小虎」指中國六家大模型新創：智譜 AI、MiniMax、百川智能、月之暗面、階躍星辰、零一萬物（分布於北京與上海，與杭州六小龍是兩組不同名單）。月之暗面的 Kimi 主打百萬字長文本；智譜源自清華、產品線最完整；百川專注中文語境；零一萬物由李開復創辦，主打開源與中英雙語。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-26",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報提到遊戲科學的代表作，是中國首款 3A 級遊戲，指的是哪一部？",
+  "options": [
+   "《原神》",
+   "《黑神話：悟空》",
+   "《崩壞：星穹鐵道》",
+   "《鳴潮》"
+  ],
+  "answer": 1,
+  "explanation": "遊戲科學是杭州六小龍之一，和 DeepSeek、宇樹等公司並列為杭州的代表性科技團隊。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-27",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "在簡報的訓練成本對照表中，DeepSeek（V3）被引用的訓練成本估計約為多少？",
+  "options": [
+   "約 5,600 萬美元",
+   "約 56 萬美元",
+   "約 5.6 億美元",
+   "約 560 萬美元"
+  ],
+  "answer": 3,
+  "explanation": "常被引用的 557.6 萬美元其實是 DeepSeek-V3 技術報告揭露的最終一次預訓練 GPU 租用成本（不含前期研究與硬體購置），R1 的訓練成本官方從未公布。相較之下 GPT-4 的估計約 4,100 萬至 7,800 萬美元，甚至有一億美元以上的說法。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-28",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "從原始 Transformer 到 GPT-4，訓練成本的變化級距大約是什麼？",
+  "options": [
+   "從數萬美元拉高到數百萬美元",
+   "一直維持在數百萬美元的水準",
+   "從數百美元一路拉高到數千萬美元",
+   "先上升後下降，目前已回到數十萬美元"
+  ],
+  "answer": 2,
+  "explanation": "原始 Transformer 約 900 美元、GPT-2 約 5 萬美元、GPT-3 約 460 萬美元，到 GPT-4 已是數千萬美元。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-29",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報把 AI War 的終極目標分成哪三個層面？",
+  "options": [
+   "教育、產業、外交",
+   "資金、人才、土地",
+   "晶片、模型、應用",
+   "戰略國安、經濟產業、科技規則"
+  ],
+  "answer": 3,
+  "explanation": "誰的規則被全球採用，誰就能在技術與市場上長期領先——這是第三個層面的核心。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-US-30",
+  "topic": "emba",
+  "unit": "USCN",
+  "unit_name": "美中競賽",
+  "category": "美中競賽",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "簡報把中美 AI 競賽的最終「聖杯」設定為什麼？",
+  "options": [
+   "量子電腦商業化",
+   "完全自主的晶片供應鏈",
+   "全自動無人工廠",
+   "通用 AI（圖靈測試）"
+  ],
+  "answer": 3,
+  "explanation": "爭奪的其實是未來全球科技、經濟、軍事與制度的主導權。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-01",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "這份簡報的核心論點，用一句話說是什麼？",
+  "options": [
+   "只要半導體與 AI 持續領先，其他社會問題都會自然被解決",
+   "台灣近年的經濟數據被高估，實際上並沒有真的變強",
+   "科技業讓台灣變富，但社會制度要跟得上才會真的變強",
+   "台灣的產業升級其實失敗了，必須回頭重新發展傳統產業"
+  ],
+  "answer": 2,
+  "explanation": "簡報開宗明義：台灣的問題不是沒有成功產業，而是成功產業創造的紅利，能否支撐整個社會系統。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-02",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報引用的資料中，台灣股市市值約 5.15 兆美元，已略高於哪一個經濟體？",
+  "options": [
+   "香港",
+   "南韓",
+   "新加坡",
+   "澳洲"
+  ],
+  "answer": 1,
+  "explanation": "簡報投影片 5 依影片畫面標示台灣股市市值約 5.15 兆美元，略高於南韓；此為影片畫面讀值，非官方統計，實際規模請以證交所／IMF 資料為準。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-03",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "台積電在 MSCI 新興市場指數中權重極高，簡報認為這帶來什麼後果？",
+  "options": [
+   "台灣股市與全球被動資金的連動變得更緊密",
+   "台灣企業獲利可以完全不受國際景氣影響",
+   "新興市場指數因此不再納入中國企業",
+   "台灣的外資持股比率會自動下降"
+  ],
+  "answer": 0,
+  "explanation": "指數權重越高，全球被動資金越容易買進；相對地，任何半導體景氣變動也會快速反映在台灣股市。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-04",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "簡報指出台灣人均 GDP 從 2021 年的 33,111 美元升到 2025 年的 39,492 美元，逼近哪一個門檻？",
+  "options": [
+   "3 萬美元",
+   "4 萬美元",
+   "5 萬美元",
+   "6 萬美元"
+  ],
+  "answer": 1,
+  "explanation": "簡報同時提醒：人均 GDP 是總體平均，不等於每個職業的薪資都同步上升。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-05",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "依簡報整理，台灣 2025 年前五大出口品項不包含下列何者？",
+  "options": [
+   "紡織與加工食品",
+   "通訊視聽產品",
+   "電子零組件",
+   "金屬製品"
+  ],
+  "answer": 0,
+  "explanation": "紡織、農產與加工食品是 1960 至 1970 年代的主力；1990 年代後已轉向電機電器與電子零組件。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-06",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報提到台灣的 AI 國力排名有什麼變化？",
+  "options": [
+   "由 2024 年第 21 名升至 2025 年第 16 名",
+   "由 2024 年第 16 名降至 2025 年第 21 名",
+   "連續兩年都維持在第 10 名以內",
+   "首度進入全球前五名"
+  ],
+  "answer": 0,
+  "explanation": "簡報投影片 14 標示：台灣 AI 國力排名由 2024 年第 21 名升至 2025 年第 16 名。簡報未標明排行榜出處，屬影片畫面整理值。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-07",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "「AI 新十大建設」設定的 2040 年目標是什麼？",
+  "options": [
+   "50 兆元產值與 15 萬個就業機會",
+   "15 兆元產值與 50 萬個就業機會",
+   "1.5 兆元產值與 5 萬個就業機會",
+   "5 兆元產值與 15 萬個就業機會"
+  ],
+  "answer": 1,
+  "explanation": "簡報藉此指出：AI 建設越成功，人才重新分配的壓力就越大。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-08",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "簡報引用的職場缺工人數，從 2020 年低點約 55.4 萬，到 2026 年大約是多少？",
+  "options": [
+   "約 72.5 萬",
+   "約 92.5 萬",
+   "約 112.5 萬",
+   "約 152.5 萬"
+  ],
+  "answer": 2,
+  "explanation": "缺工突破百萬代表這不只是餐飲或服務業的問題，而是整體勞動市場的結構性緊縮。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-09",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "上市櫃公司平均薪資排行榜上，簡報標示的榜首年薪大約是多少？",
+  "options": [
+   "約 328.2 萬元",
+   "約 428.2 萬元",
+   "約 528.2 萬元",
+   "約 628.2 萬元"
+  ],
+  "answer": 3,
+  "explanation": "榜上多數是科技、半導體或高附加價值產業，後續也有多家公司平均年薪高於 300 萬元。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-10",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "對於「年輕人不願意投入公共服務」這個說法，簡報的看法是什麼？",
+  "options": [
+   "確實是這一代年輕人缺乏服務熱忱",
+   "不是不願意，是誘因結構把人推向高薪部門",
+   "問題出在公共服務的招募管道不夠多元",
+   "只要加強志願服務教育就能解決"
+  ],
+  "answer": 1,
+  "explanation": "薪資與工時若無法和高薪產業競爭，公共服務部門就會在人才市場上被邊緣化。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-11",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報引用民國 112 年的數據，護理師的離職率與空缺率分別約為多少？",
+  "options": [
+   "離職率 9.05%、空缺率 12.61%",
+   "離職率 12.61%、空缺率 9.05%",
+   "離職率 22.61%、空缺率 19.05%",
+   "離職率 5.61%、空缺率 3.05%"
+  ],
+  "answer": 1,
+  "explanation": "離職率代表留不住人，空缺率代表補不到人；兩者同時偏高，顯示醫療現場承受高壓。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-12",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "國軍志願役招募滿足率在簡報中呈現什麼趨勢？",
+  "options": [
+   "由約 78.6% 上升到約 88.57%",
+   "連續五年都維持在九成以上",
+   "由約 88.57% 下降到約 78.6%",
+   "先下降後回升，已恢復到滿額"
+  ],
+  "answer": 2,
+  "explanation": "簡報指出，當年輕人口變少，國防、科技、照護與教育其實都在搶同一批人。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-13",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報引用的調查顯示，社工的「重度過勞」比例大約是多少？",
+  "options": [
+   "約 27.2%",
+   "約 37.2%",
+   "約 17.2%",
+   "約 47.2%"
+  ],
+  "answer": 3,
+  "explanation": "社工要面對兒少、家庭暴力與弱勢照護等高情緒負荷案件，人力不足會直接削弱社會安全網。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-14",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "簡報列出的三個直轄市中，社工缺額率最高的是哪一個？",
+  "options": [
+   "新北市（36.9%）",
+   "台北市（22.8%）",
+   "桃園市（27.6%）",
+   "三者相當，簡報未分高下"
+  ],
+  "answer": 0,
+  "explanation": "都會區人口多、個案也多；地方社福補不到人，最後會由家庭、學校、警政與醫療共同承受。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-15",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "關於公務員離職率，簡報觀察到什麼現象？",
+  "options": [
+   "只有中央政府上升，地方政府持平",
+   "中央與地方都上升，地方政府更接近 15%",
+   "離職率變化不大，但退休人數暴增",
+   "中央與地方都下降，穩定性明顯提高"
+  ],
+  "answer": 1,
+  "explanation": "過去公務員被視為穩定，但穩定已不足以抵銷工作量與薪資落差；行政體系留不住人，政策落地就會變慢。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-16",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "簡報列出的「教師荒」成因中，不包含下列何者？",
+  "options": [
+   "薪資吸引力不足、調薪幅度有限",
+   "師資培育名額遭到大幅刪減",
+   "擔憂遭家長濫訴、精神壓力大",
+   "課綱與行政事務夾擊導致過勞"
+  ],
+  "answer": 1,
+  "explanation": "簡報列的四項成因是薪資、法律風險、行政負擔，以及重榜與報到流失；師培名額不在其中。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-17",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "簡報引用的新生兒數從 2016 年的 208,440 人，到 2025 年畫面標示約多少？",
+  "options": [
+   "約 187,000 人",
+   "約 157,000 人",
+   "約 107,800 人",
+   "約 67,800 人"
+  ],
+  "answer": 2,
+  "explanation": "不到十年接近腰斬。出生數下降會延遲反映到學校、兵源、勞動市場與稅基上。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-18",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報把「結婚率下降」視為什麼樣的指標？",
+  "options": [
+   "薪資、住房、工作壓力與社會信心的綜合指標",
+   "單純是年輕人價值觀改變的結果",
+   "只要提高生育補助就能反轉的短期現象",
+   "與勞動市場沒有直接關係的個人選擇"
+  ],
+  "answer": 0,
+  "explanation": "全台 2025 年粗結婚率約 2.23‰，低於 2024 年的 2.28‰，六都多數也在下滑。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-19",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "簡報引用的少年犯罪資料中，哪一類案件的年增率特別突出？",
+  "options": [
+   "竊盜",
+   "毒品",
+   "傷害",
+   "詐欺"
+  ],
+  "answer": 3,
+  "explanation": "2024 年少年刑案嫌疑犯 11,785 人，其中詐欺年增率達 43%，顯示網路與金流工具降低了犯罪門檻。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-20",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "簡報推估全台約有多少青少年使用電子菸？",
+  "options": [
+   "約 1.4 萬名",
+   "約 3.4 萬名",
+   "約 5.4 萬名",
+   "約 9.4 萬名"
+  ],
+  "answer": 2,
+  "explanation": "高中職學生使用率曾達 8.8%；電子菸比傳統菸品更容易透過網路與社群流通。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-21",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "毒品包裹查獲件數從 2024 年的 2,619 件，到 2025 年畫面顯示成長到多少？",
+  "options": [
+   "約 8,569 件",
+   "約 3,569 件",
+   "約 5,569 件",
+   "約 12,569 件"
+  ],
+  "answer": 0,
+  "explanation": "簡報提醒這可能同時反映查緝加強與實際流通增加；包裹與線上交易讓毒品流通更隱蔽。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-22",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報引用 2025 年中央稅課收入預算約為多少？",
+  "options": [
+   "約 17,844 億元",
+   "約 37,844 億元",
+   "約 47,844 億元",
+   "約 27,844 億元"
+  ],
+  "answer": 3,
+  "explanation": "稅收上升代表資本市場與企業獲利擴張；簡報的提問是這筆錢如何轉化為公共服務能力。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-23",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "對於政府的穩物價措施，簡報的評價是什麼？",
+  "options": [
+   "有必要，但成本會轉由財政與國營事業承擔",
+   "這些措施能同時解決短期壓力與長期的結構問題",
+   "只是帳面上的操作，對一般民眾並沒有實質幫助",
+   "應該完全取消所有補貼，讓價格直接反映真實成本"
+  ],
+  "answer": 0,
+  "explanation": "票價凍漲、油價補貼等措施可以降低民眾短期壓力，但長期依賴補貼會讓財政與國營事業承壓。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-24",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報標示台電 2025 年的負債比大約是多少？",
+  "options": [
+   "約 65.47%",
+   "約 75.47%",
+   "約 95.47%",
+   "約 85.47%"
+  ],
+  "answer": 2,
+  "explanation": "電價若不完全反映成本，虧損會留在台電帳上；公共成本不會消失，只會以不同形式延後出現。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-25",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "簡報對「台灣是不是沒錢做公共投資」的判斷是什麼？",
+  "options": [
+   "不是沒錢，難在把科技紅利轉成公共服務能力",
+   "確實沒有錢，必須先大幅舉債才有辦法投資",
+   "錢其實很多，但法規限制讓大部分預算無法動用",
+   "要等這一輪半導體景氣循環結束之後才會有餘裕"
+  ],
+  "answer": 0,
+  "explanation": "中央稅課收入持續上升，財政紅利若沒有投入人力與制度，社會基礎仍然會薄弱。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-26",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "製造業聘僱外國技術人力的比率上限有什麼調整？",
+  "options": [
+   "維持 25% 不變，只放寬產業別",
+   "由 25% 放寬到 100%，但合計不得超過總員工 50%",
+   "由 50% 放寬到 100%，且不設其他上限",
+   "由 10% 放寬到 25%，合計不得超過總員工 30%"
+  ],
+  "answer": 1,
+  "explanation": "政策目標是讓熟練移工轉為中階技術人力，補足製造業、照護與服務業的人力缺口。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-27",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "簡報投影片標示的「失智移工」人數，在十年內有什麼變化？",
+  "options": [
+   "由約 2 萬人升到約 5 萬人",
+   "由約 10 萬人降到約 5 萬人",
+   "始終維持在約 5 萬人上下",
+   "由約 5 萬人升到接近 10 萬人"
+  ],
+  "answer": 3,
+  "explanation": "簡報標示失智照護相關移工由約 5 萬人升至接近 10 萬人。注意這不是全體家庭看護移工人數（實際規模更大），僅為簡報畫面所指的類別。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-28",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 3,
+  "type": "choice",
+  "question": "簡報認為台灣在移工議題上的角色正在如何轉變？",
+  "options": [
+   "從移工的輸出國，轉變為移工的輸入國",
+   "從原本的開放政策，轉向全面限縮移工人數",
+   "從移工使用國，走向與他國競爭移工的國家",
+   "從依賴移工，轉為完全由自動化與機器人取代"
+  ],
+  "answer": 2,
+  "explanation": "台灣薪資條件相對日本、韓國、新加坡更有吸引力，但也需要處理薪資、勞權、訓練與社會融合。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-29",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 2,
+  "type": "choice",
+  "question": "簡報指出 2025 年的職場霸凌案件量，約是 2020 年的幾倍？",
+  "options": [
+   "約 3 倍",
+   "約 6 倍",
+   "約 30 倍",
+   "約 12 倍"
+  ],
+  "answer": 3,
+  "explanation": "簡報投影片 40 標示『2025 年職場霸凌案件已是 2020 年的 12 倍』；同頁另寫『5 年成長 10 倍』，兩個說法並存，本題以『倍數』的 12 倍為準。案件數上升可能同時反映事件增加與申訴意識提高。",
+  "fun_fact": "",
+  "region": "EMBA"
+ },
+ {
+  "id": "emba-TW-30",
+  "topic": "emba",
+  "unit": "TWNOW",
+  "unit_name": "談台灣現狀與台灣病",
+  "category": "談台灣現狀與台灣病",
+  "difficulty": 1,
+  "type": "choice",
+  "question": "對於校園霸凌通報件數上升（2024 年約 8,819 件），簡報的解讀是什麼？",
+  "options": [
+   "通報件數上升一定代表校園治安正在急速惡化",
+   "數字上升主要是統計方式改變造成的，沒有太大實質意義",
+   "只要加重對施暴學生的處罰就能讓通報件數下降",
+   "可能是事件增加，也可能是通報更完整，但處理量確實變大"
+  ],
+  "answer": 3,
+  "explanation": "不論原因為何，學校都需要輔導、社工、教師與家庭支持共同處理；教育人力不足會更難早期介入。",
+  "fun_fact": "",
+  "region": "EMBA"
+ }
+]

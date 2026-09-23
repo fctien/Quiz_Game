@@ -18,7 +18,7 @@ from app import BANK, REGION_ORDER, REGION_TOPICS, TOPICS
 
 HERE = Path(__file__).parent
 # 公開版要藏起來的主題(課程教材)
-PRIVATE = ("python", "pytorch", "vba")
+PRIVATE = ("python", "pytorch", "vba", "ai", "emba")
 
 html = (HERE / "static" / "index.html").read_text(encoding="utf-8")
 css = (HERE / "static" / "style.css").read_text(encoding="utf-8")

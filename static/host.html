@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-title" content="脈衝 PULSE">
 <link rel="apple-touch-icon" href="/static/icons/icon-180.png">
 <link rel="icon" href="/static/icons/favicon.png" type="image/png">
-<link rel="stylesheet" href="/static/style.css?v=6.0">
+<link rel="stylesheet" href="/static/style.css?v=6.1">
 <!-- QR code 產生器：連不到網路時只會少了 QR code，輸入房號一樣能加入 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 <script>
@@ -92,7 +92,7 @@ async function setup(msg = ''){
   const cats = await getJSON('/api/categories');
   if (!cats || !cats.length){
     $app.innerHTML = `<div class="masthead"><div><h1>主持台<span class="seal">試</span></h1>
-        <p class="sub">連不上題庫　<span style="opacity:.6">v6.0</span></p></div>
+        <p class="sub">連不上題庫　<span style="opacity:.6">v6.1</span></p></div>
         <a class="back" href="/">← 回首頁</a></div>
       <div class="mp-card"><h3>讀不到主題清單</h3>
         <p>伺服器可能還在啟動（題庫有三千多題，第一次要幾秒），或是已經停掉了。
@@ -102,13 +102,13 @@ async function setup(msg = ''){
     return;
   }
   $app.innerHTML = `<div class="masthead"><div><h1>主持台<span class="seal">試</span></h1>
-      <p class="sub">開一間考坊，學生用手機輸入房號一起搶答　<span style="opacity:.6">v6.0</span></p></div>
+      <p class="sub">開一間考坊，學生用手機輸入房號一起搶答　<span style="opacity:.6">v6.1</span></p></div>
       <a class="back" href="/">← 回首頁</a></div>
     <div class="chips multi" id="units" role="group" aria-label="單元"></div>
     <div class="grid" id="cats">${cats.map(c => `
       <button class="cat" data-k="${c.key}" aria-pressed="${c.key === pick.category}" ${c.count === 0 ? 'disabled style="opacity:.4"' : ''}>
         <span class="sealbox">${c.seal || SEAL[c.key] || esc(c.name[0])}</span>
-        <span><b>${esc(c.name)}</b><small>${c.key === 'news' ? '今日新聞' : c.count + ' 題'}</small></span>
+        <span><b>${esc(c.name)}</b><small>${c.key === 'news' ? '今日新聞' : (c.count ? c.count + ' 題' : '準備中')}</small></span>
       </button>`).join('')}</div>
     <div class="row" style="flex-wrap:wrap;gap:18px;margin-top:18px">
       <div><div class="sub" style="margin:0 0 4px">題數</div><div class="seg" id="cnt" style="margin:0">

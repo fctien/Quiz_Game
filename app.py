@@ -39,7 +39,9 @@ GAME_TTL = 60 * 60                          # 一局最長保留 1 小時
 TOPICS = {
     "python":  {"name": "Python",   "seal": "蟒"},
     "pytorch": {"name": "Deep Learning", "seal": "深"},
+    "ai":      {"name": "AI 導論",  "seal": "導"},
     "vba":     {"name": "VBA",      "seal": "巨"},
+    "emba":    {"name": "EMBA",     "seal": "商"},
     "geo":     {"name": "地理",     "seal": "輿"},
     "history": {"name": "歷史",     "seal": "史"},
     "human":   {"name": "人文",     "seal": "文"},
@@ -57,7 +59,8 @@ FILES = {"taiwan": "台灣", "china": "中國", "world": "世界", "poetry": "�
          "r_southasia": "東南亞・南亞", "r_europe": "歐洲", "r_america": "美洲",
          "r_other": "中東・非洲・大洋洲",
          "stars": "娛樂", "fun": "趣聞", "tech": "科技", "python": "Python", "pytorch": "Deep Learning",
-         "vba": "VBA", "pingpong": "桌球"}
+         "vba": "VBA", "pingpong": "桌球",
+         "ai": "AI 導論", "emba": "EMBA"}
 # 地理、歷史、人文的題目再依地區分成幾個單元,主持台是「先選主題,再選地區」。
 # 地區直接用單元(unit)的機制,和 Python 的週次共用同一套,不必多一套東西。
 REGIONS = ["台灣", "中國", "日韓・東亞", "東南亞・南亞", "歐洲", "美洲",
@@ -66,6 +69,31 @@ REGIONS = ["台灣", "中國", "日韓・東亞", "東南亞・南亞", "歐洲"
 REGION_ORDER = ["TW", "CN", "EA", "SEA", "EU", "AM", "OTH", "GLOBAL", "POEM"]
 REGION_TOPICS = ("geo", "history", "human")
 COUNTS_MIN = 5                      # 一場最少 5 題,單元少於這個數就不列出來
+
+# 課程主題的單元順序。題庫是逐週(逐科)慢慢補上來的,單元清單由題目長出來,
+# 但順序要照課程的順序,不能照檔案裡碰巧的先後,所以在這裡先寫死。
+# 還沒有題目的單元不會出現在畫面上,補進來就會自動照這個順序排好。
+UNIT_ORDER = {
+    "ai": [f"W{i}" for i in range(1, 17)] + ["MIX"],
+    "emba": ["MV", "AOI", "AIINTRO", "AGENTIC", "AIWAR", "USCN", "TWNOW"],
+}
+# 各單元的中文名稱(題目裡也會寫,這裡是給還沒有題目時的對照與檢查用)
+UNIT_NAMES = {
+    "ai": {
+        "W1": "W1 什麼是 AI", "W2": "W2 AI 術語地圖", "W3": "W3 AI 與神經網路簡史",
+        "W4": "W4 什麼是機器學習", "W5": "W5 神經元與感知機", "W6": "W6 學習就是最佳化",
+        "W7": "W7 反向傳播", "W8": "W8 什麼是深度學習", "W9": "W9 CNN 卷積原理與四種任務",
+        "W10": "W10 注意力機制與 Transformer", "W11": "W11 什麼是 LLM",
+        "W12": "W12 LLM 的能力邊界", "W13": "W13 什麼是 AI Agent",
+        "W14": "W14 Agent 與程式開發", "W15": "W15 Physical AI",
+        "W16": "W16 主權 AI 與 AI 時代的你", "MIX": "綜合題組（跨週整合）",
+    },
+    "emba": {
+        "MV": "機器視覺檢測技術", "AOI": "AOI 案例分享", "AIINTRO": "AI 簡介",
+        "AGENTIC": "Agentic AI", "AIWAR": "AI War",
+        "USCN": "美中競賽", "TWNOW": "談台灣現狀與台灣病",
+    },
+}
 
 
 def load_all():
@@ -109,6 +137,9 @@ def units_of(topic):
     if topic in REGION_TOPICS:          # 地區按鈕固定照 REGION_ORDER 排,不受題庫檔順序影響
         out.sort(key=lambda d: REGION_ORDER.index(d["key"])
                  if d["key"] in REGION_ORDER else len(REGION_ORDER))
+    elif topic in UNIT_ORDER:           # 課程主題照課程順序排,不照題庫檔裡碰巧的先後
+        order = UNIT_ORDER[topic]
+        out.sort(key=lambda d: order.index(d["key"]) if d["key"] in order else len(order))
     return out
 
 

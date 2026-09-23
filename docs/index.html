@@ -406,6 +406,29 @@ body[data-topic="geo"]{--blue:#0E7C86; --blue-soft:#DDF1F2; --cinnabar:#C2641B; 
   --pattern:repeating-radial-gradient(circle at 80% 20%,rgba(14,124,134,.07) 0 1px,transparent 1px 22px),
             repeating-radial-gradient(circle at 10% 85%,rgba(194,100,27,.05) 0 1px,transparent 1px 26px);}
 
+/* AI 導論：電路藍與訊號橙 —— 課程主題,和 Deep Learning 分得開 */
+body[data-topic="ai"]{--blue:#1B62C9; --blue-soft:#E2ECFB; --cinnabar:#E07A1F; --cinnabar-soft:#FCEEDC;
+  --pattern:repeating-linear-gradient(90deg,rgba(27,98,201,.055) 0 1px,transparent 1px 34px),
+            repeating-linear-gradient(0deg,rgba(27,98,201,.045) 0 1px,transparent 1px 34px),
+            radial-gradient(circle 3px at 34px 34px,rgba(224,122,31,.16),transparent);}
+body[data-topic="ai"] .masthead h1,body[data-topic="ai"] .lbhead h1{color:#1B62C9}
+body[data-topic="ai"] .cat .sealbox{background:rgba(27,98,201,.13);color:#1B62C9}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) body[data-topic="ai"]{--ground:#0A1426}
+}
+:root[data-theme="dark"] body[data-topic="ai"]{--ground:#0A1426}
+
+/* EMBA：墨綠與金 —— 高階班,沉穩一點 */
+body[data-topic="emba"]{--blue:#1F5A4C; --blue-soft:#E2EFEB; --cinnabar:#B08430; --cinnabar-soft:#F8F0DC;
+  --pattern:repeating-linear-gradient(45deg,rgba(31,90,76,.05) 0 1px,transparent 1px 18px),
+            radial-gradient(ellipse 50% 35% at 85% 10%,rgba(176,132,48,.10),transparent 70%);}
+body[data-topic="emba"] .masthead h1,body[data-topic="emba"] .lbhead h1{color:#1F5A4C}
+body[data-topic="emba"] .cat .sealbox{background:rgba(31,90,76,.13);color:#1F5A4C}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) body[data-topic="emba"]{--ground:#08170F}
+}
+:root[data-theme="dark"] body[data-topic="emba"]{--ground:#08170F}
+
 /* 娛樂：聚光燈 */
 body[data-topic="star"]{--blue:#7A3DBD; --blue-soft:#EFE5FA; --cinnabar:#E0367A; --cinnabar-soft:#FCE4EE;
   --pattern:radial-gradient(ellipse 60% 40% at 50% -5%,rgba(224,54,122,.12),transparent 70%),
@@ -657,7 +680,7 @@ async function home(){
       <li>答得越快分數越高；連中 3 題 ×1.5、連中 5 題 ×2</li>
       <li>每局各有一次道具：刪去兩個選項、跳過此題、加時 10 秒</li>
       <li>依正確率評級：滿格、高峰、躍升、穩定、起跳；留下代號就能登上脈衝榜</li>
-    </ul><p class="sub" style="font-size:.78rem;margin-top:10px">脈衝 PULSE v6.0</p></div></div>
+    </ul><p class="sub" style="font-size:.78rem;margin-top:10px">脈衝 PULSE v6.1</p></div></div>
     <div id="multi" class="mp-panel" ${mode === 'multi' ? '' : 'hidden'}>${LOCAL ? `
       <div class="mp-card"><h3>多人對戰</h3><p>多人同場搶答需要執行 Python 伺服器版（app.py），這個單機版只能單人闖關。</p></div>` : `
       <form class="mp-card" id="joinf"><h3>加入考坊</h3><p>輸入主持人畫面上的四位數房號</p>
@@ -682,7 +705,7 @@ async function home(){
     document.getElementById('cats').innerHTML = cats.map(c => `
       <button class="cat" data-k="${c.key}" ${c.count === 0 ? 'disabled style="opacity:.4"' : ''}>
         <span class="sealbox">${c.seal || SEAL[c.key] || esc(c.name[0])}</span>
-        <span><b>${esc(c.name)}</b><small>${c.key === 'news' ? '每小時更新' : c.count + ' 題'}</small></span>
+        <span><b>${esc(c.name)}</b><small>${c.key === 'news' ? '每小時更新' : (c.count ? c.count + ' 題' : '準備中')}</small></span>
       </button>`).join('');
     document.querySelectorAll('.cat').forEach(b => b.onclick = () => pickUnit(b.dataset.k, region));
   };
