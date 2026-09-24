@@ -582,3 +582,133 @@ Applications of Machine Vision 美國案例（37 張）、四大領域（12 張�
   3. 拿到「基礎／元件／打光」三份機器視覺投影片後，回頭覆核 `emba-MV-20`～`27`。
   4. `docs/index.html` 裡殘留的 CSS 註解與舊 `CAT_NAME` 對照（只有顯示名稱、無題目內容），
      下次整理模板時拿掉。
+
+---
+
+## 2026-09-24 題庫私有化的評估與操作程序
+
+- **需求**：使用者問「如果要把所有題庫藏起來、只留 private /docs，程序怎麼走」。
+- **做法**：先查現況再寫程序，不憑印象回答。
+  1. 用 `curl` 以未登入身分抓 `raw.githubusercontent.com/fctien/Quiz_Game/main/questions/*.json`，
+     驗證題庫到底公不公開。
+  2. 解析 `docs/index.html` 與 `standalone.html` 裡的 `window.EMBEDDED_BANK`，數出各自嵌了幾題。
+  3. 查 GitHub Pages 與 Render 對 private repo 的方案限制。
+- **產出**：`私有化-題庫.md`（第 0～7 步 + 建議順序）；`.gitignore` 補上 `班級管理碼.txt`。
+- **驗證**：
+  - 五個課程題庫全部 HTTP 200，題數與本地一致（python 500 / pytorch 738 / ai 510 / vba 280 / emba 150），
+    共 **2,178 題含答案目前是公開可下載的**。
+  - `docs/index.html` 嵌了 **1,742 題**明碼（human 463、geo 391、history 388、tech/star/fun/tt 各 125），
+    `standalone.html` 嵌了 3,920 題。所以「所有題庫都不公開」與「保留現在的公開單機版」互斥，
+    文件裡列成甲／乙／丙三案讓他選。
+  - `https://fctien.github.io/Quiz_Game/` HTTP 200，Pages 確實在跑。
+  - GitHub Free **不支援** private repo 發佈 Pages（需 Pro），所以沒有「repo private + Pages 照舊」這個選項。
+- **問題與修正**：
+  1. **`course_code.txt` 已經外洩**。它在 `.gitignore` 裡，但 `.gitignore` 只管未被追蹤的檔案——
+     這個檔在被加進 .gitignore 之前就 commit 過了，raw 網址回 HTTP 200（7 bytes，未印出內容）。
+     處理方式寫在文件第 4 步：`git rm --cached` + 換一組新代碼。
+  2. `班級管理碼.txt` 沒進 `.gitignore`，`classroom.py` 一旦寫出這個檔就會被 `git add -A` 推上去。已補。
+  3. 比對 GitHub 上的檔案時發現使用者已經自己推過了（`DEVLOG.md`、`CLAUDE.md` 與我剛寫的一致），
+     而且他電腦上的 `classroom.py` 比沙箱新（多了 `MASTER_CODE` 與管理碼備份）。
+     已把 GitHub 上的版本拉回沙箱，避免下次同步蓋掉他的修改。
+     **教訓：同步前要先比對，不能假設沙箱一定比較新。**
+- **不確定的地方**：Render 免費方案能不能從 private repo 部署。官方免費方案說明沒有列這條限制，
+  但我沒有實際驗證過，文件裡已如實寫出，並建議轉 private 時盯著 Render 做，萬一不吃可以馬上轉回。
+- **待辦**：
+  1. 等使用者決定甲／乙／丙案。
+  2. 主題分類分頁（課程／通識／輕鬆／特別）+ `TEACH_CODE` 伺服器端上鎖，兩件一起做。
+  3. EMBA 還缺 AI 簡介、Agentic AI、AI War 三個科目的教材。
+
+### 補充驗證（同日）：repo 轉 private 對 Render 沒有保護作用
+
+使用者問「GitHub 設 private，題庫在 Render 下就看不到了吧？」。答案是**不對**，實際驗證如下，
+全程未登入、未帶任何憑證，只用 `https://pulse-quiz.onrender.com` 這個網址：
+
+| 請求 | 結果 |
+|---|---|
+| `GET /api/health` | HTTP 200 |
+| `GET /api/categories` | HTTP 200，列出全部 14 個主題含課程五科的題數（python 500、pytorch 738、ai 510、vba 280、emba 150） |
+| `POST /api/start {"category":"ai","count":5}` | HTTP 200，發回 10 題 AI 導論的完整題幹與選項 |
+| `POST /api/show` → `POST /api/answer` | HTTP 200，**回傳 `answer` 正解索引與 `explanation` 解析** |
+
+實際跑出來的一題：「感知機的誤差 e 怎麼算？」選項 `['a − t','t × a','t − a','a ÷ t']`，
+伺服器回 `answer=2`（`t − a`）、解析「誤差定義為目標值減去實際輸出」。
+
+`/api/start` 本身有把 `answer` 與 `explanation` 拿掉（判分在伺服器端做），這點設計是對的；
+但 `/api/answer`（app.py 第 372 行）為了讓玩家看到正解，會把 `answer` 和 `explanation` 一起回傳。
+所以只要照 start → show → answer 這個順序跑迴圈，510 題全部連答案帶解析都撈得出來，不需要猜。
+
+**結論**：GitHub 的 visibility 管的是「原始碼倉庫誰能讀」，Render 上跑的是那份程式碼的副本，
+對外服務是獨立的一回事。轉 private 之後 raw 網址會 404，但 Render 照發不誤。
+這正是 `私有化-題庫.md` 第 6 步（`TEACH_CODE` 伺服器端上鎖）不能跳過、而且要排在轉 private 之前的原因。
+
+---
+
+## 2026-09-24（二）v6.2：課程題庫上鎖 + 主題分類分頁
+
+- **需求**：
+  1. 主題太多，要分類、分頁。
+  2. 課程相關的主題要能藏起來，輸入密碼才顯示。
+  3. 在 Render 上，學生只該拿到「老師開的考坊裡當場那些題」，不能把整個題庫撈走。
+
+- **做法**：
+  1. 先量現況，不憑印象。用未登入的 curl 對線上的 `pulse-quiz.onrender.com` 實際跑一遍撈題腳本
+     （`/api/start` 拿題 → `/api/show` → `/api/answer` 拿正解），確認漏在哪裡。
+  2. 讀 `multiplayer.py` 的 `public_question()` 與 `view()`，確認考坊那條路本來就是安全的：
+     一次只發當前那一題、不帶 `id`／`answer`／`explanation`、`reveal.answer` 只在該題結束後出現、
+     一場最多 20 題。**所以考坊完全不用改**，要堵的是另外兩個端點。
+  3. 新增 `gate.py` 集中處理門禁，端點只呼叫 `gate.allow(topic, request)`：
+     - `POST /api/start`（單人練習，一次吐 10 題）→ 課程主題未解鎖回 403
+     - `POST /api/mp/create`（任何人都能開考坊）→ 同上
+     - `GET /api/units` → 未解鎖的課程主題回空陣列
+     - `GET /api/categories` → 未解鎖時課程主題連格子都不列出來
+     - 新增 `GET/POST/DELETE /api/gate`：查狀態、用 `TEACH_CODE` 解鎖、鎖回去
+     - 解鎖狀態用 `itsdangerous` 簽名 cookie，12 小時，綁單一瀏覽器（Flask 本來就依賴這個套件）
+  4. `TOPICS` 每一項加 `group`（course／known／light／extra），`GROUPS` 定義四個分頁。
+     主持台與單人頁在主題格上方加一排分頁鈕，預設停在「通識」。
+     **`group` 只是畫面分類，不是安全依據** —— 安全一律看 `gate.py`。
+  5. 主持台的解鎖欄位用 `<input type="password">`：主持台常常投影在大螢幕上，不能讓密碼顯示出來。
+
+- **產出**：新增 `gate.py`、`tests/t_gate.py`、`tests/t_ui.py`、`tests/_serve.py`；
+  改 `app.py`、`multiplayer.py`、`static/host.html`、`static/index.html`、`build_standalone.py`、
+  `requirements.txt`、`DEPLOY-Render.md`（新增「步驟 3-1 設定 TEACH_CODE」）、`CLAUDE.md`、
+  `私有化-題庫.md`（第 6 步標記完成）；版本 v6.1 → v6.2；重建 `standalone.html` 與 `docs/index.html`；
+  兩份列印小抄的題數從 3230 更新成 3920。
+
+- **驗證**：
+  - `tests/t_gate.py` **29 項全過**。三種情境都測：雲端+有 TEACH_CODE、雲端+忘了設、本機零設定。
+  - `tests/t_ui.py` **18 項全過**（Playwright）。含「解鎖欄位確實是 password 型別」、
+    「重新整理後仍是解鎖的」、「另一個瀏覽器情境看不到課程分頁」。
+  - **改前／改後的實測對照**（同一支撈題腳本，未登入、未解鎖）：
+
+    | | AI 導論題幹 | 拿到正解 | 自己開課程考坊 |
+    |---|---|---|---|
+    | 改之前（GitHub 上那版） | **284 / 510**，1 秒內 | **162 次** | HTTP 200 |
+    | 改之後 | **0** | **0** | HTTP 403 |
+
+  - 舊的回歸測試全部重跑過，沒被改壞：
+    `t_units.py` ai 680 題／emba 200 題／pytorch 1000 題／vba 320 題，**不一致 0 件**；
+    `t_regions.py` 1260 題 0 件；`t_mp.py`、`t_close.py`、`t_closeguard2.py`、`t_againguard.py`、
+    `t_poll_gone.py` 全過。
+  - 重建後的兩份單機版都用瀏覽器開過：完整版四個分頁、課程頁五個主題；
+    公開版三個分頁、沒有「課程」、1742 題裡沒有任何課程題目。
+
+- **問題與修正**：
+  1. **速率限制做了又拿掉。** 本來在 `/api/start` 和 `/api/mp/create` 加了「同一 IP 每分鐘 30 次」，
+     跑 `t_units.py` 時就被自己擋住（429）。這不只是測試不方便 —— 想清楚之後發現是**設計錯誤**：
+     整班學生在同一個校園 NAT 後面，伺服器看到的是同一個 IP，55 個人同時開局就是 55 次請求，
+     任何合理門檻都會誤傷整班。而且擋不到真正的攻擊者（換個手機熱點就好）。
+     已全數移除，速率限制只留在「試解鎖碼」那裡防硬猜。CLAUDE.md 加了這條規則。
+  2. 第一次跑 `t_gate.py` 時，`boot()` 拋例外前沒有 kill 掉子行程，留下一個帶著
+     `RENDER=true` 的 `app.py` 佔著 5000 埠，導致後面的測試全部誤判。
+     改成用 `tests/_serve.py` 跑在獨立的埠上。
+  3. `t_units.py` 一度報「不一致 2 件」，是被上面那個 429 干擾的假警報，排除後是 0 件。
+  4. host.html 裡有一處 Python 字串替換把 `${noCode ? 'hidden' : ''}` 寫成了帶引號的字面值，
+     會在畫面上印出原始碼。已修正。
+
+- **待辦**：
+  1. 到 Render 後台 **Environment** 設一組 `TEACH_CODE`（不設的話，雲端上課程主題會整批消失）。
+     可以順便設 `SECRET_KEY`，這樣伺服器休眠重啟後不用重新解鎖。
+  2. 跑 `推上GitHub.bat`。
+  3. GitHub 那一邊還沒動：`questions/*.json` 與 `standalone.html` 仍可從公開 repo 直接下載，
+     見 `私有化-題庫.md` 第 1、2 步。這次只關了 Render 那一扇門。
+  4. EMBA 還缺 AI 簡介、Agentic AI、AI War 三個科目的教材。

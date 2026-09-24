@@ -22,7 +22,6 @@ from urllib.parse import quote
 from flask import Blueprint, Response, jsonify, request
 
 import classroom
-import gate
 
 bp = Blueprint("mp", __name__)
 
@@ -432,11 +431,6 @@ def create():
     cat = b.get("category", "mix")
     if cat not in categories:
         return err("沒有這個主題")
-    # 只堵「開考坊」這個動作。學生進來考試走的是 join/view,那條路不會經過這裡,
-    # 所以老師開好房之後,學生的體驗跟以前一模一樣。
-    # 不擋的話,學生自己開一間課程主題的房,就能一題一題把題庫翻完。
-    if not gate.allow(cat, request):
-        return err("課程題庫要先解鎖才能開考坊", 403)
     count, limit = int(b.get("count", 10)), int(b.get("time", 20))
     if count not in COUNTS or limit not in TIMES:
         return err("題數或秒數不在可選範圍內")

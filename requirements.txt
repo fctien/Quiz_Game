@@ -1,4 +1,5 @@
 flask>=3.0
+itsdangerous>=2.1      # 簽課程題庫的解鎖 cookie(Flask 本來就會裝,寫明白比較保險)
 requests>=2.31
 
 # 選用：只有要讓 Claude 依當日新聞出題時才需要（需付費 API key）

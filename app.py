@@ -16,6 +16,7 @@ from flask import Flask, Response, jsonify, request, send_from_directory
 from werkzeug.middleware.proxy_fix import ProxyFix
 
 import classroom
+import gate
 import leaderboard
 import multiplayer
 import news
@@ -36,21 +37,29 @@ TIME_LIMIT = {"choice": 15, "order": 25}   # 秒
 GRACE = 1.5                                 # 網路延遲容忍秒數
 GAME_TTL = 60 * 60                          # 一局最長保留 1 小時
 
+# group 決定主題出現在主持台的哪一個分頁。course 那一頁要先解鎖才看得到,
+# 判斷「能不能碰」一律用 gate.py,不要用 group 當安全依據 —— group 只是畫面分類。
+GROUPS = [
+    {"key": "course", "name": "課程"},
+    {"key": "known",  "name": "通識"},
+    {"key": "light",  "name": "輕鬆"},
+    {"key": "extra",  "name": "特別"},
+]
 TOPICS = {
-    "python":  {"name": "Python",   "seal": "蟒"},
-    "pytorch": {"name": "Deep Learning", "seal": "深"},
-    "ai":      {"name": "AI 導論",  "seal": "導"},
-    "vba":     {"name": "VBA",      "seal": "巨"},
-    "emba":    {"name": "EMBA",     "seal": "商"},
-    "geo":     {"name": "地理",     "seal": "輿"},
-    "history": {"name": "歷史",     "seal": "史"},
-    "human":   {"name": "人文",     "seal": "文"},
-    "tech":    {"name": "科技",     "seal": "科"},
-    "star":    {"name": "娛樂",     "seal": "星"},
-    "fun":     {"name": "趣聞",     "seal": "奇"},
-    "tt":      {"name": "桌球",     "seal": "桌"},
-    "news":    {"name": "即時新聞", "seal": "聞"},
-    "mix":     {"name": "綜合挑戰", "seal": "雜"},
+    "python":  {"name": "Python",   "seal": "蟒", "group": "course"},
+    "pytorch": {"name": "Deep Learning", "seal": "深", "group": "course"},
+    "ai":      {"name": "AI 導論",  "seal": "導", "group": "course"},
+    "vba":     {"name": "VBA",      "seal": "巨", "group": "course"},
+    "emba":    {"name": "EMBA",     "seal": "商", "group": "course"},
+    "geo":     {"name": "地理",     "seal": "輿", "group": "known"},
+    "history": {"name": "歷史",     "seal": "史", "group": "known"},
+    "human":   {"name": "人文",     "seal": "文", "group": "known"},
+    "tech":    {"name": "科技",     "seal": "科", "group": "known"},
+    "star":    {"name": "娛樂",     "seal": "星", "group": "light"},
+    "fun":     {"name": "趣聞",     "seal": "奇", "group": "light"},
+    "tt":      {"name": "桌球",     "seal": "桌", "group": "light"},
+    "news":    {"name": "即時新聞", "seal": "聞", "group": "extra"},
+    "mix":     {"name": "綜合挑戰", "seal": "雜", "group": "extra"},
 }
 CATEGORIES = TOPICS            # 舊名稱,保留相容
 # 題庫檔案 -> 這個檔的題目屬於哪個地區(顯示在題目上,也可以當篩選條件)
@@ -284,16 +293,52 @@ def class_page():
 @app.get("/api/categories")
 def categories():
     region = request.args.get("region") or None
+    show_course = gate.unlocked(request)
     out = []
     for k, v in TOPICS.items():
+        if gate.is_course(k) and not show_course:
+            continue                    # 沒解鎖,課程主題連格子都不出現
         if k == "mix":
             count = sum(len(active_bank(b, region)) for b in BANK)
         elif k == "news":
             count = None
         else:
             count = len(active_bank(k, region))
-        out.append({"key": k, "name": v["name"], "seal": v["seal"], "count": count})
+        out.append({"key": k, "name": v["name"], "seal": v["seal"],
+                    "group": v.get("group", "extra"), "count": count})
     return jsonify(out)
+
+
+@app.get("/api/gate")
+def gate_status():
+    """前端拿來決定要不要畫「解鎖課程題庫」那個按鈕"""
+    return jsonify(gate.status(request))
+
+
+@app.post("/api/gate")
+def gate_unlock():
+    """老師輸入 TEACH_CODE 解鎖課程題庫。密碼在環境變數裡,不在任何檔案裡。"""
+    body = request.get_json(silent=True) or {}
+    if not gate.enforced():
+        return jsonify(ok=True, unlocked=True)          # 本機零設定,本來就全開
+    if not gate.openable():
+        return jsonify(error="這台伺服器沒有設定 TEACH_CODE,課程題庫在這裡打不開"), 403
+    if gate.too_fast("unlock:" + (request.remote_addr or "?"), limit=10):
+        return jsonify(error="試太多次了,等一分鐘再來"), 429
+    if not gate.check_code(body.get("code")):
+        return jsonify(error="密碼不對"), 403
+    resp = jsonify(ok=True, unlocked=True)
+    resp.set_cookie(gate.COOKIE, gate.make_token(), max_age=gate.MAX_AGE,
+                    httponly=True, samesite="Lax", secure=request.is_secure)
+    return resp
+
+
+@app.delete("/api/gate")
+def gate_lock():
+    """鎖回去(換教室、借別人用的時候)"""
+    resp = jsonify(ok=True, unlocked=False)
+    resp.delete_cookie(gate.COOKIE, samesite="Lax")
+    return resp
 
 
 @app.get("/api/units")
@@ -301,6 +346,8 @@ def units():
     """某個主題的單元(週次)清單"""
     topic = request.args.get("topic", "")
     if topic not in BANK:
+        return jsonify([])
+    if not gate.allow(topic, request):
         return jsonify([])
     return jsonify(units_of(topic))
 
@@ -312,6 +359,10 @@ def start():
     cat = body.get("category", "mix")
     if cat not in TOPICS:
         return jsonify(error="沒有這個主題"), 400
+    # 單人練習是「一次吐 10 題」的端點,沒擋的話跑個迴圈就能把整個題庫掃走。
+    # 課程題目要先解鎖才給;學生在考坊裡玩完全不會走到這裡。
+    if not gate.allow(cat, request):
+        return jsonify(error="課程題庫要先解鎖"), 403
     region = body.get("region") or None
     if region and region not in REGIONS:
         return jsonify(error="沒有這個地區"), 400

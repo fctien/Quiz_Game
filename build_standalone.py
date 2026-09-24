@@ -48,7 +48,7 @@ def build(hide=()):
         if k in bank:
             bank[k] = sorted(bank[k], key=lambda q: REGION_ORDER.index(q["unit"])
                              if q.get("unit") in REGION_ORDER else len(REGION_ORDER))
-    cats = [{"key": k, "name": v["name"], "seal": v["seal"],
+    cats = [{"key": k, "name": v["name"], "seal": v["seal"], "group": v.get("group", "extra"),
              "count": len(bank[k]) if k in bank else sum(len(b) for b in bank.values())}
             for k, v in TOPICS.items() if k != "news" and k not in hide]
     inject = ("<script>window.EMBEDDED_BANK = " + json.dumps(bank, ensure_ascii=False) +
