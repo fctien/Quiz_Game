@@ -712,3 +712,21 @@ Applications of Machine Vision 美國案例（37 張）、四大領域（12 張�
   3. GitHub 那一邊還沒動：`questions/*.json` 與 `standalone.html` 仍可從公開 repo 直接下載，
      見 `私有化-題庫.md` 第 1、2 步。這次只關了 Render 那一扇門。
   4. EMBA 還缺 AI 簡介、Agentic AI、AI War 三個科目的教材。
+
+### 補充（同日）：F12 自我檢查腳本
+
+- **需求**：使用者問「在網頁按 F12 要怎麼確認沒有題目外洩」。
+- **做法**：先在本機起一台 `RENDER=true` + `TEACH_CODE` 的伺服器，實際跑一場考坊，
+  把學生瀏覽器收到的整包 JSON 印出來看，再照著實際欄位寫檢查步驟——不憑印象寫。
+- **產出**：`tools/F12自我檢查.js`（貼進 Console 就出一張表）；`DEPLOY-Render.md` 新增「步驟 5」。
+- **驗證**：用 Playwright 開兩個瀏覽器情境跑這支腳本：
+  未解鎖 → 「全部通過:學生撈不到課程題庫」；已解鎖 → 「這個瀏覽器已經解鎖過了…請開無痕視窗」。
+  兩種訊息都正確。學生端實測：`python=403 pytorch=403 ai=403 vba=403 emba=403`、開考坊 403、主題清單無外洩。
+- **問題與修正**：
+  1. 第一版腳本在老師（已解鎖）的瀏覽器上會印紅字「有項目沒過」，會嚇到人。
+     其實那是正確行為。已改成先判斷 `unlocked`，是的話提示「請開無痕視窗再驗」。
+  2. 實測發現學生端的 `/api/mp/view` 裡**本來就有 `answer` 這個字串** ——
+     來自 `"answered": 0` 與 `"my_answer": null`，不是正解。
+     直接 Ctrl+F 搜 `answer` 會誤判，文件裡特別標出要搜 `"answer":`（含冒號）。
+  3. 順帶確認：`state=reveal` 時 `reveal.answer` 與 `reveal.explanation` 確實會送到學生端，
+     這是必須的（要對答案），範圍只有當下那一題。已寫進文件，免得以後自己看到又嚇一跳。

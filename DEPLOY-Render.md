@@ -75,6 +75,41 @@ Render 是從 GitHub 讀程式的，所以先把資料夾推上去。
 6. **用另一支沒解鎖過的手機**開同一個網址，確認課程分頁還是「需解鎖」——
    這是在確認鎖是綁在你的瀏覽器上，不是一解鎖全世界都開了。
 
+### 步驟 5　用 F12 自己驗一次（可以印出來當檢查表）
+
+**先開無痕視窗**（Ctrl+Shift+N）。用一般視窗驗不準：你自己的解鎖 cookie 還在，當然拿得到。
+
+在無痕視窗開你的 Render 網址 → 按 **F12** → 切到 **Console（主控台）** →
+把 `tools/F12自我檢查.js` 整個檔案貼進去 → Enter。
+
+學生端應該看到：
+
+```
+鎖有沒有生效      true          ← 沒設 TEACH_CODE 的話這裡是 false
+這台已經解鎖      false         ← 無痕視窗應該是 false
+主題清單外洩      無
+單人練習擋不擋    python=403 pytorch=403 ai=403 vba=403 emba=403
+自己開考坊        403
+
+全部通過：學生撈不到課程題庫。
+```
+
+**手動看一遍也行**，重點在這三個地方：
+
+| F12 的哪一頁 | 看什麼 | 正常的樣子 |
+|---|---|---|
+| Network → `categories` | 回應的 JSON | 只有 geo／history／human／tech／star／fun／tt／news／mix，**沒有** python／pytorch／ai／vba／emba |
+| Network → `stream` 或 `view` | 考試進行中的那一包 | `q` 裡只有 `question`／`options`／`index`／`total`／`category`／`difficulty`／`region`／`double` —— **沒有 `id`、沒有 `answer`、沒有 `explanation`**，而且一次只有一題 |
+| Application → Cookies | 有沒有 `pulse_teach` | 學生端**不該有**。有的話代表那台機器解鎖過 |
+
+**兩個容易誤判的地方**
+
+1. 在回應裡用 Ctrl+F 搜 `answer` 會有東西 —— 那是 `"answered": 0` 和 `"my_answer": null`，
+   是「這題幾個人作答了」「我選了哪個」，不是正解。要搜就搜 **`"answer":`**（含冒號）。
+2. **公布答案之後（`state` 變成 `reveal`），`reveal.answer` 和 `reveal.explanation` 會出現，這是正常且必須的** ——
+   學生要對答案。重點是那只有**當下這一題**，不是整個題庫。
+   一場最多 20 題，所以學生看得到的永遠就是那 20 題。
+
 ---
 
 ## 二、上課當天的流程
