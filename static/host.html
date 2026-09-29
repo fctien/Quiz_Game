@@ -124,6 +124,7 @@ async function setup(msg = ''){
     <div class="seg" id="grp" style="margin:0 0 14px">${tabs.map(t =>
       `<button data-g="${t.key}" aria-pressed="${t.key === pick.group}">${esc(t.name)}${t.locked ? (noCode ? '（未設定）' : '（需解鎖）') : ''}</button>`).join('')}</div>
     <div class="chips multi" id="units" role="group" aria-label="單元"></div>
+    <div class="sub" id="unithint" style="margin:-6px 0 12px"></div>
     <div class="grid" id="cats">${shown.map(c => `
       <button class="cat" data-k="${c.key}" aria-pressed="${c.key === pick.category}" ${c.count === 0 ? 'disabled style="opacity:.4"' : ''}>
         <span class="sealbox">${c.seal || SEAL[c.key] || esc(c.name[0])}</span>
@@ -146,7 +147,7 @@ async function setup(msg = ''){
     </div>
     <div class="row" style="flex-wrap:wrap;gap:18px;margin-top:18px">
       <div><div class="sub" style="margin:0 0 4px">題數</div><div class="seg" id="cnt" style="margin:0">
-        ${[5, 10, 15, 20].map(n => `<button data-v="${n}" aria-pressed="${n === pick.count}">${n}</button>`).join('')}</div></div>
+        ${[5, 10, 15, 20, 25, 30].map(n => `<button data-v="${n}" aria-pressed="${n === pick.count}">${n}</button>`).join('')}</div></div>
       <div><div class="sub" style="margin:0 0 4px">每題秒數（選「手動」由你控制開始與結束）</div><div class="seg" id="tm" style="margin:0">
         ${[10, 15, 20, 30].map(n => `<button data-v="${n}" aria-pressed="${n === pick.time}">${n}</button>`).join('')}
         <button data-v="0" aria-pressed="${pick.time === 0}">手動</button></div></div>
@@ -181,19 +182,10 @@ async function setup(msg = ''){
   style.textContent = '.cat[aria-pressed="true"]{border-color:var(--cinnabar);box-shadow:0 0 0 2px var(--cinnabar)}';
   $app.appendChild(style);
   const save = () => ss.set('mp_setup', pick);
+  let paintUnits = () => {};
   const loadUnits = async () => {
-    const box = document.getElementById('units');
-    const list = await fetch('/api/units?topic=' + encodeURIComponent(pick.category)).then(r => r.json()).catch(() => []);
-    if (!list.length){ box.innerHTML = ''; pick.unit = ''; pick.unit_name = ''; save(); return; }
-    if (!list.some(u => u.key === pick.unit)) { pick.unit = ''; pick.unit_name = ''; save(); }
-    const byRegion = REGION_TOPICS.includes(pick.category);
-    box.innerHTML = `<button data-u="" aria-pressed="${!pick.unit}">${byRegion ? '不分地區' : '不分單元'}</button>`
-      + list.map(u => `<button data-u="${u.key}" data-n="${esc(u.name)}" aria-pressed="${u.key === pick.unit}">`
-        + `${byRegion ? '' : (u.key === 'GEN' ? '綜合' : u.key) + '　'}${esc(u.name)}（${u.count}）</button>`).join('');
-    box.querySelectorAll('button').forEach(b => b.onclick = () => {
-      pick.unit = b.dataset.u; pick.unit_name = b.dataset.n || ''; save();
-      box.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
-    });
+    paintUnits = await wireUnits(document.getElementById('units'),
+                                 document.getElementById('unithint'), pick, save);
   };
   loadUnits();
   document.querySelectorAll('.cat').forEach(b => b.onclick = () => {
@@ -240,7 +232,7 @@ async function setup(msg = ''){
     document.querySelectorAll(`#${id} button`).forEach(x => x.setAttribute('aria-pressed', x === b));
     after?.();
   });
-  seg('cnt', 'count'); seg('tm', 'time'); seg('tc', 'team_count');
+  seg('cnt', 'count', () => paintUnits()); seg('tm', 'time'); seg('tc', 'team_count');
   seg('md', 'mode', () => document.getElementById('tcwrap').hidden = pick.mode !== 'team');
   document.getElementById('csv').onchange = async e => {
     const f = e.target.files[0]; if (!f) return;
@@ -368,14 +360,15 @@ async function reconfig(v){
   box.hidden = !box.hidden;
   if (box.hidden) return;
   const cats = (await getJSON('/api/categories')) || [];
-  const pick = {category: v.topic, unit: '', unit_name: '', count: v.count, time: v.limit};
+  const pick = {category: v.topic, unit: [], unit_name: '', count: v.count, time: v.limit};
   box.innerHTML = `<h3>換一套題目</h3>
     <div class="chips" id="rcat">${cats.filter(c => c.count !== 0).map(c =>
       `<button data-k="${c.key}" aria-pressed="${c.key === pick.category}">${esc(c.name)}</button>`).join('')}</div>
     <div class="chips multi" id="runit"></div>
+    <div class="sub" id="runithint" style="margin:-4px 0 8px"></div>
     <div class="row" style="flex-wrap:wrap;gap:18px;margin-top:10px">
       <div><div class="sub" style="margin:0 0 4px">題數</div><div class="seg" id="rcnt" style="margin:0">
-        ${[5, 10, 15, 20].map(n => `<button data-v="${n}" aria-pressed="${n === pick.count}">${n}</button>`).join('')}</div></div>
+        ${[5, 10, 15, 20, 25, 30].map(n => `<button data-v="${n}" aria-pressed="${n === pick.count}">${n}</button>`).join('')}</div></div>
       <div><div class="sub" style="margin:0 0 4px">每題秒數</div><div class="seg" id="rtm" style="margin:0">
         ${[10, 15, 20, 30].map(n => `<button data-v="${n}" aria-pressed="${n === pick.time}">${n}</button>`).join('')}
         <button data-v="0" aria-pressed="${pick.time === 0}">手動</button></div></div>
@@ -383,19 +376,11 @@ async function reconfig(v){
     <div class="row"><button class="btn" id="rgo">換上這一套</button>
       <button class="btn ghost" id="rcancel">取消</button></div>
     <p class="err" id="rerr" hidden></p>`;
+  let paintUnits = () => {};
   const loadUnits = async () => {
-    const el = document.getElementById('runit');
-    const list = await fetch('/api/units?topic=' + encodeURIComponent(pick.category))
-      .then(r => r.ok ? r.json() : []).catch(() => []);
-    pick.unit = ''; pick.unit_name = '';
-    const byRegion = REGION_TOPICS.includes(pick.category);
-    el.innerHTML = list.length ? `<button data-u="" aria-pressed="true">${byRegion ? '不分地區' : '不分單元'}</button>`
-      + list.map(u => `<button data-u="${u.key}" data-n="${esc(u.name)}">`
-        + `${byRegion ? '' : (u.key === 'GEN' ? '綜合' : u.key) + '　'}${esc(u.name)}（${u.count}）</button>`).join('') : '';
-    el.querySelectorAll('button').forEach(b => b.onclick = () => {
-      pick.unit = b.dataset.u; pick.unit_name = b.dataset.n || '';
-      el.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b));
-    });
+    pick.unit = [];
+    paintUnits = await wireUnits(document.getElementById('runit'),
+                                 document.getElementById('runithint'), pick);
   };
   loadUnits();
   document.querySelectorAll('#rcat button').forEach(b => b.onclick = () => {
@@ -406,7 +391,9 @@ async function reconfig(v){
   const seg2 = (id, key) => document.querySelectorAll(`#${id} button`).forEach(b => b.onclick = () => {
     pick[key] = +b.dataset.v;
     document.querySelectorAll(`#${id} button`).forEach(x => x.setAttribute('aria-pressed', x === b));
+    seg2after[id]?.();
   });
+  const seg2after = {rcnt: () => paintUnits()};
   seg2('rcnt', 'count'); seg2('rtm', 'time');
   document.getElementById('rcancel').onclick = () => { box.hidden = true; };
   document.getElementById('rgo').onclick = async e => {
@@ -515,6 +502,57 @@ function downloadQR(url, filename, caption){
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(() => URL.revokeObjectURL(a.href), 4000);
   }, 'image/png');
+}
+
+/* ---------- 單元複選（最多 MAX_UNITS 個） ----------
+   開考坊的設定畫面、考坊裡的「換一套題目」兩邊共用同一套。
+   選一個以上時，題數會平均分給每個單元，而且每個單元各自維持 25／50／25 的難度分布
+   —— 分配是在伺服器做的（app.py 的 by_units），這裡只負責把選了哪些送出去、以及告訴老師會怎麼分。 */
+const MAX_UNITS = 3;
+const asUnits = v => Array.isArray(v) ? v : (v ? [v] : []);
+
+function shareText(count, k){
+  const base = Math.floor(count / k), rem = count % k;
+  return Array.from({length: k}, (_, i) => base + (i < rem ? 1 : 0)).join('／');
+}
+
+async function wireUnits(box, hint, pick, save){
+  const list = (await getJSON('/api/units?topic=' + encodeURIComponent(pick.category), 3)) || [];
+  pick.unit = asUnits(pick.unit);
+  if (!list.length){
+    box.innerHTML = ''; if (hint) hint.textContent = '';
+    pick.unit = []; pick.unit_name = ''; save?.(); return () => {};
+  }
+  const have = new Set(list.map(u => u.key));
+  pick.unit = pick.unit.filter(u => have.has(u)).slice(0, MAX_UNITS);
+  const byRegion = REGION_TOPICS.includes(pick.category);
+  const word = byRegion ? '地區' : '單元';
+  const nameOf = k => (list.find(u => u.key === k) || {}).name || k;
+  box.innerHTML = `<button data-u="">${byRegion ? '不分地區' : '不分單元'}</button>`
+    + list.map(u => `<button data-u="${u.key}">`
+      + `${byRegion ? '' : (u.key === 'GEN' ? '綜合' : u.key) + '　'}${esc(u.name)}（${u.count}）</button>`).join('');
+  const paint = () => {
+    pick.unit_name = pick.unit.map(nameOf).join('・');
+    box.querySelectorAll('button').forEach(x => {
+      const k = x.dataset.u, on = k ? pick.unit.includes(k) : !pick.unit.length;
+      x.setAttribute('aria-pressed', on);
+      x.disabled = !!k && !on && pick.unit.length >= MAX_UNITS;
+      x.style.opacity = x.disabled ? '.45' : '';
+    });
+    if (hint) hint.textContent = pick.unit.length >= 2
+      ? `已選 ${pick.unit.length} 個${word}：${pick.count} 題平均分成 ${shareText(pick.count, pick.unit.length)}，每個${word}各自維持 25／50／25 的難度分布`
+      : `${word}可以複選，最多 ${MAX_UNITS} 個；選兩個以上，題數會平均分配`;
+    save?.();
+  };
+  box.querySelectorAll('button').forEach(b => b.onclick = () => {
+    const k = b.dataset.u;
+    if (!k) pick.unit = [];
+    else if (pick.unit.includes(k)) pick.unit = pick.unit.filter(x => x !== k);
+    else if (pick.unit.length < MAX_UNITS) pick.unit = [...pick.unit, k];
+    paint();
+  });
+  paint();
+  return paint;
 }
 
 /* 地區的印章字與說明:主題是地理/歷史/人文時,「單元」就是地區 */

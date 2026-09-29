@@ -128,9 +128,24 @@ def active_bank(topic, region=None, unit=None):
     qs = [q for q in BANK[topic] if active(q)]
     if region:
         qs = [q for q in qs if q.get("region") == region]
-    if unit:                                   # 課程週次(Python 題庫用)
-        qs = [q for q in qs if q.get("unit") == unit]
+    if unit:                                   # 課程週次;可以是單一個,也可以是一串(複選)
+        want = set(unit) if isinstance(unit, (list, tuple, set)) else {unit}
+        qs = [q for q in qs if q.get("unit") in want]
     return qs
+
+
+MAX_UNITS = 3          # 一場最多可以同時考幾個單元
+
+
+def clean_units(v):
+    """單元可以複選。字串或陣列都收,去掉空值與重複,保留老師點選的順序,最多 MAX_UNITS 個。"""
+    raw = v if isinstance(v, (list, tuple)) else ([v] if v else [])
+    out = []
+    for u in raw:
+        u = str(u).strip()[:24]
+        if u and u not in out:
+            out.append(u)
+    return out[:MAX_UNITS]
 
 
 def units_of(topic):
@@ -150,6 +165,20 @@ def units_of(topic):
         order = UNIT_ORDER[topic]
         out.sort(key=lambda d: order.index(d["key"]) if d["key"] in order else len(order))
     return out
+
+
+def unit_names(qs, units):
+    """這一場的單元名稱,複選時串起來給畫面顯示,例如「W1 甚麼是 AI・W2 …」"""
+    if not units:
+        return ""
+    seen, out = set(), []
+    for u in units:
+        for q in qs:
+            if q.get("unit") == u and u not in seen:
+                seen.add(u)
+                out.append(q.get("unit_name", u))
+                break
+    return "・".join(out)
 
 
 # 進行中的遊戲 session_id -> 狀態
@@ -209,13 +238,58 @@ def by_ratio(pool, n):
     return chosen
 
 
+def by_units(cat, n, region, units, only_choice=False):
+    """複選單元時,把 n 題平均分給每個單元,而且每個單元各自維持 25/50/25 的難度分布。
+
+    先平均分配(餘數隨機給,長期平均才公平);某個單元題目不夠時,缺的名額讓給還有餘裕的單元,
+    整場的總題數才不會因為某一週題少就縮水。
+    """
+    pools = {}
+    for u in units:
+        p = active_bank(cat, region, u)
+        if only_choice:
+            p = [q for q in p if q.get("type") == "choice"]
+        pools[u] = p
+
+    base, rem = divmod(n, len(units))
+    share = {u: base for u in units}
+    for u in random.sample(list(units), rem):
+        share[u] += 1
+
+    short = 0                                  # 題目不夠的單元,先把名額吐出來
+    for u in units:
+        if share[u] > len(pools[u]):
+            short += share[u] - len(pools[u])
+            share[u] = len(pools[u])
+    while short > 0:                           # 再把這些名額分給還有題目的單元
+        room = [u for u in units if len(pools[u]) > share[u]]
+        if not room:
+            break
+        for u in room:
+            if short <= 0:
+                break
+            share[u] += 1
+            short -= 1
+
+    chosen = []
+    for u in units:
+        chosen += by_ratio(pools[u], share[u])
+    # 由易到難,但同一個難度裡面要打散 —— 不然三個單元會整段整段黏在一起
+    random.shuffle(chosen)
+    chosen.sort(key=lambda q: q.get("difficulty", 2))
+    return chosen
+
+
 def pick_questions(cat, n, region=None, unit=None, only_choice=False):
+    units = clean_units(unit)
     if cat == "news":
         pool = news.get_news_questions()
     elif cat == "mix":
         pool = [q for k in BANK for q in active_bank(k, region)]
+    elif len(units) > 1:
+        return by_units(cat, n, region, units, only_choice)
     else:
-        pool = active_bank(cat, region, unit)
+        pool = active_bank(cat, region, units[0] if units else None)
     if only_choice:
         pool = [q for q in pool if q.get("type") == "choice"]
     return by_ratio(list(pool), n)
@@ -366,14 +440,14 @@ def start():
     region = body.get("region") or None
     if region and region not in REGIONS:
         return jsonify(error="沒有這個地區"), 400
-    unit = body.get("unit") or None
-    qs = pick_questions(cat, 10, region, unit)
+    units = clean_units(body.get("unit"))
+    qs = pick_questions(cat, 10, region, units)
     if not qs:
         return jsonify(error="目前抓不到新聞,請稍後再試或先玩其他分類"), 503
     sid = secrets.token_urlsafe(12)
     GAMES[sid] = new_game(cat, qs)
     return jsonify(session=sid, total=len(qs), lives=LIVES, time_limit=TIME_LIMIT,
-                   unit_name=(qs[0].get("unit_name", "") if unit else ""),
+                   unit_name=unit_names(qs, units),
                    questions=[public_view(q) for q in qs])
 
 
@@ -505,7 +579,7 @@ def get_leaderboard():
     return jsonify(leaderboard.top(cat, period, limit=20))
 
 
-multiplayer.init(app, pick_questions, leaderboard.clean_name, TOPICS)
+multiplayer.init(app, pick_questions, leaderboard.clean_name, TOPICS, clean_units, MAX_UNITS)
 
 @app.post("/api/class/summary")
 def class_summary():

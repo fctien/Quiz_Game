@@ -24,12 +24,15 @@ from flask import Blueprint, Response, jsonify, request
 import classroom
 import gate
 
+clean_units = None          # 由 init() 從 app.py 注入
+MAX_UNITS = 3
+
 bp = Blueprint("mp", __name__)
 
 MAX_PLAYERS = 100
 ROOM_TTL = 3 * 60 * 60        # 房間最長保留 3 小時
 GRACE = 1.0                   # 網路延遲容忍秒數
-COUNTS = (5, 10, 15, 20)
+COUNTS = (5, 10, 15, 20, 25, 30)  # 一場的題數。複選單元時 30 題剛好每個單元 10 題
 TIMES = (0, 10, 15, 20, 30)      # 0 = 手動,由主持人按鈕控制每題的開始與結束
 MANUAL_WINDOW = 30               # 手動模式的速度分以 30 秒為基準
 BONUS = 0.5                      # 每題最快答對的人,課堂加分
@@ -45,9 +48,11 @@ clean_name = None
 categories = {}
 
 
-def init(app, pick, clean, cats):
-    global pick_questions, clean_name, categories
+def init(app, pick, clean, cats, units_cleaner=None, max_units=3):
+    global pick_questions, clean_name, categories, clean_units, MAX_UNITS
     pick_questions, clean_name, categories = pick, clean, cats
+    clean_units = units_cleaner or (lambda v: [v] if v else [])
+    MAX_UNITS = max_units
     app.register_blueprint(bp)
 
 
@@ -258,7 +263,7 @@ class Room:
         v = {"code": self.code, "state": "closed" if self.closed else self.state,
              "topic": self.category,
              "category": categories.get(self.category, {}).get("name", self.category),
-             "region": self.region or "", "unit": self.unit or "", "unit_name": self.unit_name,
+             "region": self.region or "", "unit": list(self.unit or []), "unit_name": self.unit_name,
              "mode": self.mode, "teams": self.teams,
              "class_code": self.class_code, "has_roster": bool(self.roster),
              "notice": self.notice, "count": self.count,
@@ -441,8 +446,8 @@ def create():
     if count not in COUNTS or limit not in TIMES:
         return err("題數或秒數不在可選範圍內")
     region = b.get("region") or None
-    unit = b.get("unit") or None
-    unit_name = str(b.get("unit_name", ""))[:40]
+    unit = clean_units(b.get("unit"))          # 單元可以複選,最多 MAX_UNITS 個
+    unit_name = str(b.get("unit_name", ""))[:80]
     mode = "team" if b.get("mode") == "team" else "solo"
     entry = clean_entry(b.get("entry", ""))
 
@@ -662,6 +667,10 @@ def reconfig():
         cat = b.get("category", r.category)
         if cat not in categories:
             return err("沒有這個主題")
+        # 換題目也要過門禁。少了這一行,學生可以先開一間地理考坊,再用 reconfig
+        # 把它換成課程主題,整個鎖就繞過去了。
+        if not gate.allow(cat, request):
+            return err("課程題庫要先解鎖", 403)
         count = int(b.get("count", r.count))
         limit = int(b.get("time", r.limit))
         if count not in COUNTS or limit not in TIMES:
@@ -669,8 +678,8 @@ def reconfig():
         old = (r.category, r.region, r.unit, r.unit_name, r.count, r.limit)
         r.category = cat
         r.region = b.get("region") or None
-        r.unit = b.get("unit") or None
-        r.unit_name = str(b.get("unit_name", ""))[:40]
+        r.unit = clean_units(b.get("unit"))
+        r.unit_name = str(b.get("unit_name", ""))[:80]
         r.count, r.limit = count, limit
         r.new_round()
         if not r.questions:                       # 抽不到題就整組還原

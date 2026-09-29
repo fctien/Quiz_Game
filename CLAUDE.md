@@ -38,8 +38,10 @@ docs/                GitHub Pages 目錄 + 兩份列印用小抄
 - 改題庫或前端後要重跑 `python build_standalone.py`。
 - 版本字樣同時出現在 `static/*.html`、`DEPLOY-Render.md`、`docs/*.html`，要一起改。
 - **公開版（docs/）不可含 Python、Deep Learning、VBA 題庫**，見 `build_standalone.py` 的 `PRIVATE`。
-- 課程題庫的門禁一律走 `gate.py`，不要自己在端點裡寫判斷。新增任何「會吐出題目」的端點時，
-  第一件事就是加 `gate.allow(topic, request)`。`TOPICS` 裡的 `group` 只是畫面分類，**不是安全依據**。
+- 課程題庫的門禁一律走 `gate.py`，不要自己在端點裡寫判斷。`TOPICS` 裡的 `group` 只是畫面分類，
+  **不是安全依據**。要加 `gate.allow(topic, request)` 的不只是「會吐出題目」的端點，而是
+  **任何會決定題目來源的端點**——包括改設定的（`/api/mp/reconfig` 就漏過一次：先開地理考坊
+  再換成課程主題，整個鎖就繞過去了）。新增或修改端點時，問自己「這支能不能改變 category？」。
 - 密碼（`TEACH_CODE`、`MASTER_CODE`、`SECRET_KEY`）只能從環境變數讀，不可以寫進檔案或預設值。
 - **不要對「會吐題目」的端點加以 IP 為單位的速率限制**：整班學生在同一個校園 NAT 後面，
   伺服器看到的是同一個 IP，任何合理門檻都會誤傷整班。速率限制只用在「試密碼」那裡。
